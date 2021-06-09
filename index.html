@@ -269,6 +269,10 @@ Error message and password prompt
 
 <li>$:/state/tree/$:/plugins/</li>
 
+<li>$:/state/tree/$:/plugins/tiddlywiki/</li>
+
+<li>$:/state/tree/$:/plugins/tiddlywiki/markdown/</li>
+
 <li>$:/status/RequireReloadDueToPluginChange</li>
 
 <li>$:/StoryList</li>
@@ -11795,16 +11799,22 @@ exports.context = contextWidget;
 <div created="20210609081303352" modified="20210609083005331" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Explorer</pre>
 </div>
-<div created="20210609081257054" modified="20210609083033616" title="$:/state/tab/sidebar--595412856">
+<div created="20210609081257054" modified="20210609083202981" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div created="20210609083010440" modified="20210609083010440" title="$:/state/tree/$:/plugins/">
 <pre>show</pre>
 </div>
-<div title="$:/status/RequireReloadDueToPluginChange">
-<pre>yes</pre>
+<div created="20210609083156464" modified="20210609083156464" title="$:/state/tree/$:/plugins/tiddlywiki/">
+<pre>show</pre>
 </div>
-<div created="20210609083034150" list="$:/ControlPanel $:/Import GettingStarted" modified="20210609083034150" title="$:/StoryList">
+<div created="20210609083158845" modified="20210609083158845" title="$:/state/tree/$:/plugins/tiddlywiki/markdown/">
+<pre>show</pre>
+</div>
+<div title="$:/status/RequireReloadDueToPluginChange">
+<pre>no</pre>
+</div>
+<div created="20210609083203778" list="[[Bits and bytes]] GettingStarted" modified="20210609083203778" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -11931,8 +11941,8 @@ exports.context = contextWidget;
 <div bag="default" created="20200127165334843" modified="20201231112723122" revision="0" tags="$:/giffmex/stroll" title="$:/view" type="text/vnd.tiddlywiki">
 <pre>zoomin</pre>
 </div>
-<div created="20210609081308349" modified="20210609082753493" summary="A bit is a unit of measurement for information. 1 bit of information is enough to reduce the uncertainty by 50%. 8 bits comprise 1 byte. Humans count bytes in multiples of thousands, while computers count bytes in multiples of 1,024." tags="season:4 topic:data" title="Bits and bytes">
-<pre>## A bit: the littlest bit of data
+<div created="20210609081308349" modified="20210609083424518" summary="A bit is a unit of measurement for information. 1 bit of information is enough to reduce the uncertainty by 50%. 8 bits comprise 1 byte. Humans count bytes in multiples of thousands, while computers count bytes in multiples of 1,024." tags="season:4 topic:data" title="Bits and bytes">
+<pre>!! A [[bit]]: the littlest bit of data
 
 You know the game [Animal, Plant or Mineral](https://www.helpmykidlearn.ie/activities/8-9/detail/animal-plant-or-mineral), where you ask yes/no questions to guess what the other person has chosen (from the Animal, Plant, or Mineral category)? Each yes/no question narrows down the range of options until you are finally reasonably certain you know what they have in mind.
 
@@ -11947,25 +11957,25 @@ It seems everybody knows that all the way down, computers work with 0s and 1s. T
 
 With this question sequence, a grasshopper would be represented as YNNY, or `1001`. A millipede would be represented as `1010`. A dog would be represented as `1101`, but so would a cat. 4 digits can help us categorise different animals, but not all. The more questions we can ask, the better we can categorise them.
 
-The answer to each question has 2 possible outcomes, and gives us a little _bit_ more information. Claude Shannon, the father of modern Information Theory, thus named it the **bit**. What is a bit? It’s a unit of measure for information. Just as we measure weight in units of kilograms, height in units of centimetres, or time in units of seconds, we measure information in bits.
+The answer to each question has 2 possible outcomes, and gives us a little _bit_ more information. Claude Shannon, the father of modern Information Theory, thus named it the [[bit]]. What is a bit? It’s a unit of measure for information. Just as we measure weight in units of kilograms, height in units of centimetres, or time in units of seconds, we measure information in bits.
 
 1 bit of information is enough information to reduce the uncertainty by 50%. Each question you ask in Animal, Plant, or Mineral should reduce the possibilities by half, until the remaining possibilities are small enough to guess.
 
 So in a computer, a single digit—0 or 1—is a bit.
 
-## A byte: a convenient cluster of 8 bits
+!! A [[byte]]: a convenient cluster of 8 bits
 
-In the 1970s, 8-bit microprocessors were all the rage. These were processors that processed everything in clusters of 8 bits. It became convenient to refer to 8 bits as a **byte**, and the term has stuck since. The term didn’t die off because so many things still use clusters of 8 bits to represent information.
+In the 1970s, 8-bit microprocessors were all the rage. These were processors that processed everything in clusters of 8 bits. It became convenient to refer to 8 bits as a [[byte]], and the term has stuck since. The term didn’t die off because so many things still use clusters of 8 bits to represent information.
 
 8 bits can store 256 (2^8) unique values, and that turns out to be enough for many purposes. I won’t list examples here, since those examples will come in subsequent issues. If you need greater precision, you can always use 2 bytes.
 
-## It’s all Greek (prefixes): kilo, mega, giga, tera
+!! It’s all Greek (prefixes): kilo, mega, giga, tera
 
 The metric system gave us nice prefixes to count in thousands (kilo-), millions (mega-), billions (giga-), or trillions (tera-), neatly represented by the letters _k_, _M_, _G_, and _T_ respectively (case-sensitive).
 
 So a kilobyte is 1,000 bytes, a megabyte is 1,000,000 bytes, a gigabyte is 1,000,000,000 bytes, and a terabyte is 1,000,000,000,000 bytes.
 
-## Uh oh …
+!! Uh oh …
 
 Here we run into a little bit of a problem. Computers like to count in powers of two, because increasing the number of bits by one gives us double the number of possible values.
 
@@ -11982,7 +11992,7 @@ Here we run into a little bit of a problem. Computers like to count in powers of
 
 1024 bytes is the closest we can come to 1000 bytes.
 
-## Can’t be unseen
+!! Can’t be unseen
 
 If you’re on a Windows computer, go to My Computer. If you’re on another OS, go to whichever app shows you available disk space. Look carefully at the units for free space.
 
