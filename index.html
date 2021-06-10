@@ -327,8 +327,6 @@ Error message and password prompt
 
 <li>Contents</li>
 
-<li>Draft of 'Bits and bytes' by jsng</li>
-
 <li>glossary</li>
 
 <li>prereqTemplate</li>
@@ -802,7 +800,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" modified="20201231113403988" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Why does my hard drive seem to have less space than it should?" modified="20210610095027585" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Bits and bytes" modified="20210610095036409" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1446,10 +1444,13 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;Why does my hard drive seem to have less space than it should?&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Bits and bytes&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[Why does my hard drive seem to have less space than it should?]] [[Draft of 'Bits and bytes' by jsng]]" modified="20210610075606739" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[Why does my hard drive seem to have less space than it should?]] [[Bits and bytes]]" modified="20210610075606739" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div created="20200510024843460" modified="20200603121638626" tags="$:/giffmex/stroll $:/giffmex/blinks" title="$:/config/EditorTypeMappings/text/vnd.tiddlywiki">
@@ -12677,7 +12678,7 @@ exports.context = contextWidget;
 
 The symbol for a bit is **b** (lower-case).</pre>
 </div>
-<div created="20210609081308349" creator="jsng" modified="20210610092956377" modifier="jsng" summary="A bit is a unit of measurement for information. 1 bit of information is enough to reduce the uncertainty by 50%. 8 bits comprise 1 byte." tags="topic:data" title="Bits and bytes" topic="data" type="text/x-markdown">
+<div created="20210609081308349" creator="jsng" modified="20210610095036397" modifier="jsng" summary="A bit is a unit of measurement for information. 1 bit of information is enough to reduce the uncertainty by 50%. 8 bits comprise 1 byte." tags="topic:data" title="Bits and bytes" topic="data" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 ## A bit: the littlest bit of data
@@ -12718,42 +12719,6 @@ In the 1970s, 8-bit microprocessors were all the rage. These were processors tha
 <pre>&lt;$list filter=&quot;[tag[content:topic]sort[title]]&quot;&gt;&gt;
 &lt;$link/&gt;
 &lt;/$list&gt;</pre>
-</div>
-<div created="20210609081308349" creator="jsng" draft.of="Bits and bytes" draft.title="Bits and bytes" modified="20210610093909715" modifier="jsng" summary="A bit is a unit of measurement for information. 1 bit of information is enough to reduce the uncertainty by 50%. 8 bits comprise 1 byte." tags="topic:data" title="Draft of 'Bits and bytes' by jsng" topic="data" type="text/x-markdown">
-<pre>{{||prereqTemplate}}
-
-&lt;$transclude tiddler=&quot;prereqTemplate&quot;/&gt;
-
-## A bit: the littlest bit of data
-
-You know the game [Animal, Plant or Mineral](https://www.helpmykidlearn.ie/activities/8-9/detail/animal-plant-or-mineral), where you ask yes/no questions to guess what the other person has chosen (from the Animal, Plant, or Mineral category)? Each yes/no question narrows down the range of options until you are finally reasonably certain you know what they have in mind.
-
-It seems everybody knows that all the way down, computers work with 0s and 1s. They work kind of like Yes and No, too, with each digit acting like the answer to a Yes/No question, to narrow down the available information. Quick example:
-
-&gt; **Animal**
-&gt; 
-&gt; 1. Does it have more than two legs? → Yes (1)
-&gt; 2. Does it have four legs? → No (0)
-&gt; 3. Does it crawl on the ground? → No (0)
-&gt; 4. Can it jump? → Yes (1)
-
-With this question sequence, a grasshopper would be represented as YNNY, or `1001`. A millipede would be represented as `1010`. A dog would be represented as `1101`, but so would a cat. 4 digits can help us categorise different animals, but not all. The more questions we can ask, the better we can categorise them.
-
-The answer to each question has 2 possible outcomes, and gives us a little _bit_  more information. Claude Shannon, the father of modern Information Theory, thus named it the [[bit]].
-
-&gt; {{bit}}
-
-1 bit of information is enough information to reduce the uncertainty by 50%. Each question you ask in Animal, Plant, or Mineral should reduce the possibilities by half, until the remaining possibilities are small enough to guess.
-
-So in a computer, a single digit—0 or 1—is a bit.
-
-## A byte: a convenient cluster of 8 bits
-
-In the 1970s, 8-bit microprocessors were all the rage. These were processors that processed everything in clusters of 8 bits. It became convenient to refer to 8 bits as a [[byte]], and the term has stuck since. The term didn’t die off because so many things still use clusters of 8 bits to represent information.
-
-&gt; {{byte}}
-
-8 bits can store 256 (2^8) unique values, and that turns out to be enough for many purposes. I won’t list examples here, since those examples will come in subsequent issues. If you need greater precision, you can always use 2 bytes.</pre>
 </div>
 <div created="20210610075627131" creator="jsng" modified="20210610080020439" modifier="jsng" title="glossary" type="text/vnd.tiddlywiki">
 <pre>&lt;$list filter=&quot;[tag[glossary]sort[title]]&quot; index=&quot;index&quot;&gt;
