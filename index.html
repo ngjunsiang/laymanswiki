@@ -800,7 +800,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" modified="20201231113403988" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Bits and bytes" modified="20210610095036409" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Why does my hard drive seem to have less space than it should?" modified="20210610095117147" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1447,6 +1447,12 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;Bits and bytes&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'Why does my hard drive seem to have less space than it should?' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Why does my hard drive seem to have less space than it should?&quot;
     }
 ]</pre>
 </div>
@@ -12735,14 +12741,14 @@ In the 1970s, 8-bit microprocessors were all the rage. These were processors tha
 &lt;/div&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div created="20210610072430150" creator="jsng" list-after="[[Bits and bytes]]" modified="20210610095027569" modifier="jsng" summary="Humans count bytes in multiples of thousands, while computers count bytes in multiples of 1,024." tags="topic:data" title="Why does my hard drive seem to have less space than it should?" topic="data" type="text/x-markdown">
+<div created="20210610072430150" creator="jsng" list-after="[[Bits and bytes]]" modified="20210610095117135" modifier="jsng" summary="Humans count bytes in multiples of thousands, while computers count bytes in multiples of 1,024." tags="topic:data" title="Why does my hard drive seem to have less space than it should?" topic="data" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 When you buy a 1TB hard disk, connect it to your computer, and check the available space, it says there is only 930 GiB available. What is going on?
 
 No, it’s not cheating you of space! It’s just counting space differently, using a different set of units.
 
-!! Greek (prefixes): kilo, mega, giga, tera
+## (prefixes): kilo, mega, giga, tera
 
 The metric system gave us humans nice prefixes to count in thousands (kilo-), millions (mega-), billions (giga-), or trillions (tera-), neatly represented by the letters (case-sensitive):
 
@@ -12755,7 +12761,7 @@ The metric system gave us humans nice prefixes to count in thousands (kilo-), mi
 - T: terabyte  
   1 TB = 1,000,000,000,000 bytes, or 1 trillion bytes
 
-!! Powers of 2
+## Powers of 2
 
 Computers, on the other hand, like to count in powers of two, because increasing the number of bits by one gives us double the number of possible values.
 
@@ -12773,22 +12779,20 @@ Computers, on the other hand, like to count in powers of two, because increasing
 
 1024 bytes is the closest we can come to 1000 bytes.
 
-!! Can’t be unseen
+## Can’t be unseen
 
 If you’re on a Windows computer, go to My Computer. If you’re on another OS, go to whichever app shows you available disk space. Look carefully at the units for free space.
 
 Disk space is not reported in MB, GB, or TB. It’s reported in MiB (mebibytes), GiB (gibibytes), or TiB (tebibytes)! Those units are not the decimal notations we are used to. We count bits differently from computers.
 
-''For humans''
-
+**For humans**
 &gt; 10^3 is 1000.  
 &gt; A kilobyte is 1000 bytes  
 &gt; A megabyte is 1000 kilobytes  
 &gt; A gigabyte is 1000 megabytes  
 &gt; A terabyte is 1000 gigabytes
 
-''For computers''
-
+**For computers**
 &gt; 2^10 is 1024.  
 &gt; A kibibyte (kiB, or kilo binary byte) is 1024 bytes  
 &gt; A mebibyte (MiB, or mega binary byte) is 1024 kibibytes  
