@@ -199,6 +199,8 @@ Error message and password prompt
 
 <li>$:/config/RelinkOnRename</li>
 
+<li>$:/config/TextEditor/EnableToolbar</li>
+
 <li>$:/config/Tiddlers/TitleLinks</li>
 
 <li>$:/config/ui/EditTemplate</li>
@@ -320,6 +322,8 @@ Error message and password prompt
 <li>byte</li>
 
 <li>Contents</li>
+
+<li>Draft of 'prereqTemplate' by jsng</li>
 
 <li>glossary</li>
 
@@ -481,7 +485,7 @@ background-color: &lt;&lt;colour tiddler-info-background&gt;&gt;;}
 
 &lt;/$reveal&gt;</pre>
 </div>
-<div created="20191220121428434" list-before="$:/core/ui/EditTemplate/body" modified="20201231113056589" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/.giffmex/EditTemplate/custom">
+<div created="20191220121428434" creator="jsng" list-before="$:/core/ui/EditTemplate/body" modified="20210610093355195" modifier="jsng" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/.giffmex/EditTemplate/custom">
 <pre>&quot;&quot;&quot;
 This is where you can add your own items you want visible in the edit template. For example:
 
@@ -1575,6 +1579,9 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <pre>show</pre>
 </div>
 <div bag="default" created="20200106214031452" modified="20200521150810088" revision="0" tags="$:/giffmex/stroll $:/giffmex/blinks" title="$:/config/RelinkOnRename" type="text/vnd.tiddlywiki">
+<pre>yes</pre>
+</div>
+<div created="20210610093343709" creator="jsng" modified="20210610093401394" modifier="jsng" title="$:/config/TextEditor/EnableToolbar">
 <pre>yes</pre>
 </div>
 <div bag="default" created="20200414150157768" modified="20200521145815908" revision="0" tags="$:/giffmex/stroll" title="$:/config/Tiddlers/TitleLinks" type="text/vnd.tiddlywiki">
@@ -12729,7 +12736,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210610084538319" creator="jsng" list="Contents" modified="20210610084749107" modifier="jsng" title="$:/StoryList">
+<div created="20210610084538319" creator="jsng" list="[[Draft of 'prereqTemplate' by jsng]] Contents" modified="20210610093313988" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -12901,6 +12908,14 @@ In the 1970s, 8-bit microprocessors were all the rage. These were processors tha
 <div created="20210610073828324" creator="jsng" modified="20210610082450214" modifier="jsng" tags="$:/tags/SideBar" title="Contents" type="text/vnd.tiddlywiki">
 <pre>&lt;$list filter=&quot;[tag[content:topic]sort[title]]&quot;&gt;&gt;
 &lt;$link/&gt;
+&lt;/$list&gt;</pre>
+</div>
+<div created="20210610084811774" creator="jsng" draft.of="prereqTemplate" draft.title="prereqTemplate" modified="20210610093315764" modifier="jsng" tags="" title="Draft of 'prereqTemplate' by jsng" type="text/vnd.tiddlywiki">
+<pre>Pre-reading:
+&lt;$list filter=&quot;[field:topic{!!topic}list-after{!!list-after}]&quot;&gt;
+&lt;div&gt;
+&lt;$link/&gt;
+&lt;/div&gt;
 &lt;/$list&gt;</pre>
 </div>
 <div created="20210610075627131" creator="jsng" modified="20210610080020439" modifier="jsng" title="glossary" type="text/vnd.tiddlywiki">
