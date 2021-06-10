@@ -323,7 +323,7 @@ Error message and password prompt
 
 <li>Contents</li>
 
-<li>Draft of 'prereqTemplate' by jsng</li>
+<li>Draft of 'Bits and bytes' by jsng</li>
 
 <li>glossary</li>
 
@@ -798,7 +798,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" modified="20201231113403988" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Why does my hard drive seem to have less space than it should?" modified="20210610093855707" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Why does my hard drive seem to have less space than it should?" modified="20210610094105567" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1560,10 +1560,19 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;Why does my hard drive seem to have less space than it should?&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'Bits and bytes' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'Why does my hard drive seem to have less space than it should?' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Why does my hard drive seem to have less space than it should?&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[Why does my hard drive seem to have less space than it should?]] [[Bits and bytes]]" modified="20210610075606739" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[Why does my hard drive seem to have less space than it should?]] [[Draft of 'Bits and bytes' by jsng]]" modified="20210610075606739" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div created="20200510024843460" modified="20200603121638626" tags="$:/giffmex/stroll $:/giffmex/blinks" title="$:/config/EditorTypeMappings/text/vnd.tiddlywiki">
@@ -12742,7 +12751,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210610084538319" creator="jsng" list="[[Draft of 'prereqTemplate' by jsng]] Contents" modified="20210610093313988" modifier="jsng" title="$:/StoryList">
+<div created="20210610084538319" creator="jsng" list="Contents" modified="20210610093313988" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -12916,13 +12925,41 @@ In the 1970s, 8-bit microprocessors were all the rage. These were processors tha
 &lt;$link/&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div created="20210610084811774" creator="jsng" draft.of="prereqTemplate" draft.title="prereqTemplate" modified="20210610093315764" modifier="jsng" tags="" title="Draft of 'prereqTemplate' by jsng" type="text/vnd.tiddlywiki">
-<pre>Pre-reading:
-&lt;$list filter=&quot;[field:topic{!!topic}list-after{!!list-after}]&quot;&gt;
-&lt;div&gt;
-&lt;$link/&gt;
-&lt;/div&gt;
-&lt;/$list&gt;</pre>
+<div created="20210609081308349" creator="jsng" draft.of="Bits and bytes" draft.title="Bits and bytes" modified="20210610093909715" modifier="jsng" summary="A bit is a unit of measurement for information. 1 bit of information is enough to reduce the uncertainty by 50%. 8 bits comprise 1 byte." tags="topic:data" title="Draft of 'Bits and bytes' by jsng" topic="data" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+&lt;$transclude tiddler=&quot;prereqTemplate&quot;/&gt;
+
+## A bit: the littlest bit of data
+
+You know the game [Animal, Plant or Mineral](https://www.helpmykidlearn.ie/activities/8-9/detail/animal-plant-or-mineral), where you ask yes/no questions to guess what the other person has chosen (from the Animal, Plant, or Mineral category)? Each yes/no question narrows down the range of options until you are finally reasonably certain you know what they have in mind.
+
+It seems everybody knows that all the way down, computers work with 0s and 1s. They work kind of like Yes and No, too, with each digit acting like the answer to a Yes/No question, to narrow down the available information. Quick example:
+
+&gt; **Animal**
+&gt; 
+&gt; 1. Does it have more than two legs? → Yes (1)
+&gt; 2. Does it have four legs? → No (0)
+&gt; 3. Does it crawl on the ground? → No (0)
+&gt; 4. Can it jump? → Yes (1)
+
+With this question sequence, a grasshopper would be represented as YNNY, or `1001`. A millipede would be represented as `1010`. A dog would be represented as `1101`, but so would a cat. 4 digits can help us categorise different animals, but not all. The more questions we can ask, the better we can categorise them.
+
+The answer to each question has 2 possible outcomes, and gives us a little _bit_  more information. Claude Shannon, the father of modern Information Theory, thus named it the [[bit]].
+
+&gt; {{bit}}
+
+1 bit of information is enough information to reduce the uncertainty by 50%. Each question you ask in Animal, Plant, or Mineral should reduce the possibilities by half, until the remaining possibilities are small enough to guess.
+
+So in a computer, a single digit—0 or 1—is a bit.
+
+## A byte: a convenient cluster of 8 bits
+
+In the 1970s, 8-bit microprocessors were all the rage. These were processors that processed everything in clusters of 8 bits. It became convenient to refer to 8 bits as a [[byte]], and the term has stuck since. The term didn’t die off because so many things still use clusters of 8 bits to represent information.
+
+&gt; {{byte}}
+
+8 bits can store 256 (2^8) unique values, and that turns out to be enough for many purposes. I won’t list examples here, since those examples will come in subsequent issues. If you need greater precision, you can always use 2 bytes.</pre>
 </div>
 <div created="20210610075627131" creator="jsng" modified="20210610080020439" modifier="jsng" title="glossary" type="text/vnd.tiddlywiki">
 <pre>&lt;$list filter=&quot;[tag[glossary]sort[title]]&quot; index=&quot;index&quot;&gt;
@@ -12931,7 +12968,7 @@ In the 1970s, 8-bit microprocessors were all the rage. These were processors tha
 &lt;/div&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div created="20210610084811774" creator="jsng" modified="20210610091000322" modifier="jsng" tags="" title="prereqTemplate" type="text/vnd.tiddlywiki">
+<div created="20210610084811774" creator="jsng" modified="20210610093858779" modifier="jsng" tags="" title="prereqTemplate" type="text/vnd.tiddlywiki">
 <pre>Pre-reading:
 &lt;$list filter=&quot;[field:topic{!!topic}list-after{!!list-after}]&quot;&gt;
 &lt;div&gt;
@@ -12939,7 +12976,7 @@ In the 1970s, 8-bit microprocessors were all the rage. These were processors tha
 &lt;/div&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div created="20210610072430150" creator="jsng" list-after="[[Bits and bytes]]" modified="20210610093855680" modifier="jsng" summary="Humans count bytes in multiples of thousands, while computers count bytes in multiples of 1,024." tags="topic:data" title="Why does my hard drive seem to have less space than it should?" topic="data" type="text/x-markdown">
+<div created="20210610072430150" creator="jsng" list-after="[[Bits and bytes]]" modified="20210610094105547" modifier="jsng" summary="Humans count bytes in multiples of thousands, while computers count bytes in multiples of 1,024." tags="topic:data" title="Why does my hard drive seem to have less space than it should?" topic="data" type="text/vnd.tiddlywiki">
 <pre>{{||prereqTemplate}}
 
 &lt;$transclude tiddler=&quot;prereqTemplate&quot;/&gt;
@@ -12948,7 +12985,7 @@ When you buy a 1TB hard disk, connect it to your computer, and check the availab
 
 No, it’s not cheating you of space! It’s just counting space differently, using a different set of units.
 
-## Greek (prefixes): kilo, mega, giga, tera
+!! Greek (prefixes): kilo, mega, giga, tera
 
 The metric system gave us humans nice prefixes to count in thousands (kilo-), millions (mega-), billions (giga-), or trillions (tera-), neatly represented by the letters (case-sensitive):
 
@@ -12961,7 +12998,7 @@ The metric system gave us humans nice prefixes to count in thousands (kilo-), mi
 - T: terabyte  
   1 TB = 1,000,000,000,000 bytes, or 1 trillion bytes
 
-## Powers of 2
+!! Powers of 2
 
 Computers, on the other hand, like to count in powers of two, because increasing the number of bits by one gives us double the number of possible values.
 
@@ -12979,20 +13016,22 @@ Computers, on the other hand, like to count in powers of two, because increasing
 
 1024 bytes is the closest we can come to 1000 bytes.
 
-## Can’t be unseen
+!! Can’t be unseen
 
 If you’re on a Windows computer, go to My Computer. If you’re on another OS, go to whichever app shows you available disk space. Look carefully at the units for free space.
 
 Disk space is not reported in MB, GB, or TB. It’s reported in MiB (mebibytes), GiB (gibibytes), or TiB (tebibytes)! Those units are not the decimal notations we are used to. We count bits differently from computers.
 
-**For humans**
+''For humans''
+
 &gt; 10^3 is 1000.  
 &gt; A kilobyte is 1000 bytes  
 &gt; A megabyte is 1000 kilobytes  
 &gt; A gigabyte is 1000 megabytes  
 &gt; A terabyte is 1000 gigabytes
 
-**For computers**
+''For computers''
+
 &gt; 2^10 is 1024.  
 &gt; A kibibyte (kiB, or kilo binary byte) is 1024 bytes  
 &gt; A mebibyte (MiB, or mega binary byte) is 1024 kibibytes  
@@ -13001,9 +13040,11 @@ Disk space is not reported in MB, GB, or TB. It’s reported in MiB (mebibytes),
 
 When you buy a 1TB hard drive, you are buying a 1,000,000,000,000-byte drive.
 
-1,000,000,000,000 bytes ÷ 1,024 = 976,562,500 kibibytes (kiB)  
-976,562,500 kibibytes ÷ 1,024 = 953,674 mebibytes (MiB)  
-953,674 mebibytes ÷ 1,024 = 931 gibibytes (GiB)  
+1,000,000,000,000 bytes ÷ 1,024 = 976,562,500 kibibytes (kiB)
+
+976,562,500 kibibytes ÷ 1,024 = 953,674 mebibytes (MiB)
+
+953,674 mebibytes ÷ 1,024 = 931 gibibytes (GiB)
 
 So your computer isn’t lying. It’s just using different units of counting!</pre>
 </div>
