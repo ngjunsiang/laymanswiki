@@ -267,6 +267,8 @@ Error message and password prompt
 
 <li>$:/state/plugin-info-896098052-$:/plugins/tiddlywiki/markdown--436478829</li>
 
+<li>$:/state/showeditpreview</li>
+
 <li>$:/state/sidebar</li>
 
 <li>$:/state/tab--1498284803</li>
@@ -790,7 +792,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" modified="20201231113403988" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="glossary" modified="20210610075922716" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="glossary" modified="20210610080020453" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1525,6 +1527,12 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 210.93333435058594,
             &quot;height&quot;: 19.600006103515625
         }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'glossary' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;glossary&quot;
     },
     {
         &quot;title&quot;: &quot;Draft of 'glossary' by jsng&quot;
@@ -12694,6 +12702,9 @@ exports.context = contextWidget;
 <div created="20210609084800789" modified="20210609084803824" title="$:/state/plugin-info-896098052-$:/plugins/tiddlywiki/markdown--436478829">
 <pre>contents</pre>
 </div>
+<div created="20210610075938559" creator="jsng" modified="20210610080019180" modifier="jsng" title="$:/state/showeditpreview">
+<pre>no</pre>
+</div>
 <div created="20210529125950441" modified="20210529125951482" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
@@ -12905,9 +12916,11 @@ In the 1970s, 8-bit microprocessors were all the rage. These were processors tha
 &lt;$text text=&lt;&lt;currentTiddler&gt;&gt;/&gt;
 &lt;/list&gt;</pre>
 </div>
-<div created="20210610075627131" creator="jsng" modified="20210610075922708" modifier="jsng" title="glossary" type="text/x-markdown">
-<pre>&lt;$list filter=&quot;[tag[glossary]]&quot; index=&quot;index&quot;&gt;
-* &lt;$link/&gt;
+<div created="20210610075627131" creator="jsng" modified="20210610080020439" modifier="jsng" title="glossary" type="text/vnd.tiddlywiki">
+<pre>&lt;$list filter=&quot;[tag[glossary]sort[title]]&quot; index=&quot;index&quot;&gt;
+&lt;div&gt;
+&lt;$link/&gt;
+&lt;/div&gt;
 &lt;/$list&gt;</pre>
 </div>
 <div created="20210610073828324" creator="jsng" modified="20210610074556813" modifier="jsng" tags="$:/tags/SideBar" title="Index" type="text/vnd.tiddlywiki">
