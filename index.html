@@ -319,9 +319,9 @@ Error message and password prompt
 
 <li>byte</li>
 
-<li>Draft of 'topic:data' by jsng</li>
+<li>Draft of 'Index' by jsng</li>
 
-<li>Draft of 'Why does my hard drive seem to have less space than it should?' by jsng</li>
+<li>Draft of 'topic:data' by jsng</li>
 
 <li>glossary</li>
 
@@ -797,7 +797,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" modified="20201231113403988" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Index" modified="20210610081345783" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Why does my hard drive seem to have less space than it should?" modified="20210610081109540" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1625,16 +1625,10 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;Why does my hard drive seem to have less space than it should?&quot;
-    },
-    {
-        &quot;title&quot;: &quot;Draft of 'Why does my hard drive seem to have less space than it should?' by jsng&quot;
-    },
-    {
-        &quot;title&quot;: &quot;Index&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[Draft of 'topic:data' by jsng]] [[Draft of 'Why does my hard drive seem to have less space than it should?' by jsng]] Index" modified="20210610080919925" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[Draft of 'topic:data' by jsng]] [[Why does my hard drive seem to have less space than it should?]] [[Draft of 'Index' by jsng]]" modified="20210610080919925" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div created="20200510024843460" modified="20200603121638626" tags="$:/giffmex/stroll $:/giffmex/blinks" title="$:/config/EditorTypeMappings/text/vnd.tiddlywiki">
@@ -12768,8 +12762,8 @@ exports.context = contextWidget;
 <div created="20210609084800789" modified="20210609084803824" title="$:/state/plugin-info-896098052-$:/plugins/tiddlywiki/markdown--436478829">
 <pre>contents</pre>
 </div>
-<div created="20210610075938559" creator="jsng" modified="20210610081326837" modifier="jsng" title="$:/state/showeditpreview">
-<pre>no</pre>
+<div created="20210610075938559" creator="jsng" modified="20210610080129178" modifier="jsng" title="$:/state/showeditpreview">
+<pre>yes</pre>
 </div>
 <div created="20210529125950441" modified="20210529125951482" title="$:/state/sidebar">
 <pre>yes</pre>
@@ -12977,83 +12971,19 @@ In the 1970s, 8-bit microprocessors were all the rage. These were processors tha
 <div created="20210610071159528" modified="20210610071346171" tags="glossary" title="byte" type="text/x-markdown">
 <pre>A **byte** is a sequence of 8 [[bit]]s. This is sufficient to represent 2^8 = 256 different values.</pre>
 </div>
+<div created="20210610073828324" creator="jsng" draft.of="Index" draft.title="Index" modified="20210610080143969" modifier="jsng" tags="$:/tags/SideBar" title="Draft of 'Index' by jsng" type="text/vnd.tiddlywiki">
+<pre>&lt;$list filter=&quot;[[tag[About]sort[title]]&quot;&gt;
+&lt;div&gt;
+&lt;$text text=&lt;&lt;currentTiddler&gt;&gt;/&gt;
+&lt;/div&gt;
+&lt;/$list&gt;</pre>
+</div>
 <div created="20210610080931016" creator="jsng" draft.of="topic:data" draft.title="topic:data" modified="20210610081021902" modifier="jsng" title="Draft of 'topic:data' by jsng">
 <pre>&lt;$list filter=&quot;[tag[topic:data]]&quot;&gt;
 &lt;div&gt;
 &lt;$link/&gt;
 &lt;/div&gt;
 &lt;/$list&gt;</pre>
-</div>
-<div created="20210610072430150" creator="jsng" draft.of="Why does my hard drive seem to have less space than it should?" draft.title="Why does my hard drive seem to have less space than it should?" list-after="Bits and bytes" modified="20210610081314580" modifier="jsng" summary="Humans count bytes in multiples of thousands, while computers count bytes in multiples of 1,024." tags="topic:data" title="Draft of 'Why does my hard drive seem to have less space than it should?' by jsng" type="text/x-markdown">
-<pre>Read first:
-&lt;$list filter=[field:list-before[]]&gt;
-&lt;div&gt;
-&lt;$link/&gt;
-&lt;/div&gt;
-&lt;/$list&gt;
-
-When you buy a 1TB hard disk, connect it to your computer, and check the available space, it says there is only 930 GiB available. What is going on?
-
-No, it’s not cheating you of space! It’s just counting space differently, using a different set of units.
-
-## Greek (prefixes): kilo, mega, giga, tera
-
-The metric system gave us humans nice prefixes to count in thousands (kilo-), millions (mega-), billions (giga-), or trillions (tera-), neatly represented by the letters (case-sensitive):
-
-- k: kilobyte  
-  1 kB = 1,000 bytes, or 1 thousand bytes
-- M: megabyte  
-  1 MB = 1,000,000 bytes, or 1 million bytes
-- G: gigabyte  
-  1 GB = 1,000,000,000 bytes, or 1 billion bytes
-- T: terabyte  
-  1 TB = 1,000,000,000,000 bytes, or 1 trillion bytes
-
-## Powers of 2
-
-Computers, on the other hand, like to count in powers of two, because increasing the number of bits by one gives us double the number of possible values.
-
-8 bits gives us a byte: 2^8 different possible combinations of 0s and 1s.  
-9 bits gives us 2 bytes: 2^9 different possible combinations of 0s and 1s.  
-10 bits gives us 4 bytes: 2^10 combinations is double of 2^9.  
-11 bits: 8 bytes (double of 2^10)  
-12 bits: 16 bytes (see the pattern yet?)  
-13 bits: 32 bytes  
-14 bits: 64 bytes  
-15 bits: 128 bytes  
-16 bits: 256 bytes  
-17 bits: 512 bytes  
-18 bits: 1024 bytes  
-
-1024 bytes is the closest we can come to 1000 bytes.
-
-## Can’t be unseen
-
-If you’re on a Windows computer, go to My Computer. If you’re on another OS, go to whichever app shows you available disk space. Look carefully at the units for free space.
-
-Disk space is not reported in MB, GB, or TB. It’s reported in MiB (mebibytes), GiB (gibibytes), or TiB (tebibytes)! Those units are not the decimal notations we are used to. We count bits differently from computers.
-
-&gt; **For humans**  
-&gt; 10^3 is 1000.  
-&gt; A kilobyte is 1000 bytes  
-&gt; A megabyte is 1000 kilobytes  
-&gt; A gigabyte is 1000 megabytes  
-&gt; A terabyte is 1000 gigabytes
-
-&gt; **For computers**  
-&gt; 2^10 is 1024.  
-&gt; A kibibyte (kiB, or kilo binary byte) is 1024 bytes  
-&gt; A mebibyte (MiB, or mega binary byte) is 1024 kibibytes  
-&gt; A gibibyte (GiB, or giga binary byte) is 1024 mebibytes  
-&gt; A tebibyte (TiB, or tera binary byte) is 1024 gibibytes
-
-When you buy a 1TB hard drive, you are buying a 1,000,000,000,000-byte drive.
-
-1,000,000,000,000 bytes ÷ 1,024 = 976,562,500 kibibytes (kiB)  
-976,562,500 kibibytes ÷ 1,024 = 953,674 mebibytes (MiB)  
-953,674 mebibytes ÷ 1,024 = 931 gibibytes (GiB)  
-
-So your computer isn’t lying. It’s just using different units of counting!</pre>
 </div>
 <div created="20210610075627131" creator="jsng" modified="20210610080020439" modifier="jsng" title="glossary" type="text/vnd.tiddlywiki">
 <pre>&lt;$list filter=&quot;[tag[glossary]sort[title]]&quot; index=&quot;index&quot;&gt;
@@ -13062,12 +12992,10 @@ So your computer isn’t lying. It’s just using different units of counting!</
 &lt;/div&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div created="20210610073828324" creator="jsng" modified="20210610081345778" modifier="jsng" tags="$:/tags/SideBar" title="Index" type="text/vnd.tiddlywiki">
-<pre>&lt;$list filter=&quot;[[tag[topic]sort[title]]&quot;&gt;
-&lt;div&gt;
+<div created="20210610073828324" creator="jsng" modified="20210610074556813" modifier="jsng" tags="$:/tags/SideBar" title="Index" type="text/vnd.tiddlywiki">
+<pre>&lt;$list filter=&quot;[[tag[About]sort[title]]&quot;&gt;&gt;
 &lt;$text text=&lt;&lt;currentTiddler&gt;&gt;/&gt;
-&lt;/div&gt;
-&lt;/$list&gt;</pre>
+&lt;/list&gt;</pre>
 </div>
 <div created="20210610072430150" creator="jsng" list-after="Bits and bytes" modified="20210610081109515" modifier="jsng" summary="Humans count bytes in multiples of thousands, while computers count bytes in multiples of 1,024." tags="topic:data" title="Why does my hard drive seem to have less space than it should?" type="text/x-markdown">
 <pre>When you buy a 1TB hard disk, connect it to your computer, and check the available space, it says there is only 930 GiB available. What is going on?
