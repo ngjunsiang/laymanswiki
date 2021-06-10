@@ -12704,7 +12704,7 @@ The symbol for a bit is **b** (lower-case).</pre>
 <div created="20210610070403583" modified="20210610070403583" tags="" title="bit1">
 <pre>What is a bit? It’s a unit of measure for information. Just as we measure weight in units of kilograms, height in units of centimetres, or time in units of seconds, we measure information in bits.</pre>
 </div>
-<div created="20210609081308349" modified="20210610072510375" summary="A bit is a unit of measurement for information. 1 bit of information is enough to reduce the uncertainty by 50%. 8 bits comprise 1 byte. Humans count bytes in multiples of thousands, while computers count bytes in multiples of 1,024." tags="topic:data" title="Bits and bytes" type="text/x-markdown">
+<div created="20210609081308349" modified="20210610073232583" summary="A bit is a unit of measurement for information. 1 bit of information is enough to reduce the uncertainty by 50%. 8 bits comprise 1 byte. Humans count bytes in multiples of thousands, while computers count bytes in multiples of 1,024." tags="topic:data" title="Bits and bytes" type="text/x-markdown">
 <pre>## A bit: the littlest bit of data
 
 You know the game [Animal, Plant or Mineral](https://www.helpmykidlearn.ie/activities/8-9/detail/animal-plant-or-mineral), where you ask yes/no questions to guess what the other person has chosen (from the Animal, Plant, or Mineral category)? Each yes/no question narrows down the range of options until you are finally reasonably certain you know what they have in mind.
@@ -12734,11 +12734,19 @@ In the 1970s, 8-bit microprocessors were all the rage. These were processors tha
 
 &gt; {{byte}}
 
-8 bits can store 256 (2^8) unique values, and that turns out to be enough for many purposes. I won’t list examples here, since those examples will come in subsequent issues. If you need greater precision, you can always use 2 bytes.
+8 bits can store 256 (2^8) unique values, and that turns out to be enough for many purposes. I won’t list examples here, since those examples will come in subsequent issues. If you need greater precision, you can always use 2 bytes.</pre>
+</div>
+<div created="20210610071159528" modified="20210610071346171" tags="glossary" title="byte" type="text/x-markdown">
+<pre>A **byte** is a sequence of 8 [[bit]]s. This is sufficient to represent 2^8 = 256 different values.</pre>
+</div>
+<div created="20210610072430150" draft.of="New Tiddler" draft.title="Why does my hard drive seem to have less space than it should?" modified="20210610073213989" tags="topic:data" title="Draft of 'New Tiddler'" type="text/x-markdown">
+<pre>When you buy a 1TB hard disk, connect it to your computer, and check the available space, it says there is only 930 GiB available. What is going on?
+
+No, it’s not cheating you of space! It’s just counting space differently, using a different set of units.
 
 ## Greek (prefixes): kilo, mega, giga, tera
 
-The metric system gave us nice prefixes to count in thousands (kilo-), millions (mega-), billions (giga-), or trillions (tera-), neatly represented by the letters (case-sensitive):
+The metric system gave us humans nice prefixes to count in thousands (kilo-), millions (mega-), billions (giga-), or trillions (tera-), neatly represented by the letters (case-sensitive):
 
 - k: kilobyte  
   1 kB = 1,000 bytes, or 1 thousand bytes
@@ -12749,9 +12757,9 @@ The metric system gave us nice prefixes to count in thousands (kilo-), millions 
 - T: terabyte  
   1 TB = 1,000,000,000,000 bytes, or 1 trillion bytes
 
-## Uh oh …
+## Powers of 2
 
-Here we run into a little bit of a problem. Computers like to count in powers of two, because increasing the number of bits by one gives us double the number of possible values.
+Computers, on the other hand, like to count in powers of two, because increasing the number of bits by one gives us double the number of possible values.
 
 8 bits gives us a byte: 2^8 different possible combinations of 0s and 1s.  
 9 bits gives us 2 bytes: 2^9 different possible combinations of 0s and 1s.  
@@ -12773,8 +12781,19 @@ If you’re on a Windows computer, go to My Computer. If you’re on another OS,
 
 Disk space is not reported in MB, GB, or TB. It’s reported in MiB (mebibytes), GiB (gibibytes), or TiB (tebibytes)! Those units are not the decimal notations we are used to. We count bits differently from computers.
 
-**Humans:** Since 10^3 is 1000, a kilobyte is 1000 bytes, a megabyte is 1000 kilobytes, a gigabyte is 1000 megabytes, and a terabyte is 1000 gigabytes.  
-**Computers:** Since 2^10 is 1024, a kibibyte (kiB, or kilo binary byte) is 1024 bytes, a mebibyte (MiB, or mega binary byte) is 1024 kibibytes, a gibibyte (GiB, or giga binary byte) is 1024 mebibytes, and a tebibyte (TiB, or tera binary byte) is 1024 gibibytes.  
+&gt; **For humans**
+&gt; 10^3 is 1000.
+&gt; A kilobyte is 1000 bytes
+&gt; A megabyte is 1000 kilobytes
+&gt; A gigabyte is 1000 megabytes
+&gt; A terabyte is 1000 gigabytes
+
+&gt; **For computers**
+&gt; 2^10 is 1024
+&gt; A kibibyte (kiB, or kilo binary byte) is 1024 bytes
+&gt; A mebibyte (MiB, or mega binary byte) is 1024 kibibytes
+&gt; A gibibyte (GiB, or giga binary byte) is 1024 mebibytes
+&gt; A tebibyte (TiB, or tera binary byte) is 1024 gibibytes
 
 When you buy a 1TB hard drive, you are buying a 1,000,000,000,000-byte drive.
 
@@ -12782,13 +12801,7 @@ When you buy a 1TB hard drive, you are buying a 1,000,000,000,000-byte drive.
 976,562,500 kibibytes ÷ 1,024 = 953,674 mebibytes (MiB)  
 953,674 mebibytes ÷ 1,024 = 931 gibibytes (GiB)  
 
-So your computer isn’t lying, it’s just using different units of counting.</pre>
-</div>
-<div created="20210610071159528" modified="20210610071346171" tags="glossary" title="byte" type="text/x-markdown">
-<pre>A **byte** is a sequence of 8 [[bit]]s. This is sufficient to represent 2^8 = 256 different values.</pre>
-</div>
-<div created="20210610072430150" draft.of="New Tiddler" draft.title="Why does my hard drive seem to have less space than it should?" modified="20210610072500579" tags="topic:data" title="Draft of 'New Tiddler'">
-<pre>[[bit]]</pre>
+So your computer isn’t lying. It’s just using different units of counting!</pre>
 </div>
 
 
