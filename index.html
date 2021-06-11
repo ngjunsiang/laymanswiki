@@ -375,8 +375,6 @@ Error message and password prompt
 
 <li>decode</li>
 
-<li>Draft of 'Text representation in computers' by jsng</li>
-
 <li>Draft of 'Unicode' by jsng</li>
 
 <li>encode</li>
@@ -12691,7 +12689,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210611032345550" creator="jsng" list="[[ASCII code table]] Contents [[Draft of 'Text representation in computers' by jsng]]" modified="20210611033539155" modifier="jsng" title="$:/StoryList">
+<div created="20210611032345550" creator="jsng" list="Contents [[Text representation in computers]]" modified="20210611033602993" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -12967,45 +12965,6 @@ These two actions, and many others from the time of the telegraph, have been dig
 <div created="20210611030554268" creator="jsng" modified="20210611030555371" modifier="jsng" title="decode">
 <pre>See [[encoding table]].</pre>
 </div>
-<div created="20210611011618961" creator="jsng" draft.of="Text representation in computers" draft.title="Text representation in computers" modified="20210611033014851" modifier="jsng" summary="In computers that can encode and decode ASCII, text is stored as a 7-bit sequence. Text consists of letters, numbers, symbols, and control codes." tags="Topic:data todo:refactor" title="Draft of 'Text representation in computers' by jsng" type="text/x-markdown">
-<pre>How do computers represent text using 0s and 1s?
-
-Humans often use a simple mapping: A=1, B=2, C=3, and so on.
-
-A computer does something more complicated: it keeps a table of characters and the numbers that represent them, in an [[encoding table]].
-
-&gt; {{encoding table}}
-
-One encoding that is commonly used for plain text is known as the [[ASCII]] table.
-
-&gt; {{ASCII}}
-
-Side reading: [[ASCII background and history]]
-
-ASCII introduced punctuation symbols. It also introduced [[control codes]]: unprintable characters which determined the formatting of text, or changed the way it is to be interpreted.
-
-Side reading: [[ASCII code table]]
-
-Plain [[ASCII]] was unable to represent accented characters (such as á), umlauts (like ö), and emojis, as well as glyphs (symbols) used in Greek, Cyrillic, Chinese, Japanese, and other languages. It was unsuitable for use in other countries and cultures that needed those characters.
-
-## Encoding hell
-
-Side reading: [[ISO 8859-1]]
-
-Computer users in these other countries soon came up with their own ways of representing the huge number of glyphs they needed. There were [numerous other ISO 8859-* encoding systems](https://en.wikipedia.org/wiki/ISO/IEC_8859#The_parts_of_ISO/IEC_8859). The Chinese had [[GB encoding]] in mainland China, [[Big5]] in Taiwan, and numerous extensions on that. The Japanese used [[Shift-JIS]].
-
-It was encoding hell.
-
-Circa the ’90s and early ’00s, the internet often had pages of what looked like gibberish. Because webpages then did not include information about their encoding, most of the time web browsers simply had to guess. If your page wasn’t encoded in [[ASCII]] (or [[ISO 8859-1]]), it was anybody’s guess what encoding you were using. You just tried each encoding until you got a page that makes sense!
-
-This was obviously untenable as a long-term solution.
-
-## [[Unicode]]
-
-&gt; {{Unicode}}
-
-</pre>
-</div>
 <div created="20210611032800606" creator="jsng" draft.of="Unicode" draft.title="Unicode" modified="20210611033517992" modifier="jsng" summary="Unicode is an encoding format which is meant to support every language, ever. Most websites, apps, and interfaces support it today." tags="Glossary" title="Draft of 'Unicode' by jsng" type="text/x-markdown">
 <pre>In 1988, a bunch of engineers from [Xerox](https://en.wikipedia.org/wiki/Xerox) and [Apple](https://en.wikipedia.org/wiki/Apple_Inc.) started thinking about a universal encoding that can encompass all languages. The first volume of this encoding was published in 1991, with extensions added subsequently.
 
@@ -13085,7 +13044,7 @@ This card shows all cards written for this topic.
 
 &lt;&lt;list-links &quot;[tag{!!title}]&quot;&gt;&gt;</pre>
 </div>
-<div created="20210611011618961" creator="jsng" modified="20210611030730470" modifier="jsng" summary="In computers that can encode and decode ASCII, text is stored as a 7-bit sequence. Text consists of letters, numbers, symbols, and control codes." tags="Topic:data todo:refactor" title="Text representation in computers" type="text/x-markdown">
+<div created="20210611011618961" creator="jsng" modified="20210611033735023" modifier="jsng" summary="In computers that can encode and decode ASCII, text is stored as a 7-bit sequence. Text consists of letters, numbers, symbols, and control codes." tags="Topic:data todo:refactor" title="Text representation in computers" type="text/x-markdown">
 <pre>How do computers represent text using 0s and 1s?
 
 Humans often use a simple mapping: A=1, B=2, C=3, and so on.
@@ -13098,41 +13057,27 @@ One encoding that is commonly used for plain text is known as the [[ASCII]] tabl
 
 &gt; {{ASCII}}
 
-ASCII introduced punctuation symbols. It also introduced control codes: unprintable characters which determined the formatting of text, or changed the way it is to be interpreted.
-
 Side reading: [[ASCII background and history]]
 
-The need for punctuation is easy enough to understand, and very welcome; if you’ve ever tried reading early telegrams (or using Morse code) you’ll appreciate their addition. But what about control code, like carriage return and line feed?
+ASCII introduced punctuation symbols. It also introduced [[control codes]]: unprintable characters which determined the formatting of text, or changed the way it is to be interpreted.
 
-## The typewriter
+Main article: [[ASCII code table]]
 
-With the advent of the typewriter, people had access to nicely formatted text. You could type text on multiple rows instead of one long row!
+Plain [[ASCII]] was unable to represent accented characters (such as á), umlauts (like ö), and emojis, as well as glyphs (symbols) used in Greek, Cyrillic, Chinese, Japanese, and other languages. It was unsuitable for use in other countries and cultures that needed those characters.
 
-But you had to remember to do two things when using a typewriter for it to be formatted properly.
+## Encoding hell
 
-![A typewriter on a table](images/issue041_03.jpg)&lt;br/&gt;
-The Underwood Five typewriter  
-Image from [Wikimedia Commons](https://en.wikipedia.org/wiki/File:Underwoodfive.jpg)
+Side reading: [[ISO 8859-1]]
 
-There were two separate actions involved as you pulled the leftmost lever to the right:
+Computer users in these other countries soon came up with their own ways of representing the huge number of glyphs they needed. There were [numerous other ISO 8859-* encoding systems](https://en.wikipedia.org/wiki/ISO/IEC_8859#The_parts_of_ISO/IEC_8859). The Chinese had [[GB encoding]] in mainland China, [[Big5]] in Taiwan, and numerous extensions on that. The Japanese used [[Shift-JIS]].
 
-1. The carriage, which holds the paper and moves a bit to the right after each letter is typed, now resets its position so you can start typing from the left again,
-2. the paper is moved up so you can begin typing on the next line.
+It was encoding hell.
 
-(1) is called a [[carriage return]], (2) is called a [[line feed]].
+Circa the ’90s and early ’00s, the internet often had pages of what looked like gibberish. Because webpages then did not include information about their encoding, most of the time web browsers simply had to guess. If your page wasn’t encoded in [[ASCII]] (or [[ISO 8859-1]]), it was anybody’s guess what encoding you were using. You just tried each encoding until you got a page that makes sense!
 
-These two actions, and many others from the time of the telegraph, have been digitised into the [[ASCII code table]], some of which are still used in text files today to control the display of text.
+This was obviously untenable as a long-term solution. A universal [[encoding table]], [[Unicode]], was created to allow all computer users to use a common encoding table that is able to represent any character or symbol that would need to be displayed.
 
-Side reading: [[ASCII code table]]
-
-Remember this image from Issue 12?
-
-![An HTTP request captured in Wireshark showing my developer API key](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season1/issue012/issue012_01.png)&lt;br /&gt;
-An HTTP request captured in Wireshark.
-
-The `\r` and `\n` you see there are control codes. They stand for '[[return]]' and '[[newline]]', the modern equivalent of 'carriage return' and 'line feed'.
-
-Formatting codes are well and alive today, and they are more prosperous than ever! Without formatting codes, all our files would be stored only in the same boring format, represented only as letters and numbers and punctuation marks.</pre>
+Main article: [[Unicode]]</pre>
 </div>
 <div caption="Data" created="20210610095238442" creator="jsng" modified="20210611011242076" modifier="jsng" tags="Contents" title="Topic:data" type="text/x-markdown">
 <pre>{{||tagPageTemplate}}</pre>
