@@ -383,6 +383,8 @@ Error message and password prompt
 
 <li>Colour representation in computers</li>
 
+<li>Compression</li>
+
 <li>Contents</li>
 
 <li>control codes</li>
@@ -394,8 +396,6 @@ Error message and password prompt
 <li>DPI</li>
 
 <li>Draft of 'lossy compression' by jsng</li>
-
-<li>Draft of 'New Tiddler' by jsng</li>
 
 <li>encode</li>
 
@@ -13260,7 +13260,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210611035922453" creator="jsng" list="[[Text representation in computers]] [[Draft of 'New Tiddler' by jsng]] [[Draft of 'lossy compression' by jsng]] [[Audio representation in computers]]" modified="20210611083356339" modifier="jsng" title="$:/StoryList">
+<div created="20210611035922453" creator="jsng" list="Compression [[Draft of 'lossy compression' by jsng]] [[Audio representation in computers]]" modified="20210611083356339" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13630,6 +13630,27 @@ Main article: [[Colour production]]
 
 In a computer, combinations of **image pixels** are stored as [[image files|Image formats]].</pre>
 </div>
+<div created="20210611083640196" creator="jsng" modified="20210611085152830" modifier="jsng" tags="" title="Compression" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+We all have that one friend who can just drone on and on about their day, giving a detailed account with every little thing that happened, and all the things that it reminds them of, and finally in their entire speech there’s that *one* piece of information you are looking for!
+
+Or maybe you’ve been in an hour-long meeting and your colleague missed it and asked you what they missed. Would it take you an hour to recount the key points? Probably not. You’d give a summary, highlighting only the key bits that would make a difference.
+
+# Lossy vs lossless compression
+
+Computers do something similar using compression [[algorithm]]s to analyse the data and figure out which parts can be safely discarded without affecting the gist of what’s being transferred.
+
+If information is being discarded, this is known as [[lossy compression]]—you can never get back all of the original information once it has been lossily compressed.
+
+Main article: [[lossy compression]]
+
+If you can restore the entirety of the original data, it is known as [[lossless compression]]. This is necessary in cases where the information must be stored **verbatim** (word for word).
+
+For example, if you are sending a 26MB Powerpoint file to a friend, but GMail’s attachment limit is only 25MB, one thing you might try to do is put it into a compressed ZIP file to see if you can bring the size below 25MB. However, you would not want any information to be lost when it reaches your friend; they must be able to decode the [[ZIP]] file to retrieve the original Powerpoint file.
+
+Main article: [[lossless compression]]</pre>
+</div>
 <div created="20210610073828324" creator="jsng" modified="20210611011431522" modifier="jsng" tags="$:/tags/SideBar" title="Contents" type="text/vnd.tiddlywiki">
 <pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
 &lt;&lt;toc-selective-expandable 'Contents'&gt;&gt;
@@ -13727,21 +13748,6 @@ We don’t always need to record audio with the full dynamic range of human hear
 Human voice frequency typically ranges from 85 to 255 Hz, and only covers a range of up to 65 dB. That’s a full 30 dB lower than the 96 dB of CD audio, which means we don’t need 16-bit audio to store that; about 11 or 12 bits would be sufficient. And you won’t need a 44.1 kHz sampling rate for that; 11.025 kHz is sufficient.
 
 That, in a nutshell, is how we get such small images and audio files on the internet. If you’re particularly sensitive you can often make out the difference caused by this lost information. But most of the time, we’re not listening or looking closely, and it’s easy to overlook such minor differences.</pre>
-</div>
-<div created="20210611083640196" creator="jsng" draft.of="New Tiddler" draft.title="Compression" modified="20210611083833285" modifier="jsng" tags="" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
-<pre>We all have that one friend who can just drone on and on about their day, giving a detailed account with every little thing that happened, and all the things that it reminds them of, and finally in their entire speech there’s that *one* piece of information you are looking for!
-
-Or maybe you’ve been in an hour-long meeting and your colleague missed it and asked you what they missed. Would it take you an hour to recount the key points? Probably not. You’d give a summary, highlighting only the key bits that would make a difference.
-
-# Lossy vs lossless compression
-
-Computers do something similar using compression [[algorithm]]s that analyse the data and figure out which parts can be safely discarded without affecting the gist of what’s being transferred. Because information is being discarded, this is known as **lossy compression**—you can never get back *all of* the original information once it has been lossily compressed.
-
-Main article: [[lossy compression]]
-
-Lossless compression is necessary in cases where the information must be stored **verbatim** (word for word). For example, if you are sending a 26MB Powerpoint file to a friend, but GMail’s attachment limit is only 25MB, one thing you might try to do is put it into a compressed ZIP file to see if you can bring the size below 25MB. However, you would not want any information to be lost when it reaches your friend; they must be able to decode the [[ZIP]] file to retrieve the original Powerpoint file.
-
-Main article: [[lossless compression]]</pre>
 </div>
 <div created="20210611030532554" creator="jsng" modified="20210611033811818" modifier="jsng" tags="Glossary" title="encode">
 <pre>See [[encoding table]].</pre>
