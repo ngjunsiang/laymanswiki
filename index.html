@@ -851,7 +851,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="ASCII background and history" modified="20210611014951934" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="ASCII background and history" modified="20210611020038716" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1520,6 +1520,12 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;Draft of 'New Tiddler' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;ASCII background and history&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'ASCII background and history' by jsng&quot;
     },
     {
         &quot;title&quot;: &quot;ASCII background and history&quot;
@@ -12791,34 +12797,41 @@ exports.context = contextWidget;
 
 The ASCII table is a commonly used [[encoding table]] for representing text as numbers.</pre>
 </div>
-<div created="20210611014209852" creator="jsng" modified="20210611014951928" modifier="jsng" title="ASCII background and history" type="text/x-markdown">
+<div created="20210611014209852" creator="jsng" modified="20210611020038707" modifier="jsng" title="ASCII background and history" type="text/x-markdown">
 <pre>[[ASCII]] actually predates the internet! (We had computers way longer than we had the Internet, after all.)
 
-In the 1960s, Morse code was the standard in telegraph transmission until the 1900s, when the [Murray code](https://en.wikipedia.org/wiki/Baudot_code#Murray_code) was used instead (itself derived from the earlier Baudot code).
+## Morse Code
+
+In the 1860s, Morse code was the standard in telegraph transmission.
+
+In Morse code, every letter is represented with between 1 to 5 symbols. Each symbol is either a dash or a dot:
+
+![Morse Code table](images/issue041_02.png)
+Image from [Wikimedia Commons](https://en.wikipedia.org/wiki/File:International_Morse_Code.svg)
+
+## Murray Code
+
+In the early 1900s, the [Murray code](https://en.wikipedia.org/wiki/Baudot_code#Murray_code) was used instead (itself derived from the earlier Baudot code).
 
 The Murray code employed a keyboard much like a typewriter’s. This was an improvement over Morse code, because instead of tapping a single control key (like you see in classic movies), you can now use **all five fingers** of the hand to type.
 
 ## ITA2
 
-In the 1920s, the Murray code was developed into the International Telegraph Alphabet No. 2 code (ITA2 code). Behold:
+In the 1920s, the Murray code was developed into the International Telegraph Alphabet No. 2 code (ITA2 code).
 
 ![ITA2 table](images/issue041_01.jpg)
 Image from [Wikimedia Commons](https://en.wikipedia.org/wiki/File:International_Telegraph_Alphabet_2.jpg)
 
-But the Murray code actually used more bits to transmit the same information! In Morse code, every letter is represented with between 1 to 5 symbols. Each symbol is either a dash or a dot:
+## Morse code vs ITA2
 
-![Morse Code table](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season4/issue041/issue041_02.png)&lt;br /&gt;
-&lt;small&gt;Image from [Wikimedia Commons](https://en.wikipedia.org/wiki/File:International_Morse_Code.svg)&lt;/small&gt;
+Morse code uses *up to* 5 [[bits]] (each dot represented by 0 and each dash represented by 1) for each character, while ITA2 uses 5 [[bits]] per character.
 
-What do we gain from using more symbols to transmit each number or letter? If you compare the two, you see that ITA2 has some things that are missing in Morse code:
+The extra information available was used for things missing in Morse code:
 
 - Spaces
 - Carriage return
 - Line feed
-- Symbols
-
-Symbols and spaces are easy enough to understand, and very welcome; if you’ve ever tried reading early telegrams (or using Morse code) you’ll appreciate their addition. But what is carriage return and line feed?
-</pre>
+- Symbols</pre>
 </div>
 <div created="20210610065925052" creator="jsng" modified="20210611011023883" modifier="jsng" tags="Glossary" title="bit" type="text/x-markdown">
 <pre>A **bit** is a unit of measure for information. Just as we measure weight in units of kilograms, height in units of centimetres, or time in units of seconds, we measure information in bits.
@@ -12869,7 +12882,7 @@ The symbol for a byte is **B** (uppercase).</pre>
 &lt;&lt;toc-selective-expandable 'Contents'&gt;&gt;
 &lt;/div&gt;</pre>
 </div>
-<div created="20210611011618961" creator="jsng" draft.of="Representing text" draft.title="Representing text" modified="20210611014204476" modifier="jsng" summary="In computers that can encode and decode ASCII, text is stored as a 7-bit sequence. Text consists of letters, numbers, symbols, and control codes." tags="Topic:data" title="Draft of 'Representing text' by jsng" type="text/x-markdown">
+<div created="20210611011618961" creator="jsng" draft.of="Representing text" draft.title="Representing text" modified="20210611020035231" modifier="jsng" summary="In computers that can encode and decode ASCII, text is stored as a 7-bit sequence. Text consists of letters, numbers, symbols, and control codes." tags="Topic:data" title="Draft of 'Representing text' by jsng" type="text/x-markdown">
 <pre>How do computers represent text using 0s and 1s?
 
 Humans often use a simple mapping: A=1, B=2, C=3, and so on.
@@ -12884,21 +12897,9 @@ One encoding that is commonly used for plain text is known as the [[ASCII]] tabl
 
 ## ASCII background and history
 
-[[ASCII]] actually predates the internet! (We had computers way longer than we had the Internet, after all.)
+&gt; {{ASCII background and history}}
 
-In the 1960s, Morse code was the standard in telegraph transmission until the 1900s, when the [Murray code](https://en.wikipedia.org/wiki/Baudot_code#Murray_code) was used instead (itself derived from the earlier Baudot code).
-
-The Murray code employed a keyboard much like a typewriter’s. This was an improvement over Morse code, because instead of tapping a single control key (like you see in classic movies), you can now use **all five fingers** of the hand to type.
-
-In the 1920s, the Murray code was developed into the International Telegraph Alphabet No. 2 code (ITA2 code). Behold:
-
-![ITA2 table](https://github.com/ngjunsiang/laymansguide/blob/release/season4/issue041/issue041_01.jpg?raw=true)&lt;br /&gt;
-&lt;small&gt;Image from [Wikimedia Commons](https://en.wikipedia.org/wiki/File:International_Telegraph_Alphabet_2.jpg)&lt;/small&gt;
-
-But the Murray code actually used more bits to transmit the same information! In Morse code, every letter is represented with between 1 to 5 symbols. Each symbol is either a dash or a dot:
-
-![Morse Code table](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season4/issue041/issue041_02.png)&lt;br /&gt;
-&lt;small&gt;Image from [Wikimedia Commons](https://en.wikipedia.org/wiki/File:International_Morse_Code.svg)&lt;/small&gt;
+Symbols and spaces are easy enough to understand, and very welcome; if you’ve ever tried reading early telegrams (or using Morse code) you’ll appreciate their addition. But what is carriage return and line feed?
 
 What do we gain from using more symbols to transmit each number or letter? If you compare the two, you see that ITA2 has some things that are missing in Morse code:
 
