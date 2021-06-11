@@ -373,6 +373,8 @@ Error message and password prompt
 
 <li>decode</li>
 
+<li>Draft of 'Text representation in computers' by jsng</li>
+
 <li>encode</li>
 
 <li>encoding table</li>
@@ -869,7 +871,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="The ASCII code table" modified="20210611030620063" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="ASCII code table" modified="20210611030714534" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1599,10 +1601,27 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 770.3333129882812,
             &quot;height&quot;: 19
         }
+    },
+    {
+        &quot;title&quot;: &quot;ASCII code table&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 477.83331298828125,
+            &quot;left&quot;: 111.19999694824219,
+            &quot;width&quot;: 107.65000915527344,
+            &quot;right&quot;: 218.85000610351562,
+            &quot;bottom&quot;: 496.83331298828125,
+            &quot;height&quot;: 19
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'ASCII code table' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;ASCII code table&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[encoding table]] Topic:data" modified="20210611030527561" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[ASCII code table]] [[encoding table]] Topic:data" modified="20210611030527561" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div created="20200510024843460" modified="20200603121638626" tags="$:/giffmex/stroll $:/giffmex/blinks" title="$:/config/EditorTypeMappings/text/vnd.tiddlywiki">
@@ -12745,7 +12764,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210611022146064" creator="jsng" list="Contents [[Text representation in computers]]" modified="20210611022146064" modifier="jsng" title="$:/StoryList">
+<div created="20210611022146064" creator="jsng" list="Contents [[Draft of 'Text representation in computers' by jsng]]" modified="20210611022146064" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -12916,7 +12935,7 @@ The extra information available was used for things missing in Morse code:
 * Line feed
 * Symbols</pre>
 </div>
-<div created="20210611020920525" creator="jsng" modified="20210611025805547" modifier="jsng" title="ASCII code table" type="text/x-markdown">
+<div created="20210611020920525" creator="jsng" modified="20210611030714522" modifier="jsng" title="ASCII code table" type="text/x-markdown">
 <pre>The [[ASCII]] code table expanded the capabilities of [[ITA2|Representing text]], but required 7 [[bit]]s for each character. Each character is situated in a specific row and column, out of 8 columns and 16 rows which are numbered starting from 0.&lt;&lt;fnote &quot;8 = 2^3 and requires 3 bits; 16 = 2^4 and requires 4 bits.&quot;&gt;&gt;
 
 ![ASCII code chart](images/issue041_04.png)&lt;br/&gt;
@@ -12939,6 +12958,10 @@ What do these control codes mean?
 - `CR` and `LF`: carriage return and line feed.
 
 The full list of control codes can be found [on Wikipedia](https://en.wikipedia.org/wiki/ASCII#Control_characters).
+
+## ASCII today
+
+In a basic text file, text is still stored using [[ASCII]] (although it has seen some modifications since). Some of the control codes are obsolete, while some are still in use today.
 </pre>
 </div>
 <div created="20210610065925052" creator="jsng" modified="20210611011023883" modifier="jsng" tags="Glossary" title="bit" type="text/x-markdown">
@@ -12995,6 +13018,57 @@ The symbol for a byte is **B** (uppercase).</pre>
 </div>
 <div created="20210611030554268" creator="jsng" modified="20210611030555371" modifier="jsng" title="decode">
 <pre>See [[encoding table]].</pre>
+</div>
+<div created="20210611011618961" creator="jsng" draft.of="Text representation in computers" draft.title="Text representation in computers" modified="20210611030651529" modifier="jsng" summary="In computers that can encode and decode ASCII, text is stored as a 7-bit sequence. Text consists of letters, numbers, symbols, and control codes." tags="Topic:data todo:refactor" title="Draft of 'Text representation in computers' by jsng" type="text/x-markdown">
+<pre>How do computers represent text using 0s and 1s?
+
+Humans often use a simple mapping: A=1, B=2, C=3, and so on.
+
+A computer does something more complicated: it keeps a table of characters and the numbers that represent them, in an [[encoding table]].
+
+&gt; {{encoding table}}
+
+One encoding that is commonly used for plain text is known as the [[ASCII]] table.
+
+&gt; {{ASCII}}
+
+ASCII introduced punctuation symbols. It also introduced control codes: unprintable characters which determined the formatting of text, or changed the way it is to be interpreted.
+
+Side reading: [[ASCII background and history]]
+
+The need for punctuation is easy enough to understand, and very welcome; if you’ve ever tried reading early telegrams (or using Morse code) you’ll appreciate their addition. But what about control code, like carriage return and line feed?
+
+## The typewriter
+
+With the advent of the typewriter, people had access to nicely formatted text. You could type text on multiple rows instead of one long row!
+
+But you had to remember to do two things when using a typewriter for it to be formatted properly.
+
+![A typewriter on a table](images/issue041_03.jpg)&lt;br/&gt;
+The Underwood Five typewriter  
+Image from [Wikimedia Commons](https://en.wikipedia.org/wiki/File:Underwoodfive.jpg)
+
+There were two separate actions involved as you pulled the leftmost lever to the right:
+
+1. The carriage, which holds the paper and moves a bit to the right after each letter is typed, now resets its position so you can start typing from the left again,
+2. the paper is moved up so you can begin typing on the next line.
+
+(1) is called a [[carriage return]], (2) is called a [[line feed]].
+
+These two actions, and many others from the time of the telegraph, have been digitised into the [[ASCII code table]], some of which are still used in text files today to control the display of text.
+
+Side reading: [[ASCII code table]]
+
+## ASCII today
+
+In a basic text file, text is still stored using [[ASCII]] (although it has seen some modifications since). Some of the control codes are obsolete, while some are still in use today. Remember this image from Issue 12?
+
+![An HTTP request captured in Wireshark showing my developer API key](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season1/issue012/issue012_01.png)&lt;br /&gt;
+An HTTP request captured in Wireshark.
+
+The `\r` and `\n` you see there are control codes. They stand for '[[return]]' and '[[newline]]', the modern equivalent of 'carriage return' and 'line feed'.
+
+Formatting codes are well and alive today, and they are more prosperous than ever! Without formatting codes, all our files would be stored only in the same boring format, represented only as letters and numbers and punctuation marks.</pre>
 </div>
 <div created="20210611030532554" creator="jsng" modified="20210611030548790" modifier="jsng" title="encode">
 <pre>See [[encoding table]].</pre>
