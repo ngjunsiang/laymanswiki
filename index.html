@@ -397,8 +397,6 @@ Error message and password prompt
 
 <li>Draft of 'lossy compression' by jsng</li>
 
-<li>Draft of 'lossy image compression' by jsng</li>
-
 <li>encode</li>
 
 <li>encoding table</li>
@@ -935,7 +933,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Draft of 'lossy image compression' by jsng" modified="20210611085339311" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="lossy image compression" modified="20210611085556403" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2122,10 +2120,13 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;Draft of 'lossy image compression' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;lossy image compression&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[Draft of 'lossy image compression' by jsng]] Welcome Topic:data" modified="20210611085337017" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[lossy image compression]] Welcome Topic:data" modified="20210611085337017" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13278,7 +13279,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210611035922453" creator="jsng" list="Compression [[Draft of 'lossy compression' by jsng]] [[Audio representation in computers]]" modified="20210611083356339" modifier="jsng" title="$:/StoryList">
+<div created="20210611035922453" creator="jsng" list="[[Draft of 'lossy compression' by jsng]] [[Audio representation in computers]]" modified="20210611083356339" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13705,8 +13706,10 @@ These two actions, and many others from the time of the telegraph, have been dig
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div caption="Lossy compression" created="20210611083429212" creator="jsng" draft.of="lossy compression" draft.title="lossy compression" modified="20210611085432217" modifier="jsng" tags="" title="Draft of 'lossy compression' by jsng" type="text/x-markdown">
-<pre>
+<div caption="Lossy compression" created="20210611083429212" creator="jsng" draft.of="lossy compression" draft.title="lossy compression" modified="20210611085531126" modifier="jsng" tags="" title="Draft of 'lossy compression' by jsng" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+Main article: [[lossy image compression]]
 
 # Lossy audio compression: discarding what we can’t hear
 
@@ -13735,34 +13738,6 @@ We don’t always need to record audio with the full dynamic range of human hear
 Human voice frequency typically ranges from 85 to 255 Hz, and only covers a range of up to 65 dB. That’s a full 30 dB lower than the 96 dB of CD audio, which means we don’t need 16-bit audio to store that; about 11 or 12 bits would be sufficient. And you won’t need a 44.1 kHz sampling rate for that; 11.025 kHz is sufficient.
 
 That, in a nutshell, is how we get such small images and audio files on the internet. If you’re particularly sensitive you can often make out the difference caused by this lost information. But most of the time, we’re not listening or looking closely, and it’s easy to overlook such minor differences.</pre>
-</div>
-<div created="20210611085326546" creator="jsng" draft.of="lossy image compression" draft.title="lossy image compression" modified="20210611085451888" modifier="jsng" tags="" title="Draft of 'lossy image compression' by jsng" type="text/x-markdown">
-<pre>
-
-# Luma and chroma
-
-In [Issue 44](https://buttondown.email/laymansguide/archive/lmg-s4-issue-44-image-resolution/), I mentioned that the human eye has 3 types of cones that sense red, green, and blue light. What I didn’t mention then is that partly due to the way these cones are distributed, the human eye is more sensitive to differences in brightness (or “**luma**”) than differences in colour (“**chroma**”).
-
-A black-and-white image has only luma information (brightness), while a colour image has both luma and chroma information—you can mathematically separate the data of a colour image into the brightness component (which looks just like a black-and-white photo), and a colour component, which looks like nothing you have ever seen. The closest thing to chroma information would be analog colour photo negatives, if you were born early enough to get to see those.
-
-So that’s another way of representing image information: you can either represent it as RGB (red-green-blue) colour values, or YUV (1 luma value, Y, and 2 chroma values, U &amp; V). In RGB, all 3 colour components are equally important and you can’t treat them differently, but in YUV you _can_ process them differently to achieve lossy compression.
-
-# Lossy image compression: chroma
-
-Since the human eye is less sensitive to chroma (colour) information, in the JPEG image format, the chroma components are compressed by averaging each 2×2 group of pixels into 1 value for U and V each. (This process is known as subsampling.) Theoretically that halves the amount of data required for the same image! (4/4 Y + 1/4 U + 1/4 V = 6/12 of the original information)
-
-![4 images with different chroma subsampling](https://github.com/ngjunsiang/laymansguide/blob/release/season4/issue046/issue046_01.jpg?raw=true)&lt;br /&gt;
-&lt;small&gt;Compare the image without chroma compression (4:4:4) to the image with chroma compression (4:2:0).&lt;br /&gt;
-Without scrutiny, the human eye is not very sensitive to lower resolution in chroma.&lt;br /&gt;
-Image from [Wikimedia Commons](https://en.wikipedia.org/wiki/File:Colorcomp.jpg)&lt;/small&gt;
-
-# Lossy image compression: luma
-
-Furthermore, even within the luma channel (i.e. looking at luma information only), the human eye is more sensitive to sharp changes in brightness across adjacent pixels than gradual changes in brightness across adjacent pixels. Through a Discrete Cosine Transform (DCT) algorithm, a computer can separate the luma information and differentiate parts with sharper changes, and parts with gradual changes.
-
-As the compression level increases (this is the quality setting you often play with in Photoshop and other image-editing software), the computer increasingly discards more and more information, starting from the gradual-change information. For photograph images, you will generally hit diminishing returns below 85%: each 1% decrease in quality brings you less and less savings on filesize.
-
-And that, in a nutshell, is how most lossy image compression works, and how the JPEG format works (well, okay, I’ve explained the main 30% of it maybe).</pre>
 </div>
 <div created="20210611030532554" creator="jsng" modified="20210611033811818" modifier="jsng" tags="Glossary" title="encode">
 <pre>See [[encoding table]].</pre>
@@ -13926,8 +13901,33 @@ Human voice frequency typically ranges from 85 to 255 Hz, and only covers a rang
 
 That, in a nutshell, is how we get such small images and audio files on the internet. If you’re particularly sensitive you can often make out the difference caused by this lost information. But most of the time, we’re not listening or looking closely, and it’s easy to overlook such minor differences.</pre>
 </div>
-<div created="20210611085326546" creator="jsng" modified="20210611085335097" modifier="jsng" tags="" title="lossy image compression">
-<pre></pre>
+<div created="20210611085326546" creator="jsng" list-after="[[Colour representation in computers]]" modified="20210611085556396" modifier="jsng" tags="" title="lossy image compression" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+# Luma and chroma
+
+In [Issue 44](https://buttondown.email/laymansguide/archive/lmg-s4-issue-44-image-resolution/), I mentioned that the human eye has 3 types of cones that sense red, green, and blue light. What I didn’t mention then is that partly due to the way these cones are distributed, the human eye is more sensitive to differences in brightness (or “**luma**”) than differences in colour (“**chroma**”).
+
+A black-and-white image has only luma information (brightness), while a colour image has both luma and chroma information—you can mathematically separate the data of a colour image into the brightness component (which looks just like a black-and-white photo), and a colour component, which looks like nothing you have ever seen. The closest thing to chroma information would be analog colour photo negatives, if you were born early enough to get to see those.
+
+So that’s another way of representing image information: you can either represent it as RGB (red-green-blue) colour values, or YUV (1 luma value, Y, and 2 chroma values, U &amp; V). In RGB, all 3 colour components are equally important and you can’t treat them differently, but in YUV you _can_ process them differently to achieve lossy compression.
+
+# Lossy image compression: chroma
+
+Since the human eye is less sensitive to chroma (colour) information, in the JPEG image format, the chroma components are compressed by averaging each 2×2 group of pixels into 1 value for U and V each. (This process is known as subsampling.) Theoretically that halves the amount of data required for the same image! (4/4 Y + 1/4 U + 1/4 V = 6/12 of the original information)
+
+![4 images with different chroma subsampling](https://github.com/ngjunsiang/laymansguide/blob/release/season4/issue046/issue046_01.jpg?raw=true)&lt;br /&gt;
+&lt;small&gt;Compare the image without chroma compression (4:4:4) to the image with chroma compression (4:2:0).&lt;br /&gt;
+Without scrutiny, the human eye is not very sensitive to lower resolution in chroma.&lt;br /&gt;
+Image from [Wikimedia Commons](https://en.wikipedia.org/wiki/File:Colorcomp.jpg)&lt;/small&gt;
+
+# Lossy image compression: luma
+
+Furthermore, even within the luma channel (i.e. looking at luma information only), the human eye is more sensitive to sharp changes in brightness across adjacent pixels than gradual changes in brightness across adjacent pixels. Through a Discrete Cosine Transform (DCT) algorithm, a computer can separate the luma information and differentiate parts with sharper changes, and parts with gradual changes.
+
+As the compression level increases (this is the quality setting you often play with in Photoshop and other image-editing software), the computer increasingly discards more and more information, starting from the gradual-change information. For photograph images, you will generally hit diminishing returns below 85%: each 1% decrease in quality brings you less and less savings on filesize.
+
+And that, in a nutshell, is how most lossy image compression works, and how the JPEG format works (well, okay, I’ve explained the main 30% of it maybe).</pre>
 </div>
 <div created="20210611063507523" creator="jsng" modified="20210611063507523" modifier="jsng" title="LPCM">
 <pre></pre>
