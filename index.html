@@ -353,6 +353,8 @@ Error message and password prompt
 
 <li>ASCII background and history</li>
 
+<li>ASCII code table</li>
+
 <li>bit</li>
 
 <li>Bits and bytes</li>
@@ -851,7 +853,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="ASCII" modified="20210611020843124" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="ASCII code table" modified="20210611021033153" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1559,10 +1561,27 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;ASCII&quot;
+    },
+    {
+        &quot;title&quot;: &quot;ASCII code table&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 45.44999694824219,
+            &quot;left&quot;: 685.9833374023438,
+            &quot;width&quot;: 32.899993896484375,
+            &quot;right&quot;: 718.8833312988281,
+            &quot;bottom&quot;: 84.93333435058594,
+            &quot;height&quot;: 39.48333740234375
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'ASCII code table' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;ASCII code table&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="ASCII [[encoding table]] [[Why does my hard drive seem to have less space than it should?]] Topic:data" modified="20210611014143065" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[ASCII code table]] ASCII [[encoding table]] [[Why does my hard drive seem to have less space than it should?]] Topic:data" modified="20210611020848218" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div created="20200510024843460" modified="20200603121638626" tags="$:/giffmex/stroll $:/giffmex/blinks" title="$:/config/EditorTypeMappings/text/vnd.tiddlywiki">
@@ -12862,6 +12881,33 @@ The extra information available was used for things missing in Morse code:
 * Carriage return
 * Line feed
 * Symbols</pre>
+</div>
+<div created="20210611020920525" creator="jsng" modified="20210611021033151" modifier="jsng" title="ASCII code table">
+<pre>The ASCII code table expanded the capabilities of [[ITA2|Representing text]], but required 7 bits for each character. Each character is situated in a specific row and column, out of 8 columns and 16 rows which are numbered starting from 0[^1].
+
+[^1]: Note that 8 = 2^3 and requires 3 bits; 16 is 2^4 and requires 4 bits.
+
+![ASCII code chart](images/issue041_04.png)&lt;br/&gt;
+(An early version of) The US ASCII code chart. Each row number is represented by 4 bits, while each column number is represented by 3 bits.  
+Image from [Wikimedia Commons](https://en.wikipedia.org/wiki/File:USASCII_code_chart.png)
+
+Technical details aside, look at what ASCII has:
+
+- Symbols and numbers (mainly columns 2 and 3, but also scattered elsewhere)
+- Upper _and_ lowercase letters (columns 4 to 7)
+- Lots and lots of control codes! (columns 0 and 1)
+
+What do these control codes mean?
+
+- `NUL` stands for null, a placeholder code for when the machine wasn’t transmitting.
+- `SOH`: start of header, to indicate the portion of the transmission that contained information about the message.
+- `STX` and `ETX`: start of text and end of text, to indicate the message portion.
+- `EOT`: end of transmission.
+- `DEL`: to delete the previous character (hello, backspace).
+- `CR` and `LF`: we just met them, carriage return and line feed.
+
+I won’t explain the rest in this supposedly-short newsletter, but if you’re interested the full list is [on Wikipedia](https://en.wikipedia.org/wiki/ASCII#Control_characters).
+</pre>
 </div>
 <div created="20210610065925052" creator="jsng" modified="20210611011023883" modifier="jsng" tags="Glossary" title="bit" type="text/x-markdown">
 <pre>A **bit** is a unit of measure for information. Just as we measure weight in units of kilograms, height in units of centimetres, or time in units of seconds, we measure information in bits.
