@@ -351,13 +351,13 @@ Error message and password prompt
 
 <li>Contents</li>
 
-<li>Draft of 'New Tiddler' by jsng</li>
-
 <li>encoding table</li>
 
 <li>Glossary</li>
 
 <li>prereqTemplate</li>
+
+<li>Representing text</li>
 
 <li>tagPageTemplate</li>
 
@@ -13025,7 +13025,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210610094939210" creator="jsng" list="[[Draft of 'New Tiddler' by jsng]] Contents Glossary" modified="20210611011712638" modifier="jsng" title="$:/StoryList">
+<div created="20210610094939210" creator="jsng" list="[[Representing text]] Contents Glossary" modified="20210611011712638" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13204,14 +13204,28 @@ The symbol for a byte is **B** (uppercase).</pre>
 &lt;&lt;toc-selective-expandable 'Contents'&gt;&gt;
 &lt;/div&gt;</pre>
 </div>
-<div created="20210611011618961" creator="jsng" draft.of="New Tiddler" draft.title="Representing text" modified="20210611012024581" modifier="jsng" summary="In computers that can encode and decode ASCII, text is stored as a 7-bit sequence. Text consists of letters, numbers, symbols, and control codes." tags="Topic:data" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
+<div created="20210611011954773" creator="jsng" modified="20210611012049903" modifier="jsng" tags="Glossary" title="encoding table" type="text/x-markdown">
+<pre>An encoding table stores a list of characters, and the numbers that represent them.</pre>
+</div>
+<div created="20210610075627131" creator="jsng" list-after="" modified="20210611011525501" modifier="jsng" tags="Contents" title="Glossary" type="text/x-markdown">
+<pre>&lt;&lt;list-links &quot;[tag[Glossary]sort[title]]&quot;&gt;&gt;</pre>
+</div>
+<div created="20210610084811774" creator="jsng" modified="20210610105400704" modifier="jsng" tags="" title="prereqTemplate" type="text/x-markdown">
+<pre>&lt;$set name=&quot;header&quot; value=&quot;Some text&quot;&gt;
+## Pre-reading:
+
+{{!!list-after}}
+
+&lt;hr&gt;</pre>
+</div>
+<div created="20210611011618961" creator="jsng" modified="20210611012101475" modifier="jsng" summary="In computers that can encode and decode ASCII, text is stored as a 7-bit sequence. Text consists of letters, numbers, symbols, and control codes." tags="Topic:data" title="Representing text" type="text/x-markdown">
 <pre>How do computers represent text using 0s and 1s?
 
 The simple answer is that text can be represented as numbers in a simple mapping: A=1, B=2, C=3, and so on.
 
 A computer does something more complicated: it keeps a table of characters and the numbers that represent them, in an **encoding table**.
 
-{{encoding table}}
+&gt; {{encoding table}}
 
 One encoding that is commonly used for plain text is known as the American Standard Code for Information Interchange, or ASCII table.
 
@@ -13289,20 +13303,6 @@ The `\r` and `\n` you see there are control codes. They stand for 'return' and '
 Formatting codes are well and alive today, and they are more prosperous than ever! Without formatting codes, all our files would be stored only in the same boring format, represented only as letters and numbers and punctuation marks.
 
 And there you have it.</pre>
-</div>
-<div created="20210611011954773" creator="jsng" modified="20210611012049903" modifier="jsng" tags="Glossary" title="encoding table" type="text/x-markdown">
-<pre>An encoding table stores a list of characters, and the numbers that represent them.</pre>
-</div>
-<div created="20210610075627131" creator="jsng" list-after="" modified="20210611011525501" modifier="jsng" tags="Contents" title="Glossary" type="text/x-markdown">
-<pre>&lt;&lt;list-links &quot;[tag[Glossary]sort[title]]&quot;&gt;&gt;</pre>
-</div>
-<div created="20210610084811774" creator="jsng" modified="20210610105400704" modifier="jsng" tags="" title="prereqTemplate" type="text/x-markdown">
-<pre>&lt;$set name=&quot;header&quot; value=&quot;Some text&quot;&gt;
-## Pre-reading:
-
-{{!!list-after}}
-
-&lt;hr&gt;</pre>
 </div>
 <div created="20210610095326608" creator="jsng" modified="20210611011255427" modifier="jsng" tags="" title="tagPageTemplate" type="text/x-markdown">
 <pre>#  {{!!caption}}
