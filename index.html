@@ -877,7 +877,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="control codes" modified="20210611031426573" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="ISO 8859-1" modified="20210611032157819" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1697,10 +1697,38 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 84.93333435058594,
             &quot;height&quot;: 39.48333740234375
         }
+    },
+    {
+        &quot;title&quot;: &quot;ISO 8859-1&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 45.44999694824219,
+            &quot;left&quot;: 685.9833374023438,
+            &quot;width&quot;: 32.899993896484375,
+            &quot;right&quot;: 718.8833312988281,
+            &quot;bottom&quot;: 84.93333435058594,
+            &quot;height&quot;: 39.48333740234375
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'ISO 8859-1' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;ASCII  encoding table&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 254.5833282470703,
+            &quot;left&quot;: 1411.1500244140625,
+            &quot;width&quot;: 291.66668701171875,
+            &quot;right&quot;: 1702.8167114257812,
+            &quot;bottom&quot;: 292.5833282470703,
+            &quot;height&quot;: 38
+        }
+    },
+    {
+        &quot;title&quot;: &quot;ISO 8859-1&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[HTTP request]] newline return [[encoding table]] Topic:data" modified="20210611031426569" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[ISO 8859-1]] [[HTTP request]] newline return [[encoding table]] Topic:data" modified="20210611032105504" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div created="20200510024843460" modified="20200603121638626" tags="$:/giffmex/stroll $:/giffmex/blinks" title="$:/config/EditorTypeMappings/text/vnd.tiddlywiki">
@@ -12843,7 +12871,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210611022146064" creator="jsng" list="[[ISO 8859-1]] [[Draft of 'Text representation in computers' by jsng]]" modified="20210611031424222" modifier="jsng" title="$:/StoryList">
+<div created="20210611022146064" creator="jsng" list="[[Draft of 'Text representation in computers' by jsng]]" modified="20210611031424222" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13120,7 +13148,7 @@ These two actions, and many others from the time of the telegraph, have been dig
 <div created="20210611030554268" creator="jsng" modified="20210611030555371" modifier="jsng" title="decode">
 <pre>See [[encoding table]].</pre>
 </div>
-<div created="20210611011618961" creator="jsng" draft.of="Text representation in computers" draft.title="Text representation in computers" modified="20210611031749400" modifier="jsng" summary="In computers that can encode and decode ASCII, text is stored as a 7-bit sequence. Text consists of letters, numbers, symbols, and control codes." tags="Topic:data todo:refactor" title="Draft of 'Text representation in computers' by jsng" type="text/x-markdown">
+<div created="20210611011618961" creator="jsng" draft.of="Text representation in computers" draft.title="Text representation in computers" modified="20210611031844772" modifier="jsng" summary="In computers that can encode and decode ASCII, text is stored as a 7-bit sequence. Text consists of letters, numbers, symbols, and control codes." tags="Topic:data todo:refactor" title="Draft of 'Text representation in computers' by jsng" type="text/x-markdown">
 <pre>How do computers represent text using 0s and 1s?
 
 Humans often use a simple mapping: A=1, B=2, C=3, and so on.
@@ -13143,18 +13171,6 @@ But plain ASCII is unable to represent accented characters (such as á), umlauts
 
 This shortcoming made ASCII unsuitable for use in other countries and cultures that needed those characters. It did not allow them to communicate effectively in their own languages.
 
-In 1985, the European Computer Manufacturers Association (ECMA) extended US-[[ASCII]] into the ISO 8859-1 [[encoding table]]. In ISO 8859-1, each character is represented by 8 bits. Let’s look at some numbers:
-
-Characters needed minimally (lower- + upper-case, and numerals): 26+26+10 = 62  
-Common symbols: 30  
-7 bits can encode 2^7 = 128 different characters  
-8 bits can encode 2^8 = 256 different characters
-
-8 bits was enough to provide for a number of additional glyphs seen below. But very quickly it ran into limitations as well. 256 characters just aren’t enough!
-
-
-![ISO 8859-1](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Latin-1-infobox.svg/800px-Latin-1-infobox.svg.png)
-&lt;small&gt;The ISO 8859-1 characters&lt;/small&gt;
 
 
 ## Encoding hell
@@ -13214,8 +13230,14 @@ An HTTP request captured in Wireshark.
 
 The `\r` and `\n` you see there are control codes. They stand for '[[return]]' and '[[newline]]', the modern equivalent of 'carriage return' and 'line feed'.</pre>
 </div>
-<div created="20210611031810707" creator="jsng" modified="20210611031821783" modifier="jsng" tags="" title="ISO 8859-1" type="text/x-markdown">
-<pre></pre>
+<div created="20210611031810707" creator="jsng" modified="20210611032157816" modifier="jsng" tags="" title="ISO 8859-1" type="text/x-markdown">
+<pre>The 7-[[bit]]s-per-character limitation of the [[ASCII code table]] meant it was unable to store many glyphs outside of the English alphabet.
+
+In 1985, the European Computer Manufacturers Association (ECMA) extended US-[[ASCII]] into the ISO 8859-1 [[encoding table]]. In ISO 8859-1, each character is represented by 8 bits.
+
+![ISO 8859-1](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Latin-1-infobox.svg/800px-Latin-1-infobox.svg.png)
+&lt;small&gt;The ISO 8859-1 characters&lt;/small&gt;
+</pre>
 </div>
 <div created="20210611023323056" creator="jsng" modified="20210611023323056" modifier="jsng" title="line feed">
 <pre></pre>
