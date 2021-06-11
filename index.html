@@ -393,6 +393,12 @@ Error message and password prompt
 
 <li>DPI</li>
 
+<li>Draft of 'Image representation in computers' by jsng</li>
+
+<li>Draft of 'lossy compression' by jsng</li>
+
+<li>Draft of 'New Tiddler' by jsng</li>
+
 <li>encode</li>
 
 <li>encoding table</li>
@@ -923,7 +929,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="KiB" modified="20210611082952133" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Draft of 'Image representation in computers' by jsng" modified="20210611083944506" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1975,10 +1981,24 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 967.75,
             &quot;height&quot;: 18
         }
+    },
+    {
+        &quot;title&quot;: &quot;Image representation in computers&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 488.2166748046875,
+            &quot;left&quot;: 1774,
+            &quot;width&quot;: 568.5999755859375,
+            &quot;right&quot;: 2342.5999755859375,
+            &quot;bottom&quot;: 508.2166748046875,
+            &quot;height&quot;: 20
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'Image representation in computers' by jsng&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="Welcome [[HTTP request]] Topic:data" modified="20210611062450289" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[Draft of 'Image representation in computers' by jsng]] Welcome Topic:data" modified="20210611062450289" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13131,7 +13151,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210611035922453" creator="jsng" list="compression [[Colour representation in computers]] [[Audio representation in computers]]" modified="20210611083307056" modifier="jsng" title="$:/StoryList">
+<div created="20210611035922453" creator="jsng" list="[[Draft of 'New Tiddler' by jsng]] [[Draft of 'lossy compression' by jsng]] [[Audio representation in computers]]" modified="20210611083356339" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13330,7 +13350,7 @@ The full list of control codes can be found [on Wikipedia](https://en.wikipedia.
 
 In a basic text file, text is still stored using [[ASCII]] (although it has seen some modifications since). Some of the control codes are obsolete, while some are still in use today.</pre>
 </div>
-<div created="20210611062941007" creator="jsng" modified="20210611083052652" modifier="jsng" summary="Humans can distinguish 120 dB of loudness, which means the loudest perceivable sound is a million times louder than the softest perceivable sound. CD audio provides 16 bits of information per sample, sufficient to provide 96 dB. Humans have a hearing range from 20 Hz to 20 kHz. CD audio is sampled at 44.1 kHz. Uncompressed audio thus requires 705,600 bits per second, or 86 KiB/s." tags="Topic:data WIP" title="Audio representation in computers" type="text/x-markdown">
+<div created="20210611062941007" creator="jsng" modified="20210611084103878" modifier="jsng" summary="Humans can distinguish 120 dB of loudness, which means the loudest perceivable sound is a million times louder than the softest perceivable sound. CD audio provides 16 bits of information per sample, sufficient to provide 96 dB. Humans have a hearing range from 20 Hz to 20 kHz. CD audio is sampled at 44.1 kHz. Uncompressed audio thus requires 705,600 bits per second, or 86 KiB/s." tags="Topic:data WIP" title="Audio representation in computers" type="text/x-markdown">
 <pre># The human ear
 
 Humans detect sound through vibrations of the eardrum which are transmitted through the [cochlea](https://en.wikipedia.org/wiki/Cochlea) of the inner ear. These vibrations are caused by variations of air pressure in the ear, which in turn are caused by vibrations in the air.
@@ -13376,6 +13396,8 @@ You probably can’t make out the individual waves in the waveform much earlier 
 A sound with higher pitch has higher frequency; it has more waves per second. A sound with lower pitch has lower frequency; it has fewer waves per second. Here, it is the upper limit we need to worry about: we must have enough samples per second to be able to represent so many waves. To be able to see a complete wave, we need at least two points: one for the peak, and one for the valley.
 
 This agrees with what signal engineers learn from the [Nyquist-Shannon sampling theorem](https://en.wikipedia.org/wiki/Nyquist–Shannon_sampling_theorem): to store a 1 Hz sound (1 wave per second), you need at least 2 samples per second (to distinguish the peak and valley of the wave).
+
+# Human limits to hearing
 
 The human range of hearing ranges from 20 Hz to 20 kHz (that’s 20,000 Hz).  To store a 20 kHz sound, you need at least 40,000 samples per second. CD-quality audio is sampled at 44,100 samples per second (enough for up to 22.05 kHz), which is sufficient to cover the human hearing range of frequencies.
 
@@ -13562,6 +13584,118 @@ These two actions, and many others from the time of the telegraph, have been dig
 </div>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
+</div>
+<div created="20210611060910634" creator="jsng" draft.of="Image representation in computers" draft.title="Image representation in computers" list-after="[[Colour representation in computers]]" modified="20210611083944487" modifier="jsng" summary="An image’s resolution describes its dimensions. Its pixel resolution gives an indication of its physical size (if printed or displayed on a screen), and thus its sharpness. A display with imperceptibly small pixels is often referred to as a Retina display (Apple’s branding) or as a high-PPI display; this requires at least 220 PPI nominally. For an image to be printed sharply, it needs at least 300 DPI." tags="Topic:data" title="Draft of 'Image representation in computers' by jsng" type="text/x-markdown">
+<pre>An image is two-dimensional and certainly much larger than a single pixel. How do we talk about its size?
+
+# Image dimensions
+
+It is common to hear people refer to an image’s size as its pixel size. When we say that an image has a resolution of 1000×3000 pixels, that means it is 1000 pixels wide by 3000 pixels high. In other words, the image is made up of 3 million pixels of colour, arranged in a grid 1000 pixels wide by 3000 pixels tall.
+
+But how large is this image _physically_? Well, that’s a harder question to answer …
+
+# Resizing
+
+You see, on a computer, you can resize an image as you like. I’m sure you have done it many times, preparing for a presentation or just creating a document. So you can make that image 1cm×3cm, or 10cm×30cm. But how large is an image *originally* meant to be?
+
+# Image resolution: a ratio between dots and inches
+
+In more finicky circles, the term [[resolution]] is used in another way: to refer to the ratio of pixels to a physical dimension, usually in inches (this is a legacy thing, I can’t explain why it’s imperial and not metric).
+
+For example, if that 1000×3000 image was meant to be displayed as a 10cm×30cm image on screen (approx. 4 inches by 12 inches), it would have a resolution of 1000 pixels ÷ 4 inches = 250 pixels per inch ([[PPI]]). If you could see pixels, and you took out a ruler to count the number of pixels in a 1-inch line across or down the image, there would be 250 of them.
+
+If it was displayed as a 100cm×300cm image on screen instead, that printed image would have a resolution of 25 pixels per inch (1000 pixels ÷ 40 inches). And it would look 10 times blurrier; each image pixel would be about 1mm wide!
+
+So image resolution, as pixels per inch, also gives a measure of sharpness of the image.
+
+For printed images, the same idea applies: a 1000×3000 image printed as a 10cm×30cm image has a resolution of 250 dots per inch ([[DPI]]) — 1000 ÷ 4 inches. It’s dots instead of pixels because a printer lays down dots of colour rather than displaying pixels
+
+Side reading: [[Printing images]]
+
+# Monitor resolution
+
+When you buy or browse computer monitors, you would have heard the monitor’s pixel dimensions&lt;&lt;fnote &quot;number of pixels across and down&quot;&gt;&gt; referred to as its resolution. Its measure of sharpness is usually listed under a label like [[DPI]] or [[PPI]], if not [[pixel density]]. If not, you can calculate the PPI of a monitor yourself: Just take the horizontal pixel dimension (number of pixels in the screen horizontally) and divide it by the display width, or take the vertical pixel dimension and divide by the height.
+
+Your [[OS]] might have a setting for fixing blurry apps, or making small text appear larger. These are typical problems faced on a high-PPI screen (at least 218 [[PPI]]), such as the Retina displays used by iPhones, iPads, and Macbooks.
+
+Side reading: [[Retina]]</pre>
+</div>
+<div caption="Lossy compression" created="20210611083429212" creator="jsng" draft.of="lossy compression" draft.title="lossy compression" modified="20210611083609266" modifier="jsng" tags="Topic:data" title="Draft of 'lossy compression' by jsng" type="text/x-markdown">
+<pre>We all have that one friend who can just drone on and on about their day, giving a detailed account with every little thing that happened, and all the things that it reminds them of, and finally in their entire speech there’s that *one* piece of information you are looking for!
+
+Or maybe you’ve been in an hour-long meeting and your colleague missed it and asked you what they missed. Would it take you an hour to recount the key points? Probably not. You’d give a summary, highlighting only the key bits that would make a difference.
+
+Computers do something similar using compression [[algorithm]]s that analyse the data and figure out which parts can be safely discarded without affecting the gist of what’s being transferred. Because information is being discarded, this is known as **lossy compression**—you can never get back *all of* the original information once it has been lossily compressed.
+
+If you’re thinking “this part is going to be incredibly math-ey”, you are right, but I have only an hour for this issue so I’ll see how I can further summarise the theory for you readers :)
+
+## Lossy image compression: luma and chroma
+
+In [Issue 44](https://buttondown.email/laymansguide/archive/lmg-s4-issue-44-image-resolution/), I mentioned that the human eye has 3 types of cones that sense red, green, and blue light. What I didn’t mention then is that partly due to the way these cones are distributed, the human eye is more sensitive to differences in brightness (or “**luma**”) than differences in colour (“**chroma**”).
+
+A black-and-white image has only luma information (brightness), while a colour image has both luma and chroma information—you can mathematically separate the data of a colour image into the brightness component (which looks just like a black-and-white photo), and a colour component, which looks like nothing you have ever seen. The closest thing to chroma information would be analog colour photo negatives, if you were born early enough to get to see those.
+
+So that’s another way of representing image information: you can either represent it as RGB (red-green-blue) colour values, or YUV (1 luma value, Y, and 2 chroma values, U &amp; V). In RGB, all 3 colour components are equally important and you can’t treat them differently, but in YUV you _can_ process them differently to achieve lossy compression.
+
+## Lossy image compression: chroma
+
+Since the human eye is less sensitive to chroma (colour) information, in the JPEG image format, the chroma components are compressed by averaging each 2×2 group of pixels into 1 value for U and V each. (This process is known as subsampling.) Theoretically that halves the amount of data required for the same image! (4/4 Y + 1/4 U + 1/4 V = 6/12 of the original information)
+
+![4 images with different chroma subsampling](https://github.com/ngjunsiang/laymansguide/blob/release/season4/issue046/issue046_01.jpg?raw=true)&lt;br /&gt;
+&lt;small&gt;Compare the image without chroma compression (4:4:4) to the image with chroma compression (4:2:0).&lt;br /&gt;
+Without scrutiny, the human eye is not very sensitive to lower resolution in chroma.&lt;br /&gt;
+Image from [Wikimedia Commons](https://en.wikipedia.org/wiki/File:Colorcomp.jpg)&lt;/small&gt;
+
+## Lossy image compression: luma
+
+Furthermore, even within the luma channel (i.e. looking at luma information only), the human eye is more sensitive to sharp changes in brightness across adjacent pixels than gradual changes in brightness across adjacent pixels. Through a Discrete Cosine Transform (DCT) algorithm, a computer can separate the luma information and differentiate parts with sharper changes, and parts with gradual changes.
+
+As the compression level increases (this is the quality setting you often play with in Photoshop and other image-editing software), the computer increasingly discards more and more information, starting from the gradual-change information. For photograph images, you will generally hit diminishing returns below 85%: each 1% decrease in quality brings you less and less savings on filesize.
+
+And that, in a nutshell, is how most lossy image compression works, and how the JPEG format works (well, okay, I’ve explained the main 30% of it maybe).
+
+## Lossy audio compression: discarding what we can’t hear
+
+What about audio?
+
+If you are all about the bass, or like tweaking with sound settings, or have worked with audio systems before e.g. for a performance or for your school’s events, you would have used an equaliser at some point. An equaliser is a device (or software application) that lets you adjust how much bass (low pitch), medium (middle pitch), and treble (high pitch) you want from the sound. How is the system able to do that?
+
+Through transforms! DCT, mentioned earlier, is one such transform; audio formats often use another one, known as the Fast Fourier Transform (FFT). (Aren’t you glad this is a newsletter about computing and not about math?) Anyway, a transform lets us transform information organised by position (e.g. in images) or by time (e.g. in audio) into information organised by other properties, such as frequency.
+
+The FFT algorithm organises audio information (for a certain time length) by frequency. Depending on your equaliser settings, it increases or decreases the weightage of different frequencies to produce the sound you want, be it bass-heavy rock or medium-light jazz.
+
+But the FFT algorithm can do much more! It is known that most sounds we hear are typically in the 40 Hz to 19 kHz range, so it is usually a safe bet to discard frequency information below 40 Hz and above 19 kHz. If we lower the frequency ceiling for discarding, down to 16 kHz, we can reduce the amount of audio information even more.
+
+## Lossy audio compression: masking
+
+It is also known that the human ear, when it hears a very loud sound around one frequency, will not process much softer sounds in other frequencies. This is known as masking. With the help of the FFT algorithm, it’s easy to identify which frequencies will be masked for each range of time samples, and therefore can be discarded.
+
+Furthermore, because of the way the cochlea works, right after hearing a very loud sound, the ear will not be able to hear softer sounds for a fraction of a second (maybe the fluid in the cochlea of the ear needs some time to settle? I don’t know). So softer sounds occurring right after a loud sound are **masked**. We can discard that audio information too.
+
+Lastly, long periods of silence (a couple seconds for example) are not worth all that information they take up as well, and can be further compressed.
+
+## Lossy audio compression: lowering dynamic range
+
+We don’t always need to record audio with the full dynamic range of human hearing. For an orchestra concert, maybe that is important, but if you are just recording an interview, you don’t need to hear every tiny detail of how that person speaks (unless maybe you’re a doctor who can pick up telltale signs of cancer from the way a person speaks? That would be amazing.).
+
+Human voice frequency typically ranges from 85 to 255 Hz, and only covers a range of up to 65 dB. That’s a full 30 dB lower than the 96 dB of CD audio, which means we don’t need 16-bit audio to store that; about 11 or 12 bits would be sufficient. And you won’t need a 44.1 kHz sampling rate for that; 11.025 kHz is sufficient.
+
+That, in a nutshell, is how we get such small images and audio files on the internet. If you’re particularly sensitive you can often make out the difference caused by this lost information. But most of the time, we’re not listening or looking closely, and it’s easy to overlook such minor differences.</pre>
+</div>
+<div created="20210611083640196" creator="jsng" draft.of="New Tiddler" draft.title="Compression" modified="20210611083833285" modifier="jsng" tags="" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
+<pre>We all have that one friend who can just drone on and on about their day, giving a detailed account with every little thing that happened, and all the things that it reminds them of, and finally in their entire speech there’s that *one* piece of information you are looking for!
+
+Or maybe you’ve been in an hour-long meeting and your colleague missed it and asked you what they missed. Would it take you an hour to recount the key points? Probably not. You’d give a summary, highlighting only the key bits that would make a difference.
+
+# Lossy vs lossless compression
+
+Computers do something similar using compression [[algorithm]]s that analyse the data and figure out which parts can be safely discarded without affecting the gist of what’s being transferred. Because information is being discarded, this is known as **lossy compression**—you can never get back *all of* the original information once it has been lossily compressed.
+
+Main article: [[lossy compression]]
+
+Lossless compression is necessary in cases where the information must be stored **verbatim** (word for word). For example, if you are sending a 26MB Powerpoint file to a friend, but GMail’s attachment limit is only 25MB, one thing you might try to do is put it into a compressed ZIP file to see if you can bring the size below 25MB. However, you would not want any information to be lost when it reaches your friend; they must be able to decode the [[ZIP]] file to retrieve the original Powerpoint file.
+
+Main article: [[lossless compression]]</pre>
 </div>
 <div created="20210611030532554" creator="jsng" modified="20210611033811818" modifier="jsng" tags="Glossary" title="encode">
 <pre>See [[encoding table]].</pre>
