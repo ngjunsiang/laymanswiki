@@ -381,6 +381,8 @@ Error message and password prompt
 
 <li>decode</li>
 
+<li>Draft of 'Colour representation in computers 1' by jsng</li>
+
 <li>encode</li>
 
 <li>encoding table</li>
@@ -396,6 +398,8 @@ Error message and password prompt
 <li>newline</li>
 
 <li>pixel</li>
+
+<li>PPI</li>
 
 <li>prereqTemplate</li>
 
@@ -889,7 +893,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Colour production" modified="20210611050222912" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="PPI" modified="20210611061225149" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1772,10 +1776,27 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;Colour production&quot;
+    },
+    {
+        &quot;title&quot;: &quot;PPI&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 446.98333740234375,
+            &quot;left&quot;: 900.316650390625,
+            &quot;width&quot;: 20.26666259765625,
+            &quot;right&quot;: 920.5833129882812,
+            &quot;bottom&quot;: 464.98333740234375,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'PPI' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;PPI&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[Colour production]] pixel Welcome [[HTTP request]] Topic:data" modified="20210611050038832" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="PPI [[Colour production]] pixel Welcome [[HTTP request]] Topic:data" modified="20210611050038832" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -12916,7 +12937,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210611035922453" creator="jsng" list="[[Colour representation in computers]]" modified="20210611035922453" modifier="jsng" title="$:/StoryList">
+<div created="20210611035922453" creator="jsng" list="[[Draft of 'Colour representation in computers 1' by jsng]] [[Colour representation in computers]]" modified="20210611035922453" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13294,6 +13315,55 @@ These two actions, and many others from the time of the telegraph, have been dig
 <div created="20210611030554268" creator="jsng" modified="20210611033821895" modifier="jsng" tags="Glossary" title="decode">
 <pre>See [[encoding table]].</pre>
 </div>
+<div created="20210611060910634" creator="jsng" draft.of="Colour representation in computers 1" draft.title="Image representation in computers" list-after="[[Colour representation in computers]]" modified="20210611061203960" modifier="jsng" summary="An image’s resolution describes its dimensions. Its pixel resolution gives an indication of its physical size (if printed or displayed on a screen), and thus its sharpness. A display with imperceptibly small pixels is often referred to as a Retina display (Apple’s branding) or as a high-PPI display; this requires at least 220 PPI nominally. For an image to be printed sharply, it needs at least 300 DPI." tags="Topic:data" title="Draft of 'Colour representation in computers 1' by jsng" type="text/x-markdown">
+<pre>An image is two-dimensional and certainly much larger than a single pixel. How do we talk about its size?
+
+# Image dimensions
+
+It is common to hear people refer to an image’s size as its pixel size. When we say that an image has a resolution of 1000×3000 pixels, that means it is 1000 pixels wide by 3000 pixels high. In other words, the image is made up of 3 million pixels of colour, arranged in a grid 1000 pixels wide by 3000 pixels tall.
+
+But how large is this image _physically_? Well, that’s a harder question to answer …
+
+# Resizing
+
+You see, on a computer, you can resize an image as you like. I’m sure you have done it many times, preparing for a presentation or just creating a document. So you can make that image 1cm×3cm, or 10cm×30cm. But how large is an image *originally* meant to be?
+
+# Image resolution: a ratio between dots and inches
+
+In more finicky circles, the term “resolution” is used in another way: to refer to the ratio of pixels to a physical dimension, usually in inches (this is a legacy thing, I can’t explain why it’s imperial and not metric).
+
+For example, if that 1000×3000 image was meant to be displayed as a 10cm×30cm image on screen (approx. 4 inches by 12 inches), it would have a resolution of 1000 pixels ÷ 4 inches = 250 pixels per inch ([[PPI]]). If you could see pixels, and you took out a ruler to count the number of dots in a 1-inch line across or down the image, there would be 250 pixels.
+
+If it was displayed as a 100cm×300cm image instead, that printed image would have a resolution of 25 pixels per inch (1000 pixels ÷ 40 inches). And it would look 10 times blurrier; each image pixel would be about 1mm wide!
+
+So image resolution, as pixels per inch, also gives a measure of sharpness of the image.
+
+For printed images, the same idea applies: a 1000×3000 image printed as a 10cm×30cm image has a resolution of 250 dots per inch (**DPI**) — 1000 ÷ 4 inches. It’s dots instead of pixels because a printer lays down dots of colour rather than displaying pixels (I’ll go into more detail in a future season on computer accessories and peripherals).
+
+# Monitor resolution
+
+When you buy or browse computer monitors, you would have heard the monitor’s pixel dimensions (number of pixels across and down) referred to as its resolution. Its measure of sharpness is usually listed under a label like DPI or PPI, if not pixel density. If not, you can calculate the PPI of a monitor yourself: Just take the horizontal pixel dimension (number of pixels in the screen horizontally) and divide it by the display width, or take the vertical pixel dimension and divide by the height.
+
+Your OS might have a setting for fixing blurry apps, or making small text appear larger. These are typical problems faced on a high-PPI screen. But how high does the PPI need to be for us to get a reasonably sharp image?
+
+## Retina: a brand name for high pixel density displays
+
+In 2010, the late Steve Jobs first used the term Retina referring to the iPhone 4. I suppose he meant to describe a class of devices with a display so sharp that the pixels were practically imperceptible; it wasn’t that long ago that if you squinted a little, you could make out the pixels on your monitor or laptop. High pixel density displays are a lot more common today, so you would probably have to visit the budget section of the computer monitor department in a store to see the low-pixel-density effect again.
+
+So what’s the minimum PPI required to have a Retina display? Apple doesn’t specifically designate a number, but it appears that [the minimum PPI of their Retina devices is 218](https://en.wikipedia.org/wiki/Retina_display). Devices that will be further to your eye can get away with about 220 PPI, while those that will be closer to your eyes will need a higher PPI (up to 400 on the iPhone 6).
+
+But all of that is useless if you scale up an image and still view it at a low _image PPI_!
+
+## Why do my printed images come out blurry?
+
+Here’s a problem I think some of you might have encountered: You are editing a picture on your laptop or computer monitor, and it looks just fine. You send it to the printer and it comes out really blurry. What happened?
+
+What happened is that the image was presented in two different ways. On a screen, it appears as a grid of pixels. a 14&quot; laptop with a 1920×1080 screen resolution actually only has a screen PPI of 157. An image at 100% zoom (1 image pixel displayed as 1 screen pixel) on such a screen would appear fine, because it would be displayed alongside other screen elements (such as the application window) that appear sharp.
+
+But once it is printed, it appears as a collection of ink dots on paper. These dots are a lot finer than the pixels on a screen, so any blurriness is immediately apparent. Your computer or laptop screen is a poor device for assessing print sharpness! To get a better sense of print sharpness, you will want to view the image on a high-PPI display (such as an iPad) and adjust the zoom such that the image on screen has the same size when printed.
+
+For printing images, you will want to make sure your image has a resolution of at least 300 DPI; at least 600 DPI is ideal. You can also calculate this by taking the horizontal pixel dimension of the image, and dividing by the horizontal size you intend to print it at.</pre>
+</div>
 <div created="20210611030532554" creator="jsng" modified="20210611033811818" modifier="jsng" tags="Glossary" title="encode">
 <pre>See [[encoding table]].</pre>
 </div>
@@ -13328,6 +13398,9 @@ In 1985, the European Computer Manufacturers Association (ECMA) extended US-[[AS
 </div>
 <div created="20210611043340804" creator="jsng" modified="20210611045916886" modifier="jsng" tags="Glossary" title="pixel" type="text/x-markdown">
 <pre>Pixel is a term shortened from _picture element_. Each pixel represents a single dot of colour.</pre>
+</div>
+<div created="20210611061206966" creator="jsng" modified="20210611061225146" modifier="jsng" tags="Glossary" title="PPI">
+<pre>Pixels per inch.</pre>
 </div>
 <div created="20210610084811774" creator="jsng" modified="20210611013739628" modifier="jsng" tags="" title="prereqTemplate" type="text/x-markdown">
 <pre>&lt;$set name=&quot;header&quot; value=&quot;Some text&quot;&gt;
