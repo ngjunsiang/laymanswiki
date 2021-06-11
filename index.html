@@ -177,6 +177,10 @@ Error message and password prompt
 
 <li>$:/.giffmex/ViewToolbar/new-note-here-datetime</li>
 
+<li>$:/_sq/Stories/config/openLinkDivert</li>
+
+<li>$:/_sq/Stories/config/showRiverDropZones</li>
+
 <li>$:/_sq/Stories/config/sidebaroverlaybreakpoint</li>
 
 <li>$:/_sq/Stories/config/Story2-storyview</li>
@@ -198,6 +202,8 @@ Error message and password prompt
 <li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/new-journal</li>
 
 <li>$:/config/RelinkOnRename</li>
+
+<li>$:/config/sq/Stories/storyRiverRatio</li>
 
 <li>$:/config/TextEditor/EnableToolbar</li>
 
@@ -240,6 +246,8 @@ Error message and password prompt
 <li>$:/language/Buttons/NewHere/Hint</li>
 
 <li>$:/language/Buttons/NewJournalHere/Hint</li>
+
+<li>$:/layout</li>
 
 <li>$:/palette</li>
 
@@ -318,6 +326,8 @@ Error message and password prompt
 <li>$:/tags/ViewTemplate</li>
 
 <li>$:/tags/ViewToolbar</li>
+
+<li>$:/theme</li>
 
 <li>$:/themes/tiddlywiki/snowwhite</li>
 
@@ -806,13 +816,19 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 &lt;/$set&gt;
 </pre>
 </div>
+<div bag="default" created="20170629173808777" creator="jsng" modified="20210611002820366" modifier="jsng" revision="0" title="$:/_sq/Stories/config/openLinkDivert" type="text/vnd.tiddlywiki">
+<pre>top</pre>
+</div>
+<div bag="default" created="20200417170940547" creator="jsng" modified="20210611002723442" modifier="jsng" revision="0" title="$:/_sq/Stories/config/showRiverDropZones" type="text/vnd.tiddlywiki">
+<pre>disable</pre>
+</div>
 <div bag="default" created="20170616192704225" modified="20200808141147261" revision="0" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/sidebaroverlaybreakpoint" type="text/vnd.tiddlywiki">
 <pre>1100px</pre>
 </div>
-<div created="20200502183010768" modified="20201231113403988" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
+<div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="topic" modified="20210611002410669" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="topic" modified="20210611002844442" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1731,6 +1747,12 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;topic&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'topic' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;topic&quot;
     }
 ]</pre>
 </div>
@@ -1757,6 +1779,9 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 </div>
 <div bag="default" created="20200106214031452" modified="20200521150810088" revision="0" tags="$:/giffmex/stroll $:/giffmex/blinks" title="$:/config/RelinkOnRename" type="text/vnd.tiddlywiki">
 <pre>yes</pre>
+</div>
+<div bag="default" created="20200730040856198" creator="jsng" modified="20210611002802701" modifier="jsng" revision="14" tags="" title="$:/config/sq/Stories/storyRiverRatio" type="text/vnd.tiddlywiki">
+<pre>60</pre>
 </div>
 <div created="20210610093343709" creator="jsng" modified="20210610093401394" modifier="jsng" title="$:/config/TextEditor/EnableToolbar">
 <pre>yes</pre>
@@ -11752,6 +11777,9 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200422191645603" modified="20200521145818053" tags="$:/giffmex/stroll" title="$:/language/Buttons/NewJournalHere/Hint">
 <pre>Create a new journal tiddler that links to this one</pre>
 </div>
+<div created="20210611002540046" creator="jsng" modified="20210611002548330" modifier="jsng" title="$:/layout">
+<pre>$:/core/ui/PageTemplate</pre>
+</div>
 <div created="20200228210954683" modified="20200521145815264" tags="$:/giffmex/stroll" title="$:/palette">
 <pre>$:/palettes/Vanilla</pre>
 </div>
@@ -12800,8 +12828,8 @@ exports.context = contextWidget;
 <div created="20210610073724295" creator="jsng" modified="20210610073724295" modifier="jsng" title="$:/state/tab--1498284803">
 <pre>$:/core/ui/AdvancedSearch/Filter</pre>
 </div>
-<div created="20210610073736087" creator="jsng" modified="20210610094232948" modifier="jsng" title="$:/state/tab--1963855381">
-<pre>$:/snippets/LayoutSwitcher</pre>
+<div created="20210610073736087" creator="jsng" modified="20210611002658333" modifier="jsng" title="$:/state/tab--1963855381">
+<pre>$:/plugins/sq/Stories/settings</pre>
 </div>
 <div created="20210610083135067" creator="jsng" modified="20210610083135067" modifier="jsng" title="$:/state/tab--2112689675">
 <pre>$:/core/ui/ControlPanel/Advanced</pre>
@@ -12809,8 +12837,8 @@ exports.context = contextWidget;
 <div created="20210610111901810" creator="jsng" modified="20210610111901810" modifier="jsng" title="$:/state/tab-1637712383">
 <pre>Data</pre>
 </div>
-<div created="20210529125757706" creator="jsng" modified="20210610094234271" modifier="jsng" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Plugins</pre>
+<div created="20210529125757706" creator="jsng" modified="20210611002537617" modifier="jsng" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Appearance</pre>
 </div>
 <div created="20210529125758959" modified="20210609083050097" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/General</pre>
@@ -12818,17 +12846,17 @@ exports.context = contextWidget;
 <div created="20210610111839871" creator="jsng" modified="20210611001127579" modifier="jsng" title="$:/state/tab-352448052">
 <pre>$:/tags/Stylesheet</pre>
 </div>
-<div created="20210609081303352" creator="jsng" modified="20210611002314870" modifier="jsng" title="$:/state/tab/moresidebar-1850697562">
-<pre>$:/core/ui/MoreSideBar/All</pre>
+<div created="20210609081303352" creator="jsng" modified="20210611002552416" modifier="jsng" title="$:/state/tab/moresidebar-1850697562">
+<pre>$:/core/ui/MoreSideBar/System</pre>
 </div>
-<div created="20210609081257054" creator="jsng" modified="20210611001144739" modifier="jsng" title="$:/state/tab/sidebar--595412856">
+<div created="20210609081257054" creator="jsng" modified="20210611002550826" modifier="jsng" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/More</pre>
 </div>
 <div created="20210610065832479" modified="20210610065835069" title="$:/state/tab/strolltabs--486725550">
 <pre>Bits and bytes</pre>
 </div>
-<div created="20210610073757454" creator="jsng" modified="20210610094230826" modifier="jsng" title="$:/state/tabs/controlpanel/toolbars-1345989671">
-<pre>$:/core/ui/ControlPanel/Toolbars/EditorToolbar</pre>
+<div created="20210610073757454" creator="jsng" modified="20210611002602957" modifier="jsng" title="$:/state/tabs/controlpanel/toolbars-1345989671">
+<pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
 </div>
 <div created="20210609083010440" modified="20210609083010440" title="$:/state/tree/$:/plugins/">
 <pre>show</pre>
@@ -12839,7 +12867,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210610094939210" creator="jsng" list="tagPageTemplate Contents" modified="20210611002316240" modifier="jsng" title="$:/StoryList">
+<div created="20210610094939210" creator="jsng" list="$:/ControlPanel Contents" modified="20210611002811498" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -12853,6 +12881,9 @@ exports.context = contextWidget;
 </div>
 <div bag="default" created="20200127144249151" list="$:/core/ui/Buttons/fold $:/.giffmex/ViewToolbar/new-note-here $:/.giffmex/ViewToolbar/new-note-here-datetime $:/.giffmex/viewtemplate/viewrefs $:/jd/fullscreen-editor/EditButton $:/core/ui/Buttons/more-tiddler-actions $:/core/ui/Buttons/info $:/core/ui/Buttons/new-here $:/core/ui/Buttons/new-journal-here $:/core/ui/Buttons/clone $:/core/ui/Buttons/export-tiddler $:/core/ui/Buttons/edit $:/core/ui/Buttons/delete $:/core/ui/Buttons/permalink $:/core/ui/Buttons/permaview $:/core/ui/Buttons/open-window $:/core/ui/Buttons/close-others $:/core/ui/Buttons/close $:/core/ui/Buttons/fold-others" modified="20200521145813547" revision="0" tags="$:/giffmex/stroll" title="$:/tags/ViewToolbar" type="text/vnd.tiddlywiki">
 <pre></pre>
+</div>
+<div created="20210611002608081" creator="jsng" modified="20210611002611134" modifier="jsng" title="$:/theme">
+<pre>$:/themes/tiddlywiki/snowwhite</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
 <pre>{
@@ -12963,7 +12994,7 @@ exports.context = contextWidget;
     }
 }</pre>
 </div>
-<div bag="default" created="20200127165334843" modified="20201231112723122" revision="0" tags="$:/giffmex/stroll" title="$:/view" type="text/vnd.tiddlywiki">
+<div bag="default" created="20200127165334843" creator="jsng" modified="20210611002641767" modifier="jsng" revision="0" tags="$:/giffmex/stroll" title="$:/view" type="text/vnd.tiddlywiki">
 <pre>zoomin</pre>
 </div>
 <div created="20210610065925052" creator="jsng" modified="20210610112727845" modifier="jsng" tags="glossary" title="bit" type="text/x-markdown">
@@ -13032,7 +13063,7 @@ The symbol for a byte is **B** (uppercase).</pre>
 <pre>&lt;&lt;list-links &quot;[tag{!!title}]&quot;&gt;&gt;
 </pre>
 </div>
-<div caption="Topics" created="20210611002327824" creator="jsng" modified="20210611002410664" modifier="jsng" title="topic">
+<div caption="Topics" created="20210611002327824" creator="jsng" modified="20210611002844438" modifier="jsng" title="topic" type="text/x-markdown">
 <pre># Topics
 
 &lt;&lt;list-links &quot;[tag[topic]]&quot;&gt;&gt;</pre>
