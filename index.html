@@ -853,7 +853,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="ASCII code table" modified="20210611021055135" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="ASCII code table" modified="20210611021704631" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1572,6 +1572,12 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 84.93333435058594,
             &quot;height&quot;: 39.48333740234375
         }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'ASCII code table' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;ASCII code table&quot;
     },
     {
         &quot;title&quot;: &quot;Draft of 'ASCII code table' by jsng&quot;
@@ -12888,22 +12894,20 @@ The extra information available was used for things missing in Morse code:
 * Line feed
 * Symbols</pre>
 </div>
-<div created="20210611020920525" creator="jsng" modified="20210611021055126" modifier="jsng" title="ASCII code table" type="text/x-markdown">
-<pre>The ASCII code table expanded the capabilities of [[ITA2|Representing text]], but required 7 bits for each character. Each character is situated in a specific row and column, out of 8 columns and 16 rows which are numbered starting from 0[^1].
-
-[^1]: Note that 8 = 2^3 and requires 3 bits; 16 is 2^4 and requires 4 bits.
+<div created="20210611020920525" creator="jsng" modified="20210611021704623" modifier="jsng" title="ASCII code table" type="text/x-markdown">
+<pre>The ASCII code table expanded the capabilities of [[ITA2|Representing text]], but required 7 bits for each character. Each character is situated in a specific row and column, out of 8 columns and 16 rows which are numbered starting from 0.&lt;&lt;fnote &quot;8 = 2^3 and requires 3 bits; 16 = 2^4 and requires 4 bits.&quot;&gt;&gt;
 
 ![ASCII code chart](images/issue041_04.png)&lt;br/&gt;
 (An early version of) The US ASCII code chart. Each row number is represented by 4 bits, while each column number is represented by 3 bits.  
 Image from [Wikimedia Commons](https://en.wikipedia.org/wiki/File:USASCII_code_chart.png)
 
-Technical details aside, look at what ASCII has:
+The ASCII code table comprises:
 
 - Symbols and numbers (mainly columns 2 and 3, but also scattered elsewhere)
 - Upper _and_ lowercase letters (columns 4 to 7)
 - Lots and lots of control codes! (columns 0 and 1)
 
-What do these control codes mean?
+The more relevant control codes are:
 
 - `NUL` stands for null, a placeholder code for when the machine wasn’t transmitting.
 - `SOH`: start of header, to indicate the portion of the transmission that contained information about the message.
@@ -12912,7 +12916,7 @@ What do these control codes mean?
 - `DEL`: to delete the previous character (hello, backspace).
 - `CR` and `LF`: we just met them, carriage return and line feed.
 
-I won’t explain the rest in this supposedly-short newsletter, but if you’re interested the full list is [on Wikipedia](https://en.wikipedia.org/wiki/ASCII#Control_characters).
+Details of other control codes can be found [on Wikipedia](https://en.wikipedia.org/wiki/ASCII#Control_characters).
 </pre>
 </div>
 <div created="20210610065925052" creator="jsng" modified="20210611011023883" modifier="jsng" tags="Glossary" title="bit" type="text/x-markdown">
