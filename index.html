@@ -343,6 +343,8 @@ Error message and password prompt
 
 <li>Contents</li>
 
+<li>Draft of 'tagPageTemplate' by jsng</li>
+
 <li>Draft of 'Topic' by jsng</li>
 
 <li>glossary</li>
@@ -830,7 +832,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Draft of 'Topic' by jsng" modified="20210611004829304" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="topic:data" modified="20210611004915180" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1806,6 +1808,12 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;Draft of 'Topic' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'topic:data' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;topic:data&quot;
     }
 ]</pre>
 </div>
@@ -12918,7 +12926,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210610094939210" creator="jsng" list="tagPageTemplate $:/ControlPanel Contents" modified="20210611004811847" modifier="jsng" title="$:/StoryList">
+<div created="20210610094939210" creator="jsng" list="[[Draft of 'tagPageTemplate' by jsng]] $:/ControlPanel Contents" modified="20210611004811847" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13095,6 +13103,15 @@ The symbol for a byte is **B** (uppercase).</pre>
 <div created="20210610073828324" creator="jsng" modified="20210611001749876" modifier="jsng" tags="$:/tags/SideBar" title="Contents" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;tabs &quot;[[topic:data]]&quot; &quot;topic:data&quot; &quot;$:/state/contentstab&quot; &quot;tc-vertical&quot;&gt;&gt;</pre>
 </div>
+<div created="20210610095326608" creator="jsng" draft.of="tagPageTemplate" draft.title="tagPageTemplate" modified="20210611004859758" modifier="jsng" tags="" title="Draft of 'tagPageTemplate' by jsng">
+<pre>This card shows all cards written for this topic.
+
+&lt;&lt;list-links &quot;[tag{!!title}]&quot;&gt;&gt;
+
+&lt;div class=&quot;tc-table-of-contents&quot;&gt;
+&lt;&lt;toc-selective-expandable '{!!title}'&gt;&gt;
+&lt;/div&gt;</pre>
+</div>
 <div caption="Topics" created="20210611002327824" creator="jsng" draft.of="Topic" draft.title="Topic" modified="20210611004829295" modifier="jsng" title="Draft of 'Topic' by jsng" type="text/x-markdown">
 <pre>This is a top-level card showing all topics.
 
@@ -13133,10 +13150,8 @@ The symbol for a byte is **B** (uppercase).</pre>
 &lt;&lt;toc-selective-expandable 'Topic'&gt;&gt;
 &lt;/div&gt;</pre>
 </div>
-<div caption="Data" created="20210610095238442" creator="jsng" modified="20210611004808044" modifier="jsng" tags="Topic" title="topic:data" type="text/x-markdown">
+<div caption="Data" created="20210610095238442" creator="jsng" modified="20210611004915174" modifier="jsng" tags="Topic" title="topic:data" type="text/x-markdown">
 <pre># Data
-
-This card shows all cards written for this topic.
 
 {{||tagPageTemplate}}</pre>
 </div>
