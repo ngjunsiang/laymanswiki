@@ -879,7 +879,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Unicode" modified="20210611032947409" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Unicode" modified="20210611033457397" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1528,6 +1528,12 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 84.93333435058594,
             &quot;height&quot;: 39.48333740234375
         }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'Unicode' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Unicode&quot;
     },
     {
         &quot;title&quot;: &quot;Draft of 'Unicode' by jsng&quot;
@@ -12957,7 +12963,7 @@ These two actions, and many others from the time of the telegraph, have been dig
 <div created="20210611030554268" creator="jsng" modified="20210611030555371" modifier="jsng" title="decode">
 <pre>See [[encoding table]].</pre>
 </div>
-<div created="20210611011618961" creator="jsng" draft.of="Text representation in computers" draft.title="Text representation in computers" modified="20210611032753821" modifier="jsng" summary="In computers that can encode and decode ASCII, text is stored as a 7-bit sequence. Text consists of letters, numbers, symbols, and control codes." tags="Topic:data todo:refactor" title="Draft of 'Text representation in computers' by jsng" type="text/x-markdown">
+<div created="20210611011618961" creator="jsng" draft.of="Text representation in computers" draft.title="Text representation in computers" modified="20210611033014851" modifier="jsng" summary="In computers that can encode and decode ASCII, text is stored as a 7-bit sequence. Text consists of letters, numbers, symbols, and control codes." tags="Topic:data todo:refactor" title="Draft of 'Text representation in computers' by jsng" type="text/x-markdown">
 <pre>How do computers represent text using 0s and 1s?
 
 Humans often use a simple mapping: A=1, B=2, C=3, and so on.
@@ -12990,35 +12996,11 @@ Circa the ’90s and early ’00s, the internet often had pages of what looked l
 
 This was obviously untenable as a long-term solution.
 
-## Origins of Unicode
+## [[Unicode]]
 
-In 1988, a bunch of engineers from Xerox and Apple started thinking about a universal encoding that can encompass all languages. The first volume of this encoding was published in 1991, with extensions added subsequently.
+&gt; {{Unicode}}
 
-At that point, a Unicode character was represented using 16 bits (for a possible 65,536 characters!). In 1996, a method of extending the Unicode scheme was added, so that Unicode could easily represented over a million different characters!
-
-## Unicode today
-
-Today, the global significance of the internet has resulted in Unicode being the standard encoding on any interface a user interacts with.
-
-If something you try to submit in a form (such as your name) or view on a page does not display properly, chances are the service you are interacting with has not updated itself with proper Unicode support yet. Write a support request to them and ask for it to be done!
-
-One big reason for the increased support in Unicode is the space that was set aside for emoji … more evidence that war may drive the development of technology, but it is social factors that lead to its widespread adoption :)
-
-## Cool things about Unicode
-
-Aside from the fact that it could include encodings for just about any character in any language, here are some things about Unicode which _may not be entirely relevant_ for the layperson, but I think are good to know. Feel free to skip this section.
-
-- Unicode is able to “craft” characters by combining multiple glyphs.
-  - For instance, a&amp;#773; is not represented with a single character, but can be printed through combining the 'a' glyph with the ◌̅  (Combining Overline) glyph.
-- Unicode has an area set aside for alternate character representations.
-  - For instance, “fl” is sometimes stylistically combined into an “ﬂ” ligature; there is room for this ligature in Unicode. (Try to select the ‘fl’s above if you can’t see the difference.)
-  - Some high-quality fonts provide such alternate glyph representations, and with the right software (such as Adobe InDesign) you can make use of them.
-  - Some languages (e.g. Arabic) actually require ligatures for combining adjacent glyphs, so this is a pretty big deal.
-- With the right font type (i.e. [OpenType](https://en.wikipedia.org/wiki/OpenType)), you can actually include programmatic features though Unicode.
-  - [FF Chartwell](https://typographica.org/typeface-reviews/chartwell/) is a font for creating mini-charts just by typing!
-  - The font uses ligatures to turn numbers into a mini chart.
-- Unicode has a &quot;Private Use Area&quot; that you can use for your own private purposes. You can insert symbols from this area for use in a webpage.
-  - I have seen websites use this to create custom icons that can scale in size and change colour easily, just like text.</pre>
+</pre>
 </div>
 <div created="20210611030532554" creator="jsng" modified="20210611030548790" modifier="jsng" title="encode">
 <pre>See [[encoding table]].</pre>
@@ -13122,8 +13104,8 @@ Formatting codes are well and alive today, and they are more prosperous than eve
 <div caption="Data" created="20210610095238442" creator="jsng" modified="20210611011242076" modifier="jsng" tags="Contents" title="Topic:data" type="text/x-markdown">
 <pre>{{||tagPageTemplate}}</pre>
 </div>
-<div created="20210611032800606" creator="jsng" modified="20210611032947403" modifier="jsng" tags="Glossary" title="Unicode" type="text/x-markdown">
-<pre>In 1988, a bunch of engineers from Xerox and Apple started thinking about a universal encoding that can encompass all languages. The first volume of this encoding was published in 1991, with extensions added subsequently.
+<div created="20210611032800606" creator="jsng" modified="20210611033457388" modifier="jsng" tags="Glossary" title="Unicode" type="text/x-markdown">
+<pre>In 1988, a bunch of engineers from [Xerox](https://en.wikipedia.org/wiki/Xerox) and [Apple](https://en.wikipedia.org/wiki/Apple_Inc.) started thinking about a universal encoding that can encompass all languages. The first volume of this encoding was published in 1991, with extensions added subsequently.
 
 At that point, a Unicode character was represented using 16 [[bit]]s (for a possible 65,536 characters). In 1996, a method of extending the Unicode scheme was added, so that Unicode could easily represented over a million different characters!
 
@@ -13133,7 +13115,23 @@ Today, the global significance of the internet has resulted in Unicode being the
 
 If something you try to submit in a form (such as your name) or view on a page does not display properly, chances are the service you are interacting with has not updated itself with proper Unicode support yet. Write a support request to them and ask for it to be done!
 
-One big reason for the increased support in Unicode is the space that was set aside for emoji … more evidence that war may drive the development of technology, but it is social factors that lead to its widespread adoption.</pre>
+One big reason for the increased support in Unicode is the space that was set aside for emoji … more evidence that war may drive the development of technology, but it is social factors that lead to its widespread adoption.
+
+## Cool things about Unicode
+
+Unicode is able to “craft” characters by combining multiple [[glyph]]s.
+- For instance, a&amp;#773; is not represented with a single character, but can be printed through combining the 'a' glyph with the ◌̅  (Combining Overline) glyph.
+
+Unicode has an area set aside for alternate character representations.
+- For instance, “fl” is sometimes stylistically combined into an “ﬂ” [[ligature]]; there is room for this ligature in Unicode. (Try to select the ‘fl’s above if you can’t see the difference.)
+- Some high-quality [[fonts]] provide such alternate glyph representations, and with the right software (such as [[Adobe InDesign]]) you can make use of them.
+- Some languages (e.g. Arabic) actually require ligatures for combining adjacent glyphs, so this is a pretty big deal.
+
+With the right font type (i.e. [OpenType](https://en.wikipedia.org/wiki/OpenType)), programmatic features can be included though Unicode.
+- [FF Chartwell](https://typographica.org/typeface-reviews/chartwell/) is a font for creating mini-charts just by typing!
+  - The font uses ligatures to turn numbers into a mini chart.
+- Unicode has a &quot;Private Use Area&quot; that you can use for your own private purposes. You can insert symbols from this area for use in a webpage.
+  - Some websites use this to create custom icons that can scale in size and change colour easily, just like text.</pre>
 </div>
 <div created="20210610072430150" creator="jsng" list-after="[[Bits and bytes]]" modified="20210611013724031" modifier="jsng" summary="Humans count bytes in multiples of thousands, while computers count bytes in multiples of 1,024." tags="Topic:data" title="Why does my hard drive seem to have less space than it should?" topic="data" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
