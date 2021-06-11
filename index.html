@@ -377,6 +377,8 @@ Error message and password prompt
 
 <li>decode</li>
 
+<li>Draft of 'Image representation in computers' by jsng</li>
+
 <li>encode</li>
 
 <li>encoding table</li>
@@ -883,7 +885,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Welcome" modified="20210611041656402" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="control codes" modified="20210611041721770" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1635,10 +1637,38 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;Welcome&quot;
+    },
+    {
+        &quot;title&quot;: &quot;encoding table&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 758.566650390625,
+            &quot;left&quot;: 1785,
+            &quot;width&quot;: 91.73333740234375,
+            &quot;right&quot;: 1876.7333374023438,
+            &quot;bottom&quot;: 776.566650390625,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;control codes&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 738.566650390625,
+            &quot;left&quot;: 1785,
+            &quot;width&quot;: 84,
+            &quot;right&quot;: 1869,
+            &quot;bottom&quot;: 756.566650390625,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'control codes' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;control codes&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="Welcome [[HTTP request]] Topic:data" modified="20210611034753506" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[control codes]] [[encoding table]] Welcome [[HTTP request]] Topic:data" modified="20210611034753506" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -12784,7 +12814,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210611035922453" creator="jsng" list="Contents [[Image representation in computers]]" modified="20210611035922453" modifier="jsng" title="$:/StoryList">
+<div created="20210611035922453" creator="jsng" list="Contents [[Draft of 'Image representation in computers' by jsng]]" modified="20210611035922453" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13035,8 +13065,8 @@ The symbol for a byte is **B** (uppercase).</pre>
 &lt;&lt;toc-selective-expandable 'Contents'&gt;&gt;
 &lt;/div&gt;</pre>
 </div>
-<div created="20210611031058234" creator="jsng" modified="20210611031412544" modifier="jsng" tags="" title="control codes" type="text/x-markdown">
-<pre>The need for punctuation is easy enough to understand, and very welcome; if you’ve ever tried reading early telegrams (or using Morse code) you’ll appreciate their addition. But what purpose do control codes such as [[carriage return]] and [[line feed]] serve?
+<div created="20210611031058234" creator="jsng" modified="20210611041721762" modifier="jsng" tags="" title="control codes" type="text/x-markdown">
+<pre>The need for punctuation is easy enough to understand, and very welcome; if you’ve ever tried reading early telegrams (or using Morse code) you’ll appreciate their addition. But what purpose do **control codes** such as [[carriage return]] and [[line feed]] serve?
 
 ## The typewriter
 
@@ -13059,6 +13089,71 @@ These two actions, and many others from the time of the telegraph, have been dig
 </div>
 <div created="20210611030554268" creator="jsng" modified="20210611033821895" modifier="jsng" tags="Glossary" title="decode">
 <pre>See [[encoding table]].</pre>
+</div>
+<div created="20210611034029232" creator="jsng" draft.of="Image representation in computers" draft.title="Image representation in computers" modified="20210611041703658" modifier="jsng" tags="Topic:data WIP" title="Draft of 'Image representation in computers' by jsng" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+In [[Text representation in computers]], I explained how text is stored as numbers through the use of [[encoding table]]s. The more total characters we want to store in the lookup table, the more [[bit]]s we need for each character.
+
+&gt; {{bit}}
+
+This is going to be a recurring theme: If we want to be able to differentiate more shades of colour, or more degrees of loudness in sound, we will need more and more bits for each **sample**, and that means our file—whether text, image, or sound—is going to have a larger filesize.
+
+Side reading: [[Bits and bytes]]
+
+How many bits is good enough? For text, that is determined by how many symbols we might possibly need to communicate. But for colour, the number of different shades is possibly infinite, and yet we can’t possibly differentiate between really fine shades, nor can our screens possibly produce all of them …
+
+Deep dive: [Colour Theory](https://en.wikipedia.org/wiki/Color_theory)
+
+I will attempt to summarise and oversimplify decades of colour theory and colour vision research. Buckle up!
+
+# The human eye
+
+Any effective colour system must take into account how the human eye is structured, and how vision occurs. Today, we understand that humans are trichromatic: there are 3 types of cone cells in the eye (and also 1 type of rod cell, which I won’t be explaining here), and each one recognises a different shade of colour: red, green, blue. Each type of cone cell can differentiate roughly 100 different shades, which theoretically enables us to distinguish 1 million shades of colour (100^3).
+
+So it makes good sense that our colour systems in computers evolved similarly, to store single dots of colour as a combination of red, green, and blue. To be able to store 100 different shades, we will need at least 7 bits (2^7 = 128), but [computer systems like things in 8s](https://buttondown.email/laymansguide/archive/lmg-s4-issue-40-bits-and-bytes/). For this and other historical reasons, 1 byte (8 bits) are used for each shade, giving us 256 shades of red, green, and blue each. That’s over 16 million (256^3) shades of colour!
+
+## Colour encoding
+
+Since one byte stores one colour value, three bytes are needed for a single spot of colour combining red, green, and blue—a combination commonly called **RGB**. In a computer, each byte represents the level of that colour; 0 means minimum level (i.e. black) while 255 means maximum level (complete saturation of that colour). So any of those 16 million colours can be stored as a number triplet, representing the red, green, and blue values respectively.
+
+(0,0,0) is black
+(255,255,255) is white
+
+So now you know what to do with colour pickers in applications: just find the combination of red, green, and blue that is closest to the colour you want!
+
+![The Microsoft Paint colour picker](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season4/issue043/issue043_01.png)&lt;br /&gt;
+&lt;small&gt;A colour picker, common in graphics applications. This one is from Microsoft Paint.&lt;/small&gt;
+
+You can play with a simple colour wheel on [colorspire.com](https://www.colorspire.com/rgb-color-wheel/), or if you’re feeling more adventurous, try the more technical one on [rapidtables.com](https://www.rapidtables.com/web/color/RGB_Color.html).
+
+## Colour production
+
+On a screen, colours are produced by millions of liquid crystals (in LCDs) or light-emitting diodes (in LED displays). These are arranged in a rectangular grid pattern, and each one is known as a **pixel** (shortened from _picture element_). Each pixel is capable of producing 256 shades of red, green, or blue.
+
+It is extremely difficult to manufacture pixels that can produce any colour; this would require that the crystal or diode can emit light of different frequencies. Instead, the display industry has settled on combining 3 sub-pixels into a pixel. Each sub-pixel produces—you guessed it—either red, green, or blue light.
+
+![Close-up of LCD/LED pixels from various displays](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season4/issue043/issue043_02.png)&lt;br /&gt;
+&lt;small&gt;Extreme close-up shots of pixels.&lt;br /&gt;
+Taken from [lcdtech.info](http://lcdtech.info/en/tests/lcd.pixels.structure.htm).&lt;/small&gt;
+
+When colour information is sent from the computer to the display (through the video cable) and decoded in the display, it also uses RGB values. In this sense there is remarkable consistency in computer systems in how colour is stored, sent, and displayed. That minimises the amount of time spent by computers converting from one format to another.
+
+## Colour storage
+
+In a computer, combinations of **image pixels** are stored as image files, but you already know that. I’m on the verge of exceeding my one-idea-per-week promise, so I’ll end this issue with a short comparison of common image formats. Each image format is labelled below by its file extension, the part of the filename that comes at the end.
+
+**BMP**  
+BMP is short for “bitmap”. The bitmap format commonly encountered in computer systems, stores pixels uncompressed. This means that each pixel requires 3 bytes of space, so a full-screen image on a typical modern laptop (1920 pixels horizontally, 1080 pixels vertically) would require about 6 MB (1920×1080×3)!
+
+**GIF**  
+GIF (Graphics Interchange Format) is one of the earliest image formats, and is rather more restricted in its capabilities as a result. Each GIF pixel is only 8 bits, so a GIF image is limited to using only use 256 colours. One of those colours can be “transparent”, allowing GIF to produce images with transparent parts.
+
+**JPEG**  
+JPEG stands for Joint Photographers Expert Group, so it wouldn’t surprise you to learn that it was designed to display photographs with as small a filesize as possible. Today, it is in use for a variety of image types. JPEG can display pixels in 24 bits (i.e. 8 bits for RGB each), but does not store them uncompressed like BMP. Instead, it applies compression to reduce the filesize by “discarding information” from the image in a way that does not affect the final image visibly.
+
+**PNG**  
+PNG (Portable Network Graphics) was designed as a replacement for GIF. It supports 24-bit image pixels, with an additional 8 bits per pixel for transparency information. That means PNG pixels have 256 different levels of transparency, allowing for blending effects where one image overlaps another. PNG files support image compression, allowing them to be stored with smaller filesizes than BMP.</pre>
 </div>
 <div created="20210611030532554" creator="jsng" modified="20210611033811818" modifier="jsng" tags="Glossary" title="encode">
 <pre>See [[encoding table]].</pre>
