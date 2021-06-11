@@ -879,7 +879,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Image representation in computers" modified="20210611034108746" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="$:/plugins/snowgoon88/edit-comptext" modified="20210611034233387" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1642,10 +1642,21 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;Image representation in computers&quot;
+    },
+    {
+        &quot;title&quot;: &quot;$:/plugins/snowgoon88/edit-comptext&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 45.44999694824219,
+            &quot;left&quot;: 685.9833374023438,
+            &quot;width&quot;: 32.899993896484375,
+            &quot;right&quot;: 718.8833312988281,
+            &quot;bottom&quot;: 84.93333435058594,
+            &quot;height&quot;: 39.48333740234375
+        }
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="Unicode [[Image representation in computers]] [[HTTP request]] Topic:data" modified="20210611033948505" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="$:/plugins/snowgoon88/edit-comptext Unicode [[HTTP request]] Topic:data" modified="20210611034233385" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div created="20200510024843460" modified="20200603121638626" tags="$:/giffmex/stroll $:/giffmex/blinks" title="$:/config/EditorTypeMappings/text/vnd.tiddlywiki">
@@ -12755,8 +12766,8 @@ exports.context = contextWidget;
 <div created="20210609081303352" creator="jsng" modified="20210611021948872" modifier="jsng" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Plugins</pre>
 </div>
-<div created="20210609081257054" creator="jsng" modified="20210611033925603" modifier="jsng" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Open</pre>
+<div created="20210609081257054" creator="jsng" modified="20210611034447803" modifier="jsng" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div created="20210611013912622" creator="jsng" modified="20210611013912622" modifier="jsng" title="$:/state/tab/strolltabs--386877772">
 <pre>ASCII</pre>
@@ -12788,7 +12799,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210611032345550" creator="jsng" list="Contents" modified="20210611033826860" modifier="jsng" title="$:/StoryList">
+<div created="20210611032345550" creator="jsng" list="[[Image representation in computers]] Contents" modified="20210611034449927" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13081,12 +13092,18 @@ An HTTP request captured in Wireshark.
 
 The `\r` and `\n` you see there are control codes. They stand for '[[return]]' and '[[newline]]', the modern equivalent of 'carriage return' and 'line feed'.</pre>
 </div>
-<div created="20210611034029232" creator="jsng" modified="20210611034108734" modifier="jsng" tags="Topic:data" title="Image representation in computers" type="text/x-markdown">
-<pre>In the last two issues, I explained how text is stored as numbers through the use of lookup tables, whether ASCII or Unicode. The more total characters we want to store in the lookup table, the more bits we need for each character.
+<div created="20210611034029232" creator="jsng" modified="20210611034704295" modifier="jsng" tags="Topic:data WIP" title="Image representation in computers" type="text/x-markdown">
+<pre>In [[Text representation in computers]], I explained how text is stored as numbers through the use of [[encoding table]]s. The more total characters we want to store in the lookup table, the more [[bit]]s we need for each character.
+
+&gt; {{bit}}
 
 This is going to be a recurring theme: If we want to be able to differentiate more shades of colour, or more degrees of loudness in sound, we will need more and more bits for each **sample**, and that means our file—whether text, image, or sound—is going to have a larger filesize.
 
-How many bits is good enough? In the case of text, that is determined largely by the upper limit on the number of symbols we might possibly need to communicate. But how do we decide that for colour? The number of different shades of colours is possibly infinite, and yet we can’t possibly differentiate between really fine shades, nor can our screens possibly produce all of them …
+Side reading: [[Bits and bytes]]
+
+How many bits is good enough? For text, that is determined by how many symbols we might possibly need to communicate. But for colour, the number of different shades is possibly infinite, and yet we can’t possibly differentiate between really fine shades, nor can our screens possibly produce all of them …
+
+Deep dive: [Colour Theory](https://en.wikipedia.org/wiki/Color_theory)
 
 In this issue, I’ll be summarising and oversimplifying decades of colour theory and colour vision research. Buckle up!
 
