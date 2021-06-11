@@ -189,6 +189,8 @@ Error message and password prompt
 
 <li>$:/_sq/Stories/Story2StoryList</li>
 
+<li>$:/config/_sq/Stories/story2</li>
+
 <li>$:/config/EditorTypeMappings/text/vnd.tiddlywiki</li>
 
 <li>$:/config/EditorTypeMappings/text/x-markdown</li>
@@ -881,7 +883,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Welcome" modified="20210611035409368" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Welcome" modified="20210611035713493" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1700,11 +1702,31 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;Welcome&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Bits and bytes&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 381.83331298828125,
+            &quot;left&quot;: 174.4166717529297,
+            &quot;width&quot;: 92.89999389648438,
+            &quot;right&quot;: 267.31666564941406,
+            &quot;bottom&quot;: 400.83331298828125,
+            &quot;height&quot;: 19
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'Welcome' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Welcome&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="GettingStarted Welcome $:/plugins/snowgoon88/edit-comptext Unicode [[HTTP request]] Topic:data" modified="20210611034753506" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="Welcome $:/plugins/snowgoon88/edit-comptext Unicode [[HTTP request]] Topic:data" modified="20210611034753506" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
+</div>
+<div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
+<pre>yes</pre>
 </div>
 <div created="20200510024843460" modified="20200603121638626" tags="$:/giffmex/stroll $:/giffmex/blinks" title="$:/config/EditorTypeMappings/text/vnd.tiddlywiki">
 <pre>comptext</pre>
@@ -12846,7 +12868,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210611032345550" creator="jsng" list="[[Draft of 'New Tiddler' by jsng]] [[Image representation in computers]] Contents" modified="20210611035308160" modifier="jsng" title="$:/StoryList">
+<div created="20210611032345550" creator="jsng" list="[[Draft of 'New Tiddler' by jsng]] [[Image representation in computers]] Contents" modified="20210611035505926" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13302,7 +13324,7 @@ With the right font type (i.e. [OpenType](https://en.wikipedia.org/wiki/OpenType
 - Unicode has a &quot;Private Use Area&quot; that you can use for your own private purposes. You can insert symbols from this area for use in a webpage.
   - Some websites use this to create custom icons that can scale in size and change colour easily, just like text.</pre>
 </div>
-<div created="20210611034728011" creator="jsng" modified="20210611035409362" modifier="jsng" tags="" title="Welcome" type="text/x-markdown">
+<div created="20210611034728011" creator="jsng" modified="20210611035713485" modifier="jsng" tags="WIP" title="Welcome" type="text/x-markdown">
 <pre>Welcome to the {{$:/SiteTitle}}!
 
 This site is created using [TiddlyWiki](https://tiddlywiki.com/), a wiki-like tool for organising information in a card-like format.
@@ -13313,7 +13335,9 @@ This format can be confusing for first-timers, so here’s a handy guide for ori
 
 Internal links to other cards in this wiki are displayed in a &lt;span style=&quot;color: #5778d8;&quot;&gt;light blue&lt;/span&gt;.
 
-These do not open in a new tab, but add a card
+These do not open in a new tab, but replace the card you are currently reading. When you close a card, the card you were previously reading is brought back.
+
+You can Shift+click an internal link to open in in a two-column view. This will not replace your existing card; instead, it adds the clicked link into the right-side column, while keeping the card you are reading on the left side.
 
 ### External links
 
