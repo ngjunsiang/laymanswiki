@@ -391,8 +391,6 @@ Error message and password prompt
 
 <li>DPI</li>
 
-<li>Draft of 'Colour representation in computers 1' by jsng</li>
-
 <li>encode</li>
 
 <li>encoding table</li>
@@ -400,6 +398,8 @@ Error message and password prompt
 <li>Glossary</li>
 
 <li>HTTP request</li>
+
+<li>Image representation in computers</li>
 
 <li>ISO 8859-1</li>
 
@@ -1927,7 +1927,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[Printing images]] Retina Welcome [[HTTP request]] Topic:data" modified="20210611062450289" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="Welcome [[HTTP request]] Topic:data" modified="20210611062450289" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13080,7 +13080,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210611035922453" creator="jsng" list="[[Draft of 'Colour representation in computers 1' by jsng]] [[Colour representation in computers]]" modified="20210611062315736" modifier="jsng" title="$:/StoryList">
+<div created="20210611035922453" creator="jsng" list="[[Image representation in computers]] [[Colour representation in computers]]" modified="20210611062315736" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13461,7 +13461,24 @@ These two actions, and many others from the time of the telegraph, have been dig
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210611060910634" creator="jsng" draft.of="Colour representation in computers 1" draft.title="Image representation in computers" list-after="[[Colour representation in computers]]" modified="20210611062823024" modifier="jsng" summary="An image’s resolution describes its dimensions. Its pixel resolution gives an indication of its physical size (if printed or displayed on a screen), and thus its sharpness. A display with imperceptibly small pixels is often referred to as a Retina display (Apple’s branding) or as a high-PPI display; this requires at least 220 PPI nominally. For an image to be printed sharply, it needs at least 300 DPI." tags="Topic:data" title="Draft of 'Colour representation in computers 1' by jsng" type="text/x-markdown">
+<div created="20210611030532554" creator="jsng" modified="20210611033811818" modifier="jsng" tags="Glossary" title="encode">
+<pre>See [[encoding table]].</pre>
+</div>
+<div created="20210611011954773" creator="jsng" modified="20210611041728577" modifier="jsng" tags="Glossary" title="encoding table" type="text/x-markdown">
+<pre>An **encoding table** stores a list of characters, and the numbers that represent them.
+
+A computer uses an encoding table to [[encode]] characters into their binary (0s and 1s) representation, and to [[decode]] binary data into its text representation.</pre>
+</div>
+<div created="20210610075627131" creator="jsng" list-after="" modified="20210611011525501" modifier="jsng" tags="Contents" title="Glossary" type="text/x-markdown">
+<pre>&lt;&lt;list-links &quot;[tag[Glossary]sort[title]]&quot;&gt;&gt;</pre>
+</div>
+<div created="20210611030849058" creator="jsng" modified="20210611033920526" modifier="jsng" tags="todo:refactor" title="HTTP request" type="text/x-markdown">
+<pre>![An HTTP request captured in Wireshark showing my developer API key](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season1/issue012/issue012_01.png)&lt;br /&gt;
+An HTTP request captured in Wireshark.
+
+The `\r` and `\n` you see there are control codes. They stand for '[[return]]' and '[[newline]]', the modern equivalent of 'carriage return' and 'line feed'.</pre>
+</div>
+<div created="20210611060910634" creator="jsng" list-after="[[Colour representation in computers]]" modified="20210611062857229" modifier="jsng" summary="An image’s resolution describes its dimensions. Its pixel resolution gives an indication of its physical size (if printed or displayed on a screen), and thus its sharpness. A display with imperceptibly small pixels is often referred to as a Retina display (Apple’s branding) or as a high-PPI display; this requires at least 220 PPI nominally. For an image to be printed sharply, it needs at least 300 DPI." tags="Topic:data" title="Image representation in computers" type="text/x-markdown">
 <pre>An image is two-dimensional and certainly much larger than a single pixel. How do we talk about its size?
 
 # Image dimensions
@@ -13495,23 +13512,6 @@ When you buy or browse computer monitors, you would have heard the monitor’s p
 Your [[OS]] might have a setting for fixing blurry apps, or making small text appear larger. These are typical problems faced on a high-PPI screen (at least 218 [[PPI]]), such as the Retina displays used by iPhones, iPads, and Macbooks.
 
 Side reading: [[Retina]]</pre>
-</div>
-<div created="20210611030532554" creator="jsng" modified="20210611033811818" modifier="jsng" tags="Glossary" title="encode">
-<pre>See [[encoding table]].</pre>
-</div>
-<div created="20210611011954773" creator="jsng" modified="20210611041728577" modifier="jsng" tags="Glossary" title="encoding table" type="text/x-markdown">
-<pre>An **encoding table** stores a list of characters, and the numbers that represent them.
-
-A computer uses an encoding table to [[encode]] characters into their binary (0s and 1s) representation, and to [[decode]] binary data into its text representation.</pre>
-</div>
-<div created="20210610075627131" creator="jsng" list-after="" modified="20210611011525501" modifier="jsng" tags="Contents" title="Glossary" type="text/x-markdown">
-<pre>&lt;&lt;list-links &quot;[tag[Glossary]sort[title]]&quot;&gt;&gt;</pre>
-</div>
-<div created="20210611030849058" creator="jsng" modified="20210611033920526" modifier="jsng" tags="todo:refactor" title="HTTP request" type="text/x-markdown">
-<pre>![An HTTP request captured in Wireshark showing my developer API key](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season1/issue012/issue012_01.png)&lt;br /&gt;
-An HTTP request captured in Wireshark.
-
-The `\r` and `\n` you see there are control codes. They stand for '[[return]]' and '[[newline]]', the modern equivalent of 'carriage return' and 'line feed'.</pre>
 </div>
 <div created="20210611031810707" creator="jsng" modified="20210611032157816" modifier="jsng" tags="" title="ISO 8859-1" type="text/x-markdown">
 <pre>The 7-[[bit]]s-per-character limitation of the [[ASCII code table]] meant it was unable to store many glyphs outside of the English alphabet.
