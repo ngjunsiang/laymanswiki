@@ -395,8 +395,6 @@ Error message and password prompt
 
 <li>DPI</li>
 
-<li>Draft of 'lossy compression' by jsng</li>
-
 <li>encode</li>
 
 <li>encoding table</li>
@@ -13260,7 +13258,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210611035922453" creator="jsng" list="Compression [[Draft of 'lossy compression' by jsng]] [[Audio representation in computers]]" modified="20210611083356339" modifier="jsng" title="$:/StoryList">
+<div created="20210611035922453" creator="jsng" list="Compression [[lossy compression]] [[Audio representation in computers]]" modified="20210611083356339" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13687,68 +13685,6 @@ These two actions, and many others from the time of the telegraph, have been dig
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div caption="Lossy compression" created="20210611083429212" creator="jsng" draft.of="lossy compression" draft.title="lossy compression" modified="20210611084121924" modifier="jsng" tags="Topic:data" title="Draft of 'lossy compression' by jsng" type="text/x-markdown">
-<pre>We all have that one friend who can just drone on and on about their day, giving a detailed account with every little thing that happened, and all the things that it reminds them of, and finally in their entire speech there’s that *one* piece of information you are looking for!
-
-Or maybe you’ve been in an hour-long meeting and your colleague missed it and asked you what they missed. Would it take you an hour to recount the key points? Probably not. You’d give a summary, highlighting only the key bits that would make a difference.
-
-Computers do something similar using compression [[algorithm]]s that analyse the data and figure out which parts can be safely discarded without affecting the gist of what’s being transferred. Because information is being discarded, this is known as **lossy compression**—you can never get back *all of* the original information once it has been lossily compressed.
-
-If you’re thinking “this part is going to be incredibly math-ey”, you are right, but I have only an hour for this issue so I’ll see how I can further summarise the theory for you readers :)
-
-## Lossy image compression: luma and chroma
-
-In [Issue 44](https://buttondown.email/laymansguide/archive/lmg-s4-issue-44-image-resolution/), I mentioned that the human eye has 3 types of cones that sense red, green, and blue light. What I didn’t mention then is that partly due to the way these cones are distributed, the human eye is more sensitive to differences in brightness (or “**luma**”) than differences in colour (“**chroma**”).
-
-A black-and-white image has only luma information (brightness), while a colour image has both luma and chroma information—you can mathematically separate the data of a colour image into the brightness component (which looks just like a black-and-white photo), and a colour component, which looks like nothing you have ever seen. The closest thing to chroma information would be analog colour photo negatives, if you were born early enough to get to see those.
-
-So that’s another way of representing image information: you can either represent it as RGB (red-green-blue) colour values, or YUV (1 luma value, Y, and 2 chroma values, U &amp; V). In RGB, all 3 colour components are equally important and you can’t treat them differently, but in YUV you _can_ process them differently to achieve lossy compression.
-
-## Lossy image compression: chroma
-
-Since the human eye is less sensitive to chroma (colour) information, in the JPEG image format, the chroma components are compressed by averaging each 2×2 group of pixels into 1 value for U and V each. (This process is known as subsampling.) Theoretically that halves the amount of data required for the same image! (4/4 Y + 1/4 U + 1/4 V = 6/12 of the original information)
-
-![4 images with different chroma subsampling](https://github.com/ngjunsiang/laymansguide/blob/release/season4/issue046/issue046_01.jpg?raw=true)&lt;br /&gt;
-&lt;small&gt;Compare the image without chroma compression (4:4:4) to the image with chroma compression (4:2:0).&lt;br /&gt;
-Without scrutiny, the human eye is not very sensitive to lower resolution in chroma.&lt;br /&gt;
-Image from [Wikimedia Commons](https://en.wikipedia.org/wiki/File:Colorcomp.jpg)&lt;/small&gt;
-
-## Lossy image compression: luma
-
-Furthermore, even within the luma channel (i.e. looking at luma information only), the human eye is more sensitive to sharp changes in brightness across adjacent pixels than gradual changes in brightness across adjacent pixels. Through a Discrete Cosine Transform (DCT) algorithm, a computer can separate the luma information and differentiate parts with sharper changes, and parts with gradual changes.
-
-As the compression level increases (this is the quality setting you often play with in Photoshop and other image-editing software), the computer increasingly discards more and more information, starting from the gradual-change information. For photograph images, you will generally hit diminishing returns below 85%: each 1% decrease in quality brings you less and less savings on filesize.
-
-And that, in a nutshell, is how most lossy image compression works, and how the JPEG format works (well, okay, I’ve explained the main 30% of it maybe).
-
-## Lossy audio compression: discarding what we can’t hear
-
-What about audio?
-
-If you are all about the bass, or like tweaking with sound settings, or have worked with audio systems before e.g. for a performance or for your school’s events, you would have used an equaliser at some point. An equaliser is a device (or software application) that lets you adjust how much bass (low pitch), medium (middle pitch), and treble (high pitch) you want from the sound. How is the system able to do that?
-
-Through transforms! DCT, mentioned earlier, is one such transform; audio formats often use another one, known as the Fast Fourier Transform (FFT). (Aren’t you glad this is a newsletter about computing and not about math?) Anyway, a transform lets us transform information organised by position (e.g. in images) or by time (e.g. in audio) into information organised by other properties, such as frequency.
-
-The FFT algorithm organises audio information (for a certain time length) by frequency. Depending on your equaliser settings, it increases or decreases the weightage of different frequencies to produce the sound you want, be it bass-heavy rock or medium-light jazz.
-
-But the FFT algorithm can do much more! It is known that most sounds we hear are typically in the 40 Hz to 19 kHz range, so it is usually a safe bet to discard frequency information below 40 Hz and above 19 kHz. If we lower the frequency ceiling for discarding, down to 16 kHz, we can reduce the amount of audio information even more.
-
-## Lossy audio compression: masking
-
-It is also known that the human ear, when it hears a very loud sound around one frequency, will not process much softer sounds in other frequencies. This is known as masking. With the help of the FFT algorithm, it’s easy to identify which frequencies will be masked for each range of time samples, and therefore can be discarded.
-
-Furthermore, because of the way the cochlea works, right after hearing a very loud sound, the ear will not be able to hear softer sounds for a fraction of a second (maybe the fluid in the cochlea of the ear needs some time to settle? I don’t know). So softer sounds occurring right after a loud sound are **masked**. We can discard that audio information too.
-
-Lastly, long periods of silence (a couple seconds for example) are not worth all that information they take up as well, and can be further compressed.
-
-## Lossy audio compression: lowering dynamic range
-
-We don’t always need to record audio with the full dynamic range of human hearing. For an orchestra concert, maybe that is important, but if you are just recording an interview, you don’t need to hear every tiny detail of how that person speaks (unless maybe you’re a doctor who can pick up telltale signs of cancer from the way a person speaks? That would be amazing.).
-
-Human voice frequency typically ranges from 85 to 255 Hz, and only covers a range of up to 65 dB. That’s a full 30 dB lower than the 96 dB of CD audio, which means we don’t need 16-bit audio to store that; about 11 or 12 bits would be sufficient. And you won’t need a 44.1 kHz sampling rate for that; 11.025 kHz is sufficient.
-
-That, in a nutshell, is how we get such small images and audio files on the internet. If you’re particularly sensitive you can often make out the difference caused by this lost information. But most of the time, we’re not listening or looking closely, and it’s easy to overlook such minor differences.</pre>
-</div>
 <div created="20210611030532554" creator="jsng" modified="20210611033811818" modifier="jsng" tags="Glossary" title="encode">
 <pre>See [[encoding table]].</pre>
 </div>
@@ -13849,7 +13785,7 @@ In 1985, the European Computer Manufacturers Association (ECMA) extended US-[[AS
 <div created="20210611023323056" creator="jsng" modified="20210611033909087" modifier="jsng" tags="Glossary" title="line feed">
 <pre></pre>
 </div>
-<div caption="Lossy compression" created="20210611083429212" creator="jsng" modified="20210611084109850" modifier="jsng" tags="Topic:data" title="lossy compression" type="text/x-markdown">
+<div caption="Lossy compression" created="20210611083429212" creator="jsng" modified="20210611085241970" modifier="jsng" tags="" title="lossy compression" type="text/x-markdown">
 <pre>We all have that one friend who can just drone on and on about their day, giving a detailed account with every little thing that happened, and all the things that it reminds them of, and finally in their entire speech there’s that *one* piece of information you are looking for!
 
 Or maybe you’ve been in an hour-long meeting and your colleague missed it and asked you what they missed. Would it take you an hour to recount the key points? Probably not. You’d give a summary, highlighting only the key bits that would make a difference.
