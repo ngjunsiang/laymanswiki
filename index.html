@@ -851,7 +851,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="ASCII background and history" modified="20210611020242763" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="ASCII background and history" modified="20210611020614560" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1520,6 +1520,12 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;Draft of 'New Tiddler' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;ASCII background and history&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'ASCII background and history' by jsng&quot;
     },
     {
         &quot;title&quot;: &quot;ASCII background and history&quot;
@@ -12803,7 +12809,7 @@ exports.context = contextWidget;
 
 The ASCII table is a commonly used [[encoding table]] for representing text as numbers.</pre>
 </div>
-<div created="20210611014209852" creator="jsng" modified="20210611020242753" modifier="jsng" title="ASCII background and history" type="text/x-markdown">
+<div created="20210611014209852" creator="jsng" modified="20210611020614547" modifier="jsng" title="ASCII background and history" type="text/x-markdown">
 <pre>[[ASCII]] actually predates the internet! (We had computers way longer than we had the Internet, after all.)
 
 ## Morse Code
@@ -12825,7 +12831,7 @@ The Murray code employed a keyboard much like a typewriter’s. This was an impr
 
 In the 1920s, the Murray code was developed into the International Telegraph Alphabet No. 2 code (ITA2 code).
 
-![ITA2 table](images/issue041_01.jpg)
+![ITA2 table](images/issue041_01.jpg)  
 Image from [Wikimedia Commons](https://en.wikipedia.org/wiki/File:International_Telegraph_Alphabet_2.jpg)
 
 ## Morse code vs ITA2
@@ -12888,7 +12894,7 @@ The symbol for a byte is **B** (uppercase).</pre>
 &lt;&lt;toc-selective-expandable 'Contents'&gt;&gt;
 &lt;/div&gt;</pre>
 </div>
-<div created="20210611011618961" creator="jsng" draft.of="Representing text" draft.title="Representing text" modified="20210611020204159" modifier="jsng" summary="In computers that can encode and decode ASCII, text is stored as a 7-bit sequence. Text consists of letters, numbers, symbols, and control codes." tags="Topic:data" title="Draft of 'Representing text' by jsng" type="text/x-markdown">
+<div created="20210611011618961" creator="jsng" draft.of="Representing text" draft.title="Representing text" modified="20210611020550845" modifier="jsng" summary="In computers that can encode and decode ASCII, text is stored as a 7-bit sequence. Text consists of letters, numbers, symbols, and control codes." tags="Topic:data" title="Draft of 'Representing text' by jsng" type="text/x-markdown">
 <pre>How do computers represent text using 0s and 1s?
 
 Humans often use a simple mapping: A=1, B=2, C=3, and so on.
@@ -12905,29 +12911,31 @@ One encoding that is commonly used for plain text is known as the [[ASCII]] tabl
 
 &gt; {{ASCII background and history}}
 
-Symbols and spaces are easy enough to understand, and very welcome; if you’ve ever tried reading early telegrams (or using Morse code) you’ll appreciate their addition. But what is carriage return and line feed?
+Symbols and spaces are easy enough to understand, and very welcome; if you’ve ever tried reading early telegrams (or using Morse code) you’ll appreciate their addition. But what about carriage return and line feed?
 
 ## The typewriter
 
-With the advent of the typewriter, people had access to nicely formatted text. You could type text on multiple rows instead of one long row! But you had to remember to do the actions when using a typewriter for it to be formatted properly.
+With the advent of the typewriter, people had access to nicely formatted text. You could type text on multiple rows instead of one long row!
 
-![A typewriter on a table](https://github.com/ngjunsiang/laymansguide/blob/release/season4/issue041/issue041_03.jpg?raw=true)&lt;br /&gt;
-&lt;small&gt;The Underwood Five typewriter&lt;br /&gt;
-Image from [Wikimedia Commons](https://en.wikipedia.org/wiki/File:Underwoodfive.jpg)&lt;/small&gt;
+But you had to remember to do two things when using a typewriter for it to be formatted properly.
+
+![A typewriter on a table](images/issue041_03.jpg)
+The Underwood Five typewriter  
+Image from [Wikimedia Commons](https://en.wikipedia.org/wiki/File:Underwoodfive.jpg)
 
 There were two separate actions involved as you pulled the leftmost lever to the right: (1) The carriage, which holds the paper and moves a bit to the right after each letter is typed, now resets its position so you can start typing from the left again, and (2) the paper is moved up so you can begin typing on the next line.
 
-(1) is called a carriage return, (2) is called a line feed.
+(1) is called a **carriage return**, (2) is called a **line feed**.
 
-ITA2 could not only send letters and symbols, it could send formatting commands!
+In 1901, ITA2 could not only send letters and symbols, it could send formatting commands!
 
 ## ASCII proper
 
 The ASCII code chart expands the capabilities of ITA2, while requiring 7 bits for each character. Each character is situated in a specific row and column, out of 8 columns and 16 rows which are numbered starting from 0. (Note that 8 is 2^3 and requires 3 bits, 16 is 2^4 and requires 4 bits.)
 
-![ASCII code chart](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season4/issue041/issue041_04.png)&lt;br /&gt;
-&lt;small&gt;(An early version of) The US ASCII code chart. Each row number is represented by 4 bits, while each column number is represented by 3 bits.&lt;br /&gt;
-Image from [Wikimedia Commons](https://en.wikipedia.org/wiki/File:USASCII_code_chart.png)&lt;/small&gt;
+![ASCII code chart](images/issue041_04.png)
+An early version of) The US ASCII code chart. Each row number is represented by 4 bits, while each column number is represented by 3 bits.  
+Image from [Wikimedia Commons](https://en.wikipedia.org/wiki/File:USASCII_code_chart.png)
 
 Technical details aside, look at what ASCII has:
 
