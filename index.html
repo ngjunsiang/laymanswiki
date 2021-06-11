@@ -385,6 +385,8 @@ Error message and password prompt
 
 <li>HTTP request</li>
 
+<li>ISO 8859-1</li>
+
 <li>line feed</li>
 
 <li>newline</li>
@@ -875,7 +877,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="control codes" modified="20210611031412549" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="control codes" modified="20210611031426573" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1684,10 +1686,21 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;control codes&quot;
+    },
+    {
+        &quot;title&quot;: &quot;control codes&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 45.44999694824219,
+            &quot;left&quot;: 678.7833251953125,
+            &quot;width&quot;: 32.899993896484375,
+            &quot;right&quot;: 711.6833190917969,
+            &quot;bottom&quot;: 84.93333435058594,
+            &quot;height&quot;: 39.48333740234375
+        }
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[control codes]] [[HTTP request]] newline return [[encoding table]] Topic:data" modified="20210611031100298" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[HTTP request]] newline return [[encoding table]] Topic:data" modified="20210611031426569" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div created="20200510024843460" modified="20200603121638626" tags="$:/giffmex/stroll $:/giffmex/blinks" title="$:/config/EditorTypeMappings/text/vnd.tiddlywiki">
@@ -12797,8 +12810,8 @@ exports.context = contextWidget;
 <div created="20210609081303352" creator="jsng" modified="20210611021948872" modifier="jsng" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Plugins</pre>
 </div>
-<div created="20210609081257054" creator="jsng" modified="20210611021947551" modifier="jsng" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/More</pre>
+<div created="20210609081257054" creator="jsng" modified="20210611031423141" modifier="jsng" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div created="20210611013912622" creator="jsng" modified="20210611013912622" modifier="jsng" title="$:/state/tab/strolltabs--386877772">
 <pre>ASCII</pre>
@@ -12830,7 +12843,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210611022146064" creator="jsng" list="Contents [[Draft of 'Text representation in computers' by jsng]]" modified="20210611031120371" modifier="jsng" title="$:/StoryList">
+<div created="20210611022146064" creator="jsng" list="[[ISO 8859-1]] [[Draft of 'Text representation in computers' by jsng]]" modified="20210611031424222" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13107,7 +13120,7 @@ These two actions, and many others from the time of the telegraph, have been dig
 <div created="20210611030554268" creator="jsng" modified="20210611030555371" modifier="jsng" title="decode">
 <pre>See [[encoding table]].</pre>
 </div>
-<div created="20210611011618961" creator="jsng" draft.of="Text representation in computers" draft.title="Text representation in computers" modified="20210611031349894" modifier="jsng" summary="In computers that can encode and decode ASCII, text is stored as a 7-bit sequence. Text consists of letters, numbers, symbols, and control codes." tags="Topic:data todo:refactor" title="Draft of 'Text representation in computers' by jsng" type="text/x-markdown">
+<div created="20210611011618961" creator="jsng" draft.of="Text representation in computers" draft.title="Text representation in computers" modified="20210611031749400" modifier="jsng" summary="In computers that can encode and decode ASCII, text is stored as a 7-bit sequence. Text consists of letters, numbers, symbols, and control codes." tags="Topic:data todo:refactor" title="Draft of 'Text representation in computers' by jsng" type="text/x-markdown">
 <pre>How do computers represent text using 0s and 1s?
 
 Humans often use a simple mapping: A=1, B=2, C=3, and so on.
@@ -13126,12 +13139,63 @@ ASCII introduced punctuation symbols. It also introduced [[control codes]]: unpr
 
 Side reading: [[ASCII code table]]
 
-Remember this image from Issue 12?
+But plain ASCII is unable to represent accented characters (such as á), umlauts (like ö), and emojis, as well as glyphs (symbols) used in Greek, Cyrillic, Chinese, Japanese, and other languages?
 
-![An HTTP request captured in Wireshark showing my developer API key](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season1/issue012/issue012_01.png)&lt;br /&gt;
-An HTTP request captured in Wireshark.
+This shortcoming made ASCII unsuitable for use in other countries and cultures that needed those characters. It did not allow them to communicate effectively in their own languages.
 
-The `\r` and `\n` you see there are control codes. They stand for '[[return]]' and '[[newline]]', the modern equivalent of 'carriage return' and 'line feed'.</pre>
+In 1985, the European Computer Manufacturers Association (ECMA) extended US-[[ASCII]] into the ISO 8859-1 [[encoding table]]. In ISO 8859-1, each character is represented by 8 bits. Let’s look at some numbers:
+
+Characters needed minimally (lower- + upper-case, and numerals): 26+26+10 = 62  
+Common symbols: 30  
+7 bits can encode 2^7 = 128 different characters  
+8 bits can encode 2^8 = 256 different characters
+
+8 bits was enough to provide for a number of additional glyphs seen below. But very quickly it ran into limitations as well. 256 characters just aren’t enough!
+
+
+![ISO 8859-1](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Latin-1-infobox.svg/800px-Latin-1-infobox.svg.png)
+&lt;small&gt;The ISO 8859-1 characters&lt;/small&gt;
+
+
+## Encoding hell
+
+Computer systems in these other countries soon came up with their own ways of representing the huge number of glyphs they needed. There were other ISO 8859-* encoding systems which I do not want to list. The Chinese had GB encoding on the mainland, Big5 in Taiwan, and numerous extensions on that. The Japanese used Shift-JIS.
+
+It was encoding hell.
+
+If you remember the internet circa the ’90s and early ’00s, the internet often had pages of what looked like gibberish. Because webpages then did not include information about their encoding, most of the time web browsers simply had to guess. If your page wasn’t encoded in ASCII (or ISO 8859-1), it was anybody’s guess what encoding you were using. You just tried each encoding until you got a page that makes sense!
+
+That simply would not do.
+
+## Origins of Unicode
+
+In 1988, a bunch of engineers from Xerox and Apple started thinking about a universal encoding that can encompass all languages. The first volume of this encoding was published in 1991, with extensions added subsequently.
+
+At that point, a Unicode character was represented using 16 bits (for a possible 65,536 characters!). In 1996, a method of extending the Unicode scheme was added, so that Unicode could easily represented over a million different characters!
+
+## Unicode today
+
+Today, the global significance of the internet has resulted in Unicode being the standard encoding on any interface a user interacts with.
+
+If something you try to submit in a form (such as your name) or view on a page does not display properly, chances are the service you are interacting with has not updated itself with proper Unicode support yet. Write a support request to them and ask for it to be done!
+
+One big reason for the increased support in Unicode is the space that was set aside for emoji … more evidence that war may drive the development of technology, but it is social factors that lead to its widespread adoption :)
+
+## Cool things about Unicode
+
+Aside from the fact that it could include encodings for just about any character in any language, here are some things about Unicode which _may not be entirely relevant_ for the layperson, but I think are good to know. Feel free to skip this section.
+
+- Unicode is able to “craft” characters by combining multiple glyphs.
+  - For instance, a&amp;#773; is not represented with a single character, but can be printed through combining the 'a' glyph with the ◌̅  (Combining Overline) glyph.
+- Unicode has an area set aside for alternate character representations.
+  - For instance, “fl” is sometimes stylistically combined into an “ﬂ” ligature; there is room for this ligature in Unicode. (Try to select the ‘fl’s above if you can’t see the difference.)
+  - Some high-quality fonts provide such alternate glyph representations, and with the right software (such as Adobe InDesign) you can make use of them.
+  - Some languages (e.g. Arabic) actually require ligatures for combining adjacent glyphs, so this is a pretty big deal.
+- With the right font type (i.e. [OpenType](https://en.wikipedia.org/wiki/OpenType)), you can actually include programmatic features though Unicode.
+  - [FF Chartwell](https://typographica.org/typeface-reviews/chartwell/) is a font for creating mini-charts just by typing!
+  - The font uses ligatures to turn numbers into a mini chart.
+- Unicode has a &quot;Private Use Area&quot; that you can use for your own private purposes. You can insert symbols from this area for use in a webpage.
+  - I have seen websites use this to create custom icons that can scale in size and change colour easily, just like text.</pre>
 </div>
 <div created="20210611030532554" creator="jsng" modified="20210611030548790" modifier="jsng" title="encode">
 <pre>See [[encoding table]].</pre>
@@ -13149,6 +13213,9 @@ A computer uses an encoding table to [[encode]] characters into their binary (0s
 An HTTP request captured in Wireshark.
 
 The `\r` and `\n` you see there are control codes. They stand for '[[return]]' and '[[newline]]', the modern equivalent of 'carriage return' and 'line feed'.</pre>
+</div>
+<div created="20210611031810707" creator="jsng" modified="20210611031821783" modifier="jsng" tags="" title="ISO 8859-1" type="text/x-markdown">
+<pre></pre>
 </div>
 <div created="20210611023323056" creator="jsng" modified="20210611023323056" modifier="jsng" title="line feed">
 <pre></pre>
