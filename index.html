@@ -937,7 +937,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="lossy image compression" modified="20210611090527358" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="lossy image compression" modified="20210611091124797" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2164,6 +2164,12 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;Audio representation in computers&quot;
+    },
+    {
+        &quot;title&quot;: &quot;lossy image compression&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'lossy image compression' by jsng&quot;
     },
     {
         &quot;title&quot;: &quot;lossy image compression&quot;
@@ -13954,7 +13960,7 @@ Human voice frequency typically ranges from 85 to 255 Hz, and only covers a rang
 
 That, in a nutshell, is how we get such small images and audio files on the internet. If you’re particularly sensitive you can often make out the difference caused by this lost information. But most of the time, we’re not listening or looking closely, and it’s easy to overlook such minor differences.</pre>
 </div>
-<div created="20210611085326546" creator="jsng" list-after="[[Colour representation in computers]]" modified="20210611090527344" modifier="jsng" tags="" title="lossy image compression" type="text/x-markdown">
+<div created="20210611085326546" creator="jsng" list-after="[[Colour representation in computers]]" modified="20210611091124787" modifier="jsng" tags="" title="lossy image compression" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 # Luma and chroma
@@ -13967,24 +13973,29 @@ A black-and-white image has only luma information (brightness), while a colour i
 A photograph shown with luminance only, chrominance only, and both.  
 By Algr - Own work, [CC BY-SA 3.0](https://commons.wikimedia.org/w/index.php?curid=31044071)
 
-So that’s another way of representing image information: you can either represent it as RGB (red-green-blue) colour values, or YUV (1 luma value, Y, and 2 chroma values, U &amp; V). In RGB, all 3 colour components are equally important and you can’t treat them differently, but in YUV you _can_ process them differently to achieve lossy compression.
+So that’s another way of representing image information: you can either represent it as RGB (red-green-blue) colour values, or YUV (1 luma value: Y, and 2 chroma values: U &amp; V).
 
-# Lossy image compression: chroma
+In RGB, all 3 colour components are equally important and you can’t treat them differently, but in YUV you _can_ process them differently to achieve lossy compression.
 
-Since the human eye is less sensitive to chroma (colour) information, in the JPEG image format, the chroma components are compressed by averaging each 2×2 group of pixels into 1 value for U and V each. (This process is known as subsampling.) Theoretically that halves the amount of data required for the same image! (4/4 Y + 1/4 U + 1/4 V = 6/12 of the original information)
+# Compressing chroma
 
-![4 images with different chroma subsampling](https://github.com/ngjunsiang/laymansguide/blob/release/season4/issue046/issue046_01.jpg?raw=true)&lt;br /&gt;
-&lt;small&gt;Compare the image without chroma compression (4:4:4) to the image with chroma compression (4:2:0).&lt;br /&gt;
-Without scrutiny, the human eye is not very sensitive to lower resolution in chroma.&lt;br /&gt;
-Image from [Wikimedia Commons](https://en.wikipedia.org/wiki/File:Colorcomp.jpg)&lt;/small&gt;
+Since the human eye is less sensitive to chroma (colour) information, in the JPEG image format, the chroma components are compressed by averaging each 2×2 group of pixels into 1 value for U and V each. (This process is known as [[subsampling]].)
+
+Theoretically, that reduces the chroma data by 3/4ths! This translates to a 50% data reduction for the same image!&lt;&lt;fnote &quot;Uncompressed Y + 1/4 U + 1/4 V = 6/12 of the original information.&quot;&gt;&gt;
+
+
+![4 images with different chroma subsampling](images//issue046_01.jpg)&lt;br /&gt;
+Compare the image without chroma compression (labelled 4:4:4) to the image with chroma compression (labelled 4:2:0).  
+Without scrutiny, the human eye is not very sensitive to lower resolution in chroma.  
+Image from [Wikimedia Commons](https://en.wikipedia.org/wiki/File:Colorcomp.jpg)
 
 # Lossy image compression: luma
 
-Furthermore, even within the luma channel (i.e. looking at luma information only), the human eye is more sensitive to sharp changes in brightness across adjacent pixels than gradual changes in brightness across adjacent pixels. Through a Discrete Cosine Transform (DCT) algorithm, a computer can separate the luma information and differentiate parts with sharper changes, and parts with gradual changes.
+Even within the luma channel (i.e. looking at luma information only), the human eye is more sensitive to sharp changes in brightness across adjacent pixels than gradual changes in brightness across adjacent pixels. Through a Discrete Cosine Transform (DCT) algorithm, a computer can separate the luma information and differentiate parts with sharper changes, and parts with gradual changes.
 
-As the compression level increases (this is the quality setting you often play with in Photoshop and other image-editing software), the computer increasingly discards more and more information, starting from the gradual-change information. For photograph images, you will generally hit diminishing returns below 85%: each 1% decrease in quality brings you less and less savings on filesize.
+As the compression level increases (this is the quality setting you often play with in Photoshop and other image-editing software), the computer increasingly discards more and more information, starting from the gradual-change information.
 
-And that, in a nutshell, is how most lossy image compression works, and how the JPEG format works (well, okay, I’ve explained the main 30% of it maybe).</pre>
+For photograph images, you will generally hit diminishing returns below 85%: each 1% decrease in quality brings you less and less savings on filesize.</pre>
 </div>
 <div created="20210611063507523" creator="jsng" modified="20210611063507523" modifier="jsng" title="LPCM">
 <pre></pre>
