@@ -369,8 +369,6 @@ Error message and password prompt
 
 <li>Contents</li>
 
-<li>Draft of 'Representing text' by jsng</li>
-
 <li>encoding table</li>
 
 <li>Glossary</li>
@@ -12655,7 +12653,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div list="Contents" title="$:/StoryList">
+<div created="20210611022146064" creator="jsng" list="Contents [[Representing text]]" modified="20210611022146064" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -12900,7 +12898,21 @@ The symbol for a byte is **B** (uppercase).</pre>
 &lt;&lt;toc-selective-expandable 'Contents'&gt;&gt;
 &lt;/div&gt;</pre>
 </div>
-<div created="20210611011618961" creator="jsng" draft.of="Representing text" draft.title="Representing text" modified="20210611020804795" modifier="jsng" summary="In computers that can encode and decode ASCII, text is stored as a 7-bit sequence. Text consists of letters, numbers, symbols, and control codes." tags="Topic:data" title="Draft of 'Representing text' by jsng" type="text/x-markdown">
+<div created="20210611011954773" creator="jsng" modified="20210611012049903" modifier="jsng" tags="Glossary" title="encoding table" type="text/x-markdown">
+<pre>An encoding table stores a list of characters, and the numbers that represent them.</pre>
+</div>
+<div created="20210610075627131" creator="jsng" list-after="" modified="20210611011525501" modifier="jsng" tags="Contents" title="Glossary" type="text/x-markdown">
+<pre>&lt;&lt;list-links &quot;[tag[Glossary]sort[title]]&quot;&gt;&gt;</pre>
+</div>
+<div created="20210610084811774" creator="jsng" modified="20210611013739628" modifier="jsng" tags="" title="prereqTemplate" type="text/x-markdown">
+<pre>&lt;$set name=&quot;header&quot; value=&quot;Some text&quot;&gt;
+## Read first:
+
+{{!!list-after}}
+
+&lt;hr&gt;</pre>
+</div>
+<div created="20210611011618961" creator="jsng" modified="20210611022435255" modifier="jsng" summary="In computers that can encode and decode ASCII, text is stored as a 7-bit sequence. Text consists of letters, numbers, symbols, and control codes." tags="Topic:data todo:refactor" title="Representing text" type="text/x-markdown">
 <pre>How do computers represent text using 0s and 1s?
 
 Humans often use a simple mapping: A=1, B=2, C=3, and so on.
@@ -12935,149 +12947,20 @@ There were two separate actions involved as you pulled the leftmost lever to the
 
 In 1901, ITA2 could not only send letters and symbols, it could already send formatting commands!
 
-## ASCII proper
+## The ASCII code table
 
-The ASCII code chart expanded the capabilities of ITA2, but required 7 bits for each character. Each character is situated in a specific row and column, out of 8 columns and 16 rows which are numbered starting from 0. (Note that 8 is 2^3 and requires 3 bits, 16 is 2^4 and requires 4 bits.)
-
-![ASCII code chart](images/issue041_04.png)&lt;br/&gt;
-(An early version of) The US ASCII code chart. Each row number is represented by 4 bits, while each column number is represented by 3 bits.  
-Image from [Wikimedia Commons](https://en.wikipedia.org/wiki/File:USASCII_code_chart.png)
-
-Technical details aside, look at what ASCII has:
-
-- Symbols and numbers (mainly columns 2 and 3, but also scattered elsewhere)
-- Upper _and_ lowercase letters (columns 4 to 7)
-- Lots and lots of control codes! (columns 0 and 1)
-
-What do these control codes mean?
-
-- `NUL` stands for null, a placeholder code for when the machine wasn’t transmitting.
-- `SOH`: start of header, to indicate the portion of the transmission that contained information about the message.
-- `STX` and `ETX`: start of text and end of text, to indicate the message portion.
-- `EOT`: end of transmission.
-- `DEL`: to delete the previous character (hello, backspace).
-- `CR` and `LF`: we just met them, carriage return and line feed.
-
-I won’t explain the rest in this supposedly-short newsletter, but if you’re interested the full list is [on Wikipedia](https://en.wikipedia.org/wiki/ASCII#Control_characters).
+&gt; {{ASCII code table}}
 
 ## ASCII today
 
-In a basic text file, text is still stored using ASCII (although it has seen some modifications since). Some of the control codes are obsolete, while some are still in use today. Remember this image from Issue 12?
+In a basic text file, text is still stored using [[ASCII]] (although it has seen some modifications since). Some of the control codes are obsolete, while some are still in use today. Remember this image from Issue 12?
 
 ![An HTTP request captured in Wireshark showing my developer API key](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season1/issue012/issue012_01.png)&lt;br /&gt;
-&lt;small&gt;An HTTP request captured in Wireshark.&lt;/small&gt;
+An HTTP request captured in Wireshark.
 
-The `\r` and `\n` you see there are control codes. They stand for 'return' and 'newline', the modern equivalent of 'carriage return' and 'line feed'.
+The `\r` and `\n` you see there are control codes. They stand for '[[return]]' and '[[newline]]', the modern equivalent of 'carriage return' and 'line feed'.
 
-Formatting codes are well and alive today, and they are more prosperous than ever! Without formatting codes, all our files would be stored only in the same boring format, represented only as letters and numbers and punctuation marks.
-
-And there you have it.</pre>
-</div>
-<div created="20210611011954773" creator="jsng" modified="20210611012049903" modifier="jsng" tags="Glossary" title="encoding table" type="text/x-markdown">
-<pre>An encoding table stores a list of characters, and the numbers that represent them.</pre>
-</div>
-<div created="20210610075627131" creator="jsng" list-after="" modified="20210611011525501" modifier="jsng" tags="Contents" title="Glossary" type="text/x-markdown">
-<pre>&lt;&lt;list-links &quot;[tag[Glossary]sort[title]]&quot;&gt;&gt;</pre>
-</div>
-<div created="20210610084811774" creator="jsng" modified="20210611013739628" modifier="jsng" tags="" title="prereqTemplate" type="text/x-markdown">
-<pre>&lt;$set name=&quot;header&quot; value=&quot;Some text&quot;&gt;
-## Read first:
-
-{{!!list-after}}
-
-&lt;hr&gt;</pre>
-</div>
-<div created="20210611011618961" creator="jsng" modified="20210611014202093" modifier="jsng" summary="In computers that can encode and decode ASCII, text is stored as a 7-bit sequence. Text consists of letters, numbers, symbols, and control codes." tags="Topic:data" title="Representing text" type="text/x-markdown">
-<pre>How do computers represent text using 0s and 1s?
-
-Humans often use a simple mapping: A=1, B=2, C=3, and so on.
-
-A computer does something more complicated: it keeps a table of characters and the numbers that represent them, in an **encoding table**.
-
-&gt; {{encoding table}}
-
-One encoding that is commonly used for plain text is known as the [[ASCII]] table.
-
-&gt; {{ASCII}}
-
-## ASCII background and history
-
-[[ASCII]] actually predates the internet! (We had computers way longer than we had the Internet, after all.)
-
-In the 1960s, Morse code was the standard in telegraph transmission until the 1900s, when the [Murray code](https://en.wikipedia.org/wiki/Baudot_code#Murray_code) was used instead (itself derived from the earlier Baudot code).
-
-The Murray code employed a keyboard much like a typewriter’s. This was an improvement over Morse code, because instead of tapping a single control key (like you see in classic movies), you can now use **all five fingers** of the hand to type.
-
-In the 1920s, the Murray code was developed into the International Telegraph Alphabet No. 2 code (ITA2 code). Behold:
-
-![ITA2 table](https://github.com/ngjunsiang/laymansguide/blob/release/season4/issue041/issue041_01.jpg?raw=true)&lt;br /&gt;
-&lt;small&gt;Image from [Wikimedia Commons](https://en.wikipedia.org/wiki/File:International_Telegraph_Alphabet_2.jpg)&lt;/small&gt;
-
-But the Murray code actually used more bits to transmit the same information! In Morse code, every letter is represented with between 1 to 5 symbols. Each symbol is either a dash or a dot:
-
-![Morse Code table](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season4/issue041/issue041_02.png)&lt;br /&gt;
-&lt;small&gt;Image from [Wikimedia Commons](https://en.wikipedia.org/wiki/File:International_Morse_Code.svg)&lt;/small&gt;
-
-What do we gain from using more symbols to transmit each number or letter? If you compare the two, you see that ITA2 has some things that are missing in Morse code:
-
-- Spaces
-- Carriage return
-- Line feed
-- Symbols
-
-Symbols and spaces are easy enough to understand, and very welcome; if you’ve ever tried reading early telegrams (or using Morse code) you’ll appreciate their addition. But what is carriage return and line feed?
-
-## The typewriter
-
-With the advent of the typewriter, people had access to nicely formatted text. You could type text on multiple rows instead of one long row! But you had to remember to do the actions when using a typewriter for it to be formatted properly.
-
-![A typewriter on a table](https://github.com/ngjunsiang/laymansguide/blob/release/season4/issue041/issue041_03.jpg?raw=true)&lt;br /&gt;
-&lt;small&gt;The Underwood Five typewriter&lt;br /&gt;
-Image from [Wikimedia Commons](https://en.wikipedia.org/wiki/File:Underwoodfive.jpg)&lt;/small&gt;
-
-There were two separate actions involved as you pulled the leftmost lever to the right: (1) The carriage, which holds the paper and moves a bit to the right after each letter is typed, now resets its position so you can start typing from the left again, and (2) the paper is moved up so you can begin typing on the next line.
-
-(1) is called a carriage return, (2) is called a line feed.
-
-ITA2 could not only send letters and symbols, it could send formatting commands!
-
-## ASCII proper
-
-The ASCII code chart expands the capabilities of ITA2, while requiring 7 bits for each character. Each character is situated in a specific row and column, out of 8 columns and 16 rows which are numbered starting from 0. (Note that 8 is 2^3 and requires 3 bits, 16 is 2^4 and requires 4 bits.)
-
-![ASCII code chart](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season4/issue041/issue041_04.png)&lt;br /&gt;
-&lt;small&gt;(An early version of) The US ASCII code chart. Each row number is represented by 4 bits, while each column number is represented by 3 bits.&lt;br /&gt;
-Image from [Wikimedia Commons](https://en.wikipedia.org/wiki/File:USASCII_code_chart.png)&lt;/small&gt;
-
-Technical details aside, look at what ASCII has:
-
-- Symbols and numbers (mainly columns 2 and 3, but also scattered elsewhere)
-- Upper _and_ lowercase letters (columns 4 to 7)
-- Lots and lots of control codes! (columns 0 and 1)
-
-What do these control codes mean?
-
-- `NUL` stands for null, a placeholder code for when the machine wasn’t transmitting.
-- `SOH`: start of header, to indicate the portion of the transmission that contained information about the message.
-- `STX` and `ETX`: start of text and end of text, to indicate the message portion.
-- `EOT`: end of transmission.
-- `DEL`: to delete the previous character (hello, backspace).
-- `CR` and `LF`: we just met them, carriage return and line feed.
-
-I won’t explain the rest in this supposedly-short newsletter, but if you’re interested the full list is [on Wikipedia](https://en.wikipedia.org/wiki/ASCII#Control_characters).
-
-## ASCII today
-
-In a basic text file, text is still stored using ASCII (although it has seen some modifications since). Some of the control codes are obsolete, while some are still in use today. Remember this image from Issue 12?
-
-![An HTTP request captured in Wireshark showing my developer API key](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season1/issue012/issue012_01.png)&lt;br /&gt;
-&lt;small&gt;An HTTP request captured in Wireshark.&lt;/small&gt;
-
-The `\r` and `\n` you see there are control codes. They stand for 'return' and 'newline', the modern equivalent of 'carriage return' and 'line feed'.
-
-Formatting codes are well and alive today, and they are more prosperous than ever! Without formatting codes, all our files would be stored only in the same boring format, represented only as letters and numbers and punctuation marks.
-
-And there you have it.</pre>
+Formatting codes are well and alive today, and they are more prosperous than ever! Without formatting codes, all our files would be stored only in the same boring format, represented only as letters and numbers and punctuation marks.</pre>
 </div>
 <div created="20210610095326608" creator="jsng" modified="20210611011255427" modifier="jsng" tags="" title="tagPageTemplate" type="text/x-markdown">
 <pre>#  {{!!caption}}
