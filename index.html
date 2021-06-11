@@ -875,7 +875,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="control codes" modified="20210611031110049" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="control codes" modified="20210611031412549" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1675,6 +1675,12 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;Draft of 'New Tiddler' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;control codes&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'control codes' by jsng&quot;
     },
     {
         &quot;title&quot;: &quot;control codes&quot;
@@ -12824,7 +12830,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210611022146064" creator="jsng" list="Contents [[Draft of 'Text representation in computers' by jsng]]" modified="20210611030909755" modifier="jsng" title="$:/StoryList">
+<div created="20210611022146064" creator="jsng" list="Contents [[Draft of 'Text representation in computers' by jsng]]" modified="20210611031120371" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13076,30 +13082,8 @@ The symbol for a byte is **B** (uppercase).</pre>
 &lt;&lt;toc-selective-expandable 'Contents'&gt;&gt;
 &lt;/div&gt;</pre>
 </div>
-<div created="20210611031058234" creator="jsng" modified="20210611031110045" modifier="jsng" tags="" title="control codes">
-<pre></pre>
-</div>
-<div created="20210611030554268" creator="jsng" modified="20210611030555371" modifier="jsng" title="decode">
-<pre>See [[encoding table]].</pre>
-</div>
-<div created="20210611011618961" creator="jsng" draft.of="Text representation in computers" draft.title="Text representation in computers" modified="20210611031033148" modifier="jsng" summary="In computers that can encode and decode ASCII, text is stored as a 7-bit sequence. Text consists of letters, numbers, symbols, and control codes." tags="Topic:data todo:refactor" title="Draft of 'Text representation in computers' by jsng" type="text/x-markdown">
-<pre>How do computers represent text using 0s and 1s?
-
-Humans often use a simple mapping: A=1, B=2, C=3, and so on.
-
-A computer does something more complicated: it keeps a table of characters and the numbers that represent them, in an [[encoding table]].
-
-&gt; {{encoding table}}
-
-One encoding that is commonly used for plain text is known as the [[ASCII]] table.
-
-&gt; {{ASCII}}
-
-ASCII introduced punctuation symbols. It also introduced control codes: unprintable characters which determined the formatting of text, or changed the way it is to be interpreted.
-
-Side reading: [[ASCII background and history]]
-
-The need for punctuation is easy enough to understand, and very welcome; if you’ve ever tried reading early telegrams (or using Morse code) you’ll appreciate their addition. But what purpose do control codes such as carriage return and line feed serve?
+<div created="20210611031058234" creator="jsng" modified="20210611031412544" modifier="jsng" tags="" title="control codes" type="text/x-markdown">
+<pre>The need for punctuation is easy enough to understand, and very welcome; if you’ve ever tried reading early telegrams (or using Morse code) you’ll appreciate their addition. But what purpose do control codes such as [[carriage return]] and [[line feed]] serve?
 
 ## The typewriter
 
@@ -13118,7 +13102,27 @@ There were two separate actions involved as you pulled the leftmost lever to the
 
 (1) is called a [[carriage return]], (2) is called a [[line feed]].
 
-These two actions, and many others from the time of the telegraph, have been digitised into the [[ASCII code table]], some of which are still used in text files today to control the display of text.
+These two actions, and many others from the time of the telegraph, have been digitised into the [[ASCII code table]], some of which are still used in text files today to control the display of text.</pre>
+</div>
+<div created="20210611030554268" creator="jsng" modified="20210611030555371" modifier="jsng" title="decode">
+<pre>See [[encoding table]].</pre>
+</div>
+<div created="20210611011618961" creator="jsng" draft.of="Text representation in computers" draft.title="Text representation in computers" modified="20210611031349894" modifier="jsng" summary="In computers that can encode and decode ASCII, text is stored as a 7-bit sequence. Text consists of letters, numbers, symbols, and control codes." tags="Topic:data todo:refactor" title="Draft of 'Text representation in computers' by jsng" type="text/x-markdown">
+<pre>How do computers represent text using 0s and 1s?
+
+Humans often use a simple mapping: A=1, B=2, C=3, and so on.
+
+A computer does something more complicated: it keeps a table of characters and the numbers that represent them, in an [[encoding table]].
+
+&gt; {{encoding table}}
+
+One encoding that is commonly used for plain text is known as the [[ASCII]] table.
+
+&gt; {{ASCII}}
+
+Side reading: [[ASCII background and history]]
+
+ASCII introduced punctuation symbols. It also introduced [[control codes]]: unprintable characters which determined the formatting of text, or changed the way it is to be interpreted.
 
 Side reading: [[ASCII code table]]
 
