@@ -12779,7 +12779,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210612033611205" creator="jsng" list="FFT DCT [[lossy image compression]]" modified="20210612033931412" modifier="jsng" title="$:/StoryList">
+<div created="20210612033611205" creator="jsng" list="[[lossy image compression]]" modified="20210612033931412" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13214,7 +13214,7 @@ Main article: [[lossy image compression]]</pre>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210611091158041" creator="jsng" draft.of="lossy audio compression" draft.title="lossy audio compression" modified="20210612033922485" modifier="jsng" title="Draft of 'lossy audio compression' by jsng" type="text/x-markdown">
+<div created="20210611091158041" creator="jsng" draft.of="lossy audio compression" draft.title="lossy audio compression" modified="20210612034739172" modifier="jsng" title="Draft of 'lossy audio compression' by jsng" type="text/x-markdown">
 <pre>If you are all about the bass, or you like tweaking with sound settings, or you have worked with audio systems before e.g. for a performance or for your school’s events, you would have used an equaliser at some point.
 
 ![Image of a guitar equaliser with volume, treble, middle, and bass knobs](images/Clean-2BAmp-2BSettings.jpg)&lt;br /&gt;
@@ -13224,7 +13224,7 @@ Source: [Guitar Chalk](https://www.guitarchalk.com/optimal-clean-settings-for-yo
 
 An equaliser is a device or software application that lets you adjust how much bass (low pitch), medium (middle pitch), and treble (high pitch) you want from the sound. How is the system able to do that?
 
-Through mathematical formulas known as [[transform]]s! [[DCT]] is one such transform, used for [[lossy image compression]]. Audio formats often use another one, known as the Fast Fourier Transform ([[FFT]]). (Aren’t you glad this is a newsletter about computing and not about math?) Anyway, a transform lets us transform information organised by position (e.g. in images) or by time (e.g. in audio) into information organised by other properties, such as frequency.
+Through mathematical formulas known as [[transform]]s! [[DCT]] is one such transform, used for [[lossy image compression]]. Audio formats often use another one, known as the [Fast Fourier Transform](https://en.wikipedia.org/wiki/Fast_Fourier_transform) ([[FFT]]). (Aren’t you glad this is a newsletter about computing and not about math?) Anyway, a transform lets us transform information organised by position (e.g. in images) or by time (e.g. in audio) into information organised by other properties, such as frequency.
 
 The FFT algorithm organises audio information (for a certain time length) by frequency. Depending on your equaliser settings, it increases or decreases the weightage of different frequencies to produce the sound you want, be it bass-heavy rock or medium-light jazz.
 
@@ -13389,7 +13389,7 @@ Main article: [[lossy image compression]]
 
 Main article: [[lossy audio compression]]</pre>
 </div>
-<div created="20210611085326546" creator="jsng" list-after="[[Colour representation in computers]]" modified="20210612033840235" modifier="jsng" tags="" title="lossy image compression" type="text/x-markdown">
+<div created="20210611085326546" creator="jsng" list-after="[[Colour representation in computers]]" modified="20210612034759733" modifier="jsng" tags="" title="lossy image compression" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 # Luma and chroma
@@ -13420,7 +13420,7 @@ Image from [Wikimedia Commons](https://en.wikipedia.org/wiki/File:Colorcomp.jpg)
 
 # Lossy image compression: luma
 
-Even within the luma channel (i.e. looking at luma information only), the human eye is more sensitive to sharp changes in brightness across adjacent pixels than gradual changes in brightness across adjacent pixels. Through a Discrete Cosine Transform algorithm ([[DCT]]), a computer can separate the luma information and differentiate parts with sharper changes, and parts with gradual changes.
+Even within the luma channel (i.e. looking at luma information only), the human eye is more sensitive to sharp changes in brightness across adjacent pixels than gradual changes in brightness across adjacent pixels. Through a [Discrete Cosine Transform](https://en.wikipedia.org/wiki/Discrete_cosine_transform) algorithm ([[DCT]]), a computer can separate the luma information and differentiate parts with sharper changes, and parts with gradual changes.
 
 As the compression level increases (this is the quality setting you often play with in Photoshop and other image-editing software), the computer increasingly discards more and more information, starting from the gradual-change information.
 
