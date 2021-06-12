@@ -405,6 +405,8 @@ Error message and password prompt
 
 <li>encoding table</li>
 
+<li>FFT</li>
+
 <li>Glossary</li>
 
 <li>HTTP request</li>
@@ -941,7 +943,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="DCT" modified="20210612033827874" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="FFT" modified="20210612033928988" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1610,10 +1612,21 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;DCT&quot;
+    },
+    {
+        &quot;title&quot;: &quot;FFT&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 722.4000244140625,
+            &quot;left&quot;: 1531.7666015625,
+            &quot;width&quot;: 23.683334350585938,
+            &quot;right&quot;: 1555.449935913086,
+            &quot;bottom&quot;: 740.4000244140625,
+            &quot;height&quot;: 18
+        }
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[Draft of 'lossy audio compression' by jsng]] Welcome Topic:data" modified="20210611085337017" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[Draft of 'lossy audio compression' by jsng]] Welcome Topic:data" modified="20210612033928986" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -12766,7 +12779,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210612033611205" creator="jsng" list="[[lossy image compression]]" modified="20210612033611205" modifier="jsng" title="$:/StoryList">
+<div created="20210612033611205" creator="jsng" list="FFT DCT [[lossy image compression]]" modified="20210612033931412" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13201,7 +13214,7 @@ Main article: [[lossy image compression]]</pre>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210611091158041" creator="jsng" draft.of="lossy audio compression" draft.title="lossy audio compression" modified="20210612033634086" modifier="jsng" title="Draft of 'lossy audio compression' by jsng" type="text/x-markdown">
+<div created="20210611091158041" creator="jsng" draft.of="lossy audio compression" draft.title="lossy audio compression" modified="20210612033922485" modifier="jsng" title="Draft of 'lossy audio compression' by jsng" type="text/x-markdown">
 <pre>If you are all about the bass, or you like tweaking with sound settings, or you have worked with audio systems before e.g. for a performance or for your school’s events, you would have used an equaliser at some point.
 
 ![Image of a guitar equaliser with volume, treble, middle, and bass knobs](images/Clean-2BAmp-2BSettings.jpg)&lt;br /&gt;
@@ -13211,7 +13224,7 @@ Source: [Guitar Chalk](https://www.guitarchalk.com/optimal-clean-settings-for-yo
 
 An equaliser is a device or software application that lets you adjust how much bass (low pitch), medium (middle pitch), and treble (high pitch) you want from the sound. How is the system able to do that?
 
-Through mathematical formulas known as [[transform]]s! DCT, mentioned earlier, is one such transform; audio formats often use another one, known as the Fast Fourier Transform (FFT). (Aren’t you glad this is a newsletter about computing and not about math?) Anyway, a transform lets us transform information organised by position (e.g. in images) or by time (e.g. in audio) into information organised by other properties, such as frequency.
+Through mathematical formulas known as [[transform]]s! [[DCT]] is one such transform, used for [[lossy image compression]]. Audio formats often use another one, known as the Fast Fourier Transform ([[FFT]]). (Aren’t you glad this is a newsletter about computing and not about math?) Anyway, a transform lets us transform information organised by position (e.g. in images) or by time (e.g. in audio) into information organised by other properties, such as frequency.
 
 The FFT algorithm organises audio information (for a certain time length) by frequency. Depending on your equaliser settings, it increases or decreases the weightage of different frequencies to produce the sound you want, be it bass-heavy rock or medium-light jazz.
 
@@ -13240,6 +13253,11 @@ That, in a nutshell, is how we get such small images and audio files on the inte
 <pre>An **encoding table** stores a list of characters, and the numbers that represent them.
 
 A computer uses an encoding table to [[encode]] characters into their binary (0s and 1s) representation, and to [[decode]] binary data into its text representation.</pre>
+</div>
+<div created="20210612033939366" creator="jsng" modified="20210612034040431" modifier="jsng" title="FFT">
+<pre>A mathematical algorithm that converts audio [[waveform]] data into information about how much each frequency of sound&lt;&lt;fnote &quot;frequency refers to the pitch of the sound&quot;&gt;&gt; is represented.
+
+Main article: [[lossy audio compression]]</pre>
 </div>
 <div created="20210610075627131" creator="jsng" list-after="" modified="20210611011525501" modifier="jsng" tags="Contents" title="Glossary" type="text/x-markdown">
 <pre>&lt;&lt;list-links &quot;[tag[Glossary]sort[title]]&quot;&gt;&gt;</pre>
