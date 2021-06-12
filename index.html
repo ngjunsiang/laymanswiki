@@ -937,7 +937,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="lossy audio compression" modified="20210611091241531" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="lossy audio compression" modified="20210612033300707" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2190,6 +2190,12 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 361.7833251953125,
             &quot;height&quot;: 18
         }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'lossy audio compression' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;lossy audio compression&quot;
     },
     {
         &quot;title&quot;: &quot;Draft of 'lossy audio compression' by jsng&quot;
@@ -13316,8 +13322,8 @@ exports.context = contextWidget;
 <div created="20210610111839871" creator="jsng" modified="20210611001127579" modifier="jsng" title="$:/state/tab-352448052">
 <pre>$:/tags/Stylesheet</pre>
 </div>
-<div created="20210609081303352" creator="jsng" modified="20210611084727859" modifier="jsng" title="$:/state/tab/moresidebar-1850697562">
-<pre>$:/core/ui/MoreSideBar/All</pre>
+<div created="20210609081303352" creator="jsng" modified="20210612033105385" modifier="jsng" title="$:/state/tab/moresidebar-1850697562">
+<pre>$:/core/ui/MoreSideBar/System</pre>
 </div>
 <div created="20210609081257054" creator="jsng" modified="20210611083145773" modifier="jsng" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/More</pre>
@@ -13328,8 +13334,8 @@ exports.context = contextWidget;
 <div created="20210610065832479" modified="20210610065835069" title="$:/state/tab/strolltabs--486725550">
 <pre>Bits and bytes</pre>
 </div>
-<div created="20210610073757454" creator="jsng" modified="20210611062339064" modifier="jsng" title="$:/state/tabs/controlpanel/toolbars-1345989671">
-<pre>$:/core/ui/ControlPanel/Toolbars/ViewToolbar</pre>
+<div created="20210610073757454" creator="jsng" modified="20210612033123336" modifier="jsng" title="$:/state/tabs/controlpanel/toolbars-1345989671">
+<pre>$:/core/ui/ControlPanel/Toolbars/EditToolbar</pre>
 </div>
 <div created="20210611011352695" creator="jsng" modified="20210611011356553" modifier="jsng" title="$:/state/toc/Contents-Glossary-1637712383">
 <pre>close</pre>
@@ -13352,7 +13358,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210611035922453" creator="jsng" list="[[lossy compression]] [[Audio representation in computers]]" modified="20210611083356339" modifier="jsng" title="$:/StoryList">
+<div created="20210611035922453" creator="jsng" list="[[lossy compression]] [[Audio representation in computers]]" modified="20210612033108152" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13882,12 +13888,14 @@ In 1985, the European Computer Manufacturers Association (ECMA) extended US-[[AS
 <div created="20210611023323056" creator="jsng" modified="20210611033909087" modifier="jsng" tags="Glossary" title="line feed">
 <pre></pre>
 </div>
-<div created="20210611091158041" creator="jsng" modified="20210611091241526" modifier="jsng" title="lossy audio compression" type="text/x-markdown">
-<pre># Lossy audio compression: discarding what we can’t hear
+<div created="20210611091158041" creator="jsng" modified="20210612033300698" modifier="jsng" title="lossy audio compression" type="text/x-markdown">
+<pre>If you are all about the bass, or like tweaking with sound settings, or have worked with audio systems before e.g. for a performance or for your school’s events, you would have used an equaliser at some point.
 
-What about audio?
+![Image of a guitar equaliser with volume, treble, middle, and bass knobs](images/Clean-2BAmp-2BSettings.jpg)&lt;br /&gt;
+A guitar equaliser.  
+The different knobs adjust the relative loudness of sounds in different pitch ranges.
 
-If you are all about the bass, or like tweaking with sound settings, or have worked with audio systems before e.g. for a performance or for your school’s events, you would have used an equaliser at some point. An equaliser is a device (or software application) that lets you adjust how much bass (low pitch), medium (middle pitch), and treble (high pitch) you want from the sound. How is the system able to do that?
+An equaliser is a device (or software application) that lets you adjust how much bass (low pitch), medium (middle pitch), and treble (high pitch) you want from the sound. How is the system able to do that?
 
 Through transforms! DCT, mentioned earlier, is one such transform; audio formats often use another one, known as the Fast Fourier Transform (FFT). (Aren’t you glad this is a newsletter about computing and not about math?) Anyway, a transform lets us transform information organised by position (e.g. in images) or by time (e.g. in audio) into information organised by other properties, such as frequency.
 
