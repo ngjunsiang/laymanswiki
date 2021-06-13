@@ -427,8 +427,6 @@ Error message and password prompt
 
 <li>DPI</li>
 
-<li>Draft of 'Documents' by jsng</li>
-
 <li>encode</li>
 
 <li>encoding table</li>
@@ -12931,7 +12929,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210613093251695" creator="jsng" list="[[Draft of 'Documents' by jsng]]" modified="20210613094632342" modifier="jsng" title="$:/StoryList">
+<div created="20210613093251695" creator="jsng" list="Documents" modified="20210613094632342" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13435,69 +13433,15 @@ The process of converting compressed data, usually from a media file format, int
 
 Main article: [[Media files]]</pre>
 </div>
-<div created="20210613093424386" creator="jsng" modified="20210613094630203" modifier="jsng" tags="[[data containers]]" title="Documents" type="text/x-markdown">
-<pre>Documents are a complex file type that enables text, images, videos, fonts, and other arbitrary objects to be embedded or referenced.
-
-Let’s look at two kinds of documents: an [[HTML]] document, and a Microsoft Word document.
-
-# Webpages are HTML documents
-
-Today (in 2021), URLs can end with all kinds of extensions like `.aspx`, `.php`, or even no extension. These pages are generated on the fly by the [[web server]] that serves the pages.
-
-But just a decade or two ago they almost always ended in `.html`. These were static documents, manually written by one or more authors, saved as a document file, and served without further processing by the [[web server]].
-
-Main article: [[HTML]]
-
-## HTML Markup tags
-
-This is a snippet of an [[HTML]] file:
-
-![Snippet of HTML from an HTML file](images/issue050_01.png)&lt;br /&gt;
-An HTML file
-
-The syntax highlighting in the image should make it easier to notice the **HTML markup tags**. Each tag starts with an open angled bracket `&lt;` and closed angled bracket `&gt;`. These tags signify the start and end of segments in the document.
-
-* `&lt;html&gt;` starts the document, `&lt;/html&gt;` ends it.
-* `&lt;head&gt;&lt;/head&gt;` is the page header, which contains information about the page: the page title (which will appear in the title bar of your web browser), the styles to apply to the document are within.
-* `&lt;style type=&quot;text/css&quot;&gt;…&lt;/style&gt;`, which I have hidden here and will show later.
-* `&lt;body class=&quot;app&quot;&gt;…&lt;/body&gt;` contains the main part of the document, which is what we will see.
-* `&lt;h1&gt;` and `&lt;h3&gt;` signify different levels of headers, which can all be formatted separately.
-* `&lt;div&gt;` (for &quot;division&quot;) is a generic container, within which you can embed images or other text.
-* `&lt;p&gt;…&lt;/p&gt;` (for paragraph) indicates to a web browser that the context is to be treated like a text paragraph.
-* `&lt;strong&gt;…&lt;/strong&gt;` indicates that it is to be formatted in strong fashion (which is usually treated as bold text … but you can change that in the styles section in the `&lt;head&gt;`).
-
-Those `class=&quot;…&quot;` portions in each tag are **attributes**. The [[web browser]] creates a content element for each tag, and styles it according to the predefined style class in the document, defined inside `&lt;style&gt;…&lt;/style&gt;`. This is what that section looks like when expanded:
-
-![Styles for the Issue 49 HTML file](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season4/issue050/issue050_02.png)&lt;br /&gt;
-&lt;small&gt;Element styles for Issue 49&lt;/small&gt;
-
-I don’t need to explain the specifications for you to notice that `&lt;h1&gt;`, `&lt;h2&gt;`, `&lt;h3&gt;` etc all have a slightly different style defined for them. `.app` is a little different; it starts with a period (`.`) and is applied to everything that has the `class=&quot;app&quot;` attribute (*psst* … that’s the `&lt;body&gt;` element from the earlier image!).
-
-Yet at the same time, there are also other styles defined for `&lt;body&gt;…&lt;/body&gt;`. The browser has rules for how it chooses which styles override which. Those rules are like the bible for web programmers and web designers, which thankfully we are not (\*waves to any web folks in this mailing list\*).
-
-Okay, just two more tags to illustrate embedding other content:
-
-![Another part of the Issue 49 HTML file showing the &lt;a&gt; tag](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season4/issue050/issue050_03.png)
-
-The `&lt;a&gt;` tag (for &quot;anchor&quot;; don’t ask) is used to define links (those clickable things in a webpage) and the place it links to is defined as a `href=&quot;…&quot;` attribute.
-
-![Another part of the Issue 49 HTML file showing the &lt;img&gt; tag](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season4/issue050/issue050_04.png)
-
-The `&lt;img&gt;` tag (for &quot;image&quot;) is used to insert images. Rollover text, which appears when you put the mouse cursor over the image without clicking, is defined in the `alt=&quot;…&quot;` attribute, while the URL of the image is defined in the `src=&quot;…&quot;` attribute.
-
-(Embedding an image in a webpage is also possible, but I don’t want to go into depth here because I would have to explain many more concepts before that.)</pre>
-</div>
-<div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
-<pre>Dots per inch</pre>
-</div>
-<div created="20210613093424386" creator="jsng" draft.of="Documents" draft.title="Documents" modified="20210613094811682" modifier="jsng" tags="[[data containers]]" title="Draft of 'Documents' by jsng" type="text/x-markdown">
+<div created="20210613093424386" creator="jsng" modified="20210613094830532" modifier="jsng" tags="[[data containers]]" title="Documents" type="text/x-markdown">
 <pre>Documents are a complex file type that enables text, images, videos, fonts, and other arbitrary objects to be embedded or referenced.
 
 Let’s look at some document formats:
-[[HTML documents]]
-[[Microsoft Word document]]
-
-# Webpages are HTML documents</pre>
+* [[HTML documents]]
+* [[Microsoft Word document]]</pre>
+</div>
+<div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
+<pre>Dots per inch</pre>
 </div>
 <div created="20210611030532554" creator="jsng" modified="20210613065811523" modifier="jsng" tags="Glossary" title="encode" type="text/x-markdown">
 <pre># Text encoding
