@@ -481,6 +481,8 @@ Error message and password prompt
 
 <li>Welcome</li>
 
+<li>When I put a zip file in another zip file, why is the second zip file no smaller in size that the first?</li>
+
 <li>Why are music files so large (a few MB) when a voice call over internet uses so little data?</li>
 
 <li>Why does my hard drive seem to have less space than it should?</li>
@@ -959,7 +961,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="lossless audio compression" modified="20210613044025801" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="When I put a zip file in another zip file, why is the second zip file no smaller in size that the first?" modified="20210613044944456" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1795,10 +1797,27 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;lossless audio compression&quot;
+    },
+    {
+        &quot;title&quot;: &quot;New Tiddler&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 60.44999694824219,
+            &quot;left&quot;: 1373.7333984375,
+            &quot;width&quot;: 32.899993896484375,
+            &quot;right&quot;: 1406.6333923339844,
+            &quot;bottom&quot;: 99.93333435058594,
+            &quot;height&quot;: 39.48333740234375
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'New Tiddler' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;When I put a zip file in another zip file, why is the second zip file no smaller in size that the first?&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[lossless audio compression]]" modified="20210613043320451" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[When I put a zip file in another zip file, why is the second zip file no smaller in size that the first?]]" modified="20210613044511026" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -12954,7 +12973,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210612041437924" creator="jsng" list="[[Draft of 'lossless compression' by jsng]] Welcome Contents" modified="20210612041437924" modifier="jsng" title="$:/StoryList">
+<div created="20210612041437924" creator="jsng" list="[[Draft of 'New Tiddler' by jsng]] [[Draft of 'lossless compression' by jsng]] Welcome Contents" modified="20210612041437924" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13389,7 +13408,7 @@ Main article: [[lossy image compression]]</pre>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210612041137368" creator="jsng" draft.of="lossless compression" draft.title="lossless compression" modified="20210613042822145" modifier="jsng" summary="Data cannot be compressed beyond its predictability limit (Shannon entropy) in a lossless fashion. Lossless compression does not discard any information. It generally tries to spot patterns in the data, and represent those patterns with fewer bits, through a combination of predictive coding, run-length encoding, and entropy coding." title="Draft of 'lossless compression' by jsng" type="text/x-markdown">
+<div created="20210612041137368" creator="jsng" draft.of="lossless compression" draft.title="lossless compression" modified="20210613044545446" modifier="jsng" summary="Data cannot be compressed beyond its predictability limit (Shannon entropy) in a lossless fashion. Lossless compression does not discard any information. It generally tries to spot patterns in the data, and represent those patterns with fewer bits, through a combination of predictive coding, run-length encoding, and entropy coding." title="Draft of 'lossless compression' by jsng" type="text/x-markdown">
 <pre>While [[lossy compression]] depends very much on how our senses (particularly sight and hearing) work and on their deficiencies, lossless compression only depends on the characteristics of the information.
 
 Accordingly, a wide variety of **lossless compression** techniques have been developed, each suited for a particular domain.
@@ -13406,29 +13425,20 @@ Text compression algorithms generally use a combination of entropy coding and ru
 
 # What is the maximum possible lossless compression?
 
-Excellent question. Shannon’s source coding theorem[^1] defines a compression limit for each block of information, called Shannon entropy (unbolded, don’t worry!). The source coding theorem says it is impossible to compress data beyond its Shannon entropy.
+[Shannon’s source coding theorem](https://en.wikipedia.org/wiki/Shannon%27s_source_coding_theorem) defines a **compression limit** for each block of information, called [Shannon entropy](https://en.wikipedia.org/wiki/Entropy_(information_theory)). The source coding theorem says it is *impossible to compress data beyond its Shannon entropy*.
 
-[^1]: Yes, that’s the same Shannon from Nyquist-Shannon sampling theorem. Claude Shannon is lauded as “the father of information theory” with good reason.
+The compression limit of data depends on its predictability. A block of text that only consists of the letter `e` would be highly predictable, and therefore have a low compression limit. A block of text that is just completely random characters would be unpredictable and would therefore have a high Shannon entropy.
 
-So what is the Shannon entropy of the data? That depends on its predictability. A block of text that only consists of the letter ‘e’ would be highly predictable, and therefore have a low Shannon entropy (I will stop using this term and use **predictability limit** instead). A block of text that is just completely random characters would be unpredictable and would therefore have a high Shannon entropy.
+In summary:
 
-*tl;dr* higher predictability  = higher (lossless) compression, lower predictability = lower (lossless) compression
-
-
+* high predictability = low compression limit = high compression efficiency
+* low predictability = high compression limit = low compression efficiency
 
 And now it is myth-busting time! Well, not really, since most observant folks would have noticed this by now.
 
-# When I put a zip file in another zip file, why is the second zip file no smaller in size that the first?
 
-When the first zip file compressed its contents, the predictability of the resulting data decreased (ever tried compressing shorthand?). You won’t get very far trying to compress unpredictable data.
 
-If you want greater compression, use a higher compression setting on the original file instead.
 
-![7zip archive settings, showing options for compression level, compression method, and dictionary size](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season4/issue047/issue047_01.png)&lt;br /&gt;
-&lt;small&gt;7zip archive settings for zip files.&lt;br /&gt;
-Image from [Wikimedia Commons](https://en.wikipedia.org/wiki/File:Colorcomp.jpg)&lt;/small&gt;
-
-A higher *compression level* generally causes the algorithm to try more combinations and iterations of compression, a larger *dictionary size* enables the algorithm to use more pattern references. Play with these two settings to find the best tradeoff between compression time and compression ratio (the ratio of final filesize to original filesize).
 
 # Why do Powerpoint files sometimes compress very well and sometimes not at all?
 
@@ -13930,6 +13940,21 @@ Footnotes appear as a numbered superscript&lt;&lt;fnote &quot;such as this one&q
 ## Editing
 
 ## Sidebar</pre>
+</div>
+<div created="20210613044508953" creator="jsng" list-after="[[lossless compression]]" modified="20210613044944444" modifier="jsng" tags="question" title="When I put a zip file in another zip file, why is the second zip file no smaller in size that the first?" type="text/x-markdown">
+<pre>When the first zip file compressed its contents, the predictability of the resulting data decreased&lt;&lt;fnote &quot;Example: when you transcribe a lecture in shorthand, it is difficult to compress your shorthand much further.&quot;&gt;&gt;. You won’t get very far trying to compress unpredictable data.
+
+If you want greater compression, use a higher compression setting on the original file instead.
+
+![7zip archive settings, showing options for compression level, compression method, and dictionary size](images/issue047_01.png)&lt;br /&gt;
+7zip archive settings for zip files.  
+Image from [Wikimedia Commons](https://en.wikipedia.org/wiki/File:Colorcomp.jpg)
+
+A higher *compression level* generally causes the algorithm to try more combinations and iterations of compression.
+
+A larger *dictionary size* enables the algorithm to use more pattern references.
+
+Play with these two settings to find the best tradeoff between compression time and compression ratio.</pre>
 </div>
 <div created="20210611063109639" creator="jsng" modified="20210611063136496" modifier="jsng" tags="question" title="Why are music files so large (a few MB) when a voice call over internet uses so little data?" type="text/x-markdown">
 <pre>This is not a question I can answer within one issue; you will have to wait until next issue for a complete answer :) But let’s start here.
