@@ -1039,7 +1039,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="MIME types" modified="20210613092643623" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="metadata" modified="20210613093341126" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1679,11 +1679,25 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
         &quot;title&quot;: &quot;$:/plugins/sq/Stories/changelog&quot;
     },
     {
-        &quot;title&quot;: &quot;MIME types&quot;
+        &quot;title&quot;: &quot;metadata&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 772.066650390625,
+            &quot;left&quot;: 1634.550048828125,
+            &quot;width&quot;: 59.383331298828125,
+            &quot;right&quot;: 1693.9333801269531,
+            &quot;bottom&quot;: 790.066650390625,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'metadata' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;metadata&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="Welcome" modified="20210613074422091" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="metadata" modified="20210613074422091" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -12857,7 +12871,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div list="" title="$:/StoryList">
+<div created="20210613093251695" creator="jsng" list="[[MIME types]] Welcome Contents" modified="20210613093251695" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13763,7 +13777,7 @@ Here’s an example of the information it shows about the only video file on my 
 ![MediaInfo screenshot showing container, video stream, and audio stream information](images/issue048_01.png)&lt;br /&gt;
 Mediainfo screenshot showing metadata for an MP4 file containing an [[h264]] video stream and an [[AAC]] audio stream.</pre>
 </div>
-<div created="20210613071145667" creator="jsng" modified="20210613075440922" modifier="jsng" tags="Glossary [[data containers]]" title="metadata" type="text/x-markdown">
+<div created="20210613071145667" creator="jsng" modified="20210613093341093" modifier="jsng" summary="A file consists of data, preceded by a file header which describes the data. Software (including operating systems) detect the kind of data contained in a file by 1) glancing at the file extension, 2) looking at its declared MIME type (if any), and 3) checking the file header, in order of difficulty and accuracy." tags="Glossary [[data containers]]" title="metadata" type="text/x-markdown">
 <pre>**Metadata** is data about data.
 
 For example:
@@ -13800,7 +13814,9 @@ That’s because when speed is a concern, software will often attempt to detect 
 
 That’s a much faster way to detect a whole bunch of filetypes, it’s quick-and-dirty, but it mostly works.
 
-That also means you can spoof a lot of software into thinking you have a `.zip` file when you in fact have an `.epub` ebook file. This is a pretty common way to unpack files that use the zip archive format to pack their files! So if you write software that absolutely needs to be sure it has the right filetype, you should double-check the file header instead of jumping to assumptions from the file extension alone.
+That also means you can spoof a lot of software into thinking you have a `.zip` file when you in fact have an `.epub` ebook file. This is a pretty common way to unpack files that use the zip archive format to pack their files!
+
+If you write software that absolutely needs to be sure it has the right filetype, you should double-check the file header instead of jumping to assumptions from the file extension alone.
 
 # Metadata on the Internet
 
@@ -13808,7 +13824,7 @@ Guessing [[metadata]] from [[file extensions]] might work in a computer, but on 
 
 Images sent as data packets over the internet do not come with filenames; notice how some apps (e.g. WhatsApp) rename your image with a different name when you upload or download them? And on some web platforms, especially those that handle huge volumes of images, the filenames are just semi-random characters.
 
-That is why we rely on what are known as [[MIME types]].</pre>
+That is why we rely on what are known as [[MIME types]] to identify file types more specifically.</pre>
 </div>
 <div created="20210611063507528" creator="jsng" modified="20210611063507528" modifier="jsng" title="MiB">
 <pre></pre>
