@@ -427,6 +427,8 @@ Error message and password prompt
 
 <li>Draft of 'MIME types' by jsng</li>
 
+<li>Draft of 'MIME' by jsng</li>
+
 <li>encode</li>
 
 <li>encoding table</li>
@@ -2469,7 +2471,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="RFC [[Draft of 'MIME types' by jsng]] metadata [[Media files]] [[data containers]] Welcome" modified="20210613074422091" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[Draft of 'MIME types' by jsng]] metadata [[Media files]] [[data containers]] Welcome" modified="20210613074422091" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13643,7 +13645,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210613062439211" creator="jsng" list="MIME Contents" modified="20210613071706939" modifier="jsng" title="$:/StoryList">
+<div created="20210613062439211" creator="jsng" list="metadata [[Draft of 'MIME' by jsng]] Contents" modified="20210613071706939" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14150,12 +14152,10 @@ Main article: [[Media files]]</pre>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210613074411653" creator="jsng" draft.of="MIME types" draft.title="MIME types" list-after="[[metadata]]" modified="20210613074621801" modifier="jsng" tags="Glossary [[data containers]]" title="Draft of 'MIME types' by jsng" type="text/x-markdown">
-<pre>Guessing [[metadata]] from [[file extensions]] might work in a computer, but on the internet it’s the Wild West.
+<div created="20210613074411653" creator="jsng" draft.of="MIME types" draft.title="MIME types" list-after="[[metadata]]" modified="20210613075430923" modifier="jsng" tags="Glossary [[data containers]]" title="Draft of 'MIME types' by jsng" type="text/x-markdown">
+<pre>
 
-Images sent as data packets over the internet do not come with filenames; notice how some apps (e.g. WhatsApp) rename your image with a different name when you upload or download them? And on some web platforms, especially those that handle huge volumes of images, the filenames are just semi-random characters.
-
-That is why we rely on what are known as **[[MIME]] types**.  This is a much more standardised way of declaring what type of file you have. [The exhaustive list](https://www.iana.org/assignments/media-types/media-types.xhtml#examples) of MIME types, maintained by IANA (whom we first met in [Issue 27](https://buttondown.email/laymansguide/archive/lmg-s3-issue-27-what-is-an-ip-address/)), has MIME types for application files, audio, font, image, messages, model, multipart formats, text, and video.
+&gt; {{MIME}}
 
 If you plan to come up with a file format that is intended to be used widely, you can [apply for it to be included](https://www.iana.org/form/media-types) in the list.
 
@@ -14166,6 +14166,17 @@ Remember this HTTP header from Issue 8?
 ![An HTTP request header](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season1/issue008/issue008_01.png)
 
 See that label in the third row, with the Content-Type label, “application/json”? That’s the MIME type for the [JSON data format](https://buttondown.email/laymansguide/archive/lmg-issue-5-what-is-json/). When the server returns data, my browser (the client) has no idea what format it is. It might be nicely formatted HTML meant for human consumption, but it might also be plain text, JSON data (like in this case), XML, or any of the various data formats that people use. Declaring the MIME type properly makes life easier for the browser to know what to do with the data.</pre>
+</div>
+<div created="20210613074622926" creator="jsng" draft.of="MIME" draft.title="MIME" list-after="" modified="20210613075314318" modifier="jsng" title="Draft of 'MIME' by jsng" type="text/x-markdown">
+<pre>**MIME** stands for **M**ultipurpose **I**nternet **M**ail **E**xtension.
+
+MIME types are a standardised way of declaring what type of file you have. [The exhaustive list of MIME types](https://www.iana.org/assignments/media-types/media-types.xhtml#examples), maintained by [[IANA]], has MIME types for application files, audio, font, image, messages, model, multipart formats, text, and video.
+
+Main article: [[MIME types]]
+
+The [[specification]] for [[MIME types]] are described in [RFC6838](https://tools.ietf.org/html/rfc6838).
+
+Side reading: [[RFC]]</pre>
 </div>
 <div created="20210611030532554" creator="jsng" modified="20210613065811523" modifier="jsng" tags="Glossary" title="encode" type="text/x-markdown">
 <pre># Text encoding
@@ -14566,7 +14577,7 @@ Here’s an example of the information it shows about the only video file on my 
 ![MediaInfo screenshot showing container, video stream, and audio stream information](images/issue048_01.png)&lt;br /&gt;
 Mediainfo screenshot showing metadata for an MP4 file containing an [[h264]] video stream and an [[AAC]] audio stream.</pre>
 </div>
-<div created="20210613071145667" creator="jsng" modified="20210613074320016" modifier="jsng" tags="Glossary [[data containers]]" title="metadata" type="text/x-markdown">
+<div created="20210613071145667" creator="jsng" modified="20210613075440922" modifier="jsng" tags="Glossary [[data containers]]" title="metadata" type="text/x-markdown">
 <pre>**Metadata** is data about data.
 
 For example:
@@ -14603,7 +14614,15 @@ That’s because when speed is a concern, software will often attempt to detect 
 
 That’s a much faster way to detect a whole bunch of filetypes, it’s quick-and-dirty, but it mostly works.
 
-That also means you can spoof a lot of software into thinking you have a `.zip` file when you in fact have an `.epub` ebook file. This is a pretty common way to unpack files that use the zip archive format to pack their files! So if you write software that absolutely needs to be sure it has the right filetype, you should double-check the file header instead of jumping to assumptions from the file extension alone.</pre>
+That also means you can spoof a lot of software into thinking you have a `.zip` file when you in fact have an `.epub` ebook file. This is a pretty common way to unpack files that use the zip archive format to pack their files! So if you write software that absolutely needs to be sure it has the right filetype, you should double-check the file header instead of jumping to assumptions from the file extension alone.
+
+# Metadata on the Internet
+
+Guessing [[metadata]] from [[file extensions]] might work in a computer, but on the internet it’s the Wild West.
+
+Images sent as data packets over the internet do not come with filenames; notice how some apps (e.g. WhatsApp) rename your image with a different name when you upload or download them? And on some web platforms, especially those that handle huge volumes of images, the filenames are just semi-random characters.
+
+That is why we rely on what are known as [[MIME types]].</pre>
 </div>
 <div created="20210611063507528" creator="jsng" modified="20210611063507528" modifier="jsng" title="MiB">
 <pre></pre>
