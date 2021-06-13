@@ -1007,7 +1007,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="codec" modified="20210613065759163" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="h264" modified="20210613070120958" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2042,10 +2042,38 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;codec&quot;
+    },
+    {
+        &quot;title&quot;: &quot;OS&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 739.6666870117188,
+            &quot;left&quot;: 468.9666748046875,
+            &quot;width&quot;: 18.383346557617188,
+            &quot;right&quot;: 487.3500213623047,
+            &quot;bottom&quot;: 757.6666870117188,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;h264&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 800.4666748046875,
+            &quot;left&quot;: 555.5999755859375,
+            &quot;width&quot;: 31.849990844726562,
+            &quot;right&quot;: 587.4499664306641,
+            &quot;bottom&quot;: 818.4666748046875,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'h264' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;h264&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[data containers]] Welcome" modified="20210613065236052" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="h264 [[data containers]] Welcome" modified="20210613065236052" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13216,7 +13244,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210613062439211" creator="jsng" list="encode [[Draft of 'New Tiddler' by jsng]] Contents" modified="20210613065437825" modifier="jsng" title="$:/StoryList">
+<div created="20210613062439211" creator="jsng" list="[[Draft of 'New Tiddler' by jsng]] Contents" modified="20210613065437825" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13686,7 +13714,7 @@ Main article: [[Media files]]</pre>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210613063316979" creator="jsng" draft.of="New Tiddler" draft.title="Media files" modified="20210613065615942" modifier="jsng" tags="[[data containers]]" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
+<div created="20210613063316979" creator="jsng" draft.of="New Tiddler" draft.title="Media files" modified="20210613070106159" modifier="jsng" tags="[[data containers]]" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
 <pre>A media file, as we like to think about it, actually is not a simple form of data. It can have one or more of the following:
 
 * video data
@@ -13741,18 +13769,20 @@ Confused yet? Just remember that the video file you have (carrying the `.mp4`, `
 
 # Encoding and decoding
 
-To use these streams, you need a piece of software on your computer. This piece of software en**co**des or **dec**odes the data stream, so it is called a [[codec]]. If you don’t have the required codecs, you will get an error when you attempt to open a video container file that has one or more streams in that format.
+To use these streams, you need a piece of software on your computer. This piece of software [[encode]]s or [[decode]]s the data stream, so it is called a [[codec]].
 
-The operating system you use comes bundled with support for the most common formats, although for free-and-open-source OSes (like some flavours of Linux) this may be hampered by copyright restrictions.
+If you don’t have the required codecs, you will get an error when you attempt to open a video container file that has one or more streams in that format.
 
-About a decade ago, when video formats proliferated like a tropical ecosystem, codec packs containing just about every codec you need were a common sight online. Today, with most video moved to online streaming platforms, you no longer need them.
+The operating system you use comes bundled with support for the most common formats, although for free-and-open-source [[OS]]es (like some flavours of Linux) this may be hampered by copyright restrictions.
+
+In the 2010s, when video formats proliferated like a tropical ecosystem, [[codec]] packs containing just about every codec you need were a common sight online. Today, with most video moved to online streaming platforms, you no longer need them.
 
 # MediaInfo: a program to decipher containers and streams
 
 You can use a program like [MediaInfo](https://mediaarea.net/en/MediaInfo) to help you read the metadata and figure out the container and stream formats. Here’s an example of the information it shows about the only video file on my laptop at the moment:
 
-![MediaInfo screenshot showing container, video stream, and audio stream information](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season4/issue048/issue048_01.png)&lt;br /&gt;
-&lt;small&gt;Mediainfo screenshot showing metadata for an MP4 file containing an h264 (a.k.a. AVC) video stream and an AAC audio stream.&lt;/small&gt;
+![MediaInfo screenshot showing container, video stream, and audio stream information](images/issue048_01.png)&lt;br /&gt;
+Mediainfo screenshot showing metadata for an MP4 file containing an [[h264]] video stream and an [[AAC]] audio stream.&lt;/small&gt;
 
 **Issue summary:** A video container can hold one or more audio, video, or text data streams. To encode or decode a data stream, you need to have the necessary codec installed[^1]. Most video runs at 25 or 30 fps, with high-quality video going up to 60 fps. You can use a program like MediaInfo to help you decipher the streams inside a video container file.</pre>
 </div>
@@ -13792,8 +13822,8 @@ Main article: [[lossy audio compression]]</pre>
 <div created="20210610075627131" creator="jsng" list-after="" modified="20210613061759645" modifier="jsng" tags="Contents" title="Glossary" type="text/x-markdown">
 <pre>&lt;&lt;list-links &quot;[tag[Glossary]sort[title]]&quot;&gt;&gt;</pre>
 </div>
-<div created="20210613064921255" creator="jsng" modified="20210613064922477" modifier="jsng" tags="Glossary" title="h264">
-<pre></pre>
+<div created="20210613064921255" creator="jsng" modified="20210613070120955" modifier="jsng" tags="Glossary" title="h264">
+<pre>A video format. also known as [[AVC]].</pre>
 </div>
 <div created="20210613064928103" creator="jsng" modified="20210613064929286" modifier="jsng" tags="Glossary" title="h265">
 <pre></pre>
