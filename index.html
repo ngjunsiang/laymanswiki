@@ -419,6 +419,8 @@ Error message and password prompt
 
 <li>DPI</li>
 
+<li>Draft of 'data containers' by jsng</li>
+
 <li>encode</li>
 
 <li>encoding table</li>
@@ -474,6 +476,8 @@ Error message and password prompt
 <li>Media files</li>
 
 <li>MediaInfo</li>
+
+<li>metadata</li>
 
 <li>MiB</li>
 
@@ -1011,7 +1015,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Why am I getting a Missing Codec Error when I open a video file?" modified="20210613070925860" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Draft of 'data containers' by jsng" modified="20210613071023462" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2148,10 +2152,13 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;Why am I getting a Missing Codec Error when I open a video file?&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'data containers' by jsng&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[Why am I getting a Missing Codec Error when I open a video file?]] [[data containers]] Welcome" modified="20210613070705905" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[Draft of 'data containers' by jsng]] Welcome" modified="20210613070705905" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13322,7 +13329,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210613062439211" creator="jsng" list="[[Media files]] codec Contents" modified="20210613070656847" modifier="jsng" title="$:/StoryList">
+<div created="20210613062439211" creator="jsng" list="metadata [[Media files]] codec Contents" modified="20210613070656847" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13799,6 +13806,23 @@ Main article: [[Media files]]</pre>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
+<div caption="Data containers" created="20210613063148190" creator="jsng" draft.of="data containers" draft.title="data containers" modified="20210613071144573" modifier="jsng" tags="Topic:data" title="Draft of 'data containers' by jsng" type="text/x-markdown">
+<pre>{{||tagPageTemplate}}
+
+&lt;hr/&gt;
+
+Images, audio, video, text, and more … we are so used to thinking of them as different kinds of files. But within the computer’s binary world, how does it tell that one file is a different type from another?
+
+In the human world, if you ran across a bunch of unlabelled boxes of various types and sizes, you would have no way of telling what is in each box. And you know this is a terrible way to move house—you would have to at least label the boxes by colour, by room, or by type of contents.
+
+# Identifying file contents
+
+When you buy something online, your packages arrive with a shipping label, which is a quick and convenient way for the shipping companies to identify the package, type of contents, origin, and destination.
+
+The box labels, and the shipping labels, tell us _about_ the contents, but not the contents itself. We refer to such data as [[metadata]]. 
+
+For a computer to be able to handle so many files without inspecting them individually, it must also have metadata about each of these files.</pre>
+</div>
 <div created="20210611030532554" creator="jsng" modified="20210613065811523" modifier="jsng" tags="Glossary" title="encode" type="text/x-markdown">
 <pre># Text encoding
 
@@ -14179,6 +14203,21 @@ Here’s an example of the information it shows about the only video file on my 
 
 ![MediaInfo screenshot showing container, video stream, and audio stream information](images/issue048_01.png)&lt;br /&gt;
 Mediainfo screenshot showing metadata for an MP4 file containing an [[h264]] video stream and an [[AAC]] audio stream.</pre>
+</div>
+<div created="20210613071145667" creator="jsng" modified="20210613071457964" modifier="jsng" title="metadata" type="text/x-markdown">
+<pre>**Metadata** is data about data.
+
+For example:
+
+* the creation date of the file
+* the file size
+* the [[file type|Data containers]]
+
+Video and audio files may also include information about:
+
+* their duration
+* the [[codec]] used to create them
+* their [[pixel]] dimensions</pre>
 </div>
 <div created="20210611063507528" creator="jsng" modified="20210611063507528" modifier="jsng" title="MiB">
 <pre></pre>
