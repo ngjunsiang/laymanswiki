@@ -455,6 +455,8 @@ Error message and password prompt
 
 <li>PPI</li>
 
+<li>predictive coding</li>
+
 <li>prereqTemplate</li>
 
 <li>Printing images</li>
@@ -957,7 +959,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="lossless image compression" modified="20210613043044470" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="predictive coding" modified="20210613043505648" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1773,10 +1775,27 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;lossless image compression&quot;
+    },
+    {
+        &quot;title&quot;: &quot;predictive coding&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 254.5833282470703,
+            &quot;left&quot;: 1363.7166748046875,
+            &quot;width&quot;: 106.16667175292969,
+            &quot;right&quot;: 1469.8833465576172,
+            &quot;bottom&quot;: 272.5833282470703,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'predictive coding' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;predictive coding&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[lossless image compression]] [[Draft of 'lossless audio compression' by jsng]]" modified="20210613042956904" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[Draft of 'lossless audio compression' by jsng]] [[predictive coding]]" modified="20210613043320451" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13367,10 +13386,8 @@ Main article: [[lossy image compression]]</pre>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210613040811964" creator="jsng" draft.of="lossless audio compression" draft.title="lossless audio compression" modified="20210613040811964" modifier="jsng" title="Draft of 'lossless audio compression' by jsng">
-<pre>Your brain works in interesting ways. If it sees two images that are near-identical (like a game of Spot The Difference), it won’t remember it as two separate images. Instead, it remembers it as one image, plus the difference between the two images&lt;&lt;fnote &quot;In jargon, the difference between two sets of data or two files is sometimes called a diff or a delta&quot;&gt;&gt;.
-
-So when people try to recall the two images, you hear things like “this photo had a cat and a dog staring each other down and it also had [blahblah], the other photo is exactly the same except the cat’s ears were furled back and the dog was drooling”. Certainly a lot simpler than just describing the second image exactly the same way!
+<div created="20210613040811964" creator="jsng" draft.of="lossless audio compression" draft.title="lossless audio compression" modified="20210613043319010" modifier="jsng" title="Draft of 'lossless audio compression' by jsng" type="text/x-markdown">
+<pre>Main article: [[predictive coding]]
 
 Lossless audio compressors work in a similar way. They sample the audio in short segments, and try to see how lazy they can get in describing the next sample. This is known as **predictive coding**, because it is a little similar to the process of trying to “predict” the next sample. For example, based on the past 10 samples, a predictive algorithm might say “the next sample will have 0.09% of sample 1, 1.02% of sample 2, 5.63% of sample 3, …”. Storing those percentages will use a lot less space than storing the entire sample; when decompressing, the algorithm can then multiply the percentages with the respective samples to reconstruct the original sample.
 
@@ -13730,6 +13747,13 @@ For photograph images, you will generally hit diminishing returns below 85%: eac
 </div>
 <div created="20210611061206966" creator="jsng" modified="20210611061529155" modifier="jsng" tags="Glossary" title="PPI">
 <pre>Pixels per inch.</pre>
+</div>
+<div created="20210613043324810" creator="jsng" modified="20210613043505644" modifier="jsng" summary="Predictive coding expresses samples as a combination of past samples (and any residual information)." tags="Glossary" title="predictive coding" type="text/x-markdown">
+<pre>Your brain works in interesting ways. If it sees two images that are near-identical (like a game of Spot The Difference), it won’t remember it as two separate images. Instead, it remembers it as one image, plus the difference between the two images.
+
+Aside: In jargon, the difference between two sets of data or two files is sometimes called a [[diff]] or a [[delta]].
+
+So when people try to recall the two images, you hear things like “this photo had a cat and a dog staring each other down and it also had [blahblah], the other photo is exactly the same except the cat’s ears were furled back and the dog was drooling”. Certainly a lot simpler than just describing the second image exactly the same way!</pre>
 </div>
 <div created="20210610084811774" creator="jsng" modified="20210611013739628" modifier="jsng" tags="" title="prereqTemplate" type="text/x-markdown">
 <pre>&lt;$set name=&quot;header&quot; value=&quot;Some text&quot;&gt;
