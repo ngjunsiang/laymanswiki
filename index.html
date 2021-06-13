@@ -1053,7 +1053,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="document" modified="20210613102900378" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="HTML" modified="20210613103328507" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1873,10 +1873,27 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;document&quot;
+    },
+    {
+        &quot;title&quot;: &quot;HTML&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 1124.566650390625,
+            &quot;left&quot;: 1634.550048828125,
+            &quot;width&quot;: 37.133331298828125,
+            &quot;right&quot;: 1671.6833801269531,
+            &quot;bottom&quot;: 1142.566650390625,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'HTML' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;HTML&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="document Topic:compression" modified="20210613102644674" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="HTML Topic:compression" modified="20210613102644674" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13050,7 +13067,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210613093251695" creator="jsng" list="Contents metadata HTML document [[Draft of 'New Tiddler' by jsng]]" modified="20210613102900319" modifier="jsng" title="$:/StoryList">
+<div created="20210613093251695" creator="jsng" list="Contents document [[Draft of 'New Tiddler' by jsng]]" modified="20210613102900319" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13569,21 +13586,18 @@ Let’s look at some document formats:
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210613094857058" creator="jsng" draft.of="New Tiddler" draft.title="Microsoft Word document" modified="20210613102900369" modifier="jsng" tags="document" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
-<pre>&gt; That also means you can spoof a lot of software into thinking you have a zip file when you in fact have an .epub ebook file. This is a pretty common way to unpack files that use the zip archive format to pack their files!
+<div created="20210613094857058" creator="jsng" draft.of="New Tiddler" draft.title="Microsoft Word document" modified="20210613103312212" modifier="jsng" tags="document" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
+<pre>A `'docx` file from Microsoft Word is actually a `.zip` [[file archive]] containing multiple files.
 
-Suppose we do that with a DOCX file … heck, lets convert Issue 49 into a DOCX, rename it to a `.zip` file and see what happens.
+![A DOCX file opened as a .zip file](images/issue050_05.png)&lt;br /&gt;
+A DOCX file opened as a `.zip` file.
 
-![Issue 49 DOCX file opened as a .zip file](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season4/issue050/issue050_05.png)
+We’ll jump right into the interesting part which is `document.xml`:
 
-![WHOA cat meme](https://i.imgflip.com/2i7zhl.jpg)
+![document.xml](images/issue050_06.png)&lt;br /&gt;
+document.xml
 
-Don’t run! Most of it is unimportantly technical, we’ll just jump right into the interesting part which is `document.xml`, so take a deep breath …
-
-![document.xml](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season4/issue050/issue050_06.png)&lt;br /&gt;
-&lt;small&gt;document.xml&lt;/small&gt;
-
-Okay, ouch. That’s a different tag language, called e**X**tensible **M**arkup **L**anguage (XML). Interestingly enough, each of those tags starts with `w:`, followed by some familiar phrases: `body`, `p`, and others that are not so familiar.
+`document.xml` in the Word document uses a different [[markup language]], called e**X**tensible **M**arkup **L**anguage (XML). Interestingly enough, each of those tags starts with `w:`, followed by some familiar phrases: `body`, `p`, and others that are not so familiar.
 
 But look, there’s also &quot;Heading1&quot; and &quot;Heading3&quot;! Other than the fact that the tags look completely different, it still uses tags in similar fashion.</pre>
 </div>
@@ -13651,10 +13665,10 @@ Side reading: [[colour palette]]</pre>
 <div created="20210613064723545" creator="jsng" modified="20210613064724877" modifier="jsng" tags="Glossary" title="HEVC">
 <pre></pre>
 </div>
-<div created="20210613093639526" creator="jsng" modified="20210613095955130" modifier="jsng" tags="Glossary" title="HTML" type="text/x-markdown">
+<div created="20210613093639526" creator="jsng" modified="20210613103328495" modifier="jsng" tags="Glossary" title="HTML" type="text/x-markdown">
 <pre>**HTML** stands for **H**yper**T**ext **M**arkup **L**anguage.
 
-HTML is a **markup language**, not a programming language. You can’t write code and tell a computer to make different decisions by writing only HTML. You can create a button using HTML, but you can’t use HTML to tell the computer to send your credit card details to another server on the Internet when you click that button.</pre>
+HTML is a [[markup language]], not a [[programming language]]. You can’t write code and tell a computer to make different decisions by writing only HTML. You can create a button using HTML, but you can’t use HTML to tell the computer to send your credit card details to another server on the Internet when you click that button.</pre>
 </div>
 <div created="20210613094706347" creator="jsng" modified="20210613102900321" modifier="jsng" tags="document" title="HTML document" type="text/x-markdown">
 <pre>Today (in 2021), [[URL]]s can end with all kinds of suffixes like `.aspx`, `.php`, or even no suffix. These pages are generated on the fly by the [[web server]] that serves the pages.
