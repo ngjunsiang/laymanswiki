@@ -433,8 +433,6 @@ Error message and password prompt
 
 <li>Draft of 'Portable Document Format' by jsng</li>
 
-<li>Draft of 'Why can’t I copy text from a scanned document?' by jsng</li>
-
 <li>editing a PDF file</li>
 
 <li>encode</li>
@@ -1085,7 +1083,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Draft of 'Why can’t I copy text from a scanned document?' by jsng" modified="20210613122125000" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Why can’t I copy text from a scanned document?" modified="20210613122515511" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1857,10 +1855,13 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;Draft of 'Why can’t I copy text from a scanned document?' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Why can’t I copy text from a scanned document?&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[Draft of 'Why can’t I copy text from a scanned document?' by jsng]]" modified="20210613122114058" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[Why can’t I copy text from a scanned document?]]" modified="20210613122114058" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13577,17 +13578,6 @@ Have your magazine cover all set up with the fonts, sizes, colours, and everythi
 
 Main article: [[editing a PDF file]]</pre>
 </div>
-<div created="20210613122103675" creator="jsng" draft.of="Why can’t I copy text from a scanned document?" draft.title="Why can’t I copy text from a scanned document?" modified="20210613122326389" modifier="jsng" tags="question" title="Draft of 'Why can’t I copy text from a scanned document?' by jsng" type="text/x-markdown">
-<pre>When you [[scan]] a physical document, your [[scanner]] does not produce [[text|Text representation in computers]]; it produces an [[image|Image representation in computers]].
-
-When the scanning software lets you save your scan as a [[PDF]], it basically embeds the image into a full-page PDF and calls it a day. There is no text content in the PDF at all!
-
-If the software is a bit smarter, or if you have Adobe Acrobat, you might have access to Optical Character Recognition software ([[OCR]]). This is a feature in some apps that recognise text in images and recreates it for you. This feature lets the app check your scan for recognisable characters and produce a text stream from it. It can them put this text into an additional layer in the PDF, below the image.
-
-It takes some additional trickery to ensure the text appears at exactly the same position where it was detected in the image (remember from above that the text position must be specified). If the PDF library gets the font size and positioning right, this *simulates* the experience of selecting text on the image and having it appear to be highlighted.
-
-However, the state of OCR technology is such that you will often still get typos or missing/extra spaces in the text, so do be sure to check any text that you copy from a PDF!</pre>
-</div>
 <div created="20210613121827918" creator="jsng" modified="20210613122050709" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
 
@@ -14686,8 +14676,24 @@ Play with these two settings to find the best tradeoff between compression time 
 We’ll answer the first part, why audio files are so large, by looking at just how much information we need to provide an undistracting audio experience.
 </pre>
 </div>
-<div created="20210613122103675" creator="jsng" modified="20210613122112854" modifier="jsng" tags="question" title="Why can’t I copy text from a scanned document?" type="text/x-markdown">
-<pre></pre>
+<div created="20210613122103675" creator="jsng" modified="20210613122515507" modifier="jsng" tags="question" title="Why can’t I copy text from a scanned document?" type="text/x-markdown">
+<pre>When you [[scan]] a physical document, your [[scanner]] does not produce [[text|Text representation in computers]]; it produces an [[image|Image representation in computers]].
+
+When the scanning software lets you save your scan as a [[PDF]], it basically embeds the image into a full-page [[PDF]] and calls it a day. There is no text content in the PDF at all!
+
+If the software is a bit smarter, or if you have Adobe Acrobat, you might have access to Optical Character Recognition software ([[OCR]]). 
+
+Side reading: [[OCR]]
+
+&gt; {{OCR}}
+
+[[OCR]] lets the app check your scan for recognisable characters and produce a text stream from it. It can them put this text into an additional layer in the PDF, below the image.
+
+It takes some additional trickery to ensure the text appears at exactly the same position where it was detected in the image (remember from above that the text position must be specified).
+
+If the [[PDF]] [[library]] gets the font size and positioning right, this *simulates* the experience of selecting text on the image and having it appear to be highlighted.
+
+However, the state of OCR technology is such that you will often still get typos or missing/extra spaces in the text, so do be sure to check any text that you copy from a [[PDF]]!</pre>
 </div>
 <div created="20210613045023015" creator="jsng" list-after="[[lossless compression]]" modified="20210613045755705" modifier="jsng" tags="question" title="Why do Powerpoint files sometimes compress very well and sometimes not at all?" type="text/x-markdown">
 <pre>Main article: [[lossless compression]]
