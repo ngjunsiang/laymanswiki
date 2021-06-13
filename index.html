@@ -431,8 +431,6 @@ Error message and password prompt
 
 <li>Draft of 'New Tiddler' by jsng</li>
 
-<li>Draft of 'Topic:compression' by jsng</li>
-
 <li>encode</li>
 
 <li>encoding table</li>
@@ -1850,7 +1848,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="7zip ZIP" modified="20210613102027627" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="" modified="20210613102027627" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13024,7 +13022,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210613093251695" creator="jsng" list="[[Draft of 'Topic:compression' by jsng]] Contents metadata HTML Document [[Draft of 'New Tiddler' by jsng]]" modified="20210613102200740" modifier="jsng" title="$:/StoryList">
+<div created="20210613093251695" creator="jsng" list="Topic:compression Contents metadata HTML Document [[Draft of 'New Tiddler' by jsng]]" modified="20210613102200740" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13560,41 +13558,6 @@ Don’t run! Most of it is unimportantly technical, we’ll just jump right into
 Okay, ouch. That’s a different tag language, called e**X**tensible **M**arkup **L**anguage (XML). Interestingly enough, each of those tags starts with `w:`, followed by some familiar phrases: `body`, `p`, and others that are not so familiar.
 
 But look, there’s also &quot;Heading1&quot; and &quot;Heading3&quot;! Other than the fact that the tags look completely different, it still uses tags in similar fashion.</pre>
-</div>
-<div caption="Topic: Compression" created="20210611083640196" creator="jsng" draft.of="Topic:compression" draft.title="Topic:compression" modified="20210613102335987" modifier="jsng" tags="Contents" title="Draft of 'Topic:compression' by jsng" type="text/x-markdown">
-<pre>{{||tagPageTemplate}}
-
-&lt;hr&gt;
-
-We all have that one friend who can just drone on and on about their day, giving a detailed account with every little thing that happened, and all the things that it reminds them of, and finally in their entire speech there’s that *one* piece of information you are looking for!
-
-Or maybe you’ve been in an hour-long meeting and your colleague missed it and asked you what they missed. Would it take you an hour to recount the key points? Probably not. You’d give a summary, highlighting only the key bits that would make a difference.
-
-# Lossy vs lossless compression
-
-Computers do something similar using compression [[algorithm]]s to analyse the data and figure out which parts can be safely discarded without affecting the gist of what’s being transferred.
-
-If information is being discarded, this is known as [[lossy compression]]—you can never get back all of the original information once it has been lossily compressed.
-
-Main article: [[lossy compression]]
-
-If you can restore the entirety of the original data, it is known as [[lossless compression]]. This is necessary in cases where the information must be stored **verbatim** (word for word).
-
-For example, if you are sending a 26MB Powerpoint file to a friend, but GMail’s attachment limit is only 25MB, one thing you might try to do is put it into a compressed ZIP file to see if you can bring the size below 25MB. However, you would not want any information to be lost when it reaches your friend; they must be able to decode the [[ZIP]] file to retrieve the original Powerpoint file.
-
-Main article: [[lossless compression]]
-
-# File compression
-
-Compression can also be applied at the file level.
-
-One or more files can be compressed into a single file. This compressed file is called a [[file archive]].
-
-## Common archive compression formats
-
-* [[ZIP]] (file extension: `.zip`)
-* [[7zip]] (file extension: `.7z`)
-* [[RAR]] (file extension: `.rar`)</pre>
 </div>
 <div created="20210611030532554" creator="jsng" modified="20210613065811523" modifier="jsng" tags="Glossary" title="encode" type="text/x-markdown">
 <pre># Text encoding
@@ -14296,7 +14259,7 @@ Main article: [[Unicode]]</pre>
 <div created="20210613050950834" creator="jsng" modified="20210613050950834" modifier="jsng" title="TiB">
 <pre></pre>
 </div>
-<div caption="Topic: Compression" created="20210611083640196" creator="jsng" modified="20210613062613456" modifier="jsng" tags="Contents" title="Topic:compression" type="text/x-markdown">
+<div caption="Topic: Compression" created="20210611083640196" creator="jsng" modified="20210613102642778" modifier="jsng" tags="Contents" title="Topic:compression" type="text/x-markdown">
 <pre>{{||tagPageTemplate}}
 
 &lt;hr&gt;
@@ -14317,7 +14280,19 @@ If you can restore the entirety of the original data, it is known as [[lossless 
 
 For example, if you are sending a 26MB Powerpoint file to a friend, but GMail’s attachment limit is only 25MB, one thing you might try to do is put it into a compressed ZIP file to see if you can bring the size below 25MB. However, you would not want any information to be lost when it reaches your friend; they must be able to decode the [[ZIP]] file to retrieve the original Powerpoint file.
 
-Main article: [[lossless compression]]</pre>
+Main article: [[lossless compression]]
+
+# File compression
+
+Compression can also be applied at the file level.
+
+One or more files can be compressed into a single file. This compressed file is called a [[file archive]].
+
+## Common archive compression formats
+
+* [[ZIP]] (file extension: `.zip`)
+* [[7zip]] (file extension: `.7z`)
+* [[RAR]] (file extension: `.rar`)</pre>
 </div>
 <div caption="Topic: Data" created="20210610095238442" creator="jsng" list="[[Bits and bytes]]" modified="20210613062204825" modifier="jsng" tags="Contents" title="Topic:data" type="text/x-markdown">
 <pre>{{||tagPageTemplate}}</pre>
