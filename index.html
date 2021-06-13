@@ -405,8 +405,6 @@ Error message and password prompt
 
 <li>Draft of 'lossless compression' by jsng</li>
 
-<li>Draft of 'lossless image compression' by jsng</li>
-
 <li>encode</li>
 
 <li>encoding table</li>
@@ -959,7 +957,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="entropy coding" modified="20210613042924052" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="lossless image compression" modified="20210613042942639" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1749,10 +1747,13 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;entropy coding&quot;
+    },
+    {
+        &quot;title&quot;: &quot;lossless image compression&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[Draft of 'lossless image compression' by jsng]] [[entropy coding]] [[Draft of 'lossless audio compression' by jsng]]" modified="20210613042915996" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[lossless image compression]] [[Draft of 'lossless audio compression' by jsng]]" modified="20210613042915996" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13403,26 +13404,6 @@ Shannon’s source coding theorem does not claim that you cannot compress data b
 
 You are getting video and image files from those sources with lots of information thrown away. If you can’t tell the difference, good for you.</pre>
 </div>
-<div created="20210613040838383" creator="jsng" draft.of="lossless image compression" draft.title="lossless image compression" modified="20210613042913030" modifier="jsng" title="Draft of 'lossless image compression' by jsng" type="text/x-markdown">
-<pre>The most common image formats that use compression are GIF (yes, really) and PNG.
-
-# Pattern recognition
-
-Some kinds of images, such as screenshots, have patterns that are repeated. The algorithm used in GIF and PNG, called [LZ77](https://en.wikipedia.org/wiki/LZ77_and_LZ78), attempts to spot these patterns and compress them with [[run-length encoding]].
-
-Main article: [[run-length encoding]]
-
-&gt; {{run-length encoding}}
- 
-The nature of images makes the process easier, as each pixel only has 256 possible values rather than 65536.
-
-# Pattern storage and retrieval
-
-Those patterns are stored in a table, and *references* to them are used instead. So instead of saying “Pattern 0101011101110110”, the algorithm will store a list of these patterns, and refer to them as Pattern 0, Pattern 1, Pattern 10, Pattern 11, … —these are 1, 2, 3, and 4 respectively, in [[binary representation|Bits and bytes]].
-
-This method of pattern storage and retrieval is known as [[entropy coding]]&lt;&lt;fnote &quot;The term ‘entropy’ here has to do with the idea of entropy in information theory; see the Wikipedia article on the topic for more information.&quot;&gt;&gt;. By linking the longest pattern with the smallest reference number (i.e. Pattern 0), the next-longest pattern with the next-smallest reference number (Pattern 1, 10, 11, 100, 101, 110, …) you can reduce quite significantly the number of bits needed to represent the image.
-</pre>
-</div>
 <div created="20210611030532554" creator="jsng" modified="20210611033811818" modifier="jsng" tags="Glossary" title="encode">
 <pre>See [[encoding table]].</pre>
 </div>
@@ -13592,12 +13573,24 @@ Shannon’s source coding theorem does not claim that you cannot compress data b
 
 You are getting video and image files from those sources with lots of information thrown away. If you can’t tell the difference, good for you.</pre>
 </div>
-<div created="20210613040838383" creator="jsng" modified="20210613040946168" modifier="jsng" title="lossless image compression">
-<pre>The most common image formats that use compression are GIF (yes, really) and PNG. Some kinds of images, such as screenshots, have patterns that are repeated. The algorithm used in GIF and PNG, LZ77, attempts to spot these patterns, and reduce them to 1) the repeating portion, and 2) the number of repetitions. This is known as **run-length encoding**. The nature of images makes the process easier, as each pixel only has 256 possible values rather than 65536.
+<div created="20210613040838383" creator="jsng" modified="20210613042942633" modifier="jsng" summary="Entropy encoding stores the list of patterns, using a shorter symbol as reference to the pattern." title="lossless image compression" type="text/x-markdown">
+<pre>The most common image formats that use compression are GIF (yes, really) and PNG.
 
-Those patterns are stored in a table, and *references* to them are used instead. So instead of saying “Pattern 0101011101110110”, the algorithm will store a list of these patterns, and refer to them as Pattern 0, Pattern 1, Pattern 10, Pattern 11, … (these are 1, 2, 3, and 4 respectively, in binary representation ([Issue 40](https://buttondown.email/laymansguide/archive/lmg-s4-issue-40-bits-and-bytes/))).
+# Pattern recognition
 
-This is known as **entropy coding**. By linking the longest pattern with the smallest reference number (i.e. Pattern 0), the next-longest pattern with the next-smallest reference number (Pattern 1, 10, 11, 100, 101, 110, …) you can reduce quite significantly the number of bits needed to represent the image.
+Some kinds of images, such as screenshots, have patterns that are repeated. The algorithm used in GIF and PNG, called [LZ77](https://en.wikipedia.org/wiki/LZ77_and_LZ78), attempts to spot these patterns and compress them with [[run-length encoding]].
+
+Main article: [[run-length encoding]]
+
+&gt; {{run-length encoding}}
+ 
+The nature of images makes the process easier, as each pixel only has 256 possible values rather than 65536.
+
+# Pattern storage and retrieval
+
+Those patterns are stored in a table, and *references* to them are used instead. So instead of saying “Pattern 0101011101110110”, the algorithm will store a list of these patterns, and refer to them as Pattern 0, Pattern 1, Pattern 10, Pattern 11, … —these are 1, 2, 3, and 4 respectively, in [[binary representation|Bits and bytes]].
+
+This method of pattern storage and retrieval is known as [[entropy coding]]&lt;&lt;fnote &quot;The term ‘entropy’ here has to do with the idea of entropy in information theory; see the Wikipedia article on the topic for more information.&quot;&gt;&gt;. By linking the longest pattern with the smallest reference number (i.e. Pattern 0), the next-longest pattern with the next-smallest reference number (Pattern 1, 10, 11, 100, 101, 110, …) you can reduce quite significantly the number of bits needed to represent the image.
 </pre>
 </div>
 <div created="20210611091158041" creator="jsng" modified="20210612040406231" modifier="jsng" summary="Computers compress image and audio data through a process similar to summarising: it analyses the data using algorithms that use brightness and colour instead of RGB values for images, and different frequencies of sound rather than samples at different points in time for audio. These algorithms then discard parts of the information that human senses do not perceive easily, and reduce the resolution of other parts that human senses are not as sensitive to." title="lossy audio compression" type="text/x-markdown">
