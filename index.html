@@ -421,8 +421,6 @@ Error message and password prompt
 
 <li>DPI</li>
 
-<li>Draft of 'Image formats' by jsng</li>
-
 <li>Draft of 'metadata' by jsng</li>
 
 <li>encode</li>
@@ -2251,7 +2249,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="PNG [[data containers]] Welcome" modified="20210613070705905" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[data containers]] Welcome" modified="20210613070705905" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13422,7 +13420,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210613062439211" creator="jsng" list="[[Draft of 'Image formats' by jsng]] [[Draft of 'metadata' by jsng]] [[Media files]] codec Contents" modified="20210613071706939" modifier="jsng" title="$:/StoryList">
+<div created="20210613062439211" creator="jsng" list="[[Image formats]] [[Draft of 'metadata' by jsng]] [[Media files]] codec Contents" modified="20210613071706939" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13924,27 +13922,6 @@ Main article: [[Media files]]</pre>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210611084252877" creator="jsng" draft.of="Image formats" draft.title="Image formats" list-after="[[Image representation in computers]]" modified="20210613072238841" modifier="jsng" tags="Topic:data WIP" title="Draft of 'Image formats' by jsng" type="text/x-markdown">
-<pre>{{||prereqTemplate}}
-
-Each image format is labelled below by its file extension, the part of the filename that comes at the end.
-
-Main article: [[BMP]]
-
-&gt; {{BMP}}
-
-Main article: [[GIF]]
-
-&gt; {{GIF}}
-
-Main article: [[JPEG]]
-
-&gt; {{JPEG}}
-
-Main article: [[PNG]]
-
-&gt; {{PNG}}</pre>
-</div>
 <div created="20210613071145667" creator="jsng" draft.of="metadata" draft.title="metadata" modified="20210613071657520" modifier="jsng" title="Draft of 'metadata' by jsng" type="text/x-markdown">
 <pre>**Metadata** is data about data.
 
@@ -14054,36 +14031,26 @@ So you can compress data beyond its predictability limit if you do it [[lossily|
 
 Those tiny files you found? You are getting them with lots of information thrown away. If you can’t tell the difference, good for you—that means the lossy compression algorithm is really good!.</pre>
 </div>
-<div created="20210611084252877" creator="jsng" list-after="[[Image representation in computers]]" modified="20210613062502475" modifier="jsng" tags="Topic:data WIP" title="Image formats" type="text/x-markdown">
+<div created="20210611084252877" creator="jsng" list-after="[[Image representation in computers]]" modified="20210613072326756" modifier="jsng" tags="Topic:data" title="Image formats" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 Each image format is labelled below by its file extension, the part of the filename that comes at the end.
 
-## BMP
+Main article: [[BMP]]
 
-BMP is short for “bitmap”.
+&gt; {{BMP}}
 
-The bitmap format commonly encountered in computer systems, stores pixels uncompressed.
+Main article: [[GIF]]
 
-Each pixel thus requires 3 [[byte]]s of space, so a full-screen image on a typical modern laptop (1920 pixels horizontally, 1080 pixels vertically) would require about 6 MB (1920×1080×3)!
+&gt; {{GIF}}
 
-## GIF
+Main article: [[JPEG]]
 
-GIF (Graphics Interchange Format) is one of the earliest image formats, and is rather more restricted in its capabilities as a result.
+&gt; {{JPEG}}
 
-Each GIF pixel is only 8 bits, so a GIF image is limited to using only use 256 colours. One of those colours can be “transparent”, allowing GIF to produce images with transparent parts.
+Main article: [[PNG]]
 
-## JPEG
-
-JPEG stands for Joint Photographers Expert Group, so it wouldn’t surprise you to learn that it was designed to display photographs with as small a filesize as possible. Today, it is in use for a variety of image types.
-
-JPEG can display pixels in 24 bits (i.e. 8 bits for RGB each), but does not store them uncompressed like BMP. Instead, it applies [[lossy compression]] to reduce the filesize by “discarding information” from the image in a way that does not affect the final image *visibly*.
-
-## PNG
-
-PNG (Portable Network Graphics) was designed as a replacement for GIF. It supports 24-bit image pixels, with an additional 8 bits per pixel for transparency information.
-
-PNG pixels have 256 different levels of transparency, allowing for blending effects where one image overlaps another. PNG files support image compression, allowing them to be stored with smaller filesizes than BMP.</pre>
+&gt; {{PNG}}</pre>
 </div>
 <div created="20210611060910634" creator="jsng" list-after="[[Colour representation in computers]]" modified="20210613062445929" modifier="jsng" summary="An image’s resolution describes its dimensions. Its pixel resolution gives an indication of its physical size (if printed or displayed on a screen), and thus its sharpness. A display with imperceptibly small pixels is often referred to as a Retina display (Apple’s branding) or as a high-PPI display; this requires at least 220 PPI nominally. For an image to be printed sharply, it needs at least 300 DPI." tags="Topic:data" title="Image representation in computers" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
