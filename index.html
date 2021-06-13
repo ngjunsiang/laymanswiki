@@ -459,6 +459,8 @@ Error message and password prompt
 
 <li>JPEG</li>
 
+<li>JPG</li>
+
 <li>KiB</li>
 
 <li>line feed</li>
@@ -1023,7 +1025,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="PNG" modified="20210613072313887" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="JPEG" modified="20210613072453051" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2246,10 +2248,32 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;PNG&quot;
+    },
+    {
+        &quot;title&quot;: &quot;JPG&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 571.183349609375,
+            &quot;left&quot;: 711.13330078125,
+            &quot;width&quot;: 23.850006103515625,
+            &quot;right&quot;: 734.9833068847656,
+            &quot;bottom&quot;: 589.183349609375,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;JPEG&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 571.183349609375,
+            &quot;left&quot;: 711.13330078125,
+            &quot;width&quot;: 32.03334045410156,
+            &quot;right&quot;: 743.1666412353516,
+            &quot;bottom&quot;: 589.183349609375,
+            &quot;height&quot;: 18
+        }
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[data containers]] Welcome" modified="20210613070705905" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="JPEG [[data containers]] Welcome" modified="20210613070705905" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13420,7 +13444,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210613062439211" creator="jsng" list="[[Image formats]] [[Draft of 'metadata' by jsng]] [[Media files]] codec Contents" modified="20210613071706939" modifier="jsng" title="$:/StoryList">
+<div created="20210613062439211" creator="jsng" list="JPG [[Draft of 'metadata' by jsng]] [[Media files]] codec Contents" modified="20210613071706939" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13922,7 +13946,7 @@ Main article: [[Media files]]</pre>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210613071145667" creator="jsng" draft.of="metadata" draft.title="metadata" modified="20210613071657520" modifier="jsng" title="Draft of 'metadata' by jsng" type="text/x-markdown">
+<div created="20210613071145667" creator="jsng" draft.of="metadata" draft.title="metadata" modified="20210613072451497" modifier="jsng" title="Draft of 'metadata' by jsng" type="text/x-markdown">
 <pre>**Metadata** is data about data.
 
 For example:
@@ -13941,7 +13965,7 @@ Video and audio files may also include information about:
 
 Files generally have a file header.
 
-For example, the [[GIF]] file format begins with a header (“GIF87a” or “GIF89a”), so anytime a piece of software (e.g. an image editor) starts to read a file header and detects that label, it knows it’s dealing with a GIF file and not a JPG file.
+For example, the [[GIF]] file format begins with a header (`GIF87a` or `GIF89a`). When a piece of software, such as an image editor, reads a file header and detects that label, it knows it’s dealing with a [[GIF]] file instead of, say, a [[JPEG]] file.
 
 When the software opens a GIF file, and before it has read anything beyond this header signature (that’s what the [GIF file specification](https://buttondown.email/laymansguide/archive/lmg-s2-issue-23-specifications-in-software/) calls the above label), it doesn’t know anything about this GIF file. Before doing anything else, it will at least need to know the width and height of this image, and in the case of GIF, some information about its colour palette (which can vary from GIF to GIF). All this information is stored within the file header, and the software will have to know how to read it from the header.
 
@@ -14103,6 +14127,9 @@ In 1985, the European Computer Manufacturers Association (ECMA) extended US-[[AS
 
 JPEG can display pixels in 24 bits (i.e. 8 bits for RGB each), but does not store them uncompressed like BMP. Instead, it applies [[lossy compression]] to reduce the filesize by “discarding information” from the image in a way that does not affect the final image *visibly*.
 </pre>
+</div>
+<div created="20210613072456178" creator="jsng" modified="20210613072517752" modifier="jsng" tags="Glossary" title="JPG">
+<pre>alternative form of [[JPEG]].</pre>
 </div>
 <div created="20210611063507525" creator="jsng" modified="20210611063507525" modifier="jsng" title="KiB">
 <pre></pre>
