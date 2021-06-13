@@ -1037,7 +1037,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="file extension" modified="20210613073903653" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="file extension" modified="20210613074139619" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2364,10 +2364,27 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;file extension&quot;
+    },
+    {
+        &quot;title&quot;: &quot;file extension&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 670.4833374023438,
+            &quot;left&quot;: 552.5,
+            &quot;width&quot;: 82.75,
+            &quot;right&quot;: 635.25,
+            &quot;bottom&quot;: 688.4833374023438,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'file extension' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;file extension&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[file extension]] [[file header]] [[Draft of 'specification' by jsng]] JPEG [[data containers]] Welcome" modified="20210613073659010" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[file extension]] [[Draft of 'specification' by jsng]] JPEG [[data containers]] Welcome" modified="20210613073659010" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -14045,7 +14062,7 @@ Main article: [[Media files]]</pre>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210613071145667" creator="jsng" draft.of="metadata" draft.title="metadata" modified="20210613073843563" modifier="jsng" title="Draft of 'metadata' by jsng" type="text/x-markdown">
+<div created="20210613071145667" creator="jsng" draft.of="metadata" draft.title="metadata" modified="20210613074040896" modifier="jsng" title="Draft of 'metadata' by jsng" type="text/x-markdown">
 <pre>**Metadata** is data about data.
 
 For example:
@@ -14060,23 +14077,29 @@ Video and audio files may also include information about:
 * the [[codec]] used to create them
 * their [[pixel]] dimensions
 
-# The [[file header]]
+# The file header
 
-Files generally have a file header. All metadata is stored within the file header, and the software will have to know how to read it from the header.
+Files generally have a [[file header]]. All metadata is stored within the file header, and the software will have to know how to read it from the header.
 
-## Example: [[GIF]]
+## Example: GIF
 
-For example, the [[GIF]] file format [[specification]] begins with a header (`GIF87a` or `GIF89a`). When a piece of software, such as an image editor, reads a file header and detects that label, it knows it’s dealing with a [[GIF]] file instead of, say, a [[JPEG]] file.
+For example, the [[GIF]] file format [[specification]] begins with a [[file header]] (`GIF87a` or `GIF89a`). When a piece of software, such as an image editor, reads a file header and detects that label, it knows it’s dealing with a [[GIF]] file instead of, say, a [[JPEG]] file.
 
 The raw data of the [[GIF]] file consists of a continuous [[stream]] of pixel data. This obviously cannot be rendered as a single row of pixels. The software will need to know the width and height of this image, and in the case of [[GIF]], some information about its [[colour palette]].
 
-# The [[file extension]]
+# The file extension
 
 That still seems like a complicated way for operating systems to detect what type of files they have. They would have to read the header of each file, and then figure out which complicated set of patterns the header matches.
 
 When you open a folder, save a file, or download something from the internet, the computer seems to do that detection much faster than this process would imply.
 
-That’s because when speed is a concern, software will often attempt to detect the filetype simply by detecting the **file extension**. File extensions are the ending characters in the filename, after the period (“.”). A file named sound.mp3 has a .mp3 file extension, and one named image.gif has a .gif file extension. That’s a much faster way to detect a whole bunch of filetypes, it’s quick-and-dirty, and it mostly works.
+That’s because when speed is a concern, software will often attempt to detect the file type simply by detecting the [[file extension]].
+
+Side reading: [[file extension]]
+
+&gt; {{file extension}}
+
+That’s a much faster way to detect a whole bunch of filetypes, it’s quick-and-dirty, and it mostly works.
 
 That also means you can spoof a lot of software into thinking you have a zip file when you in fact have an .epub ebook file. This is a pretty common way to unpack files that use the zip archive format to pack their files! So if you write software that absolutely needs to be sure it has the right filetype, you should double-check the file header instead of jumping to assumptions from the file extension alone.</pre>
 </div>
@@ -14119,8 +14142,10 @@ A computer uses an encoding table to [[encode]] characters into their binary (0s
 
 Main article: [[lossy audio compression]]</pre>
 </div>
-<div created="20210613073902447" creator="jsng" modified="20210613073903650" modifier="jsng" tags="Glossary" title="file extension">
-<pre></pre>
+<div created="20210613073902447" creator="jsng" modified="20210613074139609" modifier="jsng" tags="Glossary" title="file extension" type="text/x-markdown">
+<pre>**File extensions** are the ending characters in the filename, after the period (`.`).
+
+A file named `sound.mp3` has a `.mp3` file extension, and a file named `image.gif` has a `.gif` file extension.</pre>
 </div>
 <div created="20210613073855661" creator="jsng" modified="20210613073856979" modifier="jsng" tags="Glossary" title="file header">
 <pre></pre>
