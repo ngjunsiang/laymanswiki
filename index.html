@@ -425,7 +425,7 @@ Error message and password prompt
 
 <li>DPI</li>
 
-<li>Draft of 'MIME types' by jsng</li>
+<li>Draft of 'HTTP request' by jsng</li>
 
 <li>encode</li>
 
@@ -1041,7 +1041,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="RFC" modified="20210613075110919" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="MIME types" modified="20210613092540858" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2464,10 +2464,13 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;RFC&quot;
+    },
+    {
+        &quot;title&quot;: &quot;MIME types&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[Draft of 'MIME types' by jsng]] metadata [[Media files]] [[data containers]] Welcome" modified="20210613074422091" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[MIME types]] metadata [[Media files]] [[data containers]] Welcome" modified="20210613074422091" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13641,7 +13644,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210613062439211" creator="jsng" list="metadata Contents" modified="20210613071706939" modifier="jsng" title="$:/StoryList">
+<div created="20210613062439211" creator="jsng" list="[[Draft of 'HTTP request' by jsng]] metadata Contents" modified="20210613075543757" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14148,22 +14151,17 @@ Main article: [[Media files]]</pre>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210613074411653" creator="jsng" draft.of="MIME types" draft.title="MIME types" list-after="[[metadata]]" modified="20210613075501021" modifier="jsng" tags="Glossary [[data containers]]" title="Draft of 'MIME types' by jsng" type="text/x-markdown">
-<pre>**MIME** stands for **M**ultipurpose **I**nternet **M**ail **E**xtension.
-
-**MIME types** are a standardised way of declaring what type of file you have. [The exhaustive list of MIME types](https://www.iana.org/assignments/media-types/media-types.xhtml#examples), maintained by [[IANA]], has MIME types for application files, audio, font, image, messages, model, multipart formats, text, and video.
-
-&gt; {{MIME}}
-
-If you plan to come up with a file format that is intended to be used widely, you can [apply for it to be included](https://www.iana.org/form/media-types) in the list.
-
-## MIME types and HTTP headers
-
-Remember this HTTP header from Issue 8?
+<div created="20210611030849058" creator="jsng" draft.of="HTTP request" draft.title="HTTP request" modified="20210613075622805" modifier="jsng" tags="todo:refactor" title="Draft of 'HTTP request' by jsng" type="text/x-markdown">
+<pre># HTTP headers
 
 ![An HTTP request header](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season1/issue008/issue008_01.png)
 
-See that label in the third row, with the Content-Type label, “application/json”? That’s the MIME type for the [JSON data format](https://buttondown.email/laymansguide/archive/lmg-issue-5-what-is-json/). When the server returns data, my browser (the client) has no idea what format it is. It might be nicely formatted HTML meant for human consumption, but it might also be plain text, JSON data (like in this case), XML, or any of the various data formats that people use. Declaring the MIME type properly makes life easier for the browser to know what to do with the data.</pre>
+See that label in the third row, with the Content-Type label, “application/json”? That’s the MIME type for the [JSON data format](https://buttondown.email/laymansguide/archive/lmg-issue-5-what-is-json/). When the server returns data, my browser (the client) has no idea what format it is. It might be nicely formatted HTML meant for human consumption, but it might also be plain text, JSON data (like in this case), XML, or any of the various data formats that people use. Declaring the MIME type properly makes life easier for the browser to know what to do with the data.
+
+![An HTTP request captured in Wireshark showing my developer API key](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season1/issue012/issue012_01.png)&lt;br /&gt;
+An HTTP request captured in Wireshark.
+
+The `\r` and `\n` you see there are control codes. They stand for '[[return]]' and '[[newline]]', the modern equivalent of 'carriage return' and 'line feed'.</pre>
 </div>
 <div created="20210611030532554" creator="jsng" modified="20210613065811523" modifier="jsng" tags="Glossary" title="encode" type="text/x-markdown">
 <pre># Text encoding
@@ -14614,20 +14612,18 @@ That is why we rely on what are known as [[MIME types]].</pre>
 <div created="20210611063507528" creator="jsng" modified="20210611063507528" modifier="jsng" title="MiB">
 <pre></pre>
 </div>
-<div created="20210613074411653" creator="jsng" list-after="[[metadata]]" modified="20210613074518912" modifier="jsng" tags="Glossary [[data containers]]" title="MIME types" type="text/x-markdown">
-<pre>Guessing [[metadata]] from [[file extensions]] might work in a computer, but on the internet it’s the Wild West. Images sent as data packets over the internet do not come with filenames; notice how some apps (e.g. WhatsApp) rename your image with a different name when you upload or download them? And on some web platforms, especially those that handle huge volumes of images, the filenames are just semi-random characters.
+<div created="20210613074411653" creator="jsng" list-after="[[metadata]]" modified="20210613092540846" modifier="jsng" tags="Glossary [[data containers]]" title="MIME types" type="text/x-markdown">
+<pre>**MIME** stands for **M**ultipurpose **I**nternet **M**ail **E**xtension.
 
-That is why we rely on what are known as **MIME types**. MIME stands for **M**ultipurpose **I**nternet **M**ail **E**xtension, and yes there is an RFC for it, [RFC6838](https://tools.ietf.org/html/rfc6838). This is a much more standardised way of declaring what type of file you have. [The exhaustive list](https://www.iana.org/assignments/media-types/media-types.xhtml#examples) of MIME types, maintained by IANA (whom we first met in [Issue 27](https://buttondown.email/laymansguide/archive/lmg-s3-issue-27-what-is-an-ip-address/)), has MIME types for application files, audio, font, image, messages, model, multipart formats, text, and video.
+**MIME types** are a standardised way of declaring what type of file you have. [The exhaustive list of MIME types](https://www.iana.org/assignments/media-types/media-types.xhtml#examples), maintained by [[IANA]], has MIME types for application files, audio, font, image, messages, model, multipart formats, text, and video.
+
+The [[specification]] for [[MIME types]] are described in [RFC6838](https://tools.ietf.org/html/rfc6838).
+
+Side reading: [[RFC]]
 
 If you plan to come up with a file format that is intended to be used widely, you can [apply for it to be included](https://www.iana.org/form/media-types) in the list.
 
-## MIME types and HTTP headers
-
-Remember this HTTP header from Issue 8?
-
-![An HTTP request header](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season1/issue008/issue008_01.png)
-
-See that label in the third row, with the Content-Type label, “application/json”? That’s the MIME type for the [JSON data format](https://buttondown.email/laymansguide/archive/lmg-issue-5-what-is-json/). When the server returns data, my browser (the client) has no idea what format it is. It might be nicely formatted HTML meant for human consumption, but it might also be plain text, JSON data (like in this case), XML, or any of the various data formats that people use. Declaring the MIME type properly makes life easier for the browser to know what to do with the data.</pre>
+## MIME types and HTTP headers</pre>
 </div>
 <div created="20210613065128815" creator="jsng" modified="20210613065248284" modifier="jsng" tags="Glossary" title="MP3">
 <pre>An audio file format, largely superceded by [[AAC]].</pre>
