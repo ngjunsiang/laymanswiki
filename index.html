@@ -391,6 +391,8 @@ Error message and password prompt
 
 <li>Bits and bytes</li>
 
+<li>BMP</li>
+
 <li>byte</li>
 
 <li>carriage return</li>
@@ -418,6 +420,10 @@ Error message and password prompt
 <li>decode</li>
 
 <li>DPI</li>
+
+<li>Draft of 'Image formats' by jsng</li>
+
+<li>Draft of 'metadata' by jsng</li>
 
 <li>encode</li>
 
@@ -1013,7 +1019,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="data containers" modified="20210613071629077" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="BMP" modified="20210613071911263" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2162,10 +2168,38 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;data containers&quot;
+    },
+    {
+        &quot;title&quot;: &quot;GIF&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 359.183349609375,
+            &quot;left&quot;: 576.11669921875,
+            &quot;width&quot;: 21.633331298828125,
+            &quot;right&quot;: 597.7500305175781,
+            &quot;bottom&quot;: 377.183349609375,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;BMP&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 436.98333740234375,
+            &quot;left&quot;: 468.9666748046875,
+            &quot;width&quot;: 29.116668701171875,
+            &quot;right&quot;: 498.0833435058594,
+            &quot;bottom&quot;: 454.98333740234375,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'BMP' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;BMP&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[data containers]] Welcome" modified="20210613070705905" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="BMP GIF [[data containers]] Welcome" modified="20210613070705905" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13336,7 +13370,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210613062439211" creator="jsng" list="metadata [[Media files]] codec Contents" modified="20210613070656847" modifier="jsng" title="$:/StoryList">
+<div created="20210613062439211" creator="jsng" list="[[Draft of 'Image formats' by jsng]] [[Draft of 'metadata' by jsng]] [[Media files]] codec Contents" modified="20210613071706939" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13641,6 +13675,15 @@ In the 1970s, 8-bit microprocessors were all the rage. These were processors tha
 
 8 bits can store 256 (2^8) unique values, and that turns out to be enough for many purposes. I won’t list examples here, since those examples will come in subsequent issues. If you need greater precision, you can always use 2 bytes.</pre>
 </div>
+<div created="20210613071745756" creator="jsng" modified="20210613071911261" modifier="jsng" title="BMP">
+<pre>''BMP'' is short for “bitmap”.
+
+The bitmap format, commonly encountered in computer systems, stores pixels uncompressed.
+
+Each pixel thus requires 3 [[byte]]s of space.
+
+A full-screen image on a typical modern laptop (1920 pixels horizontally, 1080 pixels vertically) would require about 6 MB (1920×1080×3 = 6,220,800).</pre>
+</div>
 <div created="20210610071159528" creator="jsng" modified="20210611011023888" modifier="jsng" tags="Glossary" title="byte" type="text/x-markdown">
 <pre>A **byte** is a sequence of 8 [[bit]]s. This is sufficient to represent 2^8 = 256 different values.
 
@@ -13828,6 +13871,78 @@ Main article: [[Media files]]</pre>
 </div>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
+</div>
+<div created="20210611084252877" creator="jsng" draft.of="Image formats" draft.title="Image formats" list-after="[[Image representation in computers]]" modified="20210613071734273" modifier="jsng" tags="Topic:data WIP" title="Draft of 'Image formats' by jsng" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+Each image format is labelled below by its file extension, the part of the filename that comes at the end.
+
+## BMP
+
+[[BMP]] is short for “bitmap”.
+
+The bitmap format commonly encountered in computer systems, stores pixels uncompressed.
+
+Each pixel thus requires 3 [[byte]]s of space, so a full-screen image on a typical modern laptop (1920 pixels horizontally, 1080 pixels vertically) would require about 6 MB (1920×1080×3)!
+
+## GIF
+
+[[GIF]] (Graphics Interchange Format) is one of the earliest image formats, and is rather more restricted in its capabilities as a result.
+
+Each GIF pixel is only 8 bits, so a GIF image is limited to using only use 256 colours. One of those colours can be “transparent”, allowing GIF to produce images with transparent parts.
+
+## JPEG
+
+[[JPEG]] stands for Joint Photographers Expert Group, so it wouldn’t surprise you to learn that it was designed to display photographs with as small a filesize as possible. Today, it is in use for a variety of image types.
+
+[[JPEG]] can display pixels in 24 bits (i.e. 8 bits for RGB each), but does not store them uncompressed like BMP. Instead, it applies [[lossy compression]] to reduce the filesize by “discarding information” from the image in a way that does not affect the final image *visibly*.
+
+## PNG
+
+[[PNG]] (Portable Network Graphics) was designed as a replacement for GIF. It supports 24-bit image pixels, with an additional 8 bits per pixel for transparency information.
+
+[[PNG]] pixels have 256 different levels of transparency, allowing for blending effects where one image overlaps another. PNG files support image compression, allowing them to be stored with smaller filesizes than BMP.</pre>
+</div>
+<div created="20210613071145667" creator="jsng" draft.of="metadata" draft.title="metadata" modified="20210613071657520" modifier="jsng" title="Draft of 'metadata' by jsng" type="text/x-markdown">
+<pre>**Metadata** is data about data.
+
+For example:
+
+* the creation date of the file
+* the file size
+* the [[file type|Data containers]]
+
+Video and audio files may also include information about:
+
+* their duration
+* the [[codec]] used to create them
+* their [[pixel]] dimensions
+
+# The file header
+
+Files generally have a file header.
+
+For example, the [[GIF]] file format begins with a header (“GIF87a” or “GIF89a”), so anytime a piece of software (e.g. an image editor) starts to read a file header and detects that label, it knows it’s dealing with a GIF file and not a JPG file.
+
+When the software opens a GIF file, and before it has read anything beyond this header signature (that’s what the [GIF file specification](https://buttondown.email/laymansguide/archive/lmg-s2-issue-23-specifications-in-software/) calls the above label), it doesn’t know anything about this GIF file. Before doing anything else, it will at least need to know the width and height of this image, and in the case of GIF, some information about its colour palette (which can vary from GIF to GIF). All this information is stored within the file header, and the software will have to know how to read it from the header.
+
+If for any reason you wish to start writing software that can edit GIF files, you can find out its [detailed specifications](https://www.w3.org/Graphics/GIF/spec-gif87.txt) online. This is because when Compuserve came up with the format in the early days of the internet, they meant it to be widely used. Companies who design a file format to be used internally and not for public use will come up with **proprietary** file formats, which are inscrutable to most people. Anyone coming across such a file would have no idea how to open it.
+
+If you want to figure out such a file format, you would have to **reverse-engineer** it, like [this guy on StackExchange](https://reverseengineering.stackexchange.com/questions/261/how-to-reverse-engineer-a-proprietary-data-file-format-e-g-smartboard-notebook). Since typical engineering means starting with a blueprint and coming up with a product, reverse-engineering means starting with the product and trying to figure out its blueprint. Here’s Julia Evans having a go at [reverse-engineering the Notability file format](https://jvns.ca/blog/2018/03/31/reverse-engineering-notability-format/).
+
+Another example: The MP3 file format is simpler (although not easier to decode). Audio data is organised into frames, each frame having its own header followed by data. What about the artist name, record label, genre, date of release, and other information that comes with the file? All that is stored within the ID3 portion of the file metadata.
+
+![MP3 file structure showing internal structure](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season4/issue049/issue049_01.png)&lt;br /&gt;
+&lt;small&gt;The MP3 file structure&lt;br /&gt;
+Image from [Wikipedia](https://en.wikipedia.org/wiki/MP3#/media/File:Mp3filestructure.svg)&lt;/small&gt;
+
+# File extension
+
+That seems like an awfully complicated way for operating systems to detect what type of files they have. They would have to open each file individually, even if just to read the header, and then figure out which complicated set of patterns the header matches. When you open a folder, save a file, or download something from the internet, the computer seems to do that detection much faster.
+
+That’s because when speed is a concern, software will often attempt to detect the filetype simply by detecting the **file extension**. File extensions are the ending characters in the filename, after the period (“.”). A file named sound.mp3 has a .mp3 file extension, and one named image.gif has a .gif file extension. That’s a much faster way to detect a whole bunch of filetypes, it’s quick-and-dirty, and it mostly works.
+
+That also means you can spoof a lot of software into thinking you have a zip file when you in fact have an .epub ebook file. This is a pretty common way to unpack files that use the zip archive format to pack their files! So if you write software that absolutely needs to be sure it has the right filetype, you should double-check the file header instead of jumping to assumptions from the file extension alone.</pre>
 </div>
 <div created="20210611030532554" creator="jsng" modified="20210613065811523" modifier="jsng" tags="Glossary" title="encode" type="text/x-markdown">
 <pre># Text encoding
