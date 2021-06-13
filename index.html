@@ -419,8 +419,6 @@ Error message and password prompt
 
 <li>DPI</li>
 
-<li>Draft of 'MediaInfo' by jsng</li>
-
 <li>Draft of 'New Tiddler' by jsng</li>
 
 <li>encode</li>
@@ -474,6 +472,8 @@ Error message and password prompt
 <li>LPCM</li>
 
 <li>luma</li>
+
+<li>MediaInfo</li>
 
 <li>MiB</li>
 
@@ -1009,7 +1009,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="codec" modified="20210613070521624" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="MediaInfo" modified="20210613070601964" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2120,10 +2120,13 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;codec&quot;
+    },
+    {
+        &quot;title&quot;: &quot;MediaInfo&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="codec [[Draft of 'MediaInfo' by jsng]] [[data containers]] Welcome" modified="20210613070351037" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="codec MediaInfo [[data containers]] Welcome" modified="20210613070351037" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13771,19 +13774,7 @@ Main article: [[Media files]]</pre>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210613070201967" creator="jsng" draft.of="MediaInfo" draft.title="MediaInfo" modified="20210613070334320" modifier="jsng" title="Draft of 'MediaInfo' by jsng" type="text/x-markdown">
-<pre>''MediaInfo'' is a program to decipher [[containers|Media files]] and streams
-
-You can use [MediaInfo](https://mediaarea.net/en/MediaInfo) to help you read the file [[metadata]] and figure out the container and [[stream]] formats.
-
-Here’s an example of the information it shows about the only video file on my laptop at the moment:
-
-![MediaInfo screenshot showing container, video stream, and audio stream information](images/issue048_01.png)&lt;br /&gt;
-Mediainfo screenshot showing metadata for an MP4 file containing an [[h264]] video stream and an [[AAC]] audio stream.&lt;/small&gt;
-
-**Issue summary:** A video container can hold one or more audio, video, or text data streams. To encode or decode a data stream, you need to have the necessary codec installed. Most video runs at 25 or 30 fps, with high-quality video going up to 60 fps. You can use a program like MediaInfo to help you decipher the streams inside a video container file.</pre>
-</div>
-<div created="20210613063316979" creator="jsng" draft.of="New Tiddler" draft.title="Media files" modified="20210613070518310" modifier="jsng" tags="[[data containers]]" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
+<div created="20210613063316979" creator="jsng" draft.of="New Tiddler" draft.title="Media files" modified="20210613070550000" modifier="jsng" tags="[[data containers]]" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
 <pre>A media file, as we like to think about it, actually is not a simple form of data. It can have one or more of the following:
 
 * video data
@@ -13844,18 +13835,9 @@ Main article: [[codec]]
 
 &gt; {{codec}}
 
-If you don’t have the required codecs, you will get an error when you attempt to open a video container file that has one or more streams in that format.
-
-The operating system you use comes bundled with support for the most common formats, although for free-and-open-source [[OS]]es (like some flavours of Linux) this may be hampered by copyright restrictions.
-
 In the 2010s, when video formats proliferated like a tropical ecosystem, [[codec]] packs containing just about every codec you need were a common sight online. Today, with most video moved to online streaming platforms, you no longer need them.
 
-# MediaInfo: a program to decipher containers and streams
-
-You can use a program like [MediaInfo](https://mediaarea.net/en/MediaInfo) to help you read the metadata and figure out the container and stream formats. Here’s an example of the information it shows about the only video file on my laptop at the moment:
-
-![MediaInfo screenshot showing container, video stream, and audio stream information](images/issue048_01.png)&lt;br /&gt;
-Mediainfo screenshot showing metadata for an MP4 file containing an [[h264]] video stream and an [[AAC]] audio stream.&lt;/small&gt;
+Side reading: [[MediaInfo]]
 
 **Issue summary:** A video container can hold one or more audio, video, or text data streams. To encode or decode a data stream, you need to have the necessary codec installed[^1]. Most video runs at 25 or 30 fps, with high-quality video going up to 60 fps. You can use a program like MediaInfo to help you decipher the streams inside a video container file.</pre>
 </div>
@@ -14162,6 +14144,16 @@ For photograph images, you will generally hit diminishing returns below 85%: eac
 </div>
 <div created="20210611085714936" creator="jsng" modified="20210611085739968" modifier="jsng" tags="Glossary" title="luma" type="text/x-markdown">
 <pre>Refers to the brightness information (black-and-white) in an image.</pre>
+</div>
+<div created="20210613070201967" creator="jsng" modified="20210613070601958" modifier="jsng" title="MediaInfo" type="text/x-markdown">
+<pre>''MediaInfo'' is a program to decipher [[containers|Media files]] and streams
+
+You can use [MediaInfo](https://mediaarea.net/en/MediaInfo) to help you read the file [[metadata]] and figure out the container and [[stream]] formats.
+
+Here’s an example of the information it shows about the only video file on my laptop at the moment:
+
+![MediaInfo screenshot showing container, video stream, and audio stream information](images/issue048_01.png)&lt;br /&gt;
+Mediainfo screenshot showing metadata for an MP4 file containing an [[h264]] video stream and an [[AAC]] audio stream.</pre>
 </div>
 <div created="20210611063507528" creator="jsng" modified="20210611063507528" modifier="jsng" title="MiB">
 <pre></pre>
