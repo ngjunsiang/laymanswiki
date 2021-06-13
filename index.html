@@ -401,8 +401,6 @@ Error message and password prompt
 
 <li>DPI</li>
 
-<li>Draft of 'lossless audio compression' by jsng</li>
-
 <li>Draft of 'lossless compression' by jsng</li>
 
 <li>encode</li>
@@ -426,6 +424,8 @@ Error message and password prompt
 <li>KiB</li>
 
 <li>line feed</li>
+
+<li>lossless audio compression</li>
 
 <li>lossless compression</li>
 
@@ -959,7 +959,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="predictive coding" modified="20210613043505648" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="lossless audio compression" modified="20210613044025801" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1792,10 +1792,13 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;predictive coding&quot;
+    },
+    {
+        &quot;title&quot;: &quot;lossless audio compression&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[Draft of 'lossless audio compression' by jsng]] [[predictive coding]]" modified="20210613043320451" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[lossless audio compression]]" modified="20210613043320451" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13386,13 +13389,6 @@ Main article: [[lossy image compression]]</pre>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210613040811964" creator="jsng" draft.of="lossless audio compression" draft.title="lossless audio compression" modified="20210613043319010" modifier="jsng" title="Draft of 'lossless audio compression' by jsng" type="text/x-markdown">
-<pre>Main article: [[predictive coding]]
-
-Lossless audio compressors work in a similar way. They sample the audio in short segments, and try to see how lazy they can get in describing the next sample. This is known as **predictive coding**, because it is a little similar to the process of trying to “predict” the next sample. For example, based on the past 10 samples, a predictive algorithm might say “the next sample will have 0.09% of sample 1, 1.02% of sample 2, 5.63% of sample 3, …”. Storing those percentages will use a lot less space than storing the entire sample; when decompressing, the algorithm can then multiply the percentages with the respective samples to reconstruct the original sample.
-
-In lossless compression, the predictive algorithm already knows what the next sample is, so most of the work is in calculating exactly what those percentages are. It does so by making an initial guess, then refining that guess in successive stages of calculation, each stage bringing it closer to the original waveform. This requires a lot of computation time. If such a setting is available, the algorithm can shorten the process, leading to a poorer guess. It then calculates the difference between the best guess and the original sample, and stores the difference between the two. This part is what makes it lossless rather than lossy.</pre>
-</div>
 <div created="20210612041137368" creator="jsng" draft.of="lossless compression" draft.title="lossless compression" modified="20210613042822145" modifier="jsng" summary="Data cannot be compressed beyond its predictability limit (Shannon entropy) in a lossless fashion. Lossless compression does not discard any information. It generally tries to spot patterns in the data, and represent those patterns with fewer bits, through a combination of predictive coding, run-length encoding, and entropy coding." title="Draft of 'lossless compression' by jsng" type="text/x-markdown">
 <pre>While [[lossy compression]] depends very much on how our senses (particularly sight and hearing) work and on their deficiencies, lossless compression only depends on the characteristics of the information.
 
@@ -13551,6 +13547,23 @@ In 1985, the European Computer Manufacturers Association (ECMA) extended US-[[AS
 </div>
 <div created="20210611023323056" creator="jsng" modified="20210611033909087" modifier="jsng" tags="Glossary" title="line feed">
 <pre></pre>
+</div>
+<div created="20210613040811964" creator="jsng" modified="20210613044025790" modifier="jsng" title="lossless audio compression" type="text/x-markdown">
+<pre>Main article: [[predictive coding]]
+
+&gt; {{predictive coding}}
+
+Lossless audio compressors work in a similar way: they sample the audio in short segments, and try to see how “lazy” they can get in describing the next sample.
+
+For example, based on the past 10 samples, a predictive algorithm might say “the next sample will have 0.09% of sample 1, 1.02% of sample 2, 5.63% of sample 3, …”.
+
+Storing those percentages will use a lot less space than storing the entire sample. When decompressing, the algorithm can then multiply the percentages with the respective samples to reconstruct the original sample.
+
+Most of the computational work here is in calculating exactly what those percentages are. The algorithm makes an initial guess, then refining that guess in successive stages of calculation, each stage bringing it closer to the original waveform.
+
+# Speeding up lossless compression
+
+In cases where speed is essential, the algorithm can shorten the process, leading to a poorer guess. It then calculates the difference between the best guess and the original sample, and stores the difference between the two&lt;&lt;fnote &quot;This part is what makes it lossless rather than lossy.&quot;&gt;&gt;.</pre>
 </div>
 <div created="20210612041137368" creator="jsng" modified="20210612041432600" modifier="jsng" title="lossless compression" type="text/x-markdown">
 <pre>While [[lossy compression]] depends very much on how our senses (particularly sight and hearing) work and on their deficiencies, lossless compression only depends on the characteristics of the information.
