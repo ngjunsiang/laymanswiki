@@ -1037,7 +1037,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="metadata" modified="20210613074403272" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="MIME types" modified="20210613074518938" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2423,10 +2423,27 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 559.63330078125,
             &quot;height&quot;: 17
         }
+    },
+    {
+        &quot;title&quot;: &quot;MIME types&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 45.44999694824219,
+            &quot;left&quot;: 647.5166625976562,
+            &quot;width&quot;: 32.90000915527344,
+            &quot;right&quot;: 680.4166717529297,
+            &quot;bottom&quot;: 84.93333435058594,
+            &quot;height&quot;: 39.48333740234375
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'MIME types' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;MIME types&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="metadata [[Media files]] [[data containers]] Welcome" modified="20210613074302598" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[MIME types]] metadata [[Media files]] [[data containers]] Welcome" modified="20210613074422091" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13600,7 +13617,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210613062439211" creator="jsng" list="[[MIME types]] Contents" modified="20210613071706939" modifier="jsng" title="$:/StoryList">
+<div created="20210613062439211" creator="jsng" list="Contents" modified="20210613071706939" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14548,8 +14565,20 @@ That also means you can spoof a lot of software into thinking you have a `.zip` 
 <div created="20210611063507528" creator="jsng" modified="20210611063507528" modifier="jsng" title="MiB">
 <pre></pre>
 </div>
-<div created="20210613074411653" creator="jsng" modified="20210613074420258" modifier="jsng" tags="Glossary" title="MIME types">
-<pre></pre>
+<div created="20210613074411653" creator="jsng" list-after="[[metadata]]" modified="20210613074518912" modifier="jsng" tags="Glossary [[data containers]]" title="MIME types" type="text/x-markdown">
+<pre>Guessing [[metadata]] from [[file extensions]] might work in a computer, but on the internet it’s the Wild West. Images sent as data packets over the internet do not come with filenames; notice how some apps (e.g. WhatsApp) rename your image with a different name when you upload or download them? And on some web platforms, especially those that handle huge volumes of images, the filenames are just semi-random characters.
+
+That is why we rely on what are known as **MIME types**. MIME stands for **M**ultipurpose **I**nternet **M**ail **E**xtension, and yes there is an RFC for it, [RFC6838](https://tools.ietf.org/html/rfc6838). This is a much more standardised way of declaring what type of file you have. [The exhaustive list](https://www.iana.org/assignments/media-types/media-types.xhtml#examples) of MIME types, maintained by IANA (whom we first met in [Issue 27](https://buttondown.email/laymansguide/archive/lmg-s3-issue-27-what-is-an-ip-address/)), has MIME types for application files, audio, font, image, messages, model, multipart formats, text, and video.
+
+If you plan to come up with a file format that is intended to be used widely, you can [apply for it to be included](https://www.iana.org/form/media-types) in the list.
+
+## MIME types and HTTP headers
+
+Remember this HTTP header from Issue 8?
+
+![An HTTP request header](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season1/issue008/issue008_01.png)
+
+See that label in the third row, with the Content-Type label, “application/json”? That’s the MIME type for the [JSON data format](https://buttondown.email/laymansguide/archive/lmg-issue-5-what-is-json/). When the server returns data, my browser (the client) has no idea what format it is. It might be nicely formatted HTML meant for human consumption, but it might also be plain text, JSON data (like in this case), XML, or any of the various data formats that people use. Declaring the MIME type properly makes life easier for the browser to know what to do with the data.</pre>
 </div>
 <div created="20210613065128815" creator="jsng" modified="20210613065248284" modifier="jsng" tags="Glossary" title="MP3">
 <pre>An audio file format, largely superceded by [[AAC]].</pre>
