@@ -413,6 +413,8 @@ Error message and password prompt
 
 <li>DPI</li>
 
+<li>Draft of 'New Tiddler' by jsng</li>
+
 <li>encode</li>
 
 <li>encoding table</li>
@@ -420,6 +422,8 @@ Error message and password prompt
 <li>entropy coding</li>
 
 <li>FFT</li>
+
+<li>fps</li>
 
 <li>GiB</li>
 
@@ -983,7 +987,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="data containers" modified="20210613063314422" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="fps" modified="20210613063938328" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1746,10 +1750,27 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;data containers&quot;
+    },
+    {
+        &quot;title&quot;: &quot;fps&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 690.2833251953125,
+            &quot;left&quot;: 726.9666748046875,
+            &quot;width&quot;: 19.266677856445312,
+            &quot;right&quot;: 746.2333526611328,
+            &quot;bottom&quot;: 708.2833251953125,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'fps' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;fps&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[data containers]] Welcome" modified="20210613063149891" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="fps [[data containers]] Welcome" modified="20210613063149891" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -12920,7 +12941,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210613062439211" creator="jsng" list="Contents" modified="20210613063023144" modifier="jsng" title="$:/StoryList">
+<div created="20210613062439211" creator="jsng" list="[[Draft of 'New Tiddler' by jsng]] Contents" modified="20210613063734426" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13371,6 +13392,72 @@ Main article: [[lossy image compression]]</pre>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
+<div created="20210613063316979" creator="jsng" draft.of="New Tiddler" draft.title="Video files" modified="20210613063922248" modifier="jsng" tags="[[data containers]]" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
+<pre>A video file, as we like to think about it, actually is not a simple form of data. It can have one or more of the following:
+
+* video data
+* audio data
+* subtitles
+* annotations (e.g. on Youtube videos)
+* chapters (which let you jump to certain points in the video, like a bookmark)
+* miscellaneous files (e.g. embedded copyright information)
+
+These various types of information, if they are time-sensitive (video, audio, and subtitles), have to be presented in synchrony. We can’t just throw them into a simple zip file or folder and assume the computer knows what to do with them! How does a computer know how to put them together into an engaging movie?
+
+# The video container
+
+What we usually understand as a video file is actually a **video container** format. The common ones we encounter online today are [[MP4]] (`.mp4`) and [[Quicktime]] (`.mov`). In a more recent past, you would have commonly encountered [[AVI]] (`.avi`), [[3GPP]] (`.3gp`), and [[Flash Video]] (`.flv`). And if you’re a video techie who dives into [[DVD]]s and [[Blu-ray]] discs, you would also have seen [[Video Objects]] (`.vob`) and [[MPEG Transport Streams]] (`.ts`) while digging through their contents on a computer.
+
+The audio, image, and text data in the video container are referred to as [[streams]]. At the [[binary|Bits and bytes]] level, it’s all 1s and 0s; how does the computer know which part of the file contains audio, image, or text data? This information is in the video container [[metadata]], along with more details on how to load the correct part of the video, audio, or text _at the right time_.
+
+If you have come across poorly formed video where the image and audio data is not in sync, or the subtitles come too early/late, you know how critical it is to get this right: the human eye and ear can be pretty sensitive to even slight discrepancies in timing.
+
+# From still image to video
+
+I’ve talked about how pixels are perceived in still image data, now I’ll introduce one more aspect of [psychovisuals](https://en.wikipedia.org/wiki/Human_visual_system_model): how the human eye perceives visuals and motion.
+
+The eye interacts with the brain in strange ways. Over millions of years of evolution, the brain has [evolved a ‘high-power’ and a ‘low-power’ way](https://www.eurekalert.org/pub_releases/2006-07/uops-prc072606.php) to receive information from the eye. Under everyday conditions, the brain is able to connect separate frames of image data into a coherent picture and interpretation without being confused by the differences between each frame.
+
+Decades of experimentation have set the gold standard for motion pictures at 60 frames per second ([[fps]]) for a seamless experience. That’s a lot of images per second, and a lot of corresponding video data!
+
+For everyday purposes, such as online streaming, it is more common to encounter 30 fps, or even 25 fps for older videos. In certain types of video entertainment, such as hand-drawn animation, the human eye can make do with 15 fps and the brain can still piece together an enjoyable performance!
+
+# Data streams
+
+How about the data streams? How are they stored?
+
+To start with the obvious, they are not stored uncompressed; we saw that a single image of 1920×1080 pixels (that’s 1080p video standard, with 1080 pixels vertically) already requires 6 MiB ([Issue 43](https://buttondown.email/laymansguide/archive/lmg-s4-issue-43-images-a-mosaic-of-3-colours/)), while one second of audio requires 86 KiB ([Issue 45](https://buttondown.email/laymansguide/archive/lmg-s4-issue-45-audio-a-sampling-of-values/)).
+
+In addition to the lossy compression techniques I covered in [Issue 46](https://buttondown.email/laymansguide/archive/lmg-s4-issue-46-lossy-compression/), software that creates these streams can also compare video frames at different points in time and throw away identical parts (if there’s no scene change, or if the camera is panning slowly, for instance).
+
+Various video stream formats exist to carry out this lossy compression of video data.
+
+- h264 (a.k.a. AVC, for **A**dvanced **V**ideo **Coding**) is still the most common video stream format in use today.
+- h265 (a.k.a. HEVC, for **H**igh **E**fficiency **V**ideo **C**oding) is slated to replace it and is set to become more and more popular.
+- Google’s VP9 is attempting to compete with it (with companies such as Netflix already on board).
+- FLV (as a video stream format, not a container; I know it’s confusing) is becoming less and less common.
+
+What about audio? We used to encounter MP3 pretty often, but today most audio stream data is stored as AAC (for **A**dvanced **A**udio **C**oding, the standard that’s meant to replace MP3), Dolby (often on DVDs and Blu-rays), and sometimes Vorbis (`.ogg`).
+
+Confused yet? Just remember that the video file you have (carrying the `.mp4`, `.mov`, etc file extension) is only the container, and it contains one or more streams of actual data.
+
+# Encoding and decoding
+
+To use these streams, you need a piece of software on your computer. This piece of software en**co**des or **dec**odes the data stream, so it is called a **codec**. If you don’t have the required codecs, you will get an error when you attempt to open a video container file that has one or more streams in that format.
+
+The operating system you use comes bundled with support for the most common formats, although for free-and-open-source OSes (like some flavours of Linux) this may be hampered by copyright restrictions.
+
+About a decade ago, when video formats proliferated like a tropical ecosystem, codec packs containing just about every codec you need were a common sight online. Today, with most video moved to online streaming platforms, you no longer need them.
+
+# MediaInfo: a program to decipher containers and streams
+
+You can use a program like [MediaInfo](https://mediaarea.net/en/MediaInfo) to help you read the metadata and figure out the container and stream formats. Here’s an example of the information it shows about the only video file on my laptop at the moment:
+
+![MediaInfo screenshot showing container, video stream, and audio stream information](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season4/issue048/issue048_01.png)&lt;br /&gt;
+&lt;small&gt;Mediainfo screenshot showing metadata for an MP4 file containing an h264 (a.k.a. AVC) video stream and an AAC audio stream.&lt;/small&gt;
+
+**Issue summary:** A video container can hold one or more audio, video, or text data streams. To encode or decode a data stream, you need to have the necessary codec installed[^1]. Most video runs at 25 or 30 fps, with high-quality video going up to 60 fps. You can use a program like MediaInfo to help you decipher the streams inside a video container file.</pre>
+</div>
 <div created="20210611030532554" creator="jsng" modified="20210611033811818" modifier="jsng" tags="Glossary" title="encode">
 <pre>See [[encoding table]].</pre>
 </div>
@@ -13386,6 +13473,9 @@ A computer uses an encoding table to [[encode]] characters into their binary (0s
 <pre>A mathematical algorithm that converts audio [[waveform]] data into information about how much each frequency of sound&lt;&lt;fnote &quot;frequency refers to the pitch of the sound&quot;&gt;&gt; is represented.
 
 Main article: [[lossy audio compression]]</pre>
+</div>
+<div created="20210613063928369" creator="jsng" modified="20210613063938322" modifier="jsng" tags="Glossary" title="fps" type="text/x-markdown">
+<pre>frames per second.</pre>
 </div>
 <div created="20210613050950828" creator="jsng" modified="20210613050950828" modifier="jsng" title="GiB">
 <pre></pre>
