@@ -407,6 +407,8 @@ Error message and password prompt
 
 <li>DPI</li>
 
+<li>Draft of 'Audio representation in computers' by jsng</li>
+
 <li>encode</li>
 
 <li>encoding table</li>
@@ -975,7 +977,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Topic:data" modified="20210613052320770" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Topic:data" modified="20210613052400988" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1717,10 +1719,30 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;Topic:data&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'Audio representation in computers' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Topic:data&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 340.58331298828125,
+            &quot;left&quot;: 43,
+            &quot;width&quot;: 93.11666870117188,
+            &quot;right&quot;: 136.11666870117188,
+            &quot;bottom&quot;: 359.58331298828125,
+            &quot;height&quot;: 19
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'Topic:data' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Topic:data&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="Topic:data [[Audio representation in computers]] Welcome" modified="20210613051125406" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="Topic:data [[Draft of 'Audio representation in computers' by jsng]] Welcome" modified="20210613051125406" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -12882,7 +12904,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210613052255896" creator="jsng" list="tagPageTemplate Contents" modified="20210613052255896" modifier="jsng" title="$:/StoryList">
+<div created="20210613052255896" creator="jsng" list="Contents" modified="20210613052255896" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13351,6 +13373,61 @@ Main article: [[lossy image compression]]</pre>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
+<div created="20210611062941007" creator="jsng" draft.of="Audio representation in computers" draft.title="Audio representation in computers" list-after="[[Bits and bytes]]" modified="20210613052330546" modifier="jsng" summary="Humans can distinguish 120 dB of loudness, which means the loudest perceivable sound is a million times louder than the softest perceivable sound. CD audio provides 16 bits of information per sample, sufficient to provide 96 dB. Humans have a hearing range from 20 Hz to 20 kHz. CD audio is sampled at 44.1 kHz. Uncompressed audio thus requires 705,600 bits per second, or 86 KiB/s." tags="Topic:data WIP" title="Draft of 'Audio representation in computers' by jsng" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+# The human ear
+
+Humans detect sound through vibrations of the eardrum which are transmitted through the [cochlea](https://en.wikipedia.org/wiki/Cochlea) of the inner ear. These vibrations are caused by variations of air pressure in the ear, which in turn are caused by vibrations in the air.
+
+These vibrations can be produced by computers through speakers. The cones of a speaker, which are the movable rubber parts, are connected to electromagnets which control the movement of the cone. The computer sends a signal that causes the cones to move in a particular pattern that produces … sound, or sometimes music!
+
+# Converting sound to data
+
+If we plot the vibrations of air on a graph&lt;&lt;fnote &quot;Such graphs are called waveforms&quot;&gt;&gt;, they look something like this:
+
+![Audio waveform](images/issue045_01.png)
+An audio waveform.  
+Image by [Gordon Johnson](https://pixabay.com/users/GDJ-1086657/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1781570) from [Pixabay](https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1781570).
+
+This waveform is converted into numeric values through a process called **Pulse Code Modulation** (PCM). If you see the acronym [[PCM]] or [[LPCM]] in any audio-related file, this is likely what it is referring to.
+
+![Audio waveform](images/issue045_02.png)
+Pulse code modulation to convert a waveform into numeric values.  
+Image from [Wikimedia Commons](https://en.wikipedia.org/wiki/File:Pcm.svg).
+
+These numeric values can then be stored digitally as [[bit]]s.
+
+# How high do these values go? Of decibels and dB
+
+How many different numbers would we need? That depends on how loud we need the sound to be … or does it?
+
+The maximum loudness actually depends on your speaker, not on the signal. The number of levels we can represent in the sound should depend on the range between the loudest and softest sound, shouldn’t it? If we have 16 levels, we can represent a range of sound where the softest sound is 16 times softer than the loudest sound. Any sounds softer than that can’t be represented on the waveform—they would round down to a value of 0!
+
+So just how many levels can the ear make out? This is studied under the field of [psychoacoustics](https://en.wikipedia.org/wiki/Psychoacoustics), the study of how sound is processed in the ear and perceived in the brain.
+
+Loudness is measured in **decibels** ([[dB]]). The softest sound the human ear can hear corresponds to 20 microPa (microPascals) of pressure; this is taken to be 0 dB, a reference point. A sound 10 times louder (200 microPa) is 20 dB. Every increase of 20 dB represents a tenfold increase in loudness. So a jet liner taking off (120 dB) is 10^6 times louder, or a million times louder! That is generally the limit of human hearing: from 0 to 120 dB, or a range of 120 dB.
+
+# Audio fidelity
+
+CD-quality audio uses 16 [[bit]]s to store a single sample of sound. This provides 65,536 (2^16) different levels, which corresponds to a 96 dB range of loudness. I doubt we will find speakers that can produce close to jet engine levels of sound, and if we do, they probably won’t be using CD Audio as a sound format, so this is pretty much sufficient for most quality audio you’ll find on the internet.
+
+Today, 16-bit audio is pretty much standard on all computers&lt;&lt;fnote &quot;But some audiophiles tout the benefits of 24-bit audio.&quot;&gt;&gt;, that means each point produced from pulse code modulation (PCM, above) of sound contains 16 bits (2 bytes) of information. How many such points do we need for one second of audio?
+
+# Sampling and frequency
+
+You probably can’t make out the individual waves in the waveform much earlier in this issue, because the waveform is visually compressed horizontally. But if we expanded it, you would be able to make out individual waves.
+
+A sound with higher pitch has higher frequency; it has more waves per second. A sound with lower pitch has lower frequency; it has fewer waves per second. Here, it is the upper limit we need to worry about: we must have enough samples per second to be able to represent so many waves. To be able to see a complete wave, we need at least two points: one for the peak, and one for the valley.
+
+This agrees with what signal engineers learn from the [Nyquist-Shannon sampling theorem](https://en.wikipedia.org/wiki/Nyquist–Shannon_sampling_theorem): to store a 1 Hz sound (1 wave per second), you need at least 2 samples per second (to distinguish the peak and valley of the wave).
+
+# Human limits to hearing
+
+The human range of hearing ranges from 20 Hz to 20 kHz (that’s 20,000 Hz).  To store a 20 kHz sound, you need at least 40,000 samples per second. CD-quality audio is sampled at 44,100 samples per second (enough for up to 22.05 kHz), which is sufficient to cover the human hearing range of frequencies.
+
+So 1 second of audio, uncompressed, will need 16 bits × 44,100 samples = 705,600 bits, or 86 [[KiB]]. 1 minute of uncompressed audio would be 5.05 [[MiB]]!</pre>
+</div>
 <div created="20210611030532554" creator="jsng" modified="20210611033811818" modifier="jsng" tags="Glossary" title="encode">
 <pre>See [[encoding table]].</pre>
 </div>
@@ -13759,7 +13836,7 @@ Main article: [[Unicode]]</pre>
 <div created="20210613050950834" creator="jsng" modified="20210613050950834" modifier="jsng" title="TiB">
 <pre></pre>
 </div>
-<div caption="Topic: Data" created="20210610095238442" creator="jsng" list-before="[[question]]" modified="20210613052320762" modifier="jsng" tags="Contents" title="Topic:data" type="text/x-markdown">
+<div caption="Topic: Data" created="20210610095238442" creator="jsng" list="[[Bits and bytes]]" list-before="[[question]]" modified="20210613052400979" modifier="jsng" tags="Contents" title="Topic:data" type="text/x-markdown">
 <pre>{{||tagPageTemplate}}</pre>
 </div>
 <div created="20210612034834038" creator="jsng" modified="20210612034903410" modifier="jsng" title="transform">
