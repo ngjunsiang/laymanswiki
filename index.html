@@ -427,8 +427,6 @@ Error message and password prompt
 
 <li>DPI</li>
 
-<li>Draft of 'HTML document' by jsng</li>
-
 <li>Draft of 'New Tiddler' by jsng</li>
 
 <li>encode</li>
@@ -1049,7 +1047,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Draft of 'HTML document' by jsng" modified="20210613094833718" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="HTML document" modified="20210613102003241" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1759,10 +1757,13 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;Draft of 'HTML document' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;HTML document&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[Draft of 'HTML document' by jsng]]" modified="20210613094708535" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[HTML document]]" modified="20210613094708535" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13450,67 +13451,6 @@ Let’s look at some document formats:
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210613094706347" creator="jsng" draft.of="HTML document" draft.title="HTML document" modified="20210613095934930" modifier="jsng" tags="Document" title="Draft of 'HTML document' by jsng" type="text/x-markdown">
-<pre>Today (in 2021), [[URL]]s can end with all kinds of suffixes like `.aspx`, `.php`, or even no suffix. These pages are generated on the fly by the [[web server]] that serves the pages.
-
-But just a decade or two ago they almost always ended in `.html`. These were static documents, manually written by one or more authors, saved as a document file, and served without further processing by the [[web server]].
-
-Main article: [[HTML]]
-
-# HTML file structure
-
-This is a snippet of an [[HTML]] file:
-
-![Snippet of HTML from an HTML file](images/issue050_01.png)&lt;br /&gt;
-An HTML file.
-
-The syntax highlighting in the image should make it easier to notice that an HTML document consists of multiple **HTML elements**, contained within **HTML markup tags**.
-
-* Each tag starts with an open angled bracket `&lt;` and closed angled bracket `&gt;`.
-  * An **open tag** follows the format `&lt;…&gt;`
-  * A **close tag** follows the format `&lt;/…&gt;`
-  * Any text between the open and close tags is the content of the HTML tag.
-  * Self-contained tags follow the format `&lt;…/&gt;`. These tags do not have separate open and close tags; they consist of one tag only.
-* HTML elements can be nested in each other.
-* The first word after the `&lt;` is the name of the HTML tag.  HTML elements can have [standard names](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) which are recognised by all standard web browsers, or they can have non-standard names.
-* HTML elements can contain **attributes**: additional information associated with the HTML element.
-  * Each attribute is described in a `name=&quot;value&quot;` format, after the tag name, but before the `&gt;`.
-  * Multiple attributes are separated by a space.
-
-# Common HTML elements
-
-* `&lt;html&gt;` starts the document, `&lt;/html&gt;` ends it.
-* `&lt;head&gt;&lt;/head&gt;` is the page header, which contains information about the page: the page title (which will appear in the title bar of your web browser), the styles to apply to the document are within.
-* `&lt;style type=&quot;text/css&quot;&gt;…&lt;/style&gt;`, which I have hidden here and will show later.
-* `&lt;body class=&quot;app&quot;&gt;…&lt;/body&gt;` contains the main part of the document, which is what we will see.
-* `&lt;h1&gt;` and `&lt;h3&gt;` signify different levels of headers, which can all be formatted separately.
-* `&lt;div&gt;` (for &quot;division&quot;) is a generic container, within which you can embed images or other text.
-* `&lt;p&gt;…&lt;/p&gt;` (for paragraph) indicates to a web browser that the context is to be treated like a text paragraph.
-* `&lt;strong&gt;…&lt;/strong&gt;` indicates that it is to be formatted in strong fashion (which is usually treated as bold text … but you can change that in the styles section in the `&lt;head&gt;`).
-
-# HTML styling
-
-Those `class=&quot;…&quot;` portions in each tag are **attributes**. The [[web browser]] creates a content element for each tag, and styles it according to the predefined style class in the document, defined inside `&lt;style&gt;…&lt;/style&gt;`. This is what that section looks like when expanded:
-
-![Styles for the Issue 49 HTML file](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season4/issue050/issue050_02.png)&lt;br /&gt;
-&lt;small&gt;Element styles for Issue 49&lt;/small&gt;
-
-I don’t need to explain the specifications for you to notice that `&lt;h1&gt;`, `&lt;h2&gt;`, `&lt;h3&gt;` etc all have a slightly different style defined for them. `.app` is a little different; it starts with a period (`.`) and is applied to everything that has the `class=&quot;app&quot;` attribute (*psst* … that’s the `&lt;body&gt;` element from the earlier image!).
-
-Yet at the same time, there are also other styles defined for `&lt;body&gt;…&lt;/body&gt;`. The browser has rules for how it chooses which styles override which. Those rules are like the bible for web programmers and web designers, which thankfully we are not (\*waves to any web folks in this mailing list\*).
-
-Okay, just two more tags to illustrate embedding other content:
-
-![Another part of the Issue 49 HTML file showing the &lt;a&gt; tag](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season4/issue050/issue050_03.png)
-
-The `&lt;a&gt;` tag (for &quot;anchor&quot;; don’t ask) is used to define links (those clickable things in a webpage) and the place it links to is defined as a `href=&quot;…&quot;` attribute.
-
-![Another part of the Issue 49 HTML file showing the &lt;img&gt; tag](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season4/issue050/issue050_04.png)
-
-The `&lt;img&gt;` tag (for &quot;image&quot;) is used to insert images. Rollover text, which appears when you put the mouse cursor over the image without clicking, is defined in the `alt=&quot;…&quot;` attribute, while the URL of the image is defined in the `src=&quot;…&quot;` attribute.
-
-(Embedding an image in a webpage is also possible, but I don’t want to go into depth here because I would have to explain many more concepts before that.)</pre>
-</div>
 <div created="20210613094857058" creator="jsng" draft.of="New Tiddler" draft.title="Microsoft Word document" modified="20210613094920148" modifier="jsng" tags="Document" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
 <pre>## Word document: An XML document
 
@@ -13604,21 +13544,36 @@ Side reading: [[colour palette]]</pre>
 
 HTML is a **markup language**, not a programming language. You can’t write code and tell a computer to make different decisions by writing only HTML. You can create a button using HTML, but you can’t use HTML to tell the computer to send your credit card details to another server on the Internet when you click that button.</pre>
 </div>
-<div created="20210613094706347" creator="jsng" modified="20210613094818395" modifier="jsng" tags="" title="HTML document" type="text/x-markdown">
-<pre>Today (in 2021), URLs can end with all kinds of extensions like `.aspx`, `.php`, or even no extension. These pages are generated on the fly by the [[web server]] that serves the pages.
+<div created="20210613094706347" creator="jsng" modified="20210613102003222" modifier="jsng" tags="Document" title="HTML document" type="text/x-markdown">
+<pre>Today (in 2021), [[URL]]s can end with all kinds of suffixes like `.aspx`, `.php`, or even no suffix. These pages are generated on the fly by the [[web server]] that serves the pages.
 
 But just a decade or two ago they almost always ended in `.html`. These were static documents, manually written by one or more authors, saved as a document file, and served without further processing by the [[web server]].
 
 Main article: [[HTML]]
 
-## HTML Markup tags
+# HTML file structure
 
 This is a snippet of an [[HTML]] file:
 
 ![Snippet of HTML from an HTML file](images/issue050_01.png)&lt;br /&gt;
-An HTML file
+An HTML file.
 
-The syntax highlighting in the image should make it easier to notice the **HTML markup tags**. Each tag starts with an open angled bracket `&lt;` and closed angled bracket `&gt;`. These tags signify the start and end of segments in the document.
+The syntax highlighting in the image should make it easier to notice that an HTML document consists of multiple **HTML elements**, contained within **HTML markup tags**.
+
+## HTML tags
+
+* Each tag starts with an open angled bracket `&lt;` and closed angled bracket `&gt;`.
+  * An **open tag** follows the format `&lt;…&gt;`
+  * A **close tag** follows the format `&lt;/…&gt;`
+  * Any text between the open and close tags is the content of the HTML tag.
+  * Self-contained tags follow the format `&lt;…/&gt;`. These tags do not have separate open and close tags; they consist of one tag only.
+* HTML elements can be nested in each other.
+* The first word after the `&lt;` is the name of the HTML tag.  HTML elements can have [standard names](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) which are recognised by all standard web browsers, or they can have non-standard names.
+* HTML elements can contain **attributes**: additional information associated with the HTML element.
+  * Each attribute is described in a `name=&quot;value&quot;` format, after the tag name, but before the `&gt;`.
+  * Multiple attributes are separated by a space.
+
+## Common HTML elements
 
 * `&lt;html&gt;` starts the document, `&lt;/html&gt;` ends it.
 * `&lt;head&gt;&lt;/head&gt;` is the page header, which contains information about the page: the page title (which will appear in the title bar of your web browser), the styles to apply to the document are within.
@@ -13629,28 +13584,32 @@ The syntax highlighting in the image should make it easier to notice the **HTML 
 * `&lt;p&gt;…&lt;/p&gt;` (for paragraph) indicates to a web browser that the context is to be treated like a text paragraph.
 * `&lt;strong&gt;…&lt;/strong&gt;` indicates that it is to be formatted in strong fashion (which is usually treated as bold text … but you can change that in the styles section in the `&lt;head&gt;`).
 
-# HTML styling
+# HTML formatting
 
-Those `class=&quot;…&quot;` portions in each tag are **attributes**. The [[web browser]] creates a content element for each tag, and styles it according to the predefined style class in the document, defined inside `&lt;style&gt;…&lt;/style&gt;`. This is what that section looks like when expanded:
+The `class` attributes in each HTML tag describe how it is to be formatted. The [[web browser]] creates a content element for each tag, and styles it according to the style class defined inside the `&lt;style&gt;…&lt;/style&gt;` HTML element. This is what that section looks like when expanded:
 
-![Styles for the Issue 49 HTML file](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season4/issue050/issue050_02.png)&lt;br /&gt;
-&lt;small&gt;Element styles for Issue 49&lt;/small&gt;
+![Styles for an HTML file](images/issue050_02.png)&lt;br /&gt;
+Element styles for an HTML document
 
-I don’t need to explain the specifications for you to notice that `&lt;h1&gt;`, `&lt;h2&gt;`, `&lt;h3&gt;` etc all have a slightly different style defined for them. `.app` is a little different; it starts with a period (`.`) and is applied to everything that has the `class=&quot;app&quot;` attribute (*psst* … that’s the `&lt;body&gt;` element from the earlier image!).
+Notice that `&lt;h1&gt;`, `&lt;h2&gt;`, `&lt;h3&gt;` etc all have a slightly different style defined for them. `.app` is a little different; it starts with a period (`.`) and is applied to everything that has the `class=&quot;app&quot;` attribute&lt;&lt;fnote &quot;that’s the &lt;body&gt; element from the earlier image&quot;&gt;&gt;.
 
-Yet at the same time, there are also other styles defined for `&lt;body&gt;…&lt;/body&gt;`. The browser has rules for how it chooses which styles override which. Those rules are like the bible for web programmers and web designers, which thankfully we are not (\*waves to any web folks in this mailing list\*).
+At the same time, there are also other styles defined for `&lt;body&gt;…&lt;/body&gt;`. The browser has [rules for how it chooses which styles override which](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity).
 
-Okay, just two more tags to illustrate embedding other content:
+# Linking to other content
 
-![Another part of the Issue 49 HTML file showing the &lt;a&gt; tag](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season4/issue050/issue050_03.png)
+![Another part of HTML file showing the &lt;a&gt; tag](images/issue050_03.png)
 
-The `&lt;a&gt;` tag (for &quot;anchor&quot;; don’t ask) is used to define links (those clickable things in a webpage) and the place it links to is defined as a `href=&quot;…&quot;` attribute.
+## Hyperlinks
+
+The `&lt;a&gt;` tag&lt;&lt;fnote &quot;a here stands for anchor&quot;&gt;&gt; is used to define hyperlinks; yeah, those clickable things in a webpage. The URL to be linked to is defined by the `href=&quot;…&quot;` attribute.
 
 ![Another part of the Issue 49 HTML file showing the &lt;img&gt; tag](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season4/issue050/issue050_04.png)
 
-The `&lt;img&gt;` tag (for &quot;image&quot;) is used to insert images. Rollover text, which appears when you put the mouse cursor over the image without clicking, is defined in the `alt=&quot;…&quot;` attribute, while the URL of the image is defined in the `src=&quot;…&quot;` attribute.
+## Images
 
-(Embedding an image in a webpage is also possible, but I don’t want to go into depth here because I would have to explain many more concepts before that.)</pre>
+The `&lt;img&gt;` tag&lt;&lt;fnote &quot;img stands for image&quot;&gt;&gt; is used to insert images.
+
+Mouse-over text, which appears when you put the mouse cursor over the image without clicking, is defined in the `alt=&quot;…&quot;` attribute. The source URL of the image is defined in the `src=&quot;…&quot;` attribute.</pre>
 </div>
 <div created="20210611030849058" creator="jsng" modified="20210611033920526" modifier="jsng" tags="todo:refactor" title="HTTP request" type="text/x-markdown">
 <pre>![An HTTP request captured in Wireshark showing my developer API key](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season1/issue012/issue012_01.png)&lt;br /&gt;
