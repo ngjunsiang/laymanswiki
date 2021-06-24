@@ -441,8 +441,6 @@ Error message and password prompt
 
 <li>DPI</li>
 
-<li>Draft of 'operating system' by jsng</li>
-
 <li>editing a PDF file</li>
 
 <li>encode</li>
@@ -540,6 +538,8 @@ Error message and password prompt
 <li>newline</li>
 
 <li>OCR</li>
+
+<li>operating system</li>
 
 <li>OS</li>
 
@@ -1105,7 +1105,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Draft of 'operating system' by jsng" modified="20210624071236941" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="operating system" modified="20210624072043412" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2005,10 +2005,13 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;Draft of 'operating system' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;operating system&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[Draft of 'operating system' by jsng]] [[virtual memory]] question Topic:hardware" modified="20210624071852118" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[operating system]] [[virtual memory]] question Topic:hardware" modified="20210624071852118" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13185,7 +13188,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210624041146947" creator="jsng" list="[[virtual memory]] [[memory allocation]] OS compile Contents" modified="20210624071828564" modifier="jsng" title="$:/StoryList">
+<div created="20210624041146947" creator="jsng" list="[[memory allocation]] OS compile Contents" modified="20210624071828564" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13810,32 +13813,6 @@ Let’s look at some document formats:
 </div>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
-</div>
-<div created="20210624071252187" creator="jsng" draft.of="operating system" draft.title="operating system" modified="20210624071820436" modifier="jsng" tags="Topic:hardware Topic:software" title="Draft of 'operating system' by jsng" type="text/x-markdown">
-<pre>Contrary to our usual understanding, the [[CPU]] is actually mindless, and simply carries out instructions it is given. It is possible that at some point, instructions from one program may accidentally overwrite data in [[another program’s memory space|memory allocation]], resulting in data corruption or causing the program to [[crash]].
-
-There must be some kind of a “higher mind” maintaining order and harmony within the CPU so that our programs don’t muck things up for each other.
-
-# Early memory deconflicting
-
-In the early days of computing history, this higher mind was the programmer. In those days, a programmer had to mentally partition the limited memory space, and ensure that the programs being executed on the CPU don’t inadvertently muck up the memory in unexpected ways. This was manageable for a while: up to a few thousand, or tens of thousands of memory addresses, with a sensible set of rules.
-
-As programs became more complex, and when multiple programs had to be run on the same computer, bugs started to creep in, which became increasingly difficult to trace and fix.
-
-Humans could no longer manage the CPU’s resources manually; the process had to be automated. And so the **operating system** ([[OS]]) was born.
-
-# The operating system manages the computer’s resources
-
-An operating system has to do a few things at minimum:
-
-1. Enumerate the [[devices]] on the computer: checking all its available [[interface]]s and listing the devices connected to each interface, to be made available to programs upon request.
-2. Registering device ports into the [[virtual memory]] address space. This includes physical memory, hard drive ports, printer ports, keyboard and mouse and other USB device ports, and so on. This makes the devices available to programs that need to load data from those devices, or send data to those devices.
-3. Manage running programs, giving each program its own memory space, dividing up the available CPU time among programs so that each gets some runtime, allocating more memory to programs that request it, reclaiming memory from programs that release it.
-4. Enforce security by ensuring that programs only carry out instructions that they are allowed to. This is why Windows keeps bugging you about program permissions. This also ensures that guest users cannot access the data of other guest users, and cannot modify important system files.
-
-This is both an art and a science, and getting it right is an ongoing study. When an OS works well, instructions from different programs can be mixed into the same queue and executed by the CPU without the data somehow getting mixed up. And programs will not be able to dabble into the private memory area of other programs.
-
-But cybersecurity is a multi-billion dollar industry with good reason. Black hat hackers and cybersecurity researchers are constantly trying to find loopholes in the OS logic so as to access data they are not supposed to be able to access. In Meltdown and Spectre, the loophole is not a fault in the OS logic, but in a hardware feature of the CPU which I will explain in the next issue: the CPU cache.</pre>
 </div>
 <div created="20210613121827918" creator="jsng" modified="20210624041427611" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
@@ -14528,6 +14505,35 @@ If you plan to come up with a file format that is intended to be used widely, yo
 <pre>**OCR** stands for **O**ptical **C**haracter **R**ecognition.
 
 This is a feature in some apps that recognises text in images and recreates the text for you.</pre>
+</div>
+<div created="20210624071252187" creator="jsng" modified="20210624072043394" modifier="jsng" summary="The operating system is responsible for listing and managing the computer’s resources, making them available to programs running on the computer, and making sure they only use what they are allowed to." tags="Topic:hardware Topic:software" title="operating system" type="text/x-markdown">
+<pre>Contrary to our usual understanding, the [[CPU]] is actually mindless, and simply carries out instructions it is given. It is possible that at some point, instructions from one program may accidentally overwrite data in [[another program’s memory space|memory allocation]], resulting in data corruption or causing the program to [[crash]].
+
+There must be some kind of a “higher mind” maintaining order and harmony within the CPU so that our programs don’t muck things up for each other.
+
+# Early memory deconflicting
+
+In the early days of computing history, this higher mind was the programmer. In those days, a programmer had to mentally partition the limited memory space, and ensure that the programs being executed on the CPU don’t inadvertently muck up the memory in unexpected ways. This was manageable for a while: up to a few thousand, or tens of thousands of memory addresses, with a sensible set of rules.
+
+As programs became more complex, and when multiple programs had to be run on the same computer, bugs started to creep in, which became increasingly difficult to trace and fix.
+
+Humans could no longer manage the CPU’s resources manually; the process had to be automated. And so the **operating system** ([[OS]]) was born.
+
+# The operating system manages the computer’s resources
+
+An operating system has to do a few things at minimum:
+
+1. Enumerate the [[devices]] on the computer: checking all its available [[interface]]s and listing the devices connected to each interface, to be made available to programs upon request.
+
+2. Registering device ports into the [[virtual memory]] address space. This includes [[computer memory]], [[hard drive]] ports, [[printer]] ports, [[keyboard]] and [[mouse]] and other [[USB]] device ports, and so on. This makes the devices available to programs that need to load data from those devices, or send data to those devices.
+
+3. Manage running programs, giving each program its own memory space, dividing up the available CPU time among programs so that each gets some runtime, allocating more memory to programs that request it, reclaiming memory from programs that release it.
+
+4. Enforce security by ensuring that programs only carry out instructions that they are allowed to. This is why [[Windows]] keeps bugging you about program permissions. This also ensures that guest users cannot access the data of other guest users, and cannot modify important system files.
+
+When an OS works well, instructions from different programs can be mixed into the same queue and executed by the CPU without the data somehow getting mixed up. And programs will not be able to dabble into the private memory area of other programs.
+
+But cybersecurity is a multi-billion dollar industry with good reason. Black hat hackers and cybersecurity researchers are constantly trying to find loopholes in the OS logic so as to access data they are not supposed to be able to access. In [[Meltdown and Spectre]], the loophole is not a fault in the OS logic, but in a hardware feature of the CPU: the [[CPU cache]].</pre>
 </div>
 <div created="20210611061658469" creator="jsng" modified="20210624065716265" modifier="jsng" tags="Glossary" title="OS" type="text/x-markdown">
 <pre>**OS** stands for [[operating system]].</pre>
