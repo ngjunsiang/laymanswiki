@@ -437,8 +437,6 @@ Error message and password prompt
 
 <li>Draft of 'Central Processing Unit' by jsng</li>
 
-<li>Draft of 'New Tiddler' by jsng</li>
-
 <li>editing a PDF file</li>
 
 <li>encode</li>
@@ -606,6 +604,8 @@ Error message and password prompt
 <li>Why are music files so large (a few MB) when a voice call over internet uses so little data?</li>
 
 <li>Why can’t I copy text from a scanned document?</li>
+
+<li>Why can’t I run an exe file from Windows on my smartphone, or an Android/iOS app on my Windows laptop?</li>
 
 <li>Why do Powerpoint files sometimes compress very well and sometimes not at all?</li>
 
@@ -13030,7 +13030,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210624041146947" creator="jsng" list="[[Draft of 'New Tiddler' by jsng]] [[Draft of 'Central Processing Unit' by jsng]] [[Image formats]] Contents" modified="20210624061924559" modifier="jsng" title="$:/StoryList">
+<div created="20210624041146947" creator="jsng" list="[[Why can’t I run an exe file from Windows on my smartphone, or an Android/iOS app on my Windows laptop?]] [[Draft of 'Central Processing Unit' by jsng]] [[Image formats]] Contents" modified="20210624061924559" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13659,11 +13659,6 @@ I am using this arcane presentation format in a newsletter for layfolk because I
 Everything we ask a CPU to do essentially consists of loading data from somewhere, doing some kind of processing on it, and storing the result somewhere. The CPU processes lists of these instructions, at a rate of millions to billions of instructions per second.
 
 Let that sink in for a moment. Every Youtube video, meme, or tweet we send or see is the result of hundreds and thousands of operations, taking place in CPUs around the world. CPUs converting text, audio, and images into raw data, encapsulating it into a data package along with some metadata, sending it out to another CPU that translates the destination address and forwards it to the next gateway, and so on, until it reaches its destination, gets decoded and processed, and signals get sent to the monitor and speakers to produce what we see and hear.</pre>
-</div>
-<div created="20210624061854890" creator="jsng" draft.of="New Tiddler" draft.title="Why can’t I run an exe file from Windows on my smartphone, or an Android/iOS app on my Windows laptop?" modified="20210624061915243" modifier="jsng" tags="question" title="Draft of 'New Tiddler' by jsng">
-<pre>There are many reasons for that, and I will explain one of those reasons here: the x86-64 instruction set used by Intel/AMD CPUs on your Windows laptop is *not compatible* with the ARM instruction set used by your smartphone CPU; the MOV, ADD, and other instructions have different numerical codes in each instruction set.
-
-The same programming code for the app must be **compiled** into CPU instructions separately for Intel/AMD processors, and for ARM-based processors.</pre>
 </div>
 <div created="20210613121827918" creator="jsng" modified="20210624041427611" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
@@ -14738,6 +14733,17 @@ It takes some additional trickery to ensure the text appears at exactly the same
 If the [[PDF]] [[library]] gets the font size and positioning right, this *simulates* the experience of selecting text on the image and having it appear to be highlighted.
 
 However, the state of OCR technology is such that you will often still get typos or missing/extra spaces in the text, so do be sure to check any text that you copy from a [[PDF]]!</pre>
+</div>
+<div created="20210624061854890" creator="jsng" modified="20210624062447421" modifier="jsng" tags="question" title="Why can’t I run an exe file from Windows on my smartphone, or an Android/iOS app on my Windows laptop?" type="text/x-markdown">
+<pre>[[Windows]]&lt;&lt;fnote &quot;At the time of writing, the latest version of Windows is Windows 10&quot;&gt;&gt; is an operating system ([[OS]]) [[compile]]d for the [[x86-64]] [[instruction set]]. Apps written for Windows 10 therefore also require x86-64 instructions to be executed for their effect.
+
+The [[CPU]]s made by [[Intel]] and [[AMD]], and used in your laptop, are able to understand and execute these instructions.
+
+However, Android and iOS are compiled for the [[ARMv8]] [[instruction set]]. Apps written for these [[OS]]es require [[ARMv8]] instructions to be executed for their effect.
+
+An [[x86-64]] CPU is not able to understand and execute [[ARMv8]] instructions, and vice-versa. The MOV, ADD, and other instructions have different numerical codes in each instruction set.
+
+Main article: [[Central Processing Unit]]</pre>
 </div>
 <div created="20210613045023015" creator="jsng" list-after="[[lossless compression]]" modified="20210613045755705" modifier="jsng" tags="question" title="Why do Powerpoint files sometimes compress very well and sometimes not at all?" type="text/x-markdown">
 <pre>Main article: [[lossless compression]]
