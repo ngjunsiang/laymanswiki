@@ -435,6 +435,8 @@ Error message and password prompt
 
 <li>DPI</li>
 
+<li>Draft of 'Topic:compression' by jsng</li>
+
 <li>editing a PDF file</li>
 
 <li>encode</li>
@@ -582,6 +584,8 @@ Error message and password prompt
 <li>Topic:compression</li>
 
 <li>Topic:data</li>
+
+<li>Topic:hardware</li>
 
 <li>transform</li>
 
@@ -1085,7 +1089,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="editing a PDF file" modified="20210624041427635" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Topic:hardware" modified="20210624042046955" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1768,10 +1772,41 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;editing a PDF file&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Topic:compression&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 60.44999694824219,
+            &quot;left&quot;: 1368.933349609375,
+            &quot;width&quot;: 32.899993896484375,
+            &quot;right&quot;: 1401.8333435058594,
+            &quot;bottom&quot;: 99.93333435058594,
+            &quot;height&quot;: 39.48333740234375
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Topic:hardware&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 416.58331298828125,
+            &quot;left&quot;: 713.5166625976562,
+            &quot;width&quot;: 32.90000915527344,
+            &quot;right&quot;: 746.4166717529297,
+            &quot;bottom&quot;: 456.066650390625,
+            &quot;height&quot;: 39.48333740234375
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'Topic:compression' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'Topic:hardware' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Topic:hardware&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="" modified="20210624041055215" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="Topic:hardware [[Draft of 'Topic:compression' by jsng]]" modified="20210624042033709" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -12948,7 +12983,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210624041146947" creator="jsng" list="Topic:compression [[Central Processing Unit]] [[Image formats]] Contents" modified="20210624041856961" modifier="jsng" title="$:/StoryList">
+<div created="20210624041146947" creator="jsng" list="[[Central Processing Unit]] [[Image formats]] Contents" modified="20210624042024312" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13519,6 +13554,41 @@ Let’s look at some document formats:
 </div>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
+</div>
+<div caption="Topic: Compression" created="20210611083640196" creator="jsng" draft.of="Topic:compression" draft.title="Topic:compression" modified="20210624042036367" modifier="jsng" tags="Contents" title="Draft of 'Topic:compression' by jsng" type="text/x-markdown">
+<pre>{{||tagPageTemplate}}
+
+&lt;hr&gt;
+
+We all have that one friend who can just drone on and on about their day, giving a detailed account with every little thing that happened, and all the things that it reminds them of, and finally in their entire speech there’s that *one* piece of information you are looking for!
+
+Or maybe you’ve been in an hour-long meeting and your colleague missed it and asked you what they missed. Would it take you an hour to recount the key points? Probably not. You’d give a summary, highlighting only the key bits that would make a difference.
+
+# Lossy vs lossless compression
+
+Computers do something similar using compression [[algorithm]]s to analyse the data and figure out which parts can be safely discarded without affecting the gist of what’s being transferred.
+
+If information is being discarded, this is known as [[lossy compression]]—you can never get back all of the original information once it has been lossily compressed.
+
+Main article: [[lossy compression]]
+
+If you can restore the entirety of the original data, it is known as [[lossless compression]]. This is necessary in cases where the information must be stored **verbatim** (word for word).
+
+For example, if you are sending a 26MB Powerpoint file to a friend, but GMail’s attachment limit is only 25MB, one thing you might try to do is put it into a compressed ZIP file to see if you can bring the size below 25MB. However, you would not want any information to be lost when it reaches your friend; they must be able to decode the [[ZIP]] file to retrieve the original Powerpoint file.
+
+Main article: [[lossless compression]]
+
+# File compression
+
+Compression can also be applied at the file level.
+
+One or more files can be compressed into a single file. This compressed file is called a [[file archive]].
+
+## Common archive compression formats
+
+* [[ZIP]] (file extension: `.zip`)
+* [[7zip]] (file extension: `.7z`)
+* [[RAR]] (file extension: `.rar`)</pre>
 </div>
 <div created="20210613121827918" creator="jsng" modified="20210624041427611" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
@@ -14419,6 +14489,13 @@ One or more files can be compressed into a single file. This compressed file is 
 </div>
 <div caption="Topic: Data" created="20210610095238442" creator="jsng" list="[[Bits and bytes]]" modified="20210613062204825" modifier="jsng" tags="Contents" title="Topic:data" type="text/x-markdown">
 <pre>{{||tagPageTemplate}}</pre>
+</div>
+<div created="20210624042044918" creator="jsng" modified="20210624042046952" modifier="jsng" title="Topic:hardware">
+<pre>{{||tagPageTemplate}}
+
+&lt;hr&gt;
+
+</pre>
 </div>
 <div created="20210612034834038" creator="jsng" modified="20210612034903410" modifier="jsng" title="transform">
 <pre>A mathematical formula that converts data from one form into another.</pre>
