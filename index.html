@@ -1105,7 +1105,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="MMU" modified="20210624070727890" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Virtual memory" modified="20210624071132668" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1974,10 +1974,16 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;MMU&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'Virtual memory' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Virtual memory&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="MMU [[Virtual memory]] 64-bit [[CPU instructions]] [[Central Processing Unit]] question [[instruction set]] Topic:hardware" modified="20210624065650767" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[Virtual memory]] 64-bit [[CPU instructions]] [[Central Processing Unit]] question [[instruction set]] Topic:hardware" modified="20210624065650767" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13780,7 +13786,7 @@ Let’s look at some document formats:
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210624063928582" creator="jsng" draft.of="Memory addressing" draft.title="Memory addressing" list-after="[[Central Processing Unit]]" modified="20210624070658985" modifier="jsng" summary="Each instruction may consist of loading data from a memory location, sending data to a memory location, or performing operations on the data it is holding." tags="Topic:hardware" title="Draft of 'Memory addressing' by jsng" type="text/x-markdown">
+<div created="20210624063928582" creator="jsng" draft.of="Memory addressing" draft.title="Memory addressing" list-after="[[Central Processing Unit]]" modified="20210624070749990" modifier="jsng" summary="Each instruction may consist of loading data from a memory location, sending data to a memory location, or performing operations on the data it is holding." tags="Topic:hardware" title="Draft of 'Memory addressing' by jsng" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 A [[CPU]] executes instructions, which loads data from memory, store [[data|Bits and bytes]] to memory, or carries out operations on loaded data. Where exactly does this data go, and how is it organised?
@@ -13801,9 +13807,7 @@ Consider for a moment how the CPU would transfer data to the [[hard drive]]. Or 
 
 The most straightforward answer, which you may have some difficulty accepting, is that they are simply represented as memory addresses.
 
-Main article: [[Virtual memory]]
-
-A CPU that has a [[memory management unit]] ([[MMU]]) </pre>
+Main article: [[Virtual memory]]</pre>
 </div>
 <div created="20210613121827918" creator="jsng" modified="20210624041427611" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
@@ -14790,7 +14794,7 @@ With the right font type (i.e. [OpenType](https://en.wikipedia.org/wiki/OpenType
 - Unicode has a &quot;Private Use Area&quot; that you can use for your own private purposes. You can insert symbols from this area for use in a webpage.
   - Some websites use this to create custom icons that can scale in size and change colour easily, just like text.</pre>
 </div>
-<div created="20210624065530588" creator="jsng" list-after="[[Memory addressing]]" modified="20210624070518693" modifier="jsng" tags="Topic:hardware Glossary" title="Virtual memory" type="text/x-markdown">
+<div created="20210624065530588" creator="jsng" list-after="[[Memory addressing]]" modified="20210624071132649" modifier="jsng" tags="Topic:hardware Glossary" title="Virtual memory" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 An [[operating system]] (OS) makes system resources, such as [[memory]], [[storage]], and [[peripheral devices]], available to programs running in the OS.
@@ -14799,7 +14803,20 @@ To present these resources in a consistent format, the operating system represen
 
 This technique for managing data sources as a single coherent set of memory addresses is known as **virtual memory**.
 
-Thus, a computer that has only 4 GiB of computer memory will have virtual memory greater than 4 GiB. Each byte of computer memory will have an address in virtual memory. The various devices on the computer system will also have an address (or multiple addresses) in virtual memory.</pre>
+Thus, a computer that has only 4 GiB of computer memory will have virtual memory greater than 4 GiB. Each byte of computer memory will have an address in virtual memory. The various devices on the computer system will also have an address (or multiple addresses) in virtual memory.
+
+# Memory address mapping
+
+To implement virtual memory, the operating system needs to translate between
+
+* computer memory addresses (which point to data in computer memory), and
+* virtual memory addresses (which may point to computer memory, or to a system device)
+
+This increases the load on the [[CPU]].
+
+# Memory management units
+
+A [[memory management unit]] ([[MMU]]) is a hardware chip that is able to carry out this translation for the CPU. Some CPUs may also have MMUs built in.</pre>
 </div>
 <div created="20210613064814868" creator="jsng" modified="20210613064907894" modifier="jsng" tags="Glossary" title="VP9">
 <pre>A [[video codec]] designed by Google.</pre>
