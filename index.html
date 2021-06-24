@@ -437,6 +437,8 @@ Error message and password prompt
 
 <li>Draft of 'Central Processing Unit' by jsng</li>
 
+<li>Draft of 'New Tiddler' by jsng</li>
+
 <li>editing a PDF file</li>
 
 <li>encode</li>
@@ -1091,7 +1093,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="instruction set" modified="20210624061605065" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="question" modified="20210624061940468" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1831,10 +1833,27 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;instruction set&quot;
+    },
+    {
+        &quot;title&quot;: &quot;question&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 45.44999694824219,
+            &quot;left&quot;: 713.5166625976562,
+            &quot;width&quot;: 32.90000915527344,
+            &quot;right&quot;: 746.4166717529297,
+            &quot;bottom&quot;: 84.93333435058594,
+            &quot;height&quot;: 39.48333740234375
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'question' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;question&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[instruction set]] Topic:hardware" modified="20210624042033709" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="question [[instruction set]] Topic:hardware" modified="20210624061927265" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13011,7 +13030,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210624041146947" creator="jsng" list="[[Draft of 'Central Processing Unit' by jsng]] [[Image formats]] Contents" modified="20210624061531170" modifier="jsng" title="$:/StoryList">
+<div created="20210624041146947" creator="jsng" list="[[Draft of 'New Tiddler' by jsng]] [[Draft of 'Central Processing Unit' by jsng]] [[Image formats]] Contents" modified="20210624061924559" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13583,14 +13602,16 @@ Let’s look at some document formats:
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210624041515882" creator="jsng" draft.of="Central Processing Unit" draft.title="Central Processing Unit" modified="20210624061007258" modifier="jsng" summary="CPUs are unconscious slaves that simply execute instruction after instruction, at a very fast rate." tags="Topic:hardware" title="Draft of 'Central Processing Unit' by jsng" type="text/x-markdown">
+<div created="20210624041515882" creator="jsng" draft.of="Central Processing Unit" draft.title="Central Processing Unit" modified="20210624061911440" modifier="jsng" summary="CPUs are unconscious slaves that simply execute instruction after instruction, at a very fast rate." tags="Topic:hardware" title="Draft of 'Central Processing Unit' by jsng" type="text/x-markdown">
 <pre>[[Data|Topic:data]] by itself isn’t of much value in a computer if we can’t do things to it, perform **operations** on them. We are not talking surgical or military operations here, but chiefly *mathematical* operations to manipulate information: changing a [[bit]] here, a [[bit]] there, or making a massive set of changes throughout.
 
 That happens in a **C**entral **P**rocessing **U**nit ([[CPU]]).
 
-## CPUs are instruction-obeying slaves
+# CPUs are instruction-obeying slaves
 
 The design of a CPU is very much inspired by human experience. One essential aspect of that experience is that everything we do consists of operations.
+
+## Operations
 
 &gt; Civilization advances by extending the number of important operations which we can perform without thinking of them.  
 — Alfred North Whitehead
@@ -13607,6 +13628,8 @@ That’s 6 steps to make coffee.
 
 You can break those steps down differently depending on what kind of machine you are using and what kind of coffee you are making. Whatever the outcome we want, if it can’t be broken down into simple steps like that, we would not be able to design, make, and sell household appliances; we would have to be craftsmen (and craftswomen) of that trade.
 
+# Instruction sets
+
 A CPU is an unconscious operation-executing machine. Every outcome we want must be translated into operations which a CPU can perform without understanding.
 
 A common mental model of how our computers work is that a programmer writes code in a language that a CPU understands, and the CPU simply carries out those instructions. Let’s go deeper into that model. How do those instructions get translated into the 1s and 0s of binary code?
@@ -13615,9 +13638,7 @@ Much the same way as information gets converted to [[binary|Bits and bytes]]. Th
 
 The CPUs in use today have standardised the instructions which they can be instructed to carry out. These sets of instructions are known as [[instruction set]]s.
 
-What are these instructions like?
-
-## CPU instructions: moving data around
+# CPU instructions for moving data around
 
 These instructions perform operations on one, two, or more pieces of data. This is how an instruction like `b = 1 + 2` would be broken down:
 
@@ -13631,15 +13652,16 @@ I am using this arcane presentation format in a newsletter for layfolk because I
 
 1. Load the value `1` into slot R1
 2. Add the value `2` to the value in slot R1, and store the result in slot R2
-3. Store the value in slot R2 into the memory location 1011 (where the variable `b` points, so that other programs/instructions can use the result)
+3. Store the value in slot R2 into the memory location `1011` (where the variable `b` points, so that other programs/instructions can use the result)
+
+# The CPU’s job
 
 Everything we ask a CPU to do essentially consists of loading data from somewhere, doing some kind of processing on it, and storing the result somewhere. The CPU processes lists of these instructions, at a rate of millions to billions of instructions per second.
 
-Let that sink in for a moment. Every Youtube video, meme, or tweet we send or see is the result of hundreds and thousands of operations, taking place in CPUs around the world. CPUs converting text, audio, and images into raw data, encapsulating it into a data package along with some metadata, sending it out to another CPU that translates the destination address and forwards it to the next gateway, and so on, until it reaches its destination, gets decoded and processed, and signals get sent to the monitor and speakers to produce what we see and hear.
-
-## Why can’t I run an exe file from Windows on my smartphone, or an Android/iOS app on my Windows laptop?
-
-There are many reasons for that, and I will explain one of those reasons here: the x86-64 instruction set used by Intel/AMD CPUs on your Windows laptop is *not compatible* with the ARM instruction set used by your smartphone CPU; the MOV, ADD, and other instructions have different numerical codes in each instruction set.
+Let that sink in for a moment. Every Youtube video, meme, or tweet we send or see is the result of hundreds and thousands of operations, taking place in CPUs around the world. CPUs converting text, audio, and images into raw data, encapsulating it into a data package along with some metadata, sending it out to another CPU that translates the destination address and forwards it to the next gateway, and so on, until it reaches its destination, gets decoded and processed, and signals get sent to the monitor and speakers to produce what we see and hear.</pre>
+</div>
+<div created="20210624061854890" creator="jsng" draft.of="New Tiddler" draft.title="Why can’t I run an exe file from Windows on my smartphone, or an Android/iOS app on my Windows laptop?" modified="20210624061915243" modifier="jsng" tags="question" title="Draft of 'New Tiddler' by jsng">
+<pre>There are many reasons for that, and I will explain one of those reasons here: the x86-64 instruction set used by Intel/AMD CPUs on your Windows laptop is *not compatible* with the ARM instruction set used by your smartphone CPU; the MOV, ADD, and other instructions have different numerical codes in each instruction set.
 
 The same programming code for the app must be **compiled** into CPU instructions separately for Intel/AMD processors, and for ARM-based processors.</pre>
 </div>
@@ -14410,7 +14432,7 @@ How is this coordination going to happen? Only with lots of site visits and visu
 
 Or what if two different government departments are trying to collaborate on a form that citizens will use to file taxes?</pre>
 </div>
-<div caption="Questions" created="20210613051110436" creator="jsng" list-after="[[Welcome]]" modified="20210613062022338" modifier="jsng" tags="Contents" title="question">
+<div caption="Questions" created="20210613051110436" creator="jsng" list-after="[[Welcome]]" modified="20210624061940464" modifier="jsng" tags="Contents" title="question">
 <pre>{{||tagPageTemplate}}</pre>
 </div>
 <div created="20210613102434774" creator="jsng" modified="20210613102449244" modifier="jsng" tags="Glossary" title="RAR" type="text/x-markdown">
