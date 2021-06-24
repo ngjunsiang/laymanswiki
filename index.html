@@ -593,6 +593,8 @@ Error message and password prompt
 
 <li>Text representation in computers</li>
 
+<li>throughput</li>
+
 <li>TiB</li>
 
 <li>Topic:compression</li>
@@ -1107,7 +1109,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="operating system" modified="20210624072043412" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="CPU register" modified="20210624072549443" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2010,10 +2012,43 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;operating system&quot;
+    },
+    {
+        &quot;title&quot;: &quot;cache&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 254.5833282470703,
+            &quot;left&quot;: 555.2999877929688,
+            &quot;width&quot;: 35.56666564941406,
+            &quot;right&quot;: 590.8666534423828,
+            &quot;bottom&quot;: 272.5833282470703,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;latency&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 988.566650390625,
+            &quot;left&quot;: 662.0166625976562,
+            &quot;width&quot;: 44.69999694824219,
+            &quot;right&quot;: 706.7166595458984,
+            &quot;bottom&quot;: 1006.566650390625,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;CPU register&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 509.1000061035156,
+            &quot;left&quot;: 518.1500244140625,
+            &quot;width&quot;: 78.13334655761719,
+            &quot;right&quot;: 596.2833709716797,
+            &quot;bottom&quot;: 527.1000061035156,
+            &quot;height&quot;: 18
+        }
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[operating system]] [[virtual memory]] question Topic:hardware" modified="20210624071852118" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[CPU register]] latency cache [[operating system]] [[virtual memory]] question Topic:hardware" modified="20210624071852118" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13190,7 +13225,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210624041146947" creator="jsng" list="[[Draft of 'CPU cache' by jsng]] [[memory allocation]] OS compile Contents" modified="20210624071828564" modifier="jsng" title="$:/StoryList">
+<div created="20210624041146947" creator="jsng" list="throughput [[Draft of 'CPU cache' by jsng]] [[memory allocation]] OS compile Contents" modified="20210624071828564" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13816,8 +13851,8 @@ Let’s look at some document formats:
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210624072111311" creator="jsng" draft.of="CPU cache" draft.title="CPU cache" modified="20210624072141704" modifier="jsng" summary="The CPU stores data for ready access in the CPU cache. Accessing data from the CPU cache is much faster than accessing data from memory. When the CPU needs data from a memory address, it looks in the cache first. If the data is not there (a **cache miss**), it will load the data from the memory address, and store a copy in the cache for faster reference in future. The CPU cache is managed by the CPU and is invisible to the OS. Programs that need to ensure the data in the cache is “fresh” can perform a cache flush and reload." tags="Topic:hardware" title="Draft of 'CPU cache' by jsng" type="text/x-markdown">
-<pre>We use caches to reduce latency and speed up processing: the full DNS querying process takes a few hundred milliseconds, but looking up a DNS entry in the cache only takes a few milliseconds — that’s a speedup by a factor of 100!
+<div created="20210624072111311" creator="jsng" draft.of="CPU cache" draft.title="CPU cache" modified="20210624072216189" modifier="jsng" summary="The CPU stores data for ready access in the CPU cache. Accessing data from the CPU cache is much faster than accessing data from memory. When the CPU needs data from a memory address, it looks in the cache first. If the data is not there (a **cache miss**), it will load the data from the memory address, and store a copy in the cache for faster reference in future. The CPU cache is managed by the CPU and is invisible to the OS. Programs that need to ensure the data in the cache is “fresh” can perform a cache flush and reload." tags="Topic:hardware" title="Draft of 'CPU cache' by jsng" type="text/x-markdown">
+<pre>We use [[cache]]s to reduce [[latency]] and speed up processing.
 
 ## How long does it take to transfer data?
 
@@ -14795,6 +14830,22 @@ Circa the ’90s and early ’00s, the internet often had pages of what looked l
 This was obviously untenable as a long-term solution. A universal [[encoding table]], [[Unicode]], was created to allow all computer users to use a common encoding table that is able to represent any character or symbol that would need to be displayed.
 
 Main article: [[Unicode]]</pre>
+</div>
+<div created="20210624072228395" creator="jsng" modified="20210624072610028" modifier="jsng" tags="Glossary" title="throughput" type="text/x-markdown">
+<pre>Let’s look at the transfer speeds and [[latencies|latency]] for a few places where data can be stored:
+
+- [[Hard disk drive]] (HDD): ≈5 ms response latency, 100 MB/s transfer speed
+- [[Solid state drive]] (SSD): up to 0.1 ms response latency, 0.5–1+ GB/s transfer speed
+- [[Computer memory]] (RAM): 0.1 µs (0.0001 ms) response latency, 20GB/s transfer speed
+- CPU register: &lt;1 ns (&lt;0.000001 ms) response latency&lt;&lt;fnote &quot;We seldom talk about the transfer speed of CPU registers, because each register only holds one byte and the transfer is near-instantaneous.&quot;&gt;&gt;
+
+A [[CPU register]] is a slot within the [[CPU]] which it uses to hold the data it is processing.
+
+Notice that the speed difference between each device is more than 10×? If a computer did not have physical memory to store temporary data in, and had to transfer data to/from disk instead, it would be responding a thousand times more slowly!
+
+A CPU can carry out operations very quickly on data loaded into its registers; it generally takes only a few nanoseconds for complex calculations to be done. Simple instructions (such as ADD) can even be done in less than 1 ns!
+
+This means that the limiting factor for CPU speed is actually loading and storing data. In the time it takes to load data from physical memory or store data to physical memory, it can perform 100 simple operations. That’s *slow* in CPU time!</pre>
 </div>
 <div created="20210613050950834" creator="jsng" modified="20210613050950834" modifier="jsng" title="TiB">
 <pre></pre>
