@@ -435,8 +435,6 @@ Error message and password prompt
 
 <li>DPI</li>
 
-<li>Draft of 'Central Processing Unit' by jsng</li>
-
 <li>editing a PDF file</li>
 
 <li>encode</li>
@@ -13030,7 +13028,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210624041146947" creator="jsng" list="[[Why can’t I run an exe file from Windows on my smartphone, or an Android/iOS app on my Windows laptop?]] [[Draft of 'Central Processing Unit' by jsng]] [[Image formats]] Contents" modified="20210624061924559" modifier="jsng" title="$:/StoryList">
+<div created="20210624041146947" creator="jsng" list="[[Why can’t I run an exe file from Windows on my smartphone, or an Android/iOS app on my Windows laptop?]] [[Central Processing Unit]] [[Image formats]] Contents" modified="20210624061924559" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13357,29 +13355,43 @@ The symbol for a byte is **B** (uppercase).</pre>
 <div created="20210611023323050" creator="jsng" modified="20210611033902008" modifier="jsng" tags="Glossary" title="carriage return">
 <pre></pre>
 </div>
-<div created="20210624041515882" creator="jsng" modified="20210624042020754" modifier="jsng" tags="Topic:hardware" title="Central Processing Unit" type="text/x-markdown">
+<div created="20210624041515882" creator="jsng" modified="20210624062450747" modifier="jsng" summary="CPUs are unconscious slaves that simply execute instruction after instruction, at a very fast rate." tags="Topic:hardware" title="Central Processing Unit" type="text/x-markdown">
 <pre>[[Data|Topic:data]] by itself isn’t of much value in a computer if we can’t do things to it, perform **operations** on them. We are not talking surgical or military operations here, but chiefly *mathematical* operations to manipulate information: changing a [[bit]] here, a [[bit]] there, or making a massive set of changes throughout.
 
 That happens in a **C**entral **P**rocessing **U**nit ([[CPU]]).
 
-## CPUs are instruction-obeying slaves
+# CPUs are instruction-obeying slaves
 
 The design of a CPU is very much inspired by human experience. One essential aspect of that experience is that everything we do consists of operations.
 
-&gt; Civilization advances by extending the number of important operations which we can perform without thinking of them.
+## Operations
+
+&gt; Civilization advances by extending the number of important operations which we can perform without thinking of them.  
 — Alfred North Whitehead
 
-Want to make coffee? Measure out one scoop of coffee beans per cup, add them to the grinder, press the Start button on the grinder and wait for the noise to stop, empty the coffee grounds into the drip machine, add water, press Start, and wait for a beep. 6 steps to make coffee. You can break those steps down differently depending on what kind of machine you are using and what kind of coffee you are making. Whatever the outcome we want, if it can’t be broken down into simple steps like that, we would not be able to design, make, and sell household appliances; we would have to be craftsmen (and craftswomen) of that trade.
+Want to make coffee?
+
+1. Measure out one scoop of coffee beans per cup into the grinder.
+2. Press the Start button on the grinder and wait for the noise to stop.
+3. Empty the coffee grounds into the drip machine.
+4. Add water.
+5. Press Start, and wait for a beep.
+
+That’s 6 steps to make coffee.
+
+You can break those steps down differently depending on what kind of machine you are using and what kind of coffee you are making. Whatever the outcome we want, if it can’t be broken down into simple steps like that, we would not be able to design, make, and sell household appliances; we would have to be craftsmen (and craftswomen) of that trade.
+
+# Instruction sets
 
 A CPU is an unconscious operation-executing machine. Every outcome we want must be translated into operations which a CPU can perform without understanding.
 
 A common mental model of how our computers work is that a programmer writes code in a language that a CPU understands, and the CPU simply carries out those instructions. Let’s go deeper into that model. How do those instructions get translated into the 1s and 0s of binary code?
 
-Much the same way as information gets converted to binary in Season 4. The CPU can understand and execute a limited set of instructions, and each instruction is labelled with a number. The CPUs in use today have standardised on the instructions which they can be instructed to carry out. These sets of instructions are known as **instruction sets**.
+Much the same way as information gets converted to [[binary|Bits and bytes]]. The CPU can understand and execute a limited set of instructions, and each instruction is labelled with a number.
 
-What are these instructions like?
+The CPUs in use today have standardised the instructions which they can be instructed to carry out. These sets of instructions are known as [[instruction set]]s.
 
-## CPU instructions: moving data around
+# CPU instructions for moving data around
 
 These instructions perform operations on one, two, or more pieces of data. This is how an instruction like `b = 1 + 2` would be broken down:
 
@@ -13393,17 +13405,13 @@ I am using this arcane presentation format in a newsletter for layfolk because I
 
 1. Load the value `1` into slot R1
 2. Add the value `2` to the value in slot R1, and store the result in slot R2
-3. Store the value in slot R2 into the memory location 1011 (where the variable `b` points, so that other programs/instructions can use the result)
+3. Store the value in slot R2 into the memory location `1011` (where the variable `b` points, so that other programs/instructions can use the result)
+
+# The CPU’s job
 
 Everything we ask a CPU to do essentially consists of loading data from somewhere, doing some kind of processing on it, and storing the result somewhere. The CPU processes lists of these instructions, at a rate of millions to billions of instructions per second.
 
-Let that sink in for a moment. Every Youtube video, meme, or tweet we send or see is the result of hundreds and thousands of operations, taking place in CPUs around the world. CPUs converting text, audio, and images into raw data, encapsulating it into a data package along with some metadata, sending it out to another CPU that translates the destination address and forwards it to the next gateway, and so on, until it reaches its destination, gets decoded and processed, and signals get sent to the monitor and speakers to produce what we see and hear.
-
-## Why can’t I run an exe file from Windows on my smartphone, or an Android/iOS app on my Windows laptop?
-
-There are many reasons for that, and I will explain one of those reasons here: the x86-64 instruction set used by Intel/AMD CPUs on your Windows laptop is *not compatible* with the ARM instruction set used by your smartphone CPU; the MOV, ADD, and other instructions have different numerical codes in each instruction set.
-
-The same programming code for the app must be **compiled** into CPU instructions separately for Intel/AMD processors, and for ARM-based processors.</pre>
+Let that sink in for a moment. Every Youtube video, meme, or tweet we send or see is the result of hundreds and thousands of operations, taking place in CPUs around the world. CPUs converting text, audio, and images into raw data, encapsulating it into a data package along with some metadata, sending it out to another CPU that translates the destination address and forwards it to the next gateway, and so on, until it reaches its destination, gets decoded and processed, and signals get sent to the monitor and speakers to produce what we see and hear.</pre>
 </div>
 <div created="20210611085747048" creator="jsng" modified="20210611085807172" modifier="jsng" title="chroma">
 <pre>Refers to the colour information (without brightness) in an image.</pre>
@@ -13601,64 +13609,6 @@ Let’s look at some document formats:
 </div>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
-</div>
-<div created="20210624041515882" creator="jsng" draft.of="Central Processing Unit" draft.title="Central Processing Unit" modified="20210624061911440" modifier="jsng" summary="CPUs are unconscious slaves that simply execute instruction after instruction, at a very fast rate." tags="Topic:hardware" title="Draft of 'Central Processing Unit' by jsng" type="text/x-markdown">
-<pre>[[Data|Topic:data]] by itself isn’t of much value in a computer if we can’t do things to it, perform **operations** on them. We are not talking surgical or military operations here, but chiefly *mathematical* operations to manipulate information: changing a [[bit]] here, a [[bit]] there, or making a massive set of changes throughout.
-
-That happens in a **C**entral **P**rocessing **U**nit ([[CPU]]).
-
-# CPUs are instruction-obeying slaves
-
-The design of a CPU is very much inspired by human experience. One essential aspect of that experience is that everything we do consists of operations.
-
-## Operations
-
-&gt; Civilization advances by extending the number of important operations which we can perform without thinking of them.  
-— Alfred North Whitehead
-
-Want to make coffee?
-
-1. Measure out one scoop of coffee beans per cup into the grinder.
-2. Press the Start button on the grinder and wait for the noise to stop.
-3. Empty the coffee grounds into the drip machine.
-4. Add water.
-5. Press Start, and wait for a beep.
-
-That’s 6 steps to make coffee.
-
-You can break those steps down differently depending on what kind of machine you are using and what kind of coffee you are making. Whatever the outcome we want, if it can’t be broken down into simple steps like that, we would not be able to design, make, and sell household appliances; we would have to be craftsmen (and craftswomen) of that trade.
-
-# Instruction sets
-
-A CPU is an unconscious operation-executing machine. Every outcome we want must be translated into operations which a CPU can perform without understanding.
-
-A common mental model of how our computers work is that a programmer writes code in a language that a CPU understands, and the CPU simply carries out those instructions. Let’s go deeper into that model. How do those instructions get translated into the 1s and 0s of binary code?
-
-Much the same way as information gets converted to [[binary|Bits and bytes]]. The CPU can understand and execute a limited set of instructions, and each instruction is labelled with a number.
-
-The CPUs in use today have standardised the instructions which they can be instructed to carry out. These sets of instructions are known as [[instruction set]]s.
-
-# CPU instructions for moving data around
-
-These instructions perform operations on one, two, or more pieces of data. This is how an instruction like `b = 1 + 2` would be broken down:
-
-```
-1 LOAD 1   R1
-2 ADD  2   R1, R2
-3 MOV  R2, MEM1011
-```
-
-I am using this arcane presentation format in a newsletter for layfolk because I think it helps to distinguish between human thinking and computer thinking. What the computer is doing here is:
-
-1. Load the value `1` into slot R1
-2. Add the value `2` to the value in slot R1, and store the result in slot R2
-3. Store the value in slot R2 into the memory location `1011` (where the variable `b` points, so that other programs/instructions can use the result)
-
-# The CPU’s job
-
-Everything we ask a CPU to do essentially consists of loading data from somewhere, doing some kind of processing on it, and storing the result somewhere. The CPU processes lists of these instructions, at a rate of millions to billions of instructions per second.
-
-Let that sink in for a moment. Every Youtube video, meme, or tweet we send or see is the result of hundreds and thousands of operations, taking place in CPUs around the world. CPUs converting text, audio, and images into raw data, encapsulating it into a data package along with some metadata, sending it out to another CPU that translates the destination address and forwards it to the next gateway, and so on, until it reaches its destination, gets decoded and processed, and signals get sent to the monitor and speakers to produce what we see and hear.</pre>
 </div>
 <div created="20210613121827918" creator="jsng" modified="20210624041427611" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
