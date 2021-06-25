@@ -14518,10 +14518,10 @@ Here’s an example of the information it shows about the only video file on my 
 ![MediaInfo screenshot showing container, video stream, and audio stream information](images/issue048_01.png)&lt;br /&gt;
 Mediainfo screenshot showing metadata for an MP4 file containing an [[h264]] video stream and an [[AAC]] audio stream.</pre>
 </div>
-<div created="20210624074926771" creator="jsng" list-after="[[Out-of-order Execution]]" modified="20210624075636374" modifier="jsng" summary="A set of instructions can trick a CPU into reordering load instructions so that the data is temporarily loaded into the cache before the instructions are retired. The cache can then be snooped to retrieve the data." tags="Topic:hardware" title="Meltdown" type="text/x-markdown">
+<div created="20210624074926771" creator="jsng" list-after="[[Out-of-order Execution]]" modified="20210625024954004" modifier="jsng" summary="A set of instructions can trick a CPU into reordering load instructions so that the data is temporarily loaded into the cache before the instructions are retired. The cache can then be snooped to retrieve the data." tags="Topic:hardware" title="Meltdown" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
-In [[Out-of-order Execution]], I modelled a simple CPU bank teller consisting of two units, an [[ALU]] (arithmetic logic unit), and a [[LSU]] (load-store unit). The ALU does the calculations, while the LSU loads from or stores data to memory. For the CPU to hum along optimally, the ALU should not be kept waiting for data, and the LSU should not be left twiddling its thumbs while the ALU is working.
+In [[Out-of-order Execution]], I modelled a simple [[CPU]] bank teller consisting of two units, an [[ALU]] (arithmetic logic unit), and a [[LSU]] (load-store unit). The ALU does the calculations, while the LSU loads from or stores data to memory. For the CPU to hum along optimally, the ALU should not be kept waiting for data, and the LSU should not be left twiddling its thumbs while the ALU is working.
 
 By reordering the instructions that come in, we can optimise CPU usage by making sure the LSU is loading data for the next few instructions while the ALU is still working; this is known as [[Out-of-order Execution]].
 
@@ -14583,7 +14583,7 @@ But meanwhile, the papers on the desk don’t get cleared!
 
 If this sounds horrifying to you, remember that the *real* CPU is just a bunch of transistors and it really isn’t all that smart. And remember that programs cannot access the [[CPU cache]] directly; it is a hardware implementation detail (like the backroom of any business), and so this is considered normal practice.
 
-But still, that leaves a small window of opportunity for me to crane my neck and try to snoop the paper. And that’s all the time I need to see my neighbour’s transactions, and even his bank balance!</pre>
+But still, that leaves a small window of opportunity for me to crane my neck and try to snoop the paper. And that’s all the time I need to see my neighbour’s transactions, and even his bank balance.</pre>
 </div>
 <div created="20210624063928582" creator="jsng" list-after="[[Central Processing Unit]]" modified="20210624071840490" modifier="jsng" summary="Each instruction may consist of loading data from a memory location, sending data to a memory location, or performing operations on the data it is holding." tags="Topic:hardware" title="Memory addressing" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
