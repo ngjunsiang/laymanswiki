@@ -1143,7 +1143,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="speculative execution" modified="20210628224009104" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="virtual memory" modified="20210628230259731" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2420,10 +2420,43 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 760.2666625976562,
             &quot;height&quot;: 19
         }
+    },
+    {
+        &quot;title&quot;: &quot;64-bit&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 765.7333374023438,
+            &quot;left&quot;: 85,
+            &quot;width&quot;: 42.850006103515625,
+            &quot;right&quot;: 127.85000610351562,
+            &quot;bottom&quot;: 785.7333374023438,
+            &quot;height&quot;: 20
+        }
+    },
+    {
+        &quot;title&quot;: &quot;out-of-order execution&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 858.7333374023438,
+            &quot;left&quot;: 43,
+            &quot;width&quot;: 156.6666717529297,
+            &quot;right&quot;: 199.6666717529297,
+            &quot;bottom&quot;: 878.7333374023438,
+            &quot;height&quot;: 20
+        }
+    },
+    {
+        &quot;title&quot;: &quot;virtual memory&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 878.7333374023438,
+            &quot;left&quot;: 43,
+            &quot;width&quot;: 104.06666564941406,
+            &quot;right&quot;: 147.06666564941406,
+            &quot;bottom&quot;: 898.7333374023438,
+            &quot;height&quot;: 20
+        }
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="" modified="20210628224009099" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[virtual memory]] [[out-of-order execution]] 64-bit" modified="20210628224009099" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13603,7 +13636,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210624041146947" creator="jsng" list="[[shared memory]] [[memory allocation]] OS compile Contents" modified="20210628224216441" modifier="jsng" title="$:/StoryList">
+<div created="20210624041146947" creator="jsng" list="[[Memory addressing]] [[shared memory]] [[memory allocation]] OS compile Contents" modified="20210628230253604" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -15093,7 +15126,7 @@ There are three parts to this exploit:
 
 {{||readNextTemplate}}</pre>
 </div>
-<div created="20210624063928582" creator="jsng" list-after="[[Central Processing Unit]]" modified="20210624071840490" modifier="jsng" summary="Each instruction may consist of loading data from a memory location, sending data to a memory location, or performing operations on the data it is holding." tags="Topic:hardware" title="Memory addressing" type="text/x-markdown">
+<div created="20210624063928582" creator="jsng" list-after="[[Central Processing Unit]]" modified="20210628230305953" modifier="jsng" summary="Each instruction may consist of loading data from a memory location, sending data to a memory location, or performing operations on the data it is holding." tags="Topic:hardware memory" title="Memory addressing" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 A [[CPU]] executes instructions, which loads data from memory, store [[data|Bits and bytes]] to memory, or carries out operations on loaded data. Where exactly does this data go, and how is it organised?
