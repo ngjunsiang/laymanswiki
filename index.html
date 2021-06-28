@@ -1137,7 +1137,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="exploiting out-of-order execution" modified="20210628221538547" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="exploiting out-of-order execution" modified="20210628221940755" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2284,6 +2284,12 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 84.93333435058594,
             &quot;height&quot;: 39.48333740234375
         }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'exploiting out-of-order execution' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;exploiting out-of-order execution&quot;
     }
 ]</pre>
 </div>
@@ -14308,8 +14314,10 @@ A computer uses an encoding table to [[encode]] characters into their binary (0s
 <div created="20210613042921048" creator="jsng" modified="20210613042924048" modifier="jsng" tags="Glossary" title="entropy coding">
 <pre></pre>
 </div>
-<div created="20210628221343973" creator="jsng" list-after="[[out-of-order execution]]" list-before="[[cache mapping]]" modified="20210628221533628" modifier="jsng" tags="Topic:security" title="exploiting out-of-order execution" type="text/x-markdown">
-<pre>{{||prereqTemplate}}
+<div created="20210628221343973" creator="jsng" list-after="[[out-of-order execution]]" list-before="[[cache mapping]]" modified="20210628221940723" modifier="jsng" summary="A set of instructions can trick a CPU into reordering load instructions so that the data is temporarily loaded into the cache before the instructions are retired. The cache can then be snooped to retrieve the data." tags="Topic:security" title="exploiting out-of-order execution" type="text/x-markdown">
+<pre>This is the first part of [[Meltdown]], a three-part exploit of a CPU vulnerability.
+
+{{||prereqTemplate}}
 
 By reordering the instructions that come in, we can optimise CPU usage by making sure the LSU is loading data for the next few instructions while the ALU is still working; this is known as [[out-of-order execution]].
 
