@@ -409,7 +409,7 @@ Error message and password prompt
 
 <li>cache</li>
 
-<li>cache snooping</li>
+<li>cache mapping</li>
 
 <li>carriage return</li>
 
@@ -452,8 +452,6 @@ Error message and password prompt
 <li>document</li>
 
 <li>DPI</li>
-
-<li>Draft of 'cache snooping' by jsng</li>
 
 <li>Draft of 'New Tiddler' by jsng</li>
 
@@ -13427,7 +13425,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210624041146947" creator="jsng" list="[[Draft of 'New Tiddler' by jsng]] [[Draft of 'cache snooping' by jsng]] [[CPU Optimization]] [[CPU cache]] [[memory allocation]] OS compile Contents" modified="20210628213750002" modifier="jsng" title="$:/StoryList">
+<div created="20210624041146947" creator="jsng" list="[[Draft of 'New Tiddler' by jsng]] [[cache mapping]] [[CPU Optimization]] [[CPU cache]] [[memory allocation]] OS compile Contents" modified="20210628213750002" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13776,8 +13774,36 @@ The symbol for a byte is **B** (uppercase).</pre>
 
 </pre>
 </div>
-<div created="20210628213103187" creator="jsng" modified="20210628213103187" modifier="jsng" title="cache snooping">
-<pre></pre>
+<div created="20210628213103187" creator="jsng" list-before="[[cache snooping]]" modified="20210628215715763" modifier="jsng" summary="A cache miss is slow, and a cache hit is fast. This difference in cache reading speed can be used to transmit secrets out from the cache, which cannot be read directly by programs." tags="Topic:security" title="cache mapping" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+**Cache mapping** is the second part of a three-part exploit.
+
+In the first part, an exploit (such as [[Meltdown]] or [[Spectre]]) is used to load the forbidden information into the cache, where it will not be immediately wiped by the OS when we are “found out”.
+
+The second part, naturally, is how to get the info out of the cache before the CPU eventually evicts old data from it.
+
+# Naive cache snooping
+
+If we had attempted to snoop the cache the way it was written in the [[Meltdown]] or [[Spectre]] cards, we would have failed. We have gotten the secret into the cache, but we have no idea where it is in the cache, and we have no way to access the cache directly—remember that the cache is managed by the CPU. There is no instruction we can issue to the CPU to give us cache data directly.
+
+We’ll need to modify our approach slightly. We can’t store the leaked data directly in the cache naïvely like that. We’ve got to be a little cleverer.
+
+# The cache “mirrors” a part of virtual memory
+
+A quick refresher on how the [[CPU cache]] works:
+
+&gt; 1. When the CPU needs data from a memory address, it looks in the cache first.
+&gt; 2. If the data is not there (a **cache miss**), it will load the data from the memory address, and store a copy in the cache for faster reference in future. [**SLOW**]
+&gt; 3. If there is a cache hit, the data from the cache will be returned. [**FAST**]
+
+Main article: [[CPU cache]]
+
+Hmm … there’s something here. A cache miss is slow, and a cache hit is fast. Could we exploit this in some way, possibly? If we are creative, yes!
+
+Many secret ways of transmitting information involves a shared cipher, a secret way of converting what is sent to what is meant. Leaking cache information will require a cipher of some sort.
+
+It’s like a WWII spy story. Two spies arrange 3 different dropoff locations. Dropoff location 1 means their country is going to attack. Dropoff location 2 means their country is not going to attack. And dropoff location 3 means the information is compromised and they should avoid contact. Even if they are caught by the secret police, there is no way of figuring out what the two spies had communicated to each other indirectly.</pre>
 </div>
 <div created="20210611023323050" creator="jsng" modified="20210611033902008" modifier="jsng" tags="Glossary" title="carriage return">
 <pre></pre>
@@ -14108,40 +14134,7 @@ Let’s look at some document formats:
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210628213103187" creator="jsng" draft.of="cache snooping" draft.title="cache mapping" modified="20210628215539033" modifier="jsng" tags="Topic:security" title="Draft of 'cache snooping' by jsng" type="text/x-markdown">
-<pre>{{||prereqTemplate}}
-
-**Cache snooping** is the second part of a two-part exploit.
-
-In the first part, an exploit (such as [[Meltdown]] or [[Spectre]]) is used to load the forbidden information into the cache, where it will not be immediately wiped by the OS when we are “found out”.
-
-The second part, naturally, is how to get the info out of the cache before the CPU eventually evicts old data from it.
-
-# Naive cache snooping
-
-If we had attempted to snoop the cache the way it was written in the [[Meltdown]] or [[Spectre]] cards, we would have failed. We have gotten the secret into the cache, but we have no idea where it is in the cache, and we have no way to access the cache directly—remember that the cache is managed by the CPU. There is no instruction we can issue to the CPU to give us cache data directly.
-
-We’ll need to modify our approach slightly. We can’t store the leaked data directly in the cache naïvely like that. We’ve got to be a little cleverer.
-
-# The cache “mirrors” a part of virtual memory
-
-A quick refresher on how the [[CPU cache]] works:
-
-&gt; 1. When the CPU needs data from a memory address, it looks in the cache first.
-&gt; 2. If the data is not there (a **cache miss**), it will load the data from the memory address, and store a copy in the cache for faster reference in future. [**SLOW**]
-&gt; 3. If there is a cache hit, the data from the cache will be returned. [**FAST**]
-
-Main article: [[CPU cache]]
-
-Hmm … there’s something here. A cache miss is slow, and a cache hit is fast. Could we exploit this in some way, possibly? If we are creative, yes!
-
-Many secret ways of transmitting information involves a shared cipher, a secret way of converting what is sent to what is meant. Leaking cache information will require a cipher of some sort.
-
-It’s like a WWII spy story. Two spies arrange 3 different dropoff locations. Dropoff location 1 means their country is going to attack. Dropoff location 2 means their country is not going to attack. And dropoff location 3 means the information is compromised and they should avoid contact. Even if they are caught by the secret police, there is no way of figuring out what the two spies had communicated to each other indirectly.
-
-All right, I’m writing a newsletter here, not a workshop. And the rest of the story will need more technical detail, so let’s call it a week. Next issue, all will be revealed ;)</pre>
-</div>
-<div created="20210628215407991" creator="jsng" draft.of="New Tiddler" draft.title="cache snooping" list-before="[[cache mapping]]" modified="20210628215516690" modifier="jsng" tags="" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
+<div created="20210628215407991" creator="jsng" draft.of="New Tiddler" draft.title="cache snooping" list-before="[[cache mapping]]" modified="20210628215614835" modifier="jsng" tags="Topic:security" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 **Cache snooping** is the second part of a two-part exploit.
