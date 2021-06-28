@@ -1139,7 +1139,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="exploiting speculative execution" modified="20210628222830663" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="speculative execution" modified="20210628224009104" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2394,10 +2394,32 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 505.83331298828125,
             &quot;height&quot;: 19
         }
+    },
+    {
+        &quot;title&quot;: &quot;CPU Optimization&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 387.83331298828125,
+            &quot;left&quot;: 1076.5833740234375,
+            &quot;width&quot;: 118.66667175292969,
+            &quot;right&quot;: 1195.2500457763672,
+            &quot;bottom&quot;: 406.83331298828125,
+            &quot;height&quot;: 19
+        }
+    },
+    {
+        &quot;title&quot;: &quot;speculative execution&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 741.2666625976562,
+            &quot;left&quot;: 1076.5833740234375,
+            &quot;width&quot;: 142.5166778564453,
+            &quot;right&quot;: 1219.1000518798828,
+            &quot;bottom&quot;: 760.2666625976562,
+            &quot;height&quot;: 19
+        }
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="Spectre Topic:hardware" modified="20210628222830660" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="" modified="20210628224009099" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13577,7 +13599,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210624041146947" creator="jsng" list="[[exploiting speculative execution]] Meltdown [[cache snooping]] Topic:security [[cache mapping]] [[CPU Optimization]] [[CPU cache]] [[memory allocation]] OS compile Contents" modified="20210628223917898" modifier="jsng" title="$:/StoryList">
+<div created="20210624041146947" creator="jsng" list="[[virtual memory]] Meltdown Topic:security [[memory allocation]] OS compile Contents" modified="20210628224216441" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -15623,7 +15645,7 @@ With the right font type (i.e. [OpenType](https://en.wikipedia.org/wiki/OpenType
 - Unicode has a &quot;Private Use Area&quot; that you can use for your own private purposes. You can insert symbols from this area for use in a webpage.
   - Some websites use this to create custom icons that can scale in size and change colour easily, just like text.</pre>
 </div>
-<div created="20210624065530588" creator="jsng" list-after="[[Memory addressing]]" modified="20210624071852106" modifier="jsng" tags="Topic:hardware Glossary" title="virtual memory" type="text/x-markdown">
+<div created="20210624065530588" creator="jsng" list-after="[[Memory addressing]]" modified="20210628224736348" modifier="jsng" tags="Topic:hardware Glossary" title="virtual memory" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 An [[operating system]] (OS) makes system resources, such as [[memory]], [[storage]], and [[peripheral devices]], available to programs running in the OS.
@@ -15645,7 +15667,11 @@ This increases the load on the [[CPU]].
 
 # Memory management units
 
-A [[memory management unit]] ([[MMU]]) is a hardware chip that is able to carry out this translation for the CPU. Some CPUs may also have MMUs built in.</pre>
+A [[memory management unit]] ([[MMU]]) is a hardware chip that is able to carry out this translation for the CPU. Some CPUs may also have MMUs built in.
+
+# Security
+
+Within the physical memory part of the virtual memory space, there are portions which are set aside *for the [[OS]] only*. This is the **kernel address space**, which is where critical information such as user privilege tables and OS state get stored. Knowing the addresses in the kernel address space is a big requirement for many [[CPU exploits]], so OS engineers obviously put a lot of work into make sure they are as hard to guess or discover as possible.</pre>
 </div>
 <div created="20210613064814868" creator="jsng" modified="20210613064907894" modifier="jsng" tags="Glossary" title="VP9">
 <pre>A [[video codec]] designed by Google.</pre>
