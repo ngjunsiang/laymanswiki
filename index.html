@@ -14523,12 +14523,12 @@ Here’s an example of the information it shows about the only video file on my 
 ![MediaInfo screenshot showing container, video stream, and audio stream information](images/issue048_01.png)&lt;br /&gt;
 Mediainfo screenshot showing metadata for an MP4 file containing an [[h264]] video stream and an [[AAC]] audio stream.</pre>
 </div>
-<div created="20210624074926771" creator="jsng" list-after="[[Out-of-order Execution]]" modified="20210625024954004" modifier="jsng" summary="A set of instructions can trick a CPU into reordering load instructions so that the data is temporarily loaded into the cache before the instructions are retired. The cache can then be snooped to retrieve the data." tags="Topic:hardware" title="Meltdown" type="text/x-markdown">
+<div created="20210624074926771" creator="jsng" list-after="[[Out-of-order execution]]" modified="20210628211500895" modifier="jsng" summary="A set of instructions can trick a CPU into reordering load instructions so that the data is temporarily loaded into the cache before the instructions are retired. The cache can then be snooped to retrieve the data." tags="Topic:hardware" title="Meltdown" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
-In [[Out-of-order Execution]], I modelled a simple [[CPU]] bank teller consisting of two units, an [[ALU]] (arithmetic logic unit), and a [[LSU]] (load-store unit). The ALU does the calculations, while the LSU loads from or stores data to memory. For the CPU to hum along optimally, the ALU should not be kept waiting for data, and the LSU should not be left twiddling its thumbs while the ALU is working.
+In [[Out-of-order execution]], I modelled a simple [[CPU]] bank teller consisting of two units, an [[ALU]] (arithmetic logic unit), and a [[LSU]] (load-store unit). The ALU does the calculations, while the LSU loads from or stores data to memory. For the CPU to hum along optimally, the ALU should not be kept waiting for data, and the LSU should not be left twiddling its thumbs while the ALU is working.
 
-By reordering the instructions that come in, we can optimise CPU usage by making sure the LSU is loading data for the next few instructions while the ALU is still working; this is known as [[Out-of-order Execution]].
+By reordering the instructions that come in, we can optimise CPU usage by making sure the LSU is loading data for the next few instructions while the ALU is still working; this is known as [[Out-of-order execution]].
 
 # Optimising bank balance retrieval
 
@@ -14542,7 +14542,7 @@ For the CPU to give a customer his bank account balance, the following steps nee
 4. *IF* verified, **LOAD** bank account balance
 5. **SEND** bank account balance to customer
 
-In [[Out-of-order Execution]], we were optimising the robot bank teller by carrying out the two **LOAD** steps together. While the ALUs are busy carrying out operations to verify that the customer is the owner of the bank account, the LSU is loading the bank account details, ready to be used once the ALU is done.
+In [[Out-of-order execution]], we were optimising the robot bank teller by carrying out the two **LOAD** steps together. While the ALUs are busy carrying out operations to verify that the customer is the owner of the bank account, the LSU is loading the bank account details, ready to be used once the ALU is done.
 
 Where do the bank account details go while the LSU is waiting for the ALU? In the case of the bank teller, they’re written on a piece of paper (yes, old-school, because analogy).
 
@@ -14552,7 +14552,7 @@ Side reading: [[CPU cache]]
 
 # Meltdown: the exploit
 
-Suppose I’m an ill-intentioned customer who wants to snoop on a neighbour’s bank transactions. I go up to the bank teller and ask it to retrieve the last 5 transactions of account ID 23983698576 (that’s my neighbour’s account ID, unknown to the robot tellers).
+Suppose I’m an ill-intentioned customer who wants to snoop on a neighbor’s bank transactions. I go up to the bank teller and ask it to retrieve the last 5 transactions of account ID 23983698576 (that’s my neighbor’s account ID, unknown to the robot tellers).
 
 The bank tellers need to execute the following instructions. There is an implicit step after step 4 to ensure security:
 
@@ -14582,13 +14582,13 @@ This also leaves a copy of the data in the cache; the LSU teller has written dow
 
 When the ALU reaches step 5 and figures out I’m not the owner of that account, then they start over with the next customer and I get evicted from the queue (this is called retiring an instruction, in a real CPU).
 
-But meanwhile, the papers on the desk don’t get cleared!
+But meanwhile, the papers on the desk **don’t get cleared**!
 
 # Cache snooping: the oldest trick in the book
 
 If this sounds horrifying to you, remember that the *real* CPU is just a bunch of transistors and it really isn’t all that smart. And remember that programs cannot access the [[CPU cache]] directly; it is a hardware implementation detail (like the backroom of any business), and so this is considered normal practice.
 
-But still, that leaves a small window of opportunity for me to crane my neck and try to snoop the paper. And that’s all the time I need to see my neighbour’s transactions, and even his bank balance.</pre>
+But still, that leaves a small window of opportunity for me to crane my neck and try to snoop the paper. And that’s all the time I need to see my neighbor’s transactions, and even his bank balance.</pre>
 </div>
 <div created="20210624063928582" creator="jsng" list-after="[[Central Processing Unit]]" modified="20210624071840490" modifier="jsng" summary="Each instruction may consist of loading data from a memory location, sending data to a memory location, or performing operations on the data it is holding." tags="Topic:hardware" title="Memory addressing" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
