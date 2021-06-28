@@ -387,6 +387,8 @@ Error message and password prompt
 
 <li>AAC</li>
 
+<li>ALU</li>
+
 <li>ASCII</li>
 
 <li>ASCII background and history</li>
@@ -406,6 +408,8 @@ Error message and password prompt
 <li>byte</li>
 
 <li>cache</li>
+
+<li>cache snooping</li>
 
 <li>carriage return</li>
 
@@ -523,6 +527,8 @@ Error message and password prompt
 
 <li>LPCM</li>
 
+<li>LSU</li>
+
 <li>luma</li>
 
 <li>markup language</li>
@@ -556,6 +562,8 @@ Error message and password prompt
 <li>OS</li>
 
 <li>out-of-order execution</li>
+
+<li>Out-of-order execution</li>
 
 <li>PCM</li>
 
@@ -1125,7 +1133,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Meltdown" modified="20210628212904440" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Meltdown" modified="20210628213142316" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2134,6 +2142,18 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 467.0166473388672,
             &quot;height&quot;: 39.48332214355469
         }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'Meltdown' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Meltdown&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'Meltdown' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Meltdown&quot;
     }
 ]</pre>
 </div>
@@ -13474,6 +13494,9 @@ Homepage: https://www.7-zip.org/</pre>
 
 An audio file format, meant to replace [[MP3]].</pre>
 </div>
+<div created="20210628213103184" creator="jsng" modified="20210628213103184" modifier="jsng" title="ALU">
+<pre></pre>
+</div>
 <div created="20210611012538223" creator="jsng" modified="20210611041802983" modifier="jsng" tags="Glossary" title="ASCII" type="">
 <pre>''ASCII'' is short for “American Standard Code for Information Interchange”.
 
@@ -13662,6 +13685,9 @@ The symbol for a byte is **B** (uppercase).</pre>
 <pre>{{||tagPageTemplate}}
 
 </pre>
+</div>
+<div created="20210628213103187" creator="jsng" modified="20210628213103187" modifier="jsng" title="cache snooping">
+<pre></pre>
 </div>
 <div created="20210611023323050" creator="jsng" modified="20210611033902008" modifier="jsng" tags="Glossary" title="carriage return">
 <pre></pre>
@@ -14483,6 +14509,9 @@ For photograph images, you will generally hit diminishing returns below 85%: eac
 <div created="20210611063507523" creator="jsng" modified="20210611063507523" modifier="jsng" title="LPCM">
 <pre></pre>
 </div>
+<div created="20210628213103186" creator="jsng" modified="20210628213103186" modifier="jsng" title="LSU">
+<pre></pre>
+</div>
 <div created="20210611085714936" creator="jsng" modified="20210611085739968" modifier="jsng" tags="Glossary" title="luma" type="text/x-markdown">
 <pre>Refers to the brightness information (black-and-white) in an image.</pre>
 </div>
@@ -14566,12 +14595,12 @@ Here’s an example of the information it shows about the only video file on my 
 ![MediaInfo screenshot showing container, video stream, and audio stream information](images/issue048_01.png)&lt;br /&gt;
 Mediainfo screenshot showing metadata for an MP4 file containing an [[h264]] video stream and an [[AAC]] audio stream.</pre>
 </div>
-<div created="20210624074926771" creator="jsng" list-after="[[Out-of-order execution]]" modified="20210628211959536" modifier="jsng" summary="A set of instructions can trick a CPU into reordering load instructions so that the data is temporarily loaded into the cache before the instructions are retired. The cache can then be snooped to retrieve the data." tags="Topic:hardware" title="Meltdown" type="text/x-markdown">
+<div created="20210624074926771" creator="jsng" list-after="[[out-of-order execution]]" modified="20210628213142291" modifier="jsng" summary="A set of instructions can trick a CPU into reordering load instructions so that the data is temporarily loaded into the cache before the instructions are retired. The cache can then be snooped to retrieve the data." tags="Topic:hardware" title="Meltdown" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
-In [[Out-of-order execution]], I modelled a simple [[CPU]] bank teller consisting of two units, an [[ALU]] (arithmetic logic unit), and a [[LSU]] (load-store unit). The ALU does the calculations, while the LSU loads from or stores data to memory. For the CPU to hum along optimally, the ALU should not be kept waiting for data, and the LSU should not be left twiddling its thumbs while the ALU is working.
+In [[out-of-order execution]], I modelled a simple [[CPU]] bank teller consisting of two units, an [[ALU]] (arithmetic logic unit), and a [[LSU]] (load-store unit). The ALU does the calculations, while the LSU loads from or stores data to memory. For the CPU to hum along optimally, the ALU should not be kept waiting for data, and the LSU should not be left twiddling its thumbs while the ALU is working.
 
-By reordering the instructions that come in, we can optimise CPU usage by making sure the LSU is loading data for the next few instructions while the ALU is still working; this is known as [[Out-of-order execution]].
+By reordering the instructions that come in, we can optimise CPU usage by making sure the LSU is loading data for the next few instructions while the ALU is still working; this is known as [[out-of-order execution]].
 
 # Optimising bank balance retrieval
 
@@ -14585,7 +14614,7 @@ For the CPU to give a customer his bank account balance, the following steps nee
 4. *IF* verified, **LOAD** bank account balance
 5. **SEND** bank account balance to customer
 
-In [[Out-of-order execution]], we were optimising the robot bank teller by carrying out the two **LOAD** steps together. While the ALUs are busy carrying out operations to verify that the customer is the owner of the bank account, the LSU is loading the bank account details, ready to be used once the ALU is done.
+In [[out-of-order execution]], we were optimising the robot bank teller by carrying out the two **LOAD** steps together. While the ALUs are busy carrying out operations to verify that the customer is the owner of the bank account, the LSU is loading the bank account details, ready to be used once the ALU is done.
 
 Where do the bank account details go while the LSU is waiting for the ALU? In the case of the bank teller, they’re written on a piece of paper (yes, old-school, because analogy).
 
@@ -14844,6 +14873,9 @@ If a customer needs to check their bank balance, the following instructions need
 5. **SEND** bank account balance to customer
 
 If you’re wondering why steps 2 and 4 can’t happen at the same time, you already understand out-of-order execution at an intuitive level. If the LSU can carry out steps 2 and 4 at the same time, the ALU can simply provide the bank balance once the customer is authenticated, or discard the information otherwise.</pre>
+</div>
+<div created="20210628213103182" creator="jsng" modified="20210628213103182" modifier="jsng" title="Out-of-order execution">
+<pre></pre>
 </div>
 <div created="20210611063507519" creator="jsng" modified="20210611063507519" modifier="jsng" title="PCM">
 <pre></pre>
