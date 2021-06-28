@@ -455,6 +455,8 @@ Error message and password prompt
 
 <li>Draft of 'cache snooping' by jsng</li>
 
+<li>Draft of 'Meltdown' by jsng</li>
+
 <li>editing a PDF file</li>
 
 <li>encode</li>
@@ -1135,7 +1137,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="speculative execution" modified="20210628214313969" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="out-of-order execution" modified="20210628214956873" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2185,10 +2187,41 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;speculative execution&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Spectre&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 631.566650390625,
+            &quot;left&quot;: 1756.550048828125,
+            &quot;width&quot;: 47.416656494140625,
+            &quot;right&quot;: 1803.9667053222656,
+            &quot;bottom&quot;: 649.566650390625,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;out-of-order execution&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 238.8333282470703,
+            &quot;left&quot;: 1036.5833740234375,
+            &quot;width&quot;: 152.5166778564453,
+            &quot;right&quot;: 1189.1000518798828,
+            &quot;bottom&quot;: 257.8333282470703,
+            &quot;height&quot;: 19
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'out-of-order execution' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'Meltdown' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;out-of-order execution&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[speculative execution]] Meltdown throughput [[CPU register]] latency cache [[operating system]] [[virtual memory]] question Topic:hardware" modified="20210628213227725" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[Draft of 'Meltdown' by jsng]] [[out-of-order execution]] [[CPU register]] [[operating system]] [[virtual memory]] question Topic:hardware" modified="20210628214821339" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -14049,7 +14082,7 @@ Let’s look at some document formats:
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210628213103187" creator="jsng" draft.of="cache snooping" draft.title="cache snooping" modified="20210628213626593" modifier="jsng" title="Draft of 'cache snooping' by jsng" type="text/x-markdown">
+<div created="20210628213103187" creator="jsng" draft.of="cache snooping" draft.title="cache snooping" modified="20210628214612530" modifier="jsng" title="Draft of 'cache snooping' by jsng" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 **Cache snooping** is the second part of a two-part exploit.
@@ -14058,21 +14091,21 @@ In the first part, an exploit (such as [[Meltdown]] or [[Spectre]]) is used to l
 
 The second part, naturally, is how to get the info out of the cache before the CPU eventually evicts old data from it.
 
-# Failure from the start
+# Naive cache snooping
 
-At this point, we would have failed. We have gotten the secret into the cache, but we have no idea where it is in the cache, and we have no way to access the cache directly—remember that the cache is managed by the CPU and there is no instruction we can issue to the CPU to give us cache data directly.
-
-We’ve come so far … and it doesn’t even matter.
+If we had attempted to snoop the cache the way it was written in the [[Meltdown]] or [[Spectre]] cards, we would have failed. We have gotten the secret into the cache, but we have no idea where it is in the cache, and we have no way to access the cache directly—remember that the cache is managed by the CPU. There is no instruction we can issue to the CPU to give us cache data directly.
 
 We’ll need to modify our approach slightly. We can’t store the leaked data directly in the cache naïvely like that. We’ve got to be a little cleverer.
 
-## The cache “mirrors” a part of virtual memory
+# The cache “mirrors” a part of virtual memory
 
-A quick refresher on how the cache works ([Issue 57](https://buttondown.email/laymansguide/archive/lmg-s5-issue-57-cache-the-cpus-working-space/)):
+A quick refresher on how the [[CPU cache]] works:
 
-1. When the CPU needs data from a memory address, it looks in the cache first.
-2. If the data is not there (a **cache miss**), it will load the data from the memory address, and store a copy in the cache for faster reference in future. [**SLOW**]
-3. If there is a cache hit, the data from the cache will be returned. [**FAST**]
+&gt; 1. When the CPU needs data from a memory address, it looks in the cache first.
+&gt; 2. If the data is not there (a **cache miss**), it will load the data from the memory address, and store a copy in the cache for faster reference in future. [**SLOW**]
+&gt; 3. If there is a cache hit, the data from the cache will be returned. [**FAST**]
+
+Main article: [[CPU cache]]
 
 Hmm … there’s something here. A cache miss is slow, and a cache hit is fast. Could we exploit this in some way, possibly? If we are creative, yes!
 
@@ -14081,6 +14114,75 @@ Many secret ways of transmitting information involves a shared cipher, a secret 
 It’s like a WWII spy story. Two spies arrange 3 different dropoff locations. Dropoff location 1 means their country is going to attack. Dropoff location 2 means their country is not going to attack. And dropoff location 3 means the information is compromised and they should avoid contact. Even if they are caught by the secret police, there is no way of figuring out what the two spies had communicated to each other indirectly.
 
 All right, I’m writing a newsletter here, not a workshop. And the rest of the story will need more technical detail, so let’s call it a week. Next issue, all will be revealed ;)</pre>
+</div>
+<div created="20210624074926771" creator="jsng" draft.of="Meltdown" draft.title="Meltdown" list-after="[[out-of-order execution]]" list-before="[[cache snooping]]" modified="20210628214925154" modifier="jsng" summary="A set of instructions can trick a CPU into reordering load instructions so that the data is temporarily loaded into the cache before the instructions are retired. The cache can then be snooped to retrieve the data." tags="Topic:hardware" title="Draft of 'Meltdown' by jsng" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+In [[out-of-order execution]], I modelled a simple [[CPU]] bank teller consisting of two units, an [[ALU]] (arithmetic logic unit), and a [[LSU]] (load-store unit). The ALU does the calculations, while the LSU loads from or stores data to memory. For the CPU to hum along optimally, the ALU should not be kept waiting for data, and the LSU should not be left twiddling its thumbs while the ALU is working.
+
+By reordering the instructions that come in, we can optimise CPU usage by making sure the LSU is loading data for the next few instructions while the ALU is still working; this is known as [[out-of-order execution]].
+
+# Optimising bank balance retrieval
+
+Side reading: [[CPU instructions]]
+
+For the CPU to give a customer his bank account balance, the following steps need to happen:
+
+1. **GET** ID from customer
+2. **LOAD** bank account owner from memory (using ID number)
+3. Check that customer is the bank account owner (verifying other details) *[SLOW]*
+4. *IF* verified, **LOAD** bank account balance
+5. **SEND** bank account balance to customer
+
+In [[out-of-order execution]], we were optimising the robot bank teller by carrying out the two **LOAD** steps together. While the ALUs are busy carrying out operations to verify that the customer is the owner of the bank account, the LSU is loading the bank account details, ready to be used once the ALU is done.
+
+Where do the bank account details go while the LSU is waiting for the ALU? In the case of the bank teller, they’re written on a piece of paper (yes, old-school, because analogy).
+
+In a real CPU, every piece of data requested by the CPU first goes through the [[CPU cache]]. This means the cache has a copy of all data ever requested, and it evicts the oldest data to make way for new data. The bank teller’s piece of paper is an analogy for the CPU cache.
+
+Side reading: [[CPU cache]]
+
+# Meltdown: the exploit
+
+Suppose I’m an ill-intentioned customer who wants to snoop on a neighbor’s bank transactions. I go up to the bank teller and ask it to retrieve the last 5 transactions of account ID 23983698576 (that’s my neighbor’s account ID, unknown to the robot tellers).
+
+The bank tellers need to execute the following instructions. There is an implicit step after step 4 to ensure security:
+
+1. **GET** ID[23983698576] from customer
+2. **LOAD** bank account owner of [23983698576] from memory (written back to cache)
+3. Check if I am the bank account owner *[SLOW]*
+4. *IF* verified, **LOAD** bank account balance of [23983698576]
+5. *IF* **not verified**, dump data and start over with the next customer
+6. **SEND** bank account balance to me
+7. **LOAD** last 5 transactions of [23983698576] from memory (written back to cache)
+8. **SEND** last 5 transactions to me
+
+However, after reordering for efficiency, the steps now look like this:
+
+[1.] **GET** ID[23983698576] from customer  
+[2.] **LOAD** bank account owner of [23983698576] from memory (written back to cache)  
+[3.] Check if I am the bank account owner *[SLOW]*  
+[4.] *IF* verified, **LOAD** bank account balance of [23983698576]  
+[7.] **LOAD** last 5 transactions of [23983698576] from memory (written back to cache)  
+[5.] *IF* **not verified**, dump data and start over with the next customer  
+[6.] **SEND** bank account balance to me  
+[8.] **SEND** last 5 transactions to me
+
+While the ALU is carrying out authenticity checks in step 3, the LSU is simultaneously carrying out steps 4 and 7, the LOAD steps, to avoid sitting idle.
+
+This also leaves a copy of the data in the cache; the LSU teller has written down the bank balance and last 5 transactions on a piece of paper while waiting for the ALU.
+
+When the ALU reaches step 5 and figures out I’m not the owner of that account, then they start over with the next customer and I get evicted from the queue (this is called retiring an instruction, in a real CPU).
+
+But meanwhile, the papers on the desk **don’t get cleared**!
+
+# Cache snooping: the oldest trick in the book
+
+If this sounds horrifying to you, remember that the *real* CPU is just a bunch of transistors and it really isn’t all that smart. And remember that programs cannot access the [[CPU cache]] directly; it is a hardware implementation detail (like the backroom of any business), and so this is considered normal practice.
+
+But still, that leaves a small window of opportunity for me to crane my neck and try to snoop the paper. And that’s all the time I need to see my neighbor’s transactions, and even his bank balance.
+
+{{||readNextTemplate}}</pre>
 </div>
 <div created="20210613121827918" creator="jsng" modified="20210624041427611" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
@@ -14878,7 +14980,7 @@ But cybersecurity is a multi-billion dollar industry with good reason. Black hat
 <div created="20210611061658469" creator="jsng" modified="20210624065716265" modifier="jsng" tags="Glossary" title="OS" type="text/x-markdown">
 <pre>**OS** stands for [[operating system]].</pre>
 </div>
-<div created="20210624074048300" creator="jsng" list-after="[[CPU instructions]]" modified="20210628213055053" modifier="jsng" summary="The CPU comprises different types of execution units. All the execution units can run at the same time, but they may execute instructions over different numbers of clock cycles. To minimise wait time, CPU instructions are carried out in an order that keeps the execution units busy as often as possible." tags="[[CPU Optimization]]" title="out-of-order execution" type="text/x-markdown">
+<div created="20210624074048300" creator="jsng" list-after="[[CPU instructions]]" modified="20210628214956857" modifier="jsng" summary="The CPU comprises different types of execution units. All the execution units can run at the same time, but they may execute instructions over different numbers of clock cycles. To minimise wait time, CPU instructions are carried out in an order that keeps the execution units busy as often as possible." tags="[[CPU Optimization]]" title="out-of-order execution" type="text/x-markdown">
 <pre>“Out-of-order” makes it sound like something is broken in the CPU, but it really just means that the CPU does not execute instructions in the same order that they were fed to the CPU.
 
 If you have seen a busy Starbucks joint or Chinese restaurant at work, you would know that menu orders are not always carried out in the same order that they were taken (even if customers are eventually first-come-first-served). A fully staffed Starbucks joint or Chinese restaurant is not a single working unit, but a collection of specialised units.
@@ -14921,19 +15023,7 @@ Why not schedule an instruction, even from another application, while waiting? I
 
 This, in a nutshell-issue, is **out-of-order execution**.
 
-# Analogy: old-school robot bank teller
-
-Let’s model a CPU core as two execution units: an ALU and a LSU. The ALU is a robot bank teller that does what the customer asks, while the LSU is a robot bank teller that retrieves data from and stores data back to the bank’s database (i.e. memory). Two such robot bank tellers work at a teller counter (CPU core).
-
-If a customer needs to check their bank balance, the following instructions need to happen (like I said, this is old-school; no iBanking or ATMs here, because analogy).
-
-1. **GET** ID from customer
-2. **LOAD** bank account owner from memory (using ID number)
-3. Check that customer is the bank account owner (verifying other details) *[SLOW]*
-4. *IF* verified, **LOAD** bank account balance
-5. **SEND** bank account balance to customer
-
-If you’re wondering why steps 2 and 4 can’t happen at the same time, you already understand out-of-order execution at an intuitive level. If the LSU can carry out steps 2 and 4 at the same time, the ALU can simply provide the bank balance once the customer is authenticated, or discard the information otherwise.</pre>
+See also: [[Meltdown]]</pre>
 </div>
 <div created="20210628213103182" creator="jsng" modified="20210628213103182" modifier="jsng" title="Out-of-order execution">
 <pre></pre>
