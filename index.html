@@ -1137,7 +1137,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="exploiting out-of-order execution" modified="20210628222004001" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="cache mapping" modified="20210628222125603" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2329,10 +2329,16 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;exploiting out-of-order execution&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'cache mapping' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;cache mapping&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[exploiting out-of-order execution]] [[cache mapping]] [[cache snooping]] Spectre [[out-of-order execution]] Topic:hardware" modified="20210628221538544" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[cache mapping]] [[cache snooping]] Spectre [[out-of-order execution]] Topic:hardware" modified="20210628221538544" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13861,12 +13867,12 @@ The symbol for a byte is **B** (uppercase).</pre>
 
 </pre>
 </div>
-<div created="20210628213103187" creator="jsng" list-before="[[cache snooping]]" modified="20210628220029041" modifier="jsng" summary="A cache miss is slow, and a cache hit is fast. This difference in cache reading speed can be used to transmit secrets out from the cache, which cannot be read directly by programs." tags="Topic:security cache" title="cache mapping" type="text/x-markdown">
-<pre>{{||prereqTemplate}}
+<div created="20210628213103187" creator="jsng" list-after="[[exploiting out-of-order execution]]" list-before="[[cache snooping]]" modified="20210628222125590" modifier="jsng" summary="A cache miss is slow, and a cache hit is fast. This difference in cache reading speed can be used to transmit secrets out from the cache, which cannot be read directly by programs." tags="Topic:security cache" title="cache mapping" type="text/x-markdown">
+<pre>This is the second part of [[Meltdown]], a three-part exploit of a CPU vulnerability.
 
-**Cache mapping** is the second part of a three-part exploit.
+{{||prereqTemplate}}
 
-In the first part, an exploit (see [[Meltdown]] or [[Spectre]]) is used to load the forbidden information into the cache, where it will not be immediately wiped by the OS when we are “found out”.
+In the first part, an exploit is used to load the forbidden information into the cache, where it will not be immediately wiped by the OS when we are “found out”.
 
 The second part, naturally, is how to get the info out of the cache before the CPU eventually evicts old data from it.
 
