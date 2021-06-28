@@ -455,6 +455,8 @@ Error message and password prompt
 
 <li>Draft of 'cache snooping' by jsng</li>
 
+<li>Draft of 'Spectre' by jsng</li>
+
 <li>editing a PDF file</li>
 
 <li>encode</li>
@@ -1135,7 +1137,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Meltdown" modified="20210628213427864" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="speculative execution" modified="20210628214313969" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2179,6 +2181,12 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;Meltdown&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'speculative execution' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;speculative execution&quot;
     }
 ]</pre>
 </div>
@@ -13362,7 +13370,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210624041146947" creator="jsng" list="readNextTemplate [[Draft of 'cache snooping' by jsng]] [[CPU Optimization]] [[CPU cache]] [[memory allocation]] OS compile Contents" modified="20210628213711009" modifier="jsng" title="$:/StoryList">
+<div created="20210624041146947" creator="jsng" list="[[Draft of 'Spectre' by jsng]] [[Draft of 'cache snooping' by jsng]] [[CPU Optimization]] [[CPU cache]] [[memory allocation]] OS compile Contents" modified="20210628213750002" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14075,6 +14083,53 @@ Many secret ways of transmitting information involves a shared cipher, a secret 
 It’s like a WWII spy story. Two spies arrange 3 different dropoff locations. Dropoff location 1 means their country is going to attack. Dropoff location 2 means their country is not going to attack. And dropoff location 3 means the information is compromised and they should avoid contact. Even if they are caught by the secret police, there is no way of figuring out what the two spies had communicated to each other indirectly.
 
 All right, I’m writing a newsletter here, not a workshop. And the rest of the story will need more technical detail, so let’s call it a week. Next issue, all will be revealed ;)</pre>
+</div>
+<div created="20210628212927578" creator="jsng" draft.of="Spectre" draft.title="Spectre" list-after="[[speculative execution]]" list-before="[[cache snooping]]" modified="20210628213905856" modifier="jsng" tags="Topic:hardware" title="Draft of 'Spectre' by jsng" type="text/x-markdown">
+<pre>**Spectre** is a security exploit that relies on a flaw in the [[speculative execution]] feature of [[CPU]]s.
+
+Main article: [[speculative execution]]
+
+# Model: the car valet
+
+How would this work with a more concrete example? Let’s model a pair of robot car valets.
+
+This pair still consists of a robot [[ALU]] (arithmetic logic unit) and [[LSU]] (load-store unit).
+
+- The ALU, the brains of the pair,
+
+  1. gets the car keys and driver’s license from the customer
+  2. asks the customer for his ID number
+  3. asks the LSU to retrieve the vehicle.
+
+- The LSU, the brawns of the pair,
+  1. parks or retrieves the vehicle.
+
+# The exploit
+
+Let’s exploit this CPU model to find out what kind of car our secretive neighbour drives. I don’t have my neighbour’s ID, but I do know his ID number (23983698576), and I give it to the CPU. It carries out the following instructions:
+
+1. **GET** ID number[23983698576] from customer
+2. Verify if I am the car owner *[SLOW]*
+3. *IF* verified, **LOAD** car of 23983698576 by driving it to retrieval point and pass keys to customer
+4. *IF* not verified, dump data and start over with the next customer
+
+Sounds fair enough. The ALU finds out I am not my neighbour, and I don’t get to see his car. Awww. But let’s wait and see …
+
+# Speculative valeting
+
+10 customers later, suppose the CPU has been processing verified customers only. It goes into **speculative execution** mode&lt;&lt;fnote &quot;in a real CPU, you can’t disable speculative execution just like that; it is always on&quot;&gt;&gt;. Now the CPU works this way:
+
+[1.] **GET** ID number[23983698576] from customer  
+[2a.] **LOAD** car of 23983698576 by driving it to retrieval point  
+[2b.] Verify if I am the car owner *[SLOW]*  
+[3.] *IF* verified, pass car keys to customer  
+[4.] *IF* not verified, dump data and start over with the next customer
+
+2a and 2b are carried out simultaneously. Have you figured out where the cache is in this model? It’s where the car is temporarily held: at the retrieval point.
+
+10 customers later, the ALU checks my ID, and at the same time the LSU in good faith starts to drive my neighbour’s car to the retrieval point. It is astutely hidden from my direct view. But if I know the mode of operation of this valet beforehand, I have a small window of opportunity to sneak a peek at the car before the ALU figures out I’m not the owner and a cache flush occurs (i.e. the LSU removes the car from the retrieval point). Perhaps I could plant a camera at the retrieval point …
+
+{{||readNextTemplate}}</pre>
 </div>
 <div created="20210613121827918" creator="jsng" modified="20210624041427611" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
@@ -15105,7 +15160,7 @@ Image from [Wikipedia](https://en.wikipedia.org/wiki/MP3#/media/File:Mp3filestru
 
 Main article: [[speculative execution]]</pre>
 </div>
-<div created="20210628211523846" creator="jsng" list-after="[[CPU instructions]]" list-before="[[cache snooping]]" modified="20210628213357486" modifier="jsng" summary="Speculative execution is a feature that let’s the CPU speed up execution if it correctly predicts a decision point. The CPU carries out the operations along the predicted decision branch and loads the results if it predicts correctly." tags="[[CPU Optimization]]" title="speculative execution" type="text/x-markdown">
+<div created="20210628211523846" creator="jsng" list-after="[[CPU instructions]]" modified="20210628214313957" modifier="jsng" summary="Speculative execution is a feature that let’s the CPU speed up execution if it correctly predicts a decision point. The CPU carries out the operations along the predicted decision branch and loads the results if it predicts correctly." tags="[[CPU Optimization]] WIP" title="speculative execution" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 While the [[operating system]] (OS) sends instructions to the [[CPU]] to be executed, it has no control over the *order* in which instructions are carried out.
@@ -15114,7 +15169,7 @@ Because of this, hackers who understand how the CPU reorders instructions can wr
 
 Another way that malicious code can get their targeted data into the cache exploits a feature known as **speculative execution**.
 
-# Speculative execution: the CPU’s way of anticipating
+# The CPU’s way of anticipating
 
 ```
 010011011011101101000101 …
@@ -15134,47 +15189,13 @@ If our past experience with this person tells us that there is no pattern to wha
 
 To speed up the process, we might just carry out the set of routines for A, wait for them to say “I choose A”, then give them the results—*tada*! And if they choose B instead, secretly dump the evidence and curse our luck.
 
-# Another model: the car valet
+# Speculative execution
 
-How would this work with a more concrete example? Let’s model a pair of robot car valets.
+The CPU contains units that [[look ahead]] in the code to spot decision branches.
 
-This pair still consists of a robot [[ALU]] (arithmetic logic unit) and [[LSU]] (load-store unit).
+It speculatively executes the instructions on the branch that it *thinks* will be chosen, and then loads those results if the branch it is indeed chosen. This gives the appearance of the CPU carrying out those instructions much more quickly, when in fact they have simply been pre-computed.
 
-- The ALU, the brains of the pair,
-
-  1. gets the car keys and driver’s license from the customer
-  2. asks the customer for his ID number
-  3. asks the LSU to retrieve the vehicle.
-
-- The LSU, the brawns of the pair,
-  1. parks or retrieves the vehicle.
-
-# The exploit
-
-Let’s exploit this CPU model to find out what kind of car our secretive neighbour drives. I don’t have my neighbour’s ID, but I do know his ID number (23983698576), and I give it to the CPU. It carries out the following instructions:
-
-1. **GET** ID number[23983698576] from customer
-2. Verify if I am the car owner *[SLOW]*
-3. *IF* verified, **LOAD** car of 23983698576 by driving it to retrieval point and pass keys to customer
-4. *IF* not verified, dump data and start over with the next customer
-
-Sounds fair enough. The ALU finds out I am not my neighbour, and I don’t get to see his car. Awww. But let’s wait and see …
-
-# Speculative valeting
-
-10 customers later, suppose the CPU has been processing verified customers only. It goes into **speculative execution** mode&lt;&lt;fnote &quot;in a real CPU, you can’t disable speculative execution just like that; it is always on&quot;&gt;&gt;. Now the CPU works this way:
-
-[1.] **GET** ID number[23983698576] from customer  
-[2a.] **LOAD** car of 23983698576 by driving it to retrieval point  
-[2b.] Verify if I am the car owner *[SLOW]*  
-[3.] *IF* verified, pass car keys to customer  
-[4.] *IF* not verified, dump data and start over with the next customer
-
-2a and 2b are carried out simultaneously. Have you figured out where the cache is in this model? It’s where the car is temporarily held: at the retrieval point.
-
-10 customers later, the ALU checks my ID, and at the same time the LSU in good faith starts to drive my neighbour’s car to the retrieval point. It is astutely hidden from my direct view. But if I know the mode of operation of this valet beforehand, I have a small window of opportunity to sneak a peek at the car before the ALU figures out I’m not the owner and a cache flush occurs (i.e. the LSU removes the car from the retrieval point). Perhaps I could plant a camera at the retrieval point …
-
-{{||readNextTemplate}}</pre>
+See also: [[Spectre]]</pre>
 </div>
 <div created="20210613064341354" creator="jsng" modified="20210613064436027" modifier="jsng" tags="Glossary" title="stream" type="text/x-markdown">
 <pre>A data stream is a sequence of data, usually passed directly to a program for processing.</pre>
