@@ -2257,7 +2257,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="Meltdown [[out-of-order execution]] [[CPU register]] [[operating system]] [[virtual memory]] question Topic:hardware" modified="20210628215410732" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[out-of-order execution]] [[CPU register]] [[operating system]] [[virtual memory]] question Topic:hardware" modified="20210628215410732" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13786,12 +13786,12 @@ The symbol for a byte is **B** (uppercase).</pre>
 
 </pre>
 </div>
-<div created="20210628213103187" creator="jsng" list-before="[[cache snooping]]" modified="20210628215734208" modifier="jsng" summary="A cache miss is slow, and a cache hit is fast. This difference in cache reading speed can be used to transmit secrets out from the cache, which cannot be read directly by programs." tags="Topic:security" title="cache mapping" type="text/x-markdown">
+<div created="20210628213103187" creator="jsng" list-before="[[cache snooping]]" modified="20210628220029041" modifier="jsng" summary="A cache miss is slow, and a cache hit is fast. This difference in cache reading speed can be used to transmit secrets out from the cache, which cannot be read directly by programs." tags="Topic:security cache" title="cache mapping" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 **Cache mapping** is the second part of a three-part exploit.
 
-In the first part, an exploit (such as [[Meltdown]] or [[Spectre]]) is used to load the forbidden information into the cache, where it will not be immediately wiped by the OS when we are “found out”.
+In the first part, an exploit (see [[Meltdown]] or [[Spectre]]) is used to load the forbidden information into the cache, where it will not be immediately wiped by the OS when we are “found out”.
 
 The second part, naturally, is how to get the info out of the cache before the CPU eventually evicts old data from it.
 
@@ -13813,9 +13813,13 @@ Main article: [[CPU cache]]
 
 Hmm … there’s something here. A cache miss is slow, and a cache hit is fast. Could we exploit this in some way, possibly? If we are creative, yes!
 
-Many secret ways of transmitting information involves a shared cipher, a secret way of converting what is sent to what is meant. Leaking cache information will require a cipher of some sort.
+# Cache mapping
+
+Many secret ways of transmitting information involves a shared cipher, a secret way of converting *what is sent* to *what is meant*. Leaking cache information will require a cipher of some sort.
 
 It’s like a WWII spy story. Two spies arrange 3 different dropoff locations. Dropoff location 1 means their country is going to attack. Dropoff location 2 means their country is not going to attack. And dropoff location 3 means the information is compromised and they should avoid contact. Even if they are caught by the secret police, there is no way of figuring out what the two spies had communicated to each other indirectly.
+
+We need a way to map the cache indirectly, to use the *location* of the package as the information itself.
 
 {{||readNextTemplate}}</pre>
 </div>
