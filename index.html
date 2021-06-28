@@ -13362,7 +13362,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210624041146947" creator="jsng" list="[[Draft of 'cache snooping' by jsng]] [[CPU Optimization]] [[CPU cache]] [[memory allocation]] OS compile Contents" modified="20210628213223444" modifier="jsng" title="$:/StoryList">
+<div created="20210624041146947" creator="jsng" list="readNextTemplate [[Draft of 'cache snooping' by jsng]] [[CPU Optimization]] [[CPU cache]] [[memory allocation]] OS compile Contents" modified="20210628213711009" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14043,17 +14043,16 @@ Let’s look at some document formats:
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210628213103187" creator="jsng" draft.of="cache snooping" draft.title="cache snooping" modified="20210628213314914" modifier="jsng" title="Draft of 'cache snooping' by jsng" type="text/x-markdown">
-<pre>Meltdown and Spectre need 2 pieces of the puzzle to leak data, and we have covered the first piece already: How to load the forbidden information into the cache, where it will not be immediately wiped by the OS when we are “found out”.
+<div created="20210628213103187" creator="jsng" draft.of="cache snooping" draft.title="cache snooping" modified="20210628213626593" modifier="jsng" title="Draft of 'cache snooping' by jsng" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
 
-If we were trying to pull off a Meltdown or Spectre, we would try to:
+**Cache snooping** is the second part of a two-part exploit.
 
-1. Set up the request to have the info loaded into the cache
-2. Attempt to read the cache ... how?
+In the first part, an exploit (such as [[Meltdown]] or [[Spectre]]) is used to load the forbidden information into the cache, where it will not be immediately wiped by the OS when we are “found out”.
 
-The second piece of the puzzle, naturally, is how to get the info out of the cache before the CPU eventually evicts old data from it.
+The second part, naturally, is how to get the info out of the cache before the CPU eventually evicts old data from it.
 
-## Failure from the start
+# Failure from the start
 
 At this point, we would have failed. We have gotten the secret into the cache, but we have no idea where it is in the cache, and we have no way to access the cache directly—remember that the cache is managed by the CPU and there is no instruction we can issue to the CPU to give us cache data directly.
 
@@ -15039,12 +15038,10 @@ Or what if two different government departments are trying to collaborate on a f
 
 Homepage: https://www.rarlab.com/</pre>
 </div>
-<div created="20210628212745578" creator="jsng" modified="20210628212852043" modifier="jsng" tags="" title="readNextTemplate" type="text/x-markdown">
+<div created="20210628212745578" creator="jsng" modified="20210628213716647" modifier="jsng" tags="" title="readNextTemplate" type="text/x-markdown">
 <pre>## Read next:
 
-{{!!list-before}}
-
-&lt;hr&gt;</pre>
+{{!!list-before}}</pre>
 </div>
 <div created="20210611062448287" creator="jsng" modified="20210611062623595" modifier="jsng" tags="Glossary" title="Retina" type="text/x-markdown">
 <pre>In 2010, the late Steve Jobs first used the term **Retina** referring to the iPhone 4. I suppose he meant to describe a class of devices with a display so sharp that the pixels were practically imperceptible; it wasn’t that long ago that if you squinted a little, you could make out the pixels on your monitor or laptop.
