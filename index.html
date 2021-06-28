@@ -455,8 +455,6 @@ Error message and password prompt
 
 <li>DPI</li>
 
-<li>Draft of 'New Tiddler' by jsng</li>
-
 <li>editing a PDF file</li>
 
 <li>encode</li>
@@ -610,6 +608,8 @@ Error message and password prompt
 <li>run-length encoding</li>
 
 <li>sample</li>
+
+<li>shared memory</li>
 
 <li>specification</li>
 
@@ -13601,7 +13601,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210624041146947" creator="jsng" list="[[Draft of 'New Tiddler' by jsng]] [[virtual memory]] Meltdown Topic:security [[memory allocation]] OS compile Contents" modified="20210628224216441" modifier="jsng" title="$:/StoryList">
+<div created="20210624041146947" creator="jsng" list="[[shared memory]] Meltdown Topic:security [[memory allocation]] OS compile Contents" modified="20210628224216441" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14375,9 +14375,6 @@ Let’s look at some document formats:
 </div>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
-</div>
-<div created="20210628224910558" creator="jsng" draft.of="New Tiddler" draft.title="shared memory" modified="20210628224944650" modifier="jsng" tags="Topic:systems" title="Draft of 'New Tiddler' by jsng">
-<pre></pre>
 </div>
 <div created="20210613121827918" creator="jsng" modified="20210624041427611" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
@@ -15444,6 +15441,79 @@ Post-compression (RLE):
 </div>
 <div created="20210611041919650" creator="jsng" modified="20210611041955093" modifier="jsng" tags="Glossary" title="sample" type="text/x-markdown">
 <pre>A **sample** is a technical term for a segment of data, usually video or audio.</pre>
+</div>
+<div created="20210628224910558" creator="jsng" modified="20210628225113694" modifier="jsng" tags="Topic:systems" title="shared memory" type="text/x-markdown">
+<pre>It is impossible to completely separate programs from each other. Many programs need to communicate with each other; antivirus software needs to be able to scan the addresses accessed by your web browser for harmful links, Office software needs to be able to send data to each other especially for features like Mail Merge, and of course your task manager has to know how much resources every app is using. So that it can show you this:
+
+![Screenshot of task manager in Windows 10, showing shared memory usage](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season5/issue065/issue065_01.png)&lt;br /&gt;
+&lt;small&gt;Task Manager in Windows 10&lt;br /&gt;
+You can reveal the shared memory column by right-clicking on the column labels and then “Select Columns”.&lt;/small&gt;
+
+or this:
+
+![Screenshot of system monitor in KDE, showing shared memory usage](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season5/issue065/issue065_02.png)&lt;br /&gt;
+&lt;small&gt;System Monitor in KDE (Linux).&lt;/small&gt;
+
+What is this shared memory?
+
+## Private memory
+
+The memory I talked about earlier, which every software application has, is used to store various things. It is used to store temporary information, such as unsaved data, application settings, graphics resources (every icon and image shown in the application has to come from somewhere …), but most important, libraries and other functions ([Issue 17](https://buttondown.email/laymansguide/archive/lmg-s2-issue-17-libraries/)).
+
+Very few software developers will write every single bit of code used by their program; often, they will use software libraries written by others to provide specialised functions (e.g. encrypting your data, or accessing a database). When program code is compiled into CPU instructions ([Issue 54](https://buttondown.email/laymansguide/archive/lmg-s5-issue-54-compiling-programming-code-into/)), these libraries of course have to be compiled and bundled up as well.
+
+That makes the program really huge, doesn’t it? Yes, it does; it is one reason (but not the main reason) that mobile apps, especially Android apps, [have become so bloated](https://trevore.com/post/app-sizes-are-out-of-control/) over the last half-decade or so. But I digress.
+
+## Shared memory
+
+At some point, you start to realise that many of these apps need to use a set of identical functions: at the most basic level, requesting and managing memory, requesting file access, sending data over a network, …, and up to libraries for resizing images, and so on.
+
+It doesn’t make sense for each app to have to bundle their own libraries for that! So the OS actually provides a set of common libraries that applications compiled for that OS can use. Each operating system bundles its own libraries for applications to use; this is one reason why applications compiled for Windows wont work on OSX or Linux, and vice-versa. That also means that these libraries have to be loaded into a part of memory that is accessible to all applications. These shared libraries thus go into **shared memory space**.
+
+What else? Shared libraries can’t be taking up so much space by themselves, they’re just instructions …
+
+Let’s try to find out what else is sitting in there.
+
+## Investigating memory details
+
+On Windows, I’m going to need more specialised tools. I’ve only got an hour; let’s try something else.
+
+Ah! System Monitor actually reveals more details about how an application uses memory. Let’s investigate the top few processes using the most memory.
+
+Here’s Firefox:
+
+![Screenshot of detailed memory usage in Firefox on KDE](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season5/issue065/issue065_03.png)&lt;br /&gt;
+&lt;small&gt;Firefox detailed memory usage in KDE (Linux).&lt;/small&gt;
+
+Oops, too much detail. Heres the gist:
+
+1. Firefox uses about 450 MB for its own stuff in private memory, in a place called the heap.
+2. To communicate with other processes, it uses about 10 MB privately, and 82 MB shared with other processes (it does so through /SYSV00000000, which is deleted when not in use)  
+3. It has loaded one of its core libraries, `libxul.so` (almost all libraries start with the prefix `lib`) in shared space. This core library is shared with other Mozilla applications, such as its Thunderbird email client, so it makes sense to put it mostly in shared memory.
+4. It uses a small amount of space for caching things (startup code, its own scripts, etc)
+5. It uses some shared memory to communicate with other processes. (The acronym `IPC` in this context usually refers to **inter-process communication**.) This can be for playing audio/video (it has to communicate with the audio/video drivers), or loading content that has to be processed through plugins (used to be Flash content in the past, now it can be other things).
+
+Hmm, interesting. Let’s try to find something more illuminating to wrap up this season with.
+
+## How is shared memory used?
+
+I do my newsletter writing mainly in an app called Atom, made by Github. Atom runs on a platform called Electron (atom … electron … get it?). Electron is a Github project that allows developers to write desktop/laptop apps in Javascript, traditionally the language of web scripting.
+
+In system monitor, I can see an app named atom, and one named electron. Let’s inspect them both.
+
+![Screenshot of detailed memory usage for electron on KDE](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season5/issue065/issue065_04.png)&lt;br /&gt;
+&lt;small&gt;Electron detailed memory usage in KDE (Linux).&lt;/small&gt;
+
+![Screenshot of detailed memory usage for atom on KDE](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season5/issue065/issue065_05.png)&lt;br /&gt;
+&lt;small&gt;Atom detailed memory usage in KDE (Linux).&lt;/small&gt;
+
+We can see that:
+
+1. Both apps are sharing the `electron` library (it does not have a `lib` prefix, but it is stored in the `/usr/lib` directory which is where libraries go)
+2. They both use a bunch of shared libraries: `libicu*` for Unicode support, `libc*` &amp; `libstd*` for standard operating system functions (reading/writing files, etc), `libgtk*` for user interface management, `fontconfig` for fonts, etc
+3. Some libraries are still loaded privately, and both programs still have a heap for their own data which is not meant to be accessible to other programs
+
+You can see why the application memory usage shown in Task Manager/System Monitor doesn’t always tally with the total memory usage. Application memory usage usually shows both private+shared memory usage, so that will add up to a number greater than the total memory usage.</pre>
 </div>
 <div created="20210613073650264" creator="jsng" modified="20210613074245924" modifier="jsng" tags="Glossary" title="specification" type="text/x-markdown">
 <pre># Header formats are stated in specifications
