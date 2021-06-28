@@ -453,6 +453,8 @@ Error message and password prompt
 
 <li>DPI</li>
 
+<li>Draft of 'cache snooping' by jsng</li>
+
 <li>editing a PDF file</li>
 
 <li>encode</li>
@@ -1133,7 +1135,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Meltdown" modified="20210628213142316" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="speculative execution" modified="20210628213357499" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2154,10 +2156,27 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;Meltdown&quot;
+    },
+    {
+        &quot;title&quot;: &quot;speculative execution&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 45.44999694824219,
+            &quot;left&quot;: 713.5166625976562,
+            &quot;width&quot;: 32.90000915527344,
+            &quot;right&quot;: 746.4166717529297,
+            &quot;bottom&quot;: 84.93333435058594,
+            &quot;height&quot;: 39.48333740234375
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'speculative execution' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;speculative execution&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="Meltdown throughput [[CPU register]] latency cache [[operating system]] [[virtual memory]] question Topic:hardware" modified="20210628212904436" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[speculative execution]] Meltdown throughput [[CPU register]] latency cache [[operating system]] [[virtual memory]] question Topic:hardware" modified="20210628213227725" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13337,7 +13356,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210624041146947" creator="jsng" list="Spectre [[speculative execution]] [[CPU Optimization]] [[CPU cache]] [[memory allocation]] OS compile Contents" modified="20210628212739663" modifier="jsng" title="$:/StoryList">
+<div created="20210624041146947" creator="jsng" list="[[Draft of 'cache snooping' by jsng]] [[CPU Optimization]] [[CPU cache]] [[memory allocation]] OS compile Contents" modified="20210628213223444" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14017,6 +14036,40 @@ Let’s look at some document formats:
 </div>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
+</div>
+<div created="20210628213103187" creator="jsng" draft.of="cache snooping" draft.title="cache snooping" modified="20210628213314914" modifier="jsng" title="Draft of 'cache snooping' by jsng" type="text/x-markdown">
+<pre>Meltdown and Spectre need 2 pieces of the puzzle to leak data, and we have covered the first piece already: How to load the forbidden information into the cache, where it will not be immediately wiped by the OS when we are “found out”.
+
+If we were trying to pull off a Meltdown or Spectre, we would try to:
+
+1. Set up the request to have the info loaded into the cache
+2. Attempt to read the cache ... how?
+
+The second piece of the puzzle, naturally, is how to get the info out of the cache before the CPU eventually evicts old data from it.
+
+## Failure from the start
+
+At this point, we would have failed. We have gotten the secret into the cache, but we have no idea where it is in the cache, and we have no way to access the cache directly—remember that the cache is managed by the CPU and there is no instruction we can issue to the CPU to give us cache data directly.
+
+We’ve come so far … and it doesn’t even matter.
+
+We’ll need to modify our approach slightly. We can’t store the leaked data directly in the cache naïvely like that. We’ve got to be a little cleverer.
+
+## The cache “mirrors” a part of virtual memory
+
+A quick refresher on how the cache works ([Issue 57](https://buttondown.email/laymansguide/archive/lmg-s5-issue-57-cache-the-cpus-working-space/)):
+
+1. When the CPU needs data from a memory address, it looks in the cache first.
+2. If the data is not there (a **cache miss**), it will load the data from the memory address, and store a copy in the cache for faster reference in future. [**SLOW**]
+3. If there is a cache hit, the data from the cache will be returned. [**FAST**]
+
+Hmm … there’s something here. A cache miss is slow, and a cache hit is fast. Could we exploit this in some way, possibly? If we are creative, yes!
+
+Many secret ways of transmitting information involves a shared cipher, a secret way of converting what is sent to what is meant. Leaking cache information will require a cipher of some sort.
+
+It’s like a WWII spy story. Two spies arrange 3 different dropoff locations. Dropoff location 1 means their country is going to attack. Dropoff location 2 means their country is not going to attack. And dropoff location 3 means the information is compromised and they should avoid contact. Even if they are caught by the secret police, there is no way of figuring out what the two spies had communicated to each other indirectly.
+
+All right, I’m writing a newsletter here, not a workshop. And the rest of the story will need more technical detail, so let’s call it a week. Next issue, all will be revealed ;)</pre>
 </div>
 <div created="20210613121827918" creator="jsng" modified="20210624041427611" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
@@ -15049,7 +15102,7 @@ Image from [Wikipedia](https://en.wikipedia.org/wiki/MP3#/media/File:Mp3filestru
 
 Main article: [[speculative execution]]</pre>
 </div>
-<div created="20210628211523846" creator="jsng" list-after="[[CPU instructions]]" modified="20210628213032897" modifier="jsng" summary="Speculative execution is a feature that let’s the CPU speed up execution if it correctly predicts a decision point. The CPU carries out the operations along the predicted decision branch and loads the results if it predicts correctly." tags="[[CPU Optimization]]" title="speculative execution" type="text/x-markdown">
+<div created="20210628211523846" creator="jsng" list-after="[[CPU instructions]]" list-before="[[cache snooping]]" modified="20210628213357486" modifier="jsng" summary="Speculative execution is a feature that let’s the CPU speed up execution if it correctly predicts a decision point. The CPU carries out the operations along the predicted decision branch and loads the results if it predicts correctly." tags="[[CPU Optimization]]" title="speculative execution" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 While the [[operating system]] (OS) sends instructions to the [[CPU]] to be executed, it has no control over the *order* in which instructions are carried out.
@@ -15116,7 +15169,9 @@ Sounds fair enough. The ALU finds out I am not my neighbour, and I don’t get t
 
 2a and 2b are carried out simultaneously. Have you figured out where the cache is in this model? It’s where the car is temporarily held: at the retrieval point.
 
-10 customers later, the ALU checks my ID, and at the same time the LSU in good faith starts to drive my neighbour’s car to the retrieval point. It is astutely hidden from my direct view. But if I know the mode of operation of this valet beforehand, I have a small window of opportunity to sneak a peek at the car before the ALU figures out I’m not the owner and a cache flush occurs (i.e. the LSU removes the car from the retrieval point). Perhaps I could plant a camera at the retrieval point …</pre>
+10 customers later, the ALU checks my ID, and at the same time the LSU in good faith starts to drive my neighbour’s car to the retrieval point. It is astutely hidden from my direct view. But if I know the mode of operation of this valet beforehand, I have a small window of opportunity to sneak a peek at the car before the ALU figures out I’m not the owner and a cache flush occurs (i.e. the LSU removes the car from the retrieval point). Perhaps I could plant a camera at the retrieval point …
+
+{{||readNextTemplate}}</pre>
 </div>
 <div created="20210613064341354" creator="jsng" modified="20210613064436027" modifier="jsng" tags="Glossary" title="stream" type="text/x-markdown">
 <pre>A data stream is a sequence of data, usually passed directly to a program for processing.</pre>
