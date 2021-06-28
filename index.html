@@ -1135,7 +1135,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Spectre" modified="20210628215746570" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Meltdown" modified="20210628215802020" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2248,10 +2248,16 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;Spectre&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'Meltdown' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Meltdown&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="Spectre Meltdown [[out-of-order execution]] [[CPU register]] [[operating system]] [[virtual memory]] question Topic:hardware" modified="20210628215410732" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="Meltdown [[out-of-order execution]] [[CPU register]] [[operating system]] [[virtual memory]] question Topic:hardware" modified="20210628215410732" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -14768,7 +14774,7 @@ Here’s an example of the information it shows about the only video file on my 
 ![MediaInfo screenshot showing container, video stream, and audio stream information](images/issue048_01.png)&lt;br /&gt;
 Mediainfo screenshot showing metadata for an MP4 file containing an [[h264]] video stream and an [[AAC]] audio stream.</pre>
 </div>
-<div created="20210624074926771" creator="jsng" list-after="[[out-of-order execution]]" list-before="[[cache snooping]]" modified="20210628215553002" modifier="jsng" summary="A set of instructions can trick a CPU into reordering load instructions so that the data is temporarily loaded into the cache before the instructions are retired. The cache can then be snooped to retrieve the data." tags="Topic:hardware Topic:security" title="Meltdown" type="text/x-markdown">
+<div created="20210624074926771" creator="jsng" list-after="[[out-of-order execution]]" list-before="[[cache mapping]]" modified="20210628215801989" modifier="jsng" summary="A set of instructions can trick a CPU into reordering load instructions so that the data is temporarily loaded into the cache before the instructions are retired. The cache can then be snooped to retrieve the data." tags="Topic:hardware Topic:security" title="Meltdown" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 By reordering the instructions that come in, we can optimise CPU usage by making sure the LSU is loading data for the next few instructions while the ALU is still working; this is known as [[out-of-order execution]].
