@@ -1135,7 +1135,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="speculative execution" modified="20210628213357499" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Meltdown" modified="20210628213427864" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2173,6 +2173,12 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;speculative execution&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'Meltdown' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Meltdown&quot;
     }
 ]</pre>
 </div>
@@ -14645,7 +14651,7 @@ Here’s an example of the information it shows about the only video file on my 
 ![MediaInfo screenshot showing container, video stream, and audio stream information](images/issue048_01.png)&lt;br /&gt;
 Mediainfo screenshot showing metadata for an MP4 file containing an [[h264]] video stream and an [[AAC]] audio stream.</pre>
 </div>
-<div created="20210624074926771" creator="jsng" list-after="[[out-of-order execution]]" modified="20210628213142291" modifier="jsng" summary="A set of instructions can trick a CPU into reordering load instructions so that the data is temporarily loaded into the cache before the instructions are retired. The cache can then be snooped to retrieve the data." tags="Topic:hardware" title="Meltdown" type="text/x-markdown">
+<div created="20210624074926771" creator="jsng" list-after="[[out-of-order execution]]" list-before="[[cache snooping]]" modified="20210628213427840" modifier="jsng" summary="A set of instructions can trick a CPU into reordering load instructions so that the data is temporarily loaded into the cache before the instructions are retired. The cache can then be snooped to retrieve the data." tags="Topic:hardware" title="Meltdown" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 In [[out-of-order execution]], I modelled a simple [[CPU]] bank teller consisting of two units, an [[ALU]] (arithmetic logic unit), and a [[LSU]] (load-store unit). The ALU does the calculations, while the LSU loads from or stores data to memory. For the CPU to hum along optimally, the ALU should not be kept waiting for data, and the LSU should not be left twiddling its thumbs while the ALU is working.
@@ -14712,7 +14718,7 @@ If this sounds horrifying to you, remember that the *real* CPU is just a bunch o
 
 But still, that leaves a small window of opportunity for me to crane my neck and try to snoop the paper. And that’s all the time I need to see my neighbor’s transactions, and even his bank balance.
 
-Related: [[cache snooping]]</pre>
+{{||readNextTemplate}}</pre>
 </div>
 <div created="20210624063928582" creator="jsng" list-after="[[Central Processing Unit]]" modified="20210624071840490" modifier="jsng" summary="Each instruction may consist of loading data from a memory location, sending data to a memory location, or performing operations on the data it is holding." tags="Topic:hardware" title="Memory addressing" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
