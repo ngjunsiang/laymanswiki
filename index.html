@@ -449,6 +449,10 @@ Error message and password prompt
 
 <li>DPI</li>
 
+<li>Draft of 'New Tiddler' by jsng</li>
+
+<li>Draft of 'Out-of-order execution' by jsng</li>
+
 <li>editing a PDF file</li>
 
 <li>encode</li>
@@ -13283,7 +13287,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210624041146947" creator="jsng" list="Meltdown [[Out-of-order execution]] [[CPU Optimization]] [[CPU cache]] [[memory allocation]] OS compile Contents" modified="20210624074829511" modifier="jsng" title="$:/StoryList">
+<div created="20210624041146947" creator="jsng" list="[[Draft of 'New Tiddler' by jsng]] Meltdown [[Draft of 'Out-of-order execution' by jsng]] [[CPU Optimization]] [[CPU cache]] [[memory allocation]] OS compile Contents" modified="20210628211728716" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13958,6 +13962,117 @@ Let’s look at some document formats:
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
+<div created="20210628211523846" creator="jsng" draft.of="New Tiddler" draft.title="Speculative execution" list-after="[[CPU instructions]]" modified="20210628211836199" modifier="jsng" summary="Speculative execution is a feature that let’s the CPU speed up execution if it correctly predicts a decision point. The CPU carries out the operations along the predicted decision branch and loads the results if it predicts correctly." tags="[[CPU Optimization]]" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
+<pre>While the [[operating system]] (OS) sends instructions to the [[CPU]] to be executed, it has no control over the *order* in which instructions are carried out.
+
+Because of this, hackers who understand how the CPU reorders instructions can write malicious code that tricks the CPU into loading precious data into memory for a fraction of a second, during which they can use [[cache-snooping]] techniques to read the data.
+
+Before I go into the details of one cache-snooping technique, I want to outline another way that malicious code can get their targeted data into the cache. This exploits another feature, known as speculative execution.
+
+## Speculative execution: the CPU’s way of anticipating
+
+```
+010011011011101101000101 …
+```
+
+Can you predict the next number in the sequence? Kinda tough …
+
+```
+1111111111111111 …
+```
+
+How about now? Easier?
+
+We have all been in that workplace situation where we are waiting on a colleague to make a decision. If they choose A, we have to perform one set of routines. If they choose B, we have to perform another set of routines.
+
+If our past experience with this person tells us that there is no pattern to what they will choose in such a situation, it is very difficult to proceed until they have made their choice. However, if they regularly choose A and occasionally choose B, that’s another story. Especially if they take a long time to make their decision.
+
+To speed up the process, we might just carry out the set of routines for A, wait for them to say “I choose A”, then give them the results—*tada*! And if they choose B instead, secretly dump the evidence and curse our luck.
+
+## Another model: the car valet
+
+How would this work with a more concrete example? I could reuse the bank teller model from the Meltdown explanation, but I run the risk of muddling you up since the steps will look very similar. Instead, let’s model a pair of robot car valets instead. This pair still consists of a robot ALU (arithmetic logic unit) and LSU (load-store unit). The ALU, the brains of the pair, gets the car keys and driver’s license from the customer, and asks the customer for his ID number before asking the LSU to retrieve the vehicle. The LSU, the brawns of the pair, well, just parks or retrieves the vehicle.
+
+Let’s exploit this CPU model to find out what kind of car our secretive neighbour drives. I don’t have my neighbour’s ID, but I do know his ID number (23983698576), and I give it to the CPU. It carries out the following instructions:
+
+1. **GET** ID number[23983698576] from customer
+2. Verify if I am the car owner *[SLOW]*
+3. *IF* verified, **LOAD** car of 23983698576 by driving it to retrieval point and pass keys to customer
+4. *IF* not verified, dump data and start over with the next customer
+
+Sounds fair enough. The ALU finds out I am not my neighbour, and I don’t get to see his car. Awww. But let’s wait and see …
+
+## Speculative valeting
+
+10 customers later, the CPU has been processing verified customers only. It goes into speculative execution mode (in a **real CPU**, of course you can’t disable speculative execution just like that; it is always on). Now the CPU works this way:
+
+[1.] **GET** ID number[23983698576] from customer  
+[2a.] **LOAD** car of 23983698576 by driving it to retrieval point  
+[2b.] Verify if I am the car owner *[SLOW]*  
+[3.] *IF* verified, pass car keys to customer  
+[4.] *IF* not verified, dump data and start over with the next customer
+
+2a and 2b are carried out simultaneously. Have you figured out where the cache is in this model? It’s where the car is temporarily held: at the retrieval point.
+
+10 customers later, the ALU checks my ID, and at the same time the LSU in good faith starts to drive my neighbour’s car to the retrieval point. It is astutely hidden from my direct view. But if I know the mode of operation of this valet beforehand, I have a small window of opportunity to sneak a peek at the car before the ALU figures out I’m not the owner and a cache flush occurs (i.e. the LSU removes the car from the retrieval point). Perhaps I could plant a camera at the retrieval point …</pre>
+</div>
+<div created="20210624074048300" creator="jsng" draft.of="Out-of-order execution" draft.title="Out-of-order execution" list-after="[[CPU instructions]]" modified="20210628211544593" modifier="jsng" summary="The CPU comprises different types of execution units. All the execution units can run at the same time, but they may execute instructions over different numbers of clock cycles. To minimise wait time, CPU instructions are carried out in an order that keeps the execution units busy as often as possible." tags="[[CPU Optimization]]" title="Draft of 'Out-of-order execution' by jsng" type="text/x-markdown">
+<pre>“Out-of-order” makes it sound like something is broken in the CPU, but it really just means that the CPU does not execute instructions in the same order that they were fed to the CPU.
+
+If you have seen a busy Starbucks joint or Chinese restaurant at work, you would know that menu orders are not always carried out in the same order that they were taken (even if customers are eventually first-come-first-served). A fully staffed Starbucks joint or Chinese restaurant is not a single working unit, but a collection of specialised units.
+
+# CPU execution units
+
+A [[CPU core]] comprises 3 types of execution units:
+
+- **A**rithmetic **L**ogic **U**nit ([[ALU]]): THE ALU is responsible for carrying out integer calculations
+- **F**loating **P**oint **U**nit ([[FPU]]): The FPU is responsible for carrying out decimal calculations
+- **L**oad/**S**tore **U**nit ([[LSU]]): The LSU is responsible for loading data from memory into the CPU, or storing data from the CPU into memory
+
+Main article: [[Memory addressing]]
+
+An instruction decoding unit in the CPU decodes each instruction and sends it to the appropriate execution unit. All these units can work at the same time, and for maximum performance this is what you want to happen.
+
+# Not all instructions are executed equally
+
+The CPU has an internal clock (called the [[CPU clock]]) that regulates when things are done in the CPU. Everything in a CPU takes place in cycles. Every operation takes at least one cycle, but some operations which require more steps will require more cycles.
+
+For instance, the ALU can carry out most operations in one or two cycles, but the FPU often needs four or more cycles to do its work (moving decimals is hard work!). The LSU clock cycle latency varies: the cache has different regions, and regions closer to CPU cores are faster to fetch while other regions shared among all the cores are slower to fetch.
+
+Keeping all the execution units busy is getting more complex now, eh?
+
+# Minimising wait time in a CPU
+
+Let’s revisit some [[CPU instructions]]:
+
+Main article: [[CPU instructions]]
+
+```
+1 LOAD 1   R1
+2 ADD  2   R1, R2
+3 MOV  R2, MEM1011
+```
+
+The third instruction is to store data from the CPU register to main memory, and this is gonna take a little while. Sending subsequent instructions to the ALU immediately after the third instruction will result in some wastage of clock cycles: the ALU will just be sitting there, waiting for the data to be available in main memory before it can do its thing.
+
+Why not schedule an instruction, even from another application, while waiting? It doesn’t matter if the other application’s instruction came later; if it can be executed now, we might as well do it.
+
+This, in a nutshell-issue, is **out-of-order execution**.
+
+# Analogy: old-school robot bank teller
+
+Let’s model a CPU core as two execution units: an ALU and a LSU. The ALU is a robot bank teller that does what the customer asks, while the LSU is a robot bank teller that retrieves data from and stores data back to the bank’s database (i.e. memory). Two such robot bank tellers work at a teller counter (CPU core).
+
+If a customer needs to check their bank balance, the following instructions need to happen (like I said, this is old-school; no iBanking or ATMs here, because analogy).
+
+1. **GET** ID from customer
+2. **LOAD** bank account owner from memory (using ID number)
+3. Check that customer is the bank account owner (verifying other details) *[SLOW]*
+4. *IF* verified, **LOAD** bank account balance
+5. **SEND** bank account balance to customer
+
+If you’re wondering why steps 2 and 4 can’t happen at the same time, you already understand out-of-order execution at an intuitive level. If the LSU can carry out steps 2 and 4 at the same time, the ALU can simply provide the bank balance once the customer is authenticated, or discard the information otherwise.</pre>
+</div>
 <div created="20210613121827918" creator="jsng" modified="20210624041427611" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
 
@@ -14529,7 +14644,7 @@ Here’s an example of the information it shows about the only video file on my 
 ![MediaInfo screenshot showing container, video stream, and audio stream information](images/issue048_01.png)&lt;br /&gt;
 Mediainfo screenshot showing metadata for an MP4 file containing an [[h264]] video stream and an [[AAC]] audio stream.</pre>
 </div>
-<div created="20210624074926771" creator="jsng" list-after="[[Out-of-order execution]]" modified="20210628211500895" modifier="jsng" summary="A set of instructions can trick a CPU into reordering load instructions so that the data is temporarily loaded into the cache before the instructions are retired. The cache can then be snooped to retrieve the data." tags="Topic:hardware" title="Meltdown" type="text/x-markdown">
+<div created="20210624074926771" creator="jsng" list-after="[[Out-of-order execution]]" modified="20210628211959536" modifier="jsng" summary="A set of instructions can trick a CPU into reordering load instructions so that the data is temporarily loaded into the cache before the instructions are retired. The cache can then be snooped to retrieve the data." tags="Topic:hardware" title="Meltdown" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 In [[Out-of-order execution]], I modelled a simple [[CPU]] bank teller consisting of two units, an [[ALU]] (arithmetic logic unit), and a [[LSU]] (load-store unit). The ALU does the calculations, while the LSU loads from or stores data to memory. For the CPU to hum along optimally, the ALU should not be kept waiting for data, and the LSU should not be left twiddling its thumbs while the ALU is working.
@@ -14594,7 +14709,9 @@ But meanwhile, the papers on the desk **don’t get cleared**!
 
 If this sounds horrifying to you, remember that the *real* CPU is just a bunch of transistors and it really isn’t all that smart. And remember that programs cannot access the [[CPU cache]] directly; it is a hardware implementation detail (like the backroom of any business), and so this is considered normal practice.
 
-But still, that leaves a small window of opportunity for me to crane my neck and try to snoop the paper. And that’s all the time I need to see my neighbor’s transactions, and even his bank balance.</pre>
+But still, that leaves a small window of opportunity for me to crane my neck and try to snoop the paper. And that’s all the time I need to see my neighbor’s transactions, and even his bank balance.
+
+Related: [[cache snooping]]</pre>
 </div>
 <div created="20210624063928582" creator="jsng" list-after="[[Central Processing Unit]]" modified="20210624071840490" modifier="jsng" summary="Each instruction may consist of loading data from a memory location, sending data to a memory location, or performing operations on the data it is holding." tags="Topic:hardware" title="Memory addressing" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
