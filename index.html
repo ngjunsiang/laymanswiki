@@ -1149,7 +1149,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Printing images" modified="20210630080631684" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="out-of-order execution" modified="20210630080700758" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1887,10 +1887,16 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;Printing images&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'out-of-order execution' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;out-of-order execution&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[Printing images]] [[out-of-order execution]] [[MIME types]] [[lossy audio compression]] [[editing a PDF file]] [[Colour representation in computers]]" modified="20210628224009099" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[out-of-order execution]] [[MIME types]] [[lossy audio compression]] [[editing a PDF file]] [[Colour representation in computers]]" modified="20210628224009099" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -14796,7 +14802,7 @@ But cybersecurity is a multi-billion dollar industry with good reason. Black hat
 <div created="20210611061658469" creator="jsng" modified="20210624065716265" modifier="jsng" tags="Glossary" title="OS" type="text/x-markdown">
 <pre>**OS** stands for [[operating system]].</pre>
 </div>
-<div created="20210624074048300" creator="jsng" list-after="[[CPU instructions]]" modified="20210628230429289" modifier="jsng" summary="The CPU comprises different types of execution units. All the execution units can run at the same time, but they may execute instructions over different numbers of clock cycles. To minimise wait time, CPU instructions are carried out in an order that keeps the execution units busy as often as possible." tags="[[CPU Optimization]]" title="out-of-order execution" type="text/x-markdown">
+<div created="20210624074048300" creator="jsng" list-after="[[CPU instructions]]" modified="20210630080700744" modifier="jsng" summary="The CPU comprises different types of execution units. All the execution units can run at the same time, but they may execute instructions over different numbers of clock cycles. To minimise wait time, CPU instructions are carried out in an order that keeps the execution units busy as often as possible." tags="[[CPU Optimization]]" title="out-of-order execution" type="text/x-markdown">
 <pre>“Out-of-order” makes it sound like something is broken in the CPU, but it really just means that the CPU does not execute instructions in the same order that they were fed to the CPU.
 
 If you have seen a busy Starbucks joint or Chinese restaurant at work, you would know that menu orders are not always carried out in the same order that they were taken (even if customers are eventually first-come-first-served). A fully staffed Starbucks joint or Chinese restaurant is not a single working unit, but a collection of specialised units.
@@ -14835,7 +14841,7 @@ Main article: [[CPU instructions]]
 
 The third instruction is to store data from the CPU register to main memory, and this is gonna take a little while. Sending subsequent instructions to the ALU immediately after the third instruction will result in some wastage of clock cycles: the ALU will just be sitting there, waiting for the data to be available in main memory before it can do its thing.
 
-Why not schedule an instruction, even from another application, while waiting? It doesn’t matter if the other application’s instruction came later; if it can be executed now, we might as well do it.
+Why not schedule an instruction, even from another [[application]], while waiting? It doesn’t matter if the other [[application]]’s instruction came later; if it can be executed now, we might as well do it.
 
 This, in a nutshell-issue, is **out-of-order execution**.
 
