@@ -459,6 +459,8 @@ Error message and password prompt
 
 <li>DPI</li>
 
+<li>Draft of 'New Tiddler' by jsng</li>
+
 <li>editing a PDF file</li>
 
 <li>encode</li>
@@ -1153,7 +1155,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Text representation in computers" modified="20210701040333604" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="comma separated values" modified="20210701041144156" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1831,10 +1833,27 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 84.93333435058594,
             &quot;height&quot;: 39.48333740234375
         }
+    },
+    {
+        &quot;title&quot;: &quot;comma separated values&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 45.44999694824219,
+            &quot;left&quot;: 713.5166625976562,
+            &quot;width&quot;: 32.90000915527344,
+            &quot;right&quot;: 746.4166717529297,
+            &quot;bottom&quot;: 84.93333435058594,
+            &quot;height&quot;: 39.48333740234375
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'comma separated values' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;comma separated values&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[Text representation in computers]] Topic:database [[virtual memory]]" modified="20210701040333602" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[comma separated values]] Topic:database [[virtual memory]]" modified="20210701040921166" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13014,7 +13033,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210701035926818" creator="jsng" list="[[comma separated values]] Topic:security Meltdown" modified="20210701040331040" modifier="jsng" title="$:/StoryList">
+<div created="20210701035926818" creator="jsng" list="[[Draft of 'New Tiddler' by jsng]] Topic:security Meltdown" modified="20210701040331040" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13590,7 +13609,7 @@ Main article: [[Colour production]]
 
 In a computer, combinations of **image pixels** are stored as [[image files|Image formats]].</pre>
 </div>
-<div created="20210701040030491" creator="jsng" modified="20210701040914921" modifier="jsng" summary="Comma-separated value (CSV) files store all data in text form. Within each row, a separator divides each chunk of data, and rows are separated by a line delimiter." tags="Topic:database" title="comma separated values" type="text/x-markdown">
+<div created="20210701040030491" creator="jsng" modified="20210701041144139" modifier="jsng" summary="Comma-separated value (CSV) files store all data in text form. Within each row, a separator divides each chunk of data, and rows are separated by a line delimiter." tags="Topic:database" title="comma separated values" type="text/x-markdown">
 <pre>Let’s try to put our data into a text file.
 
 Side reading: [[Text representation in computers]]
@@ -13599,7 +13618,7 @@ Inside the computer, a text file is just a long string of text:
 
     `This is the first line\nThis is the second line\nThis is the third line\n…`
 
-That `\n`? That is the newline character, also called a [[line break]] or [[line feed]], an unprintable code that tells the computer “the subsequent parts go on a new line”. Without it, everything would just be one long, continuous string.
+That `\n`? That is the [[newline]] character, also called a [[line break]] or [[line feed]], an unprintable code that tells the computer “the subsequent parts go on a new line”. Without it, everything would just be one long, continuous string.
 
 The newline character determines the limits of each line; it **delimits** the line. `\n`, the newline character, is therefore a line [delimiter](https://en.wikipedia.org/wiki/Delimiter).
 
@@ -13815,6 +13834,19 @@ Let’s look at some document formats:
 </div>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
+</div>
+<div created="20210701040924050" creator="jsng" draft.of="New Tiddler" draft.title="searching through CSV data" list-after="[[comma separated values]]" modified="20210701041132066" modifier="jsng" tags="" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
+<pre>In [[text files|Text representation in computers]], each character takes up a standard number of [[bytes]]. That makes it easy for the computer to retrieve characters. First character, first byte. 100th character, 100th byte.
+
+What about the 5th row? Which byte is that?
+
+Now the computer has to start searching from byte 1, going character by character. It counts the number of newlines (`\n`), and after the 4th newline it knows “this is the fifth line”. That works for a small amount of data, perhaps even for a household, but for businesses with thousands of customers and millions, even billions of lines of data, this is unworkable. What can we do about this?
+
+If you recognise the themes that have been recurring so far, you probably know it subconsciously: we need *standardisation*.
+
+If we could decide beforehand—a big *IF*, but possible—how many data pieces each row should have, and the largest number of bytes each data piece will take up, things will be much easier. If each row only has 3 pieces of data, and each piece of data takes up no more than 8 bytes (64 bits), then each row takes up 28 bytes. The 5th row starts from byte 113.
+
+This process is much faster for a computer. It does not need to read every single byte and count newlines anymore; it can just jump to the position of byte 113 and start reading from there.</pre>
 </div>
 <div created="20210613121827918" creator="jsng" modified="20210630080746851" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
