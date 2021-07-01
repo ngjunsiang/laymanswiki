@@ -1157,7 +1157,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="comma separated values" modified="20210701041722424" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="bit" modified="20210701042055346" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1909,6 +1909,17 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;comma separated values&quot;
+    },
+    {
+        &quot;title&quot;: &quot;bit&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 497.566650390625,
+            &quot;left&quot;: 1756.550048828125,
+            &quot;width&quot;: 16.48333740234375,
+            &quot;right&quot;: 1773.0333862304688,
+            &quot;bottom&quot;: 515.566650390625,
+            &quot;height&quot;: 18
+        }
     }
 ]</pre>
 </div>
@@ -13848,8 +13859,10 @@ What the computer is doing here is:
 <div created="20210701040121880" creator="jsng" modified="20210701040146775" modifier="jsng" tags="Glossary" title="CSV" type="text/x-markdown">
 <pre>CSV stands for [[comma separated values]].</pre>
 </div>
-<div created="20210701040924050" creator="jsng" list-after="[[comma separated values]]" modified="20210701041923542" modifier="jsng" summary="To keep the data compact and read it more quickly, we have to decide beforehand what *data type* each chunk should be, and how much space it is allowed to take up. Such a data form can no longer be opened in a simple text editor program like Notepad." tags="" title="CSV vs binary formats" type="text/x-markdown">
-<pre>In [[text files|Text representation in computers]], each character takes up a standard number of [[bytes]]. That makes it easy for the computer to retrieve characters. First character, first byte. 100th character, 100th byte.
+<div created="20210701040924050" creator="jsng" list-after="[[comma separated values]]" modified="20210701042204487" modifier="jsng" summary="To keep the data compact and read it more quickly, we have to decide beforehand what *data type* each chunk should be, and how much space it is allowed to take up. Such a data form can no longer be opened in a simple text editor program like Notepad." tags="" title="CSV vs binary formats" type="text/x-markdown">
+<pre># Searching through data in CSV
+
+In [[text files|Text representation in computers]], each character takes up a standard number of [[bytes]]. That makes it easy for the computer to retrieve characters. First character, first byte. 100th character, 100th byte.
 
 What about the 5th row? Which byte is that?
 
@@ -13861,7 +13874,20 @@ If we could decide beforehand—a big *IF*, but possible—how many data pieces 
 
 For instance, if each row only has 3 pieces of data, and each piece of data takes up no more than 8 bytes&lt;&lt;fnote &quot;= 64 bits&quot;&gt;&gt;, then each row takes up 28 bytes. The 5th row starts from byte 113.
 
-This process is much faster for a computer. It does not need to read every single byte and count newlines anymore; it can just jump to the position of byte 113 and start reading from there.</pre>
+This process is much faster for a computer. It does not need to read every single byte and count newlines anymore; it can just jump to the position of byte 113 and start reading from there.
+
+# Reducing data size
+
+One more problem to resolve: 112 bytes for 4 rows is a lot of data! A chunk of data in text form, such as “`$1,234.56`” is 9 characters, which means 9 bytes. If we could somehow *standardise* this data type (say, let’s just call it *currency*), and reduce it to just the [[number form|binary]] `1234.56`, we could store it in just 2 bytes! That’s much fewer bytes to retrieve, store, and transfer.
+
+The tradeoff is that now we can no longer just open that file in Notepad to peek at the data. We would need a program that:
+
+- remembers how many bytes each row and piece of data should take up,
+- remembers what type each piece of data is.
+
+This program will figure out where to start reading the file from, retrieve the data we want, and return it. Compared to managing data in [[CSV]], the data will be more compact, and the program will be faster.
+
+And we would have taken one step away from plain text files, towards a full [[database]].</pre>
 </div>
 <div caption="Data containers" created="20210613063148190" creator="jsng" modified="20210613071629049" modifier="jsng" tags="Topic:data" title="data containers" type="text/x-markdown">
 <pre>{{||tagPageTemplate}}
