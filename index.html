@@ -13590,8 +13590,29 @@ Main article: [[Colour production]]
 
 In a computer, combinations of **image pixels** are stored as [[image files|Image formats]].</pre>
 </div>
-<div created="20210701040030491" creator="jsng" modified="20210701040114259" modifier="jsng" tags="Topic:database" title="comma separated values">
-<pre></pre>
+<div created="20210701040030491" creator="jsng" modified="20210701040914921" modifier="jsng" summary="Comma-separated value (CSV) files store all data in text form. Within each row, a separator divides each chunk of data, and rows are separated by a line delimiter." tags="Topic:database" title="comma separated values" type="text/x-markdown">
+<pre>Let’s try to put our data into a text file.
+
+Side reading: [[Text representation in computers]]
+
+Inside the computer, a text file is just a long string of text:
+
+    `This is the first line\nThis is the second line\nThis is the third line\n…`
+
+That `\n`? That is the newline character, also called a [[line break]] or [[line feed]], an unprintable code that tells the computer “the subsequent parts go on a new line”. Without it, everything would just be one long, continuous string.
+
+The newline character determines the limits of each line; it **delimits** the line. `\n`, the newline character, is therefore a line [delimiter](https://en.wikipedia.org/wiki/Delimiter).
+
+Not all our data is just a single line like that. In spreadsheets, for example, we want multiple data types in the same row. How do we get the computer to understand that these data in the same row are not one big bundle, but separate pieces? We need a [[separator]]. Commonly, commas are used to separate data, like this:
+
+    5,bubbleSort,1.734122735215351e-06
+    5,insertionSort,1.0771698807366193e-06
+    5,mergeSort,5.6086346949450675e-06
+    5,quickSort,4.135697910096496e-06
+
+That’s some data I was compiling to compare different sorting methods. The first piece of data, a number, represents how many numbers I was sorting. The second piece of data is the sorting method, and the third piece of data is the time taken. and they are separated by commas.
+
+This format is known as **comma-separated values**, and referred to by the acronym [[CSV]].</pre>
 </div>
 <div created="20210624062949722" creator="jsng" modified="20210624064212667" modifier="jsng" summary="To get useful output from a CPU, we must translate the operations we want it to perform into CPU instructions, in a process known as compiling. Most compilers convert programming code into CPU instructions." title="compile" type="text/x-markdown">
 <pre>[[CPU]]s cannot process programming code directly. The keywords and syntax used by programming languages are very different from the [[instruction set]] that [[CPU]]s understand natively.
