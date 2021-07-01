@@ -1147,7 +1147,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="CPU instructions" modified="20210701033214909" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="CPU cache" modified="20210701033247857" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2127,10 +2127,16 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;CPU instructions&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'CPU cache' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;CPU cache&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[virtual memory]] Unicode stream [[Media files]] [[CPU instructions]] [[CPU cache]] compile [[Central Processing Unit]] [[cache snooping]]" modified="20210628224009099" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[virtual memory]] Unicode stream [[Media files]] [[CPU cache]] compile [[Central Processing Unit]] [[cache snooping]]" modified="20210628224009099" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13974,7 +13980,7 @@ These two actions, and many others from the time of the telegraph, have been dig
 
 Main article: [[Central Processing Unit]]</pre>
 </div>
-<div created="20210624072111311" creator="jsng" list-after="[[throughput]]" modified="20210624074013418" modifier="jsng" summary="The CPU stores data for ready access in the CPU cache. Accessing data from the CPU cache is much faster than accessing data from memory. When the CPU needs data from a memory address, it looks in the cache first. If the data is not there (a **cache miss**), it will load the data from the memory address, and store a copy in the cache for faster reference in future. The CPU cache is managed by the CPU and is invisible to the OS. Programs that need to ensure the data in the cache is “fresh” can perform a cache flush and reload." tags="Topic:hardware cache" title="CPU cache" type="text/x-markdown">
+<div created="20210624072111311" creator="jsng" list-after="[[throughput]]" modified="20210701033247813" modifier="jsng" summary="The CPU stores data for ready access in the CPU cache. Accessing data from the CPU cache is much faster than accessing data from memory. When the CPU needs data from a memory address, it looks in the cache first. If the data is not there (a **cache miss**), it will load the data from the memory address, and store a copy in the cache for faster reference in future. The CPU cache is managed by the CPU and is invisible to the OS. Programs that need to ensure the data in the cache is “fresh” can perform a cache flush and reload." tags="Topic:hardware cache" title="CPU cache" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 We use [[cache]]s to improve [[throughput]] and speed up processing.
@@ -14009,7 +14015,7 @@ Just as an organisation would not control what information you should have on yo
 
 Like other caches, when the CPU needs data from a memory address, it looks in the cache first. If the data is not there (a [[cache miss]]), it will load the data from the [[memory address]], and store a copy in the cache for faster reference in future.
 
-Like other caches, this process has its own issues. The cache can fill up, requiring the CPU to eject old data so as to make way for fresher data. The cached data on the CPU cache can also become outdated when other programs and instructions update the data in memory. Programs that absolutely need to ensure they get the freshest data from memory can issue special instructions to perform a [[cache flush]] and [[cache reload]].
+Like other caches, this process has its own issues. The cache can fill up, requiring the CPU to eject old data so as to make way for fresher data. The cached data on the CPU cache can also become outdated when other [[program]]s and instructions update the data in memory. Programs that absolutely need to ensure they get the freshest data from memory can issue special instructions to perform a [[cache flush]] and [[cache reload]].
 
 A **cache flush** empties out the cached data while preserving the memory address it is linked to. A **cache reload** reloads the data from those memory addresses.</pre>
 </div>
