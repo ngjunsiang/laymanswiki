@@ -451,6 +451,8 @@ Error message and password prompt
 
 <li>data containers</li>
 
+<li>database index</li>
+
 <li>dB</li>
 
 <li>DCT</li>
@@ -1157,7 +1159,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="bit" modified="20210701042055346" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="throughput" modified="20210701042901582" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1920,10 +1922,21 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 515.566650390625,
             &quot;height&quot;: 18
         }
+    },
+    {
+        &quot;title&quot;: &quot;throughput&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 938.566650390625,
+            &quot;left&quot;: 1756.550048828125,
+            &quot;width&quot;: 70.80000305175781,
+            &quot;right&quot;: 1827.3500518798828,
+            &quot;bottom&quot;: 956.566650390625,
+            &quot;height&quot;: 18
+        }
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[comma separated values]] Topic:database [[virtual memory]]" modified="20210701041635872" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="throughput [[comma separated values]] Topic:database" modified="20210701041635872" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13103,7 +13116,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210701035926818" creator="jsng" list="[[CSV vs binary formats]] Topic:security Meltdown" modified="20210701041151552" modifier="jsng" title="$:/StoryList">
+<div created="20210701035926818" creator="jsng" list="[[database index]] [[CSV vs binary formats]]" modified="20210701041151552" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13907,6 +13920,33 @@ The box labels, and the shipping labels, tell us _about_ the contents, but not t
 Main article: [[metadata]]
 
 To handle many files without inspecting them individually, a computer must be able to access the file [[metadata]] separately from its raw data.</pre>
+</div>
+<div created="20210701042313968" creator="jsng" list-after="[[CSV vs binary formats]]" list-before="[[data normalization]]" modified="20210701043131220" modifier="jsng" summary="An index is a separate table containing key terms in the database (usually names, IDs, or some other key identifier), alongside the row numbers where they are found. An index greatly speeds up row lookups, but slows down the writing of new rows." tags="Topic:database" title="database index" type="text/x-markdown">
+<pre># The search problem
+
+When our data is stored in a huge, continuous text block, each row having the exact same number of blocks, and each block having the exact same size, retrieving information from this block is easy. If you already know the row number you want; a data retrieval [[program]] can quickly calculate the required row and jump to its starting [[byte]].
+
+Most if not all of the time, you would have no idea which row to retrieve; you would instead know something about the row(s) you are looking for—a name, a date of birth, etc. You would need to [[search]] for this row. And blocks are just not really optimised for such operations.
+
+This is not a new challenge. Paper books are often dense and long, especially textbooks. If you wanted to find a passage in there to quote, you would not be flipping through more than 800 pages and scanning paragraph by paragraph just to find it again! You would just flip to the **index**, look up the term you were hoping to find, and simply check those page references.
+
+Why not do that here?
+
+# Database indexes
+
+To create an index, we would need to create another block of data. This data block would contain select pieces of data from our table for indexing—names, dates, or other oft-required properties—along with the corresponding row number(s) where they are found.
+
+Yes, that would take up more space&lt;&lt;fnote &quot;Indexes anywhere take up space, even in books!&quot;&gt;&gt;, but it would speed up the search immensely, and that is often a worthy tradeoff. This index would be stored together with the table in our database.
+
+When the database is opened, this index would be read into memory, because memory has higher [[throughput]] than physical storage. Our database would use it to look up the row number of the **record** containing the name we want, and directly retrieve it with the row number much more quickly than a row-by-row lookup could.
+
+# Tradeoffs
+
+You can see how an index would greatly speed up searches, which do not modify the database. But what if we need to store data?
+
+Each row we add to the database would necessitate updating the index. Instead of updating one table with our original database format, we now have two tables to update; that is definitely slower. You would not want to include an index for tables that are often written to.
+
+Now that creates a conundrum for us: if I have customer records, should I add an index, or not? I would often have to search these records for a customer’s information, but I would also be adding to this information often. So it looks like indexes would greatly speed up the lookup, but slow down the adding of records.</pre>
 </div>
 <div created="20210611082304156" creator="jsng" modified="20210624041640639" modifier="jsng" tags="Glossary" title="dB" type="text/x-markdown">
 <pre>decibels.</pre>
