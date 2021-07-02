@@ -411,8 +411,6 @@ Error message and password prompt
 
 <li>BMP</li>
 
-<li>browser</li>
-
 <li>byte</li>
 
 <li>cache</li>
@@ -728,6 +726,8 @@ Error message and password prompt
 <li>VLOOKUP</li>
 
 <li>VP9</li>
+
+<li>web browser</li>
 
 <li>Welcome</li>
 
@@ -1234,7 +1234,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="browser" modified="20210702094537304" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="web browser" modified="20210702094549409" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2555,10 +2555,16 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;browser&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'browser' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;web browser&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="browser cookies application Topic:software Topic:database" modified="20210702093146324" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[web browser]] cookies application Topic:software Topic:database" modified="20210702093146324" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -14105,9 +14111,6 @@ Each pixel thus requires 3 [[byte]]s of space.
 
 A full-screen image on a typical modern laptop (1920 pixels horizontally, 1080 pixels vertically) would require about 6 MB (1920×1080×3 = 6,220,800).</pre>
 </div>
-<div created="20210702094526919" creator="jsng" modified="20210702094537301" modifier="jsng" tags="Topic:software Topic:internet WIP" title="browser" type="text/x-markdown">
-<pre></pre>
-</div>
 <div created="20210610071159528" creator="jsng" modified="20210611011023888" modifier="jsng" tags="Glossary" title="byte" type="text/x-markdown">
 <pre>A **byte** is a sequence of 8 [[bit]]s. This is sufficient to represent 2^8 = 256 different values.
 
@@ -14920,7 +14923,7 @@ Once the network issue is resolved and the clusters are synchronized again, thes
 
 {{||readNextTemplate}}</pre>
 </div>
-<div created="20210702093907922" creator="jsng" draft.of="web app" draft.title="web app" modified="20210702094518275" modifier="jsng" tags="Topic:software" title="Draft of 'web app' by jsng" type="text/x-markdown">
+<div created="20210702093907922" creator="jsng" draft.of="web app" draft.title="web app" modified="20210702094543885" modifier="jsng" tags="Topic:software" title="Draft of 'web app' by jsng" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 The simplest apps we use do not generate data; think about your calculator, which simply crunches calculations and displays the result&lt;&lt;fnote &quot;I am conveniently ignoring the ones with memory slots for storing calculated values&quot;&gt;&gt;. Or currency converters, or timezone converters … no storage needed.
@@ -14935,7 +14938,7 @@ So how do web apps store data?
 
 As a [[web|World Wide Web]]-first [[programming language]], [[javascript]] [[program]]s were not expected to have to access to files, or to create [[file]]s on the device. That would make it really easy for a malicious [[script]] to download [[malware]] to a folder, where it could be accidentally invoked! Instead, it relies on other features to store and retrieve data for specific purposes:
 
-1. To remember user logins (the “Remember me” feature you see on almost every login screen), web apps can set/unset [[cookies]] in the [[browser]].
+1. To remember user logins (the “Remember me” feature you see on almost every login screen), web apps can set/unset [[cookies]] in the [[web browser]].
 2. To obtain files for use, the web app can invoke a File Select dialog for the user to choose a file, such as for uploading to the server. The web app is not allowed to access arbitrary files this way.
 3. If data needs to be provided to the user in the form of a file, it can be stored on the disk with the user’s permission through a download dialog.
 4. The web app can store data through a browser feature called **localstorage**. This is a *key-value database*, managed by the browser, that allows you to store data (the *value*) tagged to a *key*. The same way a hotel lobby holds your luggage for you and lets you access it through a luggage tag, or the way you can rent a locker for storing your stuff (*value*) and access it through the locker *key*.
@@ -16896,6 +16899,9 @@ Within the physical memory part of the virtual memory space, there are portions 
 </div>
 <div created="20210613064814868" creator="jsng" modified="20210613064907894" modifier="jsng" tags="Glossary" title="VP9">
 <pre>A [[video codec]] designed by Google.</pre>
+</div>
+<div created="20210702094526919" creator="jsng" modified="20210702094549407" modifier="jsng" tags="Topic:software Topic:internet WIP" title="web browser" type="text/x-markdown">
+<pre></pre>
 </div>
 <div created="20210611034728011" creator="jsng" list-before="" modified="20210613061934593" modifier="jsng" tags="WIP Contents" title="Welcome" type="text/x-markdown">
 <pre>Welcome to the {{$:/SiteTitle}}!
