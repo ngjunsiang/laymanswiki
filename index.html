@@ -625,6 +625,8 @@ Error message and password prompt
 
 <li>readNextTemplate</li>
 
+<li>relational database</li>
+
 <li>Retina</li>
 
 <li>return</li>
@@ -1190,7 +1192,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="relational database" modified="20210702084026055" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="distributed databases" modified="20210702084034635" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2172,10 +2174,21 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 536.5833129882812,
             &quot;height&quot;: 38
         }
+    },
+    {
+        &quot;title&quot;: &quot;distributed databases&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 45.44999694824219,
+            &quot;left&quot;: 713.5166625976562,
+            &quot;width&quot;: 32.90000915527344,
+            &quot;right&quot;: 746.4166717529297,
+            &quot;bottom&quot;: 84.93333435058594,
+            &quot;height&quot;: 39.48333740234375
+        }
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[relational database]] [[SQL injection]] [[SQL Joins]] Topic:database" modified="20210702082701414" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="Topic:database" modified="20210702084034633" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13355,7 +13368,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210701035926818" creator="jsng" list="[[distributed databases]]" modified="20210701041151552" modifier="jsng" title="$:/StoryList">
+<div created="20210701035926818" creator="jsng" list="[[relational database]]" modified="20210702084038364" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -15438,6 +15451,35 @@ Homepage: https://www.rarlab.com/</pre>
 <pre>## Read next:
 
 {{!!list-before}}</pre>
+</div>
+<div created="20210702084055509" creator="jsng" list-after="[[CSV vs binary formats]]" modified="20210702085220318" modifier="jsng" summary="Relational databases are designed to maintain a well-structured set of data tables through constraint rules. This makes them very useful for preventing accidental inconsistencies in data, but make any changes to the data schema difficult to implement. Changing from one schema to another involves downtime and a migration." tags="Topic:database" title="relational database" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+Relational databases are databases that organise data in tables. Data from multiple tables are [[joined|SQL Joins]] in [[database queries|SQL query]] to produce a view of the requested data.
+
+# Linking tables through foreign keys
+
+Pop over and have a quick look at the example in [[SQL Joins]]. Did you catch the fact that there were actually *two* `custID` columns? One in the `Sales` table, and one in the `Customer` table ... by linking two tables like that, we actually introduce a point of potential breakage.
+
+Suppose one day, a customer goes out of business, or changes name, and the corresponding `Customer` entry gets deleted. Now if we accidentally attempt to retrieve `Sales` to that customer, the SQL command will fail because it is unable to find the entry.
+
+We can protect ourselves from this kind of error by declaring `Sales.custID` as a [[foreign key]] in `Customer`, thus informing the database that `Sales.custID` is actually mapped to a column from `Customer`. If we attempt to delete that customer again, the database will help to check if that entry is referenced by other tables as a foreign key. Entries can only be deleted if they are not referenced by other entries.
+
+These and other [[database constraints]] allow us to protect ourselves from inadvertent harm. Over time, as these constraints and conditions accumulate, they can make a relational database very hard to modify. Database administrators will tell you to think about your database tables in advance, as even attempting to add a column or change a column type is going to be a pain in future!
+
+# The tradeoff: downtime for database maintenance and migrations
+
+To safely modify a relational database, we usually shut it down&lt;&lt;fnote &quot;There are ways to avoid this, but I’ll let a real database administrator tell you about how to make it happen.&quot;&gt;&gt;, and [[migrate|database migration]] the database from the old [[schema]] to the new [[schema]].
+
+In essence, we are exporting our data and re-importing it again. Attempting to migrate while the database is active—known as a **live migration**—is strongly discouraged, as changing a database while a migration is in progress can introduce data inconsistency; a real headache with constraints!
+
+Relational databases can also develop problems that require them to be shut down and rectified. It’s the tradeoff for having a consistent and structured way to store our data, and automated rules to enforce this structure.
+
+## Relational databases: excellent for predictable data needs
+
+If you don’t expect to be changing your database schema often, or if you are able to design the schema to minimise such migrations, relational databases can be quite excellent for your needs. Please consult a professional database engineer if you are planning to use a database for your business needs.
+
+{{||readNextTemplate}}</pre>
 </div>
 <div created="20210611062448287" creator="jsng" modified="20210611062623595" modifier="jsng" tags="Glossary" title="Retina" type="text/x-markdown">
 <pre>In 2010, the late Steve Jobs first used the term **Retina** referring to the iPhone 4. I suppose he meant to describe a class of devices with a display so sharp that the pixels were practically imperceptible; it wasn’t that long ago that if you squinted a little, you could make out the pixels on your monitor or laptop.
