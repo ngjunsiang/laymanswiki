@@ -1194,7 +1194,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="distributed database" modified="20210702090155495" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="distributed database" modified="20210702090329373" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2234,6 +2234,34 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;Draft of 'distributed databases' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;distributed database&quot;
+    },
+    {
+        &quot;title&quot;: &quot;distributed database&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 824.0833129882812,
+            &quot;left&quot;: 506.29998779296875,
+            &quot;width&quot;: 398.1499938964844,
+            &quot;right&quot;: 904.4499816894531,
+            &quot;bottom&quot;: 862.0833129882812,
+            &quot;height&quot;: 38
+        }
+    },
+    {
+        &quot;title&quot;: &quot;distributed database&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 824.0833129882812,
+            &quot;left&quot;: 506.29998779296875,
+            &quot;width&quot;: 398.1499938964844,
+            &quot;right&quot;: 904.4499816894531,
+            &quot;bottom&quot;: 862.0833129882812,
+            &quot;height&quot;: 38
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'distributed database' by jsng&quot;
     },
     {
         &quot;title&quot;: &quot;distributed database&quot;
@@ -14352,7 +14380,7 @@ The process of converting compressed data, usually from a media file format, int
 
 Main article: [[Media files]]</pre>
 </div>
-<div created="20210702082702596" creator="jsng" modified="20210702090155472" modifier="jsng" summary="To increase the performance of a distributed database, we can scale up/scale vertically by increasing the computers’ performance, or scale out/scale horizontally by adding more computers. Distributed databases can only prioritise two of the following three factors: consistency, availability, partitioning (CAP theorem)." tags="Topic:database" title="distributed database" type="text/x-markdown">
+<div created="20210702082702596" creator="jsng" modified="20210702090329322" modifier="jsng" summary="To increase the performance of a distributed database, we can scale up/scale vertically by increasing the computers’ performance, or scale out/scale horizontally by adding more computers. Distributed databases can only prioritise two of the following three factors: consistency, availability, partitioning (CAP theorem)." tags="Topic:database" title="distributed database" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 So far, we have been assuming that the database runs from a single computer, and all its data is stored on one as well. What happens when it outgrows this single computer?
@@ -14388,7 +14416,7 @@ In distributed databases, there are three factors that are impossible to achieve
 
 - **C**onsistency — reading the same data multiple times should not give us different results
 - **A**vailability — we should get a response from the database quickly
-- **P**artition tolerance — If network disruptions or software/hardware failures break communication, our cluster of servers break up into smaller clusters—they get partitioned. Computers in each subcluster can communicate with each other, but not with computers outside the subcluster. Under such conditions, the database should still continue to operate.
+- **P**artition tolerance — If network disruptions or software/hardware failures break communication, our cluster of servers break up into smaller clusters—they get [[partition]]ed. Computers in each subcluster can communicate with each other, but not with computers outside the subcluster. Under such conditions, the database should still continue to operate.
 
 This is known as the [CAP theorem](https://en.wikipedia.org/wiki/CAP_theorem): you can only really prioritize two out of the three factors.
 
@@ -14436,7 +14464,7 @@ Let’s look at some document formats:
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210702085235997" creator="jsng" draft.of="New Tiddler" draft.title="document database" modified="20210702090147525" modifier="jsng" tags="Topic:database" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
+<div created="20210702085235997" creator="jsng" draft.of="New Tiddler" draft.title="document database" modified="20210702090310876" modifier="jsng" tags="Topic:database" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 One problem I keep running into with [[Excel]] is when I *think* the data has a consistent structure, but halfway through I realise that it actually doesn’t: sometimes I might have two students with different categories of accomplishments, and that requires a big change in the way I design the columns.
@@ -14519,9 +14547,9 @@ Since this is not a relational database, you don’t have the protection of [[fo
 
 # Advantages
 
-Data organized as documents tend to be more self-contained. Since the database does not enforce consistency, it has less to worry about when edits or changes are made to the database. In a [[distributed document database|distributed database]], we thus sacrifice some consistency—unless we make pains to ensure it in our application code.
+Data organized as documents tend to be more self-contained. Since the database does not enforce consistency, it has less to worry about when edits or changes are made to the database. In a [[distributed database]] we thus sacrifice some consistency—unless we make pains to ensure it in our application code.
 
-This does provide an advantage: when the distributed document database suffers a network outage, causing it to partition into multiple clusters ([Issue 86](https://buttondown.email/laymansguide/archive/lmg-s7-issue-86-distributed-databases/)), the database can continue to operate. However, each cluster only has access to its own data, and not data on the other clusters. Over time, each cluster will become less and less consistent, since changes in each cluster are not synchronised to other clusters.
+This does provide an advantage: when the distributed database suffers a network outage, causing it to [[partition]] into multiple clusters, the database can continue to operate. However, each cluster only has access to its own data, and not data on the other clusters. Over time, each cluster will become less and less consistent, since changes in each cluster are not synchronised to other clusters.
 
 Once the network issue is resolved and the clusters are synchronised again, these changes can subsequently be merged following rules for resolving conflicts. The database remains operational throughout the ordeal, just with some desynchronisation.
 
