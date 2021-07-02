@@ -433,6 +433,8 @@ Error message and password prompt
 
 <li>command line</li>
 
+<li>commercial database alternatives</li>
+
 <li>compile</li>
 
 <li>Computer unit prefixes</li>
@@ -1206,7 +1208,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="library" modified="20210702092147296" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="using a database" modified="20210702092224265" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2379,10 +2381,21 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;library&quot;
+    },
+    {
+        &quot;title&quot;: &quot;using a database&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 45.44999694824219,
+            &quot;left&quot;: 713.5166625976562,
+            &quot;width&quot;: 32.90000915527344,
+            &quot;right&quot;: 746.4166717529297,
+            &quot;bottom&quot;: 84.93333435058594,
+            &quot;height&quot;: 39.48333740234375
+        }
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="library Topic:database" modified="20210702090436679" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[using a database]] Topic:database" modified="20210702092224262" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13562,7 +13575,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210701035926818" creator="jsng" list="[[using a database]]" modified="20210702085635660" modifier="jsng" title="$:/StoryList">
+<div created="20210701035926818" creator="jsng" list="[[commercial database alternatives]]" modified="20210702085635660" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14168,6 +14181,33 @@ This format is known as **comma-separated values**, and referred to by the acron
 </div>
 <div created="20210702081755446" creator="jsng" modified="20210702081757723" modifier="jsng" tags="WIP" title="command line">
 <pre></pre>
+</div>
+<div created="20210702092225758" creator="jsng" modified="20210702092525505" modifier="jsng" summary="Depending on what you need a database for, there may be online database platforms that can manage and automate much of the work for you. Airtable, Smartsheet, Knack, and Zoho Creator are just 4 of many options that offer an easier way to set up and input your data, then access them through apps or other means." tags="Topic:database" title="commercial database alternatives" type="text/x-markdown">
+<pre>So you’re running up against the limits of a [[spreadsheet]] and want to do more with the data inside it. [[Databases|using a database]] sound cool and kind of like what you want right now. But writing a whole [[application]] and setting up the database yourself, or even getting someone else to do it and checking their work ... it all sounds like so much.
+
+What to do?
+
+# Airtable
+
+[Airtable](https://airtable.com/) is a database-like platform that lets you set up Bases (similar to databases), which can contain different tables for your data. You can specify a specific data type for each table, limit entries to a list of options, and even create lookups (match the value here with a column in another table, and return data from another column in the same row).
+
+Just as databases don’t have a single canonical view, and everything depends on queries, Airtable also lets you create different views of your data. You can set it up as a list, a gallery, a job status board, and filter it as you like.
+
+Interestingly, Airtable also dynamically generates an API for each of your bases, so that apps you create have a way to retrieve, modify, or delete data from the database. That saves you a lot of trouble having to set up your own database, for simple needs.
+
+# Smartsheet
+
+[Smartsheet](https://www.smartsheet.com/platform) is another platform that lets you create sheets with different views. Unlike Airtable, is leans more heavily towards workplace workflows, with built-in task management features and integration with many services. If you are already using one or more of these services, Smartsheet could be a way to store information for collaboration.
+
+# Knack
+
+[Knack](https://www.knack.com/tour) is yet another database-as-a-platform, which also allows you to craft queries to extract the data you need. It has an interesting feature that lets you specify how tables relate to each other (e.g. Contact connects with _one_ Company, Company connects with _many_ contacts) to improve queries.
+
+Knack also lets you create simple apps with limited access to the data, for employee or customer use. If you mainly need internal apps for disseminating or allowing field access to data, this is probably a simpler option than hiring an app programmer/company.
+
+# Zoho Creator
+
+[Zoho Creator](https://www.zoho.com/creator/) is a database platform that is more focused on app-building (or so it appears). The database just comes bundled as part of the deal. Another option for corporate operations-focused apps.</pre>
 </div>
 <div created="20210624062949722" creator="jsng" modified="20210624064212667" modifier="jsng" summary="To get useful output from a CPU, we must translate the operations we want it to perform into CPU instructions, in a process known as compiling. Most compilers convert programming code into CPU instructions." title="compile" type="text/x-markdown">
 <pre>[[CPU]]s cannot process programming code directly. The keywords and syntax used by programming languages are very different from the [[instruction set]] that [[CPU]]s understand natively.
