@@ -489,6 +489,8 @@ Error message and password prompt
 
 <li>Draft of 'mobile app' by jsng</li>
 
+<li>Draft of 'Progressive Web Apps' by jsng</li>
+
 <li>Draft of 'web app' by jsng</li>
 
 <li>editing a PDF file</li>
@@ -665,6 +667,8 @@ Error message and password prompt
 
 <li>Publishing vs word processing</li>
 
+<li>PWA</li>
+
 <li>question</li>
 
 <li>RAR</li>
@@ -672,6 +676,8 @@ Error message and password prompt
 <li>readNextTemplate</li>
 
 <li>relational database</li>
+
+<li>response</li>
 
 <li>Retina</li>
 
@@ -1262,7 +1268,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="HTTP request" modified="20210702095643755" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="PWA" modified="20210702100121234" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2646,10 +2652,41 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;HTTP request&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Progressive Web Apps&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 664,
+            &quot;left&quot;: 543.2333374023438,
+            &quot;width&quot;: 139.25,
+            &quot;right&quot;: 682.4833374023438,
+            &quot;bottom&quot;: 682,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'Progressive Web Apps' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;PWA&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 664,
+            &quot;left&quot;: 689.7833251953125,
+            &quot;width&quot;: 30.75,
+            &quot;right&quot;: 720.5333251953125,
+            &quot;bottom&quot;: 682,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'PWA' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;PWA&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210702093146324" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="PWA [[Draft of 'Progressive Web Apps' by jsng]] [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210702093146324" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -15014,7 +15051,10 @@ Once the network issue is resolved and the clusters are synchronized again, thes
 
 {{||readNextTemplate}}</pre>
 </div>
-<div created="20210702093907922" creator="jsng" draft.of="web app" draft.title="web app" modified="20210702095621887" modifier="jsng" tags="Topic:software" title="Draft of 'web app' by jsng" type="text/x-markdown">
+<div draft.of="Progressive Web Apps" draft.title="Progressive Web Apps" modified="20210702100039479" modifier="jsng" title="Draft of 'Progressive Web Apps' by jsng">
+<pre></pre>
+</div>
+<div created="20210702093907922" creator="jsng" draft.of="web app" draft.title="web app" modified="20210702100048174" modifier="jsng" tags="Topic:software" title="Draft of 'web app' by jsng" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 The simplest apps we use do not generate data; think about your calculator, which simply crunches calculations and displays the result&lt;&lt;fnote &quot;I am conveniently ignoring the ones with memory slots for storing calculated values&quot;&gt;&gt;. Or currency converters, or timezone converters … no storage needed.
@@ -15043,23 +15083,23 @@ As a [[web|World Wide Web]]-first [[programming language]], [[javascript]] [[pro
 
 So a web app doesn’t have much in the way of storage access, but they were not designed for that at all. Most of the heavy lifting is not meant to be done in the [[web browser]], but on a [[server]] elsewhere.
 
-A web app would send heavy workloads to a server (typically owned by the same company) through an [[API]] through a [[web request|HTTP request]] ([Issue 9](https://buttondown.email/laymansguide/archive/lmg-issue-9-how-do-i-make-an-http-request/)), and receive the results through a server response ([Issue 8](https://buttondown.email/laymansguide/archive/lmg-issue-8-http-error-codeshow-does-a-server-let/)).
+A web app would send heavy workloads to a server (typically owned by the same company) through an [[API]] through a [[web request|HTTP request]], and receive the results through a server [[response]].
 
 A web app would also need resources for display: images, videos, PDFs, ... these are requested and received via web requests as well.
 
-Cool, so a web developer can just write Javascript code to get the data and resources it needs, display stuff to the user, wait for the user to interact, and then make more requests to the server to calculate stuff, or send the app more data (such as the user’s tweets or posts or other stuff).
+So a web developer can just write [[javascript]] code to get the data and resources it needs, display stuff to the user, wait for the user to interact, and then make more requests to the server to process or request data.
 
 Just one problem with this: if internet connectivity is intermittent or laggy, none of this is going to work! Even when the internet is fine, it makes for a very slow experience. How do we improve this?
 
-One way is to cache ([Issue 39](https://buttondown.email/laymansguide/archive/lmg-s3-issue-39-caches-and-caching/)) as many things as possible: header images, logos, emojis, icons, … these can all be stored in localstorage and accessed even when the app is offline.
+One way is to [[cache]] as many things as possible: header images, logos, emojis, icons, … these can all be stored in [[localstorage]] and accessed even when the app is offline.
 
-Some apps, such as Google Docs, will also store user data in IndexedDB for a smoother experience—imagine having to wait for a request-response round-trip to the Google servers for every word you type. The data gets modified in IndexedDB first, and then synced to the servers. If the device gets disconnected from the internet, at least you will still be able to read whatever is in IndexedDB (and if you have enabled offline access, you can even edit the data in IndexedDB, and the Docs app will attempt to sync it to the server once connectivity is restored).
+Some web apps, such as Google Docs, will also store user data in [[IndexedDB]] for a smoother experience—imagine having to wait for a request-response round-trip to the Google servers for every word you type. The data gets modified in [[IndexedDB]] first, and then synced to the servers. If the device gets disconnected from the internet, at least you will still be able to read whatever is in IndexedDB. If you have enabled offline access, you can even edit the data in IndexedDB, and the Docs app will attempt to sync it to the server once connectivity is restored.
 
-## Running background processes
+# Running background processes
 
 Then what’s with these popups on some websites asking you to install them? And how are some websites actually able to send us notifications? Something has got to be running in the browser background for these to happen, and none of what we have learned so far explains that … what gives?
 
-Enter **Progressive Web Apps** (PWAs). With some Googling and lots of reading on StackOverflow and other web documents, a web developer can get started meeting the various requirements needed to create a PWA.
+Enter [[Progressive Web Apps]] ([[PWA]]s). With some Googling and lots of reading on StackOverflow and other web documents, a web developer can get started meeting the various requirements needed to create a PWA.
 
 And in exchange for that inconvenience, she can use **service workers**: javascript scripts that run on their own and are not dependent on the browser tab staying open. These service workers can listen for messages from the server, carry out some processing, make requests and receive responses, all independently from the app running in the tab. On mobile devices, they are gradually gaining more features as well, such as access to the Share feature (enabling users to share content with the PWA), and being able to access cameras, microphones, location services, and other things (provided the user grants permission).
 
@@ -16258,6 +16298,9 @@ How is this coordination going to happen? Only with lots of site visits and visu
 
 Or what if two different government departments are trying to collaborate on a form that citizens will use to file taxes?</pre>
 </div>
+<div created="20210702100054983" creator="jsng" modified="20210702100121229" modifier="jsng" tags="Glossary Topic:software Topic:internet" title="PWA" type="text/x-markdown">
+<pre>**PWA** stands for [[Progressive Web App]].</pre>
+</div>
 <div caption="Questions" created="20210613051110436" creator="jsng" list-after="[[Welcome]]" modified="20210624061940464" modifier="jsng" tags="Contents" title="question">
 <pre>{{||tagPageTemplate}}</pre>
 </div>
@@ -16299,6 +16342,9 @@ Relational databases can also develop problems that require them to be shut down
 If you don’t expect to be changing your database schema often, or if you are able to design the schema to minimise such migrations, relational databases can be quite excellent for your needs. Please consult a professional database engineer if you are planning to use a database for your business needs.
 
 {{||readNextTemplate}}</pre>
+</div>
+<div created="20210702095925989" creator="jsng" modified="20210702095925989" modifier="jsng" title="response">
+<pre></pre>
 </div>
 <div created="20210611062448287" creator="jsng" modified="20210611062623595" modifier="jsng" tags="Glossary" title="Retina" type="text/x-markdown">
 <pre>In 2010, the late Steve Jobs first used the term **Retina** referring to the iPhone 4. I suppose he meant to describe a class of devices with a display so sharp that the pixels were practically imperceptible; it wasn’t that long ago that if you squinted a little, you could make out the pixels on your monitor or laptop.
