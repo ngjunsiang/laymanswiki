@@ -1238,7 +1238,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="key-value database" modified="20210702094806507" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="key-value database" modified="20210702095212258" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2593,6 +2593,12 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 726.86669921875,
             &quot;height&quot;: 18
         }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'key-value database' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;key-value database&quot;
     },
     {
         &quot;title&quot;: &quot;Draft of 'key-value database' by jsng&quot;
@@ -14961,7 +14967,7 @@ Once the network issue is resolved and the clusters are synchronized again, thes
 
 {{||readNextTemplate}}</pre>
 </div>
-<div created="20210702093907922" creator="jsng" draft.of="web app" draft.title="web app" modified="20210702094747690" modifier="jsng" tags="Topic:software" title="Draft of 'web app' by jsng" type="text/x-markdown">
+<div created="20210702093907922" creator="jsng" draft.of="web app" draft.title="web app" modified="20210702094816682" modifier="jsng" tags="Topic:software" title="Draft of 'web app' by jsng" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 The simplest apps we use do not generate data; think about your calculator, which simply crunches calculations and displays the result&lt;&lt;fnote &quot;I am conveniently ignoring the ones with memory slots for storing calculated values&quot;&gt;&gt;. Or currency converters, or timezone converters … no storage needed.
@@ -14979,7 +14985,7 @@ As a [[web|World Wide Web]]-first [[programming language]], [[javascript]] [[pro
 1. To remember user logins (the “Remember me” feature you see on almost every login screen), web apps can set/unset [[cookies]] in the [[web browser]].
 2. To obtain [[file]]s for use, the **web app** can invoke a File Select dialog for the user to choose a file, such as for uploading to the server. The web app is not allowed to just access any arbitrary file, only files selected this way by the user.
 3. If data needs to be provided to the user in the form of a file, it can be stored on the disk with the user’s permission through a download dialog.
-4. The web app can store data through a browser feature called [[localstorage]]. This is a [[key-value database]], managed by the browser, that allows you to store data (the *value*) tagged to a *key*. The same way a hotel lobby holds your luggage for you and lets you access it through a luggage tag, or the way you can rent a locker for storing your stuff (*value*) and access it through the locker *key*.
+4. The web app can store data through a browser feature called [[localstorage]]. This is a [[key-value database]], managed by the [[web browser]], that allows you to store data (the *value*) tagged to a *key*. The same way a hotel lobby holds your luggage for you and lets you access it through a luggage tag, or the way you can rent a locker for storing your stuff (*value*) and access it through the locker *key*.
 5. For data that is only needed in that tab (e.g. partially filled form data), and can be safely deleted when the tab is closed, the browser provides **sessionstorage**. This works similarly to localstorage.
 6. For more significant amounts of data, web apps can use IndexedDB, a more advanced database also managed in the browser. It is a document database ([Issue 88](https://buttondown.email/laymansguide/archive/lmg-s7-issue-88-document-databases/)), with each document tagged to a key in a key-object system.
 
@@ -15563,8 +15569,12 @@ JPEG can display pixels in 24 bits (i.e. 8 bits for RGB each), but does not stor
 <div created="20210613072456178" creator="jsng" modified="20210613072517752" modifier="jsng" tags="Glossary" title="JPG">
 <pre>alternative form of [[JPEG]].</pre>
 </div>
-<div created="20210702094759077" creator="jsng" modified="20210702094806503" modifier="jsng" tags="Topic:database WIP" title="key-value database" type="text/x-markdown">
-<pre></pre>
+<div created="20210702094759077" creator="jsng" modified="20210702095212247" modifier="jsng" tags="Topic:database" title="key-value database" type="text/x-markdown">
+<pre>A key-value database is a database that stores key-value pairs.
+
+The data, also called the **value** here, is tagged to a short text string, called the **key**. The value is accessed through the key, the way a hotel lobby holds your luggage for you and lets you access it through a luggage tag. Or the way you can rent a locker for storing your stuff (*value*) and access it through the locker *key*.
+
+**Key-value databases** are not meant for storing complex data; they are usually for storing short snippets of information (think IDs and [[cookies]]). They are often much simpler than more complex database types, and meant to be used within [[program]]s or [[script]]s.</pre>
 </div>
 <div created="20210611063507525" creator="jsng" modified="20210611063507525" modifier="jsng" title="KiB">
 <pre></pre>
