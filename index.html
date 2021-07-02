@@ -467,7 +467,7 @@ Error message and password prompt
 
 <li>DPI</li>
 
-<li>Draft of 'Structured Query Language' by jsng</li>
+<li>Draft of 'New Tiddler' by jsng</li>
 
 <li>editing a PDF file</li>
 
@@ -1176,7 +1176,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="data normalization" modified="20210702074907963" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Structured Query Language" modified="20210702075826890" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2082,10 +2082,13 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;data normalization&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Structured Query Language&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[Draft of 'Structured Query Language' by jsng]] Topic:database [[CSV vs binary formats]]" modified="20210702074853665" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[Structured Query Language]] Topic:database [[CSV vs binary formats]]" modified="20210702074853665" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13265,7 +13268,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210701035926818" creator="jsng" list="[[multi-user databases]] [[CSV vs binary formats]]" modified="20210701041151552" modifier="jsng" title="$:/StoryList">
+<div created="20210701035926818" creator="jsng" list="[[Draft of 'New Tiddler' by jsng]] [[multi-user databases]] [[CSV vs binary formats]]" modified="20210701041151552" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14204,12 +14207,8 @@ Let’s look at some document formats:
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210702072459490" creator="jsng" draft.of="Structured Query Language" draft.title="Structured Query Language" modified="20210702073503878" modifier="jsng" summary="A standard database language, SQL, makes it possible to write queries that are supported by multiple databases." tags="Topic:database" title="Draft of 'Structured Query Language' by jsng" type="text/x-markdown">
-<pre>{{||prereqTemplate}}
-
-
-
-{{||readNextTemplate}}</pre>
+<div created="20210702075824577" creator="jsng" draft.of="New Tiddler" draft.title="New Tiddler" modified="20210702075824577" modifier="jsng" tags="" title="Draft of 'New Tiddler' by jsng">
+<pre></pre>
 </div>
 <div created="20210613121827918" creator="jsng" modified="20210630080746851" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
@@ -15463,10 +15462,42 @@ See also: [[Spectre]]</pre>
 <div created="20210613064341354" creator="jsng" modified="20210701033329819" modifier="jsng" tags="Glossary" title="stream" type="text/x-markdown">
 <pre>A data stream is a sequence of data, usually passed directly to a [[program]] for processing.</pre>
 </div>
-<div created="20210702072459490" creator="jsng" modified="20210702072647510" modifier="jsng" summary="A standard database language, SQL, makes it possible to write queries that are supported by multiple databases." tags="Topic:database" title="Structured Query Language" type="text/x-markdown">
+<div created="20210702072459490" creator="jsng" modified="20210702075826869" modifier="jsng" summary="Structured Query Language (SQL) is a computer language for managing data in databases. It has keywords and keyphrases that let you filter rows and columns, group and order data, perform basic arithmetic on data, and more. It is complex and powerful, but using it in an astute and efficient manner requires specialised training." tags="Topic:database" title="Structured Query Language" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
+Say your boss asks for the performance numbers of employees who are up for promotion. Out of a few hundred.
 
+In a spreadsheet, you would have to apply filters for a hypothetical `nextPromoYear` column to only show the appropriate rows. Then you'd have to copy those rows into another new spreadsheet, and manually delete the unnecessary columns.
+
+Database designers don’t want to to do that. You should be able to ask the database to do this querying and filtering for you, and return you only the data you want.
+
+# Structured Query Language: the universal database language
+
+**Structured Query Language** ([[SQL]]) is another computer language designed to manage data in databases. It reads *almost* like English, but more logical and less poetic. It has its own syntax and grammar, which are not the same as in English. And sending a proper [[SQL query]] to any database that supports it will get you what you want.
+
+Here’s what an SQL query for the above info might look like:
+
+    SELECT employeeName, teamName, salesCount, salesTotal FROM SalesData
+    WHERE nextPromoYear = 2020
+    GROUP BY teamName
+    ORDER BY salesTotal;
+
+- The `SELECT` keyword lets you filter only the columns you want `FROM` a table
+- The `WHERE` keyword lets you filter only the rows you want, based on one or more criteria
+- The `GROUP BY` keyphrase lets you group the returned data based on values in a column
+- The `ORDER BY` keyphrase lets you sort the returned results according to values in a column
+
+# A database has no “main view”
+
+One difficulty many people have in switching from a spreadsheet mindset to a database mindset is that they expect to have a “main spreadsheet” where all the data lives, and where secondary spreadsheets pull data from. In a database, all data lives only in separate tables, and are joined when a query is executed. The only way to get data from a database is to use queries!
+
+Most websites or software you are using which retrieves data for you usually end up executing one or more queries such as the above to get that data. And the job of the database software is to interpret such commands, pull the data from the various tables together, collate it correctly, and send it to you.
+
+# A database can give you almost exactly what you want
+
+By using these and many other keywords and keyphrases, it is possible to put together a query that gives you *only* the data you want. SQL has arithmetic functions such as count, average, sum, and it can even return only unique values.
+
+The tradeoff is that you have to learn another language, and use it regularly enough to understand the ins and outs. This is why every big corporation has a data team that can do this!
 
 {{||readNextTemplate}}</pre>
 </div>
