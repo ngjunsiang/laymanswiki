@@ -489,8 +489,6 @@ Error message and password prompt
 
 <li>Draft of 'mobile app' by jsng</li>
 
-<li>Draft of 'Progressive Web Apps' by jsng</li>
-
 <li>Draft of 'web app' by jsng</li>
 
 <li>editing a PDF file</li>
@@ -664,6 +662,8 @@ Error message and password prompt
 <li>program</li>
 
 <li>programming language</li>
+
+<li>Progressive Web App</li>
 
 <li>Publishing vs word processing</li>
 
@@ -1268,7 +1268,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="PWA" modified="20210702100121234" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Progressive Web App" modified="20210702100920032" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2683,10 +2683,13 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;PWA&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Progressive Web App&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="PWA [[Draft of 'Progressive Web Apps' by jsng]] [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210702093146324" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[Progressive Web App]] [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210702093146324" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -15051,10 +15054,7 @@ Once the network issue is resolved and the clusters are synchronized again, thes
 
 {{||readNextTemplate}}</pre>
 </div>
-<div draft.of="Progressive Web Apps" draft.title="Progressive Web Apps" modified="20210702100039479" modifier="jsng" title="Draft of 'Progressive Web Apps' by jsng">
-<pre></pre>
-</div>
-<div created="20210702093907922" creator="jsng" draft.of="web app" draft.title="web app" modified="20210702100048174" modifier="jsng" tags="Topic:software" title="Draft of 'web app' by jsng" type="text/x-markdown">
+<div created="20210702093907922" creator="jsng" draft.of="web app" draft.title="web app" modified="20210702100859841" modifier="jsng" tags="Topic:software" title="Draft of 'web app' by jsng" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 The simplest apps we use do not generate data; think about your calculator, which simply crunches calculations and displays the result&lt;&lt;fnote &quot;I am conveniently ignoring the ones with memory slots for storing calculated values&quot;&gt;&gt;. Or currency converters, or timezone converters … no storage needed.
@@ -15097,11 +15097,9 @@ Some web apps, such as Google Docs, will also store user data in [[IndexedDB]] f
 
 # Running background processes
 
-Then what’s with these popups on some websites asking you to install them? And how are some websites actually able to send us notifications? Something has got to be running in the browser background for these to happen, and none of what we have learned so far explains that … what gives?
+Then What are these popups on some websites asking you to install them? And how are some websites actually able to send us notifications? Something has got to be running in the browser background for these to happen, and none of what we have learned so far explains that … what gives?
 
-Enter [[Progressive Web Apps]] ([[PWA]]s). With some Googling and lots of reading on StackOverflow and other web documents, a web developer can get started meeting the various requirements needed to create a PWA.
-
-And in exchange for that inconvenience, she can use **service workers**: javascript scripts that run on their own and are not dependent on the browser tab staying open. These service workers can listen for messages from the server, carry out some processing, make requests and receive responses, all independently from the app running in the tab. On mobile devices, they are gradually gaining more features as well, such as access to the Share feature (enabling users to share content with the PWA), and being able to access cameras, microphones, location services, and other things (provided the user grants permission).
+Enter [[Progressive Web App]]s ([[PWA]]s).
 
 ## Installing web apps
 
@@ -16274,6 +16272,16 @@ For printing images, you will want to make sure your image has a resolution of a
 </div>
 <div created="20210702095609408" creator="jsng" modified="20210702095609408" modifier="jsng" title="programming language">
 <pre></pre>
+</div>
+<div created="20210702100125874" creator="jsng" modified="20210702100920022" modifier="jsng" tags="Topic:internet Topic:software" title="Progressive Web App" type="text/x-markdown">
+<pre>A **progressive web application** ([[PWA]]) is a [[web app]] that requests permissions to install a [[script]] in the [[web browser]].
+
+A web app must meet [a set of requirements](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps) to be recognized as a progressive web app.
+
+In exchange for that inconvenience, it can use [[service workers]]: [[javascript]] scripts that run on their own and do not need the browser tab to stay open. These service workers can listen for messages from the [[server]], carry out some processing, make requests and receive responses, all independently from the app running in the tab.
+
+On mobile devices, PWAs are gradually gaining more features as well, such as access to the Share feature (enabling users to share content with the PWA), and being able to access cameras, microphones, location services, and other things (provided the user grants permission).
+</pre>
 </div>
 <div created="20210613121314927" creator="jsng" modified="20210613122058768" modifier="jsng" tags="[[Portable Document Format]]" title="Publishing vs word processing" type="text/x-markdown">
 <pre>Microsoft Word, first released in 1989, was a **word processor**. Adobe InDesign, [[released later in 1989|History of page publishing]] was a **page layout application**.
