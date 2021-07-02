@@ -1176,7 +1176,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Structured Query Language" modified="20210702075826890" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Structured Query Language" modified="20210702075933673" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2082,6 +2082,12 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;data normalization&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Structured Query Language&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'Structured Query Language' by jsng&quot;
     },
     {
         &quot;title&quot;: &quot;Structured Query Language&quot;
@@ -14207,8 +14213,61 @@ Let’s look at some document formats:
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210702075824577" creator="jsng" draft.of="New Tiddler" draft.title="New Tiddler" modified="20210702075824577" modifier="jsng" tags="" title="Draft of 'New Tiddler' by jsng">
-<pre></pre>
+<div created="20210702075824577" creator="jsng" draft.of="New Tiddler" draft.title="SQL Joins" modified="20210702075925661" modifier="jsng" summary="SQL queries let you join multiple tables based on specified conditions using the JOIN keyword. This enables crafting complex queries to return only the specific data that is required." tags="Topic:database" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+# VLOOKUP: The bread-and-butter of spreadsheets
+
+If I have a `Customer` data table that looks like this:
+
+![Screenshot of a Customer data table, with custID, custName, custEmail, and custContact columns.](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season7/issue084/issue084_01.png)
+
+And a `Sales` data table that looks like this:
+
+![Screenshot of a Sales data table, with salesID, orderDate, and custID columns.](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season7/issue084/issue084_02.png)
+
+I could add a `custName` column to the sales table that *looks up* the `custID`, and inserts the `custName` info from the same row. This feature of spreadsheets is known as **VLOOKUP** (vertical lookup)[^1]. This is what the formula for each cell in `custName` would look like:
+
+[^1]: There is an equivalent feature for columns known as HLOOKUP (horizontal lookup) that looks up info in a row and inserts data from the same column, but it is not as popular. So the VLOOKUP name is more commonly used for this kind of operation.
+
+![Screenshot of a Sales data table, with salesID, orderDate, and custID columns.](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season7/issue084/issue084_03.png)
+
+Let’s break down each part of that formula:
+
+`=VLOOKUP(C2,Customer!A:D,2)`
+
+This means “in columns **A:D** of the **Customer** table, look for the value from cell **C2** (which is `1`) in the first column of the **Customer** table, and return the value from the same-row cell in the **2**nd column of the **Customer** table.”
+
+What if you needed to insert more than one column? What if you need to “join” two or more tables? Your spreadsheet would soon be filled with VLOOKUP cells, and this really slows down the performance of the spreadsheet. This method is not suitable for data involving millions of rows, for sure.
+
+## SQL JOIN: VLOOKUP on steroids
+
+In a database, there is no “standard view” of the data. All data you want to see has to be retrieved with a **query**. So it makes no sense to require cells filled with VLOOKUPS; we just need to figure out how to do the equivalent in a query. The keyword for that is called **JOIN**.
+
+To join the `Customer` and `Sales` data so that we get the sales data along with `custName`, we would write a SQL query like this:
+
+```
+SELECT salesID, orderDate, custID FROM Sales
+JOIN Customer ON Sales.custID = Customer.custID
+```
+
+Here, `Sales.custID` refers to the `custID` of the `Sales` table, while `Customer.custID` refers to the `custID` of the `Customer` table. This query effectively says “select the `salesID`, `orderDate`, and `custID` columns from `Sales` table, and add data from the `Customer` table where the `custID` column matches”. This will return:
+
+![Screenshot of an INNER JOIN operation between the Sales and Customer data tables, merged using custID values.](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season7/issue084/issue084_04.png)
+
+That is much easier—once you’ve been trained in SQL syntax—than writing separate VLOOKUP formulas for each column you want, and having to maintain a whole table of formulas!
+
+You can even join more than two tables together with a query like:
+
+```
+SELECT salesID, orderDate, custID, invoiceID, Customer.custName, Customer.custContact, invoiceDate, invoiceAmt FROM Sales
+JOIN Customer ON Sales.custID = Customer.custID
+JOIN Invoice ON Sales.invoiceID = Invoice.invoiceID
+```
+
+This is barely scratching the surface of what SQL can do; it has at least 4 types of JOINs, and many more ways of crafting queries to return specifically the data you want.
+
+SQL queries are a whole different way of talking to your computer, and they can be really frustrating to write for people who are new to it. But they are behind many of the interfaces you see, which seem to seamlessly pull data from multiple sources together into a coherent view.</pre>
 </div>
 <div created="20210613121827918" creator="jsng" modified="20210630080746851" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
@@ -15462,7 +15521,7 @@ See also: [[Spectre]]</pre>
 <div created="20210613064341354" creator="jsng" modified="20210701033329819" modifier="jsng" tags="Glossary" title="stream" type="text/x-markdown">
 <pre>A data stream is a sequence of data, usually passed directly to a [[program]] for processing.</pre>
 </div>
-<div created="20210702072459490" creator="jsng" modified="20210702075826869" modifier="jsng" summary="Structured Query Language (SQL) is a computer language for managing data in databases. It has keywords and keyphrases that let you filter rows and columns, group and order data, perform basic arithmetic on data, and more. It is complex and powerful, but using it in an astute and efficient manner requires specialised training." tags="Topic:database" title="Structured Query Language" type="text/x-markdown">
+<div created="20210702072459490" creator="jsng" modified="20210702075933658" modifier="jsng" summary="Structured Query Language (SQL) is a computer language for managing data in databases. It has keywords and keyphrases that let you filter rows and columns, group and order data, perform basic arithmetic on data, and more. It is complex and powerful, but using it in an astute and efficient manner requires specialised training." tags="Topic:database" title="Structured Query Language" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 Say your boss asks for the performance numbers of employees who are up for promotion. Out of a few hundred.
