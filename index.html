@@ -465,6 +465,8 @@ Error message and password prompt
 
 <li>decode</li>
 
+<li>distributed databases</li>
+
 <li>document</li>
 
 <li>DPI</li>
@@ -1188,7 +1190,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="command line" modified="20210702081757727" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="relational database" modified="20210702084026055" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2148,10 +2150,32 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;command line&quot;
+    },
+    {
+        &quot;title&quot;: &quot;SQL injection&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 45.44999694824219,
+            &quot;left&quot;: 713.5166625976562,
+            &quot;width&quot;: 32.90000915527344,
+            &quot;right&quot;: 746.4166717529297,
+            &quot;bottom&quot;: 84.93333435058594,
+            &quot;height&quot;: 39.48333740234375
+        }
+    },
+    {
+        &quot;title&quot;: &quot;relational database&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 498.58331298828125,
+            &quot;left&quot;: 506.29998779296875,
+            &quot;width&quot;: 373.70001220703125,
+            &quot;right&quot;: 880,
+            &quot;bottom&quot;: 536.5833129882812,
+            &quot;height&quot;: 38
+        }
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[SQL Joins]] Topic:database" modified="20210702081136191" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[relational database]] [[SQL injection]] [[SQL Joins]] Topic:database" modified="20210702082701414" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13331,7 +13355,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210701035926818" creator="jsng" list="[[SQL injection]]" modified="20210701041151552" modifier="jsng" title="$:/StoryList">
+<div created="20210701035926818" creator="jsng" list="[[distributed databases]]" modified="20210701041151552" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14262,6 +14286,80 @@ See [[encoding table]].
 The process of converting compressed data, usually from a media file format, into a raw video/audio data stream.
 
 Main article: [[Media files]]</pre>
+</div>
+<div created="20210702082702596" creator="jsng" modified="20210702084029550" modifier="jsng" summary="To increase the performance of a distributed database, we can scale up/scale vertically by increasing the computers’ performance, or scale out/scale horizontally by adding more computers. Distributed databases can only prioritise two of the following three factors: consistency, availability, partitioning (CAP theorem)." tags="Topic:database" title="distributed databases" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+So far, we have been assuming that the database runs from a single computer, and all its data is stored on one as well. What happens when it outgrows this single computer?
+
+# Vertical scaling
+
+We could:
+
+- add more disk space to enable storing more data
+- add more memory or more [[processor]] [[cores]] to speed up [[SQL queries|SQL query]] or support more queries simultaneously
+
+This is called **vertical scaling**/**scaling up**, because we are increasing the performance of the computer, which usually *feels* like pushing up the performance bar on the vertical axis of a graph.
+
+# Horizontal scaling
+
+We could also spread that database over two or more computers, and then find some way to keep them constantly synchronised. This is called **horizontal scaling**/**scaling out**, because we are adding more computers, which is usually depicted as adding more units on a horizontal axis.
+
+We can only take vertical scaling so far; at some point we will have the most powerful server possible and it still won’t be enough. So if we are expecting massive growth, that means we need to scale out to a **distributed database**.
+
+# Wait, who actually expects a database to not have to store a lot of information?
+
+There are tiny databases out there!
+
+These are often used in places where the task is not expected to grow beyond a single [[computer]]. For example, the database that stores your WhatsApp messages on your mobile phone, or a tiny database that stores records from a remote standalone sensor.
+
+These databases are designed to be extremely efficient at handling small amounts of data, to use very little memory.
+
+# Okay, fine. Back to distributed databases
+
+Buying more computers to run a server is similar to hiring more employees to do the company’s work. The good: you now have more help. The bad: you now have to keep in constant communication with them! Regularly!
+
+In distributed databases, there are three factors that are impossible to achieve together in full:
+
+- **C**onsistency — reading the same data multiple times should not give us different results
+- **A**vailability — we should get a response from the database quickly
+- **P**artition tolerance — If network disruptions or software/hardware failures break communication, our cluster of servers break up into smaller clusters—they get partitioned. Computers in each subcluster can communicate with each other, but not with computers outside the subcluster. Under such conditions, the database should still continue to operate.
+
+This is known as the [CAP theorem](https://en.wikipedia.org/wiki/CAP_theorem): you can only really prioritize two out of the three factors.
+
+# Consistency and Availability
+
+Databases that use a [[query language|Structured Query Language]] are known as [[relational database]]s. They organise data in the form of tables. When implemented as a distributed database, they usually prioritize consistency and availability.
+
+When our distributed relational database is being hit with 100,000s of requests per second, more than one computer can handle, we need multiple computers to serve these requests. These computers had better be synchronised (to achieve consistency) so that the request will always return the same response from any of those computers.
+
+One way to achieve this is to have a Single Source of Truth: perhaps we design it so that only one “leader” computer handles edits/changes to the database, which then get repeated to all the other “follower” computers&lt;&lt;fnote &quot;This assumption that reading data occurs much more frequently than writing/changing data holds up for most use cases.&quot;&gt;&gt;.
+
+What happens if the “leader” computer goes down, and our distributed database goes from a leader-follower system to a partitioned bunch of followers? No writes can happen, the system is no longer operational — we cannot achieve partition tolerance.
+
+(There are multiple theorems on how to design this system to automatically/manually select a new leader, but I won’t go into that here. The fundamental problem of ensuring consistency and availability in such cases remains.)
+
+# When a partition happens
+
+So it comes down to this: when communication failure happens in a scenario like the above, we have to choose.
+
+If we need a workaround to ensure that updates on one computer still reaches all the computers so that the data is consistent, that is going to be slow — we lose availability.
+
+If we want to achieve availability, we could have each computer just return or update the data it has, then worry about synchronisation later — we lose consistency.
+
+If you find yourself in the position of having to choose a distributed database, it would be immensely helpful to know upfront which 2 factors you want to prioritise!
+
+## Examples
+
+**Consistency and Availability**: Bank databases fall in this category. Financial transactions must be accurate, and people need to quickly know whether they were successful. So we have to live with these databases requiring regular maintenance (usually late at night) to minimise the risk of partitioning failure.
+
+**Partitioning and Consistency**: Authentication systems are relied upon to ensure that data is only accessed by people who are authorised to do so, and cannot afford to go down for long periods of time. This requires that permissions be properly synchronised across all computers, so consistency is key. These two factors are more important than ensuring a speedy response.
+
+**Partitioning and Availability**: Essential services, such as Google Maps, have to remain operational even with (recoverable) failures, and still have to respond in a reasonable amount of time (otherwise real-time navigation would fail). Roads do not change often, so it is okay if the info we are getting is slightly out of date; we might occasionally get a slower route or find ourselves at a business whose operating hours are not updated in Google Maps, but these are not critical failures.
+
+The CAP theorem does not say we can never have the third factor! It means we have to pick 2 factors to prioritise, and live with the lowered performance of the third.
+
+{{||readNextTemplate}}</pre>
 </div>
 <div caption="Document" created="20210613093424386" creator="jsng" modified="20210613104407128" modifier="jsng" tags="[[data containers]]" title="document" type="text/x-markdown">
 <pre>Documents are a complex file type that enables text, images, videos, fonts, and other arbitrary objects to be embedded or referenced.
