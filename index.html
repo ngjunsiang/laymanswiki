@@ -663,6 +663,8 @@ Error message and password prompt
 
 <li>sandbox</li>
 
+<li>script</li>
+
 <li>shared memory</li>
 
 <li>specification</li>
@@ -1228,7 +1230,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="World Wide Web" modified="20210702094308061" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="script" modified="20210702094417906" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2486,10 +2488,27 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;World Wide Web&quot;
+    },
+    {
+        &quot;title&quot;: &quot;script&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 352.8666687011719,
+            &quot;left&quot;: 789.5999755859375,
+            &quot;width&quot;: 34.81666564941406,
+            &quot;right&quot;: 824.4166412353516,
+            &quot;bottom&quot;: 370.8666687011719,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'script' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;script&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[World Wide Web]] application Topic:software Topic:database" modified="20210702093146324" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="script [[World Wide Web]] application Topic:software Topic:database" modified="20210702093146324" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -14845,7 +14864,7 @@ Once the network issue is resolved and the clusters are synchronized again, thes
 
 {{||readNextTemplate}}</pre>
 </div>
-<div created="20210702093907922" creator="jsng" draft.of="web app" draft.title="web app" modified="20210702094249431" modifier="jsng" tags="Topic:software" title="Draft of 'web app' by jsng" type="text/x-markdown">
+<div created="20210702093907922" creator="jsng" draft.of="web app" draft.title="web app" modified="20210702094346820" modifier="jsng" tags="Topic:software" title="Draft of 'web app' by jsng" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 The simplest apps we use do not generate data; think about your calculator, which simply crunches calculations and displays the result&lt;&lt;fnote &quot;I am conveniently ignoring the ones with memory slots for storing calculated values&quot;&gt;&gt;. Or currency converters, or timezone converters … no storage needed.
@@ -14858,7 +14877,7 @@ So how do web apps store data?
 
 # Data storage in web apps
 
-As a [[web|World Wide Web]]-first [[programming language]], [[javascript]] [[program]]s were not expected to have to access, open, or create files on the device. That would make it really easy for a malicious script to download malware to a folder, where it could be accidentally invoked! Instead, it relies on other features to store and retrieve data for specific purposes:
+As a [[web|World Wide Web]]-first [[programming language]], [[javascript]] [[program]]s were not expected to have to access to files, or to create [[file]]s on the device. That would make it really easy for a malicious [[script]] to download [[malware]] to a folder, where it could be accidentally invoked! Instead, it relies on other features to store and retrieve data for specific purposes:
 
 1. To remember user logins (the “Remember me” feature you see on almost every login screen), web apps can set/unset cookies ([Issue 69](https://buttondown.email/laymansguide/archive/lmg-s6-issue-69-the-cookie-monster/)) in the browser.
 2. To obtain files for use, the web app can invoke a File Select dialog for the user to choose a file, such as for uploading to the server. The web app is not allowed to access arbitrary files this way.
@@ -16158,6 +16177,9 @@ In a computer system, a sandbox system imposes restrictions on running [[applica
 These restrictions are intended to limit any damage and keep the system more stable than it might otherwise have been.
 
 **Sandboxing** is a catch-all term for the concept of ensuring [[application]]s don’t have access to resources outside of their privileges. Sandboxed applications are generally safer than non-sandboxed apps in terms of security, and easier to manage, terminate, and uninstall.</pre>
+</div>
+<div created="20210702094407947" creator="jsng" modified="20210702094417904" modifier="jsng" tags="Glossary Topic:software WIP" title="script" type="text/x-markdown">
+<pre></pre>
 </div>
 <div created="20210628224910558" creator="jsng" modified="20210701032955698" modifier="jsng" tags="Topic:systems memory" title="shared memory" type="text/x-markdown">
 <pre>It is impossible to completely separate [[program]]s from each other. Many programs need to communicate with each other; antivirus software needs to be able to scan the addresses accessed by your web browser for harmful links, Office software needs to be able to send data to each other especially for features like [[Mail Merge]], and of course your task manager has to know how much resources every app is using. So that it can show you this:
