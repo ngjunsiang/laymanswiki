@@ -469,6 +469,8 @@ Error message and password prompt
 
 <li>Draft of 'New Tiddler' by jsng</li>
 
+<li>Draft of 'Structured Query Language' by jsng</li>
+
 <li>editing a PDF file</li>
 
 <li>encode</li>
@@ -1174,7 +1176,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="file lock" modified="20210702072839821" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="data normalization" modified="20210702074907963" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2038,10 +2040,52 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 386.58331298828125,
             &quot;height&quot;: 18
         }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'Structured Query Language' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;“The action can’t be completed because the file is open. Close the file and try again.”&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 180.43333435058594,
+            &quot;left&quot;: 506.29998779296875,
+            &quot;width&quot;: 400.54998779296875,
+            &quot;right&quot;: 906.8499755859375,
+            &quot;bottom&quot;: 218.43333435058594,
+            &quot;height&quot;: 38
+        }
+    },
+    {
+        &quot;title&quot;: &quot;data normalization&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 599.2833251953125,
+            &quot;left&quot;: 713.5166625976562,
+            &quot;width&quot;: 32.90000915527344,
+            &quot;right&quot;: 746.4166717529297,
+            &quot;bottom&quot;: 638.7666473388672,
+            &quot;height&quot;: 39.48332214355469
+        }
+    },
+    {
+        &quot;title&quot;: &quot;data normalization&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 1045.61669921875,
+            &quot;left&quot;: 1076.5833740234375,
+            &quot;width&quot;: 124.85000610351562,
+            &quot;right&quot;: 1201.4333801269531,
+            &quot;bottom&quot;: 1064.61669921875,
+            &quot;height&quot;: 19
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'data normalization' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;data normalization&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[Structured Query Language]] [[database index]] Topic:database [[CSV vs binary formats]]" modified="20210701073157849" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[Draft of 'Structured Query Language' by jsng]] Topic:database [[data normalization]] [[CSV vs binary formats]]" modified="20210702074853665" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13221,7 +13265,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210701035926818" creator="jsng" list="[[Draft of 'New Tiddler' by jsng]] [[“The action can’t be completed because the file is open. Close the file and try again.”]] [[data normalization]] [[CSV vs binary formats]]" modified="20210701041151552" modifier="jsng" title="$:/StoryList">
+<div created="20210701035926818" creator="jsng" list="[[Draft of 'New Tiddler' by jsng]] [[CSV vs binary formats]]" modified="20210701041151552" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14028,7 +14072,7 @@ Main article: [[metadata]]
 
 To handle many files without inspecting them individually, a computer must be able to access the file [[metadata]] separately from its raw data.</pre>
 </div>
-<div created="20210701043137747" creator="jsng" list-after="[[suboptimal data tables]]" list-before="[[Structured Query Language]]" modified="20210702073046676" modifier="jsng" summary="Making data atomic by splitting it up into multiple tables makes the data easier to work with, but requires multiple lookups and joins to get the required data." tags="Topic:database" title="data normalization" type="text/x-markdown">
+<div created="20210701043137747" creator="jsng" list-after="[[suboptimal data tables]]" list-before="[[Structured Query Language]]" modified="20210702074907934" modifier="jsng" summary="Making data atomic by splitting it up into multiple tables makes the data easier to work with, but requires multiple lookups and joins to get the required data." tags="Topic:database" title="data normalization" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 # Atomic data
@@ -14160,8 +14204,41 @@ Let’s look at some document formats:
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210702072921338" creator="jsng" draft.of="New Tiddler" draft.title="multi-user databases" list-after="[[What does this error mean? “The action can’t be completed because the file is open. Close the file and try again.”]]" modified="20210702073015194" modifier="jsng" tags="" title="Draft of 'New Tiddler' by jsng">
-<pre></pre>
+<div created="20210702072921338" creator="jsng" draft.of="New Tiddler" draft.title="multi-user databases" list-before="[[Structured Query Language]]" modified="20210702074819608" modifier="jsng" summary="A database system follows rules that enable multiple users to send commands to the database at the same time. The system attempts to execute each action one at a time, locking data that is in use by other users, and ensuring that each user does not carry out actions that they are not permitted to. Such systems are better able to prevent data corruption compared to a text-based system." tags="Topic:database" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+See also: [[“The action can’t be completed because the file is open. Close the file and try again.”]]
+
+You are likely to encounter the above error when multiple users attempt to save data to the same file at the same time, or when one user attempts to delete a file that has not been properly closed.
+
+This is kind of a waste: if it’s only the last row of data in a file that is being changed, why should that stop us from modifying the first row?
+
+**Multi-user databases** allow multiple users to edit a set of data at the same time, with some limitations.
+
+In the process of [[normalizing data|data normalization]]—breaking a set of data up into the smallest level of detail—we allow the database to do the heavy work of data processing for us, while we avoid the tedium of repeating the same data row after row.
+
+# Locking specific data
+
+Now that the data is atomic, the database is better able to figure out which data needs to be locked.
+
+If a user is requesting data from a particular table and from certain rows only, we do not need to lock the entire database and prevent other users from accessing it. Such systems are called row-locking systems, and some databases (but not all) support this feature.
+
+# Action deconflicting
+
+When multiple users access a database and attempt to write data to it at the same time, the database takes these requests and puts them in a [[queue]], processing them one by one so that no two conflicting actions end up causing the data to be [[corrupted]].
+
+But sometimes, conflicting actions can end up getting queued. For instance, User 1 might send a command to delete a table while User 2 sends a command to retrieve data from that table (because it had not been deleted at the point when User 2 accessed it). User 1’s command gets through first and deletes the table, and when the database reaches User 2’s command, it is no longer able to execute it. What happens then?
+
+Well, that’s when the database throws an [[error]]. A database system is programmed to detect actions whose logic conflict with other actions. With our previous text-based system, even with the table gone, the program could still continue to search for results, and finding none, return empty data instead of alerting the user.
+
+{{||readNextTemplate}}</pre>
+</div>
+<div created="20210702072459490" creator="jsng" draft.of="Structured Query Language" draft.title="Structured Query Language" modified="20210702073503878" modifier="jsng" summary="A standard database language, SQL, makes it possible to write queries that are supported by multiple databases." tags="Topic:database" title="Draft of 'Structured Query Language' by jsng" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+
+
+{{||readNextTemplate}}</pre>
 </div>
 <div created="20210613121827918" creator="jsng" modified="20210630080746851" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
