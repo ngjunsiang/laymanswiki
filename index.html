@@ -557,6 +557,8 @@ Error message and password prompt
 
 <li>line feed</li>
 
+<li>localstorage</li>
+
 <li>lookup</li>
 
 <li>lossless audio compression</li>
@@ -1234,7 +1236,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="web browser" modified="20210702094549409" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="localstorage" modified="20210702094735870" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2561,10 +2563,27 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;web browser&quot;
+    },
+    {
+        &quot;title&quot;: &quot;localstorage&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 708.86669921875,
+            &quot;left&quot;: 546.2999877929688,
+            &quot;width&quot;: 76.75,
+            &quot;right&quot;: 623.0499877929688,
+            &quot;bottom&quot;: 726.86669921875,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'localstorage' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;localstorage&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[web browser]] cookies application Topic:software Topic:database" modified="20210702093146324" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="localstorage [[web browser]] cookies application Topic:software Topic:database" modified="20210702093146324" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -14923,7 +14942,7 @@ Once the network issue is resolved and the clusters are synchronized again, thes
 
 {{||readNextTemplate}}</pre>
 </div>
-<div created="20210702093907922" creator="jsng" draft.of="web app" draft.title="web app" modified="20210702094543885" modifier="jsng" tags="Topic:software" title="Draft of 'web app' by jsng" type="text/x-markdown">
+<div created="20210702093907922" creator="jsng" draft.of="web app" draft.title="web app" modified="20210702094711999" modifier="jsng" tags="Topic:software" title="Draft of 'web app' by jsng" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 The simplest apps we use do not generate data; think about your calculator, which simply crunches calculations and displays the result&lt;&lt;fnote &quot;I am conveniently ignoring the ones with memory slots for storing calculated values&quot;&gt;&gt;. Or currency converters, or timezone converters … no storage needed.
@@ -14939,9 +14958,9 @@ So how do web apps store data?
 As a [[web|World Wide Web]]-first [[programming language]], [[javascript]] [[program]]s were not expected to have to access to files, or to create [[file]]s on the device. That would make it really easy for a malicious [[script]] to download [[malware]] to a folder, where it could be accidentally invoked! Instead, it relies on other features to store and retrieve data for specific purposes:
 
 1. To remember user logins (the “Remember me” feature you see on almost every login screen), web apps can set/unset [[cookies]] in the [[web browser]].
-2. To obtain files for use, the web app can invoke a File Select dialog for the user to choose a file, such as for uploading to the server. The web app is not allowed to access arbitrary files this way.
+2. To obtain [[file]]s for use, the **web app** can invoke a File Select dialog for the user to choose a file, such as for uploading to the server. The web app is not allowed to just access any arbitrary file, only files selected this way by the user.
 3. If data needs to be provided to the user in the form of a file, it can be stored on the disk with the user’s permission through a download dialog.
-4. The web app can store data through a browser feature called **localstorage**. This is a *key-value database*, managed by the browser, that allows you to store data (the *value*) tagged to a *key*. The same way a hotel lobby holds your luggage for you and lets you access it through a luggage tag, or the way you can rent a locker for storing your stuff (*value*) and access it through the locker *key*.
+4. The web app can store data through a browser feature called [[localstorage]]. This is a *key-value database*, managed by the browser, that allows you to store data (the *value*) tagged to a *key*. The same way a hotel lobby holds your luggage for you and lets you access it through a luggage tag, or the way you can rent a locker for storing your stuff (*value*) and access it through the locker *key*.
 5. For data that is only needed in that tab (e.g. partially filled form data), and can be safely deleted when the tab is closed, the browser provides **sessionstorage**. This works similarly to localstorage.
 6. For more significant amounts of data, web apps can use IndexedDB, a more advanced database also managed in the browser. It is a document database ([Issue 88](https://buttondown.email/laymansguide/archive/lmg-s7-issue-88-document-databases/)), with each document tagged to a key in a key-object system.
 
@@ -15538,6 +15557,9 @@ JPEG can display pixels in 24 bits (i.e. 8 bits for RGB each), but does not stor
 <pre>An [[unprintable character|Text representation in computers]] that instructs the computer to move to the next line.
 
 Synonyms: [[line break]], [[newline]]</pre>
+</div>
+<div created="20210702094719420" creator="jsng" modified="20210702094735868" modifier="jsng" tags="Topic:software Topic:systems" title="localstorage" type="text/x-markdown">
+<pre></pre>
 </div>
 <div created="20210702081255115" creator="jsng" modified="20210702081255115" modifier="jsng" title="lookup">
 <pre></pre>
