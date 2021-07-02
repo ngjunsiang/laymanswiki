@@ -611,6 +611,8 @@ Error message and password prompt
 
 <li>PNG</li>
 
+<li>port</li>
+
 <li>Portable Document Format</li>
 
 <li>Postscript</li>
@@ -1200,7 +1202,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="URI" modified="20210702091804412" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="port" modified="20210702091952438" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2299,10 +2301,27 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;URI&quot;
+    },
+    {
+        &quot;title&quot;: &quot;port&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 665.4166870117188,
+            &quot;left&quot;: 855.13330078125,
+            &quot;width&quot;: 26.26666259765625,
+            &quot;right&quot;: 881.3999633789062,
+            &quot;bottom&quot;: 683.4166870117188,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'port' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;port&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="URI Topic:database" modified="20210702090436679" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="port Topic:database" modified="20210702090436679" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -14589,7 +14608,7 @@ Once the network issue is resolved and the clusters are synchronized again, thes
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210702091406519" creator="jsng" draft.of="New Tiddler" draft.title="using a database" modified="20210702091731518" modifier="jsng" summary="A URI (Uniform Resource Identifier) is required to connect to a database. This URI can be provided by a hosting service provider that runs your own database for you, or by a cloud service provider that runs your database on their platform." tags="Topic:database" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
+<div created="20210702091406519" creator="jsng" draft.of="New Tiddler" draft.title="using a database" modified="20210702091941050" modifier="jsng" summary="A URI (Uniform Resource Identifier) is required to connect to a database. This URI can be provided by a hosting service provider that runs your own database for you, or by a cloud service provider that runs your database on their platform." tags="Topic:database" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
 <pre>At some point in the past, getting a [[database]] meant talking to a consultant or contractor, who would then sit with you to understand your requirements, then set everything up for you without letting you touch any part of it. And that is probably for the benefit of you both. But today, for SMEs with some relevant expertise, it is actually possible to get your own database up and running more easily.
 
 # Setting up a database on a server
@@ -14607,14 +14626,20 @@ If your company has decided to do away with in-house IT support, your next bet i
 - Google Cloud SQL
 - Microsoft Azure SQL Database
 
+Side reading: [[relational database]]
+
 **Document databases** (You will see many of them referred to as [[NoSQL]] databases)
 - Amazon DynamoDB
 - Google Cloud Firestore (part of Firebase)
 - Microsoft Azure Cosmos Database
 
+Side reading: [[document database]]
+
 **Graph databases**
 - Amazon Neptune
 - Microsoft Azure Cosmos also has an [[API]] for graph databases
+
+Side reading: [[graph database]]
 
 # Getting the database identifier
 
@@ -14622,7 +14647,7 @@ After you have successfully registered a database (of any type), you will be giv
 
 `mongodb://mongodb0.example.com:27017`
 
-which identifies your database as a `mongodb` (document) database running on the server at `mongodb0.example.com` on port `27017`. (I covered server hostnames in [Issue 29](https://buttondown.email/laymansguide/archive/lmg-s3-issue-29-how-to-resolve-a-hostname/) and port numbers in [Issue 33](https://buttondown.email/laymansguide/archive/lmg-s3-issue-33-port-numbers/)).
+which identifies your database as a `mongodb` (document) database running on the server at `mongodb0.example.com` on [[port]] `27017`. (I covered server hostnames in [Issue 29](https://buttondown.email/laymansguide/archive/lmg-s3-issue-29-how-to-resolve-a-hostname/) and port numbers in [Issue 33](https://buttondown.email/laymansguide/archive/lmg-s3-issue-33-port-numbers/)).
 
 or it can look like:
 
@@ -15699,6 +15724,9 @@ See also: [[Meltdown]]</pre>
 PNG supports 24-bit image pixels, with an additional 8 bits per pixel for transparency information.
 
 [[PNG]] pixels have 256 different levels of transparency, allowing for blending effects where one image overlaps another. PNG files support image compression, allowing them to be stored with smaller filesizes than [[BMP]].</pre>
+</div>
+<div created="20210702091950858" creator="jsng" modified="20210702091952436" modifier="jsng" tags="Glossary" title="port">
+<pre></pre>
 </div>
 <div created="20210613104432370" creator="jsng" modified="20210613122518605" modifier="jsng" summary="PDF is the gold standard for universal compatibility (supported by most software and platforms) and visual fidelity (displays exactly the same way). When you need things to appear on a different device in exactly the same way you created it, without having to install additional software, use PDF. PDF’s markup language is more concerned with how things appear on the page than with what they were originally. Once the PDF is generated, it is almost impossible to retrieve the original data from it. Scanned documents that are converted to PDF may have a text layer generated by OCR that lets detected text be copied from it." tags="document" title="Portable Document Format" type="text/x-markdown">
 <pre>Main article: [[Publishing vs word processing]]
