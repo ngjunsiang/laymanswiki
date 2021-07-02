@@ -501,6 +501,8 @@ Error message and password prompt
 
 <li>Glossary</li>
 
+<li>graph database</li>
+
 <li>h264</li>
 
 <li>h265</li>
@@ -1194,7 +1196,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="distributed database" modified="20210702090329373" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="document database" modified="20210702090436685" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2265,10 +2267,21 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;distributed database&quot;
+    },
+    {
+        &quot;title&quot;: &quot;document database&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 45.44999694824219,
+            &quot;left&quot;: 713.5166625976562,
+            &quot;width&quot;: 32.90000915527344,
+            &quot;right&quot;: 746.4166717529297,
+            &quot;bottom&quot;: 84.93333435058594,
+            &quot;height&quot;: 39.48333740234375
+        }
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[distributed database]] [[relational database]] Topic:database" modified="20210702085222214" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[document database]] [[relational database]] Topic:database" modified="20210702090436679" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13448,7 +13461,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210701035926818" creator="jsng" list="[[document database]]" modified="20210702085635660" modifier="jsng" title="$:/StoryList">
+<div created="20210701035926818" creator="jsng" list="[[graph database]]" modified="20210702085635660" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14782,6 +14795,86 @@ Side reading: [[colour palette]]</pre>
 </div>
 <div created="20210610075627131" creator="jsng" list-after="" modified="20210613061759645" modifier="jsng" tags="Contents" title="Glossary" type="text/x-markdown">
 <pre>&lt;&lt;list-links &quot;[tag[Glossary]sort[title]]&quot;&gt;&gt;</pre>
+</div>
+<div created="20210702090817438" creator="jsng" modified="20210702091329282" modifier="jsng" summary="Graph databases treat the details of things as secondary, and optimise for managing the network of relationships. A graph database can quickly look up how things are related to each other, and return the results." tags="Topic:database" title="graph database" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+If I’m trying to start a new social media platform today, I would have to store posts and user account data into a database. Which type of database should I use?
+
+I could use a relational database, but joining multiple tables to get a chain of posts, Twitter-style, could get ugly and involve lots of lookups … that is going to be one laggy service at scale!
+
+I could use a document database, but it would involve retrieving each post one at a time, searching to find posts which are linked to it, and then checking which posts are linked to those posts … that is too many searches!
+
+Maybe I’m approaching this wrong. I don’t need to relate many different types of tables or retrieve self-contained documents here. I am actually trying to store a humongous, densely linked network of data—that’s called a **graph**!
+
+## What?!
+
+Okay, stay with me here, I know you are thinking of a horizontal and a vertical axis, and axis labels and bars and lines and—that’s not the kind of graph I am talking about.
+
+&gt; “In mathematics, graph theory is the study of graphs, which are mathematical structures used to model pairwise relations between objects.”  
+&gt; — [Graph theory (Wikipedia)](https://en.wikipedia.org/wiki/Graph_theory)
+
+That’s what I’m talking about. The same kind of graph that the tech industry is talking about when it uses terms like [social graph](https://developers.facebook.com/docs/graph-api/). And it looks like this:
+
+![Wikipedia multilingual network graph, showing circles representing languages, and arrows between pairs of circles, representing editors who edited both languages.](images/issue089_01.png)&lt;br /&gt;
+This network graph shows the co-editing patterns on Wikipedia. The size of the arrows indicate the number of Wikipedia editors for one language edition of Wikipedia, who also edited another language edition.&lt;br /&gt;Source: [Wikimedia Commons](https://en.wikipedia.org/wiki/File:Wikipedia_multilingual_network_graph_July_2013.svg)
+
+Okay, phew.
+
+# Graph databases: a network of relationships
+
+So if I’m going to make a social media platform that can retrieve chains of posts, how would a graph database make it easier?
+
+A graph database will still need to have some data for the users and posts:
+
+```
+personA:User {name:&quot;Alice&quot;}
+personB:User {name:&quot;Bob&quot;}
+...
+post001:Post {tags:&quot;...&quot;, contents:&quot;...&quot;}
+post002:Post {tags:&quot;...&quot;, contents:&quot;...&quot;}
+...
+```
+
+But the heart of the graph database is the data that stores the relationships between those users and posts:
+
+```
+(personA)-[:SAYS_TO {message:&quot;...&quot;}]-&gt;(personB)
+(personB)-[:SAYS_TO {message:&quot;...&quot;}]-&gt;(personA)
+...
+```
+
+If I want to lookup a conversation between Alice and Bob, I can search for `SAYS_TO` relationships with Alice and Bob at either end of the relationship arrow (`--&gt;`), and sort the results in chronological order.
+
+## Graph databases put relationships first
+
+What about posts and comments? For social media, we can treat them as the same type of data (`Post`), but link them with relationships:
+
+```
+(personA)-[:WROTE {datetime:&quot;...&quot;}]-&gt;(post001)
+(personB)-[:WROTE {datetime:&quot;...&quot;}]-&gt;(post003)
+(personC)-[:WROTE {datetime:&quot;...&quot;}]-&gt;(post005)
+(personD)-[:WROTE {datetime:&quot;...&quot;}]-&gt;(post007)
+(personA)-[:WROTE {datetime:&quot;...&quot;}]-&gt;(post011)
+(personB)-[:WROTE {datetime:&quot;...&quot;}]-&gt;(post013)
+(personA)-[:WROTE {datetime:&quot;...&quot;}]-&gt;(post017)
+...
+(post003)-[:REPLY_TO {datetime:&quot;...&quot;}]-&gt;(post001)
+(post005)-[:REPLY_TO {datetime:&quot;...&quot;}]-&gt;(post003)
+(post007)-[:REPLY_TO {datetime:&quot;...&quot;}]-&gt;(post003)
+(post011)-[:REPLY_TO {datetime:&quot;...&quot;}]-&gt;(post005)
+(post013)-[:REPLY_TO {datetime:&quot;...&quot;}]-&gt;(post011)
+(post017)-[:REPLY_TO {datetime:&quot;...&quot;}]-&gt;(post013)
+...
+```
+
+Because the relationships contain only the bare minimum data for figuring out the network, they are quick to search through. I don’t have to load the names, post tags, post contents, and other irrelevant detail.
+
+Although I would still have to retrieve `post001`, check for replies, check those replies for replies, and so on, this is much faster with relationships between labels. A graph database optimises for this type of [[query]].
+
+Once I have figured out which users and posts are involved in this chain, I can then retrieve their information in a subsequent [[query]]. I won’t even need to load all the information at a go, since the user is not going to see the contents of later posts until they scroll.
+
+{{||readNextTemplate}}</pre>
 </div>
 <div created="20210613064921255" creator="jsng" modified="20210613070120955" modifier="jsng" tags="Glossary" title="h264">
 <pre>A video format. also known as [[AVC]].</pre>
