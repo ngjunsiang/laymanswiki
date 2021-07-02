@@ -479,6 +479,12 @@ Error message and password prompt
 
 <li>DPI</li>
 
+<li>Draft of 'laptop app' by jsng</li>
+
+<li>Draft of 'mobile app' by jsng</li>
+
+<li>Draft of 'web app' by jsng</li>
+
 <li>editing a PDF file</li>
 
 <li>encode</li>
@@ -734,6 +740,8 @@ Error message and password prompt
 <li>Why does my hard drive seem to have less space than it should?</li>
 
 <li>word processor</li>
+
+<li>World Wide Web</li>
 
 <li>WYSIWYG</li>
 
@@ -1220,7 +1228,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="application" modified="20210702093853373" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="World Wide Web" modified="20210702094308061" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2461,10 +2469,27 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;application&quot;
+    },
+    {
+        &quot;title&quot;: &quot;World Wide Web&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 312.8666687011719,
+            &quot;left&quot;: 534.9000244140625,
+            &quot;width&quot;: 26.350006103515625,
+            &quot;right&quot;: 561.2500305175781,
+            &quot;bottom&quot;: 330.8666687011719,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'World Wide Web' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;World Wide Web&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="application Topic:software Topic:database" modified="20210702093146324" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[World Wide Web]] application Topic:software Topic:database" modified="20210702093146324" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13644,7 +13669,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210701035926818" creator="jsng" list="sandbox" modified="20210702093535518" modifier="jsng" title="$:/StoryList">
+<div created="20210701035926818" creator="jsng" list="[[Draft of 'laptop app' by jsng]] [[Draft of 'mobile app' by jsng]] [[Draft of 'web app' by jsng]]" modified="20210702093535518" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14805,6 +14830,87 @@ Once the network issue is resolved and the clusters are synchronized again, thes
 </div>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
+</div>
+<div created="20210702093937179" creator="jsng" draft.of="laptop app" draft.title="laptop app" modified="20210702093950097" modifier="jsng" tags="Topic:software" title="Draft of 'laptop app' by jsng" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+
+
+{{||readNextTemplate}}</pre>
+</div>
+<div created="20210702093936256" creator="jsng" draft.of="mobile app" draft.title="mobile app" modified="20210702093947667" modifier="jsng" tags="Topic:software" title="Draft of 'mobile app' by jsng" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+
+
+{{||readNextTemplate}}</pre>
+</div>
+<div created="20210702093907922" creator="jsng" draft.of="web app" draft.title="web app" modified="20210702094249431" modifier="jsng" tags="Topic:software" title="Draft of 'web app' by jsng" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+The simplest apps we use do not generate data; think about your calculator, which simply crunches calculations and displays the result&lt;&lt;fnote &quot;I am conveniently ignoring the ones with memory slots for storing calculated values&quot;&gt;&gt;. Or currency converters, or timezone converters … no storage needed.
+
+Some webpages are like these: I use one for converting between metric and imperial units all the time. But there are also much more complex webpages that cannot possibly function without having a place to store or remember data.
+
+It’s kind of a stretch to call them webpages; that brings to mind a static page with minimal interactivity. Let’s call them web apps instead.
+
+So how do web apps store data?
+
+# Data storage in web apps
+
+As a [[web|World Wide Web]]-first [[programming language]], [[javascript]] [[program]]s were not expected to have to access, open, or create files on the device. That would make it really easy for a malicious script to download malware to a folder, where it could be accidentally invoked! Instead, it relies on other features to store and retrieve data for specific purposes:
+
+1. To remember user logins (the “Remember me” feature you see on almost every login screen), web apps can set/unset cookies ([Issue 69](https://buttondown.email/laymansguide/archive/lmg-s6-issue-69-the-cookie-monster/)) in the browser.
+2. To obtain files for use, the web app can invoke a File Select dialog for the user to choose a file, such as for uploading to the server. The web app is not allowed to access arbitrary files this way.
+3. If data needs to be provided to the user in the form of a file, it can be stored on the disk with the user’s permission through a download dialog.
+4. The web app can store data through a browser feature called **localstorage**. This is a *key-value database*, managed by the browser, that allows you to store data (the *value*) tagged to a *key*. The same way a hotel lobby holds your luggage for you and lets you access it through a luggage tag, or the way you can rent a locker for storing your stuff (*value*) and access it through the locker *key*.
+5. For data that is only needed in that tab (e.g. partially filled form data), and can be safely deleted when the tab is closed, the browser provides **sessionstorage**. This works similarly to localstorage.
+6. For more significant amounts of data, web apps can use IndexedDB, a more advanced database also managed in the browser. It is a document database ([Issue 88](https://buttondown.email/laymansguide/archive/lmg-s7-issue-88-document-databases/)), with each document tagged to a key in a key-object system.
+
+![Firefox DevTools, showing the Storage tab. Local Storage is selected, displaying a list of keys and values.](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season8/issue092/issue092_01.png)&lt;br /&gt;
+&lt;small&gt;DevTools in Firefox lets you inspect the data that web apps keep.&lt;br /&gt;The Storage tab shows what is stored in cache, cookies, IndexedDB, localstorage, and sessionstorage.&lt;br /&gt;IndexedDB, localstorage, and sessionstorage are key-value databases that store the data (value) tagged to a key.&lt;/small&gt;
+
+## Requesting and receiving data on a server
+
+So a web app doesn’t much in the way of storage access, but they were not designed for that at all. Most of the heavy lifting is not meant to be done in the browser, but elsewhere, on a server. A web app would send heavy workloads to a server (typically owned by the same company) through an API ([Issue 4](https://buttondown.email/laymansguide/archive/lmg-issue-4-what-is-an-api/)) through a web request ([Issue 9](https://buttondown.email/laymansguide/archive/lmg-issue-9-how-do-i-make-an-http-request/)), and receive the results through a server response ([Issue 8](https://buttondown.email/laymansguide/archive/lmg-issue-8-http-error-codeshow-does-a-server-let/)).
+
+A web app would also need resources for display: images, videos, PDFs, ... these are requested and received via web requests as well.
+
+Cool, so a web developer can just write Javascript code to get the data and resources it needs, display stuff to the user, wait for the user to interact, and then make more requests to the server to calculate stuff, or send the app more data (such as the user’s tweets or posts or other stuff).
+
+Just one problem with this: if internet connectivity is intermittent or laggy, none of this is going to work! Even when the internet is fine, it makes for a very slow experience. How do we improve this?
+
+One way is to cache ([Issue 39](https://buttondown.email/laymansguide/archive/lmg-s3-issue-39-caches-and-caching/)) as many things as possible: header images, logos, emojis, icons, … these can all be stored in localstorage and accessed even when the app is offline.
+
+Some apps, such as Google Docs, will also store user data in IndexedDB for a smoother experience—imagine having to wait for a request-response round-trip to the Google servers for every word you type. The data gets modified in IndexedDB first, and then synced to the servers. If the device gets disconnected from the internet, at least you will still be able to read whatever is in IndexedDB (and if you have enabled offline access, you can even edit the data in IndexedDB, and the Docs app will attempt to sync it to the server once connectivity is restored).
+
+## Running background processes
+
+Then what’s with these popups on some websites asking you to install them? And how are some websites actually able to send us notifications? Something has got to be running in the browser background for these to happen, and none of what we have learned so far explains that … what gives?
+
+Enter **Progressive Web Apps** (PWAs). With some Googling and lots of reading on StackOverflow and other web documents, a web developer can get started meeting the various requirements needed to create a PWA.
+
+And in exchange for that inconvenience, she can use **service workers**: javascript scripts that run on their own and are not dependent on the browser tab staying open. These service workers can listen for messages from the server, carry out some processing, make requests and receive responses, all independently from the app running in the tab. On mobile devices, they are gradually gaining more features as well, such as access to the Share feature (enabling users to share content with the PWA), and being able to access cameras, microphones, location services, and other things (provided the user grants permission).
+
+## Installing web apps
+
+Okay, wait. WHAT?!
+
+I imagine most folks would be okay with cookies, with localstorage and even IndexedDB. You want things from an app, you gotta give it space to work, right? That’s fair.
+
+But service workers, what?! You mean if I click Install, these apps get to run stuff *in the background* in my browser, even after the tab is closed? If I’m not cool with that, I can just choose not to install and then these service workers won’t get installed, right?
+
+Umm, I don’t know how to break this to you gently, but nope.
+
+Once you visit a site (URL) with a registered service worker, your browser automatically registers it. The only thing the Install button does is to add a shortcut on your Desktop/Home Screen, and perhaps enable some features (such as mobile Share). But the service workers are already there.
+
+## Uninstalling web apps
+
+And now the good news.
+
+Because web apps are so cleanly sandboxed, they don’t stick tendrils into your operating system or device storage (beyond the space reserved by the browser, anyway). Removing apps and their files just involves clearing your browser cache and website storage. You will, however, have to deregister the service workers manually; please google for instructions.
+
+{{||readNextTemplate}}</pre>
 </div>
 <div created="20210613121827918" creator="jsng" modified="20210630080746851" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
@@ -16885,6 +16991,9 @@ When you buy a 1TB hard drive, you are buying a 1,000,000,000,000-byte drive.
 So your computer isn’t lying. It’s just using different units of counting!</pre>
 </div>
 <div created="20210613115144142" creator="jsng" modified="20210613115144142" modifier="jsng" title="word processor">
+<pre></pre>
+</div>
+<div created="20210702094259622" creator="jsng" modified="20210702094308055" modifier="jsng" tags="Topic:internet Glossary WIP" title="World Wide Web">
 <pre></pre>
 </div>
 <div created="20210613105425033" creator="jsng" modified="20210613105440291" modifier="jsng" tags="Glossary" title="WYSIWYG" type="text/x-markdown">
