@@ -473,8 +473,6 @@ Error message and password prompt
 
 <li>DPI</li>
 
-<li>Draft of 'New Tiddler' by jsng</li>
-
 <li>editing a PDF file</li>
 
 <li>encode</li>
@@ -696,6 +694,8 @@ Error message and password prompt
 <li>Unicode</li>
 
 <li>URI</li>
+
+<li>using a database</li>
 
 <li>virtual memory</li>
 
@@ -13562,7 +13562,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210701035926818" creator="jsng" list="[[Draft of 'New Tiddler' by jsng]]" modified="20210702085635660" modifier="jsng" title="$:/StoryList">
+<div created="20210701035926818" creator="jsng" list="[[using a database]]" modified="20210702085635660" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14668,67 +14668,6 @@ Once the network issue is resolved and the clusters are synchronized again, thes
 </div>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
-</div>
-<div created="20210702091406519" creator="jsng" draft.of="New Tiddler" draft.title="using a database" modified="20210702092137326" modifier="jsng" summary="A URI (Uniform Resource Identifier) is required to connect to a database. This URI can be provided by a hosting service provider that runs your own database for you, or by a cloud service provider that runs your database on their platform." tags="Topic:database" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
-<pre>At some point in the past, getting a [[database]] meant talking to a consultant or contractor, who would then sit with you to understand your requirements, then set everything up for you without letting you touch any part of it. And that is probably for the benefit of you both. But today, for SMEs with some relevant expertise, it is actually possible to get your own database up and running more easily.
-
-# Setting up a database on a server
-
-If you have admin rights to the workplace server&lt;&lt;fnote &quot;this can be both a blessing and a curse&quot;&gt;&gt;, you’ll have to find the setup instructions that came with the server software&lt;&lt;fnote &quot;or Google it online&quot;&gt;&gt;. I’m sorry, it is painful for layfolks (and even for many experienced database admins) and there just isn’t an easier way yet.
-
-If you do not have admin rights to the workplace server, you usually ask your friendly server administrator to help you install the database and set up a web admin panel for you. They will give you a URL and login credentials for that web admin panel, and you configure the database through the database section of the admin panel.
-
-# Registering a database in the cloud
-
-If your company has decided to do away with in-house IT support, your next bet is to outsource that help to cloud services. Each of the major cloud providers provide multiple database types for your perusal. Some app hosting services will also host a database for you (usually intended for app use, but who’s asking?).
-
-**Relational databases**
-- Amazon Relational Database Service
-- Google Cloud SQL
-- Microsoft Azure SQL Database
-
-Side reading: [[relational database]]
-
-**Document databases** (You will see many of them referred to as [[NoSQL]] databases)
-- Amazon DynamoDB
-- Google Cloud Firestore (part of Firebase)
-- Microsoft Azure Cosmos Database
-
-Side reading: [[document database]]
-
-**Graph databases**
-- Amazon Neptune
-- Microsoft Azure Cosmos also has an [[API]] for graph databases
-
-Side reading: [[graph database]]
-
-# Getting the database identifier
-
-After you have successfully registered a database (of any type), you will be given a connection [[URI]], which is a fancy way of saying “URL to identify your database uniquely”. It can be a simple line of text, like:
-
-`mongodb://mongodb0.example.com:27017`
-
-which identifies your database as a `mongodb` document database running on the server at [[hostname]] `mongodb0.example.com` on [[port]] `27017`.
-
-or it can look like:
-
-`postgres://myusername:myverylongwindedpasswordwhichisobviouslygeneratedbyacomputerandnotahuman@ec2-52-207-124-89.compute-1.amazonaws.com:5432/d77ila0heea1lk`
-
-which identifies your database as a `postgres` relational database running on the server at [[hostname]] `ec2-56-486-386-34.compute-5.amazonaws.com` on [[port]] `5432`, and your particular database is named `d77ila0heea1lk` (you can run multiple databases on a single server).
-
-## Connecting to a database
-
-This is where it gets a bit trickier.
-
-If you are using another online service that integrates with your database, that service needs to know your URI and its associated information. The service will either ask your for your login/authentication credentials, hostname, and port separately, or ask for it in a single URI, or some mix of the two options.
-
-If you are hiring your own developer (including possibly yourself), you will have to figure out which programming [[library]] you need to connect to the database.
-
-For example, MongoDB in Python: `MongoClient('mongodb://mongodb0.example.com:27017')`
-
-And for PostGreSQL in Python: `psycopg2.connect('postgres://myusername:myverylongwindedpasswordwhichisobviouslygeneratedbyacomputerandnotahuman@ec2-52-207-124-89.compute-1.amazonaws.com:5432/d77ila0heea1lk')`
-
-**Note:** It is considered insecure to simply leave your login credentials in code like that. Please read up on best practices for importing sensitive information from more secure sources in your programming language of choice.</pre>
 </div>
 <div created="20210613121827918" creator="jsng" modified="20210630080746851" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
@@ -16513,6 +16452,67 @@ With the right font type (i.e. [OpenType](https://en.wikipedia.org/wiki/OpenType
 </div>
 <div created="20210702091738200" creator="jsng" modified="20210702092012542" modifier="jsng" tags="Glossary" title="URI" type="text/x-markdown">
 <pre>**URI** stands for [[Uniform Resource Identifier]].</pre>
+</div>
+<div created="20210702091406519" creator="jsng" modified="20210702092208761" modifier="jsng" summary="A URI (Uniform Resource Identifier) is required to connect to a database. This URI can be provided by a hosting service provider that runs your own database for you, or by a cloud service provider that runs your database on their platform." tags="Topic:database" title="using a database" type="text/x-markdown">
+<pre>At some point in the past, getting a [[database]] meant talking to a consultant or contractor, who would then sit with you to understand your requirements, then set everything up for you without letting you touch any part of it. And that is probably for the benefit of you both. But today, for SMEs with some relevant expertise, it is actually possible to get your own database up and running more easily.
+
+# Setting up a database on a server
+
+If you have admin rights to the workplace server&lt;&lt;fnote &quot;this can be both a blessing and a curse&quot;&gt;&gt;, you’ll have to find the setup instructions that came with the server software&lt;&lt;fnote &quot;or Google it online&quot;&gt;&gt;. I’m sorry, it is painful for layfolks (and even for many experienced database admins) and there just isn’t an easier way yet.
+
+If you do not have admin rights to the workplace server, you usually ask your friendly server administrator to help you install the database and set up a web admin panel for you. They will give you a URL and login credentials for that web admin panel, and you configure the database through the database section of the admin panel.
+
+# Registering a database in the cloud
+
+If your company has decided to do away with in-house IT support, your next bet is to outsource that help to cloud services. Each of the major cloud providers provide multiple database types for your perusal. Some app hosting services will also host a database for you (usually intended for app use, but who’s asking?).
+
+**Relational databases**
+- Amazon Relational Database Service
+- Google Cloud SQL
+- Microsoft Azure SQL Database
+
+Side reading: [[relational database]]
+
+**Document databases** (You will see many of them referred to as [[NoSQL]] databases)
+- Amazon DynamoDB
+- Google Cloud Firestore (part of Firebase)
+- Microsoft Azure Cosmos Database
+
+Side reading: [[document database]]
+
+**Graph databases**
+- Amazon Neptune
+- Microsoft Azure Cosmos also has an [[API]] for graph databases
+
+Side reading: [[graph database]]
+
+# Getting the database identifier
+
+After you have successfully registered a database (of any type), you will be given a connection [[URI]], which is a fancy way of saying “URL to identify your database uniquely”. It can be a simple line of text, like:
+
+`mongodb://mongodb0.example.com:27017`
+
+which identifies your database as a `mongodb` document database running on the server at [[hostname]] `mongodb0.example.com` on [[port]] `27017`.
+
+or it can look like:
+
+`postgres://myusername:myverylongwindedpasswordwhichisobviouslygeneratedbyacomputerandnotahuman@ec2-52-207-124-89.compute-1.amazonaws.com:5432/d77ila0heea1lk`
+
+which identifies your database as a `postgres` relational database running on the server at [[hostname]] `ec2-56-486-386-34.compute-5.amazonaws.com` on [[port]] `5432`, and your particular database is named `d77ila0heea1lk` (you can run multiple databases on a single server).
+
+## Connecting to a database
+
+This is where it gets a bit trickier.
+
+If you are using another online service that integrates with your database, that service needs to know your URI and its associated information. The service will either ask your for your login/authentication credentials, hostname, and port separately, or ask for it in a single URI, or some mix of the two options.
+
+If you are hiring your own developer (including possibly yourself), you will have to figure out which programming [[library]] you need to connect to the database.
+
+For example, MongoDB in Python: `MongoClient('mongodb://mongodb0.example.com:27017')`
+
+And for PostGreSQL in Python: `psycopg2.connect('postgres://myusername:myverylongwindedpasswordwhichisobviouslygeneratedbyacomputerandnotahuman@ec2-52-207-124-89.compute-1.amazonaws.com:5432/d77ila0heea1lk')`
+
+**Note:** It is considered insecure to simply leave your login credentials in code like that. Please read up on best practices for importing sensitive information from more secure sources in your programming language of choice.</pre>
 </div>
 <div created="20210624065530588" creator="jsng" list-after="[[memory addressing]]" modified="20210701033344539" modifier="jsng" tags="Topic:hardware Glossary Topic:systems memory" title="virtual memory" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
