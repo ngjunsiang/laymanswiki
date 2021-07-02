@@ -479,6 +479,8 @@ Error message and password prompt
 
 <li>DPI</li>
 
+<li>Draft of 'application' by jsng</li>
+
 <li>editing a PDF file</li>
 
 <li>encode</li>
@@ -654,6 +656,8 @@ Error message and password prompt
 <li>run-length encoding</li>
 
 <li>sample</li>
+
+<li>sandbox</li>
 
 <li>shared memory</li>
 
@@ -1214,7 +1218,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="app" modified="20210702093117361" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Draft of 'application' by jsng" modified="20210702093210307" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2438,10 +2442,24 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;app&quot;
+    },
+    {
+        &quot;title&quot;: &quot;application&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 45.44999694824219,
+            &quot;left&quot;: 713.5166625976562,
+            &quot;width&quot;: 32.90000915527344,
+            &quot;right&quot;: 746.4166717529297,
+            &quot;bottom&quot;: 84.93333435058594,
+            &quot;height&quot;: 39.48333740234375
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'application' by jsng&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="Topic:software Topic:database" modified="20210702092224262" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[Draft of 'application' by jsng]] Topic:software Topic:database" modified="20210702093146324" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13621,7 +13639,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210701035926818" creator="jsng" list="application" modified="20210702085635660" modifier="jsng" title="$:/StoryList">
+<div created="20210701035926818" creator="jsng" list="sandbox" modified="20210702085635660" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14794,6 +14812,29 @@ Once the network issue is resolved and the clusters are synchronized again, thes
 </div>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
+</div>
+<div created="20210702092832326" creator="jsng" draft.of="application" draft.title="application" modified="20210702093236860" modifier="jsng" tags="Topic:software" title="Draft of 'application' by jsng" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+There was a time when apps, short for **applications**, were these files that came on a [[CD]] or [[diskette]], with a filename usually ending in `.exe` (if your settings enabled you to see [[file extension]]s). You double-clicked them or pressed ‘Enter’, and things happened.
+
+Today … the idea of an [[app]] is more nebulous. The `.exe` files are still there, but now there are also apps that you install from an app store. And what’s up with webpages that display an app installation pop-up and create an icon on your home screen or desktop? Are they the same kind of app? If not, what’s the difference between them?
+
+Before I answer that question, we need to talk about an important concept called [[sandboxing]].
+
+## Why do apps need to be sandboxed?
+
+An unrestrained app running in your operating system would have access to any and all resources on that machine. It could potentially modify or remove system files, halt running programs or accidentally overwrite their memory contents, and so on.
+
+[The operating system]([Issue 56](https://buttondown.email/laymansguide/archive/lmg-s5-issue-56-operating-systems-and-resource/)) takes some measures to minimise or prevent this. But even within these limits, a app developed with good intentions could still potentially cause trouble. It might accidentally hang on to audio access when it no longer needs it, make a mess of the user’s home folder, leave files in limbo, etc. Programs can leave a mess, and a way to limit this mess is very welcome.
+
+This is why sandbox systems were already being researched as early as the 1970s, and are still an ongoing research interest at many institutions.
+
+## What is sandboxing?
+
+So one way to categorise laptop apps, mobile apps, and web apps is in the amount of sandboxing they are subject to.
+
+{{||readNextTemplate}}</pre>
 </div>
 <div created="20210613121827918" creator="jsng" modified="20210630080746851" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
@@ -16022,6 +16063,25 @@ Post-compression (RLE):
 </div>
 <div created="20210611041919650" creator="jsng" modified="20210611041955093" modifier="jsng" tags="Glossary" title="sample" type="text/x-markdown">
 <pre>A **sample** is a technical term for a segment of data, usually video or audio.</pre>
+</div>
+<div created="20210702093151539" creator="jsng" modified="20210702093427519" modifier="jsng" summary="Sandboxing is a catch-all term for the concept of ensuring apps don’t have access to resources outside of their privileges. Sandboxed apps are generally safer than non-sandboxed apps in terms of security, and easier to manage, terminate, and uninstall." tags="Topic:software Topic:security" title="sandbox" type="text/x-markdown">
+<pre>If you are old enough you might remember playing in a sandbox. While there are usually no explicit rules about how to play in a sandbox, there is usually one unspoken rule:
+
+What came from the sandbox, stays in the sandbox.
+
+A sandbox limits the mess, yet gives you unrestrained freedom _within_ that box.
+
+# Sandboxing in software
+
+In a computer system, a sandbox system imposes restrictions on running [[application]]s. Some common restrictions include:
+
+- only being able to access/change/delete files within a particular subfolder
+- only having access to some [[OS]] resources (e.g. not being able to access USB devices, or audio, or webcam)
+- having limited privileges while the application is not active (e.g. no internet access when not being directly interacted with, and just running in the background)
+
+These restrictions are intended to limit any damage and keep the system more stable than it might otherwise have been.
+
+**Sandboxing** is a catch-all term for the concept of ensuring [[application]]s don’t have access to resources outside of their privileges. Sandboxed applications are generally safer than non-sandboxed apps in terms of security, and easier to manage, terminate, and uninstall.</pre>
 </div>
 <div created="20210628224910558" creator="jsng" modified="20210701032955698" modifier="jsng" tags="Topic:systems memory" title="shared memory" type="text/x-markdown">
 <pre>It is impossible to completely separate [[program]]s from each other. Many programs need to communicate with each other; antivirus software needs to be able to scan the addresses accessed by your web browser for harmful links, Office software needs to be able to send data to each other especially for features like [[Mail Merge]], and of course your task manager has to know how much resources every app is using. So that it can show you this:
