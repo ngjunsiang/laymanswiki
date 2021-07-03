@@ -1282,7 +1282,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Document Object Model" modified="20210703100011516" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="spreadsheet" modified="20210703101014089" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2779,10 +2779,21 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;Document Object Model&quot;
+    },
+    {
+        &quot;title&quot;: &quot;spreadsheet&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 879.183349609375,
+            &quot;left&quot;: 751.6666870117188,
+            &quot;width&quot;: 76.61666870117188,
+            &quot;right&quot;: 828.2833557128906,
+            &quot;bottom&quot;: 897.183349609375,
+            &quot;height&quot;: 18
+        }
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[Document Object Model]] [[mobile app]] [[laptop app]] [[Progressive Web App]] PWA [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210703095621844" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[mobile app]] [[laptop app]] [[Progressive Web App]] PWA [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210703095621844" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -17337,7 +17348,7 @@ Main article: [[Central Processing Unit]]</pre>
 
 If you used any uncompressed images, you might be able to achieve some filesize gains. But it is better to have Powerpoint handle the compression instead; it offers a [Compress Pictures](https://highspark.co/how-to-compress-powerpoint/) option.</pre>
 </div>
-<div created="20210703093934593" creator="jsng" modified="20210703100126230" modifier="jsng" summary="Web apps require the browser to request memory on their behalf, and thus their memory usage shows up under the browser process in the OS Task Manager. Web apps use this data to store a more convenient (but larger) representation of the webpage document, and to store the data needed by the app." tags="Topic:software Topic:internet question" title="Why do web browsers take up so much memory?" type="text/x-markdown">
+<div created="20210703093934593" creator="jsng" modified="20210703101043310" modifier="jsng" summary="Web apps require the browser to request memory on their behalf, and thus their memory usage shows up under the browser process in the OS Task Manager. Web apps use this data to store a more convenient (but larger) representation of the webpage document, and to store the data needed by the app." tags="Topic:software Topic:internet question" title="Why do web browsers take up so much memory?" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 Apps once lived on a computer. You double-clicked them or pressed Enter or right-clicked Run, a window pops up and a rectangle appears on your taskbar. If [[Task Manager]] is showing you that it is using up gobs of memory, you just End Task and the rectangle disappears.
@@ -17379,7 +17390,15 @@ Most of the memory here is being taken up by javascript objects.
 
 Main article: [[Document Object Model]]
 
+# Web browsers and tabs
+
 The [[HTML]] [[DOM]] for the page I’m on takes up 14 MiB, which may sound like a lot, until you remember that each element also has associated metadata stored along with its content. And Google Sheets has lots of elements!
+
+If you have multiple tabs running the same app (e.g. multiple Google Sheets open), [[some of the memory can be shared|shared memory]] by these tabs. For example, the Google Sheet tabs are likely to require the same [[script]]s, and hence can share `scripts`). But otherwise each tab is going to have its own memory needs.
+
+In the earlier days of the internet, when [[spreadsheet]]s were still a separate app, this memory usage would have showed up in the [[OS]] Task Manager under “Lotus 1-2-3”, “Microsoft Excel”, or some other spreadsheet [[program]]. Today, it shows up under [[Chrome]] or [[Firefox]], and the details are only inspectable through the browser’s Task Manager.
+
+No wonder browsers get all the blame these days.
 
 {{||readNextTemplate}}</pre>
 </div>
