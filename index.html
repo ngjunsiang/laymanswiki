@@ -1282,7 +1282,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="DOM" modified="20210703095743129" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Document Object Model" modified="20210703100011516" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2773,10 +2773,16 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;DOM&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'Document Object Model' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Document Object Model&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[Document Object Model]] DOM [[mobile app]] [[laptop app]] [[Progressive Web App]] PWA [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210703095621844" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[Document Object Model]] [[mobile app]] [[laptop app]] [[Progressive Web App]] PWA [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210703095621844" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -15127,14 +15133,14 @@ Once the network issue is resolved and the clusters are synchronized again, thes
 
 {{||readNextTemplate}}</pre>
 </div>
-<div created="20210703095133917" creator="jsng" modified="20210703095723916" modifier="jsng" tags="Topic:internet Topic:software" title="Document Object Model" type="text/x-markdown">
+<div created="20210703095133917" creator="jsng" modified="20210703100011505" modifier="jsng" summary="The Document Object Model is a standardized way that web browsers use to represent HTML pages internally." tags="Topic:internet Topic:software" title="Document Object Model" type="text/x-markdown">
 <pre>We are used to seeing [[HTML]] documents as a plain text document with lots of formatting, but in a browser it becomes more than just text. Each part of the page is an [[HTML]] element, which can have its properties changed by [[script]]s as the page reacts to new data, or to user input.
 
 It would be too computationally taxing to keep scanning through the text document to figure out which part of the page is meant to be changed. Instead, the browser has its own way of storing the *hierarchy* of elements: each menu option falls under a menu heading, which falls under the navigation bar, which falls under the header, which falls under the main document, and so on.
 
-If each browser had its own way of doing that, a web developer would have to learn all of them to create a webpage that worked across all browsers; that would be terribly tedious! Instead, the web standardized on one way of doing so: the [[HTML]] **Document Object Model** ([[DOM]]).
+If each browser had its own way of doing that, a web developer would have to learn all of them to create a webpage that worked across all browsers; that would be terribly tedious!
 
-Internally, a [[web browser]] converts the [[HTML]] page into a DOM—a [[data structure]] that makes it easy to find the specific [[HTML element]] (or elements) that need to be modified by each function in a script.</pre>
+Instead, the web standardized on one way of doing so. This model of thinking about document data treats each HTML element as an object; we call it the **Document Object Model** ([[DOM]]).</pre>
 </div>
 <div created="20210703095729381" creator="jsng" modified="20210703095743126" modifier="jsng" tags="Glossary" title="DOM" type="text/x-markdown">
 <pre>**DOM** stands for [[Document Object Model]].</pre>
@@ -15142,7 +15148,7 @@ Internally, a [[web browser]] converts the [[HTML]] page into a DOM—a [[data s
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210703093934593" creator="jsng" draft.of="New Tiddler" draft.title="how a web app works" modified="20210703095126791" modifier="jsng" summary="Web apps require the browser to request memory on their behalf, and thus their memory usage shows up under the browser process in the OS Task Manager. Web apps use this data to store a more convenient (but larger) representation of the webpage document, and to store the data needed by the app." tags="Topic:software Topic:internet" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
+<div created="20210703093934593" creator="jsng" draft.of="New Tiddler" draft.title="how a web app works" modified="20210703095922885" modifier="jsng" summary="Web apps require the browser to request memory on their behalf, and thus their memory usage shows up under the browser process in the OS Task Manager. Web apps use this data to store a more convenient (but larger) representation of the webpage document, and to store the data needed by the app." tags="Topic:software Topic:internet" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 Apps once lived on a computer. You double-clicked them or pressed Enter or right-clicked Run, a window pops up and a rectangle appears on your taskbar. If [[Task Manager]] is showing you that it is using up gobs of memory, you just End Task and the rectangle disappears.
@@ -15180,8 +15186,7 @@ Most of the memory here is being taken up by javascript objects.
 
 - `scripts` are the internally stored scripts that the page is executing; they take up 11 MiB.
 
-- `domNode` is where it gets interesting. We are used to seeing [[HTML]] documents as a plain text document with lots of formatting, but in a browser it becomes more than just text. Each part of the page is an HTML element, which can have its properties changed by [[javascript]] as the page reacts to new data, or to user input.  
-This model of thinking about document data treats each HTML element as an object; we call it the [[Document Object Model]].
+- `domNode` is where it gets interesting. Internally, a [[web browser]] converts the [[HTML]] page into a [[DOM]]—a [[data structure]] that makes it easy to find the specific [[HTML element]] (or elements) that need to be modified by each function in a script.
 
 Main article: [[Document Object Model]]
 
