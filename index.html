@@ -16119,7 +16119,7 @@ If you plan to come up with a file format that is intended to be used widely, yo
 <div created="20210624070707900" creator="jsng" modified="20210624070727883" modifier="jsng" tags="Glossary" title="MMU" type="text/x-markdown">
 <pre>**MMU** stands for [[memory management unit]].</pre>
 </div>
-<div created="20210702093936256" creator="jsng" modified="20210704040345933" modifier="jsng" tags="Topic:software" title="mobile app" type="text/x-markdown">
+<div created="20210702093936256" creator="jsng" modified="20210704040953278" modifier="jsng" tags="Topic:software" title="mobile app" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 “Why use the mobile app when there’s already a website?”
@@ -16134,23 +16134,24 @@ Web apps have to request every single image, video, non-text object on the page 
 
 A mobile app can package the most common, unchanging resources (logos, button images, backgrounds, etc) into the mobile app itself, so they can be loaded directly in the app, without having to make a web request and wait for the response. This lets it load faster&lt;&lt;fnote &quot;theoretically … in practice, many apps still have to retrieve other data from the server, so the loading speed improvement is marginal&quot;&gt;&gt;.
 
-## Flexibility
+# Flexibility
 
-The document object model, or DOM ([Issue 94](https://buttondown.email/laymansguide/archive/lmg-s8-issue-94-why-do-web-browsers-take-up-so/)) is how web apps keep track of all the elements and their contents on a page, but it is not the most efficient way to do so. A mobile app has more choice in deciding which user interface library ([Issue 17](https://buttondown.email/laymansguide/archive/lmg-s2-issue-17-libraries/)) it wants to use.
+The [[Document Object Model]] is how [[web app]]s keep track of all the page elements and their contents, but it is not the most efficient way to do so. A mobile app has more choice in deciding which user interface [[library]] it wants to use.
 
-## Storage access
+# Storage access
 
-A mobile app can request permission to access storage on the mobile device, allowing it to store files (images, data, ...) on the device without having to interrupt the user each time. It is not limited only to browser storage interfaces (localstorage, sessionstorage) and browser databases (IndexedDB)—see [Issue 93](https://buttondown.email/laymansguide/archive/lmg-s7-issue-93-whats-in-a-web-app/)—but can use other kinds of interfaces and databases, if they are available on the mobile device, or bundled into the mobile app.
+A mobile app can request permission to access [[storage]] on the mobile device, allowing it to store [[file]]s (images, data, ...) on the device without having to interrupt the user each time. It is not limited only to browser storage ([[localstorage]], [[sessionstorage]]) and browser [[database|Topic:database]]s ([[IndexedDB]]), but can use other kinds of storage and databases, if they are available on the mobile device, or bundled into the mobile app.
 
-## Memory use
+# Memory use
 
-Both Android and iOS impose a memory limit on each app that is running. And they treat a mobile browser as a single app, despite all the web apps running inside it. So a web app has to share that limit with all the other web apps running in the mobile browser (which is why your tabs have to reload so often—they are also cleared often!).
+Both Android and iOS impose a [[memory]] limit on each app that is running. And they treat a mobile browser as a single app, despite all the web apps running inside it. So a web app has to share that limit with all the other web apps running in the mobile browser (which is why your tabs have to reload so often—they are also cleared often!).
 
 On the other hand, a mobile app can have that per-app limit all to itself.
 
 ----------
 
 All told, a mobile app has more resources, which it requests directly from the OS instead of via the web browser, and it has more freedom in using those resources.
+
 How so? And more importantly, why are some mobile apps just so darn *huge*?
 
 This and mobile app sandboxing explained next issue.
