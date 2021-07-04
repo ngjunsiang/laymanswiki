@@ -491,8 +491,6 @@ Error message and password prompt
 
 <li>DPI</li>
 
-<li>Draft of 'laptop app' by jsng</li>
-
 <li>Draft of 'New Tiddler' by jsng</li>
 
 <li>editing a PDF file</li>
@@ -14145,7 +14143,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210701035926818" creator="jsng" list="permission [[Draft of 'laptop app' by jsng]] [[Draft of 'New Tiddler' by jsng]]" modified="20210704052036392" modifier="jsng" title="$:/StoryList">
+<div created="20210701035926818" creator="jsng" list="[[laptop app]] [[Draft of 'New Tiddler' by jsng]]" modified="20210704052036392" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -15331,42 +15329,6 @@ Instead, the web standardized on one way of doing so. This model of thinking abo
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210702093937179" creator="jsng" draft.of="laptop app" draft.title="laptop app" modified="20210704052309005" modifier="jsng" summary="A laptop app can do practically anything, if it is running through the Administrator/root account. Sandboxing is carried out through permission control." tags="Topic:software" title="Draft of 'laptop app' by jsng" type="text/x-markdown">
-<pre>{{||prereqTemplate}}
-
-This issue is going to be short, because laptop apps are … well, almost unlimited in what they can do.
-
-Web apps are [[sandbox]]ed by the web browser. Mobile apps are [[sandbox]]ed by the mobile [[operating system]] ([[OS]]). Laptop apps are [[sandbox]]ed by the desktop OS (yup, Windows on laptop and desktop is practically the same).
-
-The main difference here lies in the difference between a mobile and desktop OS. Mobile OSes do not allow [[mobile app]]s to share [[libraries|library]] with other apps, and restrict their privileges. Desktop OSes, on the other hand, let you do anything that is computationally possible … if you have [[permission]].
-
-# The Admin account
-
-A desktop OS often has an all-powerful user, known as the [[Administrator]] ([[Windows]]/[[MacOS]]), or [[root]] user ([[Linux]]). This user does not need permission to do anything. But with great power comes great responsibility, and with an admin account it is all too easy to do something that renders the computer unuseable.
-
-So lower-privilege accounts exist—these are the user accounts. Logging in as a user gives you limited privileges: often you cannot change [[OS]] files, install or remove [[app]]s, or do anything risky. This is, for the most part, how desktop OSes sandbox the computer environment from damage by other apps.
-
-# What an admin can do
-
-So what happens when you run an app on an admin account?
-
-This app can:
-
-1. Edit, delete, rename OS-related files
-2. Create new “virtual” (emulated) [[hardware|Topic:hardware]] devices, and manage [[driver]]s for it
-3. Send data to any device, or receive data from any device
-4. Make changes to [[storage]] devices, including the disk where the OS itself is installed (but not the [[partition]] where the OS is installed)
-5. Run [[program]]s in the background
-6. Send data over the network to any [[IP address]], over any [[port]]
-7. Prevent other programs from doing so (e.g. [[firewall]]s)
-8. Install [[libraries|library]] that can be used by other [[program]]s
-9. Access [[OS]] settings and make changes that affect OS operation
-10. ... and many more things!
-
-What if a user needs access to some of these permissions (but not all)? Does that mean they need to become an Admin?
-
-{{||readNextTemplate}}</pre>
-</div>
 <div created="20210704051609866" creator="jsng" draft.of="New Tiddler" draft.title="crash" modified="20210704051934527" modifier="jsng" summary="An app crashes when it encounters a situation it can’t handle, or when it attempts to perform an operation that is disallowed by the operating system." tags="Topic:systems" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
@@ -15964,14 +15926,14 @@ The data, also called the **value** here, is tagged to a short text string, call
 <div created="20210611063507525" creator="jsng" modified="20210611063507525" modifier="jsng" title="KiB">
 <pre></pre>
 </div>
-<div created="20210702093937179" creator="jsng" modified="20210704044707706" modifier="jsng" summary="A laptop app can do practically anything, if it is running through the Administrator/root account. Sandboxing is carried out through permission control." tags="Topic:software" title="laptop app" type="text/x-markdown">
+<div created="20210702093937179" creator="jsng" modified="20210704052346098" modifier="jsng" summary="A laptop app can do practically anything, if it is running through the Administrator/root account. Sandboxing is carried out through permission control." tags="Topic:software" title="laptop app" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 This issue is going to be short, because laptop apps are … well, almost unlimited in what they can do.
 
 Web apps are [[sandbox]]ed by the web browser. Mobile apps are [[sandbox]]ed by the mobile [[operating system]] ([[OS]]). Laptop apps are [[sandbox]]ed by the desktop OS (yup, Windows on laptop and desktop is practically the same).
 
-The main difference here lies in the difference between a mobile and desktop OS. Mobile OSes do not allow mobile apps to share libraries with other apps, and restrict their privileges ([Issue 96](https://buttondown.email/laymansguide/archive/lmg-s8-issue-96-why-are-mobile-apps-so-large-in/)). Desktop OSes, on the other hand, let you do anything that is computationally possible … if you have permission.
+The main difference here lies in the difference between a mobile and desktop OS. Mobile OSes do not allow [[mobile app]]s to share [[libraries|library]] with other apps, and restrict their privileges. Desktop OSes, on the other hand, let you do anything that is computationally possible … if you have [[permission]].
 
 # The Admin account
 
@@ -15996,13 +15958,9 @@ This app can:
 9. Access [[OS]] settings and make changes that affect OS operation
 10. ... and many more things!
 
-# User Account Control
-
 What if a user needs access to some of these permissions (but not all)? Does that mean they need to become an Admin?
 
-[[Windows]], and other [[OS]]es as well, usually have some way to give users limited permissions for some tasks. Windows uses [[User Account Control]], which pops up a dialog box to alert the user. If the user gives permission for the app to proceed, then it is able to do so. If it is running on a user account, it can only perform tasks that the user account is allowed to perform.
-
-[[Linux]] uses the concept of groups; for a user to have permission to access [[bluetooth]], for example, the Linux OS often requires the user to be added to the `bluetooth` group in the OS.
+&gt; {{permission}}
 
 {{||readNextTemplate}}</pre>
 </div>
