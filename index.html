@@ -491,8 +491,6 @@ Error message and password prompt
 
 <li>DPI</li>
 
-<li>Draft of 'Windows' by jsng</li>
-
 <li>editing a PDF file</li>
 
 <li>encode</li>
@@ -802,6 +800,8 @@ Error message and password prompt
 <li>Why do web browsers take up so much memory?</li>
 
 <li>Why does my hard drive seem to have less space than it should?</li>
+
+<li>Windows</li>
 
 <li>word processor</li>
 
@@ -14139,7 +14139,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210701035926818" creator="jsng" list="[[Draft of 'Windows' by jsng]]" modified="20210704050933879" modifier="jsng" title="$:/StoryList">
+<div created="20210701035926818" creator="jsng" list="Windows" modified="20210704050933879" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -15324,9 +15324,6 @@ Instead, the web standardized on one way of doing so. This model of thinking abo
 </div>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
-</div>
-<div created="20210704050940913" creator="jsng" draft.of="Windows" draft.title="Windows" modified="20210704050940913" modifier="jsng" tags="Topic:systems" title="Draft of 'Windows' by jsng">
-<pre></pre>
 </div>
 <div created="20210613121827918" creator="jsng" modified="20210630080746851" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
@@ -17821,6 +17818,50 @@ When you buy a 1TB hard drive, you are buying a 1,000,000,000,000-byte drive.
 953,674 mebibytes ÷ 1,024 = 931 gibibytes (GiB)
 
 So your computer isn’t lying. It’s just using different units of counting!</pre>
+</div>
+<div created="20210704050940913" creator="jsng" modified="20210704051515314" modifier="jsng" summary="Windows systems categorise data into two types: files, and settings. Files are stored under an appropriate subfolder in `C:\`, while other storage devices and network locations are stored elsewhere or given their own drive letters. Settings are managed through the Windows Registry, which is stored in `C:\Windows\System32\Config\` and `C:\Windows\Users\Name\`." tags="Topic:systems" title="Windows" type="text/x-markdown">
+<pre>Unlike Mac-like systems, where all data comes in the form of a file, Windows systems recognize two types of data: settings, and files.
+
+# Files in Windows systems
+
+- Apps get put in `C:\Program Files` or `C:\Program Files (x86)`, for [[64-bit]] and [[32-bit]] programs respectively
+- Library? Shared files? Ha! (I’ll talk about this further down)
+- System files go into `C:\Windows`
+- Network resources, well ... don’t really have a ... well they are a different category of location that does not start with a drive letter and instead starts with `\\`, unless you assign these locations to a drive letter, then they have a drive letter. Sorta.
+- User files go into `C:\Users`
+- Other storage devices are auto-detected and assigned a drive letter, though not always consistently.
+
+And now we talk about settings.
+
+# Settings in Windows systems
+
+Settings are stored in the `C:\Windows\System32\Config\` and `C:\Windows\Users\Name\` folder, which technically makes them system files, which ... wait, how are apps supposed to access them then?
+
+App developers are supposed to do it through a system library, which provides [[variables]] named like `ApplicationData.LocalSettings`, `ApplicationDataCompositeValue`, and `RoamingSettings`. These variables let developers store and retrieve settings, which all end up stored in a system known as the **Windows [[Registry]]**. And Administrators can edit them using something known as the [[Registry Editor]].
+
+The [[Windows Registry]] consists of 5 top-level areas (known as hives), each one beginning with the word `HKEY_`:
+
+- `HKEY_CLASSES_ROOT` is for storing application settings, and [[file extension]] information (e.g. which app to use to open each type of file extension)
+- `HKEY_CURRENT_USER` is for storing settings and configuration specific to the current (logged in) user
+- `HKEY_LOCAL_MACHINE` is for storing settings and configuration common to all users (e.g. default settings)
+- `HKEY_USERS` is for storing settings and configuration of each user. The `HKEY_CURRENT_USER` data for all users is stored here, and copied to `HKEY_CURRENT_USER` when they log in.
+- `HKEY_CURRENT_CONFIG` is for storing information about the computer’s configuration and resources
+
+The usual way of finding out how to modify a particular setting for X is to google “registry setting for X” and proceed from there.
+
+Logos, backgrounds, buttons, and other application data? They go into :
+- `C:\Program Files` (or `C:\Program Files (x86)` if still 32-bit) for traditional Windows apps
+- `C:\Program Files\WindowsApps` for Windows App Store apps.
+
+What if other apps also need to use them? Then they go into ~~`C:\Library`, just kidding, if only it were so easy~~ `C:\Program Files\Common Files`, but you’ll notice it’s pretty empty. Usually, they’ll be stored within the app’s folder, and you have to find out where to edit the Windows Registry so other programs know where to find them (apparently you can look in `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\KnownDLLs`). Whoa, wait, what happened to apps not messing around in each other’s folders—
+
+OKAY MOVING ON—What if a user installs a program that they don’t want other users using? It goes into `C:\Users\username\AppData\`.
+
+User settings? They go into—nah, they don’t go into a file, they’re supposed to be settings so they go into the Windows Registry somewhere under `HKEY_CURRENT_USER`.
+
+Temporary files? They go into `C:\Windows\Temp`; isn’t that a system folder? Well yes, but if you put it in `C:\Temp` folks will complain and Disk Cleanup will not find it.
+
+So to uninstall a Windows app, you run its uninstaller. Which may or may not work perfectly. Or it might remove its files but still appear in the Program List because it did a terrible job cleaning up its settings in Windows Registry. So you reinstall the program, this time using a third-party app that helps you track app installations and registry changes, so that it detects what new files/settings it creates, and then when you uninstall the program you do it through the third-party app so that it hopefully removes all traces once and for all.</pre>
 </div>
 <div created="20210613115144142" creator="jsng" modified="20210613115144142" modifier="jsng" title="word processor">
 <pre></pre>
