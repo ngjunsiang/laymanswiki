@@ -1286,7 +1286,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="mobile app" modified="20210704043758592" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="MacOS" modified="20210704045808769" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2822,10 +2822,32 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;mobile app&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Windows&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 635.8333129882812,
+            &quot;left&quot;: 66.19999694824219,
+            &quot;width&quot;: 62.65000915527344,
+            &quot;right&quot;: 128.85000610351562,
+            &quot;bottom&quot;: 654.8333129882812,
+            &quot;height&quot;: 19
+        }
+    },
+    {
+        &quot;title&quot;: &quot;MacOS&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 635.8333129882812,
+            &quot;left&quot;: 525.7833251953125,
+            &quot;width&quot;: 47.26666259765625,
+            &quot;right&quot;: 573.0499877929688,
+            &quot;bottom&quot;: 654.8333129882812,
+            &quot;height&quot;: 19
+        }
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210704040959241" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="MacOS Windows [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210704040959241" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -17003,7 +17025,7 @@ This card shows all cards written for this topic, arranged in reading order.
 
 &lt;&lt;list-links &quot;[tag{!!title}]&quot;&gt;&gt;</pre>
 </div>
-<div created="20210704044727739" creator="jsng" modified="20210704045750885" modifier="jsng" summary="Apps generally handle three categories of files: its own (permanent) app files, (shared) user files, and (ephemeral) temporary files." tags="Topic:software Topic:systems" title="temporary file" type="text/x-markdown">
+<div created="20210704044727739" creator="jsng" modified="20210704045834367" modifier="jsng" summary="Apps generally handle three categories of files: its own (permanent) app files, (shared) user files, and (ephemeral) temporary files." tags="Topic:software Topic:systems" title="temporary file" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 Most apps need some access to device storage. It might be Youtube trying to download (part of) a [[stream]] onto your device for playback. Or it might be Tiktok trying to help you record a [[video|Media files]] for uploading.
@@ -17036,7 +17058,7 @@ On [[Windows]], these users each have their own folder in `C:\Users\`; on [[MacO
 
 Of course, each app needs to have *its own space* to keep *its own files*, which allow it to do what it does.
 
-Webapps get their own folder somewhere in `C:\Users\[USERNAME]\AppData\Local\Google\Chrome\...`, they can only see what is in that folder, and they cannot see what is in the parent folder, or sibling folders. It’s sandboxing, again ([Issue 92](https://buttondown.email/laymansguide/archive/lmg-s7-issue-92-all-about-apps/))!
+Webapps get their own folder somewhere in `C:\Users\[USERNAME]\AppData\Local\Google\Chrome\...`, they can only see what is in that folder, and they cannot see what is in the parent folder, or sibling folders. It’s [[sandbox]]ing, again!
 
 Mobile apps get stored into `/data/app` or some similar folder, and you’re not supposed to think too hard about where, because of \*handwaving\* *sandboxing*. The same idea applies: The app is not supposed to know, or be able to see, where other apps store their data! Eyes on the app’s own data only, and the user’s data (you did give it permission to access storage, right?), and any temporary data which it has created.
 
