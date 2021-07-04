@@ -461,6 +461,8 @@ Error message and password prompt
 
 <li>CPU Optimization</li>
 
+<li>crash</li>
+
 <li>CSV</li>
 
 <li>CSV vs binary formats</li>
@@ -490,8 +492,6 @@ Error message and password prompt
 <li>DOM</li>
 
 <li>DPI</li>
-
-<li>Draft of 'New Tiddler' by jsng</li>
 
 <li>editing a PDF file</li>
 
@@ -14143,7 +14143,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210701035926818" creator="jsng" list="[[laptop app]] [[Draft of 'New Tiddler' by jsng]]" modified="20210704052036392" modifier="jsng" title="$:/StoryList">
+<div created="20210701035926818" creator="jsng" list="crash" modified="20210704052036392" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14965,6 +14965,41 @@ What the computer is doing here is:
 
 </pre>
 </div>
+<div created="20210704051609866" creator="jsng" modified="20210704052719980" modifier="jsng" summary="An app crashes when it encounters a situation it can’t handle, or when it attempts to perform an operation that is disallowed by the operating system." tags="Topic:systems" title="crash" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+Besides general slowness, two of the most frustrating experiences we have with computers is when they **crash**, and when they [[hang]].
+
+You mean there’s a difference? Sometimes we use the two terms interchangeably, but they are really not the same.
+
+Remember: applications are just a list of computer instructions telling the computer what to do: where to get the data, how to process it, and what to return. When the instructions make perfect sense, everything goes well. But sometimes they don’t.
+
+# Crashing
+
+A crash happens when the app receives an instruction that it  
+**(a)** does not know how to handle, or  
+**(b)** is not allowed to carry out.
+
+# Unhandled responses
+
+A common error made by many programming newbies (including me) is failing to account for all the ways that things can go wrong. For example, if I am writing a simple app to read a text file and perform some calculations, an obvious step in the app is sending a request to the [[operating system]] ([[OS]]) to open the text file.
+
+Even that simple step is fraught with many possible failures! The [[text file|Text representation in computers]] may have been [[locked|file lock]] by another [[app]] (which is writing data to the file), or the user running the app might not have [[permission]] to open the file (especially if it is in another user’s home directory), or ...
+
+Well, a whole bunch of things can go wrong. And when they do, the OS throws an error. If the app does not have any code to handle that error ... game over, it cannot proceed and it **crashes** abruptly.
+
+This is a lot more common than you think, even for experienced programmers, especially when a process that isn’t expected to throw an error actually does it. And sometimes it just can’t be helped: when your computer runs out of memory, and an app requests for more memory but doesn’t get it, and it just can’t go on without that memory ... it crashes.
+
+# Illegal instructions
+
+[[Memory|memory]] in the computer is managed by the OS, which partitions it into different zones. The memory used by OS processes is protected from access by other apps (for your privacy and protection), and memory used by an app cannot be used by another app, unless it is shared memory space.
+
+So when an app sends an instruction requesting to access memory space it does not have authorization to, or when the OS itself attempts to access an address that it can’t (especially addresses that point to hardware devices) ... it crashes. An app crash just brings you back to your desktop, but an OS crash usually leads to the famous [[Blue Screen Of Death]] (BSOD).
+
+These days, OSes are better at handling crashes. If the crash occurs in the window management system (the part that lets apps create windows on screen and icons in the taskbar), Windows can often just restart it without restarting or touching the rest of the OS. But if it happens in a critical part that can’t be restarted by itself, then ... BSOD :)
+
+{{||readNextTemplate}}</pre>
+</div>
 <div created="20210701040121880" creator="jsng" modified="20210701040146775" modifier="jsng" tags="Glossary" title="CSV" type="text/x-markdown">
 <pre>CSV stands for [[comma separated values]].</pre>
 </div>
@@ -15328,41 +15363,6 @@ Instead, the web standardized on one way of doing so. This model of thinking abo
 </div>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
-</div>
-<div created="20210704051609866" creator="jsng" draft.of="New Tiddler" draft.title="crash" modified="20210704051934527" modifier="jsng" summary="An app crashes when it encounters a situation it can’t handle, or when it attempts to perform an operation that is disallowed by the operating system." tags="Topic:systems" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
-<pre>{{||prereqTemplate}}
-
-Besides general slowness, two of the most frustrating experiences we have with computers is when they **crash**, and when they [[hang]].
-
-You mean there’s a difference? Sometimes we use the two terms interchangeably, but they are really not the same.
-
-Remember: applications are just a list of computer instructions telling the computer what to do: where to get the data, how to process it, and what to return. When the instructions make perfect sense, everything goes well. But sometimes they don’t.
-
-# Crashing
-
-A crash happens when the app receives an instruction that it  
-**(a)** does not know how to handle, or  
-**(b)** is not allowed to carry out.
-
-# Unhandled responses
-
-A common error made by many programming newbies (including me) is failing to account for all the ways that things can go wrong. For example, if I am writing a simple app to read a text file and perform some calculations, an obvious step in the app is sending a request to the operating system (OS) to open the text file.
-
-Even that simple step is fraught with many possible failures! The [[text file|Text representation in computers]] may have been [[locked|file lock]] by another [[app]] (which is writing data to the file), or the user running the app might not have permission to open the file (especially if it is in another user’s home directory), or ...
-
-Well, a whole bunch of things can go wrong. And when they do, the OS throws an error. If the app does not have any code to handle that error ... game over, it cannot proceed and it crashes abruptly.
-
-This is a lot more common than you think, even for experienced programmers, especially when a process that isn’t expected to throw an error actually does it. And sometimes it just can’t be helped: when your computer runs out of memory, and an app requests for more memory but doesn’t get it, and it just cant go on without that memory ... it crashes.
-
-### Illegal instructions
-
-Memory in the computer is managed by the OS ([Issue 65](https://buttondown.email/laymansguide/archive/lmg-s5-issue-65-memory-sharing-in-the-operating/)), which partitions it into different zones. The memory used by OS processes is protected from access by other apps (for your privacy and protection), and memory used by an app cannot be used by another app, unless it is shared memory space.
-
-So when an app sends an instruction requesting to access memory space it does not have authorisation to, or when the OS itself attempts to access an address that it can’t (especially addresses that point to hardware devices) ... it crashes. An app crash just brings you back to your desktop, but an OS crash usually leads to the famous Blue Screen Of Death (BSOD).
-
-These days, OSes are better at handling crashes. If the crash occurs in the window management system (the part that lets apps create windows on screen and icons in the taskbar), Windows can often just restart it without restarting or touching the rest of the OS. But if it happens in a critical part that can’t be restarted by itself, then ... BSOD :)
-
-{{||readNextTemplate}}</pre>
 </div>
 <div created="20210613121827918" creator="jsng" modified="20210630080746851" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
