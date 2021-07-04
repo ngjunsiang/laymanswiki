@@ -491,6 +491,8 @@ Error message and password prompt
 
 <li>DPI</li>
 
+<li>Draft of 'mobile app' by jsng</li>
+
 <li>editing a PDF file</li>
 
 <li>encode</li>
@@ -780,6 +782,8 @@ Error message and password prompt
 <li>When I put a zip file in another zip file, why is the second zip file no smaller in size that the first?</li>
 
 <li>Why am I getting a Missing Codec Error when I open a video file?</li>
+
+<li>Why are mobile apps so large in size?</li>
 
 <li>Why are music files so large (a few MB) when a voice call over internet uses so little data?</li>
 
@@ -1282,7 +1286,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="spreadsheet" modified="20210703101014089" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="library" modified="20210704043002122" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2790,10 +2794,35 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 897.183349609375,
             &quot;height&quot;: 18
         }
+    },
+    {
+        &quot;title&quot;: &quot;mobile app&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 529.433349609375,
+            &quot;left&quot;: 713.5166625976562,
+            &quot;width&quot;: 32.90000915527344,
+            &quot;right&quot;: 746.4166717529297,
+            &quot;bottom&quot;: 568.9166870117188,
+            &quot;height&quot;: 39.48333740234375
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'mobile app' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;library&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 239.78334045410156,
+            &quot;left&quot;: 506.29998779296875,
+            &quot;width&quot;: 50.416656494140625,
+            &quot;right&quot;: 556.7166442871094,
+            &quot;bottom&quot;: 257.78334045410156,
+            &quot;height&quot;: 18
+        }
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[laptop app]] [[Progressive Web App]] PWA [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210703095621844" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[Draft of 'mobile app' by jsng]] [[laptop app]] [[Progressive Web App]] PWA [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210704040959241" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13973,7 +14002,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210701035926818" creator="jsng" list="[[mobile app]]" modified="20210703101058413" modifier="jsng" title="$:/StoryList">
+<div created="20210701035926818" creator="jsng" list="[[Why are mobile apps so large in size?]]" modified="20210703101058413" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -15158,6 +15187,45 @@ Instead, the web standardized on one way of doing so. This model of thinking abo
 </div>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
+</div>
+<div created="20210702093936256" creator="jsng" draft.of="mobile app" draft.title="mobile app" modified="20210704041146037" modifier="jsng" summary="Mobile apps, unlike web apps, can bundle resources and libraries to be installed to a mobile device. They can also request access to storage, and typically have a higher memory limit than web apps." tags="Topic:software" title="Draft of 'mobile app' by jsng" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+“Why use the mobile app when there’s already a website?”
+
+“Why even have a mobile app that looks almost exactly like the website?”
+
+I’m not going to answer from an aesthetic or user experience point of view, you’re all experts in your own preferences :) Instead, I’ll focus on what’s actually under the hood, and highlight some key differences between [[web app]]s and mobile apps.
+
+# Resources
+
+Web apps have to request every single image, video, non-text object on the page via a [[web request|HTTP request]]. [[Caching|cache]]—storing these resources for offline use—can reduce subsequent load times, but the first load will still be the most painful.
+
+A mobile app can package the most common, unchanging resources (logos, button images, backgrounds, etc) into the mobile app itself, so they can be loaded directly in the app, without having to make a web request and wait for the response. This lets it load faster&lt;&lt;fnote &quot;theoretically … in practice, many apps still have to retrieve other data from the server, so the loading speed improvement is marginal&quot;&gt;&gt;.
+
+# Flexibility
+
+The [[Document Object Model]] is how [[web app]]s keep track of all the page elements and their contents, but it is not the most efficient way to do so. A mobile app has more choice in deciding which user interface [[library]] it wants to use.
+
+# Storage access
+
+A mobile app can request permission to access [[storage]] on the mobile device, allowing it to store [[file]]s (images, data, ...) on the device without having to interrupt the user each time. It is not limited only to browser storage ([[localstorage]], [[sessionstorage]]) and browser [[database|Topic:database]]s ([[IndexedDB]]), but can use other kinds of storage and databases, if they are available on the mobile device, or bundled into the mobile app.
+
+# Memory use
+
+Both Android and iOS impose a [[memory]] limit on each app that is running. And they treat a mobile browser as a single app, despite all the web apps running inside it. So a web app has to share that limit with all the other web apps running in the mobile browser (which is why your tabs have to reload so often—they are also cleared often!).
+
+On the other hand, a mobile app can have that per-app limit all to itself.
+
+----------
+
+All told, a mobile app has more resources, which it requests directly from the OS instead of via the web browser, and it has more freedom in using those resources.
+
+How so? And more importantly, why are some mobile apps just so darn *huge*?
+
+This and mobile app sandboxing explained next issue.
+
+{{||readNextTemplate}}</pre>
 </div>
 <div created="20210613121827918" creator="jsng" modified="20210630080746851" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
@@ -17336,6 +17404,59 @@ Play with these two settings to find the best tradeoff between compression time 
 # [[codec]]
 
 &gt; {{codec}}</pre>
+</div>
+<div created="20210704040957337" creator="jsng" modified="20210704043754655" modifier="jsng" summary="Mobile apps are sandboxed by the operating system. As a result, they have to bundle all the libraries they need, and are not allowed to share libraries with other apps. This results in mobile apps with huge filesizes." tags="question Topic:software" title="Why are mobile apps so large in size?" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+In the process of creating an app, a developer often needs to use [[libraries|library]], which are ready-packaged chunks of code she can run without having to write the code herself. Some provide core functions (e.g. sending information via the Internet, or checking if a data connection is available), while some provide optional features (e.g. mobile payments, or user feedback systems).
+
+Libraries that provide core functions are typically provided by the [[operating system]] (OS), which ultimately controls the device’s resources, but all else have to be pulled in by the app, somehow.
+
+# Web apps vs mobile apps
+
+[[Web apps|web app]] pull in any resources they need through [[web requests|HTTP request]]. This includes any libraries that they need. The browser allows them to do this, but prevents access to most parts of the operating system, and allows limited access to camera, sound, storage, etc. The [[sandbox]]ing features of the browser make web apps generally safer to access.
+
+A mobile app, on the other hand, is sandboxed by the operating system. Most of the resources it needs have to be present at the time of running the app, and that includes libraries. In a non-sandboxed environment, commonly used libraries (e.g. mobile payment libraries) could be installed in the [[OS]] and shared by the apps. But this opens up a means of unauthorized access to multiple apps: hack this library successfully, and all other apps on the OS are also affected!
+
+The [[sandbox]]ing system in a mobile device does not allow this. Each app *must bundle all the libraries it requires*, to be installed into storage after downloading. This way, if an app has one or more libraries compromised, it would at least not expose the user’s data in other apps.
+
+# Libraries in a mobile app
+
+The tradeoff to separating all these mobile apps and preventing sharing, is that each app now comes with its own copy of all the libraries it needs. And the file size can really add up—you already see it in the huge app sizes. I unbundled the installation package of a popular shopping app, Lazada, just to see what is inside it.
+
+The list is way too long to post as an image, or even as text; it has over 300,000 code functions bundled inside! I should note that I am not an Android developer and can’t tell you very much about whether these libraries are absolutely necessary, but here are some noteworthy libraries included that I can make an educated guess about:
+
+1. Libraries to translate code from one [[programming language]] to another (often to translate an easier language into a faster or better-supported language)
+2. Compatibility fallback &amp; device evaluation libraries (probably for devices on older Android versions)
+3. Layout libraries (for calculating placement of window frames in devices with different screen sizes)
+4. Graphics, media, augmented reality (AR) libraries (for graphics rendering, video playback, capturing images from camera, etc)
+5. System, network, version detection and updating, etc
+6. Animation libraries (I see one from AirBnB)
+7. Analytics libraries (to track user and ad engagement, and do [[A/B testing]])
+8. Debug, [[crash]] reporting, logging libraries (for troubleshooting app crashes)
+9. Integration libraries (for login using Facebook and other accounts)
+10. Maps, location
+11. Search, image search, QR code, user feed, and related services
+12. [[Database|Topic:database]] access (it seems to use Google Firebase, in addition to others)
+13. Mobile payments
+
+and then there is the app itself, which contains code for:
+
+14. Address validation, checkout, delivery
+15. User feed and homepage, login management, recommendations
+16. Search
+
+and many others which I don’t know about.
+
+# Why aren’t web apps so huge then?
+
+They are! But they don’t need many of these (e.g. code translation and compatibility), and most of the libraries in 1–13 would have been loaded separately from the main page (see [[uMatrix]] for a visual example). Much of the functionality would not need to be loaded or installed upfront, only when it is required (e.g. map display).
+
+For a web app, many more functions would also have been offloaded to Lazada’s servers, such as address validation. On a mobile app, this code is included upon installation to reduce data usage.
+
+More importantly, you have little idea how large a web app really is, since you are never shown its filesize anywhere ;)
+
+{{||readNextTemplate}}</pre>
 </div>
 <div created="20210611063109639" creator="jsng" modified="20210611063136496" modifier="jsng" tags="question" title="Why are music files so large (a few MB) when a voice call over internet uses so little data?" type="text/x-markdown">
 <pre>This is not a question I can answer within one issue; you will have to wait until next issue for a complete answer :) But let’s start here.
