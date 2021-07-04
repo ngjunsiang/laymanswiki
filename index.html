@@ -2793,7 +2793,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[mobile app]] [[laptop app]] [[Progressive Web App]] PWA [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210703095621844" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[laptop app]] [[Progressive Web App]] PWA [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210703095621844" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13973,7 +13973,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210701035926818" creator="jsng" list="[[Why do web browsers take up so much memory?]] [[web app]]" modified="20210703095642616" modifier="jsng" title="$:/StoryList">
+<div created="20210701035926818" creator="jsng" list="[[mobile app]]" modified="20210703101058413" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -16119,10 +16119,41 @@ If you plan to come up with a file format that is intended to be used widely, yo
 <div created="20210624070707900" creator="jsng" modified="20210624070727883" modifier="jsng" tags="Glossary" title="MMU" type="text/x-markdown">
 <pre>**MMU** stands for [[memory management unit]].</pre>
 </div>
-<div created="20210702093936256" creator="jsng" modified="20210702100953187" modifier="jsng" tags="Topic:software" title="mobile app" type="text/x-markdown">
+<div created="20210702093936256" creator="jsng" modified="20210704040345933" modifier="jsng" tags="Topic:software" title="mobile app" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
+“Why use the mobile app when there’s already a website?”
 
+“Why even have a mobile app that looks almost exactly like the website?”
+
+I’m not going to answer from an aesthetic or user experience point of view, you’re all experts in your own preferences :) Instead, I’ll focus on what’s actually under the hood, and highlight some key differences between [[web app]]s and mobile apps.
+
+# Resources
+
+Web apps have to request every single image, video, non-text object on the page via a [[web request|HTTP request]]. [[Caching|cache]]—storing these resources for offline use—can reduce subsequent load times, but the first load will still be the most painful.
+
+A mobile app can package the most common, unchanging resources (logos, button images, backgrounds, etc) into the mobile app itself, so they can be loaded directly in the app, without having to make a web request and wait for the response. This lets it load faster&lt;&lt;fnote &quot;theoretically … in practice, many apps still have to retrieve other data from the server, so the loading speed improvement is marginal&quot;&gt;&gt;.
+
+## Flexibility
+
+The document object model, or DOM ([Issue 94](https://buttondown.email/laymansguide/archive/lmg-s8-issue-94-why-do-web-browsers-take-up-so/)) is how web apps keep track of all the elements and their contents on a page, but it is not the most efficient way to do so. A mobile app has more choice in deciding which user interface library ([Issue 17](https://buttondown.email/laymansguide/archive/lmg-s2-issue-17-libraries/)) it wants to use.
+
+## Storage access
+
+A mobile app can request permission to access storage on the mobile device, allowing it to store files (images, data, ...) on the device without having to interrupt the user each time. It is not limited only to browser storage interfaces (localstorage, sessionstorage) and browser databases (IndexedDB)—see [Issue 93](https://buttondown.email/laymansguide/archive/lmg-s7-issue-93-whats-in-a-web-app/)—but can use other kinds of interfaces and databases, if they are available on the mobile device, or bundled into the mobile app.
+
+## Memory use
+
+Both Android and iOS impose a memory limit on each app that is running. And they treat a mobile browser as a single app, despite all the web apps running inside it. So a web app has to share that limit with all the other web apps running in the mobile browser (which is why your tabs have to reload so often—they are also cleared often!).
+
+On the other hand, a mobile app can have that per-app limit all to itself.
+
+----------
+
+All told, a mobile app has more resources, which it requests directly from the OS instead of via the web browser, and it has more freedom in using those resources.
+How so? And more importantly, why are some mobile apps just so darn *huge*?
+
+This and mobile app sandboxing explained next issue.
 
 {{||readNextTemplate}}</pre>
 </div>
