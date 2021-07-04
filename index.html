@@ -597,6 +597,8 @@ Error message and password prompt
 
 <li>luma</li>
 
+<li>MacOS</li>
+
 <li>malware</li>
 
 <li>markup language</li>
@@ -2941,7 +2943,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="Topic:systems Linux MacOS Windows [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210704040959241" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="Topic:systems Linux Windows [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210704040959241" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -14121,7 +14123,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210701035926818" creator="jsng" list="[[laptop app]]" modified="20210704045852392" modifier="jsng" title="$:/StoryList">
+<div created="20210701035926818" creator="jsng" list="MacOS [[laptop app]]" modified="20210704050428341" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -16091,6 +16093,36 @@ For photograph images, you will generally hit diminishing returns below 85%: eac
 </div>
 <div created="20210611085714936" creator="jsng" modified="20210611085739968" modifier="jsng" tags="Glossary" title="luma" type="text/x-markdown">
 <pre>Refers to the brightness information (black-and-white) in an image.</pre>
+</div>
+<div created="20210704050434679" creator="jsng" modified="20210704050811549" modifier="jsng" summary="MacOS, Linux, and other similar systems treat everything as a file, organised into appropriate subfolders." tags="Topic:systems" title="MacOS" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+On ''MacOS'' (and [[Linux]]) systems, everything is a file. All files get stashed into some kind of folder.
+
+I personally prefer this because you have everything sorted into sensible top-level folders&lt;&lt;fnote &quot;There’s lots of things that make less sense once we get into more detail though&quot;&gt;&gt;.
+
+''MacOS'' has:
+
+* an `/Applications` folder for apps
+* a `/Library` folder for shared files (e.g. [[libraries|library]]), but on Mac this extends to things like sounds, profile pics, colors, ...)
+* a `/System` folder for, well, system files and stuff
+* a `/Network` folder for accessing resources on the [[network]] (such as shared folders)
+* a `/Users` folder for accessing user folders and files
+* a `/Drives` folder for accessing other [[storage]] devices (e.g. USB drives)
+
+and then, similar to Linux, it has `/bin`, `/etc` and other weird-looking folders that we don’t need to worry about at this point. Just treat them similar to system files and try not to touch them. The apps that we install generally do not clutter up these folders unnecessarily.
+
+Logos, backgrounds, buttons, and other application data? They go into `/Applications`.  
+What if other apps also need to use them? Then they go into `/Library`.  
+What if a user installs a program that they don’t want other users using? It goes into `/Users/username/Applications`.  
+User settings? They go into `/Users/username/Library` (under a subfolder for the app).  
+Temporary files? They go into `/Library/Caches`.
+
+[[Linux]] systems are similarly divided, but into differently named folders. Everything is still a file, and belongs in some folder somewhere.
+
+So to uninstall an app, you remove its files from `/Applications` or `/Users/username/Applications` and from `/Library`, and that’s usually it. Apps are usually quite good at doing that themselves, so you don’t need to worry.
+
+{{||readNextTemplate}}</pre>
 </div>
 <div created="20210702095609434" creator="jsng" modified="20210702095609434" modifier="jsng" title="malware">
 <pre></pre>
