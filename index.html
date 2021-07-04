@@ -635,6 +635,8 @@ Error message and password prompt
 
 <li>multi-user databases</li>
 
+<li>multithreading</li>
+
 <li>newline</li>
 
 <li>OCR</li>
@@ -1298,7 +1300,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Linux" modified="20210704050948725" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="thread" modified="20210704053209470" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2962,10 +2964,21 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;Linux&quot;
+    },
+    {
+        &quot;title&quot;: &quot;thread&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 45.44999694824219,
+            &quot;left&quot;: 713.5166625976562,
+            &quot;width&quot;: 32.90000915527344,
+            &quot;right&quot;: 746.4166717529297,
+            &quot;bottom&quot;: 84.93333435058594,
+            &quot;height&quot;: 39.48333740234375
+        }
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="Topic:systems [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210704040959241" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="thread Topic:systems [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210704053209464" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -14145,7 +14158,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210701035926818" creator="jsng" list="thread crash" modified="20210704052036392" modifier="jsng" title="$:/StoryList">
+<div created="20210701035926818" creator="jsng" list="multithreading crash" modified="20210704052036392" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -16460,6 +16473,39 @@ When multiple users access a database and attempt to write data to it at the sam
 But sometimes, conflicting actions can end up getting queued. For instance, User 1 might send a command to delete a table while User 2 sends a command to retrieve data from that table (because it had not been deleted at the point when User 2 accessed it). User 1’s command gets through first and deletes the table, and when the database reaches User 2’s command, it is no longer able to execute it. What happens then?
 
 Well, that’s when the database throws an [[error]]. A database system is programmed to detect actions whose logic conflict with other actions. With our previous text-based system, even with the table gone, the program could still continue to search for results, and finding none, return empty data instead of alerting the user.
+
+{{||readNextTemplate}}</pre>
+</div>
+<div created="20210704053211062" creator="jsng" list-after="[[thread]]" modified="20210704053441529" modifier="jsng" summary="A race condition happens when threads depend on instructions happening with coincidental timing for success. When instructions are not executed with appropriate timing, one or more threads can get stuck waiting on a response that never comes." tags="Topic:systems" title="multithreading" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+# Multithreading
+
+An [[app]] can [[hang]] if its sole [[thread]] gets stuck. In some cases, an app can be written to make use of multiple threads. This is possible when a computer has more than one processing core, or if an operating system is designed to divide computing time among multiple threads.
+
+# Race conditions
+
+Trying to design apps to use multiple threads is hard! Apps running into an error is one thing; a more subtle form of failure is known as a [[race condition]]. This happens when the success of two or more tasks depend on near-perfect timing which the threads have little control over.
+
+# Main and secondary threads
+
+A common pattern is to have the app’s graphical interface and main code run in its own thread, with any subsidiary tasks (such as opening files) running in a secondary thread. If the task in the secondary thread is taking too long, the main thread can still issue instructions to terminate the secondary thread’s task, and thereby restore order and control.
+
+Sounds fair enough. How might this fail?
+
+Lets take an example: the main thread has a task that involves sending a signal to secondary thread, and then waiting for a response from it. Secondary thread has a task that involves sending a signal to main thread, and then waiting for a response from it. Both tasks complete successfully when they are carried out independently. But what if the main and secondary threads both run those tasks near-simultaneously, before the other thread has a chance to respond? They both get stuck waiting for a response. The app has just hung!
+
+# Multiple worker threads
+
+Another pattern is to split the job up into multiple parts, and have multiple threads each take a part of the job. When they have all completed, the completed parts are then stitched back together into the finished result.
+
+But this has its own ways of failing too.
+
+The threads have to coordinate their job status, and often do so by updating a common set of data. Thread 1 might request access to that data to update it. To ensure that the data doesn’t change before it is done, it will usually request a lock ([Issue 82](https://buttondown.email/laymansguide/archive/lmg-s7-issue-82-multiplayer-databases/)) on it, to prevent other threads from modifying it at the same time.
+
+One way this can fail in practice is if two or more worker threads request a lock simultaneously. They both get a lock, because at the moment their requests are processed, nothing else has locked the resource. But now they can’t proceed to modify the data because it has been locked by another thread that isn’t them.
+
+This situation is known as a **deadlock**. This and similar situations are just one out of many ways that apps can hang.
 
 {{||readNextTemplate}}</pre>
 </div>
