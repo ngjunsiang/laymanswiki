@@ -491,8 +491,6 @@ Error message and password prompt
 
 <li>DPI</li>
 
-<li>Draft of 'mobile app' by jsng</li>
-
 <li>editing a PDF file</li>
 
 <li>encode</li>
@@ -1286,7 +1284,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="library" modified="20210704043002122" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="mobile app" modified="20210704043758592" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2819,10 +2817,13 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 257.78334045410156,
             &quot;height&quot;: 18
         }
+    },
+    {
+        &quot;title&quot;: &quot;mobile app&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[Draft of 'mobile app' by jsng]] [[laptop app]] [[Progressive Web App]] PWA [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210704040959241" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[mobile app]] [[laptop app]] [[Progressive Web App]] PWA [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210704040959241" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -14002,7 +14003,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210701035926818" creator="jsng" list="[[Why are mobile apps so large in size?]]" modified="20210703101058413" modifier="jsng" title="$:/StoryList">
+<div created="20210701035926818" creator="jsng" list="" modified="20210703101058413" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -15188,45 +15189,6 @@ Instead, the web standardized on one way of doing so. This model of thinking abo
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210702093936256" creator="jsng" draft.of="mobile app" draft.title="mobile app" modified="20210704041146037" modifier="jsng" summary="Mobile apps, unlike web apps, can bundle resources and libraries to be installed to a mobile device. They can also request access to storage, and typically have a higher memory limit than web apps." tags="Topic:software" title="Draft of 'mobile app' by jsng" type="text/x-markdown">
-<pre>{{||prereqTemplate}}
-
-“Why use the mobile app when there’s already a website?”
-
-“Why even have a mobile app that looks almost exactly like the website?”
-
-I’m not going to answer from an aesthetic or user experience point of view, you’re all experts in your own preferences :) Instead, I’ll focus on what’s actually under the hood, and highlight some key differences between [[web app]]s and mobile apps.
-
-# Resources
-
-Web apps have to request every single image, video, non-text object on the page via a [[web request|HTTP request]]. [[Caching|cache]]—storing these resources for offline use—can reduce subsequent load times, but the first load will still be the most painful.
-
-A mobile app can package the most common, unchanging resources (logos, button images, backgrounds, etc) into the mobile app itself, so they can be loaded directly in the app, without having to make a web request and wait for the response. This lets it load faster&lt;&lt;fnote &quot;theoretically … in practice, many apps still have to retrieve other data from the server, so the loading speed improvement is marginal&quot;&gt;&gt;.
-
-# Flexibility
-
-The [[Document Object Model]] is how [[web app]]s keep track of all the page elements and their contents, but it is not the most efficient way to do so. A mobile app has more choice in deciding which user interface [[library]] it wants to use.
-
-# Storage access
-
-A mobile app can request permission to access [[storage]] on the mobile device, allowing it to store [[file]]s (images, data, ...) on the device without having to interrupt the user each time. It is not limited only to browser storage ([[localstorage]], [[sessionstorage]]) and browser [[database|Topic:database]]s ([[IndexedDB]]), but can use other kinds of storage and databases, if they are available on the mobile device, or bundled into the mobile app.
-
-# Memory use
-
-Both Android and iOS impose a [[memory]] limit on each app that is running. And they treat a mobile browser as a single app, despite all the web apps running inside it. So a web app has to share that limit with all the other web apps running in the mobile browser (which is why your tabs have to reload so often—they are also cleared often!).
-
-On the other hand, a mobile app can have that per-app limit all to itself.
-
-----------
-
-All told, a mobile app has more resources, which it requests directly from the OS instead of via the web browser, and it has more freedom in using those resources.
-
-How so? And more importantly, why are some mobile apps just so darn *huge*?
-
-This and mobile app sandboxing explained next issue.
-
-{{||readNextTemplate}}</pre>
-</div>
 <div created="20210613121827918" creator="jsng" modified="20210630080746851" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
 
@@ -16187,7 +16149,7 @@ If you plan to come up with a file format that is intended to be used widely, yo
 <div created="20210624070707900" creator="jsng" modified="20210624070727883" modifier="jsng" tags="Glossary" title="MMU" type="text/x-markdown">
 <pre>**MMU** stands for [[memory management unit]].</pre>
 </div>
-<div created="20210702093936256" creator="jsng" modified="20210704040953278" modifier="jsng" tags="Topic:software" title="mobile app" type="text/x-markdown">
+<div created="20210702093936256" creator="jsng" modified="20210704043758577" modifier="jsng" summary="Mobile apps, unlike web apps, can bundle resources and libraries to be installed to a mobile device. They can also request access to storage, and typically have a higher memory limit than web apps." tags="Topic:software" title="mobile app" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 “Why use the mobile app when there’s already a website?”
