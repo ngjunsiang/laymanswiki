@@ -747,6 +747,8 @@ Error message and password prompt
 
 <li>Text representation in computers</li>
 
+<li>thread</li>
+
 <li>throughput</li>
 
 <li>TiB</li>
@@ -14143,7 +14145,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210701035926818" creator="jsng" list="crash" modified="20210704052036392" modifier="jsng" title="$:/StoryList">
+<div created="20210701035926818" creator="jsng" list="thread crash" modified="20210704052036392" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -17293,6 +17295,39 @@ Circa the ’90s and early ’00s, the internet often had pages of what looked l
 This was obviously untenable as a long-term solution. A universal [[encoding table]], [[Unicode]], was created to allow all computer users to use a common encoding table that is able to represent any character or symbol that would need to be displayed.
 
 Main article: [[Unicode]]</pre>
+</div>
+<div created="20210704052741219" creator="jsng" modified="20210704053127454" modifier="jsng" summary="Applications are assigned a thread by the OS for running a sequence of instructions. The instructions are executed sequentially, and the app cannot proceed if it gets stuck on any instruction." tags="Glossary Topic:systems" title="thread" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+This card is a prelude to talking about app [[hang]]s. Hangs are both simple yet complicated to talk about, but there’s a piece of the puzzle that has to come into the picture first. That piece is about how apps work.
+
+In a computer, the [[operating system]] ([[OS]]) has to coordinate the requested actions of so many different apps. How does it know which action came from which app?
+
+Through a mechanism known as **threads**.
+
+# Threading
+
+When you run an app, the [[OS]] creates a separate thread. A thread is a sequence of programmed instructions, like a thread of thought. Or a thread of bureaucracy. The OS completes each instruction in the thread, and if it gets stuck on any single task, it cannot move on.
+
+Sometimes, this is good and necessary, like when you need input from the user (don’t be doing anything else until I tell you what I need!). Other times, it is unnecessary waiting.
+
+# What causes threads to get stuck?
+
+Some of us really hate math, but computers don’t! The math is hardly ever what causes threads to stop.
+
+Like in the workplace, it is often other ~~people~~ devices.
+
+When an app (running in a thread) tries to open a file to read data from it, the operating system has to look up the [[virtual memory]]  address, follow it to the [[hard disk]] or [[solid state drive]], and then wait for the disk to respond with the data.
+
+And in that moment, *lots* of things can go wrong.
+
+If the storage device is failing, and unable to read the [[sector]] where the data resides, it will usually keep attempting to do so. Meanwhile, back in the OS, the thread is stuck. It cannot move on, because the previous instruction to open the file has not completed. It can’t even decide to abort the currently-running instruction—telling the app to stop **is already another instruction** which has to wait!
+
+The only thing to do now is wait for the OS to realize that this thread is taking too long to do its thing, and forcibly terminate the thread. This is known as a thread [[timeout]].
+
+Is there any way to work around this? Yep! The termination instruction has to come from a separate thread. This means the app has to run multiple threads.
+
+{{||readNextTemplate}}</pre>
 </div>
 <div created="20210624072228395" creator="jsng" modified="20210628211515943" modifier="jsng" tags="Glossary WIP" title="throughput" type="text/x-markdown">
 <pre>Let’s look at the transfer speeds and [[latencies|latency]] for a few places where data can be stored:
