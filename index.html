@@ -1324,7 +1324,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="filesystem" modified="20210710091227642" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="storage management" modified="20210710091327560" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -3333,10 +3333,21 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;filesystem&quot;
+    },
+    {
+        &quot;title&quot;: &quot;storage management&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 859.3499755859375,
+            &quot;left&quot;: 506.29998779296875,
+            &quot;width&quot;: 133.23333740234375,
+            &quot;right&quot;: 639.5333251953125,
+            &quot;bottom&quot;: 877.3499755859375,
+            &quot;height&quot;: 18
+        }
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="filesystem [[storage device]] Topic:systems [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210710085627884" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[storage management]] filesystem [[storage device]] Topic:systems [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210710085627884" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -15942,7 +15953,7 @@ Sounds fair enough. The ALU finds out I am not my neighbour, and I don’t get t
 
 Main article: [[lossy audio compression]]</pre>
 </div>
-<div created="20210702095609428" creator="jsng" list-before="[[storage management]]" modified="20210710091306413" modifier="jsng" summary="A hard disk is organised into sectors, which are the smallest unit of storage. The OS’s filesystem determines how and where to store each file on the hard disk. The filesystem manages the file metadata in a file table, separate from the actual contents of the file." tags="Topic:systems" title="file" type="text/x-markdown">
+<div created="20210702095609428" creator="jsng" modified="20210710091404214" modifier="jsng" summary="A hard disk is organised into sectors, which are the smallest unit of storage. The OS’s filesystem determines how and where to store each file on the hard disk. The filesystem manages the file metadata in a file table, separate from the actual contents of the file." tags="Topic:systems" title="file" type="text/x-markdown">
 <pre># Files in operating systems
 
 Let’s start from what we know about files. When we open File Explorer in Windows and open any folder (aka [[directory]]), we see a bunch of things with colourful icons, that we know of as **files**. And we also see things with folder icons that we know as folders (or directories).
@@ -15961,7 +15972,9 @@ Each sector has an address (yes, just like memory!). To store data on the hard d
 
 The [[hard disk drive]] itself does not inherently have any system for managing your files or folders; it can’t tell you where `draft1.docx` is stored, nor tell you what the size is. It only takes care of storing data at addresses, and retrieving data from addresses!
 
-{{readNextTemplate}}</pre>
+Related: [[storage management]], [[filesystem]]
+
+{{||readNextTemplate}}</pre>
 </div>
 <div created="20210613073902447" creator="jsng" modified="20210613074139609" modifier="jsng" tags="Glossary" title="file extension" type="text/x-markdown">
 <pre>**File extensions** are the ending characters in the filename, after the period (`.`).
