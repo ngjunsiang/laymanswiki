@@ -1302,7 +1302,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="thread" modified="20210710045924911" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="thread" modified="20210710050057833" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2988,6 +2988,12 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 340.3833312988281,
             &quot;height&quot;: 18
         }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'thread' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;thread&quot;
     },
     {
         &quot;title&quot;: &quot;Draft of 'thread' by jsng&quot;
@@ -17394,7 +17400,7 @@ This was obviously untenable as a long-term solution. A universal [[encoding tab
 
 Main article: [[Unicode]]</pre>
 </div>
-<div created="20210704052741219" creator="jsng" modified="20210710045924898" modifier="jsng" summary="Applications are assigned a thread by the OS for running a sequence of instructions. The instructions are executed sequentially, and the app cannot proceed if it gets stuck on any instruction." tags="Glossary Topic:systems" title="thread" type="text/x-markdown">
+<div created="20210704052741219" creator="jsng" list-before="[[multithreading]]" modified="20210710050057822" modifier="jsng" summary="Applications are assigned a thread by the OS for running a sequence of instructions. The instructions are executed sequentially, and the app cannot proceed if it gets stuck on any instruction." tags="Glossary Topic:systems" title="thread" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 This card is a prelude to talking about [[application]] [[hang]]s. Hangs are both simple yet complicated to talk about, but there’s a piece of the puzzle that has to come into the picture first. That piece is about how apps work.
@@ -17419,9 +17425,9 @@ When an app (running in a thread) tries to open a file to read data from it, the
 
 And in that moment, *lots* of things can go wrong.
 
-If the storage device is failing, and unable to read the [[sector]] where the data resides, it will usually keep attempting to do so. Meanwhile, back in the OS, the thread is stuck. It cannot move on, because the previous instruction to open the file has not completed. It can’t even decide to abort the currently-running instruction—telling the app to stop **is already another instruction** which has to wait!
+If the [[storage device]] is failing, and unable to read the [[sector]] where the data resides, it will usually keep attempting to do so. Meanwhile, back in the OS, the thread is stuck. It cannot move on, because the previous instruction to open the file has not completed. It can’t even decide to abort the currently-running [[instruction|CPU instruction]]—telling the app to stop **requires another instruction** which has to wait!
 
-The only thing to do now is wait for the OS to realize that this thread is taking too long to do its thing, and forcibly terminate the thread. This is known as a thread [[timeout]].
+The only thing to do now is wait for the [[OS]] to realize that this thread is taking too long to do its thing, and forcibly terminate the thread. This is known as a thread [[timeout]].
 
 Is there any way to work around this? Yep! The termination instruction has to come from a separate thread. This means the app has to run multiple threads.
 
