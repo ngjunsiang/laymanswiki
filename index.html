@@ -1326,7 +1326,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="filesystem" modified="20210710091200411" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="filesystem" modified="20210710091227642" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -3323,6 +3323,12 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 425.58331298828125,
             &quot;height&quot;: 18
         }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'filesystem' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;filesystem&quot;
     },
     {
         &quot;title&quot;: &quot;Draft of 'filesystem' by jsng&quot;
@@ -15733,7 +15739,7 @@ Instead, the web standardized on one way of doing so. This model of thinking abo
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210702095609428" creator="jsng" draft.of="file" draft.title="file" modified="20210710090210066" modifier="jsng" summary="A hard disk is organised into sectors, which are the smallest unit of storage. The OS’s filesystem determines how and where to store each file on the hard disk. The filesystem manages the file metadata in a file table, separate from the actual contents of the file." tags="Topic:systems" title="Draft of 'file' by jsng" type="text/x-markdown">
+<div created="20210702095609428" creator="jsng" draft.of="file" draft.title="file" modified="20210710091219750" modifier="jsng" summary="A hard disk is organised into sectors, which are the smallest unit of storage. The OS’s filesystem determines how and where to store each file on the hard disk. The filesystem manages the file metadata in a file table, separate from the actual contents of the file." tags="Topic:systems" title="Draft of 'file' by jsng" type="text/x-markdown">
 <pre># Files in operating systems
 
 Let’s start from what we know about files. When we open File Explorer in Windows and open any folder (aka [[directory]]), we see a bunch of things with colourful icons, that we know of as **files**. And we also see things with folder icons that we know as folders (or directories).
@@ -15752,21 +15758,7 @@ Each sector has an address (yes, just like memory!). To store data on the hard d
 
 The [[hard disk drive]] itself does not inherently have any system for managing your files or folders; it can’t tell you where `draft1.docx` is stored, nor tell you what the size is. It only takes care of storing data at addresses, and retrieving data from addresses!
 
-# Managing storage
 
-And this is where the operating system comes in. An operating system installing itself is like a company occupying a warehouse. You’ve got to impose some kind of order on the space!
-
-In an operating system, this job is delegated to the **file system**, a sort of facility director who manages the storage space. Windows uses [NT File System](https://en.wikipedia.org/wiki/NTFS) (**NTFS**) for its own space, MacOS uses [High Performance File System](https://en.wikipedia.org/wiki/High_Performance_File_System) (**HPFS**), while portable storage devices (e.g. USB drives) often use [File Allocation Table](https://en.wikipedia.org/wiki/File_Allocation_Table) (FAT).
-
-An operating system that is not “aware” of other filesystems will not be able to read storage devices formatted with those filesystems. This is why you can’t just take out a disk from a Mac system and expect it to open in Windows when plugged in. Windows can read HPFS disks, but cannot write data to them. Both OSes can handle FAT (phew!), which is why it is possible to pass files from a Windows user to a Mac user with a portable flash disk.
-
-## How filesystems work
-
-Intuitively, we might imagine that the metadata for each file gets stored with its data. This is like storing the shipment details of each package with the package itself. But when you need to find a particular shipment in the warehouse, you can’t be checking every single rack!
-
-Instead, you would store shipment records in a master file, usually in some kind of separate office, which would list the shipment details alongside the location of the cargo (e.g. by rack number and level). The equivalent of this master file on a filesystem is the **file table**.
-
-In NTFS, this is the Master File Table (MFT). The MFT lists all the files on the disk (by their full path, e.g. `C:\Windows\system32\notepad.exe`), along with its metadata. This makes it easy for Windows to show you the data quickly when you open any folder in File Explorer; it can get all this data from the MFT easily!
 
 Sounds peachy. What can go wrong with this picture?</pre>
 </div>
@@ -15986,12 +15978,12 @@ A file named `sound.mp3` has a `.mp3` file extension, and a file named `image.gi
 <div created="20210613073855661" creator="jsng" modified="20210613073856979" modifier="jsng" tags="Glossary" title="file header">
 <pre></pre>
 </div>
-<div created="20210710091050060" creator="jsng" modified="20210710091200398" modifier="jsng" tags="Topic:systems" title="filesystem" type="text/x-markdown">
+<div created="20210710091050060" creator="jsng" modified="20210710091227632" modifier="jsng" tags="Topic:systems" title="filesystem" type="text/x-markdown">
 <pre>Intuitively, we might imagine that the [[metadata]] for each file gets stored with its data. In container shipping, This is like storing the shipment details of each package with the package itself. But when you need to find a particular shipment in the warehouse, you can’t be checking every single rack!
 
 Instead, you would store shipment records in a master file, usually in some kind of separate office, which would list the shipment details alongside the location of the cargo (e.g. by rack number and level). The equivalent of this master file on a **filesystem** is the [[file table]].
 
-In [[NTFS]], this is the [[Master File Table]] ([[MFT]]). The MFT lists all the files on the disk (by their full path, e.g. `C:\Windows\system32\notepad.exe`), along with its metadata. This makes it easy for Windows to show you the data quickly when you open any folder in File Explorer; it can get all this data from the MFT easily!</pre>
+In [[NTFS]], this is the [[Master File Table]] ([[MFT]]). The MFT lists all the files on the disk (by their full path, e.g. `C:\Windows\system32\notepad.exe`), along with its metadata. This makes it easy for Windows to show you the data quickly when you open any folder in File Explorer; it can get all this data from the MFT easily.</pre>
 </div>
 <div created="20210702095609446" creator="jsng" modified="20210702095609446" modifier="jsng" title="Firefox">
 <pre></pre>
