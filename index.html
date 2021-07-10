@@ -1302,7 +1302,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="thread" modified="20210710050057833" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="thread" modified="20210710050226524" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2988,6 +2988,12 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 340.3833312988281,
             &quot;height&quot;: 18
         }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'thread' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;thread&quot;
     },
     {
         &quot;title&quot;: &quot;Draft of 'thread' by jsng&quot;
@@ -15404,16 +15410,16 @@ Instead, the web standardized on one way of doing so. This model of thinking abo
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210704053211062" creator="jsng" draft.of="multithreading" draft.title="multithreading" list-after="[[thread]]" modified="20210704053443263" modifier="jsng" summary="A race condition happens when threads depend on instructions happening with coincidental timing for success. When instructions are not executed with appropriate timing, one or more threads can get stuck waiting on a response that never comes." tags="Topic:systems" title="Draft of 'multithreading' by jsng" type="text/x-markdown">
+<div created="20210704053211062" creator="jsng" draft.of="multithreading" draft.title="multithreading" list-after="[[thread]]" modified="20210710050212319" modifier="jsng" summary="A race condition happens when threads depend on instructions happening with coincidental timing for success. When instructions are not executed with appropriate timing, one or more threads can get stuck waiting on a response that never comes." tags="Topic:systems" title="Draft of 'multithreading' by jsng" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 # Multithreading
 
-An [[app]] can [[hang]] if its sole [[thread]] gets stuck. In some cases, an app can be written to make use of multiple threads. This is possible when a computer has more than one processing core, or if an operating system is designed to divide computing time among multiple threads.
+An [[application]] can [[hang]] if its sole [[thread]] gets stuck. In some cases, an [[application]] can be written to make use of multiple threads. This is possible when a computer has more than one processing core, or if an [[operating system]] ([[OS]]) is designed to divide computing time among multiple threads (a feature called [[timesharing]]; modern [[OS]]es have this).
 
 # Race conditions
 
-Trying to design apps to use multiple threads is hard! Apps running into an error is one thing; a more subtle form of failure is known as a [[race condition]]. This happens when the success of two or more tasks depend on near-perfect timing which the threads have little control over.
+Trying to design applications to use multiple threads is hard! Applications running into an error is one thing; a more subtle form of failure is known as a [[race condition]]. This happens when the success of two or more tasks depend on near-perfect timing which the threads have little control over.
 
 # Main and secondary threads
 
@@ -17400,7 +17406,7 @@ This was obviously untenable as a long-term solution. A universal [[encoding tab
 
 Main article: [[Unicode]]</pre>
 </div>
-<div created="20210704052741219" creator="jsng" list-before="[[multithreading]]" modified="20210710050057822" modifier="jsng" summary="Applications are assigned a thread by the OS for running a sequence of instructions. The instructions are executed sequentially, and the app cannot proceed if it gets stuck on any instruction." tags="Glossary Topic:systems" title="thread" type="text/x-markdown">
+<div created="20210704052741219" creator="jsng" list-before="[[multithreading]]" modified="20210710050226511" modifier="jsng" summary="Applications are assigned a thread by the OS for running a sequence of instructions. The instructions are executed sequentially, and the app cannot proceed if it gets stuck on any instruction." tags="Glossary Topic:systems" title="thread" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 This card is a prelude to talking about [[application]] [[hang]]s. Hangs are both simple yet complicated to talk about, but there’s a piece of the puzzle that has to come into the picture first. That piece is about how apps work.
@@ -17411,7 +17417,7 @@ Through a mechanism known as **threads**.
 
 # Threading
 
-When you run an app, the [[OS]] creates a separate thread. A thread is a sequence of programmed instructions, like a thread of thought. Or a thread of bureaucracy. The OS completes each instruction in the thread, and if it gets stuck on any single task, it cannot move on.
+When you run an application, the [[OS]] creates a separate thread. A thread is a sequence of programmed instructions, like a thread of thought. Or a thread of bureaucracy. The OS completes each instruction in the thread, and if it gets stuck on any single task, it cannot move on.
 
 Sometimes, this is good and necessary, like when you need input from the user (don’t be doing anything else until I tell you what I need!). Other times, it is unnecessary waiting.
 
