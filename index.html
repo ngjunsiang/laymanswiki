@@ -495,6 +495,8 @@ Error message and password prompt
 
 <li>Draft of 'file' by jsng</li>
 
+<li>Draft of 'hard disk drive' by jsng</li>
+
 <li>editing a PDF file</li>
 
 <li>encode</li>
@@ -724,6 +726,8 @@ Error message and password prompt
 <li>sessionstorage</li>
 
 <li>shared memory</li>
+
+<li>solid state drive</li>
 
 <li>specification</li>
 
@@ -1308,7 +1312,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="memory addressing" modified="20210710085520859" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="solid state drive" modified="20210710085616825" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -3152,10 +3156,41 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;memory addressing&quot;
+    },
+    {
+        &quot;title&quot;: &quot;hard disk drive&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 686.183349609375,
+            &quot;left&quot;: 607.7666625976562,
+            &quot;width&quot;: 90.26667785644531,
+            &quot;right&quot;: 698.0333404541016,
+            &quot;bottom&quot;: 704.183349609375,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;solid state drive&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 686.183349609375,
+            &quot;left&quot;: 721.63330078125,
+            &quot;width&quot;: 97.93333435058594,
+            &quot;right&quot;: 819.5666351318359,
+            &quot;bottom&quot;: 704.183349609375,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'solid state drive' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'hard disk drive' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;solid state drive&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[memory addressing]] [[laptop app]] thread Topic:systems [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210710085223689" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[solid state drive]] [[Draft of 'hard disk drive' by jsng]] thread Topic:systems [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210710085223689" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -15556,7 +15591,7 @@ Instead, the web standardized on one way of doing so. This model of thinking abo
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210702095609428" creator="jsng" draft.of="file" draft.title="file" modified="20210710085509081" modifier="jsng" summary="A hard disk is organised into sectors, which are the smallest unit of storage. The OS’s filesystem determines how and where to store each file on the hard disk. The filesystem manages the file metadata in a file table, separate from the actual contents of the file." tags="Topic:systems" title="Draft of 'file' by jsng" type="text/x-markdown">
+<div created="20210702095609428" creator="jsng" draft.of="file" draft.title="file" modified="20210710085543267" modifier="jsng" summary="A hard disk is organised into sectors, which are the smallest unit of storage. The OS’s filesystem determines how and where to store each file on the hard disk. The filesystem manages the file metadata in a file table, separate from the actual contents of the file." tags="Topic:systems" title="Draft of 'file' by jsng" type="text/x-markdown">
 <pre># Files in operating systems
 
 Let’s start from what we know about files. When we open File Explorer in Windows and open any folder (aka [[directory]]), we see a bunch of things with colourful icons, that we know of as **files**. And we also see things with folder icons that we know as folders (or directories).
@@ -15567,7 +15602,7 @@ Now, a brief introduction to the hardware, where the actual files get stored.
 
 # Introducing storage
 
-When you buy a [[hard disk drive]] (or solid state drive) and connect it up to your computer (or laptop), the computer does not have fine-grained control over every bit of storage. Instead, the [[hard disk drive]] gets presented as a huge volume of space, like a warehouse.
+When you buy a [[hard disk drive]] (or [[solid state drive]]) and connect it up to your computer (or laptop), the computer does not have fine-grained control over every bit of storage. Instead, the [[hard disk drive]] gets presented as a huge volume of space, like a warehouse.
 
 This volume is organised into **sectors** (these days, a modern [[hard disk drive]] sector is 4KiB), which are the smallest unit of storage on a hard disk. If you have to store 1KiB of data, it will still take up an entire sector; the rest of the space is filled with zeroes. This is similar to the way a warehouse is managed by pallets, and not by single cardboard boxes. If your shipment does not fill the entire pallet, the rest of the space is “wasted”.
 
@@ -15592,6 +15627,9 @@ Instead, you would store shipment records in a master file, usually in some kind
 In NTFS, this is the Master File Table (MFT). The MFT lists all the files on the disk (by their full path, e.g. `C:\Windows\system32\notepad.exe`), along with its metadata. This makes it easy for Windows to show you the data quickly when you open any folder in File Explorer; it can get all this data from the MFT easily!
 
 Sounds peachy. What can go wrong with this picture?</pre>
+</div>
+<div created="20210710085609375" creator="jsng" draft.of="hard disk drive" draft.title="hard disk drive" modified="20210710085612187" modifier="jsng" tags="[[storage device]] Topic:hardware" title="Draft of 'hard disk drive' by jsng">
+<pre></pre>
 </div>
 <div created="20210613121827918" creator="jsng" modified="20210630080746851" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
@@ -17178,6 +17216,9 @@ We can see that:
 3. Some libraries are still loaded privately, and both programs still have a heap for their own data which is not meant to be accessible to other programs
 
 You can see why the application memory usage shown in Task Manager/System Monitor doesn’t always tally with the total memory usage. Application memory usage usually shows both private+shared memory usage, so that will add up to a number greater than the total memory usage.</pre>
+</div>
+<div created="20210710085600726" creator="jsng" modified="20210710085616819" modifier="jsng" tags="[[storage device]] Topic:hardware" title="solid state drive">
+<pre></pre>
 </div>
 <div created="20210613073650264" creator="jsng" modified="20210613074245924" modifier="jsng" tags="Glossary" title="specification" type="text/x-markdown">
 <pre># Header formats are stated in specifications
