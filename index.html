@@ -493,8 +493,6 @@ Error message and password prompt
 
 <li>DPI</li>
 
-<li>Draft of 'New Tiddler' by jsng</li>
-
 <li>editing a PDF file</li>
 
 <li>encode</li>
@@ -796,6 +794,8 @@ Error message and password prompt
 <li>What are these popups on some websites asking you to install them?</li>
 
 <li>When I put a zip file in another zip file, why is the second zip file no smaller in size that the first?</li>
+
+<li>Where do my secrets get stored? If I don’t want them to be stored, what are my options?</li>
 
 <li>Why am I getting a Missing Codec Error when I open a video file?</li>
 
@@ -3039,7 +3039,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[environment variables]] thread Topic:systems [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210704053209464" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="thread Topic:systems [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210704053209464" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -14219,7 +14219,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210701035926818" creator="jsng" list="[[Draft of 'New Tiddler' by jsng]] multithreading crash" modified="20210710050545975" modifier="jsng" title="$:/StoryList">
+<div created="20210701035926818" creator="jsng" list="[[Where do my secrets get stored? If I don’t want them to be stored, what are my options?]] multithreading crash" modified="20210710050545975" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -15439,51 +15439,6 @@ Instead, the web standardized on one way of doing so. This model of thinking abo
 </div>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
-</div>
-<div created="20210710050544257" creator="jsng" draft.of="New Tiddler" draft.title="Where do my secrets get stored? If I don’t want them to be stored, what are my options?" modified="20210710050949639" modifier="jsng" summary="Shared secrets allow secured access to resources, such as databases or other services. These shared secrets are typically kept on a server controlled by the app developer. For mobile apps, they are usually stored with the operating system, inaccessible to other apps." tags="question" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
-<pre># Why would I want to keep secrets from my users?
-
-You just wrote an [[application]] (app). Your app syncs data to a cloud [[database|Topic:database]]. But the cloud database services many other users as well—how would it know it is you and not some other malicious hacker?
-
-It recognizes you via a [[shared secret]]: a token or an [[API]] key that you can see after you log in to your dashboard on their website.
-
-After your users install the app, every request sent by your app to the cloud database has to be authenticated using this shared secret. That means you are going to have to get this shared secret onto the app somehow. But this has to happen without the user being able to see it or access it, otherwise a savvy user could use that key to gain access to your cloud database.
-
-# Storing secrets on the web
-
-The code that is loaded by the user’s browser runs under their control, so putting the shared secret anywhere in that code is a bad idea. Any savvy user who knows how to view the script’s [[source|source code]] can potentially find it!
-
-A much safer option is to store the secret, together with the code, on *your* [[server]]. But not in the server’s source code! If you are most developers, you would be using some kind of [[version control system]] that maintains a copy of your source code and all its changes. If you are using [[GitHub]] or some other public platform for this, you have to be very careful that the [[shared secret]] is not visible (or otherwise guessable) just by reading the [[source code]].
-
-For a simple shared secret, such as a short string of characters, app developers usually use [[environment variables]].
-
-## Storing secrets in a mobile app
-
-Mobile apps are supported by a host of services provided by the operating system (OS), typically managed by Google or Apple. They each offer a way for you to store a shared secret with the OS. Your app can use this shared secret from the OS to encrypt information so that other apps are not able to access it. When your app starts up, it requests the secret from the OS, and uses it to decrypt the secret again.
-
-## Storing secrets in a laptop app
-
-If you are developing a laptop app that does not rely on a connection to your server (i.e. a “standalone” app), your options are somewhat more limited. Since all your app code and resources will be in the user’s machine and thus accessible to the user, your best bet is to find some way to obfuscate it and hope no one finds it easily.
-
-This is one reason why so many apps require an online connection: it is much easier to hide secrets on a machine you own and control! With a server connection, you can require the app to retrieve the secret from the server, and delete the temporary copy of the secret after use.
-
-## Storing passwords
-
-If your users log in with an email and password (which is almost every online service ever), you don‘t actually store their passwords; that is terrible security practice, even if you do it in a database! A nifty piece of software technology, known as a **hash function**, takes that password (regardless of length) and turns it into a unique[^1] **hash** with a fixed number of characters.
-
-[^1]: In practice, there is a very low chance that two different passwords may end up giving the same hash. This technology is still being improved!
-
-Examples of hashes:
-
-```
-661c425549bc70b98e908325b8c64f82
-056cd6eb540ace37e64572c64c778d45
-239b1ddbb45caf82408cb89f13816185
-```
-
-What you do, then, is to store the password *hash* instead of the password. When a user sends a username and password, you hash their attempted password, compare it with the stored hash, and see if they are the same.
-
-The hashes are designed to be difficult to reverse. The state-of-the-art algorithm used today can generate hashes that would take millions of years to reverse using hardware currently available. But there are techniques that can reverse hashes of some older algorithms in as little as 30 minutes, so if you are a developer, please find out which one to use!</pre>
 </div>
 <div created="20210613121827918" creator="jsng" modified="20210630080746851" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
@@ -17852,6 +17807,55 @@ A higher *compression level* generally causes the algorithm to try more combinat
 A larger *dictionary size* enables the algorithm to use more pattern references.
 
 Play with these two settings to find the best tradeoff between compression time and compression ratio.</pre>
+</div>
+<div created="20210710050544257" creator="jsng" modified="20210710051346095" modifier="jsng" summary="Shared secrets allow secured access to resources, such as databases or other services. These shared secrets are typically kept on a server controlled by the app developer. For mobile apps, they are usually stored with the operating system, inaccessible to other apps." tags="question" title="Where do my secrets get stored? If I don’t want them to be stored, what are my options?" type="text/x-markdown">
+<pre># Why would I want to keep secrets from my users?
+
+You just wrote an [[application]] (app). Your app syncs data to a cloud [[database|Topic:database]]. But the cloud database services many other users as well—how would it know it is you and not some other malicious hacker?
+
+It recognizes you via a [[shared secret]]: a token or an [[API]] key that you can see after you log in to your dashboard on their website.
+
+After your users install the app, every request sent by your app to the cloud database has to be authenticated using this shared secret. That means you are going to have to get this shared secret onto the app somehow. But this has to happen without the user being able to see it or access it, otherwise a savvy user could use that key to gain access to your cloud database.
+
+# Storing secrets on the web
+
+The code that is loaded by the user’s browser runs under their control, so putting the shared secret anywhere in that code is a bad idea. Any savvy user who knows how to view the script’s [[source|source code]] can potentially find it!
+
+A much safer option is to store the secret, together with the code, on *your* [[server]]. But not in the server’s source code! If you are most developers, you would be using some kind of [[version control system]] that maintains a copy of your source code and all its changes. If you are using [[GitHub]] or some other public platform for this, you have to be very careful that the [[shared secret]] is not visible (or otherwise guessable) just by reading the [[source code]].
+
+For a simple shared secret, such as a short string of characters, app developers usually use [[environment variables]].
+
+# Storing secrets in a mobile app
+
+Mobile apps are supported by a host of services provided by the [[operating system]] ([[OS]]), typically managed by Google or Apple. They each offer a way for you to store a [[shared secret]] with the [[OS]].
+
+Your app can use this shared secret from the [[OS]] to [[encrypt]] information so that other apps are not able to access it. When your app starts up, it requests the secret from the [[OS]], and uses it to [[decrypt]] the secret again.
+
+# Storing secrets in a laptop app
+
+If you are developing a laptop app that does not rely on a connection to your server (i.e. a “standalone” app), your options are somewhat more limited. Since all your app code and resources will be in the user’s machine and thus accessible to the user, your best bet is to find some way to obfuscate it and hope no one finds it easily.
+
+This is one reason why so many apps require an online connection: it is much easier to hide secrets on a machine you own and control! With a server connection, you can require the app to retrieve the secret from the server, and delete the temporary copy of the secret after use.
+
+# Storing passwords
+
+If your users log in with an email and password (which is almost every online service ever), you don‘t actually store their passwords; that is terrible security practice, even if you do it in a database!
+
+A nifty piece of [[software|Topic:software]] technology, known as a [[hash function]], takes that password (regardless of length) and turns it into a unique **hash**&lt;&lt;fnote &quot;In practice, there is a very low chance that two different passwords may end up giving the same hash. This technology is still being improved!&quot;&gt;&gt; with a fixed number of characters.
+
+Examples of hashes:
+
+```
+661c425549bc70b98e908325b8c64f82
+056cd6eb540ace37e64572c64c778d45
+239b1ddbb45caf82408cb89f13816185
+```
+
+What you do, then, is to store the password *hash* instead of the password. When a user sends a username and password, you hash their attempted password, compare it with the stored hash, and see if they are the same.
+
+The hashes are designed to be difficult to reverse. The state-of-the-art hashing algorithms used today can generate hashes that would take millions of years to reverse, using hardware currently available.
+
+But there are techniques that can reverse hashes of some older algorithms in as little as 30 minutes, so if you are a developer, please find out which one to use!</pre>
 </div>
 <div created="20210613070703260" creator="jsng" modified="20210613070925845" modifier="jsng" tags="question" title="Why am I getting a Missing Codec Error when I open a video file?" type="text/x-markdown">
 <pre>Your operating system is missing one more more [[codec]]s that it needs to [[decode]] the video data in the file.
