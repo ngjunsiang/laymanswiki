@@ -493,6 +493,8 @@ Error message and password prompt
 
 <li>DPI</li>
 
+<li>Draft of 'multithreading' by jsng</li>
+
 <li>editing a PDF file</li>
 
 <li>encode</li>
@@ -1300,7 +1302,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="thread" modified="20210704053209470" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="thread" modified="20210710045924911" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2975,6 +2977,23 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 84.93333435058594,
             &quot;height&quot;: 39.48333740234375
         }
+    },
+    {
+        &quot;title&quot;: &quot;thread&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 322.3833312988281,
+            &quot;left&quot;: 669.3499755859375,
+            &quot;width&quot;: 40.81666564941406,
+            &quot;right&quot;: 710.1666412353516,
+            &quot;bottom&quot;: 340.3833312988281,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'thread' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;thread&quot;
     }
 ]</pre>
 </div>
@@ -14089,10 +14108,10 @@ exports.context = contextWidget;
 <div created="20210610111901810" creator="jsng" modified="20210610111901810" modifier="jsng" title="$:/state/tab-1637712383">
 <pre>Data</pre>
 </div>
-<div created="20210529125757706" creator="jsng" modified="20210612040512587" modifier="jsng" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Info</pre>
+<div created="20210529125757706" creator="jsng" modified="20210710045022979" modifier="jsng" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Saving</pre>
 </div>
-<div created="20210529125758959" modified="20210609083050097" title="$:/state/tab-2065006209">
+<div created="20210529125758959" creator="jsng" modified="20210710045036961" modifier="jsng" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/General</pre>
 </div>
 <div created="20210610111839871" creator="jsng" modified="20210611001127579" modifier="jsng" title="$:/state/tab-352448052">
@@ -14158,7 +14177,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210701035926818" creator="jsng" list="multithreading crash" modified="20210704052036392" modifier="jsng" title="$:/StoryList">
+<div created="20210701035926818" creator="jsng" list="[[Draft of 'multithreading' by jsng]] crash" modified="20210710045020566" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -15378,6 +15397,39 @@ Instead, the web standardized on one way of doing so. This model of thinking abo
 </div>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
+</div>
+<div created="20210704053211062" creator="jsng" draft.of="multithreading" draft.title="multithreading" list-after="[[thread]]" modified="20210704053443263" modifier="jsng" summary="A race condition happens when threads depend on instructions happening with coincidental timing for success. When instructions are not executed with appropriate timing, one or more threads can get stuck waiting on a response that never comes." tags="Topic:systems" title="Draft of 'multithreading' by jsng" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+# Multithreading
+
+An [[app]] can [[hang]] if its sole [[thread]] gets stuck. In some cases, an app can be written to make use of multiple threads. This is possible when a computer has more than one processing core, or if an operating system is designed to divide computing time among multiple threads.
+
+# Race conditions
+
+Trying to design apps to use multiple threads is hard! Apps running into an error is one thing; a more subtle form of failure is known as a [[race condition]]. This happens when the success of two or more tasks depend on near-perfect timing which the threads have little control over.
+
+# Main and secondary threads
+
+A common pattern is to have the app’s graphical interface and main code run in its own thread, with any subsidiary tasks (such as opening files) running in a secondary thread. If the task in the secondary thread is taking too long, the main thread can still issue instructions to terminate the secondary thread’s task, and thereby restore order and control.
+
+Sounds fair enough. How might this fail?
+
+Lets take an example: the main thread has a task that involves sending a signal to secondary thread, and then waiting for a response from it. Secondary thread has a task that involves sending a signal to main thread, and then waiting for a response from it. Both tasks complete successfully when they are carried out independently. But what if the main and secondary threads both run those tasks near-simultaneously, before the other thread has a chance to respond? They both get stuck waiting for a response. The app has just hung!
+
+# Multiple worker threads
+
+Another pattern is to split the job up into multiple parts, and have multiple threads each take a part of the job. When they have all completed, the completed parts are then stitched back together into the finished result.
+
+But this has its own ways of failing too.
+
+The threads have to coordinate their job status, and often do so by updating a common set of data. Thread 1 might request access to that data to update it. To ensure that the data doesn’t change before it is done, it will usually request a lock ([Issue 82](https://buttondown.email/laymansguide/archive/lmg-s7-issue-82-multiplayer-databases/)) on it, to prevent other threads from modifying it at the same time.
+
+One way this can fail in practice is if two or more worker threads request a lock simultaneously. They both get a lock, because at the moment their requests are processed, nothing else has locked the resource. But now they can’t proceed to modify the data because it has been locked by another thread that isn’t them.
+
+This situation is known as a **deadlock**. This and similar situations are just one out of many ways that apps can hang.
+
+{{||readNextTemplate}}</pre>
 </div>
 <div created="20210613121827918" creator="jsng" modified="20210630080746851" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
@@ -17342,10 +17394,10 @@ This was obviously untenable as a long-term solution. A universal [[encoding tab
 
 Main article: [[Unicode]]</pre>
 </div>
-<div created="20210704052741219" creator="jsng" modified="20210704053127454" modifier="jsng" summary="Applications are assigned a thread by the OS for running a sequence of instructions. The instructions are executed sequentially, and the app cannot proceed if it gets stuck on any instruction." tags="Glossary Topic:systems" title="thread" type="text/x-markdown">
+<div created="20210704052741219" creator="jsng" modified="20210710045924898" modifier="jsng" summary="Applications are assigned a thread by the OS for running a sequence of instructions. The instructions are executed sequentially, and the app cannot proceed if it gets stuck on any instruction." tags="Glossary Topic:systems" title="thread" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
-This card is a prelude to talking about app [[hang]]s. Hangs are both simple yet complicated to talk about, but there’s a piece of the puzzle that has to come into the picture first. That piece is about how apps work.
+This card is a prelude to talking about [[application]] [[hang]]s. Hangs are both simple yet complicated to talk about, but there’s a piece of the puzzle that has to come into the picture first. That piece is about how apps work.
 
 In a computer, the [[operating system]] ([[OS]]) has to coordinate the requested actions of so many different apps. How does it know which action came from which app?
 
