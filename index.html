@@ -825,6 +825,8 @@ Error message and password prompt
 
 <li>Why can’t I run an exe file from Windows on my smartphone, or an Android/iOS app on my Windows laptop?</li>
 
+<li>Why can’t my Windows laptop use a storage drive from a Mac?</li>
+
 <li>Why do Powerpoint files sometimes compress very well and sometimes not at all?</li>
 
 <li>Why do web browsers take up so much memory?</li>
@@ -3311,7 +3313,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="FAT filesystem [[storage device]] Topic:systems [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210710085627884" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="filesystem [[storage device]] Topic:systems [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210710085627884" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -14491,7 +14493,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210701035926818" creator="jsng" list="[[Draft of 'New Tiddler' by jsng]] [[Draft of 'file' by jsng]] Topic:systems Windows [[operating system]] [[Where do my secrets get stored? If I don’t want them to be stored, what are my options?]] multithreading crash" modified="20210710085153503" modifier="jsng" title="$:/StoryList">
+<div created="20210701035926818" creator="jsng" list="[[Why can’t my Windows laptop use a storage drive from a Mac?]] [[Draft of 'New Tiddler' by jsng]] [[Draft of 'file' by jsng]] Topic:systems Windows [[operating system]] [[Where do my secrets get stored? If I don’t want them to be stored, what are my options?]] multithreading crash" modified="20210710085153503" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -15749,12 +15751,14 @@ In NTFS, this is the Master File Table (MFT). The MFT lists all the files on the
 
 Sounds peachy. What can go wrong with this picture?</pre>
 </div>
-<div created="20210710090048316" creator="jsng" draft.of="New Tiddler" draft.title="storage management" modified="20210710090418406" modifier="jsng" tags="Topic:systems" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
+<div created="20210710090048316" creator="jsng" draft.of="New Tiddler" draft.title="storage management" modified="20210710090641846" modifier="jsng" tags="Topic:systems" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
 <pre>An operating system installing itself on a [[storage device]] is like a company occupying a warehouse. You’ve got to impose some kind of order on the space!
 
-In an operating system, this job is delegated to the [[filesystem]], a sort of facility director who manages the storage space. Windows uses [NT File System](https://en.wikipedia.org/wiki/NTFS) ([[NTFS]]) for its own space, MacOS uses [High Performance File System](https://en.wikipedia.org/wiki/High_Performance_File_System) ([[HPFS]]), while portable storage devices (e.g. USB drives) often use [File Allocation Table](https://en.wikipedia.org/wiki/File_Allocation_Table) ([[FAT]]).
+In an operating system, this job is delegated to the [[filesystem]], a sort of facility director who manages the storage space. Each [[filesystem]] has its own way of organizing the space.
 
-An operating system that is not “aware” of other filesystems will not be able to read storage devices formatted with those filesystems. This is why you can’t just take out a disk from a Mac system and expect it to open in Windows when plugged in. Windows can read HPFS disks, but cannot write data to them. Both OSes can handle FAT (phew!), which is why it is possible to pass files from a Windows user to a Mac user with a portable flash disk.
+Windows uses [NT File System](https://en.wikipedia.org/wiki/NTFS) ([[NTFS]]) for its own space, MacOS uses [High Performance File System](https://en.wikipedia.org/wiki/High_Performance_File_System) ([[HPFS]]), while portable storage devices (e.g. USB drives) often use [File Allocation Table](https://en.wikipedia.org/wiki/File_Allocation_Table) ([[FAT]]).
+
+An [[operating system]] that is not “aware” of other [[filesystem]]s will not be able to read [[storage device]]s formatted with those [[filesystem]]s. This is why you can’t just take out a disk from a Mac system and expect it to open in Windows when plugged in. Windows can read HPFS disks, but cannot write data to them. Both OSes can handle FAT (phew!), which is why it is possible to pass files from a Windows user to a Mac user with a portable flash disk.
 
 # How filesystems work
 
@@ -18337,6 +18341,9 @@ However, Android and iOS are compiled for the [[ARMv8]] [[instruction set]]. App
 An [[x86-64]] CPU is not able to understand and execute [[ARMv8]] instructions, and vice-versa. The MOV, ADD, and other instructions have different numerical codes in each instruction set.
 
 Main article: [[Central Processing Unit]]</pre>
+</div>
+<div created="20210710090714453" creator="jsng" modified="20210710090800129" modifier="jsng" tags="question" title="Why can’t my Windows laptop use a storage drive from a Mac?" type="text/x-markdown">
+<pre>See [[storage management]].</pre>
 </div>
 <div created="20210613045023015" creator="jsng" list-after="[[lossless compression]]" modified="20210613045755705" modifier="jsng" tags="question" title="Why do Powerpoint files sometimes compress very well and sometimes not at all?" type="text/x-markdown">
 <pre>Main article: [[lossless compression]]
