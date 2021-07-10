@@ -1308,7 +1308,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="memory management" modified="20210710085444283" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="memory addressing" modified="20210710085520859" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -3146,10 +3146,16 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;memory management&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'memory addressing' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;memory addressing&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[memory management]] [[memory addressing]] [[laptop app]] thread Topic:systems [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210710085223689" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[memory addressing]] [[laptop app]] thread Topic:systems [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210710085223689" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -15550,7 +15556,7 @@ Instead, the web standardized on one way of doing so. This model of thinking abo
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210702095609428" creator="jsng" draft.of="file" draft.title="file" modified="20210710085139594" modifier="jsng" summary="A hard disk is organised into sectors, which are the smallest unit of storage. The OS’s filesystem determines how and where to store each file on the hard disk. The filesystem manages the file metadata in a file table, separate from the actual contents of the file." tags="Topic:systems" title="Draft of 'file' by jsng" type="text/x-markdown">
+<div created="20210702095609428" creator="jsng" draft.of="file" draft.title="file" modified="20210710085509081" modifier="jsng" summary="A hard disk is organised into sectors, which are the smallest unit of storage. The OS’s filesystem determines how and where to store each file on the hard disk. The filesystem manages the file metadata in a file table, separate from the actual contents of the file." tags="Topic:systems" title="Draft of 'file' by jsng" type="text/x-markdown">
 <pre># Files in operating systems
 
 Let’s start from what we know about files. When we open File Explorer in Windows and open any folder (aka [[directory]]), we see a bunch of things with colourful icons, that we know of as **files**. And we also see things with folder icons that we know as folders (or directories).
@@ -15561,13 +15567,13 @@ Now, a brief introduction to the hardware, where the actual files get stored.
 
 # Introducing storage
 
-When you buy a [[hard disk drive]] (or solid state drive) and connect it up to your computer (or laptop), the computer does not have fine-grained control over every bit of storage. Instead, the hard drive gets presented as a huge volume of space, like a warehouse.
+When you buy a [[hard disk drive]] (or solid state drive) and connect it up to your computer (or laptop), the computer does not have fine-grained control over every bit of storage. Instead, the [[hard disk drive]] gets presented as a huge volume of space, like a warehouse.
 
-This volume is organised into **sectors** (these days, a modern hard drive sector is 4KiB), which are the smallest unit of storage on a hard disk. If you have to store 1KiB of data, it will still take up an entire sector; the rest of the space is filled with zeroes. This is similar to the way a warehouse is managed by pallets, and not by single cardboard boxes. If your shipment does not fill the entire pallet, the rest of the space is “wasted”.
+This volume is organised into **sectors** (these days, a modern [[hard disk drive]] sector is 4KiB), which are the smallest unit of storage on a hard disk. If you have to store 1KiB of data, it will still take up an entire sector; the rest of the space is filled with zeroes. This is similar to the way a warehouse is managed by pallets, and not by single cardboard boxes. If your shipment does not fill the entire pallet, the rest of the space is “wasted”.
 
 Each sector has an address (yes, just like memory!). To store data on the hard disk, the OS has to “tell” the hard disk a) what data to store, and b) the address at which to store the data.
 
-The hard drive itself does not inherently have any system for managing your files or folders; it can’t tell you where `draft1.docx` is stored, nor tell you what the size is. It only takes care of storing data at addresses, and retrieving data from addresses!
+The [[hard disk drive]] itself does not inherently have any system for managing your files or folders; it can’t tell you where `draft1.docx` is stored, nor tell you what the size is. It only takes care of storing data at addresses, and retrieving data from addresses!
 
 ## Managing storage
 
@@ -16505,7 +16511,7 @@ There are three parts to this exploit:
 <div created="20210628230508407" creator="jsng" modified="20210628230509468" modifier="jsng" tags="WIP" title="memory">
 <pre></pre>
 </div>
-<div created="20210624063928582" creator="jsng" list-after="[[Central Processing Unit]]" modified="20210628230437980" modifier="jsng" summary="Each instruction may consist of loading data from a memory location, sending data to a memory location, or performing operations on the data it is holding." tags="Topic:hardware memory" title="memory addressing" type="text/x-markdown">
+<div created="20210624063928582" creator="jsng" list-after="[[Central Processing Unit]]" modified="20210710085520840" modifier="jsng" summary="Each instruction may consist of loading data from a memory location, sending data to a memory location, or performing operations on the data it is holding." tags="Topic:hardware memory" title="memory addressing" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 A [[CPU]] executes instructions, which loads data from memory, store [[data|Bits and bytes]] to memory, or carries out operations on loaded data. Where exactly does this data go, and how is it organised?
@@ -16522,7 +16528,7 @@ Side reading: [[64-bit]]
 
 # Memory vs memory addresses
 
-Consider for a moment how the CPU would transfer data to the [[hard drive]]. Or send data to a [[printer]]. Or even send it out onto the network. How would those virtual “locations” be represented in a CPU instruction that can only handle memory addresses?
+Consider for a moment how the CPU would transfer data to the [[hard disk drive]]. Or send data to a [[printer]]. Or even send it out onto the network. How would those virtual “locations” be represented in a CPU instruction that can only handle memory addresses?
 
 The most straightforward answer, which you may have some difficulty accepting, is that they are simply represented as memory addresses.
 
