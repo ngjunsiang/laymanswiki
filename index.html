@@ -1308,7 +1308,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="environment variables" modified="20210710051101423" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Administrator" modified="20210710084231974" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -3040,6 +3040,17 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;environment variables&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Administrator&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 483.83331298828125,
+            &quot;left&quot;: 432.8666687011719,
+            &quot;width&quot;: 92.36666870117188,
+            &quot;right&quot;: 525.2333374023438,
+            &quot;bottom&quot;: 502.83331298828125,
+            &quot;height&quot;: 19
+        }
     }
 ]</pre>
 </div>
@@ -14223,7 +14234,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210701035926818" creator="jsng" list="[[memory management]] memory [[Draft of 'operating system' by jsng]] [[Where do my secrets get stored? If I don’t want them to be stored, what are my options?]] multithreading crash" modified="20210710082426099" modifier="jsng" title="$:/StoryList">
+<div created="20210701035926818" creator="jsng" list="[[laptop app]] Topic:software [[Document Object Model]] application memory [[Draft of 'operating system' by jsng]] [[Where do my secrets get stored? If I don’t want them to be stored, what are my options?]] multithreading crash" modified="20210710084348755" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -15429,7 +15440,7 @@ Once the network issue is resolved and the clusters are synchronized again, thes
 
 {{||readNextTemplate}}</pre>
 </div>
-<div created="20210703095133917" creator="jsng" modified="20210703100011505" modifier="jsng" summary="The Document Object Model is a standardized way that web browsers use to represent HTML pages internally." tags="Topic:internet Topic:software" title="Document Object Model" type="text/x-markdown">
+<div created="20210703095133917" creator="jsng" modified="20210710084407064" modifier="jsng" summary="The Document Object Model is a standardized way that web browsers use to represent HTML pages internally." tags="Topic:internet" title="Document Object Model" type="text/x-markdown">
 <pre>We are used to seeing [[HTML]] documents as a plain text document with lots of formatting, but in a browser it becomes more than just text. Each part of the page is an [[HTML]] element, which can have its properties changed by [[script]]s as the page reacts to new data, or to user input.
 
 It would be too computationally taxing to keep scanning through the text document to figure out which part of the page is meant to be changed. Instead, the browser has its own way of storing the *hierarchy* of elements: each menu option falls under a menu heading, which falls under the navigation bar, which falls under the header, which falls under the main document, and so on.
@@ -15444,36 +15455,46 @@ Instead, the web standardized on one way of doing so. This model of thinking abo
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210624071252187" creator="jsng" draft.of="operating system" draft.title="operating system" modified="20210710082650589" modifier="jsng" summary="The operating system is responsible for listing and managing the computer’s resources, making them available to programs running on the computer, and making sure they only use what they are allowed to." tags="Topic:hardware Topic:software" title="Draft of 'operating system' by jsng" type="text/x-markdown">
-<pre>We usually hear the [[CPU]] referred to as the “brains” of the computer; it should be a pretty smart little chip then, right? Unfortunately, the [[CPU]] is actually mindless, and simply carries out instructions it is given.
+<div created="20210624071252187" creator="jsng" draft.of="operating system" draft.title="operating system" modified="20210710084301603" modifier="jsng" summary="The operating system is responsible for listing and managing the computer’s resources, making them available to programs running on the computer, and making sure they only use what they are allowed to." tags="Topic:hardware Topic:software" title="Draft of 'operating system' by jsng" type="text/x-markdown">
+<pre># What an operating system does
 
-If not carefully managed, it is possible that at some point, instructions from one program may accidentally overwrite data in [[another program’s memory space|memory allocation]], resulting in data corruption or causing the program to [[crash]].
+## 1. Boot-up
 
-There must be some kind of a “higher mind” maintaining order and harmony so that our programs don’t muck things up for each other.
+When the machine is powered on, how does it know what hardware is available? This hardware discovery is done by the [[bootloader]], which for the purposes of explanation we can consider as part of the [[operating system]] ([[OS]]). It checks for the available [[hardware|Topic:hardware]] resources, and compiles a list of them for the operating system. Added some memory? Added a new hard drive? The [[bootloader]] should detect it.
 
-# Early memory deconflicting
+## 2. Login and user management
 
-In the early days of computing history, this higher mind was the programmer. In those days, a programmer had to mentally partition the limited memory space, and ensure that the programs being executed on the CPU don’t inadvertently muck up the memory in unexpected ways. This was manageable for a while: up to a few thousand, or tens of thousands of memory addresses, with a sensible set of rules.
+While a personal computer (PC) might have only one user, many PCs are used by more than one person. Multiple login accounts allow each user to have their own space on the computer for their files.
 
-As programs became more complex, and when multiple programs had to be run on the same computer, bugs started to creep in, which became increasingly difficult to trace and fix.
+In addition to the user accounts, an operating system also creates multiple system accounts to manage services on the OS.
 
-Humans could no longer manage the CPU’s resources manually; the process had to be automated. And so the **operating system** ([[OS]]) was born.
+## 3. Window management
 
-# The operating system manages the computer’s memory
+Ever wondered how apps on a PC can have their windows styled so similarly? That’s because the OS provides a standardised window style for apps, with standardised actions that can be performed (maximise, minimise, close, resize, …). Apps can choose not to use this standardised window style, but then they are on their own when it comes to window styling, and they will have to write their own code for all of these actions.
 
-An operating system has to do a few things at minimum:
+## 4. Memory allocation and deallocation
 
-1. Enumerate the [[devices]] on the computer: checking all its available [[interface]]s and listing the devices connected to each interface, to be made available to programs upon request.
+[[Applications|application]] primarily run off computer [[memory]], which is a hundred times faster than the [[hard disk]] (I’ll explain more in a future season). When an [[application]] is first launched, it is allocated a small amount of memory space for its [[data|Topic:data]]. If it wants more, it can’t just reach for the memory space and grab more chunks as needed; other apps are using memory as well, and it might inadvertently overwrite data stored by other apps.
 
-2. Registering device ports into the [[virtual memory]] address space. This includes [[computer memory]], [[hard drive]] ports, [[printer]] ports, [[keyboard]] and [[mouse]] and other [[USB]] device ports, and so on. This makes the devices available to programs that need to load data from those devices, or send data to those devices.
+So instead, access to memory is mediated by the OS. All requests for more memory are sent to the OS, which will return [[addresses|memory addressing]] for available chunks of memory. And any memory that the app frees up is released back into the common pool, for use by other apps.
 
-3. Manage running programs, giving each program its own [[memory]] space, dividing up the available [[CPU]] time among programs so that each gets some runtime, allocating more memory to programs that request it, reclaiming memory from programs that release it.
+## 5. Storage interfaces
 
-4. Enforce security by ensuring that programs only carry out [[instructions|CPU instructions]] that they are allowed to. This is why [[Windows]] keeps bugging you about program permissions. This also ensures that guest users cannot access the data of other guest users, and cannot modify important system files.
+Applications do not need to know how the user has their computer set up: what kind of disks they have, or which disk they put the OS on. But what if they need to allow the user to save a file, or load an existing file? The OS provides standard interfaces for doing so—you would likely have seen the “Select A File” interface on any OS. The OS takes care of file reading and writing, sparing the application developers from having to worry about the details.
 
-When an OS works well, instructions from different programs can be mixed into the same queue and executed by the CPU without the data somehow getting mixed up. And programs will not be able to dabble into the private memory area of other programs.
+## 6. Background services
 
-But cybersecurity is a multi-billion dollar industry with good reason. Black hat hackers and cybersecurity researchers are constantly trying to find loopholes in the OS logic so as to access data they are not supposed to be able to access. In [[Meltdown and Spectre]], the loophole is not a fault in the OS logic, but in a hardware feature of the CPU: the [[CPU cache]].</pre>
+Applications run by the user typically expect input only from one user; if you are running Microsoft Word at the same time as your sister, each instance of Microsoft Word expects to interact with either you or sister. However, there are special system applications that often have to deal with input from multiple users. For example, antivirus software or Windows Printer Management need to run for all users at the same time, and should not be terminated like a typical program.
+
+These applications thus run differently: they run as [[background services]], which are special applications which do not interact with the desktop. Background services are managed differently from applications, and typically can only be terminated by the [[system administrator|Administrator]].
+
+## 7. Peripheral management
+
+Do you use Bluetooth wireless headphones? USB devices of any sort? Did you just buy a new gamepad? The OS detects them and takes care of [[driver]] [[installation]] (usually). You can see all detected devices and installed drivers in the Device Manager, under Control Panel, in Windows 10.
+
+I’ve just covered the main ones that most users would use on a regular basis. The OS manages much more stuff, including OS updates, per-user settings, etc—remember the Registry Editor? ([Issue 100](https://buttondown.email/laymansguide/archive/lmg-s8-issue-100-where-does-all-the-app-data-go-a/)) For a look at what else the OS manages, take a peek in the Control Panel or System Preferences of your OS.
+
+These form a supporting network of services that applications can draw on. Instead of having to work out the full details of implementation for each of these features, they can use the OS’s provided functions to do the work for them. These functions are typically bundled in a standard library ([Issue 17](https://buttondown.email/laymansguide/archive/lmg-s2-issue-17-libraries/)) provided by the OS manufacturer. For example, [.NET](https://dotnet.microsoft.com/) is a collection of libraries for Windows applications that developers can use to simplify their work.</pre>
 </div>
 <div created="20210613121827918" creator="jsng" modified="20210630080746851" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
