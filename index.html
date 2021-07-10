@@ -1308,7 +1308,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="operating system" modified="20210710085423574" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="memory management" modified="20210710085444283" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -3140,10 +3140,16 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;operating system&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'memory management' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;memory management&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[operating system]] [[memory management]] [[memory addressing]] [[laptop app]] thread Topic:systems [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210710085223689" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[memory management]] [[memory addressing]] [[laptop app]] thread Topic:systems [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210710085223689" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -16525,7 +16531,7 @@ Main article: [[virtual memory]]</pre>
 <div created="20210628230242708" creator="jsng" modified="20210628230519517" modifier="jsng" tags="memory WIP" title="memory allocation">
 <pre></pre>
 </div>
-<div created="20210710082441627" creator="jsng" modified="20210710082738783" modifier="jsng" summary="The operating system is responsible for listing and managing the computer’s memory, making them available to programs running on the computer, and making sure they only use what they are allowed to." tags="Topic:systems" title="memory management" type="text/x-markdown">
+<div created="20210710082441627" creator="jsng" modified="20210710085444240" modifier="jsng" summary="The operating system is responsible for listing and managing the computer’s memory, making them available to programs running on the computer, and making sure they only use what they are allowed to." tags="Topic:systems" title="memory management" type="text/x-markdown">
 <pre>We usually hear the [[CPU]] referred to as the “brains” of the computer; it should be a pretty smart little chip then, right? Unfortunately, the [[CPU]] is actually mindless, and simply carries out instructions it is given.
 
 If not carefully managed, it is possible that at some point, instructions from one program may accidentally overwrite data in [[another program’s memory space|memory allocation]], resulting in data corruption or causing the program to [[crash]].
@@ -16546,7 +16552,7 @@ An operating system has to do a few things at minimum:
 
 1. Enumerate the [[devices]] on the computer: checking all its available [[interface]]s and listing the devices connected to each interface, to be made available to programs upon request.
 
-2. Registering device ports into the [[virtual memory]] address space. This includes [[computer memory]], [[hard drive]] ports, [[printer]] ports, [[keyboard]] and [[mouse]] and other [[USB]] device ports, and so on. This makes the devices available to programs that need to load data from those devices, or send data to those devices.
+2. Registering device ports into the [[virtual memory]] address space. This includes [[computer memory]], [[hard disk drive]] ports, [[printer]] ports, [[keyboard]] and [[mouse]] and other [[USB]] device ports, and so on. This makes the devices available to programs that need to load data from those devices, or send data to those devices.
 
 3. Manage running programs, giving each program its own [[memory]] space, dividing up the available [[CPU]] time among programs so that each gets some runtime, allocating more memory to programs that request it, reclaiming memory from programs that release it.
 
