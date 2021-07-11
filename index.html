@@ -481,6 +481,8 @@ Error message and password prompt
 
 <li>DevTools</li>
 
+<li>disk journal</li>
+
 <li>distributed database</li>
 
 <li>document</li>
@@ -492,8 +494,6 @@ Error message and password prompt
 <li>DOM</li>
 
 <li>DPI</li>
-
-<li>Draft of 'New Tiddler' by jsng</li>
 
 <li>editing a PDF file</li>
 
@@ -14720,7 +14720,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210701035926818" creator="jsng" list="[[Draft of 'New Tiddler' by jsng]] file Topic:systems Windows [[operating system]] [[Where do my secrets get stored? If I don’t want them to be stored, what are my options?]] multithreading crash" modified="20210710085153503" modifier="jsng" title="$:/StoryList">
+<div created="20210701035926818" creator="jsng" list="[[disk journal]] file Topic:systems Windows [[operating system]] [[Where do my secrets get stored? If I don’t want them to be stored, what are my options?]] multithreading crash" modified="20210710085153503" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -15754,6 +15754,37 @@ Main article: [[Media files]]</pre>
 <div created="20210702095609444" creator="jsng" modified="20210702095609444" modifier="jsng" title="DevTools">
 <pre></pre>
 </div>
+<div created="20210711060203314" creator="jsng" list-after="[[writing data to storage quickly]]" modified="20210711060901081" modifier="jsng" summary="Filesystem journals are a record of changes made to the disk, so as to enable those changes to be rolled back, or to be completed properly in case of sudden interruption." tags="[[storage device]] Topic:systems" title="disk journal" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+A [[write cache]] can “speed up” file write operations by allowing data to be dumped to a write cache in memory first. The OS “completes” the operation, making it look the file has been successfully written to disk, when in actuality parts of it are still in memory waiting to be written. This works fine as long as we don’t suffer catastrophic power loss before everything gets put on disk; once power is cut, all the contents of the write cache in memory are lost.
+
+All right, we are into worst-case scenarios here. How do we recover from something like this?
+
+The first thing we’ll need to know is what had happened; what data made it through and was written, and what data didn’t make it. We need a record of changes to the disk.
+
+# Disk journals
+
+This record, in a filesystem, is called a journal. Keeping a journal requires more CPU cycles and can slow down file write operations somewhat, but as disk performance increases, this is increasingly considered a worthwhile trade-off for data reliability.
+
+The default filesystems on major [[OS]]es today are all journalled. I’m not going into details of how this is done, and instead will list the things that a journal enables [[Windows 10]] to do.
+
+# Disk recovery with a journal
+
+So what happens when power is cut and a computer reboots? It goes into recovery mode, where it checks the log for incomplete operations, and attempts to complete them. Any files that were “lost” (i.e. [[file table]] records that have been separated or desynced from the actual data) get moved to a separate folder, and the disk is considered okay for use again.
+
+# Disk transaction rollbacks
+
+When installing a new application, sometimes you encounter that odd screen where the installation fails because something that needed to happen couldn’t happen. Oh great, the application could not complete installing, and now we have to remove it ... how do we undo all the things that were done?
+
+The journal lets you see a list of all the changes that were made to the disk from the start of the installation, so that you can perform the equivalent steps to reverse their effect.
+
+# System restore with journals
+
+The same thing happens with some Windows updates. Windows stores a lot of the old data as backup, in case you ever want to roll back some system changes, or return to an older version of Windows (minus some breaking updates, for example). And again, the file journal lets you do that, by identifying which changes were responsible for the update.
+
+{{||readNextTemplate}}</pre>
+</div>
 <div created="20210702082702596" creator="jsng" modified="20210702090329322" modifier="jsng" summary="To increase the performance of a distributed database, we can scale up/scale vertically by increasing the computers’ performance, or scale out/scale horizontally by adding more computers. Distributed databases can only prioritise two of the following three factors: consistency, availability, partitioning (CAP theorem)." tags="Topic:database" title="distributed database" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
@@ -15940,13 +15971,6 @@ Instead, the web standardized on one way of doing so. This model of thinking abo
 </div>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
-</div>
-<div created="20210711060203314" creator="jsng" draft.of="New Tiddler" draft.title="disk journal" list-after="[[writing data to storage quickly]]" modified="20210711060353189" modifier="jsng" summary="" tags="" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
-<pre>{{||prereqTemplate}}
-
-
-
-{{||readNextTemplate}}</pre>
 </div>
 <div created="20210613121827918" creator="jsng" modified="20210630080746851" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
