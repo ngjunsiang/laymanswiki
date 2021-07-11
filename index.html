@@ -1330,7 +1330,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="reading data from storage" modified="20210711054616397" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="reading data from storage" modified="20210711054736421" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -3417,6 +3417,12 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 84.93333435058594,
             &quot;height&quot;: 39.48333740234375
         }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'reading data from storage' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;reading data from storage&quot;
     },
     {
         &quot;title&quot;: &quot;Draft of 'reading data from storage' by jsng&quot;
@@ -15827,8 +15833,10 @@ Instead, the web standardized on one way of doing so. This model of thinking abo
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210711054340234" creator="jsng" draft.of="New Tiddler" draft.title="writing data to storage safely" modified="20210711054604875" modifier="jsng" summary="Safe writes ensure that all the data is written to disk sectors properly first before updating the file table. The result is that write operations take a longer time to complete." tags="[[storage device]] Topic:systems" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
-<pre>When a batch of data (shipment of cargo)) arrives at our warehouse, there are two things that need doing:
+<div created="20210711054340234" creator="jsng" draft.of="New Tiddler" draft.title="writing data to storage safely" list-after="[[reading data from storage]]" list-before="[[writing data to storage quickly]]" modified="20210711054720347" modifier="jsng" summary="Safe writes ensure that all the data is written to disk sectors properly first before updating the file table. The result is that write operations take a longer time to complete." tags="[[storage device]] Topic:systems" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+When a batch of data (shipment of cargo)) arrives at our warehouse, there are two things that need doing:
 
 1) The data needs to be written into [[sector]]s (the smallest unit of storage that the disk handles),
 2) The [[file table]] needs to be updated.
@@ -15849,7 +15857,7 @@ But this is the *right thing to do*, isn’t it? It doesn’t matter; [Windows V
 
 Why did Windows XP feel faster, then? Because it did it the other way round!
 
-</pre>
+{{||readNextTemplate}}</pre>
 </div>
 <div created="20210613121827918" creator="jsng" modified="20210630080746851" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
@@ -17292,8 +17300,10 @@ Or what if two different government departments are trying to collaborate on a f
 
 Homepage: https://www.rarlab.com/</pre>
 </div>
-<div created="20210711052405718" creator="jsng" list-before="[[writing data to storage safely]]" modified="20210711054616362" modifier="jsng" summary="When write operations are interrupted prematurely, filesystem corruption often results." tags="[[storage device]] Topic:systems" title="reading data from storage" type="text/x-markdown">
-<pre>A [[hard disk drive]] is like a warehouse, where cargo gets stored in racks, their contents and details are stored in the [[file table]] (in the warehouse office), and we can easily look up the details of each shipment of cargo without having to inspect rack by rack.
+<div created="20210711052405718" creator="jsng" list-before="[[writing data to storage safely]]" modified="20210711054736412" modifier="jsng" summary="When write operations are interrupted prematurely, filesystem corruption often results." tags="[[storage device]] Topic:systems" title="reading data from storage" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+A [[hard disk drive]] is like a warehouse, where cargo gets stored in racks, their contents and details are stored in the [[file table]] (in the warehouse office), and we can easily look up the details of each shipment of cargo without having to inspect rack by rack.
 
 Let’s screw things up!
 
@@ -17315,7 +17325,9 @@ The problem is ... when a shipment comes in, we have to load the shipment onto t
 
 Okay, we’ll have to step away from the warehouse analogy for a bit when we talk about reading data from a hard drive; this is usually safe, because unlike cargo, reading data does not destroy the existing copy. We can mount a [[filesystem]] (i.e. gain access to it) for reading only, which will protect it from accidentally having its data overwritten.
 
-It is the writes that always get us. When a write operation does not go smoothly, the result is usually filesystem corruption; the file table is no longer up to date, or worse, some parts of it might be improperly written, resulting in the company no longer knowing what is on the warehouse racks.</pre>
+It is the writes that always get us. When a write operation does not go smoothly, the result is usually filesystem corruption; the file table is no longer up to date, or worse, some parts of it might be improperly written, resulting in the company no longer knowing what is on the warehouse racks.
+
+{{||readNextTemplate}}</pre>
 </div>
 <div created="20210628212745578" creator="jsng" modified="20210628213716647" modifier="jsng" tags="" title="readNextTemplate" type="text/x-markdown">
 <pre>## Read next:
