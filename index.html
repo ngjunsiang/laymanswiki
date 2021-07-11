@@ -1346,7 +1346,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Basic Input/Output System" modified="20210711063419725" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Basic Input/Output System" modified="20210711063610392" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -3683,6 +3683,12 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 215.8333282470703,
             &quot;height&quot;: 19
         }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'Basic Input/Output System' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Basic Input/Output System&quot;
     },
     {
         &quot;title&quot;: &quot;Draft of 'Basic Input/Output System' by jsng&quot;
@@ -15194,10 +15200,12 @@ So 1 second of audio, uncompressed, will need 16 bits × 44,100 samples = 705,60
 
 A video format. Also known as [[h264]].</pre>
 </div>
-<div created="20210711063313670" creator="jsng" modified="20210711063419715" modifier="jsng" tags="Topic:systems" title="Basic Input/Output System" type="text/x-markdown">
+<div created="20210711063313670" creator="jsng" modified="20210711063610389" modifier="jsng" tags="Topic:systems" title="Basic Input/Output System" type="text/x-markdown">
 <pre>The Basic Input/Output System ([[BIOS]]) is a program loaded on a special chip that helps to bootstrap the [[operating system]], in a process known as [[bootup]].
 
-Modern BIOSes are no longer stored permanently on a chip, but written to flash storage that is soldered directly to the [[mainboard]].</pre>
+Modern BIOSes are no longer stored permanently on a chip, but written to flash storage that is soldered directly to the [[mainboard]].
+
+The BIOS screen is visible at the start of [[bootup]], but this process is usually hidden by a branded startup screen on machines that come with [[Windows]] pre-installed. You can usually disable that screen if you like to see the [[bootup]] process happening.</pre>
 </div>
 <div created="20210711063231577" creator="jsng" modified="20210711063248471" modifier="jsng" tags="Glossary" title="BIOS" type="text/x-markdown">
 <pre>**BIOS** stands for [[Basic Input/Output System]].</pre>
@@ -16165,7 +16173,7 @@ Instead, the web standardized on one way of doing so. This model of thinking abo
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210711062839131" creator="jsng" draft.of="New Tiddler" draft.title="bootup" modified="20210711063253237" modifier="jsng" summary="When a computer is booted up, it runs the BIOS from a chip on the motherboard. The chip checks that core parts are present, checks for a storage disk containing a bootloader, loads it into memory, and hands over control. The bootloader loads the operating system kernel. The operating system kernel then does whatever it needs to do to get the system ready for use." tags="Topic:systems" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
+<div created="20210711062839131" creator="jsng" draft.of="New Tiddler" draft.title="bootup" modified="20210711063507770" modifier="jsng" summary="When a computer is booted up, it runs the BIOS from a chip on the motherboard. The chip checks that core parts are present, checks for a storage disk containing a bootloader, loads it into memory, and hands over control. The bootloader loads the operating system kernel. The operating system kernel then does whatever it needs to do to get the system ready for use." tags="Topic:systems" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
 <pre>We humans wake up in the morning and magically there is information in our heads. We open our eyes, trust that all our limbs and body parts are there, and we just get up and make coffee.
 
 Computers, they are different in that regard. After they light up the power LED, there is just … nothing. Computer memory needs power to hold its information&lt;&lt;fnote &quot;Memory comprises lots of capacitors wired together, and capacitors slowly leak charge when they are not powered. Memory chips need periodic “refreshing” every few milliseconds to avoid losing data due to this charge leakage.&quot;&gt;&gt;, so once you really power down your computer, all data in memory is gone. Your [[operating system]] ([[OS]]), your open [[application]]s, your [[file]] data … all that now resides only in your [[storage device]]. Whatever was not written to storage would have been lost by now.
@@ -16174,16 +16182,12 @@ Before anything can be done, the computer needs to read all that information bac
 
 # Bootup
 
-The way to sidestep the bootup paradox is to have a very tiny chip, not the [[CPU]], perform the bootstrap. This tiny chip is already wired up in a particular way from creation; it contains a [[program]] called the [[BIOS]] (short for [[Basic Input/Output System]])[^2], which does only three things:
+The way to sidestep the bootup paradox is to have a very tiny chip, not the [[CPU]], perform the bootstrap. This tiny chip is already wired up in a particular way from creation; it contains a [[program]] called the [[BIOS]] (short for [[Basic Input/Output System]]), which does only three things:
 
-[^2]: Modern BIOSes are no longer stored permanently on a chip, but written to flash storage (similar to a thumbdrive) that is soldered directly to the motherboard.
-
-1. Check that the core parts are present: CPU, memory, video card, keyboard, storage disk.  
-   At the BIOS screen[^3], you can press a button to configure BIOS settings.
+1. Check that the core parts are present: [[CPU]], [[memory]], [[video card]], [[keyboard]], [[storage device]].  
+   At the BIOS screen, you can press a button to configure BIOS settings.
 2. The BIOS checks the available disks to see if they are “bootable”, i.e. contain information in a specific part of the disk that contains a **bootloader**. In modern BIOSes, you can override this process by specifying a valid disk containing the bootloader.
 3. The BIOS loads the bootloader into memory, and runs it.
-
-[^3]: Today, this process is hidden by a branded startup screen on machines that come with Windows pre-installed. You can usually disable that screen if you like to see this bootstrap process happening.
 
 ## The bootloader
 
