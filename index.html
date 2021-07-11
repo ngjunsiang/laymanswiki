@@ -495,8 +495,6 @@ Error message and password prompt
 
 <li>Draft of 'New Tiddler' by jsng</li>
 
-<li>Draft of 'writing data to storage quickly' by jsng</li>
-
 <li>editing a PDF file</li>
 
 <li>encode</li>
@@ -1338,7 +1336,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="writing data to storage safely" modified="20210711060346337" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="writing data to storage quickly" modified="20210711060358637" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -3536,10 +3534,13 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;writing data to storage safely&quot;
+    },
+    {
+        &quot;title&quot;: &quot;writing data to storage quickly&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[Draft of 'writing data to storage quickly' by jsng]] [[writing data to storage safely]] [[reading data from storage]] filesystem [[storage device]] Topic:systems [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210711060205287" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[writing data to storage quickly]] [[writing data to storage safely]] [[reading data from storage]] filesystem [[storage device]] Topic:systems [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210711060205287" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -15940,37 +15941,12 @@ Instead, the web standardized on one way of doing so. This model of thinking abo
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210711060203314" creator="jsng" draft.of="New Tiddler" draft.title="disk journal" list-after="[[writing data to storage quickly]]" modified="20210711060332284" modifier="jsng" summary="" tags="" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
+<div created="20210711060203314" creator="jsng" draft.of="New Tiddler" draft.title="disk journal" list-after="[[writing data to storage quickly]]" modified="20210711060353189" modifier="jsng" summary="" tags="" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
-</pre>
-</div>
-<div created="20210711054747428" creator="jsng" draft.of="writing data to storage quickly" draft.title="writing data to storage quickly" list-after="[[writing data to storage safely]]" list-before="[[disk journal]]" modified="20210711060335111" modifier="jsng" summary="Fast writes dump the data to a write cache (in computer memory), then update the file table to look like the file is already written to disk. However, if power is cut before all data is properly moved from the write cache to disk, the data in memory is lost, and file corruption usually results." tags="[[storage device]] Topic:systems" title="Draft of 'writing data to storage quickly' by jsng" type="text/x-markdown">
-<pre>{{||prereqTemplate}}
 
-If there’s anything to take away from the previous issue, it’s that *doing things the right way takes time*. And sometimes we are okay with taking shortcuts to get something done faster, the *left* way.
 
-# The write cache
-
-If you have a shipment coming in that urgently needs to be dumped into the warehouse (e.g. because the ship needs to leave quickly for another delivery, or to free up space on the docks), how do we speed this up?
-
-What usually happens is the goods will be offloaded onto some empty space **outside the warehouse**. The ship will leave first, and *assume* that the warehouse will be able to get the goods in just fine.
-
-What is the [[operating system]] ([[OS]]) equivalent of this? Hard disk writes are actually pretty slow; they can get up to 100 MB/s, but usually hit a sustained speed of 60 MB/s for system disks, and about 20 MB/s over USB. The operating system therefore sets up a “dumping space” in memory; files can be read from other disks at up to 200 MB/s, and written to memory at **a few GB/s**!
-
-This space is known as the [[write cache]].
-
-# Speeding up file access ... and its drawbacks
-
-So how do we speed up the process of copying data to a disk? We could dump the data into the [[write cache]] (assuming there is enough space), then update the [[file table]] first, and let the [[OS]] slowly copy the data from the [[write cache]] into the [[storage device]]. Anyone who needs access to the file records will then be able to go about their merry way, and if they need data from the file, they can just copy it from the [[write cache]] instead of the disk. Easy peasy!
-
-This was what happened in Windows XP. File copying appears to be speeded up, and users are happy.
-
-But remember what happens when power to the computer is accidentally cut, or if a program suddenly hangs, or the computer sometimes runs out of memory.
-
-Yup ... it shuts down (or reboots), and the contents of memory are wiped clean. And any data that has not been written to disk is *lost forever*. And ... the file table has **already been updated to look like there is valid data**!
-
-This is when things look really bad.</pre>
+{{||readNextTemplate}}</pre>
 </div>
 <div created="20210613121827918" creator="jsng" modified="20210630080746851" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
@@ -18778,8 +18754,10 @@ So to uninstall a Windows app, you run its uninstaller. Which may or may not wor
 <div created="20210711055339058" creator="jsng" modified="20210711055526638" modifier="jsng" tags="cache" title="write cache" type="text/x-markdown">
 <pre>A space in [[memory]] set aside by the [[operating system]] to hold data that is waiting to be written to a [[storage device]].</pre>
 </div>
-<div created="20210711054747428" creator="jsng" list-after="[[writing data to storage safely]]" modified="20210711060107663" modifier="jsng" summary="Fast writes dump the data to a write cache (in computer memory), then update the file table to look like the file is already written to disk. However, if power is cut before all data is properly moved from the write cache to disk, the data in memory is lost, and file corruption usually results." tags="[[storage device]] Topic:systems" title="writing data to storage quickly" type="text/x-markdown">
-<pre>If there’s anything to take away from the previous issue, it’s that *doing things the right way takes time*. And sometimes we are okay with taking shortcuts to get something done faster, the *left* way.
+<div created="20210711054747428" creator="jsng" list-after="[[writing data to storage safely]]" list-before="[[disk journal]]" modified="20210711060358619" modifier="jsng" summary="Fast writes dump the data to a write cache (in computer memory), then update the file table to look like the file is already written to disk. However, if power is cut before all data is properly moved from the write cache to disk, the data in memory is lost, and file corruption usually results." tags="[[storage device]] Topic:systems" title="writing data to storage quickly" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+If there’s anything to take away from the previous issue, it’s that *doing things the right way takes time*. And sometimes we are okay with taking shortcuts to get something done faster, the *left* way.
 
 # The write cache
 
@@ -18801,7 +18779,9 @@ But remember what happens when power to the computer is accidentally cut, or if 
 
 Yup ... it shuts down (or reboots), and the contents of memory are wiped clean. And any data that has not been written to disk is *lost forever*. And ... the file table has **already been updated to look like there is valid data**!
 
-This is when things look really bad.</pre>
+This is when things look really bad.
+
+{{||readNextTemplate}}</pre>
 </div>
 <div created="20210711054340234" creator="jsng" list-after="[[reading data from storage]]" list-before="[[writing data to storage quickly]]" modified="20210711060346301" modifier="jsng" summary="Safe writes ensure that all the data is written to disk sectors properly first before updating the file table. The result is that write operations take a longer time to complete." tags="[[storage device]] Topic:systems" title="writing data to storage safely" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
