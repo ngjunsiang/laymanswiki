@@ -14832,7 +14832,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210701035926818" creator="jsng" list="[[operating system]] [[Where do my secrets get stored? If I don’t want them to be stored, what are my options?]] multithreading crash" modified="20210711062501069" modifier="jsng" title="$:/StoryList">
+<div created="20210701035926818" creator="jsng" list="multithreading crash" modified="20210711062501069" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -17291,7 +17291,7 @@ Well, that’s when the database throws an [[error]]. A database system is progr
 
 {{||readNextTemplate}}</pre>
 </div>
-<div created="20210704053211062" creator="jsng" list-after="[[thread]]" modified="20210710050516880" modifier="jsng" summary="A race condition happens when threads depend on instructions happening with coincidental timing for success. When instructions are not executed with appropriate timing, one or more threads can get stuck waiting on a response that never comes." tags="Topic:systems" title="multithreading" type="text/x-markdown">
+<div created="20210704053211062" creator="jsng" list-after="[[thread]]" modified="20210711062741713" modifier="jsng" summary="A race condition happens when threads depend on instructions happening with coincidental timing for success. When instructions are not executed with appropriate timing, one or more threads can get stuck waiting on a response that never comes." tags="Topic:systems" title="multithreading" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 # Multithreading
@@ -17320,9 +17320,7 @@ The threads have to coordinate their job status, and often do so by updating a c
 
 One way this can fail in practice is if two or more worker threads request a lock simultaneously. They both get a lock, because at the moment their requests are processed, nothing else has locked the resource. But now they can’t proceed to modify the data because it has been locked by another thread that isn’t them.
 
-This situation is known as a [[deadlock]]. This and similar situations are just one out of many ways that applications can hang.
-
-{{||readNextTemplate}}</pre>
+This situation is known as a [[deadlock]]. This and similar situations are just one out of many ways that applications can hang.</pre>
 </div>
 <div created="20210611023323062" creator="jsng" modified="20210701041339769" modifier="jsng" tags="Glossary" title="newline" type="text/x-markdown">
 <pre>See [[line feed]].</pre>
