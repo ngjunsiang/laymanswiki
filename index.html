@@ -493,8 +493,6 @@ Error message and password prompt
 
 <li>DPI</li>
 
-<li>Draft of 'New Tiddler' by jsng</li>
-
 <li>editing a PDF file</li>
 
 <li>encode</li>
@@ -706,6 +704,8 @@ Error message and password prompt
 <li>question</li>
 
 <li>RAR</li>
+
+<li>reading data from storage</li>
 
 <li>readNextTemplate</li>
 
@@ -3407,7 +3407,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[file table]] filesystem [[storage device]] Topic:systems [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210711053143344" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="filesystem [[storage device]] Topic:systems [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210711053143344" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -14587,7 +14587,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210701035926818" creator="jsng" list="[[Draft of 'New Tiddler' by jsng]] file Topic:systems Windows [[operating system]] [[Where do my secrets get stored? If I don’t want them to be stored, what are my options?]] multithreading crash" modified="20210710085153503" modifier="jsng" title="$:/StoryList">
+<div created="20210701035926818" creator="jsng" list="[[reading data from storage]] file Topic:systems Windows [[operating system]] [[Where do my secrets get stored? If I don’t want them to be stored, what are my options?]] multithreading crash" modified="20210710085153503" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -15807,27 +15807,6 @@ Instead, the web standardized on one way of doing so. This model of thinking abo
 </div>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
-</div>
-<div created="20210711052405718" creator="jsng" draft.of="New Tiddler" draft.title="reading data from storage" modified="20210711053059859" modifier="jsng" tags="[[storage device]] Topic:systems" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
-<pre>A [[hard disk drive]] is like a warehouse, where cargo gets stored in racks, their contents and details are stored in the [[file table]] (in the warehouse office), and we can easily look up the details of each shipment of cargo without having to inspect rack by rack.
-
-Let’s screw things up here, shall we?
-
-## Read/write failure
-
-As mechanical devices, hard disks are prone to failure; I’ll go into detail why in a future season on hardware. Remember that when this hard drive is housed in a computer, that computer can get disturbed by shocks or jolts. If it is housed in an external USB enclosure, sometimes we do terrible things to that enclosure ... like when we drop them (usually accidentally 😬).
-
-This is like the warehouse experiencing an earthquake. Sometimes, a small earthquake may be uneventful ... other times, we might even get away with a moderate earthquake, if nothing is happening in the warehouse. But if it happens while a forklift is carrying out a precarious loading operation ... 🙈
-
-Well, that’s terrible. We’ll have to write off that shipment. Luckily, we can analogy here; data can always be re-copied again. The problem is ... when a shipment comes in, we have to load the shipment onto the rack, *and* update the file table, so that its contents match whatever is on the racks. Which should we do first? If the loading is uneventful, it doesn’t really matter; after 5 minutes or so, both the file table and the racks will be in sync. But if the earthquake happens during this loading, they won’t be!
-
-We don’t need an earthquake to screw things up. Remember that a hard drive, or even a flash drive, needs power to run. When we unplug a hard disk or flash drive while it is still operating, it’s like cutting power to the entire warehouse (including its forklifts) at the same time. If nothing is happening in the warehouse, it is safe to do so. But if there are ongoing operations, well you don’t need me to tell you that’s not a good idea.
-
-## Reads are usually safe
-
-Okay, we’ll have to step away from the warehouse analogy for a bit when we talk about reading data from a hard drive; this is usually safe, because unlike cargo, reading data does not destroy the existing copy. We can mount a filesystem (i.e. gain access to it) for reading only, which will protect it from accidentally having its data overwritten.
-
-It is the writes that always get us. When a write operation does not go smoothly, the result is usually filesystem corruption; the file table is no longer up to date, or worse, some parts of it might be improperly written, resulting in the company no longer knowing what is on the warehouse racks.</pre>
 </div>
 <div created="20210613121827918" creator="jsng" modified="20210630080746851" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
@@ -17269,6 +17248,31 @@ Or what if two different government departments are trying to collaborate on a f
 <pre>A compressed file archive format.
 
 Homepage: https://www.rarlab.com/</pre>
+</div>
+<div created="20210711052405718" creator="jsng" list-before="[[writing data to storage]]" modified="20210711054336731" modifier="jsng" summary="When write operations are interrupted prematurely, filesystem corruption often results." tags="[[storage device]] Topic:systems" title="reading data from storage" type="text/x-markdown">
+<pre>A [[hard disk drive]] is like a warehouse, where cargo gets stored in racks, their contents and details are stored in the [[file table]] (in the warehouse office), and we can easily look up the details of each shipment of cargo without having to inspect rack by rack.
+
+Let’s screw things up!
+
+# Read/write failure
+
+As mechanical devices, [[hard disk drive]]s are prone to failure. A [[hard disk drive]] housed in a computer can get disturbed by shocks or jolts. If it is housed in an external USB enclosure, sometimes we do terrible things to that enclosure ... like dropping them (accidentally!)
+
+This is like the warehouse experiencing an earthquake. Sometimes, a small earthquake may be uneventful ... other times, we might even get away with a moderate earthquake, if nothing is happening in the warehouse. But if it happens while a forklift is carrying out a precarious loading operation ... 🙈
+
+Well, that’s terrible. We’ll have to write off that shipment. Luckily this is just an analogy; data can always be re-copied again.
+
+We don’t need an earthquake to screw things up. Remember that [[storage device]]s need power to run. When we unplug a hard disk or flash drive while it is still operating, it’s like cutting power to the entire warehouse (including its forklifts) at the same time. If nothing is happening in the warehouse, it is safe to do so. But if there are ongoing operations, well you don’t need me to tell you that’s not a good idea.
+
+# Which first: the file table first, or the shipment?
+
+The problem is ... when a shipment comes in, we have to load the shipment onto the rack, *and* update the file table, so that its contents match whatever is on the racks. Which should we do first? If the loading is uneventful, it doesn’t really matter; after 5 minutes or so, both the file table and the racks will be in sync. But if the earthquake happens during this loading, they won’t be!
+
+# Reads are usually safe
+
+Okay, we’ll have to step away from the warehouse analogy for a bit when we talk about reading data from a hard drive; this is usually safe, because unlike cargo, reading data does not destroy the existing copy. We can mount a [[filesystem]] (i.e. gain access to it) for reading only, which will protect it from accidentally having its data overwritten.
+
+It is the writes that always get us. When a write operation does not go smoothly, the result is usually filesystem corruption; the file table is no longer up to date, or worse, some parts of it might be improperly written, resulting in the company no longer knowing what is on the warehouse racks.</pre>
 </div>
 <div created="20210628212745578" creator="jsng" modified="20210628213716647" modifier="jsng" tags="" title="readNextTemplate" type="text/x-markdown">
 <pre>## Read next:
