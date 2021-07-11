@@ -497,6 +497,8 @@ Error message and password prompt
 
 <li>DPI</li>
 
+<li>Draft of 'New Tiddler' by jsng</li>
+
 <li>editing a PDF file</li>
 
 <li>encode</li>
@@ -14832,7 +14834,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210701035926818" creator="jsng" list="Topic:systems" modified="20210711062817276" modifier="jsng" title="$:/StoryList">
+<div created="20210701035926818" creator="jsng" list="memory [[Draft of 'New Tiddler' by jsng]] Topic:systems" modified="20210711062946810" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -16117,6 +16119,46 @@ Instead, the web standardized on one way of doing so. This model of thinking abo
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
+<div created="20210711062839131" creator="jsng" draft.of="New Tiddler" draft.title="bootup" modified="20210711062941792" modifier="jsng" summary="When a computer is booted up, it runs the BIOS from a chip on the motherboard. The chip checks that core parts are present, checks for a storage disk containing a bootloader, loads it into memory, and hands over control. The bootloader loads the operating system kernel. The operating system kernel then does whatever it needs to do to get the system ready for use." tags="Topic:systems" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
+<pre>We humans wake up in the morning and magically there is information in our heads. We open our eyes, trust that all our limbs and body parts are there, and we just get up and make coffee.
+
+Computers, they are different in that regard. After they light up the power LED, there is just … nothing. Computer memory needs power to hold its information&lt;&lt;fnote &quot;Memory comprises lots of capacitors wired together, and capacitors slowly leak charge when they are not powered. Memory chips need periodic “refreshing” every few milliseconds to avoid losing data due to this charge leakage.&quot;&gt;&gt;, so once you really power down your computer, all data in memory is gone. Your operating system (OS), your open programs, your file data … all that now resides only in your hard disk. Whatever was not written to hard disk would have been lost by now ([Issue 108](https://buttondown.email/laymansguide/archive/lmg-s9-issue-108-safeguarding-data-operations/)).
+
+[^1]: 
+
+Before anything can be done, the computer needs to read all that information back in to memory. But there’s *nothing* in memory … you need a program loaded in memory to do that, but that program is still residing in file storage—it’s a Catch-22! The OS has to *bootstrap* itself into existence first, in a process known as the **bootup**.
+
+## Bootup
+
+The way to sidestep the bootup paradox is to have a very tiny chip perform the bootstrap. This tiny chip is already wired up in a particular way from birth; it contains a program called the BIOS (short for Basic Input/Output System)[^2], which does only three things:
+
+[^2]: Modern BIOSes are no longer stored permanently on a chip, but written to flash storage (similar to a thumbdrive) that is soldered directly to the motherboard.
+
+1. Check that the core parts are present: CPU, memory, video card, keyboard, storage disk.  
+   At the BIOS screen[^3], you can press a button to configure BIOS settings.
+2. The BIOS checks the available disks to see if they are “bootable”, i.e. contain information in a specific part of the disk that contains a **bootloader**. In modern BIOSes, you can override this process by specifying a valid disk containing the bootloader.
+3. The BIOS loads the bootloader into memory, and runs it.
+
+[^3]: Today, this process is hidden by a branded startup screen on machines that come with Windows pre-installed. You can usually disable that screen if you like to see this bootstrap process happening.
+
+## The bootloader
+
+The BIOS is not optimised—it’s only a *basic* system after all—and would take forever to try to get the OS running on its own. So, with its limited resources, the BIOS calls in bigger guns: the **bootloader**.
+
+The bootloader is not the OS! It has only one job: to *load* the OS during the *boot* process, and carry out whatever is necessary before that.
+
+Usually, the first thing that needs to be loaded is the filesystem ([Issue 106](https://buttondown.email/laymansguide/archive/lmg-s9-issue-106-organising-storage/)). Without that, no program will know how to read in data from the storage disks! At this point, if the bootloader detects disk errors or uncompleted operations in the journal ([Issue 110](https://buttondown.email/laymansguide/archive/lmg-s9-issue-110-safeguarding-against-data/)), it may attempt to scan for errors or complete those operations before proceeding with the rest of the bootup process.
+
+Some systems may contain multiple OSes: Mac users may want to run Windows using Parallels Desktop, Windows users may want to dabble in Linux, and many Linux users dual-boot Windows as well. The bootloader, with the help of the filesystem, detects other operating systems on the storage disks, and offers the user a choice of which one to boot. If there is only one OS found, this step might be skipped.
+
+Once an operating system is selected, the bootloader loads the OS **kernel**, which contains its core instructions, and hands control over. The bootup sequence is not yet complete, but the bootloader has completed its job.
+
+## The operating system startup
+
+The operating system is not ready to accept user input at this point yet. It still has to mount other storage disks and their subregions, check that other hardware is available and working properly (such as hardware timers, which are very important for an operating system), start up various necessary services, start up programs which asked to be started up when the system boots (like the annoying Adobe Updater, or your sound card drivers and utility), etc.
+
+Finally, when it is ready, it displays the login screen.</pre>
+</div>
 <div created="20210613121827918" creator="jsng" modified="20210630080746851" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
 
@@ -17071,8 +17113,8 @@ There are three parts to this exploit:
 
 {{||readNextTemplate}}</pre>
 </div>
-<div created="20210628230508407" creator="jsng" modified="20210628230509468" modifier="jsng" tags="WIP" title="memory">
-<pre></pre>
+<div created="20210628230508407" creator="jsng" modified="20210711063008335" modifier="jsng" tags="WIP Topic:hardware Topic:systems" title="memory" type="text/x-markdown">
+<pre>Memory comprises lots of capacitors wired together, and capacitors slowly leak charge when they are not powered. Memory chips need periodic “refreshing” every few milliseconds to avoid losing data due to this charge leakage.</pre>
 </div>
 <div created="20210624063928582" creator="jsng" list-after="[[Central Processing Unit]]" modified="20210710085520840" modifier="jsng" summary="Each instruction may consist of loading data from a memory location, sending data to a memory location, or performing operations on the data it is holding." tags="Topic:hardware memory" title="memory addressing" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
