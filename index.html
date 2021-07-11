@@ -519,6 +519,8 @@ Error message and password prompt
 
 <li>file header</li>
 
+<li>file table</li>
+
 <li>filesystem</li>
 
 <li>Firefox</li>
@@ -1326,7 +1328,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="localstorage" modified="20210711052216804" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="file table" modified="20210711053247530" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -3363,10 +3365,49 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;localstorage&quot;
+    },
+    {
+        &quot;title&quot;: &quot;file table&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 274.58331298828125,
+            &quot;left&quot;: 770.7166748046875,
+            &quot;width&quot;: 54.083343505859375,
+            &quot;right&quot;: 824.8000183105469,
+            &quot;bottom&quot;: 292.58331298828125,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;file table&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 274.58331298828125,
+            &quot;left&quot;: 770.7166748046875,
+            &quot;width&quot;: 54.083343505859375,
+            &quot;right&quot;: 824.8000183105469,
+            &quot;bottom&quot;: 292.58331298828125,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;filesystem&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 245.73333740234375,
+            &quot;left&quot;: 1036.5833740234375,
+            &quot;width&quot;: 70.48333740234375,
+            &quot;right&quot;: 1107.0667114257812,
+            &quot;bottom&quot;: 265.73333740234375,
+            &quot;height&quot;: 20
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'file table' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;file table&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[storage device]] Topic:systems [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210711052206355" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[file table]] filesystem [[storage device]] Topic:systems [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210711053143344" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -15767,8 +15808,26 @@ Instead, the web standardized on one way of doing so. This model of thinking abo
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210711052405718" creator="jsng" draft.of="New Tiddler" draft.title="reading data from storage" modified="20210711052703685" modifier="jsng" tags="[[storage device]]" title="Draft of 'New Tiddler' by jsng">
-<pre></pre>
+<div created="20210711052405718" creator="jsng" draft.of="New Tiddler" draft.title="reading data from storage" modified="20210711053059859" modifier="jsng" tags="[[storage device]] Topic:systems" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
+<pre>A [[hard disk drive]] is like a warehouse, where cargo gets stored in racks, their contents and details are stored in the [[file table]] (in the warehouse office), and we can easily look up the details of each shipment of cargo without having to inspect rack by rack.
+
+Let’s screw things up here, shall we?
+
+## Read/write failure
+
+As mechanical devices, hard disks are prone to failure; I’ll go into detail why in a future season on hardware. Remember that when this hard drive is housed in a computer, that computer can get disturbed by shocks or jolts. If it is housed in an external USB enclosure, sometimes we do terrible things to that enclosure ... like when we drop them (usually accidentally 😬).
+
+This is like the warehouse experiencing an earthquake. Sometimes, a small earthquake may be uneventful ... other times, we might even get away with a moderate earthquake, if nothing is happening in the warehouse. But if it happens while a forklift is carrying out a precarious loading operation ... 🙈
+
+Well, that’s terrible. We’ll have to write off that shipment. Luckily, we can analogy here; data can always be re-copied again. The problem is ... when a shipment comes in, we have to load the shipment onto the rack, *and* update the file table, so that its contents match whatever is on the racks. Which should we do first? If the loading is uneventful, it doesn’t really matter; after 5 minutes or so, both the file table and the racks will be in sync. But if the earthquake happens during this loading, they won’t be!
+
+We don’t need an earthquake to screw things up. Remember that a hard drive, or even a flash drive, needs power to run. When we unplug a hard disk or flash drive while it is still operating, it’s like cutting power to the entire warehouse (including its forklifts) at the same time. If nothing is happening in the warehouse, it is safe to do so. But if there are ongoing operations, well you don’t need me to tell you that’s not a good idea.
+
+## Reads are usually safe
+
+Okay, we’ll have to step away from the warehouse analogy for a bit when we talk about reading data from a hard drive; this is usually safe, because unlike cargo, reading data does not destroy the existing copy. We can mount a filesystem (i.e. gain access to it) for reading only, which will protect it from accidentally having its data overwritten.
+
+It is the writes that always get us. When a write operation does not go smoothly, the result is usually filesystem corruption; the file table is no longer up to date, or worse, some parts of it might be improperly written, resulting in the company no longer knowing what is on the warehouse racks.</pre>
 </div>
 <div created="20210613121827918" creator="jsng" modified="20210630080746851" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
@@ -16005,6 +16064,9 @@ A file named `sound.mp3` has a `.mp3` file extension, and a file named `image.gi
 </div>
 <div created="20210613073855661" creator="jsng" modified="20210613073856979" modifier="jsng" tags="Glossary" title="file header">
 <pre></pre>
+</div>
+<div created="20210711053208094" creator="jsng" modified="20210711053247522" modifier="jsng" title="file table" type="text/x-markdown">
+<pre>The location in a storage drive where [[metadata]]—data about data—is stored.</pre>
 </div>
 <div created="20210710091050060" creator="jsng" modified="20210710091227632" modifier="jsng" tags="Topic:systems" title="filesystem" type="text/x-markdown">
 <pre>Intuitively, we might imagine that the [[metadata]] for each file gets stored with its data. In container shipping, This is like storing the shipment details of each package with the package itself. But when you need to find a particular shipment in the warehouse, you can’t be checking every single rack!
