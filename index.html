@@ -493,6 +493,10 @@ Error message and password prompt
 
 <li>DPI</li>
 
+<li>Draft of 'New Tiddler' by jsng</li>
+
+<li>Draft of 'writing data to storage safely' by jsng</li>
+
 <li>editing a PDF file</li>
 
 <li>encode</li>
@@ -842,6 +846,8 @@ Error message and password prompt
 <li>word processor</li>
 
 <li>World Wide Web</li>
+
+<li>write cache</li>
 
 <li>writing data to storage safely</li>
 
@@ -1330,7 +1336,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="writing data to storage safely" modified="20210711054741368" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="write cache" modified="20210711055344850" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -3440,10 +3446,30 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 84.93333435058594,
             &quot;height&quot;: 39.48333740234375
         }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'writing data to storage safely' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;write cache&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 609.183349609375,
+            &quot;left&quot;: 671.933349609375,
+            &quot;width&quot;: 70.80000305175781,
+            &quot;right&quot;: 742.7333526611328,
+            &quot;bottom&quot;: 627.183349609375,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'write cache' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;write cache&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[writing data to storage safely]] [[reading data from storage]] filesystem [[storage device]] Topic:systems [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210711054741360" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[write cache]] [[Draft of 'writing data to storage safely' by jsng]] [[reading data from storage]] filesystem [[storage device]] Topic:systems [[HTTP request]] [[web browser]] cookies application Topic:software Topic:database" modified="20210711054741360" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -14623,7 +14649,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210701035926818" creator="jsng" list="[[writing data to storage safely]] file Topic:systems Windows [[operating system]] [[Where do my secrets get stored? If I don’t want them to be stored, what are my options?]] multithreading crash" modified="20210710085153503" modifier="jsng" title="$:/StoryList">
+<div created="20210701035926818" creator="jsng" list="[[Draft of 'New Tiddler' by jsng]] file Topic:systems Windows [[operating system]] [[Where do my secrets get stored? If I don’t want them to be stored, what are my options?]] multithreading crash" modified="20210710085153503" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -15843,6 +15869,57 @@ Instead, the web standardized on one way of doing so. This model of thinking abo
 </div>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
+</div>
+<div created="20210711054747428" creator="jsng" draft.of="New Tiddler" draft.title="writing data to storage quickly" list-after="[[writing data to storage safely]]" modified="20210711055331724" modifier="jsng" summary="Fast writes dump the data to a write cache (in computer memory), then update the file table to look like the file is already written to disk. However, if power is cut before all data is properly moved from the write cache to disk, the data in memory is lost, and file corruption usually results." tags="[[storage device]] Topic:systems" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
+<pre>If there’s anything to take away from the previous issue, it’s that *doing things the right way takes time*. And sometimes we are okay with taking shortcuts to get something done faster, the *left* way.
+
+# The write cache
+
+If you have a shipment coming in that urgently needs to be dumped into the warehouse (e.g. because the ship needs to leave quickly for another delivery, or to free up space on the docks), how do we speed this up?
+
+What usually happens is the goods will be offloaded onto some empty space **outside the warehouse**. The ship will leave first, and *assume* that the warehouse will be able to get the goods in just fine.
+
+What is the [[OS]] equivalent of this? Hard disk writes are actually pretty slow; they can get up to 100 MB/s, but usually hit a sustained speed of 60 MB/s for system disks, and about 20 MB/s over USB. The operating system therefore sets up a “dumping space” in memory; files can be read from other disks at up to 200 MB/s, and written to memory at **a few GB/s**!
+
+This space is known as the [[write cache]]. (I’ve previously covered the idea of caches in Issues [39](https://buttondown.email/laymansguide/archive/lmg-s3-issue-39-caches-and-caching/) and [57](https://buttondown.email/laymansguide/archive/lmg-s5-issue-57-cache-the-cpus-working-space/), and the write cache works on a similar idea.)
+
+## Speeding up file access ... and its drawbacks
+
+So how do we speed up the process of copying data to a disk? We could dump the data into the write cache (assuming there is enough space), then update the file table first, and let the OS slowly copy the data from the write cache into the disk. Anyone who needs access to the file records will then be able to go about their merry way, and if they need data from the file, they can just copy it from the disk cache instead of the disk. Easy peasy!
+
+This was what happened in Windows XP. File copying appears to be speeded up, and users are happy.
+
+But remember what happens when power to the computer is accidentally cut, or if a program suddenly hangs, or the computer sometimes runs out of memory.
+
+Yup ... it shuts down (or reboots), and the contents of memory are wiped clean. And any data that has not been written to disk is *lost forever*. And ... the file table has **already been updated to look like there is valid data**!
+
+This is when things look really bad.</pre>
+</div>
+<div created="20210711054340234" creator="jsng" draft.of="writing data to storage safely" draft.title="writing data to storage safely" list-after="[[reading data from storage]]" list-before="[[writing data to storage quickly]]" modified="20210711054833272" modifier="jsng" summary="Safe writes ensure that all the data is written to disk sectors properly first before updating the file table. The result is that write operations take a longer time to complete." tags="[[storage device]] Topic:systems" title="Draft of 'writing data to storage safely' by jsng" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+When a batch of data (shipment of cargo)) arrives at our warehouse, there are two things that need doing:
+
+1) The data needs to be written into [[sector]]s (the smallest unit of storage that the disk handles),
+2) The [[file table]] needs to be updated.
+
+# Writing data the safe way
+
+If the write operation gets interrupted, it is preferable that our file table is not updated; this way, we will not find any reference to the data in the file table, and we can attempt the write operation again.
+
+This will appear strange in a warehouse analogy; the cargo, damaged or intact, is still occupying space on the racks! But remember that when we are talking about a hard disk storing data, there is no *physical cargo*; the data exists as a specific arrangement of electrons/atoms. We can override the existing arrangement of electrons/atoms without having to reset it first.
+
+# Drawbacks of safe writing
+
+This way of storing data first before updating the file table is advantageous in its security; if the write operation is interrupted halfway, we are less likely to suffer filesystem corruption.
+
+But for large batches of data (or large shipments of cargo), this means a long wait ... and in the meantime, nothing else can happen! Hard drives only have one writing needle, which is like a warehouse only having one forklift. If you have other applications waiting for that file (similar to other employees waiting for the file record to appear in the file table), they will be twiddling their thumbs until the last sector of data is written, the last pallet of cargo loaded onto the racks.
+
+But this is the *right thing to do*, isn’t it? It doesn’t matter; [Windows Vista did it this way](https://blog.codinghorror.com/actual-performance-perceived-performance/), waiting for write operations to complete before updating the file metadata in the file table, and the result is that *people complained that it was slower*. People do not like things slow!
+
+Why did Windows XP feel faster, then? Because it did it the other way round!
+
+{{||readNextTemplate}}</pre>
 </div>
 <div created="20210613121827918" creator="jsng" modified="20210630080746851" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
@@ -18645,6 +18722,9 @@ So to uninstall a Windows app, you run its uninstaller. Which may or may not wor
 <pre></pre>
 </div>
 <div created="20210702094259622" creator="jsng" modified="20210702094425418" modifier="jsng" tags="Topic:internet Glossary WIP" title="World Wide Web" type="text/x-markdown">
+<pre></pre>
+</div>
+<div created="20210711055339058" creator="jsng" modified="20210711055344844" modifier="jsng" tags="cache" title="write cache" type="text/x-markdown">
 <pre></pre>
 </div>
 <div created="20210711054340234" creator="jsng" list-after="[[reading data from storage]]" list-before="[[writing data to storage quickly]]" modified="20210711054743852" modifier="jsng" summary="Safe writes ensure that all the data is written to disk sectors properly first before updating the file table. The result is that write operations take a longer time to complete." tags="[[storage device]] Topic:systems" title="writing data to storage safely" type="text/x-markdown">
