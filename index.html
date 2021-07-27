@@ -751,6 +751,8 @@ Error message and password prompt
 
 <li>shared memory</li>
 
+<li>shutdown</li>
+
 <li>solid state drive</li>
 
 <li>specification</li>
@@ -1348,7 +1350,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="bootup" modified="20210727103444353" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="embedded operating system" modified="20210727104044095" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2019,10 +2021,21 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 583.9166870117188,
             &quot;height&quot;: 39.48333740234375
         }
+    },
+    {
+        &quot;title&quot;: &quot;embedded operating system&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 45.44999694824219,
+            &quot;left&quot;: 713.5166625976562,
+            &quot;width&quot;: 32.90000915527344,
+            &quot;right&quot;: 746.4166717529297,
+            &quot;bottom&quot;: 84.93333435058594,
+            &quot;height&quot;: 39.48333740234375
+        }
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="bootup" modified="20210727103444352" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[embedded operating system]] bootup" modified="20210727104044091" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13202,7 +13215,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210727103349256" creator="jsng" list="[[embedded operating system]] Topic:security" modified="20210727103349256" modifier="jsng" title="$:/StoryList">
+<div created="20210727103349256" creator="jsng" list="shutdown Topic:security" modified="20210727104413265" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -16222,6 +16235,29 @@ We can see that:
 3. Some libraries are still loaded privately, and both programs still have a heap for their own data which is not meant to be accessible to other programs
 
 You can see why the application memory usage shown in Task Manager/System Monitor doesn’t always tally with the total memory usage. Application memory usage usually shows both private+shared memory usage, so that will add up to a number greater than the total memory usage.</pre>
+</div>
+<div created="20210727104045948" creator="jsng" modified="20210727104545513" modifier="jsng" summary="When you shut a computer down, it sends an exit signal to all running programs to get them to do their exit routine. This process can sometimes take a long time. To preserve the data configuration in memory while minimising power draw, a computer can go into standby mode: all hardware except the memory gets powered down, until the computer is woken up from standby." tags="Topic:systems" title="shutdown" type="text/x-markdown">
+<pre>The [[bootup]] process takes so many steps to make a computer useable for us humans, and the mere press of a power switch wipes that data configuration once computer [[memory]] loses power.
+
+This is obviously undesirable; your work in progress might not have been saved, data that is being transferred to disks might not be written properly and end up getting corrupted, and you should never switch off a computer at the power socket this way!
+
+Related: [[writing data to storage quickly]]
+
+# Forced shutdowns
+
+But sometimes, the computer gets itself so stuck that there is just no other way to do it. On a laptop or smartphone, which has a built-in battery and cant be shut off immediately at the power socket, this is usually done by holding the power button for more than 10 seconds. This will cut off power to the mainboard immediately.
+
+What does a proper shutdown do differently?
+
+# Shutdown
+
+To avoid the problems described above, we need to give the computer time to wind down. Most programs have a proper exit routine (which we invoke by clicking the red dot on [[MacOS]] or the red cross in [[Windows]]). This gets the program to write any last bits of data, release any file or [[database locks|multi-user databases]], quit, and then release its resources back to the [[operating system]] ([[OS]]). When shutting down, all running programs and services have this exit routine invoked, and they usually quit pretty quickly.
+
+The exceptions to this usually have to do with disk operations, the slowest of operations on a computer. If a program has lots of data to [[save to disk|writing data to storage safely]], or is waiting for a disk operation to complete, it will remain open while attempting to exit, and prevent the computer from shutting down. If you’re wondering why a folder seems to be stopping the computer from shutting down, this is usually the reason!
+
+“Wait, I’m not copying anything …” Yep, but File Explorer in Windows does more than just let you copy, paste, and delete. It also generates image and video thumbnails for you, create file indexes to speed up searching, and so on. And these are disk operations too.
+
+On rare occasions, these disk operations can mean your computer takes up to an hour to shutdown! My best advice, if you’re not in a hurry, is to just leave it alone and let it do its thing. Much safer than having to scan for errors later.</pre>
 </div>
 <div created="20210710085600726" creator="jsng" modified="20210710085656620" modifier="jsng" tags="[[storage device]]" title="solid state drive">
 <pre></pre>
