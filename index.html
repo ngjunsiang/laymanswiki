@@ -503,9 +503,9 @@ Error message and password prompt
 
 <li>DPI</li>
 
-<li>Draft of 'New Tiddler' by jsng</li>
-
 <li>editing a PDF file</li>
+
+<li>embedded operating system</li>
 
 <li>encode</li>
 
@@ -13202,7 +13202,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210727103349256" creator="jsng" list="[[Draft of 'New Tiddler' by jsng]] Topic:security" modified="20210727103349256" modifier="jsng" title="$:/StoryList">
+<div created="20210727103349256" creator="jsng" list="[[embedded operating system]] Topic:security" modified="20210727103349256" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14536,29 +14536,6 @@ Instead, the web standardized on one way of doing so. This model of thinking abo
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210727103442392" creator="jsng" draft.of="New Tiddler" draft.title="embedded operating system" modified="20210727103715071" modifier="jsng" tags="Topic:systems" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
-<pre># Embedded operating systems
-
-Though these are also [[operating system]]s ([[OS]]), and serve the same function, they are quite different from the one running on your laptop. We call them [[embedded OS]]es.
-
-Embedded OSes are not meant for users to interact with directly. They primarily runs services which the appliance (such as your Amazon Echo, 3D printer, or smart home appliance) provides; you’re not allowed to install your own apps on it unless it has a manufacturer-approved app store or you are hacking it.
-
-# Hardware and Software
-
-We often see the term “hardware” used to refer to physical tools and implements that are needed for a job; they’re “hard” in the sense that they often come fixed into a certain configuration, are not easily changeable, and remain that way for the rest of their lifetime.
-
-“Software”, on the other hand, is … fuzzier, more malleable, less clearly defined. Almost anything goes for software! This is usually the user-facing side of a system.
-
-## Firmware
-
-We usually consider laptop OSes to be software, because it has an installation process, you get small regular updates on it, you can add and remove features … if it looks like software, talks like software, and behaves like software, you might as well call it software.
-
-Embedded OSes are kinda different. They come preinstalled; if they don’t, you won’t know how to install it yourself on a brand new, unprogrammed appliance. You don’t get small hotfixes and updates, only big version changes. And you can’t control what features it has.
-
-If *soft*ware sits at the layer nearest the user, and *hard*ware sits at the layer nearest the machine, then I guess we’ll call the middle layer *firm*ware.
-
-So when you see the word **firmware** used in an interface, I guess you can just think of it as the “OS of the device” :)</pre>
-</div>
 <div created="20210613121827918" creator="jsng" modified="20210630080746851" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
 
@@ -14603,6 +14580,29 @@ If it is done properly, copying text from a [[PDF]] document is rather easy. But
 [[PDF]] is concerned primarily with *how things look*, not with *what things are*. To display an [[image|Image formats]] on a PDF, the app’s PDF library has to convert it from its compressed format into [[an array of pixels|Image representation in computers]].
 
 The image’s pixel dimensions will seldom match those of the frame it must go into; often you may find yourself trying to fit an 800×600px image into a 400×300px space. The conversion process may resize or crop the image, and the PDF creation app encodes the *resized* image; you may not be able to get the original image back from that stream.</pre>
+</div>
+<div created="20210727103442392" creator="jsng" modified="20210727103938142" modifier="jsng" summary="Embedded operating systems are unlike user operating systems. They are designed to run the software needed for an appliance’s operation, and are not meant to be used by users directly. Since they are considered somewhere between software and hardware, they are usually referred to as firmware." tags="Topic:systems" title="embedded operating system" type="text/x-markdown">
+<pre># Embedded operating systems
+
+Though these are also [[operating system]]s ([[OS]]), and serve the same function, they are quite different from the one running on your laptop. We call them [[embedded OS]]es.
+
+Embedded OSes are not meant for users to interact with directly. They primarily runs services which the appliance (such as your Amazon Echo, 3D printer, or smart home appliance) provides; you’re not allowed to install your own apps on it unless it has a manufacturer-approved app store or you are hacking it.
+
+# Hardware and Software
+
+We often see the term [[hardware]] used to refer to physical tools and implements that are needed for a job; they’re “hard” in the sense that they often come fixed into a certain configuration, are not easily changeable, and remain that way for the rest of their lifetime.
+
+[[Software|software]], on the other hand, is … fuzzier, more malleable, less clearly defined. Almost anything goes for software! This is usually the user-facing side of a system.
+
+# Firmware
+
+We usually consider laptop [[OS]]es to be software, because they has an installation process, you get small regular updates for them, you can add and remove features … if it looks like software, talks like software, and behaves like software, you might as well call it software.
+
+Embedded OSes are different. They come preinstalled; if they don’t, you won’t know how to install them yourself on a brand new, unprogrammed appliance. You don’t get small hotfixes and updates, only big version changes. And you can’t control what features they have without some reprogramming.
+
+If *soft*ware sits at the layer nearest the user, and *hard*ware sits at the layer nearest the machine, then I guess we’ll call the middle layer *firm*ware.
+
+So when you see the word [[firmware]] used in an interface, I guess you can just think of it as the “OS of the device”.</pre>
 </div>
 <div created="20210611030532554" creator="jsng" modified="20210613065811523" modifier="jsng" tags="Glossary" title="encode" type="text/x-markdown">
 <pre># Text encoding
