@@ -771,6 +771,8 @@ Error message and password prompt
 
 <li>StackOverflow</li>
 
+<li>standby</li>
+
 <li>storage device</li>
 
 <li>storage management</li>
@@ -1350,7 +1352,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="embedded operating system" modified="20210727104044095" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="shutdown" modified="20210727104621648" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2032,10 +2034,21 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 84.93333435058594,
             &quot;height&quot;: 39.48333740234375
         }
+    },
+    {
+        &quot;title&quot;: &quot;shutdown&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 60.44999694824219,
+            &quot;left&quot;: 1368.933349609375,
+            &quot;width&quot;: 32.899993896484375,
+            &quot;right&quot;: 1401.8333435058594,
+            &quot;bottom&quot;: 99.93333435058594,
+            &quot;height&quot;: 39.48333740234375
+        }
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[embedded operating system]] bootup" modified="20210727104044091" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="shutdown" modified="20210727104621645" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13215,7 +13228,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210727103349256" creator="jsng" list="shutdown Topic:security" modified="20210727104413265" modifier="jsng" title="$:/StoryList">
+<div created="20210727103349256" creator="jsng" list="standby Topic:security" modified="20210727104413265" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -16492,6 +16505,21 @@ This is barely scratching the surface of what [[SQL]] can do; it has at least 4 
 </div>
 <div created="20210702095609453" creator="jsng" modified="20210702095609453" modifier="jsng" title="StackOverflow">
 <pre></pre>
+</div>
+<div created="20210727104624651" creator="jsng" list-after="[[bootup]]" modified="20210727104949347" modifier="jsng" summary="To preserve the data configuration in memory while minimizing power draw, a computer can go into standby mode: all hardware except the memory gets powered down, until the computer is woken up from standby." tags="Topic:systems" title="standby" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+On older computers, shutting down and booting up took more than 10 seconds, which is quite a killjoy when you are getting ready for a presentation and just need to stuff your laptop into a bag, get up to the conference room, and switch it on again. That feeling when you’re looking at a room full of people looking back at you, waiting for your laptop to boot up … *awkwardddddd*.
+
+Some of us just keep our laptops open&lt;&lt;fnote &quot;because closing the lid causes it to shut down, but you can change that in the system settings&quot;&gt;&gt; and hold it that way while running around. And the purpose of that is just to keep the computer memory powered so we don’t lose the precious data configuration of the computer [[memory]]!
+
+What if there was a way to keep power going to computer memory, but have the rest of the computer system powered off, to save energy? That would be perfect for hopping from coffee joint to coffee joint!
+
+This is exactly what happens when you put a computer into **standby** (some systems also refer to this as [[sleep]]). The [[CPU]] goes into a power state where only the computer memory remains powered. Everything else is powered off—screen, network hardware, [[storage devices]], … until you power the system on again.
+
+The memory configuration remains intact, and everything is exactly the way you left it at the moment you put the laptop into standby. Best of all, you didn’t have to go through the long and tedious [[shutdown]]-[[bootup]] sequence again!
+
+{{||readNextTemplate}}</pre>
 </div>
 <div created="20210710085634509" creator="jsng" modified="20210711061545366" modifier="jsng" tags="Topic:hardware" title="storage device">
 <pre>A storage device is organized into [[sector]]s, which are the smallest units of storage in a storage device.
