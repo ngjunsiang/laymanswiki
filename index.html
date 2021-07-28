@@ -503,8 +503,6 @@ Error message and password prompt
 
 <li>DPI</li>
 
-<li>Draft of 'New Tiddler' by jsng</li>
-
 <li>editing a PDF file</li>
 
 <li>embedded operating system</li>
@@ -680,6 +678,8 @@ Error message and password prompt
 <li>out-of-order execution</li>
 
 <li>page layout application</li>
+
+<li>paging memory</li>
 
 <li>partition</li>
 
@@ -13264,7 +13264,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210727103349256" creator="jsng" list="[[Draft of 'New Tiddler' by jsng]] [[virtual memory]] [[What happens when a computer runs out of memory?]] throughput memory Topic:security" modified="20210728091803371" modifier="jsng" title="$:/StoryList">
+<div created="20210727103349256" creator="jsng" list="[[paging memory]] [[What happens when a computer runs out of memory?]] throughput memory Topic:security" modified="20210728092808889" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14597,35 +14597,6 @@ Instead, the web standardized on one way of doing so. This model of thinking abo
 </div>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
-</div>
-<div created="20210728091853383" creator="jsng" draft.of="New Tiddler" draft.title="paging memory" modified="20210728092031431" modifier="jsng" tags="" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
-<pre>If a computer runs out of physical memory, it [[hang]]s.
-
-Question: [[What happens when a computer runs out of memory?]]
-
-One way to extend memory capacity is to use a [[page file]] for storing memory contents.
-
-# Memory usage patterns
-
-As it turns out, not all parts of memory are constantly being written to or read from. Lots of it is just sitting there, waiting for that one moment when the data is needed. Kind of wasteful if out of 8GB of memory, only 2GB is actively changing in any hour.
-
-The OS could write that mostly-static 6GB to disk and free it up for other programs, maybe? Then when the data is needed, the OS reads it back from disk before passing it to the program. Yes, this would mean a slower response time for programs that have been idle for a while, but surely better than hanging because it ran out of memory?
-
-This is what all modern OSes do. They write unused in-memory data to a file known as the **page file**. In Windows, the page file is `C:\pagefile.sys`. When data is moved from physical memory to the page file, it is said to be *paged out*, and when moved from page file to physical memory, it is *paged in*.
-
-In older systems or software, you may also see this page file referred to as a *swap file*, or *swap space*. On Linux, a subregion of storage space can be set aside as a *swap partition*.
-
-## Why is it called the page file?
-
-Computer memory is organised into pages, each page typically being 4 KiB (notice that disk sectors are also typically 4 KiB ([Issue 106](https://buttondown.email/laymansguide/archive/lmg-s9-issue-106-organising-storage/)) …). The computer may have only 8GB of physical memory, but present 16GB of virtual memory ([Issue 56](https://buttondown.email/laymansguide/archive/lmg-s5-issue-56-operating-systems-and-resource/)) to programs. Kind of like how banks only hold some liquidity but present their assets as being much more …
-
-So the 8GB “shortfall” is actually in the pagefile, not in memory. The pagefile essentially acts like (much slower) memory! The OS reads pages from it and writes pages to it, through virtual memory accesses.
-
-## This sounds like a waste of space, can I choose not to use it?
-
-Though most OSes are configured to use a page file by default, you can configure it to not do so, although this is ill-advised (and I won’t explain why here; this is a newsletter aimed at layfolks). Modern OSes are pretty smart at managing page files, understanding that it is much slower than physical computer memory. They have their own algorithms to decide when to move data to a pagefile, and these days they even forecast when data that was paged out will soon be needed by the program.
-
-OSes need page space for all kinds of reasons: as a kind of “emergency space” when physical memory is full, as working space for optimising data layout in memory, etc. So that disk space is definitely not going to waste!</pre>
 </div>
 <div created="20210613121827918" creator="jsng" modified="20210630080746851" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
@@ -15976,6 +15947,41 @@ See also: [[Meltdown]]</pre>
 </div>
 <div created="20210630080617144" creator="jsng" modified="20210630080617144" modifier="jsng" title="page layout application">
 <pre></pre>
+</div>
+<div created="20210728091853383" creator="jsng" modified="20210728092848082" modifier="jsng" summary="Operating systems use a page file on the storage disk as a complement to physical memory. This allows OSes to behave more performantly than they would if they did not have a page file. Data that is rarely accessed is moved to the pagefile (“paged out”), and can be paged in when it is needed later, albeit with a performance hit." tags="Topic:systems memory" title="paging memory" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+If a computer runs out of physical memory, it [[hang]]s.
+
+Question: [[What happens when a computer runs out of memory?]]
+
+If memory is limited, what can we do to increase it?
+
+# Memory usage patterns
+
+As it turns out, not all parts of memory are constantly being written to or read from. Lots of it is just sitting there, waiting for that one moment when the data is needed. Kind of wasteful if out of 8GB of memory, only 2GB is actively changing in any hour.
+
+The OS could write that mostly-static 6GB to a [[storage device]] and free it up for other programs, maybe? Then when the data is needed, the OS reads it back from disk before passing it to the program. Yes, this would mean a slower response time for programs that have been idle for a while, but surely better than [[hang]]ing because it ran out of memory?
+
+# Moving memory contents to storage
+
+This is what all modern OSes do. They write unused in-memory data to a file known as the [[page file]]. In Windows, the page file is `C:\pagefile.sys`. When data is moved from computer memory to the page file, it is said to be *paged out*, and when moved from page file back to computer memory, it is *paged in*.
+
+In older systems or software, you may also see this page file referred to as a [[swap file]], or *swap space*. On Linux, a [[partition]] can be set aside as a *swap partition*.
+
+# Why is it called the page file?
+
+Computer memory is organized into [[page]]s, each [[page]] typically being 4 KiB. The computer may have only 8GB of physical memory, but it presents 16GB of [[virtual memory]] to programs. Kind of like how banks only hold some liquidity but present their assets as being much more …
+
+So the 8GB “shortfall” is actually in the [[page file]], not in memory. The page file essentially acts like (much slower) memory! The [[OS]] reads pages from it and writes pages to it, through [[virtual memory]] accesses.
+
+# This sounds like a waste of space, can I choose not to use it?
+
+Though most [[OS]]es are configured to use a [[page file]] by default, you can configure it to not do so, although this is ill-advised. Modern OSes are pretty smart at managing page files, understanding that it is much slower than physical computer memory. They have their own algorithms to decide when to move data to a page file, and might even forecast when data that was paged out will soon be needed by the program.
+
+[[OS]]es need page space for all kinds of reasons: as a kind of “emergency space” when physical memory is full, as working space for optimizing data layout in memory, etc. So that disk space is definitely not going to waste!
+
+{{||readNextTemplate}}</pre>
 </div>
 <div created="20210711061604833" creator="jsng" modified="20210711062509419" modifier="jsng" tags="[[storage device]] [[storage management]]" title="partition" type="text/x-markdown">
 <pre>A section of storage space in a [[storage device]]. A partition has contiguous sectors in a disk, and its own [[file table]] separate from other partitions.</pre>
