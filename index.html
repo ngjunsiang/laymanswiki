@@ -503,6 +503,8 @@ Error message and password prompt
 
 <li>DPI</li>
 
+<li>Draft of 'New Tiddler' by jsng</li>
+
 <li>editing a PDF file</li>
 
 <li>embedded operating system</li>
@@ -13262,7 +13264,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210727103349256" creator="jsng" list="[[What happens when a computer runs out of memory?]] throughput memory Topic:security" modified="20210728091330188" modifier="jsng" title="$:/StoryList">
+<div created="20210727103349256" creator="jsng" list="[[Draft of 'New Tiddler' by jsng]] [[virtual memory]] [[What happens when a computer runs out of memory?]] throughput memory Topic:security" modified="20210728091803371" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14595,6 +14597,35 @@ Instead, the web standardized on one way of doing so. This model of thinking abo
 </div>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
+</div>
+<div created="20210728091853383" creator="jsng" draft.of="New Tiddler" draft.title="paging memory" modified="20210728092031431" modifier="jsng" tags="" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
+<pre>If a computer runs out of physical memory, it [[hang]]s.
+
+Question: [[What happens when a computer runs out of memory?]]
+
+One way to extend memory capacity is to use a [[page file]] for storing memory contents.
+
+# Memory usage patterns
+
+As it turns out, not all parts of memory are constantly being written to or read from. Lots of it is just sitting there, waiting for that one moment when the data is needed. Kind of wasteful if out of 8GB of memory, only 2GB is actively changing in any hour.
+
+The OS could write that mostly-static 6GB to disk and free it up for other programs, maybe? Then when the data is needed, the OS reads it back from disk before passing it to the program. Yes, this would mean a slower response time for programs that have been idle for a while, but surely better than hanging because it ran out of memory?
+
+This is what all modern OSes do. They write unused in-memory data to a file known as the **page file**. In Windows, the page file is `C:\pagefile.sys`. When data is moved from physical memory to the page file, it is said to be *paged out*, and when moved from page file to physical memory, it is *paged in*.
+
+In older systems or software, you may also see this page file referred to as a *swap file*, or *swap space*. On Linux, a subregion of storage space can be set aside as a *swap partition*.
+
+## Why is it called the page file?
+
+Computer memory is organised into pages, each page typically being 4 KiB (notice that disk sectors are also typically 4 KiB ([Issue 106](https://buttondown.email/laymansguide/archive/lmg-s9-issue-106-organising-storage/)) …). The computer may have only 8GB of physical memory, but present 16GB of virtual memory ([Issue 56](https://buttondown.email/laymansguide/archive/lmg-s5-issue-56-operating-systems-and-resource/)) to programs. Kind of like how banks only hold some liquidity but present their assets as being much more …
+
+So the 8GB “shortfall” is actually in the pagefile, not in memory. The pagefile essentially acts like (much slower) memory! The OS reads pages from it and writes pages to it, through virtual memory accesses.
+
+## This sounds like a waste of space, can I choose not to use it?
+
+Though most OSes are configured to use a page file by default, you can configure it to not do so, although this is ill-advised (and I won’t explain why here; this is a newsletter aimed at layfolks). Modern OSes are pretty smart at managing page files, understanding that it is much slower than physical computer memory. They have their own algorithms to decide when to move data to a pagefile, and these days they even forecast when data that was paged out will soon be needed by the program.
+
+OSes need page space for all kinds of reasons: as a kind of “emergency space” when physical memory is full, as working space for optimising data layout in memory, etc. So that disk space is definitely not going to waste!</pre>
 </div>
 <div created="20210613121827918" creator="jsng" modified="20210630080746851" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
@@ -17001,7 +17032,7 @@ And for PostGreSQL in Python: `psycopg2.connect('postgres://myusername:myverylon
 
 **Note:** It is considered insecure to simply leave your login credentials in code like that. Please read up on best practices for importing sensitive information from more secure sources in your programming language of choice.</pre>
 </div>
-<div created="20210624065530588" creator="jsng" list-after="[[memory addressing]]" modified="20210701033344539" modifier="jsng" tags="Topic:hardware Glossary Topic:systems memory" title="virtual memory" type="text/x-markdown">
+<div created="20210624065530588" creator="jsng" list-after="[[memory addressing]]" list-before="page file" modified="20210728092139921" modifier="jsng" tags="Topic:hardware Glossary Topic:systems memory" title="virtual memory" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 An [[operating system]] (OS) makes system resources, such as [[memory]], [[storage]], and [[peripheral devices]], available to [[program]]s running in the OS.
@@ -17027,7 +17058,11 @@ A [[memory management unit]] ([[MMU]]) is a hardware chip that is able to carry 
 
 # Security
 
-Within the physical memory part of the virtual memory space, there are portions which are set aside *for the [[OS]] only*. This is the **kernel address space**, which is where critical information such as user privilege tables and OS state get stored. Knowing the addresses in the kernel address space is a big requirement for many [[CPU exploits]], so OS engineers obviously put a lot of work into make sure they are as hard to guess or discover as possible.</pre>
+Within the physical memory part of the virtual memory space, there are portions which are set aside *for the [[OS]] only*. This is the **kernel address space**, which is where critical information such as user privilege tables and OS state get stored. Knowing the addresses in the kernel address space is a big requirement for many [[CPU exploits]], so OS engineers obviously put a lot of work into make sure they are as hard to guess or discover as possible.
+
+# Extending memory
+
+Virtual memory can also include [[page file]]s for increasing memory capacity without requiring more computer memory.</pre>
 </div>
 <div created="20210702081255129" creator="jsng" modified="20210702081255129" modifier="jsng" title="VLOOKUP">
 <pre></pre>
