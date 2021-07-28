@@ -509,8 +509,6 @@ Error message and password prompt
 
 <li>DPI</li>
 
-<li>Draft of 'New Tiddler' by jsng</li>
-
 <li>driver</li>
 
 <li>DVD-ROM</li>
@@ -744,6 +742,8 @@ Error message and password prompt
 <li>readNextTemplate</li>
 
 <li>relational database</li>
+
+<li>render</li>
 
 <li>response</li>
 
@@ -13393,7 +13393,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210727103349256" creator="jsng" list="[[Draft of 'New Tiddler' by jsng]] [[3D graphics]]" modified="20210728095917176" modifier="jsng" title="$:/StoryList">
+<div created="20210727103349256" creator="jsng" list="render" modified="20210728095917176" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14765,33 +14765,6 @@ Instead, the web standardized on one way of doing so. This model of thinking abo
 </div>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
-</div>
-<div created="20210728101440079" creator="jsng" draft.of="New Tiddler" draft.title="render" list-after="[[3D graphics]]" modified="20210728101548733" modifier="jsng" tags="Glossary Topic:systems" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
-<pre>{{||prereqTemplate}}
-
-Having a 3D model represented in a computer as a large set of numbers is cool, but nobody does 3D modelling like that. We need something to look at! We need a way to convert our model into a flat picture, ideally displayed on our monitors. And this conversion process needs to be fast enough that as we rotate or change the view of our model, the computer can keep up, displaying the changes in real-time.
-
-This process is called **rendering**.
-
-## A pipeline for rendering pictures
-
-During rendering, data from the modelling program is processed in a series of steps; these steps together are known as the **graphics pipeline**. If you’ve done perspective drawing or tried to figure out how to create clever camera tricks, you already have a sense of what the computer needs to do here.
-
-The 3D cube on screen looks different depending on where our eye is, and which direction it is looking. Our distance to the cube affects how much distortion the view undergoes. Lighting also affects how the cube appears, by making shaded areas appear darker, and lit areas appear brighter.
-
-Finally, this 3D model needs to be “distorted” into a 2D view so it can be displayed on a screen. (We don’t have 3D holo-projectors yet … 😢)
-
-Lastly, since our screens display images as a grid of pixels, we need to figure out the best way to convert the distorted 2D view into a pixel grid. This part of the pipeline is known as **rasterisation**. Here, the computer figures out what colour each pixel should be, based on which part of the model actually gets projected here. Hidden parts do not need to be rasterised, and neither do parts of the model which are outside the screen.
-
-All these steps take place in the graphics pipeline.
-
-## The hardware
-
-The pipeline used to be carried out by the CPU ([Issue 53](https://buttondown.email/laymansguide/archive/lmg-s5-issue-53-the-cpu-is-an-instruction-obeying/)), but that isn’t ideal. The CPU’s hardware is optimised for *general-purpose processing*: keeping track of integers (i.e. natural numbers like 1, 2, 3, …), adding or subtracting them, and resetting them. It has many more computational units that carry out this calculation.
-
-Graphics processing, on the other hand, requires a different kind of calculation. The position of vertices do not fit nicely into integers; we have to carry this out using decimal numbers (1.46776, 2.58704, –3.57514, …). The CPU does not encounter these often, and therefore does not have many of these computational units.
-
-For graphics, we need a different kind of processor, one that is jam-packed with decimal computational units. We need a **graphics card**.</pre>
 </div>
 <div created="20210728095742017" creator="jsng" modified="20210728100825468" modifier="jsng" summary="Driver files provide information about the driver, and instructions on how to receive information from the device, and encode information to be passed to the device. The operating system may come with generic driver files for the device, but custom driver files might provide better performance or additional features." tags="Topic:systems Glossary" title="driver" type="text/x-markdown">
 <pre>Drivers are responsible for enabling an [[operating system]] ([[OS]]) to understand how to use a [[hardware|Topic:hardware]] device. It acts as an interface between the [[OS]] and device.
@@ -16460,6 +16433,39 @@ Relational databases can also develop problems that require them to be shut down
 If you don’t expect to be changing your database schema often, or if you are able to design the schema to minimise such migrations, relational databases can be quite excellent for your needs. Please consult a professional database engineer if you are planning to use a database for your business needs.
 
 {{||readNextTemplate}}</pre>
+</div>
+<div created="20210728101440079" creator="jsng" list-after="[[3D graphics]]" modified="20210728101845913" modifier="jsng" summary="Computers are general-purpose machines that usually process integer calculations. The graphics pipeline requires more specialised hardware that can process decimal number calculations. This is why high-performance graphics usually requires a graphics card." tags="Glossary Topic:systems" title="render" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+Having a 3D model represented in a computer as a large set of numbers is cool, but nobody does 3D modelling like that. We need something to look at! We need a way to convert our model into a flat picture, ideally displayed on our screens. And this conversion process needs to be fast enough that as we rotate or change the view of our model, the computer can keep up, displaying the changes in real-time.
+
+This process is called **rendering**.
+
+# A pipeline for rendering pictures
+
+During rendering, data from the modelling program is processed in a series of steps; these steps together are known as the **graphics pipeline**. If you’ve done perspective drawing or tried to figure out how to create clever camera tricks, you already have a sense of what the computer needs to do here.
+
+## Shading
+
+The 3D cube on screen looks different depending on where our eye is, and which direction it is looking. Our distance to the cube affects how much distortion the view undergoes. Lighting also affects how the cube appears, by making shaded areas appear darker, and lit areas appear brighter.
+
+## 3D to 2D transform
+
+Finally, this 3D model needs to be “distorted” into a 2D view so it can be displayed on a screen. (We don’t have 3D holo-projectors yet … 😢)
+
+## Rasterization
+
+Lastly, since our screens display images as a grid of pixels, we need to figure out the best way to convert the distorted 2D view into a pixel grid. This part of the pipeline is known as **rasterization**. Here, the computer figures out what color each pixel should be, based on which part of the model actually gets projected here. Hidden parts do not need to be rasterized, and neither do parts of the model which are outside the screen.
+
+All these steps take place in the graphics pipeline.
+
+# The hardware
+
+The pipeline used to be carried out by the [[CPU]], but that isn’t ideal. The CPU’s hardware is optimized for *general-purpose processing*: keeping track of integers (i.e. natural numbers like 1, 2, 3, …), adding or subtracting them, and resetting them. It has many more computational units that carry out this calculation.
+
+Graphics processing, on the other hand, requires a different kind of calculation. The position of vertices do not fit nicely into integers; we have to carry this out using decimal numbers (1.46776, 2.58704, –3.57514, …). The CPU does not encounter these often, and therefore does not have many of these computational units.
+
+For graphics, we need a different kind of processor, one that is jam-packed with decimal computational units. We need a [[graphics card]].</pre>
 </div>
 <div created="20210702095925989" creator="jsng" modified="20210702095925989" modifier="jsng" title="response">
 <pre></pre>
