@@ -385,6 +385,8 @@ Error message and password prompt
 
 <li>32-bit</li>
 
+<li>3D graphics</li>
+
 <li>64-bit</li>
 
 <li>7zip</li>
@@ -506,8 +508,6 @@ Error message and password prompt
 <li>DOM</li>
 
 <li>DPI</li>
-
-<li>Draft of 'USB-IF' by jsng</li>
 
 <li>driver</li>
 
@@ -1386,7 +1386,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Draft of 'USB-IF' by jsng" modified="20210728100348905" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="driver" modified="20210728100835619" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2194,10 +2194,24 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;Draft of 'USB-IF' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;USB-IF&quot;
+    },
+    {
+        &quot;title&quot;: &quot;driver&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 45.44999694824219,
+            &quot;left&quot;: 588.7166748046875,
+            &quot;width&quot;: 32.90000915527344,
+            &quot;right&quot;: 621.6166839599609,
+            &quot;bottom&quot;: 84.93333435058594,
+            &quot;height&quot;: 39.48333740234375
+        }
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[Universal Serial Bus]] [[Draft of 'USB-IF' by jsng]]" modified="20210728100346893" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="driver [[Universal Serial Bus]]" modified="20210728100835616" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13377,7 +13391,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210727103349256" creator="jsng" list="driver [[solid state drive]]" modified="20210728095917176" modifier="jsng" title="$:/StoryList">
+<div created="20210727103349256" creator="jsng" list="[[3D graphics]]" modified="20210728095917176" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13509,6 +13523,35 @@ exports.context = contextWidget;
 </div>
 <div created="20210728094116818" creator="jsng" modified="20210728094116818" modifier="jsng" title="32-bit">
 <pre></pre>
+</div>
+<div created="20210728100854572" creator="jsng" modified="20210728101356235" modifier="jsng" summary="3D models are represented with vertices (points), edges (line segments between points), and faces in a computer. Images known as textures can be mapped to faces to give the impression of detail." tags="Topic:data" title="3D graphics" type="text/x-markdown">
+<pre># Representing graphics using numbers
+
+Numbers can be used to represent points (a [[vertex]], in graphics-speak). In 3-dimensional space, a point can be represented with 3 numbers representing its position in each dimension. This is usually written in math as `(x, y, z)`.
+
+A line ([[edge]], in graphics-speak) can be represented as a segment between two points. So we can represent straight-line segments using two points. Curved-line segments are trickier, but for now a lazy way to represent them is just ... using a series of points 😛 like connect-the-dots puzzles!
+
+Surfaces are ... a bit trickier. What is the minimum number of points we need to represent a flat surface? Turns out the answer is 3 points: if we pick any 3 points that are not along the same line, we can join them along their edges and they form a triangle, which is a flat surface!
+
+In graphics-speak, we call these surfaces [[faces]]. Four points which form a flat four-pointed face are called [[quad]]s, and we can do the same for polygons with more points too. But most graphics hardware just deals with triangles and quads, because everything else can be represented using triangles and quads anyway.
+
+# Making 3D models
+
+3D modelling software (also referred to as computer-aided design software, or [[CAD]] software) helps us with the process of creating vertices (plural for vertex), edges, and faces. Any object we model digitally is just a collection of vertices, edges, and faces: we call such collections a [[mesh]].
+
+# Textures
+
+With just meshes, we quickly run into the limits of what can be represented.
+
+For simplicity of calculation, each face can only have one color. Furthermore, to make really detailed and realistic models, we need very finely detailed meshes. These are problematic because a lot of calculation is needed to make these models appear on screen; the more faces it has, the more calculation is needed!
+
+One way to reduce the number of faces in the mesh while still creating a decent model is to [[put an image|Image representation in computers]] on the face. We will need additional information to describe the scale and rotation of the image on the face, but at least we can use the same image across multiple faces if necessary. Instead of having to model a hundred thousand blades of grass, I could just model a few stalks, and use a grassy texture to complete the impression.
+
+# Scene modelling
+
+Just having models is pretty boring. We will usually be putting multiple models in a scene. Besides models, a scene needs to have lighting, a way to model the sky as the background, and other niceties.
+
+We can use numbers to describe the position, [[luminosity]] (i.e. **brightness**), [[hue]] (i.e. **colour**), and other properties of lighting in our scene.</pre>
 </div>
 <div created="20210624064512116" creator="jsng" list-after="[[memory addressing]]" modified="20210628230416968" modifier="jsng" tags="Glossary Topic:hardware" title="64-bit" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
@@ -14716,12 +14759,6 @@ Instead, the web standardized on one way of doing so. This model of thinking abo
 </div>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
-</div>
-<div created="20210728100045335" creator="jsng" draft.of="USB-IF" draft.title="USB-IF" modified="20210728100351601" modifier="jsng" tags="" title="Draft of 'USB-IF' by jsng" type="text/x-markdown">
-<pre>**USB-IF** stands for [USB Implementers’ Forum](https://en.wikipedia.org/wiki/USB_Implementers_Forum), a nonprofit organization responsible for maintaining the [[USB]] industry standards.
-
-The [[USB-IF]] maintains a database of vendors and their products. Companies that wish to have their products recognized should [get a vendor ID](https://www.usb.org/getting-vendor-id) through the [[USB-IF]]; this also allows them to use the [[USB-IF]] logo (for USB-certified™ devices) on their product packaging if the product passes certification.
-</pre>
 </div>
 <div created="20210728095742017" creator="jsng" modified="20210728100825468" modifier="jsng" summary="Driver files provide information about the driver, and instructions on how to receive information from the device, and encode information to be passed to the device. The operating system may come with generic driver files for the device, but custom driver files might provide better performance or additional features." tags="Topic:systems Glossary" title="driver" type="text/x-markdown">
 <pre>Drivers are responsible for enabling an [[operating system]] ([[OS]]) to understand how to use a [[hardware|Topic:hardware]] device. It acts as an interface between the [[OS]] and device.
@@ -17240,8 +17277,11 @@ They do so by providing driver files with their devices. In a not-so-distant pas
 <div created="20210728095325395" creator="jsng" modified="20210728095405415" modifier="jsng" tags="Glossary" title="USB" type="text/x-markdown">
 <pre>**USB** stands for [[Universal Serial Bus]].</pre>
 </div>
-<div created="20210728100045335" creator="jsng" modified="20210728100230477" modifier="jsng" tags="" title="USB-IF" type="text/x-markdown">
-<pre>**USB-IF** stands for [USB Implementers’ Forum](https://en.wikipedia.org/wiki/USB_Implementers_Forum), a nonprofit organization responsible for maintaining the [[USB]] industry standards.</pre>
+<div created="20210728100045335" creator="jsng" modified="20210728100827103" modifier="jsng" tags="" title="USB-IF" type="text/x-markdown">
+<pre>**USB-IF** stands for [USB Implementers’ Forum](https://en.wikipedia.org/wiki/USB_Implementers_Forum), a nonprofit organization responsible for maintaining the [[USB]] industry standards.
+
+The [[USB-IF]] maintains a database of vendors and their products. Companies that wish to have their products recognized should [get a vendor ID](https://www.usb.org/getting-vendor-id) through the [[USB-IF]]; this also allows them to use the [[USB-IF]] logo (for USB-certified™ devices) on their product packaging if the product passes certification.
+</pre>
 </div>
 <div created="20210728100137309" creator="jsng" modified="20210728100137309" modifier="jsng" title="USB-IF 1">
 <pre></pre>
