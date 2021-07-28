@@ -503,6 +503,8 @@ Error message and password prompt
 
 <li>DPI</li>
 
+<li>Draft of 'hard disk drive' by jsng</li>
+
 <li>editing a PDF file</li>
 
 <li>embedded operating system</li>
@@ -854,6 +856,8 @@ Error message and password prompt
 <li>Why can’t I run an exe file from Windows on my smartphone, or an Android/iOS app on my Windows laptop?</li>
 
 <li>Why can’t my Windows laptop use a storage drive from a Mac?</li>
+
+<li>Why do my files copy so slowly when I am running two copy operations at the same time?</li>
 
 <li>Why do Powerpoint files sometimes compress very well and sometimes not at all?</li>
 
@@ -1360,7 +1364,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="hibernate" modified="20210727105451374" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="paging memory" modified="20210728092941733" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2081,10 +2085,21 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;hibernate&quot;
+    },
+    {
+        &quot;title&quot;: &quot;paging memory&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 60.44999694824219,
+            &quot;left&quot;: 1160.933349609375,
+            &quot;width&quot;: 32.899993896484375,
+            &quot;right&quot;: 1193.8333435058594,
+            &quot;bottom&quot;: 99.93333435058594,
+            &quot;height&quot;: 39.48333740234375
+        }
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="hibernate" modified="20210727105411862" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[paging memory]]" modified="20210728092941733" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13264,7 +13279,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210727103349256" creator="jsng" list="[[paging memory]] [[What happens when a computer runs out of memory?]] throughput memory Topic:security" modified="20210728092808889" modifier="jsng" title="$:/StoryList">
+<div created="20210727103349256" creator="jsng" list="[[Why do my files copy so slowly when I am running two copy operations at the same time?]] [[solid state drive]] [[Draft of 'hard disk drive' by jsng]] [[What happens when a computer runs out of memory?]] memory Topic:security" modified="20210728093022999" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14597,6 +14612,48 @@ Instead, the web standardized on one way of doing so. This model of thinking abo
 </div>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
+</div>
+<div created="20210710085609375" creator="jsng" draft.of="hard disk drive" draft.title="hard disk drive" modified="20210728093750033" modifier="jsng" tags="[[storage device]]" title="Draft of 'hard disk drive' by jsng" type="text/x-markdown">
+<pre>A hard disk is a magnetic platter that stores data. This platter contains trillions of magnetic atoms; yep, they’re atom-sized magnets!
+
+These atoms are grouped into clusters called magnetic domains; they are so tiny that 500 of these placed in a straight line would stretch the diameter of a human hair!
+
+These domains can align themselves in one of two different ways: let’s call them “up” and “down”. Each bit (as in, 8 bits = 1 byte) is stored as the alignment of a magnetic domain: up represents 1, and down represents 0.
+
+# Hard disk operation
+
+To [[read data|reading data from storage]], all you need to do is move a tiny electromagnet over each domain, and use it to see which way the domain is aligned. This can be done by measuring the current flowing through the electromagnet, a detailed explanation of which involves electromagnetic induction from high school physics.
+
+To [[write data|writing data to storage safely]], you pass a current through the electromagnet to magnetize the domain below it whichever way you want; just spin the platter and keep changing the current to write a series of 1s or 0s.
+
+Put 3 to 5 platters together, attach the electromagnet to a moving arm (called the read arm), control the whole thing with some microchips, and you have a hard disk.
+
+![Open hard disk](images/issue118_01.gif)&lt;br /&gt;
+A picture of an opened desktop hard disk, showing the read arms and magnetic platters
+
+# Characteristics of a hard disk
+
+A hard disk spins at a constant speed, because it is much more complicated to figure out how to read/write stuff when the speed can vary.
+
+The larger hard disks, which go into desktops and use 3.5-inch platters, spin at 7200rpm, while the smaller hard disks, which go into laptops and use 2.5-inch platters, spin at 5400rpm.
+
+Data stored near the circumference of a magnetic platter is faster to read than data stored near its center. For this reason, OSes that are installed on hard disks usually attempt to [[partition]] the storage space so that the operating system is stored on domains closer to the circumference.
+
+The read arm moves really close to the platters during disk operation! The gap between them (called the head gap or flying height) is half the thickness of a human hair. This is why you do not want to drop hard disks while they are in operation; the slightest movement of the read arm towards the magnetic platter causes it to gouge the platter surface and damage it permanently: this is called a head crash.
+
+# Read and write operations
+
+The hard disk is ultimately a mechanical device; each operation involves moving parts.
+
+Reading from or writing to a domain involves:
+
+1. Spinning up the platter (if it isn’t already spinning)
+2. Moving the read arm to the correct position
+3. Measuring or inducing a current
+
+This means that each time the hard disk needs to access data from a different region of the disk, there is significant lag time (~5ms). This is the time needed for all those movement described above. It is thus advantageous to try to put all the data you need in contiguous domains&lt;&lt;fnote &quot;This process is what millennials might remember as defragmentation, or defragging.&quot;&gt;, to minimize read arm movement.
+
+</pre>
 </div>
 <div created="20210613121827918" creator="jsng" modified="20210630080746851" modifier="jsng" tags="[[Portable Document Format]]" title="editing a PDF file" type="text/x-markdown">
 <pre>Because of the way it was designed to *display correctly*, editing [[PDF]] is a big pain compared to text-based formats like [[DOCX|Microsoft Word document]] or even [[HTML]].
@@ -17387,6 +17444,13 @@ MacOS uses [[HPFS]] as its [[filesystem]].
 Windows can read [[HPFS]] disks, but cannot write data to them.
 
 Fortunately, both [[OS]]es can handle the [[FAT]] filesystem, which is why it is possible to pass files from a [[Windows]] user to a [[MacOS]] user with a portable flash disk.</pre>
+</div>
+<div created="20210728093636880" creator="jsng" list-after="[[hard disk drive]]" modified="20210728093817730" modifier="jsng" summary="Operations that require the read arm to access different parts of the magnetic platters intermittently result in slower read speeds." tags="question" title="Why do my files copy so slowly when I am running two copy operations at the same time?" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+When an OS tries to perform two data operations at the same time (instead of sequentially), the [[hard disk drive]] read arm has to move a lot more to access data from different regions.
+
+This is why, if you have multiple data operations to perform on a hard disk, you should try to do them sequentially instead of simultaneously!</pre>
 </div>
 <div created="20210613045023015" creator="jsng" list-after="[[lossless compression]]" modified="20210613045755705" modifier="jsng" tags="question" title="Why do Powerpoint files sometimes compress very well and sometimes not at all?" type="text/x-markdown">
 <pre>Main article: [[lossless compression]]
