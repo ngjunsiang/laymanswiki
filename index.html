@@ -395,6 +395,8 @@ Error message and password prompt
 
 <li>ALU</li>
 
+<li>analog</li>
+
 <li>API</li>
 
 <li>app</li>
@@ -13258,7 +13260,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210809070915739" creator="jsng" list="CRT [[Draft of 'New Tiddler 1' by jsng]] [[Draft of 'New Tiddler' by jsng]] Topic:security" modified="20210809073621824" modifier="jsng" title="$:/StoryList">
+<div created="20210809070915739" creator="jsng" list="analog [[Draft of 'New Tiddler 1' by jsng]] [[Draft of 'New Tiddler' by jsng]] Topic:security" modified="20210809073621824" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13453,6 +13455,21 @@ An audio file format, meant to replace [[MP3]].</pre>
 </div>
 <div created="20210628213103184" creator="jsng" modified="20210628213103184" modifier="jsng" title="ALU">
 <pre></pre>
+</div>
+<div created="20210809075241916" creator="jsng" list-after="[[cathode-ray tube]]" modified="20210809075610136" modifier="jsng" tags="Glossary" title="analog" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+&gt; To produce an image, the electron beam is manipulated to scan across the screen, one line at a time. Each pass across the screen causes it to strike phosphor dots, emitting light in a line. A variety of techniques (microdeflections, masks, and filters) are used to ensure the correct dots are struck.
+&gt; 
+&gt; Each line of the screen is laboriously scanned with this technique, about 60 times a second. This means that the screen “updates” with a refresh rate of 60 Hz.
+
+For the above process to happen in a [[cathode-ray tube]], a varying voltage is applied across the two sets of deflecting coils.
+
+The required pattern for the deflecting coils has to come *from the television signal source*; the television signal from the broadcasting station, therefore, closely resembles the pattern required by the deflecting coils.
+
+The television itself applies almost no processing to this signal; these are what we call **analog** signals. Phonographs and early telephones also used analog signals.
+
+{{||readNextTemplate}}</pre>
 </div>
 <div created="20210702095609450" creator="jsng" modified="20210702095609450" modifier="jsng" title="API">
 <pre></pre>
@@ -14634,35 +14651,37 @@ Instead, the web standardized on one way of doing so. This model of thinking abo
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210809074855112" creator="jsng" draft.of="New Tiddler 1" draft.title="cathode-ray tube" modified="20210809074859768" modifier="jsng" tags="" title="Draft of 'New Tiddler 1' by jsng">
-<pre></pre>
-</div>
-<div created="20210809074523526" creator="jsng" draft.of="New Tiddler" draft.title="video signal formats" modified="20210809074841954" modifier="jsng" tags="Topic:hardware Topic:systems" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
+<div created="20210809074855112" creator="jsng" draft.of="New Tiddler 1" draft.title="cathode-ray tube" modified="20210809075350534" modifier="jsng" tags="Topic:hardware" title="Draft of 'New Tiddler 1' by jsng" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
-## Cathode-ray tube (CRT) televisions
+Early color television screens had primary-colour (red, blue, and green) phosphor dots embedded in the user-facing portion of the screen. These dots emit colored light when struck by electrons. At the back of the television, cathodes made of barium oxide are heated, causing them to emit electrons.
 
-Early colour television screens had primary-colour (red, blue, and green) phosphor dots embedded in the user-facing portion of the screen. These dots emit coloured light when struck by electrons. At the back of the television, cathodes made of barium oxide are heated, causing them to emit electrons.
-
-These electrons, when emitted, fly in all directions, but they are shaped into a beam by an electric field (hence the name “cathode *ray* tube”, which you might have seen in the form of the acronym **CRT**).
+These electrons, when emitted, fly in all directions, but they are shaped into a beam by an electric field (hence the name “cathode *ray* tube”, which you might have seen in the form of the acronym [[CRT]]).
 
 ![Cutaway of a CRT, showing the phosphor dot screen](images/issue124_01.png)&lt;br /&gt;
-&lt;small&gt;1: Barium oxide cathode, which is heated to emit electrons (labelled “2”), which are shaped into a a beam by an electric field (labelled “3”)&lt;br /&gt;
-4: Deflecting coils, discussed in the next paragraph&lt;br /&gt;
-8: Coloured phosphor dots, arranged on a flat screen (labelled “7”).&lt;br /&gt;
-Image via [Wikipedia](https://en.wikipedia.org/wiki/Cathode-ray_tube)&lt;/small&gt;
+1: Barium oxide cathode, which is heated to emit electrons (labelled “2”), which are shaped into a a beam by an electric field (labelled “3”)  
+4: Deflecting coils, discussed in the next paragraph  
+8: Coloured phosphor dots, arranged on a flat screen (labelled “7”).  
+Image via [Wikipedia](https://en.wikipedia.org/wiki/Cathode-ray_tube)
 
 This electron beam could be aimed at any of the phosphor dots by a set of electromagnetic deflecting coils mounted along the sides of the TV, on the inside surface. One set, oriented vertically (mounted left-right), controlled the horizontal deflection of the electron beam, while another set, oriented horizontally (mounted top-bottom), controlled the vertical deflection.
 
 ![Graphic showing an electron beam deflected upwards by deflecting coils in a CRT](images/issue124_02.png)&lt;br /&gt;
-&lt;small&gt;The electron beam produced by the cathode is deflected by (electromagnetic) deflecting coils.&lt;br /&gt;
-Image via [Wikipedia](https://en.wikipedia.org/wiki/Cathode-ray_tube)&lt;/small&gt;
+The electron beam produced by the cathode is deflected by (electromagnetic) deflecting coils.  
+Image via [Wikipedia](https://en.wikipedia.org/wiki/Cathode-ray_tube)
 
 To produce an image, the electron beam is manipulated to scan across the screen, one line at a time. Each pass across the screen causes it to strike phosphor dots, emitting light in a line. A variety of techniques (microdeflections, masks, and filters) are used to ensure the correct dots are struck.
 
 Each line of the screen is laboriously scanned with this technique, about 60 times a second. This means that the screen “updates” with a refresh rate of 60 Hz.
 
-To make this happen, a varying voltage is applied across the two sets of deflecting coils. The required pattern for the deflecting coils has to come from the television signal source; the television signal from the broadcasting station, therefore, closely resembles the pattern required by the deflecting coils. The television itself applies almost no processing to this signal! (Remember that the chips used to do this kind of processing had not been invented yet.)
+</pre>
+</div>
+<div created="20210809074523526" creator="jsng" draft.of="New Tiddler" draft.title="video signal formats" modified="20210809075015565" modifier="jsng" tags="Topic:hardware Topic:systems" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+## Cathode-ray tube (CRT) televisions
+
+
 
 These are what we call **analog** signals. Phonographs and early telephones also used analog signals.
 
