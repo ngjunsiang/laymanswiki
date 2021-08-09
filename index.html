@@ -393,9 +393,13 @@ Error message and password prompt
 
 <li>AAC</li>
 
+<li>ADC</li>
+
 <li>ALU</li>
 
 <li>analog signal</li>
+
+<li>analog-digital converter</li>
 
 <li>API</li>
 
@@ -519,11 +523,7 @@ Error message and password prompt
 
 <li>DPI</li>
 
-<li>Draft of 'New Tiddler 1' by jsng</li>
-
 <li>Draft of 'New Tiddler 2' by jsng</li>
-
-<li>Draft of 'New Tiddler 3' by jsng</li>
 
 <li>Draft of 'New Tiddler' by jsng</li>
 
@@ -1420,7 +1420,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="HDMI" modified="20210809081332609" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Image representation in computers" modified="20210809082005893" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2292,6 +2292,17 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;HDMI&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Image representation in computers&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 368.58331298828125,
+            &quot;left&quot;: 540.7166748046875,
+            &quot;width&quot;: 59.76667785644531,
+            &quot;right&quot;: 600.4833526611328,
+            &quot;bottom&quot;: 386.58331298828125,
+            &quot;height&quot;: 18
+        }
     }
 ]</pre>
 </div>
@@ -13475,7 +13486,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210809070915739" creator="jsng" list="DAC [[Draft of 'New Tiddler 3' by jsng]] [[Draft of 'New Tiddler 1' by jsng]] [[Draft of 'New Tiddler 2' by jsng]] [[Draft of 'New Tiddler' by jsng]] Topic:security" modified="20210809081558347" modifier="jsng" title="$:/StoryList">
+<div created="20210809070915739" creator="jsng" list="[[analog-digital converter]] [[Draft of 'New Tiddler 2' by jsng]] [[Draft of 'New Tiddler' by jsng]] Topic:security" modified="20210809081558347" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13668,6 +13679,9 @@ Homepage: https://www.7-zip.org/</pre>
 
 An audio file format, meant to replace [[MP3]].</pre>
 </div>
+<div created="20210809081825894" creator="jsng" modified="20210809081933272" modifier="jsng" tags="Glossary" title="ADC" type="text/x-markdown">
+<pre>**ADC** stands for [[analog-digital converter]].</pre>
+</div>
 <div created="20210628213103184" creator="jsng" modified="20210628213103184" modifier="jsng" title="ALU">
 <pre></pre>
 </div>
@@ -13683,6 +13697,19 @@ For the above process to happen in a [[cathode-ray tube]], a varying voltage is 
 The required pattern for the deflecting coils has to come *from the television signal source*; the television signal from the broadcasting station, therefore, closely resembles the pattern required by the deflecting coils.
 
 The television itself applies almost no processing to this signal; these are what we call **analog signal**s. Phonographs and early telephones also used analog signals.
+
+{{||readNextTemplate}}</pre>
+</div>
+<div created="20210809081754485" creator="jsng" list-before="[[digital signal]]" modified="20210809082128911" modifier="jsng" summary="Analog formats such as VGA mostly contain the control signals that the CRT needs to operate, while digital formats such as HDMI and DisplayPort contain image data that the device must convert to control signals. Analog signals need a digital-analog-conversion (DAC) chip to be converted to digital signals, hence VGA-HDMI adapters tend to be more costly than DisplayPort-HDMI adapters." tags="" title="analog-digital converter" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+An [[analog signal]] does not easily convert to a [[digital signal]].
+
+**Analog-to-digital converters**, such as the [[VGA]]-[[HDMI]] adapters that seem to be needed universally, have to figure out how to process a wave-like (analog) signal, and convert it into the [[pixel data|Image representation in computers]] that constitute an image. These adapters need a digital-analog conversion (DAC) chip to carry out that conversion.
+
+In contrast with analog signals, digital signals usually carry uncompressed video data. Digital-to-digital converters thus do not need to carry out any conversion—it’s the same image! Most of these converters merely need pins to be mapped to each other, which makes them cheaper (e.g. [[DP]]-[[HDMI]] converters).
+
+A chip that is able to handle multiple formats and produce a robust output is costly, and it is expected that a good adapter will cost quite a bit. That is no guarantee, however, that a costly adapter will always be a good adapter.
 
 {{||readNextTemplate}}</pre>
 </div>
@@ -14904,16 +14931,6 @@ Image via [DataPro](https://www.datapro.net/techinfo/displayport_info.html)</pre
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210809081754485" creator="jsng" draft.of="New Tiddler 1" draft.title="analog-digital converter" modified="20210809081821813" modifier="jsng" tags="" title="Draft of 'New Tiddler 1' by jsng" type="text/x-markdown">
-<pre>An [[analog signal]] does not easily convert to a [[digital signal]].
-
-**Analog-to-digital converters**, such as the VGA-HDMI adapters that seem to be needed universally, have to figure out how to process a wave-like (analog) signal, and convert it into the pixel data that constitute an image. These adapters need a digital-analog conversion (DAC) chip to carry out that conversion.
-
-In contrast with analog signals, digital signals usually carry uncompressed video data. Digital-to-digital converters thus do not need to carry out any conversion—it’s the same image! Most of these converters merely need pins to be mapped to each other, which makes them cheaper (e.g. DisplayPort-HDMI converters).
-
-A chip that is able to handle multiple formats and produce a robust output is costly, and it is expected that a good adapter will cost quite a bit. That is no guarantee, however, that a costly adapter will always be a good adapter.
-</pre>
-</div>
 <div created="20210809080328869" creator="jsng" draft.of="New Tiddler 2" draft.title="digital signal" modified="20210809081747249" modifier="jsng" summary="was superseded by HDMI, a video format standardised by consumer electronics companies. DisplayPort, on the other hand, is a video format standardised by computer display companies." tags="Glossary" title="Draft of 'New Tiddler 2' by jsng" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
@@ -14944,9 +14961,6 @@ Digital formats differ from analog formats, because they do not carry the raw si
 The responsibility of figuring out how to make the images appear on-screen has now been shifted to the display device, which is why digital TVs require significantly more electronics than CRT TVs.
 
 {{||readNextTemplate}}</pre>
-</div>
-<div created="20210809081825894" creator="jsng" draft.of="New Tiddler 3" draft.title="ADC" modified="20210809081848819" modifier="jsng" tags="Glossary" title="Draft of 'New Tiddler 3' by jsng" type="text/x-markdown">
-<pre>**ADC** stands for [[analog-digital converter]].</pre>
 </div>
 <div created="20210809074523526" creator="jsng" draft.of="New Tiddler" draft.title="video signal formats" modified="20210809080552891" modifier="jsng" tags="Topic:hardware Topic:systems" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
