@@ -487,6 +487,8 @@ Error message and password prompt
 
 <li>CSV vs binary formats</li>
 
+<li>DAC</li>
+
 <li>data containers</li>
 
 <li>data normalization</li>
@@ -517,7 +519,11 @@ Error message and password prompt
 
 <li>DPI</li>
 
+<li>Draft of 'New Tiddler 1' by jsng</li>
+
 <li>Draft of 'New Tiddler 2' by jsng</li>
+
+<li>Draft of 'New Tiddler 3' by jsng</li>
 
 <li>Draft of 'New Tiddler' by jsng</li>
 
@@ -2289,7 +2295,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="HDMI DP LCD [[analog signal]] [[integrated graphics]] [[graphics card]] [[Universal Serial Bus]]" modified="20210809080543571" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="LCD [[analog signal]] [[integrated graphics]] [[graphics card]] [[Universal Serial Bus]]" modified="20210809080543571" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13469,7 +13475,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210809070915739" creator="jsng" list="[[Draft of 'New Tiddler 2' by jsng]] [[Draft of 'New Tiddler' by jsng]] Topic:security" modified="20210809073621824" modifier="jsng" title="$:/StoryList">
+<div created="20210809070915739" creator="jsng" list="DAC [[Draft of 'New Tiddler 3' by jsng]] [[Draft of 'New Tiddler 1' by jsng]] [[Draft of 'New Tiddler 2' by jsng]] [[Draft of 'New Tiddler' by jsng]] Topic:security" modified="20210809081558347" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14524,6 +14530,11 @@ This program will figure out where to start reading the file from, retrieve the 
 
 And we would have taken one step away from plain text files, towards a full [[database]].</pre>
 </div>
+<div created="20210809081853699" creator="jsng" modified="20210809081930858" modifier="jsng" tags="Glossary" title="DAC" type="text/x-markdown">
+<pre>**DAC** stands for digital-analog converter.
+
+See: [[analog-digital converter]]</pre>
+</div>
 <div caption="Data containers" created="20210613063148190" creator="jsng" modified="20210613071629049" modifier="jsng" tags="Topic:data" title="data containers" type="text/x-markdown">
 <pre>{{||tagPageTemplate}}
 
@@ -14893,19 +14904,49 @@ Image via [DataPro](https://www.datapro.net/techinfo/displayport_info.html)</pre
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210809080328869" creator="jsng" draft.of="New Tiddler 2" draft.title="digital signal" modified="20210809081314449" modifier="jsng" tags="Glossary" title="Draft of 'New Tiddler 2' by jsng" type="text/x-markdown">
+<div created="20210809081754485" creator="jsng" draft.of="New Tiddler 1" draft.title="analog-digital converter" modified="20210809081821813" modifier="jsng" tags="" title="Draft of 'New Tiddler 1' by jsng" type="text/x-markdown">
+<pre>An [[analog signal]] does not easily convert to a [[digital signal]].
+
+**Analog-to-digital converters**, such as the VGA-HDMI adapters that seem to be needed universally, have to figure out how to process a wave-like (analog) signal, and convert it into the pixel data that constitute an image. These adapters need a digital-analog conversion (DAC) chip to carry out that conversion.
+
+In contrast with analog signals, digital signals usually carry uncompressed video data. Digital-to-digital converters thus do not need to carry out any conversion—it’s the same image! Most of these converters merely need pins to be mapped to each other, which makes them cheaper (e.g. DisplayPort-HDMI converters).
+
+A chip that is able to handle multiple formats and produce a robust output is costly, and it is expected that a good adapter will cost quite a bit. That is no guarantee, however, that a costly adapter will always be a good adapter.
+</pre>
+</div>
+<div created="20210809080328869" creator="jsng" draft.of="New Tiddler 2" draft.title="digital signal" modified="20210809081747249" modifier="jsng" summary="was superseded by HDMI, a video format standardised by consumer electronics companies. DisplayPort, on the other hand, is a video format standardised by computer display companies." tags="Glossary" title="Draft of 'New Tiddler 2' by jsng" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 # The exodus to digital formats
 
 As digital television became more feasible due to decreasing microprocessor and [[LCD]] screen costs, digital formats sprung up to replace [[VGA]].
 
-An early competitor, [[Digital Visual Interface]] ([[DVI]]), was launched by a working group convened by some computer makers (Intel, Silicon Image, Compaq, Fujitsu, HP, IBM, NEC). It was very quickly superseded by [[High-Definition Multimedia Interface]] ([[HDMI]]), an interface which implemented standards set by consumer electronics companies (Hitachi, Sanyo, Silicon Image, Sony, Technicolor, Toshiba).
+An early competitor, [[Digital Visual Interface]] ([[DVI]]), was launched by a working group convened by some computer makers (Intel, Silicon Image, Compaq, Fujitsu, HP, IBM, NEC).
+
+It was very quickly superseded by [[HDMI]], an interface which implemented standards set by consumer electronics companies (Hitachi, Sanyo, Silicon Image, Sony, Technicolor, Toshiba).
+
+&gt; {{HDMI}}
 
 This was followed by the DisplayPort ([[DP]]) standard, developed by PC and chip manufacturers and standardised by VESA, and released in in 2006.
 
+&gt; {{DP}}
+
+# Why two digital formats? HDMI vs DisplayPort
+
+**HDMI** is a consumer electronics standard, and is thus heavily focused on broadcast and home video needs. HDMI primarily supports video and audio data. It also carries some control signals through [[CEC]] (for Consumer Electronics Control) capability, enabling a video game console or set-top box to send remote-control commands to a television set via the [[HDMI]] connection.
+
+**DisplayPort** is a computer display standard, focused on computing needs. DisplayPort supports video data, optionally audio data, and additional data (such as USB). Since 2014, compatible devices can also transmit DisplayPort signal format over USB-C, provided both the transmitting and receiving devices support it.
+
+# Analog vs digital formats: a recap
+
+Digital formats differ from analog formats, because they do not carry the raw signal for the device. Instead, they carry information about the image, encoding the [[image data|Image representation in computers]] into video form; after all, video is just a series of moving images!
+
+The responsibility of figuring out how to make the images appear on-screen has now been shifted to the display device, which is why digital TVs require significantly more electronics than CRT TVs.
 
 {{||readNextTemplate}}</pre>
+</div>
+<div created="20210809081825894" creator="jsng" draft.of="New Tiddler 3" draft.title="ADC" modified="20210809081848819" modifier="jsng" tags="Glossary" title="Draft of 'New Tiddler 3' by jsng" type="text/x-markdown">
+<pre>**ADC** stands for [[analog-digital converter]].</pre>
 </div>
 <div created="20210809074523526" creator="jsng" draft.of="New Tiddler" draft.title="video signal formats" modified="20210809080552891" modifier="jsng" tags="Topic:hardware Topic:systems" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
