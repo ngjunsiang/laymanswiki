@@ -1428,7 +1428,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Universal Serial Bus" modified="20210809084610097" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Universal Serial Bus" modified="20210809084838303" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2389,6 +2389,12 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 84.93333435058594,
             &quot;height&quot;: 39.48333740234375
         }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'Universal Serial Bus' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Universal Serial Bus&quot;
     },
     {
         &quot;title&quot;: &quot;Draft of 'Universal Serial Bus' by jsng&quot;
@@ -15060,8 +15066,10 @@ Image via [DataPro](https://www.datapro.net/techinfo/displayport_info.html)</pre
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210809082928869" creator="jsng" draft.of="USB Type-C" draft.title="USB Type-C" modified="20210809084442201" modifier="jsng" tags="Topic:systems Topic:hardware" title="Draft of 'USB Type-C' by jsng" type="text/x-markdown">
-<pre># What is USB Type-C?
+<div created="20210809082928869" creator="jsng" draft.of="USB Type-C" draft.title="USB Type-C" modified="20210809084749085" modifier="jsng" tags="Topic:systems Topic:hardware" title="Draft of 'USB Type-C' by jsng" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+# What is USB Type-C?
 
 It is a connector standard. It sets standards for *this* connector:
 
@@ -15103,20 +15111,6 @@ As you can see, this makes for a lot of confusion, especially when compatibility
 
 So USB Type-C is meant to be the one connector standard to rule them all. It even has rotational symmetry, so it shouldn’t matter which way you plug it in!
 
-# So what is a USB device?
-
-Technically speaking, it is a device whose manufacturer has paid for a [[USB]] license, sent their device for certification, and passed the [[USB-IF]]’s certification process, allowing the manufacturer to put the USB logo on the packaging.
-
-![Official USB logos](images/usb-logos.png)&lt;br /&gt;
-Official USB logos  
-Image via [Logolynx](https://logolynx.com)
-
-Practically speaking, it is any device that has a USB port, allows USB devices to be connected to it, or allows itself to be connected to other USB devices, and basically behaves like a USB device. (If it walks like a duck and talks like a duck …)
-
-Furthermore, it is important to differentiate between a **USB host** and a **USB device**. The host acts as the controller of the device, and initiates all communication between the two. For instance, if you attempt to connect two Android phones to each other with a USB cable, one must act as the host and the other as a device, even if both are capable of acting as hosts. The host decides what can be done through the connection.
-
-This helps to explain why a USB-charging battery pack cannot also be an external storage device *at the same time*, i.e. you cannot combine a phone battery pack with an external hard disk and hope to charge your phone while accessing the external hard disk at the same time. When your phone charges from the battery pack, it acts as the USB device (in charging mode); when it accesses a hard disk, it is acting as the USB host. It cannot do both simultaneously!
-
 # Data supported over USB Type-C cables
 
 In addition to USB3.0 data (and later versions of USB 3), the USB Type-C specification also allows the Type-C connector to carry other kinds of data, if supported by the device:
@@ -15132,7 +15126,9 @@ The Type-C specification even supports modes that allow a Type-C cable to carry 
 
 … All this comes with the caveat that one must read the manufacturers’ fine print to see if these features are supported on the respective devices. Just because the USB spec *allows* it, doesn’t mean that a particular device *implements* it!
 
-For example, some laptops may have two Type-C ports, but *only one* of those ports will support Thunderbolt and DisplayPort; the other port sometimes only supports USB3 data.</pre>
+For example, some laptops may have two Type-C ports, but *only one* of those ports will support Thunderbolt and DisplayPort; the other port sometimes only supports USB3 data.
+
+{{||readNextTemplate}}</pre>
 </div>
 <div created="20210728095742017" creator="jsng" modified="20210728101904531" modifier="jsng" summary="Driver files provide information about the driver, and instructions on how to receive information from the device, and encode information to be passed to the device. The operating system may come with generic driver files for the device, but custom driver files might provide better performance or additional features." tags="Topic:systems Glossary" title="driver" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
@@ -17759,16 +17755,36 @@ With the right font type (i.e. [OpenType](https://en.wikipedia.org/wiki/OpenType
 - Unicode has a &quot;Private Use Area&quot; that you can use for your own private purposes. You can insert symbols from this area for use in a webpage.
   - Some websites use this to create custom icons that can scale in size and change colour easily, just like text.</pre>
 </div>
-<div created="20210728095416405" creator="jsng" modified="20210809084610090" modifier="jsng" tags="Topic:systems Topic:hardware" title="Universal Serial Bus" type="text/x-markdown">
-<pre>**Universal Serial Bus** ([[USB]]) is an industry standard for communication between devices. It establishes specifications for cables, devices which connect to these cables, and the protocols for communication and providing power using these cables.
+<div created="20210728095416405" creator="jsng" modified="20210809084838291" modifier="jsng" summary="USB is a (licensed) technical standard that describes how devices connect to each other through a cable. In a USB connection, one device acts as the host while the other acts as the device; the host initiates all communication." tags="Topic:systems Topic:hardware" title="Universal Serial Bus" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
 
-The USB specification was first released in 1996, and today it contains 21 categories of devices, each containing even more subcategories.
+**Universal Serial Bus** ([[USB]]) is an industry standard for communication between devices. It establishes specifications for cables, devices which connect to these cables, and the protocols for communication and providing power using these cables.
+
+The [[USB]] specification was first released in 1996, and today it contains 21 categories of devices, each containing even more subcategories.
 
 Each category of device has its own protocol for sending information to the computer, and receiving information from the computer.
 
 I don’t think I am over-exaggerating things to say that there are an uncountable number of USB devices in the world today. For this reason, if you have a complaint about a device you bought, it makes no sense to complain to the [USB Implementers’ Forum](https://en.wikipedia.org/wiki/USB_Implementers_Forum) ([[USB-IF]]), which is responsible for designing the USB specification. Device manufacturers themselves have to be the one responsible for making their device work with our computers.
 
-They do so by providing driver files with their devices. In a not-so-distant past, every device you bought came with drivers on a [[CD-ROM]] or [[DVD-ROM]], which you had to install before use. Today, it is more likely that you’ll download these drivers from the manufacturer’s website. If this is a widely used device (e.g. [[LCD screen]]s or input devices like keyboards or mice), it might even make its drivers (and updates to those drivers) available through [[Windows Update]].</pre>
+They do so by providing driver files with their devices. In a not-so-distant past, every device you bought came with drivers on a [[CD-ROM]] or [[DVD-ROM]], which you had to install before use. Today, it is more likely that you’ll download these drivers from the manufacturer’s website. If this is a widely used device (e.g. [[LCD screen]]s or input devices like keyboards or mice), it might even make its drivers (and updates to those drivers) available through [[Windows Update]].
+
+# So what is a USB device?
+
+Technically speaking, it is a device whose manufacturer has paid for a [[USB]] license, sent their device for certification, and passed the [[USB-IF]]’s certification process, allowing the manufacturer to put the USB logo on the packaging.
+
+![Official USB logos](images/usb-logos.png)&lt;br /&gt;
+Official USB logos  
+Image via [Logolynx](https://logolynx.com)
+
+Practically speaking, it is any device that has a USB port, allows USB devices to be connected to it, or allows itself to be connected to other USB devices, and basically behaves like a USB device. (If it walks like a duck and talks like a duck …)
+
+# Host vs Device
+
+Furthermore, it is important to differentiate between a **USB host** and a **USB device**. The host acts as the controller of the device, and initiates all communication between the two. For instance, if you attempt to connect two Android phones to each other with a USB cable, one must act as the host and the other as a device, even if both are capable of acting as hosts. The host decides what can be done through the connection.
+
+This helps to explain why a USB-charging battery pack cannot also be an external storage device *at the same time*, i.e. you cannot combine a phone battery pack with an external hard disk and hope to charge your phone while accessing the external hard disk at the same time. When your phone charges from the battery pack, it acts as the USB device (in charging mode); when it accesses a hard disk, it is acting as the USB host. It cannot do both simultaneously!
+
+{{||readNextTemplate}}</pre>
 </div>
 <div created="20210702091738200" creator="jsng" modified="20210702092012542" modifier="jsng" tags="Glossary" title="URI" type="text/x-markdown">
 <pre>**URI** stands for [[Uniform Resource Identifier]].</pre>
