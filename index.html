@@ -509,6 +509,8 @@ Error message and password prompt
 
 <li>DPI</li>
 
+<li>Draft of 'New Tiddler' by jsng</li>
+
 <li>driver</li>
 
 <li>DVD-ROM</li>
@@ -1392,7 +1394,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="graphics card" modified="20210809074225802" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="graphics card" modified="20210809074706200" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2052,10 +2054,27 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 1037.9166870117188,
             &quot;height&quot;: 39.48333740234375
         }
+    },
+    {
+        &quot;title&quot;: &quot;integrated graphics&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 45.44999694824219,
+            &quot;left&quot;: 541.9166870117188,
+            &quot;width&quot;: 32.899993896484375,
+            &quot;right&quot;: 574.8166809082031,
+            &quot;bottom&quot;: 84.93333435058594,
+            &quot;height&quot;: 39.48333740234375
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'graphics card' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;graphics card&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[graphics card]] [[Universal Serial Bus]]" modified="20210809074225798" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[integrated graphics]] [[graphics card]] [[Universal Serial Bus]]" modified="20210809074440025" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13235,7 +13254,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210809070915739" creator="jsng" list="[[integrated graphics]] [[3D graphics]] Topic:security" modified="20210809073621824" modifier="jsng" title="$:/StoryList">
+<div created="20210809070915739" creator="jsng" list="[[Draft of 'New Tiddler' by jsng]] Topic:security" modified="20210809073621824" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14608,6 +14627,75 @@ Instead, the web standardized on one way of doing so. This model of thinking abo
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
+<div created="20210809074523526" creator="jsng" draft.of="New Tiddler" draft.title="video signal formats" modified="20210809074555198" modifier="jsng" tags="Topic:hardware Topic:systems" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
+<pre>Ah, the esoteric, tricky, complicated art of shooting electromagnetic radiation into the eyes of humans … entire tomes have been written about this. And I will attempt to summarise the pertinent parts into a single newsletter issue. The hubris!
+
+It’s really something when you suddenly remember that television has been around since the 1930s, while computers in some recognisable form were a 1970s invention. The first part of the computer to be invented was the screen![^1]
+
+[^1]: To be pedantic, the first part of the computer to be invented was actually the keyboard, but they were non-electronic and were called typewriters then.
+
+How did screens work if computers weren't invented? A crash course:
+
+## Cathode-ray tube (CRT) televisions
+
+Early colour television screens had primary-colour (red, blue, and green) phosphor dots embedded in the user-facing portion of the screen. These dots emit coloured light when struck by electrons. At the back of the television, cathodes made of barium oxide are heated, causing them to emit electrons.
+
+These electrons, when emitted, fly in all directions, but they are shaped into a beam by an electric field (hence the name “cathode *ray* tube”, which you might have seen in the form of the acronym **CRT**).
+
+![Cutaway of a CRT, showing the phosphor dot screen](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season10/issue124/issue124_01.png)&lt;br /&gt;
+&lt;small&gt;1: Barium oxide cathode, which is heated to emit electrons (labelled “2”), which are shaped into a a beam by an electric field (labelled “3”)&lt;br /&gt;
+4: Deflecting coils, discussed in the next paragraph&lt;br /&gt;
+8: Coloured phosphor dots, arranged on a flat screen (labelled “7”).&lt;br /&gt;
+Image via [Wikipedia](https://en.wikipedia.org/wiki/Cathode-ray_tube)&lt;/small&gt;
+
+This electron beam could be aimed at any of the phosphor dots by a set of electromagnetic deflecting coils mounted along the sides of the TV, on the inside surface. One set, oriented vertically (mounted left-right), controlled the horizontal deflection of the electron beam, while another set, oriented horizontally (mounted top-bottom), controlled the vertical deflection.
+
+![Graphic showing an electron beam deflected upwards by deflecting coils in a CRT](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season10/issue124/issue124_02.png)&lt;br /&gt;
+&lt;small&gt;The electron beam produced by the cathode is deflected by (electromagnetic) deflecting coils.&lt;br /&gt;
+Image via [Wikipedia](https://en.wikipedia.org/wiki/Cathode-ray_tube)&lt;/small&gt;
+
+To produce an image, the electron beam is manipulated to scan across the screen, one line at a time. Each pass across the screen causes it to strike phosphor dots, emitting light in a line. A variety of techniques (microdeflections, masks, and filters) are used to ensure the correct dots are struck.
+
+Each line of the screen is laboriously scanned with this technique, about 60 times a second. This means that the screen “updates” with a refresh rate of 60 Hz.
+
+To make this happen, a varying voltage is applied across the two sets of deflecting coils. The required pattern for the deflecting coils has to come from the television signal source; the television signal from the broadcasting station, therefore, closely resembles the pattern required by the deflecting coils. The television itself applies almost no processing to this signal! (Remember that the chips used to do this kind of processing had not been invented yet.)
+
+These are what we call **analog** signals. Phonographs and early telephones also used analog signals.
+
+## Video Graphics Array (VGA)
+
+So when the computer was first invented, and these screens were widely available, there was no need to reinvent the screen. Graphics cards ([Issue 123](https://buttondown.email/laymansguide/archive/lmg-s10-issue-123-graphics-cards-the-pixel-factory/)) simply had to figure out how to emit analog signals that would work with CRT screens.
+
+The graphics standard for doing so is called **VGA** (Video Graphics Array), and was first released by IBM in 1986. An organisation, the Video Electronics Standards Association (**VESA**), was quickly formed in 1989, spearheaded by Nippon Electric Company (NEC), to extend this standard and allow it to support higher resolutions (up to 1080p!).
+
+## LCDs replaced CRTs
+
+As CRTs grow larger, they ran into a few problems. CRTs were big, bulky, and heavy. The larger you made them, the longer you had to make the cathode ray tube, which made them immensely heavy!
+
+By this point, LCD technology had been developed. Instead of using a scanning electron beam, it consisted of a backlight[^2] behind a liquid crystal layer (hence the term liquid crystal display, **LCD**).
+
+[^2]: Older LCDs used cold-cathode fluorescent lamps (CCFLs) for backlights, but today LEDs are used instead.
+
+The liquid crystal layer consisted of pixels of each primary colour. Each pixel had an adjustable transparency, which depended on the voltage applied across it (high voltage = transparent, low voltage = opaque); a cluster of red, green, and blue pixels formed a single image pixel on screen. By applying different voltages across each primary-colour pixel, we can put an image together.
+
+## Digital signals
+
+CRTs controlled the voltage plates directly to deflect an electron beam, through an analog signal. But LCDs use an internal processor to determine what voltage to apply across each liquid crystal pixel. As the technology improved, lower voltages could be used to reduce power usage. So LCDs need a different kind of signal: a **digital** one, consisting of the *raw image data* ([Issue 43](https://buttondown.email/laymansguide/archive/lmg-s4-issue-43-images-a-mosaic-of-3-colours/)).
+
+## The exodus to digital formats
+
+As digital television became more feasible due to decreasing microprocessor and LCD screen costs, digital formats sprung up to replace VGA.
+
+An early competitor, Digital Visual Interface (**DVI**), was launched by a working group convened by some computer makers (Intel, Silicon Image, Compaq, Fujitsu, HP, IBM, NEC). It was very quickly superceded by High-Definition Multimedia Interface (**HDMI**), an interface which implemented standards set by consumer electronics companies (Hitachi, Sanyo, Silicon Image, Sony, Technicolor, Toshiba).
+
+![HDMI and mini-HDMI connectors displayed top-to-bottom](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season10/issue124/issue124_03.jpg)&lt;br /&gt;
+&lt;small&gt;HDMI and mini-HDMI connectors displayed from top to bottom. Both support the HDMI video standard&lt;br /&gt;Image via [DataPro](https://www.datapro.net/techinfo/hdmi_info.html)&lt;/small&gt;
+
+This was followed by the DisplayPort (**DP**) standard, developed by PC and chip manufacturers and standardised by VESA, and released in in 2006.
+
+![DisplayPort, mini-DisplayPort, and Thunderbolt Type-C connectors displayed side-by-side](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season10/issue124/issue124_04.jpg)&lt;br /&gt;
+&lt;small&gt;DisplayPort, mini-DisplayPort, and Thunderbolt Type-C connectors displayed from left to right. All three support the DisplayPort video standard&lt;br /&gt;Image via [DataPro](https://www.datapro.net/techinfo/displayport_info.html)&lt;/small&gt;</pre>
+</div>
 <div created="20210728095742017" creator="jsng" modified="20210728101904531" modifier="jsng" summary="Driver files provide information about the driver, and instructions on how to receive information from the device, and encode information to be passed to the device. The operating system may come with generic driver files for the device, but custom driver files might provide better performance or additional features." tags="Topic:systems Glossary" title="driver" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
@@ -15026,7 +15114,7 @@ Once I have figured out which users and posts are involved in this chain, I can 
 
 {{||readNextTemplate}}</pre>
 </div>
-<div created="20210809071855875" creator="jsng" list-after="[[render]]" modified="20210809074218314" modifier="jsng" summary="Graphics cards contain lots of tiny cores that are much better at performing the same calculation for lots of decimal numbers. These cores are organised into compute units; a graphics card with more compute units can perform more calculations every second. Graphics cards have their own onboard memory, separate from the CPU. GPU memory is different from computer memory; it is configured for much higher data throughput." tags="Topic:hardware" title="graphics card" type="text/x-markdown">
+<div created="20210809071855875" creator="jsng" list-after="[[render]]" modified="20210809074706187" modifier="jsng" summary="Graphics cards contain lots of tiny cores that are much better at performing the same calculation for lots of decimal numbers. These cores are organised into compute units; a graphics card with more compute units can perform more calculations every second. Graphics cards have their own onboard memory, separate from the CPU. GPU memory is different from computer memory; it is configured for much higher data throughput." tags="Topic:hardware" title="graphics card" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 Unlike [[CPU]]s which often have to process an unpredictable workload, the [[graphics pipeline|render]] involves performing the same categories of calculations over and over again.
@@ -15045,7 +15133,7 @@ Graphics cards often come with their own memory chips, based on a different tech
 
 Unlike [[CPU]]s, which (for desktops) seldom draw more than 100W by themselves, graphics cards (for desktops) can draw up to 300W. Correspondingly, more of the space on graphics cards are taken up by components that try to keep this immense power under control. Voltage regulation modules help to adjust input voltages to what the compute units and memory requires.
 
-![Graphics card without its shroud and cooler](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season10/issue123/issue123_01.jpg)&lt;br /&gt;
+![Graphics card without its shroud and cooler](images/issue123_01.jpg)&lt;br /&gt;
 A graphics card, here exposed without its shroud and cooler.  
 The graphics chip is in the middle, surrounded by graphics memory chips (smaller, black squares) close to the edges of the board. The larger protruding gray rectangles are voltage regulation modules.  
 Image from [Gamersnexus](https://www.gamersnexus.net/guides/2826-differences-between-ddr4-and-gddr5)
