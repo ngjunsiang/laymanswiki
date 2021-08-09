@@ -477,6 +477,8 @@ Error message and password prompt
 
 <li>crash</li>
 
+<li>CRT</li>
+
 <li>CSV</li>
 
 <li>CSV vs binary formats</li>
@@ -508,6 +510,8 @@ Error message and password prompt
 <li>DOM</li>
 
 <li>DPI</li>
+
+<li>Draft of 'New Tiddler 1' by jsng</li>
 
 <li>Draft of 'New Tiddler' by jsng</li>
 
@@ -13254,7 +13258,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210809070915739" creator="jsng" list="[[Draft of 'New Tiddler' by jsng]] Topic:security" modified="20210809073621824" modifier="jsng" title="$:/StoryList">
+<div created="20210809070915739" creator="jsng" list="CRT [[Draft of 'New Tiddler 1' by jsng]] [[Draft of 'New Tiddler' by jsng]] Topic:security" modified="20210809073621824" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14232,6 +14236,9 @@ So when an app sends an instruction requesting to access memory space it does no
 
 These days, OSes are better at handling crashes. If the crash occurs in the window management system (the part that lets apps create windows on screen and icons in the taskbar), Windows can often just restart it without restarting or touching the rest of the OS. But if it happens in a critical part that can’t be restarted by itself, then ... BSOD :)</pre>
 </div>
+<div created="20210809074901627" creator="jsng" modified="20210809074935868" modifier="jsng" tags="Glossary" title="CRT" type="text/x-markdown">
+<pre>**CRT** stands for [[cathode-ray tube]].</pre>
+</div>
 <div created="20210701040121880" creator="jsng" modified="20210701040146775" modifier="jsng" tags="Glossary" title="CSV" type="text/x-markdown">
 <pre>CSV stands for [[comma separated values]].</pre>
 </div>
@@ -14627,14 +14634,11 @@ Instead, the web standardized on one way of doing so. This model of thinking abo
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210809074523526" creator="jsng" draft.of="New Tiddler" draft.title="video signal formats" modified="20210809074555198" modifier="jsng" tags="Topic:hardware Topic:systems" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
-<pre>Ah, the esoteric, tricky, complicated art of shooting electromagnetic radiation into the eyes of humans … entire tomes have been written about this. And I will attempt to summarise the pertinent parts into a single newsletter issue. The hubris!
-
-It’s really something when you suddenly remember that television has been around since the 1930s, while computers in some recognisable form were a 1970s invention. The first part of the computer to be invented was the screen![^1]
-
-[^1]: To be pedantic, the first part of the computer to be invented was actually the keyboard, but they were non-electronic and were called typewriters then.
-
-How did screens work if computers weren't invented? A crash course:
+<div created="20210809074855112" creator="jsng" draft.of="New Tiddler 1" draft.title="cathode-ray tube" modified="20210809074859768" modifier="jsng" tags="" title="Draft of 'New Tiddler 1' by jsng">
+<pre></pre>
+</div>
+<div created="20210809074523526" creator="jsng" draft.of="New Tiddler" draft.title="video signal formats" modified="20210809074841954" modifier="jsng" tags="Topic:hardware Topic:systems" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
 
 ## Cathode-ray tube (CRT) televisions
 
@@ -14642,7 +14646,7 @@ Early colour television screens had primary-colour (red, blue, and green) phosph
 
 These electrons, when emitted, fly in all directions, but they are shaped into a beam by an electric field (hence the name “cathode *ray* tube”, which you might have seen in the form of the acronym **CRT**).
 
-![Cutaway of a CRT, showing the phosphor dot screen](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season10/issue124/issue124_01.png)&lt;br /&gt;
+![Cutaway of a CRT, showing the phosphor dot screen](images/issue124_01.png)&lt;br /&gt;
 &lt;small&gt;1: Barium oxide cathode, which is heated to emit electrons (labelled “2”), which are shaped into a a beam by an electric field (labelled “3”)&lt;br /&gt;
 4: Deflecting coils, discussed in the next paragraph&lt;br /&gt;
 8: Coloured phosphor dots, arranged on a flat screen (labelled “7”).&lt;br /&gt;
@@ -14650,7 +14654,7 @@ Image via [Wikipedia](https://en.wikipedia.org/wiki/Cathode-ray_tube)&lt;/small&
 
 This electron beam could be aimed at any of the phosphor dots by a set of electromagnetic deflecting coils mounted along the sides of the TV, on the inside surface. One set, oriented vertically (mounted left-right), controlled the horizontal deflection of the electron beam, while another set, oriented horizontally (mounted top-bottom), controlled the vertical deflection.
 
-![Graphic showing an electron beam deflected upwards by deflecting coils in a CRT](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season10/issue124/issue124_02.png)&lt;br /&gt;
+![Graphic showing an electron beam deflected upwards by deflecting coils in a CRT](images/issue124_02.png)&lt;br /&gt;
 &lt;small&gt;The electron beam produced by the cathode is deflected by (electromagnetic) deflecting coils.&lt;br /&gt;
 Image via [Wikipedia](https://en.wikipedia.org/wiki/Cathode-ray_tube)&lt;/small&gt;
 
@@ -14688,13 +14692,15 @@ As digital television became more feasible due to decreasing microprocessor and 
 
 An early competitor, Digital Visual Interface (**DVI**), was launched by a working group convened by some computer makers (Intel, Silicon Image, Compaq, Fujitsu, HP, IBM, NEC). It was very quickly superceded by High-Definition Multimedia Interface (**HDMI**), an interface which implemented standards set by consumer electronics companies (Hitachi, Sanyo, Silicon Image, Sony, Technicolor, Toshiba).
 
-![HDMI and mini-HDMI connectors displayed top-to-bottom](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season10/issue124/issue124_03.jpg)&lt;br /&gt;
+![HDMI and mini-HDMI connectors displayed top-to-bottom](images/issue124_03.jpg)&lt;br /&gt;
 &lt;small&gt;HDMI and mini-HDMI connectors displayed from top to bottom. Both support the HDMI video standard&lt;br /&gt;Image via [DataPro](https://www.datapro.net/techinfo/hdmi_info.html)&lt;/small&gt;
 
 This was followed by the DisplayPort (**DP**) standard, developed by PC and chip manufacturers and standardised by VESA, and released in in 2006.
 
-![DisplayPort, mini-DisplayPort, and Thunderbolt Type-C connectors displayed side-by-side](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season10/issue124/issue124_04.jpg)&lt;br /&gt;
-&lt;small&gt;DisplayPort, mini-DisplayPort, and Thunderbolt Type-C connectors displayed from left to right. All three support the DisplayPort video standard&lt;br /&gt;Image via [DataPro](https://www.datapro.net/techinfo/displayport_info.html)&lt;/small&gt;</pre>
+![DisplayPort, mini-DisplayPort, and Thunderbolt Type-C connectors displayed side-by-side](images/issue124_04.jpg)&lt;br /&gt;
+&lt;small&gt;DisplayPort, mini-DisplayPort, and Thunderbolt Type-C connectors displayed from left to right. All three support the DisplayPort video standard&lt;br /&gt;Image via [DataPro](https://www.datapro.net/techinfo/displayport_info.html)&lt;/small&gt;
+
+{{||readNextTemplate}}</pre>
 </div>
 <div created="20210728095742017" creator="jsng" modified="20210728101904531" modifier="jsng" summary="Driver files provide information about the driver, and instructions on how to receive information from the device, and encode information to be passed to the device. The operating system may come with generic driver files for the device, but custom driver files might provide better performance or additional features." tags="Topic:systems Glossary" title="driver" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
