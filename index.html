@@ -435,6 +435,8 @@ Error message and password prompt
 
 <li>carriage return</li>
 
+<li>cathode-ray tube</li>
+
 <li>CD-ROM</li>
 
 <li>Central Processing Unit</li>
@@ -512,8 +514,6 @@ Error message and password prompt
 <li>DOM</li>
 
 <li>DPI</li>
-
-<li>Draft of 'New Tiddler 1' by jsng</li>
 
 <li>Draft of 'New Tiddler' by jsng</li>
 
@@ -1400,7 +1400,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="graphics card" modified="20210809074706200" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="analog" modified="20210809075611416" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2077,10 +2077,21 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;graphics card&quot;
+    },
+    {
+        &quot;title&quot;: &quot;analog&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 45.44999694824219,
+            &quot;left&quot;: 534.7166748046875,
+            &quot;width&quot;: 32.90000915527344,
+            &quot;right&quot;: 567.6166839599609,
+            &quot;bottom&quot;: 84.93333435058594,
+            &quot;height&quot;: 39.48333740234375
+        }
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[integrated graphics]] [[graphics card]] [[Universal Serial Bus]]" modified="20210809074440025" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="analog [[integrated graphics]] [[graphics card]] [[Universal Serial Bus]]" modified="20210809075611415" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13260,7 +13271,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210809070915739" creator="jsng" list="analog [[Draft of 'New Tiddler 1' by jsng]] [[Draft of 'New Tiddler' by jsng]] Topic:security" modified="20210809073621824" modifier="jsng" title="$:/StoryList">
+<div created="20210809070915739" creator="jsng" list="[[cathode-ray tube]] [[Draft of 'New Tiddler' by jsng]] Topic:security" modified="20210809073621824" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13839,6 +13850,32 @@ It’s a lot of work to get a single byte (256 possible values), but computers a
 </div>
 <div created="20210611023323050" creator="jsng" modified="20210611033902008" modifier="jsng" tags="Glossary" title="carriage return">
 <pre></pre>
+</div>
+<div created="20210809074855112" creator="jsng" list-before="[[analog]]" modified="20210809075712416" modifier="jsng" tags="Topic:hardware" title="cathode-ray tube" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+Early color television screens had primary-colour (red, blue, and green) phosphor dots embedded in the user-facing portion of the screen. These dots emit colored light when struck by electrons. At the back of the television, cathodes made of barium oxide are heated, causing them to emit electrons.
+
+These electrons, when emitted, fly in all directions, but they are shaped into a beam by an electric field (hence the name “cathode *ray* tube”, which you might have seen in the form of the acronym [[CRT]]).
+
+![Cutaway of a CRT, showing the phosphor dot screen](images/issue124_01.png)&lt;br /&gt;
+1: Barium oxide cathode, which is heated to emit electrons (labelled “2”), which are shaped into a a beam by an electric field (labelled “3”)  
+4: Deflecting coils, discussed in the next paragraph  
+8: Coloured phosphor dots, arranged on a flat screen (labelled “7”).  
+Image via [Wikipedia](https://en.wikipedia.org/wiki/Cathode-ray_tube)
+
+This electron beam could be aimed at any of the phosphor dots by a set of electromagnetic deflecting coils mounted along the sides of the TV, on the inside surface. One set, oriented vertically (mounted left-right), controlled the horizontal deflection of the electron beam, while another set, oriented horizontally (mounted top-bottom), controlled the vertical deflection.
+
+![Graphic showing an electron beam deflected upwards by deflecting coils in a CRT](images/issue124_02.png)&lt;br /&gt;
+The electron beam produced by the cathode is deflected by (electromagnetic) deflecting coils.  
+Image via [Wikipedia](https://en.wikipedia.org/wiki/Cathode-ray_tube)
+
+To produce an image, the electron beam is manipulated to scan across the screen, one line at a time. Each pass across the screen causes it to strike phosphor dots, emitting light in a line. A variety of techniques (microdeflections, masks, and filters) are used to ensure the correct dots are struck.
+
+Each line of the screen is laboriously scanned with this technique, about 60 times a second. This means that the screen “updates” with a refresh rate of 60 Hz.
+
+{{||readNextTemplate}}
+</pre>
 </div>
 <div created="20210728100026794" creator="jsng" modified="20210728100026794" modifier="jsng" title="CD-ROM">
 <pre></pre>
@@ -14650,31 +14687,6 @@ Instead, the web standardized on one way of doing so. This model of thinking abo
 </div>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
-</div>
-<div created="20210809074855112" creator="jsng" draft.of="New Tiddler 1" draft.title="cathode-ray tube" modified="20210809075350534" modifier="jsng" tags="Topic:hardware" title="Draft of 'New Tiddler 1' by jsng" type="text/x-markdown">
-<pre>{{||prereqTemplate}}
-
-Early color television screens had primary-colour (red, blue, and green) phosphor dots embedded in the user-facing portion of the screen. These dots emit colored light when struck by electrons. At the back of the television, cathodes made of barium oxide are heated, causing them to emit electrons.
-
-These electrons, when emitted, fly in all directions, but they are shaped into a beam by an electric field (hence the name “cathode *ray* tube”, which you might have seen in the form of the acronym [[CRT]]).
-
-![Cutaway of a CRT, showing the phosphor dot screen](images/issue124_01.png)&lt;br /&gt;
-1: Barium oxide cathode, which is heated to emit electrons (labelled “2”), which are shaped into a a beam by an electric field (labelled “3”)  
-4: Deflecting coils, discussed in the next paragraph  
-8: Coloured phosphor dots, arranged on a flat screen (labelled “7”).  
-Image via [Wikipedia](https://en.wikipedia.org/wiki/Cathode-ray_tube)
-
-This electron beam could be aimed at any of the phosphor dots by a set of electromagnetic deflecting coils mounted along the sides of the TV, on the inside surface. One set, oriented vertically (mounted left-right), controlled the horizontal deflection of the electron beam, while another set, oriented horizontally (mounted top-bottom), controlled the vertical deflection.
-
-![Graphic showing an electron beam deflected upwards by deflecting coils in a CRT](images/issue124_02.png)&lt;br /&gt;
-The electron beam produced by the cathode is deflected by (electromagnetic) deflecting coils.  
-Image via [Wikipedia](https://en.wikipedia.org/wiki/Cathode-ray_tube)
-
-To produce an image, the electron beam is manipulated to scan across the screen, one line at a time. Each pass across the screen causes it to strike phosphor dots, emitting light in a line. A variety of techniques (microdeflections, masks, and filters) are used to ensure the correct dots are struck.
-
-Each line of the screen is laboriously scanned with this technique, about 60 times a second. This means that the screen “updates” with a refresh rate of 60 Hz.
-
-</pre>
 </div>
 <div created="20210809074523526" creator="jsng" draft.of="New Tiddler" draft.title="video signal formats" modified="20210809075015565" modifier="jsng" tags="Topic:hardware Topic:systems" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
