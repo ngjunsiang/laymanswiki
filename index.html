@@ -531,8 +531,6 @@ Error message and password prompt
 
 <li>DPI</li>
 
-<li>Draft of 'throughput' by jsng</li>
-
 <li>driver</li>
 
 <li>DVD-ROM</li>
@@ -1450,7 +1448,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="hard disk drive" modified="20210821055627287" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="CPU cache" modified="20210821060310973" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2285,10 +2283,21 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 71.91667175292969,
             &quot;height&quot;: 39.48333740234375
         }
+    },
+    {
+        &quot;title&quot;: &quot;CPU cache&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 45.44999694824219,
+            &quot;left&quot;: 765.11669921875,
+            &quot;width&quot;: 32.899993896484375,
+            &quot;right&quot;: 798.0166931152344,
+            &quot;bottom&quot;: 84.93333435058594,
+            &quot;height&quot;: 39.48333740234375
+        }
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[hard disk drive]] [[If the transistors are too small to be seen, how are CPUs made?]]" modified="20210821055627281" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[CPU cache]] [[hard disk drive]] [[If the transistors are too small to be seen, how are CPUs made?]]" modified="20210821060310972" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13468,7 +13477,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210821011325708" creator="jsng" list="[[CPU cache]] [[Draft of 'throughput' by jsng]] mainboard" modified="20210821054224386" modifier="jsng" title="$:/StoryList">
+<div created="20210821011325708" creator="jsng" list="throughput mainboard" modified="20210821054224386" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14963,63 +14972,6 @@ Image via [DataPro](https://www.datapro.net/techinfo/displayport_info.html)</pre
 </div>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
-</div>
-<div created="20210624072228395" creator="jsng" draft.of="throughput" draft.title="throughput" modified="20210821060258247" modifier="jsng" tags="Glossary WIP" title="Draft of 'throughput' by jsng" type="text/x-markdown">
-<pre>The common model of a computer is that it … computes. It calculates. It takes in numbers, and spits out more numbers.
-
-That’s not quite right.
-
-While a computer does carry out compute operations, these are far outnumbered by load/store operations (see [[LSU]]). Why so much loading and storing of data?
-
-# Moving data
-
-The [[CPU]] itself has precious little storage (&lt;20 MB of cache storage); it is only a wee little processor! Most of the data in a computer is stored in [[storage device]]s.
-
-So [[CPU]]s often have to read data from a [[storage device]]. This is a slow operation, because storage drives are slow; writing to storage drives is even slower than reading from them.
-
-In the meantime, the [[CPU]] needs a place to hold working data; this is computer [[memory]] (2–32GB). Memory is slower than the CPU’s cache, but much faster than a storage drive.
-
-That’s 3 places to stash data so far: storage drives, CPU cache, and computer memory. You with me so far?
-
-## Pipelines
-
-The next place that often requires lots of data is the graphics card ([Issue 123](https://buttondown.email/laymansguide/archive/lmg-s10-issue-123-graphics-cards-the-pixel-factory/)). For you to play a video game, the computer has to:
-
-1. Load game data from the storage disk,
-2. Store most of it in memory while it’s doing some number crunching in its cache,
-3. Get the crunched numbers to the graphics card for rendering graphics ([Issue 122](https://buttondown.email/laymansguide/archive/lmg-s10-issue-122-the-great-flattening/)),
-4. Load more data from memory while crunching more numbers, and passing them to the graphics card.
-
-This involves far more loading and storing than computation. And there are limitations to how quickly data can be transferred.
-
-## Throughput
-
-How does data get transferred? Through very fine wires usually. One side (e.g. the CPU) applies a voltage to the wire, the other side (e.g. memory) checks the voltage on the wire. No applied voltage = 0, applied voltage = 1.
-
-How does the CPU know when to apply the voltage, and the memory know when to check it? These operations are synchronised through cycles, like a highly coordinated factory. A CPU operates on a frequency of up to billions of cycles per second, each cycle potentially transferring one bit of data ([Issue 40](https://buttondown.email/laymansguide/archive/lmg-s4-issue-40-bits-and-bytes/)) if there are no delays.
-
-Typically, the transfer rate is somewhat slower; how do we transfer more data per second? By adding more wires! With two wires, we can transfer two bits per cycle; four wires = four bits per second, eight wires = 8 bits per second … at some point, we run into a different problem. The CPU is a small chip, and there is only so much surface area for us to connect wires to.
-
-![An Intel Skylake CPU, showing the pins underneath](images/issue131_01.jpg)&lt;br /&gt;
-&lt;small&gt;An Intel Skylake desktop CPU.&lt;br /&gt;Each gold contact on the under-surface connects to a pin on the motherboard when the CPU is seated properly in its socket&lt;br /&gt;Source: [Wikipedia](https://en.wikipedia.org/wiki/Skylake_(microarchitecture))&lt;/small&gt;
-
-Well, that just sucks.
-
-# The limits of one chip
-
-Come to think of it, humans are much the same; we only have two hands and two legs, there are limits to how fast we can do things, and limits to how long we can stay awake working. We mostly get around these limitations by learning to delegate.
-
-In the same way, computer designs evolved to delegate more work to secondary chips, leaving the CPU to focus on computation. We’ll explore the gradual evolution of these architectures, so you can better appreciate the elegance of the Apple M1’s design ;)
-
-Let’s look at the transfer speeds and [[latencies|latency]] for a few places where data can be stored:
-
-- [[Hard disk drive|hard disk drive]] (HDD): ≈5 ms response latency, 100 MB/s transfer speed
-- [[Solid state drive|solid state drive]] (SSD): up to 0.1 ms response latency, 0.5–1+ GB/s transfer speed
-- [[Computer memory|memory]] (RAM): 0.1 µs (0.0001 ms) response latency, 20GB/s transfer speed
-- [[CPU cache]]: a few ns (0.000001 ms) response latency, up to 175 GB/s transfer speed (theoretical)
-- CPU register: &lt;1 ns (&lt;0.000001 ms) response latency&lt;&lt;fnote &quot;We seldom talk about the transfer speed of CPU registers, because each register only holds one byte and the transfer is near-instantaneous.&quot;&gt;&gt;
-
-A [[CPU register]] is a slot within the [[CPU]] [[core]] which it uses to hold the data it is processing.</pre>
 </div>
 <div created="20210728095742017" creator="jsng" modified="20210728101904531" modifier="jsng" summary="Driver files provide information about the driver, and instructions on how to receive information from the device, and encode information to be passed to the device. The operating system may come with generic driver files for the device, but custom driver files might provide better performance or additional features." tags="Topic:systems Glossary" title="driver" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
@@ -17798,15 +17750,66 @@ Is there any way to work around this? Yep! The termination instruction has to co
 
 {{||readNextTemplate}}</pre>
 </div>
-<div created="20210624072228395" creator="jsng" modified="20210710085338850" modifier="jsng" tags="Glossary WIP" title="throughput" type="text/x-markdown">
-<pre>Let’s look at the transfer speeds and [[latencies|latency]] for a few places where data can be stored:
+<div created="20210624072228395" creator="jsng" list-before="[[mainboard]]" modified="20210821061116050" modifier="jsng" summary="CPUs have limited throughput, since there is a max frequency they can operate at, and a limit to the number of wires they can be connected to (throughput = no. of wires × frequency). Later designs of early computers increased the capability of computers by delegating more work to secondary chips." tags="Glossary WIP" title="throughput" type="text/x-markdown">
+<pre>The common model of a computer is that it … computes. It calculates. It takes in numbers, and spits out more numbers.
+
+That’s not quite right.
+
+While a computer does carry out compute operations, these are far outnumbered by load/store operations (see [[LSU]]). Why so much loading and storing of data?
+
+# Stashing data
+
+The [[CPU]] itself has precious little storage (&lt;20 MB of [[CPU cache]]); it is only a wee little processor! Most of the data in a computer is stored in [[storage device]]s.
+
+So [[CPU]]s often have to read data from a [[storage device]]. This is a slow operation, because storage drives are slow; writing to storage drives is even slower than reading from them.
+
+In the meantime, the [[CPU]] needs a place to hold working data; this is computer [[memory]] (2–32GB). Memory is slower than CPU cache, but much faster than a storage drive.
+
+That’s 3 places to stash data so far: storage drives, CPU cache, and computer memory.
+
+# Moving data between stashes
+
+The next place that often requires lots of data is the [[graphics card]]. For you to play a video game, the computer has to:
+
+1. Load game data from the [[storage device]],
+2. Store most of it in [[memory]] while it’s doing some number crunching in its [[cache|CPU cache]],
+3. Get the crunched numbers to the [[graphics card]] for [[render]]ing graphics,
+4. Load more data from memory while crunching more numbers, and passing them to the graphics card.
+
+This involves far more loading and storing than computation. And there are limitations to how quickly data can be transferred.
+
+# Throughput
+
+Let’s look at the transfer speeds and [[latencies|latency]] for a few places where data can be stored:
 
 - [[Hard disk drive|hard disk drive]] (HDD): ≈5 ms response latency, 100 MB/s transfer speed
 - [[Solid state drive|solid state drive]] (SSD): up to 0.1 ms response latency, 0.5–1+ GB/s transfer speed
 - [[Computer memory|memory]] (RAM): 0.1 µs (0.0001 ms) response latency, 20GB/s transfer speed
+- [[CPU cache]]: a few ns (0.000001 ms) response latency, up to 175 GB/s transfer speed (theoretical)
 - CPU register: &lt;1 ns (&lt;0.000001 ms) response latency&lt;&lt;fnote &quot;We seldom talk about the transfer speed of CPU registers, because each register only holds one byte and the transfer is near-instantaneous.&quot;&gt;&gt;
 
-A [[CPU register]] is a slot within the [[CPU]] which it uses to hold the data it is processing.</pre>
+A [[CPU register]] is a slot within the [[CPU]] [[core]] which it uses to hold the data it is processing.
+
+These numbers also depend on the speed of the electronic pipelines that connect them.
+
+# The digital pipelines
+
+How does data get transferred from stash to stash? Through very fine wires usually. One side (e.g. the [[CPU]]) applies a voltage to the wire, the other side (e.g. memory) checks the voltage on the wire.
+
+No applied voltage = 0, applied voltage = 1.
+
+How does the [[CPU]] know when to apply the voltage, and the memory know when to check it? These operations are synchronized through cycles, like a highly coordinated factory. A CPU operates on a frequency of up to billions of cycles per second, each cycle potentially transferring one [[bit]] of data if there are no delays.
+
+Typically, the transfer rate is somewhat slower; how do we transfer more data per second? By adding more wires! With two wires, we can transfer two bits per cycle; four wires = four bits per second, eight wires = 8 bits per second …
+
+Beyond a certain point, we run into a different problem. The CPU is a small chip, and there is only so much surface area for us to connect wires to.
+
+![An Intel Skylake CPU, showing the pins underneath](images/issue131_01.jpg)&lt;br /&gt;
+An Intel Skylake desktop CPU.  
+Each gold contact on the under-surface connects to a pin on the motherboard when the CPU is seated properly in its socket  
+Source: [Wikipedia](https://en.wikipedia.org/wiki/Skylake_(microarchitecture))&lt;/small&gt;
+
+So the [[CPU]] has to delegate some operations to secondary processors on the [[mainboard]].</pre>
 </div>
 <div created="20210613050950834" creator="jsng" modified="20210613050950834" modifier="jsng" title="TiB">
 <pre></pre>
