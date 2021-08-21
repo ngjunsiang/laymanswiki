@@ -531,6 +531,10 @@ Error message and password prompt
 
 <li>DPI</li>
 
+<li>Draft of 'hard disk drive' by jsng</li>
+
+<li>Draft of 'memory' by jsng</li>
+
 <li>Draft of 'throughput' by jsng</li>
 
 <li>driver</li>
@@ -1450,7 +1454,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="storage device" modified="20210821051823900" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="storage device" modified="20210821053606883" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2239,10 +2243,30 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;storage device&quot;
+    },
+    {
+        &quot;title&quot;: &quot;memory&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 632.183349609375,
+            &quot;left&quot;: 596.11669921875,
+            &quot;width&quot;: 52.133331298828125,
+            &quot;right&quot;: 648.2500305175781,
+            &quot;bottom&quot;: 650.183349609375,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'memory' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'storage device' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;storage device&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[storage device]] [[If the transistors are too small to be seen, how are CPUs made?]]" modified="20210821013226982" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[Draft of 'memory' by jsng]] [[storage device]] [[If the transistors are too small to be seen, how are CPUs made?]]" modified="20210821013226982" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13422,7 +13446,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210821011325708" creator="jsng" list="[[Draft of 'throughput' by jsng]] mainboard" modified="20210821051050926" modifier="jsng" title="$:/StoryList">
+<div created="20210821011325708" creator="jsng" list="[[Draft of 'hard disk drive' by jsng]] [[Draft of 'throughput' by jsng]] mainboard" modified="20210821052052923" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14911,7 +14935,54 @@ Image via [DataPro](https://www.datapro.net/techinfo/displayport_info.html)</pre
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210624072228395" creator="jsng" draft.of="throughput" draft.title="throughput" modified="20210821051622298" modifier="jsng" tags="Glossary WIP" title="Draft of 'throughput' by jsng" type="text/x-markdown">
+<div created="20210710085609375" creator="jsng" draft.of="hard disk drive" draft.title="hard disk drive" modified="20210821052215758" modifier="jsng" summary="A hard disk consists of a read arm, and a set of magnetic platters which store data. To read or write data, the read arm must move to the appropriate track of the rotating platter, and detect the magnetic field (for reading), or attempt to magnetise the domains on the platter (for writing)." tags="[[storage device]]" title="Draft of 'hard disk drive' by jsng" type="text/x-markdown">
+<pre>Hard disk drives are [[storage device]]s containing multiple magnetic platters, which store data. Each platter contains trillions of magnetic atoms; yep, they’re atom-sized magnets!
+
+These atoms are grouped into clusters called magnetic domains; they are so tiny that 500 of these placed in a straight line would stretch the diameter of a human hair!
+
+These domains can align themselves in one of two different ways: let’s call them “up” and “down”. Each bit (as in, 8 bits = 1 byte) is stored as the alignment of a magnetic domain: up represents 1, and down represents 0.
+
+# Hard disk operation
+
+To [[read data|reading data from storage]], all you need to do is move a tiny electromagnet over each domain, and use it to see which way the domain is aligned. This can be done by measuring the current flowing through the electromagnet, a detailed explanation of which involves electromagnetic induction from high school physics.
+
+To [[write data|writing data to storage safely]], you pass a current through the electromagnet to magnetize the domain below it whichever way you want; just spin the platter and keep changing the current to write a series of 1s or 0s.
+
+Put 3 to 5 platters together, attach the electromagnet to a moving arm (called the read arm), control the whole thing with some microchips, and you have a hard disk.
+
+![Open hard disk](images/issue118_01.gif)&lt;br /&gt;
+A picture of an opened desktop hard disk, showing the read arms and magnetic platters
+
+# Characteristics of a hard disk
+
+A hard disk spins at a constant speed, because it is much more complicated to figure out how to read/write stuff when the speed can vary.
+
+The larger hard disks, which go into desktops and use 3.5-inch platters, spin at 7200rpm, while the smaller hard disks, which go into laptops and use 2.5-inch platters, spin at 5400rpm.
+
+Data stored near the circumference of a magnetic platter is faster to read than data stored near its center. For this reason, OSes that are installed on hard disks usually attempt to [[partition]] the storage space so that the operating system is stored on domains closer to the circumference.
+
+The read arm moves really close to the platters during disk operation! The gap between them (called the head gap or flying height) is half the thickness of a human hair. This is why you do not want to drop hard disks while they are in operation; the slightest movement of the read arm towards the magnetic platter causes it to gouge the platter surface and damage it permanently: this is called a head crash.
+
+# Read and write operations
+
+The hard disk is ultimately a mechanical device; each operation involves moving parts.
+
+Reading from or writing to a domain involves:
+
+1. Spinning up the platter (if it isn’t already spinning)
+2. Moving the read arm to the correct position
+3. Measuring or inducing a current
+
+This means that each time the hard disk needs to access data from a different region of the disk, there is significant lag time (~5ms). This is the time needed for all those movement described above.
+
+It is thus advantageous to try to put all the data you need in contiguous domains&lt;&lt;fnote &quot;This process is what millennials might remember as defragmentation, or defragging.&quot;&gt;&gt;, to minimize read arm movement.
+
+</pre>
+</div>
+<div created="20210628230508407" creator="jsng" draft.of="memory" draft.title="memory" modified="20210821051924454" modifier="jsng" tags="WIP Topic:hardware Topic:systems" title="Draft of 'memory' by jsng" type="text/x-markdown">
+<pre>Computer memory comprises lots of capacitors wired together, and capacitors slowly leak charge when they are not powered. Memory chips need periodic “refreshing” every few milliseconds to avoid losing data due to this charge leakage.</pre>
+</div>
+<div created="20210624072228395" creator="jsng" draft.of="throughput" draft.title="throughput" modified="20210821051913133" modifier="jsng" tags="Glossary WIP" title="Draft of 'throughput' by jsng" type="text/x-markdown">
 <pre>The common model of a computer is that it … computes. It calculates. It takes in numbers, and spits out more numbers.
 
 That’s not quite right.
@@ -14922,9 +14993,9 @@ While a computer does carry out compute operations, these are far outnumbered by
 
 The [[CPU]] itself has precious little storage (&lt;20 MB of cache storage); it is only a wee little processor! Most of the data in a computer is stored in [[storage device]]s.
 
-So CPUs have to read data from a storage drive. This is a slow operation, because storage drives are slow; writing to storage drives is even slower than reading from them.
+So [[CPU]]s often have to read data from a [[storage device]]. This is a slow operation, because storage drives are slow; writing to storage drives is even slower than reading from them.
 
-In the meantime, the CPU needs a place to dump working data; this is computer memory (2–32GB). Memory is slower than the CPU’s cache, but much faster than a storage drive.
+In the meantime, the [[CPU]] needs a place to hold working data; this is computer [[memory]] (2–32GB). Memory is slower than the CPU’s cache, but much faster than a storage drive.
 
 That’s 3 places to stash data so far: storage drives, CPU cache, and computer memory. You with me so far?
 
@@ -17423,11 +17494,34 @@ The memory configuration remains intact, and everything is exactly the way you l
 
 {{||readNextTemplate}}</pre>
 </div>
-<div created="20210710085634509" creator="jsng" modified="20210821051823898" modifier="jsng" tags="Topic:hardware" title="storage device">
+<div created="20210710085634509" creator="jsng" modified="20210821053606875" modifier="jsng" tags="Topic:hardware" title="storage device" type="text/x-markdown">
 <pre>Storage organized into [[sector]]s, the smallest units of storage in a storage device.
 
 Storage devices can have their storage organized into [[partition]]s. Each [[partition]] is considered a separate storage space, with its own [[file table]].
 
+# Types of storage devices
+
+## [[hard disk drive]] ([[HDD]])
+
+A hard disk drive stores data on magnetic platters, consisting of billions of magnetic domains. The alignment of each domain determines whether it is a 0 or a 1.
+
+![2.5-inch hard disk drive on top of a 3.5-inch hard disk drive](images/issue136_02.png)  
+2.5&quot; HDDs are typically used in laptops and small desktops  
+3.5&quot; HDDs are typically used in desktops and file servers  
+Both can be used in external storage enclosures
+
+![3.5-inch hard disk drive without its cover](images/issue118_01.gif)  
+A 3.5&quot; HDD with its cover removed  
+The round magnetic platters where data is stored are visible  
+Also visible is the read arm, which moves across the magnetic platters as they rotate
+
+## [[solid state drive]] ([[SSD]])
+
+A solid state drive stores data in a particular kind of transistor, called a [floating gate MOSFET](https://en.wikipedia.org/wiki/Floating-gate_MOSFET). Most solid state storage comprising these transistors arranged into a component called a NAND gate (hence the popular name for this category of storage: NAND flash)
+
+![solid state drive in a laptop](images/issue119_01.jpg)  
+Solid state storage used in a laptop, here shown unsecured  
+Desktops use the same kind with the same interface
 ----------
 
 {{||tagPageTemplate}}</pre>
