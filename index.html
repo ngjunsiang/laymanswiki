@@ -529,8 +529,6 @@ Error message and password prompt
 
 <li>DPI</li>
 
-<li>Draft of 'New Tiddler 1' by jsng</li>
-
 <li>Draft of 'New Tiddler' by jsng</li>
 
 <li>driver</li>
@@ -596,6 +594,8 @@ Error message and password prompt
 <li>hard disk drive</li>
 
 <li>HDMI</li>
+
+<li>heatsink</li>
 
 <li>HEVC</li>
 
@@ -13391,7 +13391,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210821003928291" creator="jsng" list="Topic:engineering [[Draft of 'New Tiddler 1' by jsng]] [[If the transistors are too small to be seen, how are CPUs made?]] [[Draft of 'New Tiddler' by jsng]] Topic:security" modified="20210821004239950" modifier="jsng" title="$:/StoryList">
+<div created="20210821003928291" creator="jsng" list="heatsink [[If the transistors are too small to be seen, how are CPUs made?]] [[Draft of 'New Tiddler' by jsng]] Topic:security" modified="20210821004239950" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14877,10 +14877,7 @@ Image via [DataPro](https://www.datapro.net/techinfo/displayport_info.html)</pre
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210821010546978" creator="jsng" draft.of="New Tiddler 1" draft.title="heatsink" modified="20210821010555313" modifier="jsng" tags="Glossary Topic:hardware" title="Draft of 'New Tiddler 1' by jsng">
-<pre></pre>
-</div>
-<div created="20210821003751379" creator="jsng" draft.of="New Tiddler" draft.title="heat" modified="20210821010530803" modifier="jsng" summary="The larger the surface area, the faster an object loses heat. The larger the temperature difference between object and surroundings, the faster the object loses heat. Heat is bad for computers, and CPUs will need cooling to be able to process computations quickly. A mobile phone thus typically uses no more than 4 W of power, a laptop can use 25–45 W, and a desktop can usually use 65 W and more. Two popular ways of increasing the cooling capacity of a device is to attach a larger piece of metal to the chip (passive cooling), or use a fan to force air over the heatsink (active cooling)." tags="Topic:hardware" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
+<div created="20210821003751379" creator="jsng" draft.of="New Tiddler" draft.title="heat" modified="20210821010948327" modifier="jsng" summary="The larger the surface area, the faster an object loses heat. The larger the temperature difference between object and surroundings, the faster the object loses heat. Heat is bad for computers, and CPUs will need cooling to be able to process computations quickly. A mobile phone thus typically uses no more than 4 W of power, a laptop can use 25–45 W, and a desktop can usually use 65 W and more. Two popular ways of increasing the cooling capacity of a device is to attach a larger piece of metal to the chip (passive cooling), or use a fan to force air over the heatsink (active cooling)." tags="Topic:engineering" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
 <pre>Why do computers need power?
 
 Other home appliances draw electrical power to heat up air/water, move air/water around, or extract heat from air/water to move it elsewhere. These things all need energy. But a computer … all it does is move electrons around! All the information in a computer that changes is just electromagnetic signals propagating and electrons moving; that should not need so much power, should it?
@@ -14923,11 +14920,7 @@ Main article: [[If the transistors are too small to be seen, how are CPUs made?]
 
 In practice, this means that a bare chip can only run about 4 W before it starts to run beyond its thermal limits (we call this [[overheat]]ing). Anything more powerful than a basic home router or smart device (such as the Amazon Echo or Google Home Assistant) will need some sort of [[heatsink]] to avoid overheating.
 
-The simplest way to cool a chip is to slap a piece of metal on it to increase the surface area (factor 2 above). This is known as [[passive cooling]]. A paste called [[thermal paste]] is applied between the heatsink and chip to improve the transfer of heat. To pack as much surface area as possible into a tiny space, this piece of metal usually has long, thin fins, giving the characteristic look of heatsinks:
-
-![A passive heatsink on a chip](images/issue129_01.jpg)&lt;br /&gt;
-A passive heatsink on the northbridge chip of a computer mainboard  
-Source: found on [Superuser](https://superuser.com/questions/1043094/difference-between-active-and-passive-heatsink)
+The simplest way to cool a chip is to slap a piece of metal called a [[heatsink]] on it to increase the surface area (factor 2 above). This is known as [[passive cooling]].
 
 The effectiveness of passive heatsinks depends on the ambient airflow around it. Some creative setups that manage to get *the metal case itself* in contact with the CPU can readily cool up to 45 W, without any [[cooling fans]]!
 
@@ -15485,6 +15478,17 @@ It is thus advantageous to try to put all the data you need in contiguous domain
 ![HDMI and mini-HDMI connectors displayed top-to-bottom](images/issue124_03.jpg)&lt;br /&gt;
 HDMI and mini-HDMI connectors displayed from top to bottom. Both support the HDMI video standard  
 Image via [DataPro](https://www.datapro.net/techinfo/hdmi_info.html)</pre>
+</div>
+<div created="20210821010546978" creator="jsng" modified="20210821011000514" modifier="jsng" tags="Glossary Topic:engineering" title="heatsink" type="text/x-markdown">
+<pre>A **heatsink** is a piece of metal placed in direct contact with a processor (such as a [[CPU]]) to help cool it.
+
+Main article: [[heat]]
+
+A paste called [[thermal paste]] is applied between the **heatsink** and chip to improve the transfer of heat. To pack as much surface area as possible into a tiny space, this piece of metal usually has long, thin fins, giving the characteristic look of heatsinks:
+
+![A passive heatsink on a chip](images/issue129_01.jpg)&lt;br /&gt;
+A passive heatsink on the northbridge chip of a computer mainboard  
+Source: found on [Superuser](https://superuser.com/questions/1043094/difference-between-active-and-passive-heatsink)</pre>
 </div>
 <div created="20210613064723545" creator="jsng" modified="20210613064724877" modifier="jsng" tags="Glossary" title="HEVC">
 <pre></pre>
