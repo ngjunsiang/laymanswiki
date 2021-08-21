@@ -529,8 +529,6 @@ Error message and password prompt
 
 <li>DPI</li>
 
-<li>Draft of 'graphics card' by jsng</li>
-
 <li>Draft of 'New Tiddler' by jsng</li>
 
 <li>driver</li>
@@ -1434,7 +1432,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="ALU" modified="20210821004846779" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="graphics card" modified="20210821004941116" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2164,10 +2162,13 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 377.83331298828125,
             &quot;height&quot;: 19
         }
+    },
+    {
+        &quot;title&quot;: &quot;graphics card&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="flop [[Draft of 'graphics card' by jsng]] [[Draft of 'New Tiddler 1' by jsng]] [[Universal Serial Bus]]" modified="20210821004846772" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[graphics card]] [[Draft of 'New Tiddler 1' by jsng]] [[Universal Serial Bus]]" modified="20210821004846772" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13347,7 +13348,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210821003928291" creator="jsng" list="FPU ALU [[Draft of 'New Tiddler' by jsng]] Topic:security" modified="20210821004239950" modifier="jsng" title="$:/StoryList">
+<div created="20210821003928291" creator="jsng" list="[[Draft of 'New Tiddler' by jsng]] Topic:security" modified="20210821004239950" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14833,58 +14834,6 @@ Image via [DataPro](https://www.datapro.net/techinfo/displayport_info.html)</pre
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210809071855875" creator="jsng" draft.of="graphics card" draft.title="graphics card" list-after="[[render]]" modified="20210821004432800" modifier="jsng" summary="Graphics cards contain lots of tiny cores that are much better at performing the same calculation for lots of decimal numbers. These cores are organised into compute units; a graphics card with more compute units can perform more calculations every second. Graphics cards have their own onboard memory, separate from the CPU. GPU memory is different from computer memory; it is configured for much higher data throughput." tags="Topic:hardware" title="Draft of 'graphics card' by jsng" type="text/x-markdown">
-<pre>{{||prereqTemplate}}
-
-Unlike [[CPU]]s which often have to process an unpredictable workload, the [[graphics pipeline|render]] involves performing the same categories of calculations over and over again.
-
-# Graphics compute units
-
-These calculations take in tables of numbers, crunch them mathematically, and spit out another table of numbers. Since the calculations are predictable, we don't need very complicated hardware that enables switching instructions based on the input. We can used specialised [[core]]s—clusters of transistors that are custom-fit for the purpose, cram lots of them into a circuit board, and end up with much better performance for the graphics pipeline compared to the [[CPU]].
-
-These cores are organized into groups known as [[compute units]], and graphics card companies often differentiate the lower-end and higher-end cards by the number of compute units they have. This number indicates the computation rate (measured in [[flop]]s, which stand for **fl**oating-point **o**perations **p**er **s**econd)&lt;&lt;fnote &quot;“Floating-point” is a fancy term for decimal, so-called because the way they are represented allows the decimal point to be placed differently, unlike with integers.&quot;&gt;&gt;. Better graphics require more computation, so more flops correlate with better graphics.
-
-# Graphics memory
-
-Graphics cards often come with their own memory chips, based on a different technology ([[GDDR]], standing for “graphics double data rate”, vs [[DDR]], “double data rate”). Graphics memory chips ([[GDDR]]) are optimised for higher bandwidth (more gigabytes transferred per second), while CPU memory chips ([[DDR]]) are optimized for lower latency (lower time to response). These are soldered directly onto the graphics card to keep memory readily accessible by the compute units.
-
-# Power and heat
-
-Unlike [[CPU]]s, which (for desktops) seldom draw more than 100W by themselves, graphics cards (for desktops) can draw up to 300W. Correspondingly, more of the space on graphics cards are taken up by components that try to keep this immense power under control. Voltage regulation modules help to adjust input voltages to what the compute units and memory requires.
-
-![Graphics card without its shroud and cooler](images/issue123_01.jpg)&lt;br /&gt;
-A graphics card, here exposed without its shroud and cooler.  
-The graphics chip is in the middle, surrounded by graphics memory chips (smaller, black squares) close to the edges of the board. The larger protruding gray rectangles are voltage regulation modules.  
-Image from [Gamersnexus](https://www.gamersnexus.net/guides/2826-differences-between-ddr4-and-gddr5)
-
-# Video output
-
-See also: [[render]]
-
-The graphics card is in charge of converting the final rasterized signal to a video signal, depending on the video format that is required. Naturally, this requires additional chips.
-
-Most integrated graphics chips support [[VGA]] and [[HDMI]] output formats, while [[DP]] support is usually reserved for higher-end devices.
-
-Higher-end graphics cards offer support for more video formats. Furthermore, they also have the capability to rasterize and output video streams for multiple screens, enabling multi-screen support for those who need it.
-
-If you find that you need more than two screens for work or play, you are likely going to need a dedicated video card that supports three or more simultaneous video output ports.
-
-# Other uses
-
-The graphics card excels at carrying out predictable decimal calculations in a pipeline. Besides graphics, what else can it be used for?
-
-In research, they have been purposed to perform calculations for simulations, which often involve processing the same calculation in bulk.
-
-For consumer purposes, they have also been used for video [[decoding|decode]] (decompressing videos for playback), and lately even video [[encoding|encode]] (compressing videos to a smaller size). These also involve performing the same types of calculations in a predictable pipeline.
-
-Most recently, they are being used for machine learning (also known as “artificial intelligence”) models, again because those involve predictable pipelines.
-
-Do you are see a pattern here?
-
-See also: [[integrated graphics]]
-
-{{||readNextTemplate}}</pre>
-</div>
 <div created="20210821003751379" creator="jsng" draft.of="New Tiddler" draft.title="cooling" modified="20210821004031797" modifier="jsng" summary="The larger the surface area, the faster an object loses heat. The larger the temperature difference between object and surroundings, the faster the object loses heat. Heat is bad for computers, and CPUs will need cooling to be able to process computations quickly. A mobile phone thus typically uses no more than 4 W of power, a laptop can use 25–45 W, and a desktop can usually use 65 W and more. Two popular ways of increasing the cooling capacity of a device is to attach a larger piece of metal to the chip (passive cooling), or use a fan to force air over the heatsink (active cooling)." tags="Topic:hardware" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
 <pre>Why do computers need power?
 
@@ -15380,14 +15329,14 @@ Once I have figured out which users and posts are involved in this chain, I can 
 
 {{||readNextTemplate}}</pre>
 </div>
-<div created="20210809071855875" creator="jsng" list-after="[[render]]" modified="20210809082851012" modifier="jsng" summary="Graphics cards contain lots of tiny cores that are much better at performing the same calculation for lots of decimal numbers. These cores are organised into compute units; a graphics card with more compute units can perform more calculations every second. Graphics cards have their own onboard memory, separate from the CPU. GPU memory is different from computer memory; it is configured for much higher data throughput." tags="Topic:hardware" title="graphics card" type="text/x-markdown">
+<div created="20210809071855875" creator="jsng" list-after="[[render]]" modified="20210821004941102" modifier="jsng" summary="Graphics cards contain lots of tiny cores that are much better at performing the same calculation for lots of decimal numbers. These cores are organised into compute units; a graphics card with more compute units can perform more calculations every second. Graphics cards have their own onboard memory, separate from the CPU. GPU memory is different from computer memory; it is configured for much higher data throughput." tags="Topic:hardware" title="graphics card" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 Unlike [[CPU]]s which often have to process an unpredictable workload, the [[graphics pipeline|render]] involves performing the same categories of calculations over and over again.
 
 # Graphics compute units
 
-These calculations take in tables of numbers, crunch them mathematically, and spit out another table of numbers. Since the calculations are predictable, we don't need very complicated hardware that enables switching instructions based on the input. We can used specialised cores—clusters of transistors that are custom-fit for the purpose, cram lots of them into a circuit board, and end up with much better performance for the graphics pipeline compared to the [[CPU]].
+These calculations take in tables of numbers, crunch them mathematically, and spit out another table of numbers. Since the calculations are predictable, we don't need very complicated hardware that enables switching instructions based on the input. We can used specialised [[core]]s—clusters of transistors that are custom-fit for the purpose, cram lots of them into a circuit board, and end up with much better performance for the graphics pipeline compared to the [[CPU]].
 
 These cores are organized into groups known as [[compute units]], and graphics card companies often differentiate the lower-end and higher-end cards by the number of compute units they have. This number indicates the computation rate (measured in [[flop]]s, which stand for **fl**oating-point **o**perations **p**er **s**econd)&lt;&lt;fnote &quot;“Floating-point” is a fancy term for decimal, so-called because the way they are represented allows the decimal point to be placed differently, unlike with integers.&quot;&gt;&gt;. Better graphics require more computation, so more flops correlate with better graphics.
 
