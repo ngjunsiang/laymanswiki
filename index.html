@@ -1450,7 +1450,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="memory" modified="20210821055552610" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="hard disk drive" modified="20210821055627287" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2274,10 +2274,21 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;memory&quot;
+    },
+    {
+        &quot;title&quot;: &quot;hard disk drive&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 32.43333435058594,
+            &quot;left&quot;: 765.11669921875,
+            &quot;width&quot;: 32.899993896484375,
+            &quot;right&quot;: 798.0166931152344,
+            &quot;bottom&quot;: 71.91667175292969,
+            &quot;height&quot;: 39.48333740234375
+        }
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="memory [[storage device]] [[If the transistors are too small to be seen, how are CPUs made?]]" modified="20210821013226982" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[hard disk drive]] [[If the transistors are too small to be seen, how are CPUs made?]]" modified="20210821055627281" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13457,7 +13468,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210821011325708" creator="jsng" list="[[CPU cache]] [[hard disk drive]] [[Draft of 'throughput' by jsng]] mainboard" modified="20210821054224386" modifier="jsng" title="$:/StoryList">
+<div created="20210821011325708" creator="jsng" list="[[CPU cache]] [[Draft of 'throughput' by jsng]] mainboard" modified="20210821054224386" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14403,7 +14414,7 @@ This is also why, if you accidentally permanently deleted a file, you still have
 
 Main article: [[Central Processing Unit]]</pre>
 </div>
-<div created="20210624072111311" creator="jsng" list-after="[[throughput]]" modified="20210821055555937" modifier="jsng" summary="The CPU stores data for ready access in the CPU cache. Accessing data from the CPU cache is much faster than accessing data from memory. When the CPU needs data from a memory address, it looks in the cache first. If the data is not there (a **cache miss**), it will load the data from the memory address, and store a copy in the cache for faster reference in future. The CPU cache is managed by the CPU and is invisible to the OS. Programs that need to ensure the data in the cache is “fresh” can perform a cache flush and reload." tags="Topic:hardware cache" title="CPU cache" type="text/x-markdown">
+<div created="20210624072111311" creator="jsng" list-after="[[throughput]]" modified="20210821060309063" modifier="jsng" summary="The CPU stores data for ready access in the CPU cache. Accessing data from the CPU cache is much faster than accessing data from memory. When the CPU needs data from a memory address, it looks in the cache first. If the data is not there (a **cache miss**), it will load the data from the memory address, and store a copy in the cache for faster reference in future. The CPU cache is managed by the CPU and is invisible to the OS. Programs that need to ensure the data in the cache is “fresh” can perform a cache flush and reload." tags="Topic:hardware cache" title="CPU cache" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 Also known as: **static random access memory** ([[SRAM]])
@@ -14414,11 +14425,12 @@ Unlike computer [[memory]], the **CPU cache** consists of transistors arranged i
 
 We use [[cache]]s to improve [[throughput]] and speed up processing.
 
-# [[throughput]]
+**Main article:** [[throughput]]
 
-&gt; {{throughput}}
+&gt; - [[Computer memory|memory]] (RAM): 0.1 µs (0.0001 ms) response latency, 20GB/s transfer speed
+&gt; - CPU register: &lt;1 ns (&lt;0.000001 ms) response latency
 
-Notice that the speed difference between each device is more than 10×? If a computer did not have physical memory to store temporary data in, and had to transfer data to/from disk instead, it would be responding a thousand times more slowly!
+Notice that the latency difference between CPU caches and memory is more than 10×? If a computer did not have physical memory to store temporary data in, and had to transfer data to/from disk instead, it would be responding a thousand times more slowly!
 
 A CPU can carry out operations very quickly on data loaded into its registers; it generally takes only a few nanoseconds for complex calculations to be done. Simple [[CPU instructions]] (such as `ADD`) can even be completed in less than 1 ns!
 
@@ -14952,7 +14964,7 @@ Image via [DataPro](https://www.datapro.net/techinfo/displayport_info.html)</pre
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210624072228395" creator="jsng" draft.of="throughput" draft.title="throughput" modified="20210821051913133" modifier="jsng" tags="Glossary WIP" title="Draft of 'throughput' by jsng" type="text/x-markdown">
+<div created="20210624072228395" creator="jsng" draft.of="throughput" draft.title="throughput" modified="20210821060258247" modifier="jsng" tags="Glossary WIP" title="Draft of 'throughput' by jsng" type="text/x-markdown">
 <pre>The common model of a computer is that it … computes. It calculates. It takes in numbers, and spits out more numbers.
 
 That’s not quite right.
@@ -14993,7 +15005,7 @@ Typically, the transfer rate is somewhat slower; how do we transfer more data pe
 
 Well, that just sucks.
 
-## The limits of one chip
+# The limits of one chip
 
 Come to think of it, humans are much the same; we only have two hands and two legs, there are limits to how fast we can do things, and limits to how long we can stay awake working. We mostly get around these limitations by learning to delegate.
 
@@ -15004,9 +15016,10 @@ Let’s look at the transfer speeds and [[latencies|latency]] for a few places w
 - [[Hard disk drive|hard disk drive]] (HDD): ≈5 ms response latency, 100 MB/s transfer speed
 - [[Solid state drive|solid state drive]] (SSD): up to 0.1 ms response latency, 0.5–1+ GB/s transfer speed
 - [[Computer memory|memory]] (RAM): 0.1 µs (0.0001 ms) response latency, 20GB/s transfer speed
+- [[CPU cache]]: a few ns (0.000001 ms) response latency, up to 175 GB/s transfer speed (theoretical)
 - CPU register: &lt;1 ns (&lt;0.000001 ms) response latency&lt;&lt;fnote &quot;We seldom talk about the transfer speed of CPU registers, because each register only holds one byte and the transfer is near-instantaneous.&quot;&gt;&gt;
 
-A [[CPU register]] is a slot within the [[CPU]] which it uses to hold the data it is processing.</pre>
+A [[CPU register]] is a slot within the [[CPU]] [[core]] which it uses to hold the data it is processing.</pre>
 </div>
 <div created="20210728095742017" creator="jsng" modified="20210728101904531" modifier="jsng" summary="Driver files provide information about the driver, and instructions on how to receive information from the device, and encode information to be passed to the device. The operating system may come with generic driver files for the device, but custom driver files might provide better performance or additional features." tags="Topic:systems Glossary" title="driver" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
