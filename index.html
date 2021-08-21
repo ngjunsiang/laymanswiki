@@ -595,6 +595,8 @@ Error message and password prompt
 
 <li>HDMI</li>
 
+<li>hello</li>
+
 <li>HEVC</li>
 
 <li>hibernate</li>
@@ -1432,7 +1434,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="graphics card" modified="20210821004941116" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="hello" modified="20210821005607616" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2165,10 +2167,24 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;graphics card&quot;
+    },
+    {
+        &quot;title&quot;: &quot;processor manufacturing&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 628.9000244140625,
+            &quot;left&quot;: 611.7333374023438,
+            &quot;width&quot;: 155.75,
+            &quot;right&quot;: 767.4833374023438,
+            &quot;bottom&quot;: 646.9000244140625,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;hello&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[graphics card]] [[Draft of 'New Tiddler 1' by jsng]] [[Universal Serial Bus]]" modified="20210821004846772" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[processor manufacturing]] hello [[Universal Serial Bus]]" modified="20210821004846772" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -14834,42 +14850,44 @@ Image via [DataPro](https://www.datapro.net/techinfo/displayport_info.html)</pre
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210821003751379" creator="jsng" draft.of="New Tiddler" draft.title="cooling" modified="20210821004031797" modifier="jsng" summary="The larger the surface area, the faster an object loses heat. The larger the temperature difference between object and surroundings, the faster the object loses heat. Heat is bad for computers, and CPUs will need cooling to be able to process computations quickly. A mobile phone thus typically uses no more than 4 W of power, a laptop can use 25–45 W, and a desktop can usually use 65 W and more. Two popular ways of increasing the cooling capacity of a device is to attach a larger piece of metal to the chip (passive cooling), or use a fan to force air over the heatsink (active cooling)." tags="Topic:hardware" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
+<div created="20210821003751379" creator="jsng" draft.of="New Tiddler" draft.title="heat" modified="20210821005540581" modifier="jsng" summary="The larger the surface area, the faster an object loses heat. The larger the temperature difference between object and surroundings, the faster the object loses heat. Heat is bad for computers, and CPUs will need cooling to be able to process computations quickly. A mobile phone thus typically uses no more than 4 W of power, a laptop can use 25–45 W, and a desktop can usually use 65 W and more. Two popular ways of increasing the cooling capacity of a device is to attach a larger piece of metal to the chip (passive cooling), or use a fan to force air over the heatsink (active cooling)." tags="Topic:hardware" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
 <pre>Why do computers need power?
 
-Other home appliances I can understand. They need to heat up air/water, move air/water around, or extract heat from air/water to move it elsewhere. These things all need energy. But a computer … all it does is move electrons around! All the information in a computer that changes is just electrons moving; that should not need so much power, should it?
+Other home appliances draw electrical power to heat up air/water, move air/water around, or extract heat from air/water to move it elsewhere. These things all need energy. But a computer … all it does is move electrons around! All the information in a computer that changes is just electromagnetic signals propagating and electrons moving; that should not need so much power, should it?
 
-As it turns out, energy-information equivalence theories posit that manipulating information does increase entropy which does involve energy—but this is the Layman’s Guide to Computing, not a physics newsletter. Let’s just say that managing information, in its abstract sense, needs very little energy.
+As it turns out, manipulating information increases [entropy](https://en.wikipedia.org/wiki/Entropy_(information_theory)) which does involve energy. Let’s just say that managing information, in its abstract sense, needs very little energy.
 
-## Energy usage in computers
+# Energy usage in computers
 
 What happens to all the energy that a computer uses, then? Some miniscule amount of it goes to manipulating information. A tiny amount goes to lighting up LEDs (these devices somehow always have LEDs), and maybe running the cooling fans. The rest of it is wasted as **heat**.
 
 The history of computing is also a history of less and less wasted heat. The Cray 2 supercomputer, in 1985, needed 195 kW to produce 1.9 giga[[flops]]&lt;&lt;fnote &quot;a flop is a computation rate of one floating-point operation per second&quot;&gt;&gt; of computational performance. The iPhone XS, in 2016, needed less than 1 W to produce 1 gigaflop.
 
-No, I’m not going into the environmental concerns and carbon footprint of computing. We have more tangible and immediate concerns here.
+The environmental concerns and carbon footprint of computing are beyond the scope of this wiki.
 
-Because heat is bad for computers. When microprocessor chips heat up, the semiconductor material they are made of no longer behaves as it should; it gets “leaky”, allowing electrons to go where they shouldn’t. The data it handles starts to get corrupted, and it eventually crashes.
+When microprocessor chips heat up, the semiconductor material they are made of no longer behaves as it should; it gets “leaky”, allowing electrons to go where they shouldn’t. The data it handles starts to get corrupted, and it eventually crashes.
 
-## Thermal throttling
+# Thermal throttling
 
-In the past, microprocessors were simpler, and had no thermal controls whatsoever; if you allowed them to run as-is, without any cooling assistance, they would just run until they began smoking and sometimes even catch fire (enjoy this [2005 video of a CPU doing just that](https://www.youtube.com/watch?v=Xf0VuRG7MN4&amp;t=99s)).
+In the past, microprocessors were simpler, and had no thermal controls whatsoever; if you allowed them to run as-is, without any cooling assistance, they would just run until they began smoking and sometimes even catch fire (enjoy this [2005 video of a [[CPU]] doing just that](https://www.youtube.com/watch?v=Xf0VuRG7MN4&amp;t=99s)).
 
-Today, CPUs are somewhat more sophisticated. Once they start heating up to their thermal limit, onboard thermal control circuitry will attempt to **throttle** the CPU’s performance to keep it at a safe temperature. So you will have a laggy and unresponsive CPU, but at least it’s not on fire!
+Today, [[CPU]]s are somewhat more sophisticated. Once they start heating up to their thermal limit, onboard thermal control circuitry will attempt to **throttle** the [[CPU]]’s performance to keep it at a safe temperature. So you will have a laggy and unresponsive [[CPU]], but at least it’s not on fire!
 
-Still, most CPUs are going to need some sort of heatsink that helps to draw heat away from it, and dissipate the heat into the surroundings.
+Still, most [[CPU]]s are going to need some sort of heatsink that helps to draw heat away from it, and dissipate the heat into the surroundings.
 
-## Getting rid of heat
+# Getting rid of heat
 
 There are two things you need to know about heat loss to the surroundings:
 
 1. The larger the surface area, the faster an object loses heat.
 2. The larger the temperature difference between object and surroundings, the faster the object loses heat.
 
-CPUs are kind of at a disadvantage here.
+[[CPU]]s are kind of at a disadvantage here.
 
 1. They are really small; the part that is in contact with the heatsink is usually about 400 sq mm (approx. 2 cm by 2 cm, or 0.64 sq in)[^1]
 2. The thermal limit for most CPUs is only about 100 °C (212 F), compared to most metals which have theirs in the hundreds or even over a thousand °C
+
+Main article: [[processor manufacturing]]
 
 [^1]: Multiple CPUs are produced from a single semiconductor wafer. Keeping CPUs small maximises the yield from manufacturing, and reduces the chance of a manufacturing error on any single CPU. This is going to take a whole ’nother season to explain …
 
@@ -15437,6 +15455,9 @@ It is thus advantageous to try to put all the data you need in contiguous domain
 ![HDMI and mini-HDMI connectors displayed top-to-bottom](images/issue124_03.jpg)&lt;br /&gt;
 HDMI and mini-HDMI connectors displayed from top to bottom. Both support the HDMI video standard  
 Image via [DataPro](https://www.datapro.net/techinfo/hdmi_info.html)</pre>
+</div>
+<div created="20210821005605511" creator="jsng" modified="20210821005607614" modifier="jsng" title="hello">
+<pre></pre>
 </div>
 <div created="20210613064723545" creator="jsng" modified="20210613064724877" modifier="jsng" tags="Glossary" title="HEVC">
 <pre></pre>
