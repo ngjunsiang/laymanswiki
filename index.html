@@ -393,6 +393,8 @@ Error message and password prompt
 
 <li>AAC</li>
 
+<li>AC-DC converter</li>
+
 <li>ADC</li>
 
 <li>ALU</li>
@@ -528,8 +530,6 @@ Error message and password prompt
 <li>DP</li>
 
 <li>DPI</li>
-
-<li>Draft of 'New Tiddler' by jsng</li>
 
 <li>driver</li>
 
@@ -758,6 +758,8 @@ Error message and password prompt
 <li>Portable Document Format</li>
 
 <li>Postscript</li>
+
+<li>power</li>
 
 <li>PPI</li>
 
@@ -1446,7 +1448,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="mainboard" modified="20210821013922516" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="heat" modified="20210821014239831" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2190,6 +2192,23 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;mainboard&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'If the transistors are too small to be seen, how are CPUs made?' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;If the transistors are too small to be seen, how are CPUs made?&quot;
+    },
+    {
+        &quot;title&quot;: &quot;heat&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 431.7166748046875,
+            &quot;left&quot;: 1766,
+            &quot;width&quot;: 204,
+            &quot;right&quot;: 1970,
+            &quot;bottom&quot;: 451.7166748046875,
+            &quot;height&quot;: 20
+        }
     }
 ]</pre>
 </div>
@@ -13373,7 +13392,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210821011325708" creator="jsng" list="[[Draft of 'New Tiddler' by jsng]] heat" modified="20210821013228544" modifier="jsng" title="$:/StoryList">
+<div created="20210821011325708" creator="jsng" list="power heat" modified="20210821013228544" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13565,6 +13584,9 @@ Homepage: https://www.7-zip.org/</pre>
 <pre>Advanced Audio Codec.
 
 An audio file format, meant to replace [[MP3]].</pre>
+</div>
+<div created="20210821014304224" creator="jsng" modified="20210821014304224" modifier="jsng" title="AC-DC converter">
+<pre></pre>
 </div>
 <div created="20210809081825894" creator="jsng" modified="20210809081933272" modifier="jsng" tags="Glossary" title="ADC" type="text/x-markdown">
 <pre>**ADC** stands for [[analog-digital converter]].</pre>
@@ -14859,87 +14881,6 @@ Image via [DataPro](https://www.datapro.net/techinfo/displayport_info.html)</pre
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210821013306023" creator="jsng" draft.of="New Tiddler" draft.title="power" list-after="[[heat]]" modified="20210821013841755" modifier="jsng" summary="AC power from the wall uses electric current that alternates directions, while DC power from batteries uses electric current that flows in one direction only. All electronics are DC-only, and require an AC-DC adapter to be powered from the wall. The AC-DC conversion produces a significant amount of heat; AC-DC adapters are usually external unless the device has sufficient space or cooling capacity for it." tags="Topic:engineering" title="Draft of 'New Tiddler' by jsng" type="text/x-markdown">
-<pre>{{||prereqTemplate}}
-
-**Point 1:** A powerful device produces lots of [[heat]].
-
-**Point 2:** A device that produces lots of heat needs a large surface area (directly in contact with the heat source) to stay (relatively) cool.
-
-These are two of the primary factors determining how tiny a computer can be. Can something the size of an iPhone be as powerful as something the size of a Macbook? It depends on how much cooling is available to it!
-
-One more factor to add in this issue: **power**. Without power, none of your devices would work ... and this also adds one more source of heat to be dissipated.
-
-# Batteries and DC power
-
-Some devices need to carry their own stored energy (in the form of batteries); the devices are powered by direct current (DC) from batteries. In this form of power transmission, electric current only flows one way—this is why it is important to put batteries in the right way! Electric current comes out from one end of the battery, and re-enters from the other end, marked with + and – symbols.
-
-Batteries seldom provide power at the voltage required by devices and CPUs. For example, smartphone batteries usually have a voltage of about 3.7 V, even though the CPU usually requires about 1 V to operate. This allows the batteries to power the device with a low current&lt;&lt;fnote &quot;Power = Voltage × Current, so to provide the same power with a lower current, you have to provide it at a higher voltage&quot;&gt;&gt;, so as to minimize the heating effect of current in the wires&lt;&lt;fnote &quot;the greater the current in a wire, the more it heats up&quot;&gt;&gt;.
-
-That means some power conversion has to take place on the smartphone’s [[mainboard]]. Fortunately, DC-to-DC conversion is highly efficient (though not 100%), so it doesn’t contribute much heat in the device.
-
-## Wall sockets and AC power
-
-On the other hand, alternating current (AC) from wall sockets has electric current flowing both ways—the current switches directions 50 or 60 times a second (see [this PDF of Worldwide AC Voltages &amp; Frequencies](https://www.oaktreeproducts.com/img/product/description/List%20of%20Worldwide%20AC%20Voltages.pdf)). Connecting this directly to a device that needs DC is looking for trouble! This AC power source has to be converted to DC through an **AC-DC converter** (a.k.a. “power brick”, “power supply”, “AC adapter”, …), and that process currently only goes up to 90% peak efficiency[^2].
-
-[^2]: AC-DC converters typically have a range of input power they can convert (e.g. 0–65 W for laptop adapters, 0–500 W for desktops). The efficiency is highest at about 50% of that load, and efficiency drops as the load increases or decreases from that point.
-
-That means if you have a desktop running at 100W (maybe while gaming or encoding video files), the *AC-DC converter alone* draws 111W at the wall socket, **wastes 11W** (in the form of heat), and provides 100W of power to the desktop.
-
-And heat is the enemy of CPUs.
-
-## External vs internal power supplies
-
-Ughh, power bricks … so many different types, with different connectors, and we never quite know if we can use one laptop’s power brick on another laptop (at least, until USB Type-C power for laptops came along; more in [Issue 127](https://buttondown.email/laymansguide/archive/lmg-s10-issue-127-usb-type-c-power-delivery/))
-
-In a laptop, you really do not want the power supply dumping this heat *into the laptop*! The laptop already has enough work to do getting heat from the CPU out of that cramped space into the surroundings. You don’t want to give it more heat to remove, and risk throttling the CPU’s performance ([Issue 129](https://buttondown.email/laymansguide/archive/lmg-s10-issue-129-cooling)). It’s better that the AC converter/power brick remains external to the laptop, dumping that heat into the surroundings directly without heating up the laptop’s internal space.
-
-![An Apple power adapter, with the cover removed](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season10/issue130/issue130_01.jpg)&lt;br /&gt;
-&lt;small&gt;The internals of the Apple AC converter (i.e. power adapter)&lt;br /&gt;Source: [Ken Shiriff](http://www.righto.com/2015/11/macbook-charger-teardown-surprising.html)&lt;/small&gt;
-
-In larger devices—the Mac Mini, game consoles (e.g. PS4 or Xbox One), and larger desktops, there’s plenty of space in the device’s internals, and they have sufficiently powerful cooling systems that can remove this heat. In desktops especially, the power supply may be large enough that it has its own cooling fan!
-
-![A desktop power supply, with the cover removed](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season10/issue130/issue130_02.jpg)&lt;br /&gt;
-&lt;small&gt;The internals of a desktop power supply.&lt;br /&gt;Notice the cooling fan mounted on the back with 4 silver screws, and the two silver heatsinks mounted vertically&lt;br /&gt;Source: [Wikipedia](https://en.wikipedia.org/wiki/Power_supply_unit_(computer))&lt;/small&gt;
-
-So for large devices, it makes sense to hide the power supply within the device for a sleeker look.
-
-In fact, for high-power devices, a power adapter is a poor option. Since power adapters don’t have their own cooling fans, they have limited cooling ability, and are liable to overheat easily if they have to provide &gt;100 W to a device (remember that this means they release at least 11 W of heat, while passive cooling can typically dissipate up to 8 W).
-
-## Device categories
-
-Putting together the information from [Issue 129](https://buttondown.email/laymansguide/archive/lmg-s10-issue-129-cooling) and this issue, we can deduce that devices seem to sort themselves into form-factor categories depending on how much power they draw, and how much heat they put out:
-
-**Devices drawing &gt;100W at peak, and putting out &gt;80 W of heat:**
-
-Generally large, directly powered from the wall (by AC), with power supply within the device.
-
-In rare cases they do use external AC adapters (such as high-power gaming laptops).
-
-**Devices drawing 12–65W at peak, putting out 25–45W of heat:**
-
-These devices cannot be passively cooled, and thus require active cooling (i.e. a cooling fan and heatsink).
-
-To avoid adding heat to the device from the AC-DC conversion process, they usually use external AC adapters.
-
-Even in devices as small as the Nintendo Switch, you can usually spot the cooling vents where the cooling fan blows warm air from the device into the surroundings.
-
-These may be safely powered by USB Type-C.
-
-**Devices drawing &lt;12W at peak, putting out &lt;10W of heat:**
-
-These devices can be passively cooled.
-
-Large devices, such as tablets, have a larger surface area to dissipate heat and can afford to draw as much as 8–10W, while smaller devices such as smartphones typically have to remain under 5W.
-
-These are usually powered by USB (at a voltage of 5V), though some may draw power at 9V.
-
-The M1 Macbook Air is passively cooled and thus in this category because its M1 processor is configured to limit its maximum heat output to approx. 10W or less; the M1 Macbook Pro has a cooling fan and a higher max heat output configuration, which allows it to perform at greater capacity.
-
-&lt;hr /&gt;
-
-If you spot a device in the wild that claims to have performance much greater than its form factor—its shape, size, footprint—suggests, you would be wise to suspect over-optimism or a scam! At least until it is clear how they plan to provide that power and get rid of that heat …</pre>
-</div>
 <div created="20210728095742017" creator="jsng" modified="20210728101904531" modifier="jsng" summary="Driver files provide information about the driver, and instructions on how to receive information from the device, and encode information to be passed to the device. The operating system may come with generic driver files for the device, but custom driver files might provide better performance or additional features." tags="Topic:systems Glossary" title="driver" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
@@ -15713,7 +15654,7 @@ So you can compress data beyond its predictability limit if you do it [[lossily|
 
 Those tiny files you found? You are getting them with lots of information thrown away. If you can’t tell the difference, good for you—that means the lossy compression algorithm is really good!.</pre>
 </div>
-<div created="20210821005633878" creator="jsng" modified="20210821005809802" modifier="jsng" tags="question" title="If the transistors are too small to be seen, how are CPUs made?">
+<div created="20210821005633878" creator="jsng" modified="20210821013930801" modifier="jsng" tags="question WIP" title="If the transistors are too small to be seen, how are CPUs made?">
 <pre>Multiple CPUs are produced from a single semiconductor wafer. Keeping CPUs small maximises the yield from manufacturing, and reduces the chance of a manufacturing error on any single CPU. This is going to take a whole ’nother season to explain …</pre>
 </div>
 <div created="20210611084252877" creator="jsng" list-after="[[Image representation in computers]]" modified="20210613072326756" modifier="jsng" tags="Topic:data" title="Image formats" type="text/x-markdown">
@@ -16664,6 +16605,96 @@ Main article: [[editing a PDF file]]</pre>
 That language is called **Postscript**, and it can handle text, images, shapes, and additional info (or metadata, i.e. data about data) that comes with them.
 
 Postscript is a [[programming language]] that, when interpreted, produces the exact look of a page. A Postscript file would produce the exact same result regardless of what machine it was on, and regardless of its [[OS]]. This enables dot-exact printing of a file from any device.</pre>
+</div>
+<div created="20210821013306023" creator="jsng" list-after="[[heat]]" modified="20210821014643960" modifier="jsng" summary="AC power from the wall uses electric current that alternates directions, while DC power from batteries uses electric current that flows in one direction only. All electronics are DC-only, and require an AC-DC adapter to be powered from the wall. The AC-DC conversion produces a significant amount of heat; AC-DC adapters are usually external unless the device has sufficient space or cooling capacity for it." tags="Topic:engineering" title="power" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+**Point 1:** A powerful device produces lots of [[heat]].
+
+**Point 2:** A device that produces lots of heat needs a large surface area (directly in contact with the heat source) to stay (relatively) cool.
+
+These are two of the primary factors determining how tiny a computer can be. Can something the size of an iPhone be as powerful as something the size of a Macbook? It depends on how much cooling is available to it!
+
+One more factor to add in this issue: **power**. Without power, none of your devices would work ... and this also adds one more source of heat to be dissipated.
+
+# Batteries and DC power
+
+Some devices need to carry their own stored energy (in the form of batteries); the devices are powered by direct current (DC) from batteries. In this form of power transmission, electric current only flows one way—this is why it is important to put batteries in the right way! Electric current comes out from one end of the battery, and re-enters from the other end, marked with + and – symbols.
+
+Batteries seldom provide power at the voltage required by devices and CPUs. For example, smartphone batteries usually have a voltage of about 3.7 V, even though the CPU usually requires about 1 V to operate. This allows the batteries to power the device with a low current&lt;&lt;fnote &quot;Power = Voltage × Current, so to provide the same power with a lower current, you have to provide it at a higher voltage&quot;&gt;&gt;, so as to minimize the heating effect of current in the wires&lt;&lt;fnote &quot;the greater the current in a wire, the more it heats up&quot;&gt;&gt;.
+
+That means some power conversion has to take place on the smartphone’s [[mainboard]]. Fortunately, DC-to-DC conversion is highly efficient (though not 100%), so it doesn’t contribute much heat in the device.
+
+# Wall sockets and AC power
+
+On the other hand, alternating current (AC) from wall sockets has electric current flowing both ways—the current switches directions 50 or 60 times a second (see [this PDF of Worldwide AC Voltages &amp; Frequencies](https://www.oaktreeproducts.com/img/product/description/List%20of%20Worldwide%20AC%20Voltages.pdf)).
+
+Connecting this directly to a device that needs DC is looking for trouble! This AC power source has to be converted to DC through an [[AC-DC converter]] (a.k.a. “power brick”, “power supply”, “AC adapter”, …). The AC-DC conversion process currently is only up to 90% efficient.
+
+AC-DC converters typically have a range of input power they can convert (e.g. 0–65 W for laptop adapters, 0–500 W for desktops). The efficiency is highest at about 50% of that load, and efficiency drops as the load increases or decreases from that point.
+
+That means if you have a desktop running at 100W (maybe while gaming or encoding video files), the *AC-DC converter alone* draws 111W at the wall socket, **wastes 11W** (in the form of [[heat]]), and provides 100W of power to the desktop.
+
+And [[heat]] is the enemy of [[CPU]]s.
+
+# External vs internal power supplies
+
+Ughh, power bricks … so many different types, with different connectors, and we never quite know if we can use one laptop’s power brick on another laptop (at least, until [[USB Type-C]] power for laptops came along.
+
+In a laptop, you really do not want the power supply dumping this heat *into the laptop*! The laptop already has enough work to do getting heat from the [[CPU]] out of that cramped space into the surroundings. You don’t want to give it more heat to remove, and risk [[throttling|heat]] the CPU’s performance.
+
+It’s better that the AC converter/power brick remains external to the laptop, dumping that heat into the surroundings directly without heating up the laptop’s internal space.
+
+![An Apple power adapter, with the cover removed](images/issue130_01.jpg)&lt;br /&gt;
+The internals of the Apple AC converter (i.e. power adapter)  
+Source: [Ken Shiriff](http://www.righto.com/2015/11/macbook-charger-teardown-surprising.html)
+
+In larger devices—the Mac Mini, game consoles (e.g. PS4 or Xbox One), and larger desktops, there’s plenty of space in the device’s internals, and they have sufficiently powerful cooling systems that can remove this heat. In desktops especially, the power supply may be large enough to have space for its own cooling fan!
+
+![A desktop power supply, with the cover removed](images/issue130_02.jpg)&lt;br /&gt;
+The internals of a desktop power supply.  
+Notice the cooling fan mounted on the back with 4 silver screws, and the two silver heatsinks mounted vertically  
+Source: [Wikipedia](https://en.wikipedia.org/wiki/Power_supply_unit_(computer))
+
+So for large devices, it makes sense to hide the power supply within the device for a sleeker look.
+
+In fact, for high-power devices, a small power adapter is a poor option. Since power adapters don’t have their own cooling fans, they have limited cooling ability, and are liable to overheat easily if they have to provide &gt;100 W to a device (remember that this means they release at least 11 W of heat, while passive cooling can typically dissipate up to 8 W).
+
+# Device categories
+
+Side reading: thermal design power ([[TDP]])
+
+Devices seem to sort themselves into form-factor categories depending on how much power they draw, and how much heat they put out:
+
+## Devices drawing &gt;100W at peak, and putting out &gt;80 W of heat
+
+Generally large, directly powered from the wall (by AC), with power supply within the device.
+
+In rare cases they do use external AC adapters (such as high-power gaming laptops).
+
+## Devices drawing 12–65W at peak, putting out 25–45W of heat
+
+These devices cannot be passively cooled, and thus require active cooling (i.e. a cooling fan and heatsink).
+
+To avoid adding heat to the device from the AC-DC conversion process, they usually use external AC adapters.
+
+Even in devices as small as the Nintendo Switch, you can usually spot the cooling vents where the cooling fan blows warm air from the device into the surroundings.
+
+These may be safely powered by USB Type-C.
+
+## Devices drawing &lt;12W at peak, putting out &lt;10W of heat
+
+These devices can be passively cooled.
+
+Large devices, such as tablets, have a larger surface area to dissipate heat and can afford to draw as much as 8–10W, while smaller devices such as smartphones typically have to remain under 5W.
+
+These are usually powered by [[USB]] (at a voltage of 5V), though some may draw power at 9V.
+
+The M1 Macbook Air is passively cooled and thus in this category because its M1 processor is configured to limit its maximum heat output to approx. 10W or less; the M1 Macbook Pro has a cooling fan and a higher max heat output configuration, which allows it to perform at greater capacity.
+
+&lt;hr /&gt;
+
+If you spot a device in the wild that claims to have performance much greater than its form factor—its shape, size, footprint—suggests, you would be wise to suspect over-optimism or a scam! At least until it is clear how they plan to provide that power and get rid of that heat …</pre>
 </div>
 <div created="20210611061206966" creator="jsng" modified="20210611061529155" modifier="jsng" tags="Glossary" title="PPI">
 <pre>Pixels per inch.</pre>
