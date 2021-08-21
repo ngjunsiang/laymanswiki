@@ -531,6 +531,8 @@ Error message and password prompt
 
 <li>DPI</li>
 
+<li>Draft of 'throughput' by jsng</li>
+
 <li>driver</li>
 
 <li>DVD-ROM</li>
@@ -2212,7 +2214,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="mainboard [[If the transistors are too small to be seen, how are CPUs made?]]" modified="20210821013226982" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[If the transistors are too small to be seen, how are CPUs made?]]" modified="20210821013226982" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13392,7 +13394,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210821011325708" creator="jsng" list="power heat" modified="20210821013228544" modifier="jsng" title="$:/StoryList">
+<div created="20210821011325708" creator="jsng" list="FPU [[Draft of 'throughput' by jsng]] mainboard" modified="20210821051036665" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14880,6 +14882,18 @@ Image via [DataPro](https://www.datapro.net/techinfo/displayport_info.html)</pre
 </div>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
+</div>
+<div created="20210624072228395" creator="jsng" draft.of="throughput" draft.title="throughput" modified="20210821051021397" modifier="jsng" tags="Glossary WIP" title="Draft of 'throughput' by jsng" type="text/x-markdown">
+<pre>
+
+Let’s look at the transfer speeds and [[latencies|latency]] for a few places where data can be stored:
+
+- [[Hard disk drive|hard disk drive]] (HDD): ≈5 ms response latency, 100 MB/s transfer speed
+- [[Solid state drive|solid state drive]] (SSD): up to 0.1 ms response latency, 0.5–1+ GB/s transfer speed
+- [[Computer memory|memory]] (RAM): 0.1 µs (0.0001 ms) response latency, 20GB/s transfer speed
+- CPU register: &lt;1 ns (&lt;0.000001 ms) response latency&lt;&lt;fnote &quot;We seldom talk about the transfer speed of CPU registers, because each register only holds one byte and the transfer is near-instantaneous.&quot;&gt;&gt;
+
+A [[CPU register]] is a slot within the [[CPU]] which it uses to hold the data it is processing.</pre>
 </div>
 <div created="20210728095742017" creator="jsng" modified="20210728101904531" modifier="jsng" summary="Driver files provide information about the driver, and instructions on how to receive information from the device, and encode information to be passed to the device. The operating system may come with generic driver files for the device, but custom driver files might provide better performance or additional features." tags="Topic:systems Glossary" title="driver" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
