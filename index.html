@@ -531,9 +531,9 @@ Error message and password prompt
 
 <li>DPI</li>
 
-<li>Draft of 'hard disk drive' by jsng</li>
+<li>Draft of 'CPU cache' by jsng</li>
 
-<li>Draft of 'memory' by jsng</li>
+<li>Draft of 'hard disk drive' by jsng</li>
 
 <li>Draft of 'throughput' by jsng</li>
 
@@ -1454,7 +1454,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="storage device" modified="20210821053606883" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="memory" modified="20210821054918535" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2263,10 +2263,13 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;storage device&quot;
+    },
+    {
+        &quot;title&quot;: &quot;memory&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[Draft of 'memory' by jsng]] [[storage device]] [[If the transistors are too small to be seen, how are CPUs made?]]" modified="20210821013226982" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="memory [[storage device]] [[If the transistors are too small to be seen, how are CPUs made?]]" modified="20210821013226982" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13446,7 +13449,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210821011325708" creator="jsng" list="[[Draft of 'hard disk drive' by jsng]] [[Draft of 'throughput' by jsng]] mainboard" modified="20210821052052923" modifier="jsng" title="$:/StoryList">
+<div created="20210821011325708" creator="jsng" list="[[Draft of 'CPU cache' by jsng]] [[Draft of 'hard disk drive' by jsng]] [[Draft of 'throughput' by jsng]] mainboard" modified="20210821054224386" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14935,6 +14938,45 @@ Image via [DataPro](https://www.datapro.net/techinfo/displayport_info.html)</pre
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
+<div created="20210624072111311" creator="jsng" draft.of="CPU cache" draft.title="CPU cache" list-after="[[throughput]]" modified="20210821054249327" modifier="jsng" summary="The CPU stores data for ready access in the CPU cache. Accessing data from the CPU cache is much faster than accessing data from memory. When the CPU needs data from a memory address, it looks in the cache first. If the data is not there (a **cache miss**), it will load the data from the memory address, and store a copy in the cache for faster reference in future. The CPU cache is managed by the CPU and is invisible to the OS. Programs that need to ensure the data in the cache is “fresh” can perform a cache flush and reload." tags="Topic:hardware cache" title="Draft of 'CPU cache' by jsng" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+We use [[cache]]s to improve [[throughput]] and speed up processing.
+
+# [[throughput]]
+
+&gt; {{throughput}}
+
+Notice that the speed difference between each device is more than 10×? If a computer did not have physical memory to store temporary data in, and had to transfer data to/from disk instead, it would be responding a thousand times more slowly!
+
+A CPU can carry out operations very quickly on data loaded into its registers; it generally takes only a few nanoseconds for complex calculations to be done. Simple [[CPU instructions]] (such as `ADD`) can even be completed in less than 1 ns!
+
+This means that the limiting factor for CPU speed is actually loading and storing data. In the time it takes to load data from physical memory or store data to physical memory, it can perform 100 simple operations. That’s *slow* in CPU time!
+
+# CPU and cache performance
+
+So CPU designers included some **cache** on the CPU:
+
+- CPU cache: 0.001–0.040 µs response latency, 175 GB/s transfer speed
+
+Great, now we have some storage space that sits between computer memory and the CPU’s registers. It is only slightly slower that a CPU register, and much faster than computer memory.
+
+Imagine working in an office that gave you a cubicle but no desk. When you need a piece of information, you have to go down the hallway to the filing cabinet, retrieve it, and return to your cubicle (no desk!). When you were done processing it (1 second), you had to put the results back in the filing cabinet, down the hallway … a process that takes about 100 seconds. SLOWWWWW!
+
+If you had a desk, you could put some papers on it, and retrieve them much more quickly (a few seconds). You would be 10× more efficient!
+
+By simply including a cache on the CPU, its designers sped up its performance by a factor of more than 10.
+
+# Cache is not managed by the OS
+
+Just as an organization would not control what information you should have on your desk, an operating system does not control the CPU cache. This feature is managed entirely by the CPU itself. The operating system is unable to see what is in the CPU cache, and has no access to it.
+
+Like other caches, when the CPU needs data from a memory address, it looks in the cache first. If the data is not there (a [[cache miss]]), it will load the data from the [[memory address]], and store a copy in the cache for faster reference in future.
+
+Like other caches, this process has its own issues. The cache can fill up, requiring the CPU to eject old data so as to make way for fresher data. The cached data on the CPU cache can also become outdated when other [[program]]s and instructions update the data in memory. Programs that absolutely need to ensure they get the freshest data from memory can issue special instructions to perform a [[cache flush]] and [[cache reload]].
+
+A **cache flush** empties out the cached data while preserving the memory address it is linked to. A **cache reload** reloads the data from those memory addresses.</pre>
+</div>
 <div created="20210710085609375" creator="jsng" draft.of="hard disk drive" draft.title="hard disk drive" modified="20210821052215758" modifier="jsng" summary="A hard disk consists of a read arm, and a set of magnetic platters which store data. To read or write data, the read arm must move to the appropriate track of the rotating platter, and detect the magnetic field (for reading), or attempt to magnetise the domains on the platter (for writing)." tags="[[storage device]]" title="Draft of 'hard disk drive' by jsng" type="text/x-markdown">
 <pre>Hard disk drives are [[storage device]]s containing multiple magnetic platters, which store data. Each platter contains trillions of magnetic atoms; yep, they’re atom-sized magnets!
 
@@ -14978,9 +15020,6 @@ This means that each time the hard disk needs to access data from a different re
 It is thus advantageous to try to put all the data you need in contiguous domains&lt;&lt;fnote &quot;This process is what millennials might remember as defragmentation, or defragging.&quot;&gt;&gt;, to minimize read arm movement.
 
 </pre>
-</div>
-<div created="20210628230508407" creator="jsng" draft.of="memory" draft.title="memory" modified="20210821051924454" modifier="jsng" tags="WIP Topic:hardware Topic:systems" title="Draft of 'memory' by jsng" type="text/x-markdown">
-<pre>Computer memory comprises lots of capacitors wired together, and capacitors slowly leak charge when they are not powered. Memory chips need periodic “refreshing” every few milliseconds to avoid losing data due to this charge leakage.</pre>
 </div>
 <div created="20210624072228395" creator="jsng" draft.of="throughput" draft.title="throughput" modified="20210821051913133" modifier="jsng" tags="Glossary WIP" title="Draft of 'throughput' by jsng" type="text/x-markdown">
 <pre>The common model of a computer is that it … computes. It calculates. It takes in numbers, and spits out more numbers.
@@ -16313,8 +16352,28 @@ There are three parts to this exploit:
 
 {{||readNextTemplate}}</pre>
 </div>
-<div created="20210628230508407" creator="jsng" modified="20210711063008335" modifier="jsng" tags="WIP Topic:hardware Topic:systems" title="memory" type="text/x-markdown">
-<pre>Memory comprises lots of capacitors wired together, and capacitors slowly leak charge when they are not powered. Memory chips need periodic “refreshing” every few milliseconds to avoid losing data due to this charge leakage.</pre>
+<div created="20210628230508407" creator="jsng" modified="20210821054918529" modifier="jsng" tags="WIP Topic:hardware Topic:systems" title="memory" type="text/x-markdown">
+<pre>Computer memory comprises lots of capacitors wired together, and capacitors slowly leak charge when they are not powered. Memory chips need periodic “refreshing” every few milliseconds to avoid losing data due to this charge leakage.
+
+# Physical form factor
+
+Machines with upgradeable memory have their memory chips organized into **Dual In-Line Memory Modules** ([[DIMM]]). Low-profile modules are called **Small Outline DIMM** ([[SO-DIMM]]).
+
+![Desktop memory DIMM](images/issue128_02.jpg)  
+A desktop memory DIMM
+
+![Laptop memory DIMM](images/issue128_03.jpg)  
+A laptop memory DIMM
+
+Upgradeable memory DIMMs and their physical slots are bulky. For really compact devices, the memory chips may also be soldered directly onto the [[mainboard]]; such memory is not upgradeable.
+
+# Organization
+
+Each bit in memory is stored in capacitor; a memory cell has 8 of them, allowing one [[byte]] of data to be stored.
+
+Memory cells are organized into pages, and managed at the page level. Data is typically written to memory and read from memory one page at a time.
+
+See also: [[CPU cache]]</pre>
 </div>
 <div created="20210728094116822" creator="jsng" modified="20210728094116822" modifier="jsng" title="memory address">
 <pre></pre>
