@@ -531,8 +531,6 @@ Error message and password prompt
 
 <li>DPI</li>
 
-<li>Draft of 'hard disk drive' by jsng</li>
-
 <li>Draft of 'throughput' by jsng</li>
 
 <li>driver</li>
@@ -13459,7 +13457,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210821011325708" creator="jsng" list="[[CPU cache]] [[Draft of 'hard disk drive' by jsng]] [[Draft of 'throughput' by jsng]] mainboard" modified="20210821054224386" modifier="jsng" title="$:/StoryList">
+<div created="20210821011325708" creator="jsng" list="[[CPU cache]] [[hard disk drive]] [[Draft of 'throughput' by jsng]] mainboard" modified="20210821054224386" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14954,50 +14952,6 @@ Image via [DataPro](https://www.datapro.net/techinfo/displayport_info.html)</pre
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210710085609375" creator="jsng" draft.of="hard disk drive" draft.title="hard disk drive" modified="20210821052215758" modifier="jsng" summary="A hard disk consists of a read arm, and a set of magnetic platters which store data. To read or write data, the read arm must move to the appropriate track of the rotating platter, and detect the magnetic field (for reading), or attempt to magnetise the domains on the platter (for writing)." tags="[[storage device]]" title="Draft of 'hard disk drive' by jsng" type="text/x-markdown">
-<pre>Hard disk drives are [[storage device]]s containing multiple magnetic platters, which store data. Each platter contains trillions of magnetic atoms; yep, they’re atom-sized magnets!
-
-These atoms are grouped into clusters called magnetic domains; they are so tiny that 500 of these placed in a straight line would stretch the diameter of a human hair!
-
-These domains can align themselves in one of two different ways: let’s call them “up” and “down”. Each bit (as in, 8 bits = 1 byte) is stored as the alignment of a magnetic domain: up represents 1, and down represents 0.
-
-# Hard disk operation
-
-To [[read data|reading data from storage]], all you need to do is move a tiny electromagnet over each domain, and use it to see which way the domain is aligned. This can be done by measuring the current flowing through the electromagnet, a detailed explanation of which involves electromagnetic induction from high school physics.
-
-To [[write data|writing data to storage safely]], you pass a current through the electromagnet to magnetize the domain below it whichever way you want; just spin the platter and keep changing the current to write a series of 1s or 0s.
-
-Put 3 to 5 platters together, attach the electromagnet to a moving arm (called the read arm), control the whole thing with some microchips, and you have a hard disk.
-
-![Open hard disk](images/issue118_01.gif)&lt;br /&gt;
-A picture of an opened desktop hard disk, showing the read arms and magnetic platters
-
-# Characteristics of a hard disk
-
-A hard disk spins at a constant speed, because it is much more complicated to figure out how to read/write stuff when the speed can vary.
-
-The larger hard disks, which go into desktops and use 3.5-inch platters, spin at 7200rpm, while the smaller hard disks, which go into laptops and use 2.5-inch platters, spin at 5400rpm.
-
-Data stored near the circumference of a magnetic platter is faster to read than data stored near its center. For this reason, OSes that are installed on hard disks usually attempt to [[partition]] the storage space so that the operating system is stored on domains closer to the circumference.
-
-The read arm moves really close to the platters during disk operation! The gap between them (called the head gap or flying height) is half the thickness of a human hair. This is why you do not want to drop hard disks while they are in operation; the slightest movement of the read arm towards the magnetic platter causes it to gouge the platter surface and damage it permanently: this is called a head crash.
-
-# Read and write operations
-
-The hard disk is ultimately a mechanical device; each operation involves moving parts.
-
-Reading from or writing to a domain involves:
-
-1. Spinning up the platter (if it isn’t already spinning)
-2. Moving the read arm to the correct position
-3. Measuring or inducing a current
-
-This means that each time the hard disk needs to access data from a different region of the disk, there is significant lag time (~5ms). This is the time needed for all those movement described above.
-
-It is thus advantageous to try to put all the data you need in contiguous domains&lt;&lt;fnote &quot;This process is what millennials might remember as defragmentation, or defragging.&quot;&gt;&gt;, to minimize read arm movement.
-
-</pre>
-</div>
 <div created="20210624072228395" creator="jsng" draft.of="throughput" draft.title="throughput" modified="20210821051913133" modifier="jsng" tags="Glossary WIP" title="Draft of 'throughput' by jsng" type="text/x-markdown">
 <pre>The common model of a computer is that it … computes. It calculates. It takes in numbers, and spits out more numbers.
 
@@ -15545,8 +15499,8 @@ See also: [[integrated graphics]]
 <div created="20210613064928103" creator="jsng" modified="20210613064929286" modifier="jsng" tags="Glossary" title="h265">
 <pre></pre>
 </div>
-<div created="20210710085609375" creator="jsng" modified="20210728094151622" modifier="jsng" summary="A hard disk consists of a read arm, and a set of magnetic platters which store data. To read or write data, the read arm must move to the appropriate track of the rotating platter, and detect the magnetic field (for reading), or attempt to magnetise the domains on the platter (for writing)." tags="[[storage device]]" title="hard disk drive" type="text/x-markdown">
-<pre>A hard disk is a magnetic platter that stores data. This platter contains trillions of magnetic atoms; yep, they’re atom-sized magnets!
+<div created="20210710085609375" creator="jsng" modified="20210821055601452" modifier="jsng" summary="A hard disk consists of a read arm, and a set of magnetic platters which store data. To read or write data, the read arm must move to the appropriate track of the rotating platter, and detect the magnetic field (for reading), or attempt to magnetise the domains on the platter (for writing)." tags="[[storage device]]" title="hard disk drive" type="text/x-markdown">
+<pre>Hard disk drives are [[storage device]]s containing multiple magnetic platters, which store data. Each platter contains trillions of magnetic atoms; yep, they’re atom-sized magnets!
 
 These atoms are grouped into clusters called magnetic domains; they are so tiny that 500 of these placed in a straight line would stretch the diameter of a human hair!
 
