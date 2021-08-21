@@ -1454,7 +1454,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="memory" modified="20210821054918535" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="memory" modified="20210821055058344" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2263,6 +2263,12 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;storage device&quot;
+    },
+    {
+        &quot;title&quot;: &quot;memory&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'memory' by jsng&quot;
     },
     {
         &quot;title&quot;: &quot;memory&quot;
@@ -14938,8 +14944,10 @@ Image via [DataPro](https://www.datapro.net/techinfo/displayport_info.html)</pre
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210624072111311" creator="jsng" draft.of="CPU cache" draft.title="CPU cache" list-after="[[throughput]]" modified="20210821054249327" modifier="jsng" summary="The CPU stores data for ready access in the CPU cache. Accessing data from the CPU cache is much faster than accessing data from memory. When the CPU needs data from a memory address, it looks in the cache first. If the data is not there (a **cache miss**), it will load the data from the memory address, and store a copy in the cache for faster reference in future. The CPU cache is managed by the CPU and is invisible to the OS. Programs that need to ensure the data in the cache is “fresh” can perform a cache flush and reload." tags="Topic:hardware cache" title="Draft of 'CPU cache' by jsng" type="text/x-markdown">
+<div created="20210624072111311" creator="jsng" draft.of="CPU cache" draft.title="CPU cache" list-after="[[throughput]]" modified="20210821055004046" modifier="jsng" summary="The CPU stores data for ready access in the CPU cache. Accessing data from the CPU cache is much faster than accessing data from memory. When the CPU needs data from a memory address, it looks in the cache first. If the data is not there (a **cache miss**), it will load the data from the memory address, and store a copy in the cache for faster reference in future. The CPU cache is managed by the CPU and is invisible to the OS. Programs that need to ensure the data in the cache is “fresh” can perform a cache flush and reload." tags="Topic:hardware cache" title="Draft of 'CPU cache' by jsng" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
+
+The **CPU cache** is a part of the CPU that holds data the [[CPU]] needs to work with directly.
 
 We use [[cache]]s to improve [[throughput]] and speed up processing.
 
@@ -16352,8 +16360,10 @@ There are three parts to this exploit:
 
 {{||readNextTemplate}}</pre>
 </div>
-<div created="20210628230508407" creator="jsng" modified="20210821054918529" modifier="jsng" tags="WIP Topic:hardware Topic:systems" title="memory" type="text/x-markdown">
-<pre>Computer memory comprises lots of capacitors wired together, and capacitors slowly leak charge when they are not powered. Memory chips need periodic “refreshing” every few milliseconds to avoid losing data due to this charge leakage.
+<div created="20210628230508407" creator="jsng" modified="20210821055058317" modifier="jsng" tags="WIP Topic:hardware Topic:systems" title="memory" type="text/x-markdown">
+<pre>Also known as: **dynamic random access memory** ([[DRAM]])
+
+Computer memory comprises lots of capacitors wired together, and capacitors slowly leak charge when they are not powered. Memory chips need periodic “refreshing” every few milliseconds to avoid losing data due to this charge leakage.
 
 # Physical form factor
 
