@@ -529,8 +529,6 @@ Error message and password prompt
 
 <li>DPI</li>
 
-<li>Draft of 'USB Type-C' by jsng</li>
-
 <li>driver</li>
 
 <li>DVD-ROM</li>
@@ -1444,7 +1442,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="USB Power Delivery" modified="20210821013111121" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="USB Power Delivery" modified="20210821013124140" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2127,10 +2125,21 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 99.93333435058594,
             &quot;height&quot;: 39.48333740234375
         }
+    },
+    {
+        &quot;title&quot;: &quot;USB Power Delivery&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 60.44999694824219,
+            &quot;left&quot;: 1454.933349609375,
+            &quot;width&quot;: 32.899993896484375,
+            &quot;right&quot;: 1487.8333435058594,
+            &quot;bottom&quot;: 99.93333435058594,
+            &quot;height&quot;: 39.48333740234375
+        }
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="" modified="20210821013111118" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[USB Power Delivery]]" modified="20210821013124137" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13310,7 +13319,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210821011325708" creator="jsng" list="[[USB Power Delivery]] [[Draft of 'USB Type-C' by jsng]] heat [[If the transistors are too small to be seen, how are CPUs made?]]" modified="20210821012842362" modifier="jsng" title="$:/StoryList">
+<div created="20210821011325708" creator="jsng" list="[[USB Type-C]] heat [[If the transistors are too small to be seen, how are CPUs made?]]" modified="20210821012842362" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14795,102 +14804,6 @@ Image via [DataPro](https://www.datapro.net/techinfo/displayport_info.html)</pre
 </div>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
-</div>
-<div created="20210809082928869" creator="jsng" draft.of="USB Type-C" draft.title="USB Type-C" list-after="[[Universal Serial Bus]]" modified="20210821012858121" modifier="jsng" summary="USB Type-C is a new connector standard that supports USB 3, DisplayPort, HDMI, and Thunderbolt. It is able to carry multiple types of data simultaneously, in limited combinations. USB Power Delivery is a specification that describes how much voltage and current can be supplied by different categories of USB cables. It allows power delivery at different levels for all kinds of connected devices, up to 100W. This should help to simplify cable setups that otherwise require multiple kinds of cables between two closely interconnected devices (such as a laptop and an external monitor)." tags="Topic:systems Topic:hardware" title="Draft of 'USB Type-C' by jsng" type="text/x-markdown">
-<pre>{{||prereqTemplate}}
-
-# What is USB Type-C?
-
-It is a **connector standard**. It sets standards for *this* connector:
-
-![Picture of a USB-C plug](images/issue126_01.jpg)&lt;br /&gt;
-USB-C connector  
-Image via [Wikipedia](https://en.wikipedia.org/wiki/USB-C)
-
-What does a connector standard do? It determines:
--  how many pins the connector should have
-- what each of the pins should be used for
-- how the connector should be shaped
-- how the docking port (where the cable gets plugged into) should be designed
-- other similar technical details
-
-It’s all about the docking!
-
-![Pinout diagram of a USB-C plug](images/issue126_02.png)&lt;br /&gt;
-Pinout diagram of a USB Type-C connector  
-This is a technical diagram detailing what each pin of the USB Type-C connector is used for  
-Image via [Wikipedia](https://en.wikipedia.org/wiki/USB-C)
-
-# But won’t somebody think about the data?!
-
-Ah, now we’re going back in history …
-
-[[Universal Serial Bus]] ([[USB]]) is a (set of) industry standards that sets requirements and protocols for—well, how data is transferred from one device to another. It is maintained by the USB Implementers Forum ([[USB-IF]]).
-
-The first version of the standard was released in 1996, second version (USB 2.0) in 2000, and third version (USB 3.0) in 2008.
-
-# The data specification: USB 3
-
-While USB 2.0 (or Hi-Speed USB) supported a transfer rate of *up to* 60 MB/s, USB 3.0 supports *up to* 625 MB/s, allowing for much faster transfers from external storage drives and other devices.
-
-We don’t have to worry so much about these versions, because USB is designed to be backward-compatible. That means all devices that support USB2 also support USB1, and all devices supporting USB3 also support USB2. The primary advantage that each successive USB version has over previous versions is higher throughput, more supported features, and more connectors to confuse (okay, that last isn’t an advantage 😛).
-
-![Connector shapes for different USB versions](images/issue126_03.png)&lt;br /&gt;
-Comparison of USB connector plugs, excluding USB Type-C plugs  
-Image via [Wikipedia](https://en.wikipedia.org/wiki/USB_hardware)
-
-As you can see, this makes for a lot of confusion, especially when compatibility is mixed: USB3 ‘A’ connectors are meant to go into USB2 ‘A’ receptacles, but USB3 ‘B’ connectors aren’t meant to go into USB2 ‘B’ receptacles …!
-
-So USB Type-C is meant to be the one connector standard to rule them all. It even has rotational symmetry, so it shouldn’t matter which way you plug it in!
-
-# Data supported over USB Type-C cables
-
-In addition to USB3.0 data (and later versions of USB 3), the USB Type-C specification also allows the Type-C connector to carry other kinds of data, if supported by the device:
-
-- [[DisplayPort]] [[video data|video signal formats]] for monitors and computer display devices
-- [[HDMI]] video data for monitors and consumer electronics devices
-- [[Thunderbolt]] data, for high-data-transfer devices
-
-The Type-C specification even supports modes that allow a Type-C cable to carry multiple types of data simultaneously. For instance, a Type-C connector that connects a laptop to a monitor can:
-
-- carry [[DisplayPort]] video data, enabling the laptop to use the monitor as an external display,
-- carry [[USB]] 3 data, enabling the laptop to use USB ports and other features (such as audio inputs/outputs) on the monitor
-
-… All this comes with the caveat that one must read the manufacturers’ fine print to see if these features are supported on the respective devices. Just because the USB spec *allows* it, doesn’t mean that a particular device *implements* it!
-
-For example, some laptops may have two Type-C ports, but *only one* of those ports will support Thunderbolt and DisplayPort; the other port sometimes only supports USB3 data.
-
-# USB Power Delivery: a short history
-
-When USB was first designed, it was not expected that USB would be needed for powering anything more than some basic peripherals, like keyboards, mice, and anything less power-consuming than a small external hard disk. 5V (volts) of voltage with 0.5A (amperes) could provide 2.5W of power, and that was considered plenty enough.
-
-The [[USB-IF]] didn’t want to set too high a standard for USB devices and peripherals (*including* USB-certified cables); original equipment manufacturers (OEMs), the ones who *actually had to manufacture the goods*, would complain about the high cost. Nobody likes being undercut by cheap knockoffs that don’t bother applying for the license and following the specs (do you notice the official USB logo when buying?). So for a long time, we had up to 2.5W of power from USB ports.
-
-And then tablets came along, drawing 8–12W of power to do whatever they have to. Aside from the iPad, which used its own connector, these were charged over USB. So their manufacturers had to come up with *kludges* to work around USB limitations. They had Quick Charge, Dash Charge, and all kinds of other standards which were not approved by the USB-IF, just to allow their cables to provide up to 12W of power (3A of current, more in some cases) to their tablets while charging.
-
-USB 3.0 bumped the limit up to 0.9A (providing 4.5W), which was nice but far from enough. The hard limit was the cable itself though: drawing anything more than 5A over the usual thin USB cables would cause them to heat up to unsafe levels. Clearly, something more was needed.
-
-# USB Type-C Power Delivery
-
-From 2012, the [[USB-IF]] finally added a Power Delivery (PD) specification, which allowed power to be delivered over USB cables at *different voltages*.
-
-In addition to 5V, which is used by phones, tablets, and their power banks, the PD spec also allows charging at 9V (fast charging for some devices), 15V (for higher-power devices like the Nintendo Switch), and 20V (what most laptops use for PD charging). With a current of up to 5A, this technically allows up to 100W of power to be delivered—sufficient for pretty much all laptops.
-
-## Which voltage is used?
-
-The actual voltage to be delivered by the charging host is *negotiated* with the host. When a charging device is connected, it communicates the voltages it can support, the host compares it with the voltages it can supply, and power at a supported voltage is delivered.
-
-## Can any cable be used?
-
-Greater current requires a thicker cable to be used, as thinner cables have more resistance and will heat up to unsafe levels. A cable following the USB-PD specification will negotiate the correct voltage and current in any case, so if your cable is not charging at a level you know is supported by both your devices, do check the cable rating. You may have to buy a higher-rated cable.
-
-## Are there any advantages to buying a more expensive cable?
-
-Users of external monitor screens and docking bays often have to connect multiple cables from those devices to their laptops for power, (USB) data, and video output. With USB Type-C and USB-PD specifications unifying these three requirements into one cable, we will (eventually) be able to connect a laptop to a Type-C monitor using a Type-C cable, and this cable will supply power plus allow the laptop to use all devices connected to the monitor.
-
-It’s supposed to simplify the physical cable mess, at the cost of having to manage a more complicated specification. Let’s see how that plays out in the next decade.
-
-{{||readNextTemplate}}</pre>
 </div>
 <div created="20210728095742017" creator="jsng" modified="20210728101904531" modifier="jsng" summary="Driver files provide information about the driver, and instructions on how to receive information from the device, and encode information to be passed to the device. The operating system may come with generic driver files for the device, but custom driver files might provide better performance or additional features." tags="Topic:systems Glossary" title="driver" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
@@ -17712,7 +17625,7 @@ The actual voltage to be delivered by the charging host is *negotiated* with the
 
 Greater current requires a thicker cable to be used, as thinner cables have more resistance and will heat up to unsafe levels. A cable following the USB-PD specification will negotiate the correct voltage and current in any case, so if your cable is not charging at a level you know is supported by both your devices, do check the cable rating. You may have to buy a higher-rated cable.</pre>
 </div>
-<div created="20210809082928869" creator="jsng" list-after="[[Universal Serial Bus]]" modified="20210809085359158" modifier="jsng" summary="USB Type-C is a new connector standard that supports USB 3, DisplayPort, HDMI, and Thunderbolt. It is able to carry multiple types of data simultaneously, in limited combinations. USB Power Delivery is a specification that describes how much voltage and current can be supplied by different categories of USB cables. It allows power delivery at different levels for all kinds of connected devices, up to 100W. This should help to simplify cable setups that otherwise require multiple kinds of cables between two closely interconnected devices (such as a laptop and an external monitor)." tags="Topic:systems Topic:hardware" title="USB Type-C" type="text/x-markdown">
+<div created="20210809082928869" creator="jsng" list-after="[[Universal Serial Bus]]" modified="20210821013213773" modifier="jsng" summary="USB Type-C is a new connector standard that supports USB 3, DisplayPort, HDMI, and Thunderbolt. It is able to carry multiple types of data simultaneously, in limited combinations. USB Power Delivery is a specification that describes how much voltage and current can be supplied by different categories of USB cables. It allows power delivery at different levels for all kinds of connected devices, up to 100W. This should help to simplify cable setups that otherwise require multiple kinds of cables between two closely interconnected devices (such as a laptop and an external monitor)." tags="Topic:systems Topic:hardware" title="USB Type-C" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 # What is USB Type-C?
@@ -17776,31 +17689,11 @@ The Type-C specification even supports modes that allow a Type-C cable to carry 
 
 For example, some laptops may have two Type-C ports, but *only one* of those ports will support Thunderbolt and DisplayPort; the other port sometimes only supports USB3 data.
 
-# USB Power Delivery: a short history
+# USB Power Delivery
 
-When USB was first designed, it was not expected that USB would be needed for powering anything more than some basic peripherals, like keyboards, mice, and anything less power-consuming than a small external hard disk. 5V (volts) of voltage with 0.5A (amperes) could provide 2.5W of power, and that was considered plenty enough.
+Side reading: [[USB Power Delivery]]
 
-The [[USB-IF]] didn’t want to set too high a standard for USB devices and peripherals (*including* USB-certified cables); original equipment manufacturers (OEMs), the ones who *actually had to manufacture the goods*, would complain about the high cost. Nobody likes being undercut by cheap knockoffs that don’t bother applying for the license and following the specs (do you notice the official USB logo when buying?). So for a long time, we had up to 2.5W of power from USB ports.
-
-And then tablets came along, drawing 8–12W of power to do whatever they have to. Aside from the iPad, which used its own connector, these were charged over USB. So their manufacturers had to come up with *kludges* to work around USB limitations. They had Quick Charge, Dash Charge, and all kinds of other standards which were not approved by the USB-IF, just to allow their cables to provide up to 12W of power (3A of current, more in some cases) to their tablets while charging.
-
-USB 3.0 bumped the limit up to 0.9A (providing 4.5W), which was nice but far from enough. The hard limit was the cable itself though: drawing anything more than 5A over the usual thin USB cables would cause them to heat up to unsafe levels. Clearly, something more was needed.
-
-# USB Type-C Power Delivery
-
-From 2012, the [[USB-IF]] finally added a Power Delivery (PD) specification, which allowed power to be delivered over USB cables at *different voltages*.
-
-In addition to 5V, which is used by phones, tablets, and their power banks, the PD spec also allows charging at 9V (fast charging for some devices), 15V (for higher-power devices like the Nintendo Switch), and 20V (what most laptops use for PD charging). With a current of up to 5A, this technically allows up to 100W of power to be delivered—sufficient for pretty much all laptops.
-
-## Which voltage is used?
-
-The actual voltage to be delivered by the charging host is *negotiated* with the host. When a charging device is connected, it communicates the voltages it can support, the host compares it with the voltages it can supply, and power at a supported voltage is delivered.
-
-## Can any cable be used?
-
-Greater current requires a thicker cable to be used, as thinner cables have more resistance and will heat up to unsafe levels. A cable following the USB-PD specification will negotiate the correct voltage and current in any case, so if your cable is not charging at a level you know is supported by both your devices, do check the cable rating. You may have to buy a higher-rated cable.
-
-## Are there any advantages to buying a more expensive cable?
+# Are there any advantages to buying a more expensive cable?
 
 Users of external monitor screens and docking bays often have to connect multiple cables from those devices to their laptops for power, (USB) data, and video output. With USB Type-C and USB-PD specifications unifying these three requirements into one cable, we will (eventually) be able to connect a laptop to a Type-C monitor using a Type-C cable, and this cable will supply power plus allow the laptop to use all devices connected to the monitor.
 
