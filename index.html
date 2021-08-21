@@ -1450,7 +1450,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="heat" modified="20210821014239831" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="storage device" modified="20210821051823900" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2211,10 +2211,38 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 451.7166748046875,
             &quot;height&quot;: 20
         }
+    },
+    {
+        &quot;title&quot;: &quot;storage devices&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 504.183349609375,
+            &quot;left&quot;: 532.61669921875,
+            &quot;width&quot;: 96.38333129882812,
+            &quot;right&quot;: 629.0000305175781,
+            &quot;bottom&quot;: 522.183349609375,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;storage device&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 504.183349609375,
+            &quot;left&quot;: 532.61669921875,
+            &quot;width&quot;: 89.88333129882812,
+            &quot;right&quot;: 622.5000305175781,
+            &quot;bottom&quot;: 522.183349609375,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'storage device' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;storage device&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[If the transistors are too small to be seen, how are CPUs made?]]" modified="20210821013226982" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[storage device]] [[If the transistors are too small to be seen, how are CPUs made?]]" modified="20210821013226982" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13394,7 +13422,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210821011325708" creator="jsng" list="LSU FPU [[Draft of 'throughput' by jsng]] mainboard" modified="20210821051050926" modifier="jsng" title="$:/StoryList">
+<div created="20210821011325708" creator="jsng" list="[[Draft of 'throughput' by jsng]] mainboard" modified="20210821051050926" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14883,8 +14911,52 @@ Image via [DataPro](https://www.datapro.net/techinfo/displayport_info.html)</pre
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210624072228395" creator="jsng" draft.of="throughput" draft.title="throughput" modified="20210821051021397" modifier="jsng" tags="Glossary WIP" title="Draft of 'throughput' by jsng" type="text/x-markdown">
-<pre>
+<div created="20210624072228395" creator="jsng" draft.of="throughput" draft.title="throughput" modified="20210821051622298" modifier="jsng" tags="Glossary WIP" title="Draft of 'throughput' by jsng" type="text/x-markdown">
+<pre>The common model of a computer is that it … computes. It calculates. It takes in numbers, and spits out more numbers.
+
+That’s not quite right.
+
+While a computer does carry out compute operations, these are far outnumbered by load/store operations (see [[LSU]]). Why so much loading and storing of data?
+
+# Moving data
+
+The [[CPU]] itself has precious little storage (&lt;20 MB of cache storage); it is only a wee little processor! Most of the data in a computer is stored in [[storage device]]s.
+
+So CPUs have to read data from a storage drive. This is a slow operation, because storage drives are slow; writing to storage drives is even slower than reading from them.
+
+In the meantime, the CPU needs a place to dump working data; this is computer memory (2–32GB). Memory is slower than the CPU’s cache, but much faster than a storage drive.
+
+That’s 3 places to stash data so far: storage drives, CPU cache, and computer memory. You with me so far?
+
+## Pipelines
+
+The next place that often requires lots of data is the graphics card ([Issue 123](https://buttondown.email/laymansguide/archive/lmg-s10-issue-123-graphics-cards-the-pixel-factory/)). For you to play a video game, the computer has to:
+
+1. Load game data from the storage disk,
+2. Store most of it in memory while it’s doing some number crunching in its cache,
+3. Get the crunched numbers to the graphics card for rendering graphics ([Issue 122](https://buttondown.email/laymansguide/archive/lmg-s10-issue-122-the-great-flattening/)),
+4. Load more data from memory while crunching more numbers, and passing them to the graphics card.
+
+This involves far more loading and storing than computation. And there are limitations to how quickly data can be transferred.
+
+## Throughput
+
+How does data get transferred? Through very fine wires usually. One side (e.g. the CPU) applies a voltage to the wire, the other side (e.g. memory) checks the voltage on the wire. No applied voltage = 0, applied voltage = 1.
+
+How does the CPU know when to apply the voltage, and the memory know when to check it? These operations are synchronised through cycles, like a highly coordinated factory. A CPU operates on a frequency of up to billions of cycles per second, each cycle potentially transferring one bit of data ([Issue 40](https://buttondown.email/laymansguide/archive/lmg-s4-issue-40-bits-and-bytes/)) if there are no delays.
+
+Typically, the transfer rate is somewhat slower; how do we transfer more data per second? By adding more wires! With two wires, we can transfer two bits per cycle; four wires = four bits per second, eight wires = 8 bits per second … at some point, we run into a different problem. The CPU is a small chip, and there is only so much surface area for us to connect wires to.
+
+![An Intel Skylake CPU, showing the pins underneath](images/issue131_01.jpg)&lt;br /&gt;
+&lt;small&gt;An Intel Skylake desktop CPU.&lt;br /&gt;Each gold contact on the under-surface connects to a pin on the motherboard when the CPU is seated properly in its socket&lt;br /&gt;Source: [Wikipedia](https://en.wikipedia.org/wiki/Skylake_(microarchitecture))&lt;/small&gt;
+
+Well, that just sucks.
+
+## The limits of one chip
+
+Come to think of it, humans are much the same; we only have two hands and two legs, there are limits to how fast we can do things, and limits to how long we can stay awake working. We mostly get around these limitations by learning to delegate.
+
+In the same way, computer designs evolved to delegate more work to secondary chips, leaving the CPU to focus on computation. We’ll explore the gradual evolution of these architectures, so you can better appreciate the elegance of the Apple M1’s design ;)
 
 Let’s look at the transfer speeds and [[latencies|latency]] for a few places where data can be stored:
 
@@ -17351,8 +17423,8 @@ The memory configuration remains intact, and everything is exactly the way you l
 
 {{||readNextTemplate}}</pre>
 </div>
-<div created="20210710085634509" creator="jsng" modified="20210711061545366" modifier="jsng" tags="Topic:hardware" title="storage device">
-<pre>A storage device is organized into [[sector]]s, which are the smallest units of storage in a storage device.
+<div created="20210710085634509" creator="jsng" modified="20210821051823898" modifier="jsng" tags="Topic:hardware" title="storage device">
+<pre>Storage organized into [[sector]]s, the smallest units of storage in a storage device.
 
 Storage devices can have their storage organized into [[partition]]s. Each [[partition]] is considered a separate storage space, with its own [[file table]].
 
