@@ -539,8 +539,6 @@ Error message and password prompt
 
 <li>DPI</li>
 
-<li>Draft of 'mainboard' by jsng</li>
-
 <li>Draft of 'x86' by jsng</li>
 
 <li>driver</li>
@@ -1476,7 +1474,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="PCH" modified="20210914083427810" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="mainboard" modified="20210914092414686" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2208,10 +2206,13 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     },
     {
         &quot;title&quot;: &quot;PCH&quot;
+    },
+    {
+        &quot;title&quot;: &quot;mainboard&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[Draft of 'mainboard' by jsng]] WIP" modified="20210911125936452" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="mainboard WIP" modified="20210911125936452" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13391,7 +13392,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210911125902027" creator="jsng" list="chipset [[Draft of 'x86' by jsng]] Topic:security" modified="20210914083926595" modifier="jsng" title="$:/StoryList">
+<div created="20210911125902027" creator="jsng" list="[[Draft of 'x86' by jsng]] Topic:security" modified="20210914092411225" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14945,28 +14946,6 @@ Image via [DataPro](https://www.datapro.net/techinfo/displayport_info.html)</pre
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210821013849566" creator="jsng" draft.of="mainboard" draft.title="mainboard" list-after="[[form factor]]" modified="20210914092334798" modifier="jsng" tags="Glossary Topic:hardware WIP" title="Draft of 'mainboard' by jsng" type="text/x-markdown">
-<pre>{{||prereqTemplate}}
-
-Also known as: [[motherboard]], [[logic board]]
-
-A **mainboard** is the primary circuit board through which the components of a computer connect.
-
-These parts include but are not limited to:
-
-- [[CPU]]
-- computer [[memory]]
-- [[graphics card]]
-- [[chipset]] (e.g. [[MCH]], [[PCH]])
-- [[storage device]]
-- [[power]] supply
-
-# ATX mainboards
-
-&gt; {{ATX form factor}}
-
-In the most recent mainboards</pre>
-</div>
 <div created="20210911130308405" creator="jsng" draft.of="x86" draft.title="x86" modified="20210911130336012" modifier="jsng" tags="Topic:engineering WIP" title="Draft of 'x86' by jsng" type="text/x-markdown">
 <pre></pre>
 </div>
@@ -16162,45 +16141,27 @@ So to uninstall an app, you remove its files from `/Applications` or `/Users/use
 
 {{||readNextTemplate}}</pre>
 </div>
-<div created="20210821013849566" creator="jsng" list-after="[[chipset]]" modified="20210822060404655" modifier="jsng" tags="Glossary Topic:hardware WIP" title="mainboard" type="text/x-markdown">
+<div created="20210821013849566" creator="jsng" list-after="[[form factor]]" modified="20210914092414675" modifier="jsng" tags="Glossary Topic:hardware WIP" title="mainboard" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 Also known as: [[motherboard]], [[logic board]]
 
-CPUs do not have enough wires to communicate with all the parts of the computer by themselves. It delegates some responsibility to auxiliary processors, called [[chipset]]s. These chipsets are found on the **mainboard**, and pre-wired to the various interfaces (memory, storage, audio, peripherals, buttons, lights, expansion slots, ...) they need to manage.
+A **mainboard** is the primary circuit board through which the components of a computer connect.
 
-Main article: [[throughput]]
+These parts include but are not limited to:
 
-From the late 80s, mainboards started to undergo standardization so that computer parts can be used interchangeably from one computer to another. The result of this standardization is a number of mainboard form factors.
+- [[CPU]]
+- computer [[memory]]
+- [[graphics card]]
+- [[chipset]] (e.g. [[MCH]], [[PCH]])
+- [[storage device]]
+- [[power]] supply
 
-In 1993, Intel launched its Pentium line of processors; barely two years later, in 1995, Intel launched the ATX form factor. This was the beginning of Intel’s dominance in the desktop space, and they could well afford to dictate most of the standards for this form factor.
+# ATX mainboards
 
-# Chipset diagram
+&gt; {{ATX form factor}}
 
-Mainboards at this point were complicated enough that as part of the marketing, tech publications had taken to staring at diagrams of how the chipsets were connected to each other and to the CPU. These diagrams are called **chipset diagrams**.
-
-This is the chipset diagram of a typical mainboard for the Pentium 4:
-
-![Chipset diagram of a mainboard for the Pentium 4](images/issue133_02.jpg)  
-I tried to find a chipset diagram that used human terms instead of acronyms.  
-This is the best I could do. Annotations my own.  
-Source: [Hexus](https://www.hexus.net/tech/reviews/mainboard/635-sis655fx-dual-channel-p4-chipset/?page=2)
-
-The **memory controller hub** (MCH) now takes on a much bigger role; it is managing data transfer between the CPU, graphics card, computer memory, *and* the PCH.
-
-The **peripheral controller hub** (PCH), while managing connections to many more devices, actually has less work to do; these are all low-throughput devices that don’t send much data to the CPU.
-
-## ATX mainboard
-
-And this is where the components are found on the motherboard:
-
-![A mainboard for the Pentium 4](images/issue133_01.jpg)  
-A motherboard for the Pentium 4, with key components outlined.  
-Annotations are my own.
-
-The CPU clearly draws the most power and produces the most heat here. But notice now that the MCH is no longer bare; it now produces so much heat ([4–10 W](https://hexus.net/tech/news/mainboard/132515-der8auer-examines-amd-x570-chipset-power-consumption/)) that it needs to be passively cooled with a heatsink ([Issue 129](https://buttondown.email/laymansguide/archive/lmg-s10-issue-129-cooling/)). the PCH, on the other hand, is still chill enough to get by bare naked (4 W or less).
-
-3D graphics at this point is a rapidly growing industry, especially for videogames. Graphics cards needed much more throughput to the CPU and memory, so the MCH grew to fit into this role as the mediator between these throughput-hungry components</pre>
+In the most recent mainboards</pre>
 </div>
 <div created="20210702095609434" creator="jsng" modified="20210702095609434" modifier="jsng" title="malware">
 <pre></pre>
