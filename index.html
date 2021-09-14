@@ -535,6 +535,10 @@ Error message and password prompt
 
 <li>Draft of 'mainboard' by jsng</li>
 
+<li>Draft of 'New Tiddler 1' by jsng</li>
+
+<li>Draft of 'New Tiddler' by jsng</li>
+
 <li>Draft of 'x86' by jsng</li>
 
 <li>driver</li>
@@ -2197,7 +2201,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="PCH MCH [[Draft of 'mainboard' by jsng]] WIP" modified="20210911125936452" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[Draft of 'mainboard' by jsng]] WIP" modified="20210911125936452" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13377,7 +13381,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210911125902027" creator="jsng" list="chipset [[Draft of 'x86' by jsng]] Topic:security" modified="20210914082326108" modifier="jsng" title="$:/StoryList">
+<div created="20210911125902027" creator="jsng" list="specification [[Draft of 'New Tiddler 1' by jsng]] [[Draft of 'New Tiddler' by jsng]] chipset [[Draft of 'x86' by jsng]] Topic:security" modified="20210914083926595" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14896,7 +14900,7 @@ Image via [DataPro](https://www.datapro.net/techinfo/displayport_info.html)</pre
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210821013849566" creator="jsng" draft.of="mainboard" draft.title="mainboard" list-after="[[chipset]]" modified="20210914083227868" modifier="jsng" tags="Glossary Topic:hardware WIP" title="Draft of 'mainboard' by jsng" type="text/x-markdown">
+<div created="20210821013849566" creator="jsng" draft.of="mainboard" draft.title="mainboard" list-after="[[chipset]]" modified="20210914083644350" modifier="jsng" tags="Glossary Topic:hardware WIP" title="Draft of 'mainboard' by jsng" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 Also known as: [[motherboard]], [[logic board]]
@@ -14912,6 +14916,8 @@ In 1993, Intel launched its Pentium line of processors; barely two years later, 
 # Chipset diagram
 
 Mainboards at this point were complicated enough that as part of the marketing, tech publications had taken to staring at diagrams of how the chipsets were connected to each other and to the CPU. These diagrams are called **chipset diagrams**.
+
+Main article: [[chipset]]
 
 This is the chipset diagram of a typical mainboard for the Pentium 4:
 
@@ -14932,9 +14938,35 @@ And this is where the components are found on the motherboard:
 A motherboard for the Pentium 4, with key components outlined.  
 Annotations are my own.
 
-The CPU clearly draws the most power and produces the most heat here. But notice now that the MCH is no longer bare; it now produces so much heat ([4–10 W](https://hexus.net/tech/news/mainboard/132515-der8auer-examines-amd-x570-chipset-power-consumption/)) that it needs to be passively cooled with a heatsink ([Issue 129](https://buttondown.email/laymansguide/archive/lmg-s10-issue-129-cooling/)). the PCH, on the other hand, is still chill enough to get by bare naked (4 W or less).
+The [[CPU]] clearly draws the most power and produces the most heat here. But notice now that the [[MCH]] is no longer bare; it now produces so much heat ([4–10 W](https://hexus.net/tech/news/mainboard/132515-der8auer-examines-amd-x570-chipset-power-consumption/)) that it needs to be [[passively cooled|heat]] with a [[heatsink]].
 
-3D graphics at this point is a rapidly growing industry, especially for videogames. Graphics cards needed much more throughput to the CPU and memory, so the MCH grew to fit into this role as the mediator between these throughput-hungry components</pre>
+The [[PCH]], on the other hand, is still chill enough to get by bare naked (4 W or less).
+
+3D graphics at this point is a rapidly growing industry, especially for videogames. Graphics cards needed much more [[throughput]] to the [[CPU]] and [[memory]], so the [[MCH]] grew to fit into this role as the mediator between these throughput-hungry components.</pre>
+</div>
+<div created="20210914083822530" creator="jsng" draft.of="New Tiddler 1" draft.title="form factor" modified="20210914083918126" modifier="jsng" tags="Glossary Topic:systems Topic:engineering" title="Draft of 'New Tiddler 1' by jsng">
+<pre>When computers began hitting the mainstream market, they were designed to be able to use interchangeable parts so as to reduce cost and inventory.
+
+To support this effort, manufacturers came up with standards for how to lay out computer components on a [[mainboard]]; the different patterns came to be known as **form factors**.
+
+The AT form factor, by IBM, is one of the early ones. An AT motherboard looks something like this:
+
+## The AT mainboard
+
+![An AT motherboard](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season11/issue132/issue132_01.jpg)&lt;br /&gt;
+&lt;small&gt;An AT motherboard, with key components outlined.&lt;br /&gt;Annotations are my own.&lt;br /&gt;Original: [Wikipedia](https://en.wikipedia.org/wiki/Skylake_(microarchitecture))&lt;/small&gt;
+
+Graphics cards, usually added as an expansion card, communicated with the CPU (under the heatsink) through a chipset, while the CPU communicated with memory through another chipset.
+
+At this point, graphics were still barely powerful enough to run 3D graphics (this was before Windows 95!), and the chipsets mainly served as go-betweens between memory, expansion slots (called buses), and the CPU.
+
+After 1995, this would change.</pre>
+</div>
+<div created="20210914083740688" creator="jsng" draft.of="New Tiddler" draft.title="mainboard history" modified="20210914083800382" modifier="jsng" tags="Topic:hardware" title="Draft of 'New Tiddler' by jsng">
+<pre>From the late 80s, mainboards started to undergo standardization so that computer parts can be used interchangeably from one computer to another. The result of this standardization is a number of mainboard form factors.
+
+In 1993, Intel launched its Pentium line of processors; barely two years later, in 1995, Intel launched the ATX form factor. This was the beginning of Intel’s dominance in the desktop space, and they could well afford to dictate most of the standards for this form factor.
+</pre>
 </div>
 <div created="20210911130308405" creator="jsng" draft.of="x86" draft.title="x86" modified="20210911130336012" modifier="jsng" tags="Topic:engineering WIP" title="Draft of 'x86' by jsng" type="text/x-markdown">
 <pre></pre>
@@ -17214,12 +17246,38 @@ You see, each time electrons are forced through the gate (called a program-erase
 
 This was a big concern for early SSDs, which had program-erase cycles in the low thousands. Today, with technology improving the program-erase cycle lifespan of SSDs, most users would not come close to reaching the end-of-life of an SSD.</pre>
 </div>
-<div created="20210613073650264" creator="jsng" modified="20210613074245924" modifier="jsng" tags="Glossary" title="specification" type="text/x-markdown">
-<pre># Header formats are stated in specifications
+<div created="20210613073650264" creator="jsng" modified="20210914084617529" modifier="jsng" tags="Glossary" title="specification" type="text/x-markdown">
+<pre>A **specification** is a set of requirements that must be met by certified hardware, software, or companies. Specifications enable different hardware, software, to companies to communicate without having to work closely in the development of their products.
 
-If for any reason you wish to start writing software that can edit GIF files, you can [find out its detailed specifications online](https://www.w3.org/Graphics/GIF/spec-gif87.txt). This is because when [Compuserve](https://en.wikipedia.org/wiki/CompuServe) came up with the format in the early days of the internet, they meant it to be widely used.
+# Hardware specifications
+
+Hardware specifications describe the electrical and engineering limits that devices have to meet.
+
+## Examples
+
+[[Mainboards|mainboard]] and their components have strict hardware requirements that enable them to be used interchangeably.
+
+[[USB]] devices also have specifications that prevent them from being destroyed by electricity delivered at excessive voltages, and to enable them to transfer data at an appropriate rate.
+
+# Software specifications
+
+Software specifications often take the form of [[protocols]] or [[RFC]]s, which are published documents describing the format of data being transferred across computers.
+
+## Examples
+
+===work in progress===
+
+# File format specifications
+
+Files stored on a computer also follow specifications so that they can be opened by any software that understands them.
+
+## Examples
+
+You can [find out the detailed specifications of the GIF file format online](https://www.w3.org/Graphics/GIF/spec-gif87.txt). This is because when [Compuserve](https://en.wikipedia.org/wiki/CompuServe) came up with the format in the early days of the internet, they meant it to be widely used.
 
 Companies who design a file format to be used *internally*, and not for public use, will come up with **proprietary** file formats, which are inscrutable to users. Anyone coming across such a file in the wild would have no idea how to open it.
+
+## Reverse-engineering
 
 To figure out such a file format, you would have to [[reverse-engineer]] it, like [this guy on StackExchange](https://reverseengineering.stackexchange.com/questions/261/how-to-reverse-engineer-a-proprietary-data-file-format-e-g-smartboard-notebook).
 
