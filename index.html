@@ -541,8 +541,6 @@ Error message and password prompt
 
 <li>DPI</li>
 
-<li>Draft of 'New Tiddler 1' by jsng</li>
-
 <li>Draft of 'x86' by jsng</li>
 
 <li>driver</li>
@@ -978,6 +976,8 @@ Error message and password prompt
 <li>Why does my hard disk drive seem to have less space than it should?</li>
 
 <li>Why does Windows take up so much space?</li>
+
+<li>Why is there such a large difference in size between desktops and laptops?</li>
 
 <li>Windows</li>
 
@@ -13496,7 +13496,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210911125902027" creator="jsng" list="[[Draft of 'New Tiddler 1' by jsng]] [[Draft of 'x86' by jsng]] Topic:security" modified="20210914095714636" modifier="jsng" title="$:/StoryList">
+<div created="20210911125902027" creator="jsng" list="[[Why is there such a large difference in size between desktops and laptops?]] [[Draft of 'x86' by jsng]] Topic:security" modified="20210914095714636" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -15052,67 +15052,6 @@ Image via [DataPro](https://www.datapro.net/techinfo/displayport_info.html)</pre
 </div>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
-</div>
-<div created="20210914100227729" creator="jsng" draft.of="New Tiddler 1" draft.title="Why is there such a large difference in size between desktops and laptops?" modified="20210914100306200" modifier="jsng" tags="" title="Draft of 'New Tiddler 1' by jsng">
-<pre>{{||prereqTemplate}}
-
-**Contrast with:** desktop [[mainboard]]
-
-# Laptops use slimmer components
-
-Laptops use slimmer [[memory]] than desktops.
-
-![Desktop memory vs Laptop memory](images/issue136_01.jpg)  
-&lt;small&gt;Desktop memory ([[DIMM]]) vs laptop memory ([[SO-DIMM]])  
-Source: [Quora](https://www.quora.com/What-type-of-memory-module-is-used-in-a-desktop-and-laptop-computer)
-
-On a desktop [[mainboard]], the desktop memory sticks out perpendicularly from the mainboard, all the better to cram memory sticks together and maximize the use of space.
-
-On a laptop mainboard, the laptop memory sticks lie parallel to the mainboard, to reduce the mainboard height and allow a slim laptop profile.
-
-As far as I know ... there aren’t any other significant differences to highlight (besides size). Unless you’re overclocking, just get the kind of memory your computer/laptop needs. These days, small-form-factor desktops use laptop memory ([[SO-DIMM]]) as well!
-
-Laptops use slimmer hard drives compared to desktops as well:
-
-![Desktop hard drive vs Laptop hard drive](images/issue136_02.png)  
-Desktop hard drive (3.5″) vs Laptop hard drive (2.5″)  
-Source: [M2WifiCards](https://www.m2wificards.com/2-5-vs-3-5-hdd/)
-
-Desktop hard drives are larger, use larger platters (3.5″ diameter), and hence draw more power (at both 12V and 5V voltages). Laptop hard drives are smaller, use smaller platters (2.5″ diameter), and draw less power (at 5V voltage only).
-
-This is why smaller external hard drives, which use laptop hard drives, can be powered over USB, but larger external hard drives, which use desktop hard drives, need an external AC adapter.
-
-These days, laptops have mostly made the transition to solid state disks, and you are much less likely to see hard drives in laptops.
-
-# The slim laptop in 2010: Macbook Air
-
-Let’s examine how a characteristic slim laptop, the Macbook Air, has changed in the past 10 years.
-
-In 2010, the Macbook Air had its solid state disk and wifi network card on separate (replaceable) cards. But the CPU, GPU, and memory were all soldered directly onto the motherboard.
-
-![Solid state disk in the 2010 Macbook Air](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season11/issue136/issue136_03.jpg)&lt;br /&gt;
-&lt;small&gt;The solid state disk in the 2010 Macbook Air&lt;br /&gt;Source: [iFixit](https://www.ifixit.com/Teardown/MacBook+Air+11-Inch+Late+2010+Teardown/3745)&lt;/small&gt;
-
-![Wifi network card on a 2010 Macbook Air](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season11/issue136/issue136_04.jpg)&lt;br /&gt;
-&lt;small&gt;The wifi network card on the 2010 Macbook Air&lt;br /&gt;Source: [iFixit](https://www.ifixit.com/Teardown/MacBook+Air+11-Inch+Late+2010+Teardown/3745)&lt;/small&gt;
-
-![CPU and GPU on a 2010 Macbook Air, exposed without cooler](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season11/issue136/issue136_05.jpg)&lt;br /&gt;
-&lt;small&gt;The CPU (left) and GPU (right) on the 2010 Macbook Air&lt;br /&gt;Source: [iFixit](https://www.ifixit.com/Teardown/MacBook+Air+11-Inch+Late+2010+Teardown/3745)&lt;/small&gt;
-
-![Mainboard of a 2010 Macbook Air](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season11/issue136/issue136_06.jpg)&lt;br /&gt;
-&lt;small&gt;Another view. CPU (red), GPU (orange), and memory (yellow) are directly soldered onto the mainboard&lt;br /&gt;Where is the chipset? I don’t know; the Macbook Air does not seem to use the same chipset as Intel-powered desktops&lt;br /&gt;Source: [iFixit](https://www.ifixit.com/Teardown/MacBook+Air+11-Inch+Late+2010+Teardown/3745)&lt;/small&gt;
-
-## The slim laptop in 2018: also Macbook Air
-
-By 2018, while the outside of the Macbook Air still looks much the same, the insides are rather different:
-
-![Mainboard of a 2018 Macbook Air (top view)](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season11/issue136/issue136_07.jpg)&lt;br /&gt;
-&lt;small&gt;CPU (red) and solid state disk (yellow) are directly soldered onto the mainboard&lt;br /&gt;Where’s the chipset? Notice that the CPU seems to have *2 chips* on it? They are the CPU and chipset; two chips in one CPU package!&lt;br /&gt;The next image shows the reverse side. Other chips are ignored here, see the iFixit article for full identification&lt;br /&gt;Source: [iFixit](https://www.ifixit.com/Teardown/MacBook+Air+13-Inch+Retina+2018+Teardown/115201)&lt;/small&gt;
-
-![Mainboard of a 2018 Macbook Air (bottom view)](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season11/issue136/issue136_08.jpg)&lt;br /&gt;
-&lt;small&gt;Memory (red) and wifi network chip (orange) are *also* directly soldered onto the mainboard&lt;br /&gt;This laptop only had integrated graphics; Intel had upped its integrated graphics performance sufficiently by this point&lt;br /&gt;Other chips are ignored here, see the iFixit article for full identification&lt;br /&gt;Source: [iFixit](https://www.ifixit.com/Teardown/MacBook+Air+13-Inch+Retina+2018+Teardown/115201)&lt;/small&gt;
-
-Components which in the 2010 Air were on separate cards are now all soldered directly to the mainboard! On the one hand, this saves space, which can be used for other features, or just for larger batteries. It also reduces the cost of manufacturing; connectors are costly to engineer and manufacture. On the other hand, it means upgradeability goes out the window.</pre>
 </div>
 <div created="20210911130308405" creator="jsng" draft.of="x86" draft.title="x86" modified="20210911130336012" modifier="jsng" tags="Topic:engineering WIP" title="Draft of 'x86' by jsng" type="text/x-markdown">
 <pre></pre>
@@ -18903,6 +18842,82 @@ So your computer isn’t lying. It’s just using different units of counting!</
 <pre># Large files
 
 [[hibernate]]</pre>
+</div>
+<div created="20210914100227729" creator="jsng" list-after="[[power]]" modified="20210914101536230" modifier="jsng" summary="Slim laptops have been undergoing a gradual transition: more and more of their chips are no longer available as a replaceable card, but instead soldered directly to the mainboard. Since 2017/2018, most slim laptops pretty much have CPU, memory, storage, and network chips all soldered directly to the mainboard." tags="question Topic:hardware" title="Why is there such a large difference in size between desktops and laptops?" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+**Contrast with:** desktop [[mainboard]]
+
+# Laptops use slimmer components
+
+Laptops use slimmer [[memory]] than desktops.
+
+![Desktop memory vs Laptop memory](images/issue136_01.jpg)  
+&lt;small&gt;Desktop memory ([[DIMM]]) vs laptop memory ([[SO-DIMM]])  
+Source: [Quora](https://www.quora.com/What-type-of-memory-module-is-used-in-a-desktop-and-laptop-computer)
+
+On a desktop [[mainboard]], the desktop memory sticks out perpendicularly from the mainboard, all the better to cram memory sticks together and maximize the use of space.
+
+On a laptop mainboard, the laptop memory sticks lie parallel to the mainboard, to reduce the mainboard height and allow a slim laptop profile.
+
+As far as I know ... there aren’t any other significant differences to highlight (besides size). Unless you’re overclocking, just get the kind of memory your computer/laptop needs. These days, small-form-factor desktops use laptop memory ([[SO-DIMM]]) as well!
+
+Laptops use slimmer hard drives compared to desktops as well:
+
+![Desktop hard drive vs Laptop hard drive](images/issue136_02.png)  
+Desktop hard drive (3.5″) vs Laptop hard drive (2.5″)  
+Source: [M2WifiCards](https://www.m2wificards.com/2-5-vs-3-5-hdd/)
+
+Desktop hard drives are larger, use larger platters (3.5″ diameter), and hence draw more power (at both 12V and 5V voltages). Laptop hard drives are smaller, use smaller platters (2.5″ diameter), and draw less power (at 5V voltage only).
+
+This is why smaller external hard drives, which use laptop hard drives, can be powered over USB, but larger external hard drives, which use desktop hard drives, need an external AC adapter.
+
+These days, laptops have mostly made the transition to solid state disks, and you are much less likely to see hard drives in laptops.
+
+# The slim laptop in 2010: Macbook Air
+
+Let’s examine how a characteristic slim laptop, the Macbook Air, has changed in the past 10 years.
+
+In 2010, the Macbook Air had its [[solid state disk]] and wifi network card on separate (replaceable) cards. But the [[CPU]], [[GPU]], and [[memory]] were all soldered directly onto the [[mainboard]].
+
+![Solid state disk in the 2010 Macbook Air](images/issue136_03.jpg)  
+The solid state disk in the 2010 Macbook Air  
+Source: [iFixit](https://www.ifixit.com/Teardown/MacBook+Air+11-Inch+Late+2010+Teardown/3745)
+
+![Wifi network card on a 2010 Macbook Air](images/issue136_04.jpg)&lt;br /&gt;
+The wifi network card on the 2010 Macbook Air  
+Source: [iFixit](https://www.ifixit.com/Teardown/MacBook+Air+11-Inch+Late+2010+Teardown/3745)
+
+![CPU and GPU on a 2010 Macbook Air, exposed without cooler](images/issue136_05.jpg)  
+The CPU (left) and GPU (right) on the 2010 Macbook Air  
+Source: [iFixit](https://www.ifixit.com/Teardown/MacBook+Air+11-Inch+Late+2010+Teardown/3745)
+
+![Mainboard of a 2010 Macbook Air](images/issue136_06.jpg)  
+Another view. CPU (red), GPU (orange), and memory (yellow) are directly soldered onto the mainboard  
+Where is the chipset? I don’t know; the Macbook Air does not seem to use the same chipset as Intel-powered desktops  
+Source: [iFixit](https://www.ifixit.com/Teardown/MacBook+Air+11-Inch+Late+2010+Teardown/3745)
+
+# The slim laptop in 2018: also Macbook Air
+
+By 2018, while the outside of the Macbook Air still looks much the same, the insides are rather different:
+
+![Mainboard of a 2018 Macbook Air (top view)](images/issue136_07.jpg)  
+CPU (red) and solid state disk (yellow) are directly soldered onto the mainboard  
+Where’s the [[chipset]]? Notice that the CPU seems to have *2 chips* on it? They are the CPU and chipset; two chips in one CPU package!  
+The next image shows the reverse side. Other chips are ignored here, see the iFixit article for full identification  
+Source: [iFixit](https://www.ifixit.com/Teardown/MacBook+Air+13-Inch+Retina+2018+Teardown/115201)
+
+![Mainboard of a 2018 Macbook Air (bottom view)](images/issue136_08.jpg)  
+Memory (red) and wifi network chip (orange) are *also* directly soldered onto the mainboard  
+This laptop only had integrated graphics; Intel had upped its integrated graphics performance sufficiently by this point  
+Other chips are ignored here, see the iFixit article for full identification  
+Source: [iFixit](https://www.ifixit.com/Teardown/MacBook+Air+13-Inch+Retina+2018+Teardown/115201)
+
+Components which in the 2010 Air were on separate cards are now all soldered directly to the mainboard.
+
+On the one hand, this saves space, which can be used for other features, or just for larger batteries. It also reduces the cost of manufacturing; connectors are costly to engineer and manufacture. On the other hand, it means upgradeability goes out the window.
+
+{{||readNextTemplate}}</pre>
 </div>
 <div created="20210704050940913" creator="jsng" modified="20210711062628422" modifier="jsng" summary="Windows systems categorise data into two types: files, and settings. Files are stored under an appropriate subfolder in `C:\`, while other storage devices and network locations are stored elsewhere or given their own drive letters. Settings are managed through the Windows Registry, which is stored in `C:\Windows\System32\Config\` and `C:\Windows\Users\Name\`." tags="[[operating system]]" title="Windows" type="text/x-markdown">
 <pre>Unlike Mac-like systems, where all data comes in the form of a file, Windows systems recognize two types of data: settings, and files.
