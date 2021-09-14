@@ -539,8 +539,6 @@ Error message and password prompt
 
 <li>DPI</li>
 
-<li>Draft of 'chipset' by jsng</li>
-
 <li>Draft of 'mainboard' by jsng</li>
 
 <li>Draft of 'x86' by jsng</li>
@@ -13393,7 +13391,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210911125902027" creator="jsng" list="throughput [[Draft of 'chipset' by jsng]] [[Draft of 'x86' by jsng]] Topic:security" modified="20210914083926595" modifier="jsng" title="$:/StoryList">
+<div created="20210911125902027" creator="jsng" list="chipset [[Draft of 'x86' by jsng]] Topic:security" modified="20210914083926595" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14102,26 +14100,23 @@ Everything we ask a CPU to do essentially consists of loading data from somewher
 
 Let that sink in for a moment. Every Youtube video, meme, or tweet we send or see is the result of hundreds and thousands of operations, taking place in CPUs around the world; CPUs that convert [[text|Text representation in computers]], [[audio|Audio representation in computers]], and [[images|Image representation in computers]] into [[raw data|Bits and bytes]], encapsulate it into a data package along with some [[metadata]], sends it out to another [[CPU]] that translates the [[destination address|IP address]] and forwards it to the next [[gateway]], and so on, until it reaches its destination, gets decoded and processed into signals, which are sent to the monitor and speakers to produce what we see and hear.</pre>
 </div>
-<div created="20210821061204250" creator="jsng" modified="20210914083328481" modifier="jsng" tags="Glossary Topic:hardware" title="chipset" type="text/x-markdown">
+<div created="20210821061204250" creator="jsng" list-after="[[mainboard]]" modified="20210914092341712" modifier="jsng" tags="Glossary Topic:hardware" title="chipset" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 A computer comprises several components: the [[CPU]], computer [[memory]], the [[storage device]]s, the [[power]] supply, ...
 
-The chips that need to communicate with each other often do not communicate directly with the [[CPU]]. This would take up valuable [[CPU cycles]] that the CPU could spend carrying out [[CPU instructions]] instead.
-
-Instead, a **chipset**—a subsidiary chip on the [[mainboard]]—helps to manage the various parts of a computer that need to work together.
-
-Main article: [[mainboard]]
+CPUs do not have enough wires to communicate with all the parts of the computer by themselves. It delegates some responsibility to auxiliary processors, called [[chipset]]s. These chipsets are found on the **mainboard**, and pre-wired to the various interfaces (memory, storage, audio, peripherals, buttons, lights, expansion slots, ...) they need to manage.
 
 The connections managed by a chipset are represented by a **chipset diagram**.
+
+![Chipset diagram of a mainboard for the Pentium 4](images/issue133_02.jpg)  
+Chipset diagram of a Pentium 4 computer system  
+Source: [Hexus](https://www.hexus.net/tech/reviews/mainboard/635-sis655fx-dual-channel-p4-chipset/?page=2)
 
 A **memory controller hub** ([[MCH]]) is a chipset that typically manages communication between the [[CPU]], computer [[memory]], the external graphics card, and the [[PCH]].
 
 A  **peripheral controller hub** ([[PCH]]) is a chipset that typically manages communication between the [[MCH]] and all other peripherals in a computer.
 
-![Chipset diagram of a mainboard for the Pentium 4](images/issue133_02.jpg)  
-Chipset diagram of a Pentium 4 computer system  
-Source: [Hexus](https://www.hexus.net/tech/reviews/mainboard/635-sis655fx-dual-channel-p4-chipset/?page=2)
 
 {{readNextTemplate}}</pre>
 </div>
@@ -14950,69 +14945,27 @@ Image via [DataPro](https://www.datapro.net/techinfo/displayport_info.html)</pre
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210821061204250" creator="jsng" draft.of="chipset" draft.title="chipset" modified="20210914085934068" modifier="jsng" tags="Glossary Topic:hardware" title="Draft of 'chipset' by jsng" type="text/x-markdown">
-<pre>{{||prereqTemplate}}
-
-A computer comprises several components: the [[CPU]], computer [[memory]], the [[storage device]]s, the [[power]] supply, ...
-
-The chips that need to communicate with each other often do not communicate directly with the [[CPU]]. This would take up valuable [[CPU cycles]] that the CPU could spend carrying out [[CPU instructions]] instead.
-
-Instead, a **chipset**—a subsidiary chip on the [[mainboard]]—helps to manage the various parts of a computer that need to work together.
-
-Main article: [[mainboard]]
-
-The connections managed by a chipset are represented by a **chipset diagram**.
-
-A **memory controller hub** ([[MCH]]) is a chipset that typically manages communication between the [[CPU]], computer [[memory]], the external graphics card, and the [[PCH]].
-
-A  **peripheral controller hub** ([[PCH]]) is a chipset that typically manages communication between the [[MCH]] and all other peripherals in a computer.
-
-![Chipset diagram of a mainboard for the Pentium 4](images/issue133_02.jpg)  
-Chipset diagram of a Pentium 4 computer system  
-Source: [Hexus](https://www.hexus.net/tech/reviews/mainboard/635-sis655fx-dual-channel-p4-chipset/?page=2)
-
-{{readNextTemplate}}</pre>
-</div>
-<div created="20210821013849566" creator="jsng" draft.of="mainboard" draft.title="mainboard" list-after="[[form factor]]" modified="20210914090122767" modifier="jsng" tags="Glossary Topic:hardware WIP" title="Draft of 'mainboard' by jsng" type="text/x-markdown">
+<div created="20210821013849566" creator="jsng" draft.of="mainboard" draft.title="mainboard" list-after="[[form factor]]" modified="20210914092334798" modifier="jsng" tags="Glossary Topic:hardware WIP" title="Draft of 'mainboard' by jsng" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 Also known as: [[motherboard]], [[logic board]]
 
-CPUs do not have enough wires to communicate with all the parts of the computer by themselves. It delegates some responsibility to auxiliary processors, called [[chipset]]s. These chipsets are found on the **mainboard**, and pre-wired to the various interfaces (memory, storage, audio, peripherals, buttons, lights, expansion slots, ...) they need to manage.
+A **mainboard** is the primary circuit board through which the components of a computer connect.
 
-Side reading: [[throughput]]
+These parts include but are not limited to:
 
+- [[CPU]]
+- computer [[memory]]
+- [[graphics card]]
+- [[chipset]] (e.g. [[MCH]], [[PCH]])
+- [[storage device]]
+- [[power]] supply
 
-# Chipset diagram
+# ATX mainboards
 
-When mainboards got sufficiently complicated enough, tech publications had taken to staring at manufacturer-published diagrams of how the chipsets were connected to each other and to the CPU. These diagrams are called **chipset diagrams**.
+&gt; {{ATX form factor}}
 
-Main article: [[chipset]]
-
-This is the **chipset diagram** of a typical mainboard for the Pentium 4:
-
-![Chipset diagram of a mainboard for the Pentium 4](images/issue133_02.jpg)  
-I tried to find a chipset diagram that used human terms instead of acronyms.  
-This is the best I could do. Annotations my own.  
-Source: [Hexus](https://www.hexus.net/tech/reviews/mainboard/635-sis655fx-dual-channel-p4-chipset/?page=2)
-
-The **memory controller hub** ([[MCH]]) now takes on a much bigger role; it is managing data transfer between the CPU, graphics card, computer memory, *and* the PCH.
-
-The **peripheral controller hub** ([[PCH]]), while managing connections to many more devices, actually has less work to do; these are all low-throughput devices that don’t send much data to the CPU.
-
-## ATX mainboard
-
-And this is where the components are found on the motherboard:
-
-![A mainboard for the Pentium 4](images/issue133_01.jpg)  
-A motherboard for the Pentium 4, with key components outlined.  
-Annotations are my own.
-
-The [[CPU]] clearly draws the most power and produces the most heat here. But notice now that the [[MCH]] is no longer bare; it now produces so much heat ([4–10 W](https://hexus.net/tech/news/mainboard/132515-der8auer-examines-amd-x570-chipset-power-consumption/)) that it needs to be [[passively cooled|heat]] with a [[heatsink]].
-
-The [[PCH]], on the other hand, is still chill enough to get by bare naked (4 W or less).
-
-</pre>
+In the most recent mainboards</pre>
 </div>
 <div created="20210911130308405" creator="jsng" draft.of="x86" draft.title="x86" modified="20210911130336012" modifier="jsng" tags="Topic:engineering WIP" title="Draft of 'x86' by jsng" type="text/x-markdown">
 <pre></pre>
