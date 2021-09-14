@@ -769,6 +769,8 @@ Error message and password prompt
 
 <li>permission</li>
 
+<li>photolithography</li>
+
 <li>pixel</li>
 
 <li>pixel density</li>
@@ -1476,7 +1478,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="chipset diagram" modified="20210914092430140" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="photolithography" modified="20210914095259889" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -2222,10 +2224,38 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
             &quot;bottom&quot;: 1499.316650390625,
             &quot;height&quot;: 19
         }
+    },
+    {
+        &quot;title&quot;: &quot;chipset&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 1222.13330078125,
+            &quot;left&quot;: 637.3499755859375,
+            &quot;width&quot;: 44.86665344238281,
+            &quot;right&quot;: 682.2166290283203,
+            &quot;bottom&quot;: 1240.13330078125,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;photolithography&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 1475.9666748046875,
+            &quot;left&quot;: 597.3499755859375,
+            &quot;width&quot;: 108.19999694824219,
+            &quot;right&quot;: 705.5499725341797,
+            &quot;bottom&quot;: 1493.9666748046875,
+            &quot;height&quot;: 18
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'photolithography' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;photolithography&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="WIP" modified="20210911125936452" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="photolithography WIP" modified="20210911125936452" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20170615081040584" creator="jsng" modified="20210611035420511" modifier="jsng" revision="0" title="$:/config/_sq/Stories/story2" type="text/vnd.tiddlywiki">
@@ -13405,7 +13435,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210911125902027" creator="jsng" list="[[ATX form factor]] [[Draft of 'mainboard' by jsng]] [[Draft of 'x86' by jsng]] Topic:security" modified="20210914092727536" modifier="jsng" title="$:/StoryList">
+<div created="20210911125902027" creator="jsng" list="[[Draft of 'mainboard' by jsng]] [[Draft of 'x86' by jsng]] Topic:security" modified="20210914094354737" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14959,7 +14989,7 @@ Image via [DataPro](https://www.datapro.net/techinfo/displayport_info.html)</pre
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210821013849566" creator="jsng" draft.of="mainboard" draft.title="mainboard" list-after="[[form factor]]" modified="20210914092718897" modifier="jsng" tags="Glossary Topic:hardware WIP" title="Draft of 'mainboard' by jsng" type="text/x-markdown">
+<div created="20210821013849566" creator="jsng" draft.of="mainboard" draft.title="mainboard" list-after="[[form factor]]" modified="20210914095256769" modifier="jsng" tags="Glossary Topic:hardware WIP" title="Draft of 'mainboard' by jsng" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 Also known as: [[motherboard]], [[logic board]]
@@ -14979,7 +15009,61 @@ These parts include but are not limited to:
 
 &gt; {{ATX form factor}}
 
-# 
+# Increasing throughput
+
+Main article: [[throughput]]
+
+There are two main ways to increase throughput through a set of wires:
+
+- add more wires (each wire transmits one [[bit]] in one cycle)
+- increase the frequency of transmission (shorten time time taken to transmit [[bit]]s)
+
+Manufacturers were running up against the known limits of engineering in pushing for higher frequencies, so they did the next best thing: add more wires to the [[CPU]].
+
+Pentium 4 (1993): 478 pins  
+Core, Core 2 (up to 2006): 775 pins  
+(new) Core, i* series (after 2006): **1155 pins**
+
+The Pentium 4 was succeeded by the Pentium D, then the Pentium Dual Core, then the pre-i Core&lt;&lt;fnote &quot;This Core processor preceded the Core i3/i5/i7 processors we know today; I’ll refer to this family of processors as the pre-i Core (rather than the more technical LGA775 series).&quot;&gt;&gt;, and finally the Core i-series we know today (in 2021). 
+
+# Speed limits in communication
+
+Even at the speed of light&lt;&lt;fnote &quot;Technically, the electric current itself travels much slower than the speed of light, but the electrical signal is carried by the elctromagnetic wave that propagates through the wires at near the speed of light (and causes the electrons to move).&quot;&gt;&gt;, electrical signals travelling through a [[CPU]] simply aren’t quick enough!
+
+Consider some numbers:
+
+The typical distance between the [[CPU]] and the [[MCH]] (see: [[chipset]]) is about 5 cm (2 in). Since the wires between them are not straight, let’s approximately double that to 10 cm (4 in). Light would take 0.3 ns to travel that distance. Which is roughly one clock cycle on a 3 GHz processor—at 3 billion cycles per second, each cycle takes a third of a billionth of a second**!
+
+Remember that everything in a computer needs to happen like clockwork: for data to sync up, when the [[CPU]] sets a bit to one, the other party has to detect the bit signal before the clock cycle ends. If not, it will have to wait for the next clock cycle, causing the operation to slow down and take two clock cycles instead of one.
+
+If light is taking one clock cycle to get out of the [[CPU]], you have a problem. Raise the frequency higher than 3GHz, and you can cause a one-cycle lag just waiting for data to come in from the [[MCH]], and to go out again to the [[MCH]]. That would counter-intuitively *slow down* the CPU.
+
+** I want to note here that while I believe my choice of analogy is justified, the numbers are wildly off: [RealWorldTech here puts the 1st-gen Core at approx 30 ns](https://www.realworldtech.com/nehalem/3/), for technical reasons that will take at least half a season to unpack (definitely not layman content!). But he also notes that latency for remote memory (i.e. memory not on the CPU, but on the motherboard) is “roughly 30 ns slower than local [memory]” (i.e. memory residing directly on the CPU). So the remote-vs-local latency gap is real and significant!
+
+# Core i-series mainboards
+
+The Core i-series mainboards resolved this issue by shortening the distance between the [[CPU]] and the [[MCH]]: it integrated the [[MCH]]’s functionality **into the CPU itself**.
+
+![Chipset diagram of ATX systems for Intel Core (i-Series)](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season11/issue134/issue134_02.gif)  
+An Intel Core i-series [[ATX|ATX form factor]] system [[chipset]] diagram.  
+The [[MCH]] is merged into the [[CPU]], but still a discrete unit.  
+[[DDR]] refers to computer [[memory]], while GDDR refers to [[graphics card]] memory  
+Source: [Ars](https://arstechnica.com/gadgets/2009/09/intel-launches-all-new-pc-architecture-with-core-i5i7-cpus/)
+
+This is possible because of the way [[CPU]]s are manufactured: multiple chips are etched on a single disc of silicon substrate using lasers. The precision and fineness of the etching laser determine how small we can create components on this substrate.
+
+As the manufacturing process improves, semiconductor manufacturing companies are able to create CPUs that can cram more and more transistors into each square mm (or inch) of silicon disc.
+
+**Main article:** [[photolithography]], the manufacturing process for [[CPU]]s
+
+Previously, the [[CPU]] only needed pins to communicate with the [[MCH]]. Now, the combined chip needs more pins than before to communicate with the computer [[memory]], graphics processing unit ([[GPU]]), and [[PCH]]. This is why the Core i-series [[CPU]]s need so many more wires.
+
+Besides being able to cram more transistors into the same space, it turns out that smaller components also use much less power! So we not only get performance gains, we get power efficiency gains as well.
+
+Furthermore, [[mainboard]] manufacturers save on the cost of the [[MCH]] [[chipset]], [which works out to about $40](https://www.anandtech.com/show/2824). Pretty significant when a mid-range [[mainboard]] costs $80–$160.
+
+With the [[MCH]] and its requisite wires gone, the [[mainboard]] can be shrunk further; motherboards gradually shrank from ATX and microATX form factor sizes, to smaller form factors, such as ITX and the current popular NUC form factors.
+
 
 </pre>
 </div>
@@ -16734,6 +16818,17 @@ Though most [[OS]]es are configured to use a [[page file]] by default, you can c
 <pre>[[Windows]], and other [[OS]]es as well, usually have some way to give users limited permissions for some tasks. Windows uses [[User Account Control]], which pops up a dialog box to alert the user. If the user gives permission for the app to proceed, then it is able to do so. If it is running on a user account, it can only perform tasks that the user account is allowed to perform.
 
 [[Linux]] uses the concept of groups; for a user to have permission to access [[bluetooth]], for example, the Linux OS often requires the user to be added to the `bluetooth` group in the OS.</pre>
+</div>
+<div created="20210914094717274" creator="jsng" modified="20210914095259886" modifier="jsng" tags="Topic:engineering" title="photolithography" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+Modern [[CPU]]s are manufactured through a process called **photolithography**—literally it means “etching with light” (Greek; _photo-_ “light” + _litho-_ “stone” + _-graphie_ “to draw”). By layering chemicals over the silicon base, putting a mask over them, and exposing them to light, a series of chemical reactions are induced to create the circuit pattern on the [[CPU]].
+
+Multiple [[CPU]]s are created on a single die this way, then individually cut and processed, in multiple steps spanning several months**. The precision and fineness of the etching laser determine how small we can create components on this substrate. As the manufacturing process improves, semiconductor manufacturing companies are able to create CPUs that can cram more and more transistors into each square mm (or inch) of silicon die.
+
+** See [Three months, 700 steps: Why it takes so long to produce a computer chip (WashPo)](https://www.washingtonpost.com/technology/2021/07/07/making-semiconductors-is-hard/) for a more comprehensive description of the process.
+
+{{||readNextTemplate}}</pre>
 </div>
 <div created="20210611043340804" creator="jsng" modified="20210611045916886" modifier="jsng" tags="Glossary" title="pixel" type="text/x-markdown">
 <pre>Pixel is a term shortened from _picture element_. Each pixel represents a single dot of colour.</pre>
