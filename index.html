@@ -539,6 +539,8 @@ Error message and password prompt
 
 <li>DPI</li>
 
+<li>Draft of 'chipset' by jsng</li>
+
 <li>Draft of 'mainboard' by jsng</li>
 
 <li>Draft of 'x86' by jsng</li>
@@ -13391,7 +13393,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20210911125902027" creator="jsng" list="chipset [[Draft of 'x86' by jsng]] Topic:security" modified="20210914083926595" modifier="jsng" title="$:/StoryList">
+<div created="20210911125902027" creator="jsng" list="throughput [[Draft of 'chipset' by jsng]] [[Draft of 'x86' by jsng]] Topic:security" modified="20210914083926595" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14948,21 +14950,42 @@ Image via [DataPro](https://www.datapro.net/techinfo/displayport_info.html)</pre
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20210821013849566" creator="jsng" draft.of="mainboard" draft.title="mainboard" list-after="[[form factor]]" modified="20210914085916595" modifier="jsng" tags="Glossary Topic:hardware WIP" title="Draft of 'mainboard' by jsng" type="text/x-markdown">
+<div created="20210821061204250" creator="jsng" draft.of="chipset" draft.title="chipset" modified="20210914085934068" modifier="jsng" tags="Glossary Topic:hardware" title="Draft of 'chipset' by jsng" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+A computer comprises several components: the [[CPU]], computer [[memory]], the [[storage device]]s, the [[power]] supply, ...
+
+The chips that need to communicate with each other often do not communicate directly with the [[CPU]]. This would take up valuable [[CPU cycles]] that the CPU could spend carrying out [[CPU instructions]] instead.
+
+Instead, a **chipset**—a subsidiary chip on the [[mainboard]]—helps to manage the various parts of a computer that need to work together.
+
+Main article: [[mainboard]]
+
+The connections managed by a chipset are represented by a **chipset diagram**.
+
+A **memory controller hub** ([[MCH]]) is a chipset that typically manages communication between the [[CPU]], computer [[memory]], the external graphics card, and the [[PCH]].
+
+A  **peripheral controller hub** ([[PCH]]) is a chipset that typically manages communication between the [[MCH]] and all other peripherals in a computer.
+
+![Chipset diagram of a mainboard for the Pentium 4](images/issue133_02.jpg)  
+Chipset diagram of a Pentium 4 computer system  
+Source: [Hexus](https://www.hexus.net/tech/reviews/mainboard/635-sis655fx-dual-channel-p4-chipset/?page=2)
+
+{{readNextTemplate}}</pre>
+</div>
+<div created="20210821013849566" creator="jsng" draft.of="mainboard" draft.title="mainboard" list-after="[[form factor]]" modified="20210914090122767" modifier="jsng" tags="Glossary Topic:hardware WIP" title="Draft of 'mainboard' by jsng" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 Also known as: [[motherboard]], [[logic board]]
 
 CPUs do not have enough wires to communicate with all the parts of the computer by themselves. It delegates some responsibility to auxiliary processors, called [[chipset]]s. These chipsets are found on the **mainboard**, and pre-wired to the various interfaces (memory, storage, audio, peripherals, buttons, lights, expansion slots, ...) they need to manage.
 
-Main article: [[throughput]]
+Side reading: [[throughput]]
 
 
 # Chipset diagram
 
 When mainboards got sufficiently complicated enough, tech publications had taken to staring at manufacturer-published diagrams of how the chipsets were connected to each other and to the CPU. These diagrams are called **chipset diagrams**.
-
-Main article: [[form factor]]
 
 Main article: [[chipset]]
 
@@ -17860,7 +17883,7 @@ Is there any way to work around this? Yep! The termination instruction has to co
 
 {{||readNextTemplate}}</pre>
 </div>
-<div created="20210624072228395" creator="jsng" list-before="[[mainboard]]" modified="20210911130103797" modifier="jsng" summary="CPUs have limited throughput, since there is a max frequency they can operate at, and a limit to the number of wires they can be connected to (throughput = no. of wires × frequency). Later designs of early computers increased the capability of computers by delegating more work to secondary chips." tags="Glossary" title="throughput" type="text/x-markdown">
+<div created="20210624072228395" creator="jsng" list-before="[[mainboard]]" modified="20210914090136939" modifier="jsng" summary="CPUs have limited throughput, since there is a max frequency they can operate at, and a limit to the number of wires they can be connected to (throughput = no. of wires × frequency). Later designs of early computers increased the capability of computers by delegating more work to secondary chips." tags="Glossary Topic:systems" title="throughput" type="text/x-markdown">
 <pre>The common model of a computer is that it … computes. It calculates. It takes in numbers, and spits out more numbers.
 
 That’s not quite right.
