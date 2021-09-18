@@ -879,6 +879,8 @@ Error message and password prompt
 
 <li>system files</li>
 
+<li>System-on-Chip</li>
+
 <li>tagPageTemplate</li>
 
 <li>TDP</li>
@@ -12662,7 +12664,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div list="SoC Topic:security" title="$:/StoryList">
+<div created="20210918123326560" creator="jsng" list="System-on-Chip Topic:security" modified="20210918123326560" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -16999,6 +17001,30 @@ We would have to retrieve each row one by one, split up the tag strings, and che
 </div>
 <div created="20210702093524967" creator="jsng" modified="20210702093531395" modifier="jsng" tags="WIP Topic:systems" title="system files">
 <pre></pre>
+</div>
+<div created="20210918123409304" creator="jsng" modified="20210918124807634" modifier="jsng" summary="A system-on-chip (SoC) combines the core functionality of a system—processing, graphics, memory, and control—into a single chip package." tags="Topic:hardware Topic:systems" title="System-on-Chip" type="text/x-markdown">
+<pre>{{||prereqTemplate}}
+
+Early desktop computer mainboards and early smartphone mainboards were similar in their design:
+
+![AT motherboard](images/issue132_01.jpg)  
+An AT motherboard, with key components outlined.
+
+![iPhone 3G mainboard](images/issue138_01.jpg)  
+iPhone 3G mainboard, with parts labelled
+
+Early in the design, computers consist of a large number of chips, each performing a specialized function. As the design evolves, chip designs improve, and manufacturing processes become more refined, these specialized functions come to be integrated into fewer and fewer chips.
+
+At that point, the mainboard design becomes much simpler:
+
+![iPhone 4 mainboard](images/issue138_03.jpg)  
+iPhone 4 mainboard.
+
+The specialized functions of these auxiliary chips get integrated into the [[CPU]], including memory management, access to storage, and connectivity to all the other subsidiary chips. This new chip could hardly be called the [[CPU]] anymore; it is doing so much more!
+
+The industry term for these all-in-one chips is a **System-on-Chip** ([[SoC]]): they are literally (almost) an entire system on a single chip!
+
+{{||readNextTemplate}}</pre>
 </div>
 <div created="20210610095326608" creator="jsng" modified="20210613062329261" modifier="jsng" tags="" title="tagPageTemplate" type="text/x-markdown">
 <pre>#  {{!!caption}}
