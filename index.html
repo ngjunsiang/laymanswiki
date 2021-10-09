@@ -541,6 +541,8 @@ Error message and password prompt
 
 <li>DPI</li>
 
+<li>Draft of 'HTTP' by jsng</li>
+
 <li>driver</li>
 
 <li>DVD-ROM</li>
@@ -1046,7 +1048,7 @@ When a user opens this [[file]], they do not expect data inside to change. To pr
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="x86-64" modified="20211009091218796" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Unicode" modified="20211009092656308" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1753,10 +1755,38 @@ When a user opens this [[file]], they do not expect data inside to change. To pr
     },
     {
         &quot;title&quot;: &quot;x86-64&quot;
+    },
+    {
+        &quot;title&quot;: &quot;UTF-8&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 684.5333251953125,
+            &quot;left&quot;: 488.83331298828125,
+            &quot;width&quot;: 37.75,
+            &quot;right&quot;: 526.5833129882812,
+            &quot;bottom&quot;: 704.5333251953125,
+            &quot;height&quot;: 20
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Unicode&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 684.5333251953125,
+            &quot;left&quot;: 533.7166748046875,
+            &quot;width&quot;: 54.20001220703125,
+            &quot;right&quot;: 587.9166870117188,
+            &quot;bottom&quot;: 704.5333251953125,
+            &quot;height&quot;: 20
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'Unicode' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Unicode&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[CPU instructions]] WIP" modified="20210914095741928" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="Unicode UTF-8 [[CPU instructions]] WIP" modified="20210914095741928" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div created="20191010123116672" modified="20200714164402812" tags="$:/tags/Stylesheet $:/giffmex/stroll $:/giffmex/blinks" title="$:/.giffmex/.Stylesheet4Stroll" type="text/css">
@@ -13384,7 +13414,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20211009084453261" creator="jsng" list="URL HTTP Topic:security" modified="20211009091951977" modifier="jsng" title="$:/StoryList">
+<div created="20211009084453261" creator="jsng" list="URL [[Draft of 'HTTP' by jsng]] Topic:security" modified="20211009091951977" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14942,6 +14972,56 @@ Image via [DataPro](https://www.datapro.net/techinfo/displayport_info.html)</pre
 </div>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
+</div>
+<div created="20211009091631738" creator="jsng" draft.of="HTTP" draft.title="HTTP" modified="20211009092637507" modifier="jsng" tags="Topic:internet WIP Glossary" title="Draft of 'HTTP' by jsng" type="text/x-markdown">
+<pre>**HTTP** stands for [[HyperText Transfer Protocol]].
+
+Let’s break that term down:
+
+# Protocol
+
+A protocol is “a procedure or set of rules”. So HTTP is a set of rules. For doing what?
+
+# Transfer Protocol
+
+Okay, this tells us that HTTP is a set of rules for transferring something—i.e. data.
+
+# HyperText
+
+“[HyperText](https://en.wikipedia.org/wiki/Hypertext)” is a term coined by author Ted Nelson in 1963 to describe documents that can reference each other.
+
+Today, we know these references as “hyperlinks” or “[[URL]]s”.
+
+So hypertext is what we simply know today as a “webpage”.
+
+# What is HTTP?
+
+The HTTP protocol describes how a (software) program called the [[client]] may send a data packet, called a **request**, to another (software) program called the [[server]]. The [[server]] must return a data packet, called a **response**, to the [[client]].
+
+Theoretically, a client and server implementing the HTTP specification perfectly would be able to correctly interpret the requests and responses of the other party.
+
+Both requests and responses consist of a **header** and a **body**. The header contains [[metadata]] about the data packet.
+
+![An example HTTP response header](images/issue008_01.png)
+
+The key parts of the response for us are all in the first three lines:
+
+```
+HTTP/1.1 200 OK
+Date: Sat, 17 Nov 2018 04:01:02 GMT
+Content-Type: application/json; charset=UTF-8
+[...]
+```
+
+In the first line, `HTTP/1.1` tells us that this is version 1.1 of the HTTP specification (in use since 1990), and the response from the server is `200` which means OK (more on this below).
+
+The second line is just the date and time that the response was sent. Nothing new.
+
+The third line tells is what kind of data was sent with the HTTP response. For now we can see that the data is sent in [[JSON]] format.
+
+UTF-8 stands for “[[Unicode]] Transformation Format - 8 bit”, which means it is a format for transform letters and symbols into 1s and 0s. `charset=UTF-8` tells us that the *char*acters in the data come from this *set* of tables known as Unicode.
+
+Main article: [[UTF-8]], [[Unicode]]</pre>
 </div>
 <div created="20210728095742017" creator="jsng" modified="20210728101904531" modifier="jsng" summary="Driver files provide information about the driver, and instructions on how to receive information from the device, and encode information to be passed to the device. The operating system may come with generic driver files for the device, but custom driver files might provide better performance or additional features." tags="Topic:systems Glossary" title="driver" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
@@ -18070,7 +18150,7 @@ We need a foundation for all this data, a base on which we can build our lives a
 <div created="20210612034834038" creator="jsng" modified="20210612034903410" modifier="jsng" title="transform">
 <pre>A mathematical formula that converts data from one form into another.</pre>
 </div>
-<div created="20210611032800606" creator="jsng" modified="20210611041755863" modifier="jsng" summary="Unicode is an encoding format which is meant to support every language, ever. Most websites, apps, and interfaces support it today." tags="Glossary" title="Unicode" type="text/x-markdown">
+<div created="20210611032800606" creator="jsng" modified="20211009092656297" modifier="jsng" summary="Unicode is an encoding format which is meant to support every language, ever. Most websites, apps, and interfaces support it today." tags="Glossary" title="Unicode" type="text/x-markdown">
 <pre>In 1988, a bunch of engineers from [Xerox](https://en.wikipedia.org/wiki/Xerox) and [Apple](https://en.wikipedia.org/wiki/Apple_Inc.) started thinking about a universal encoding that can encompass all languages. The first volume of this encoding, called **Unicode**, was published in 1991, with extensions added subsequently.
 
 At that point, a Unicode character was represented using 16 [[bit]]s (for a possible 65,536 characters). In 1996, a method of extending the Unicode scheme was added, so that Unicode could easily represented over a million different characters!
