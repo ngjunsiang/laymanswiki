@@ -541,8 +541,6 @@ Error message and password prompt
 
 <li>DPI</li>
 
-<li>Draft of '64-bit' by jsng</li>
-
 <li>Draft of 'x86-64' by jsng</li>
 
 <li>driver</li>
@@ -1042,7 +1040,7 @@ When a user opens this [[file]], they do not expect data inside to change. To pr
 <div created="20200502183010768" creator="jsng" modified="20210611002752334" modifier="jsng" tags="$:/giffmex/stroll" title="$:/_sq/Stories/config/Story2-storyview">
 <pre>classic</pre>
 </div>
-<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="Draft of '64-bit' by jsng" modified="20211009085224727" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" creator="jsng" current-tiddler="64-bit" modified="20211009085438021" modifier="jsng" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1731,10 +1729,13 @@ When a user opens this [[file]], they do not expect data inside to change. To pr
     },
     {
         &quot;title&quot;: &quot;Draft of '64-bit' by jsng&quot;
+    },
+    {
+        &quot;title&quot;: &quot;64-bit&quot;
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="[[Draft of '64-bit' by jsng]] [[Draft of 'x86-64' by jsng]] [[CPU instructions]] WIP" modified="20210914095741928" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="64-bit [[Draft of 'x86-64' by jsng]] [[CPU instructions]] WIP" modified="20210914095741928" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div created="20191010123116672" modified="20200714164402812" tags="$:/tags/Stylesheet $:/giffmex/stroll $:/giffmex/blinks" title="$:/.giffmex/.Stylesheet4Stroll" type="text/css">
@@ -13530,7 +13531,7 @@ We can use numbers to describe the position, [[luminosity]] (i.e. **brightness**
 
 {{||readNextTemplate}}</pre>
 </div>
-<div created="20210624064512116" creator="jsng" list-after="[[memory addressing]]" modified="20211009085136808" modifier="jsng" tags="Glossary Topic:hardware Topic:engineering" title="64-bit" type="text/x-markdown">
+<div created="20210624064512116" creator="jsng" list-after="[[memory addressing]]" modified="20211009085438014" modifier="jsng" tags="Glossary Topic:hardware Topic:engineering" title="64-bit" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 A **64-bit** [[instruction set]] is an instruction set that uses 64 [[bit]]s to encode the [[memory address|memory addressing]].
@@ -14920,23 +14921,6 @@ Image via [DataPro](https://www.datapro.net/techinfo/displayport_info.html)</pre
 </div>
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
-</div>
-<div created="20210624064512116" creator="jsng" draft.of="64-bit" draft.title="64-bit" list-after="[[memory addressing]]" modified="20211009085224723" modifier="jsng" tags="Glossary Topic:hardware Topic:engineering" title="Draft of '64-bit' by jsng" type="text/x-markdown">
-<pre>{{||prereqTemplate}}
-
-A **64-bit** [[instruction set]] is an instruction set that uses 64 [[bit]]s to encode the [[memory address|memory addressing]].
-
-A **64-bit** [[CPU]] is a CPU that implements a 64-bit instruction set.
-
-## The 32-bit to 64-bit transition in the ’00s
-
-Around the turn of the century, in the 2000s, 2 GiB of memory on a laptop was considered beefy, Google Chrome hadn’t appeared on the scene yet, and browsers did not use up gobs of memory.
-
-Browsers were gradually requiring more and more memory, as webapps starting getting more and more complex and powerful.
-
-However, a [[32-bit]] CPU, without any hacky workarounds, can only work with about 4 billion [[memory address]]es &lt;&lt;fnote &quot;2^32 = 4,294,967,296&quot;&gt;&gt;. Each address can only hold one [[byte]] of data, which meant that a [[32-bit]] CPU could only use 4 GiB of memory.
-
-We needed to use CPUs that could work with more than 4 billion addresses. 64-bit CPUs were the solution that the computing industry settled on. 64-bit memory addresses would extend the addressable memory capacity to 16 TiB for the foreseeable future.</pre>
 </div>
 <div created="20211009084554880" creator="jsng" draft.of="x86-64" draft.title="x86-64" modified="20211009084607495" modifier="jsng" tags="Topic:engineering WIP" title="Draft of 'x86-64' by jsng" type="text/x-markdown">
 <pre></pre>
@@ -18951,12 +18935,16 @@ Why did Windows XP feel faster, then? Because it did it the other way round!
 <div created="20210613105425033" creator="jsng" modified="20210613105440291" modifier="jsng" tags="Glossary" title="WYSIWYG" type="text/x-markdown">
 <pre>WYSIWYG stands for What You See Is What You Get.</pre>
 </div>
-<div created="20210911130308405" creator="jsng" list-after="[[instruction set]]" modified="20211009085435387" modifier="jsng" tags="Topic:engineering WIP" title="x86" type="text/x-markdown">
+<div created="20210911130308405" creator="jsng" list-after="[[instruction set]]" modified="20211009085619076" modifier="jsng" tags="Topic:engineering" title="x86" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
 **x86** is actually not one, but a family of **instruction set architectures** ([[ISA]]) developed by [[Intel]] for their 8086 [[CPU]] and its successors, the 80186, 80286, 80386, 80486 (see the pattern?)
 
-The instruction set was originally designed for 16-bit processors (up to 80286), but later extended to include 32-bit instructions as well (for 80386 onwards).</pre>
+The instruction set was originally designed for 16-bit processors (up to 80286), but later extended to include 32-bit instructions as well (for 80386 onwards).
+
+# Major companies
+
+Besides [[Intel]], the next notable company that designs CPUs for the x86 instruction set is [[AMD]]. </pre>
 </div>
 <div created="20210613103352333" creator="jsng" modified="20210613103425446" modifier="jsng" tags="Glossary" title="XML" type="text/x-markdown">
 <pre>**XML** stands for e**X**tensible **M**arkup **L**anguage.
