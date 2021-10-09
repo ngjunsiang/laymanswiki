@@ -541,8 +541,6 @@ Error message and password prompt
 
 <li>DPI</li>
 
-<li>Draft of 'HTTP' by jsng</li>
-
 <li>driver</li>
 
 <li>DVD-ROM</li>
@@ -1794,7 +1792,7 @@ When a user opens this [[file]], they do not expect data inside to change. To pr
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" creator="jsng" list="UTF-8 [[CPU instructions]] WIP" modified="20210914095741928" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" creator="jsng" list="[[CPU instructions]] WIP" modified="20210914095741928" modifier="jsng" revision="8" tags="$:/giffmex/stroll" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div created="20191010123116672" modified="20200714164402812" tags="$:/tags/Stylesheet $:/giffmex/stroll $:/giffmex/blinks" title="$:/.giffmex/.Stylesheet4Stroll" type="text/css">
@@ -13422,7 +13420,7 @@ exports.context = contextWidget;
 <div created="20210610073659176" creator="j" modified="20210610073659527" modifier="jsn" title="$:/status/UserName">
 <pre>jsng</pre>
 </div>
-<div created="20211009084453261" creator="jsng" list="URL [[Draft of 'HTTP' by jsng]] Topic:security" modified="20211009091951977" modifier="jsng" title="$:/StoryList">
+<div created="20211009084453261" creator="jsng" list="URL HTTP Topic:security" modified="20211009091951977" modifier="jsng" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14981,56 +14979,6 @@ Image via [DataPro](https://www.datapro.net/techinfo/displayport_info.html)</pre
 <div created="20210611061439308" creator="jsng" modified="20210611061537521" modifier="jsng" tags="Glossary" title="DPI">
 <pre>Dots per inch</pre>
 </div>
-<div created="20211009091631738" creator="jsng" draft.of="HTTP" draft.title="HTTP" modified="20211009092637507" modifier="jsng" tags="Topic:internet WIP Glossary" title="Draft of 'HTTP' by jsng" type="text/x-markdown">
-<pre>**HTTP** stands for [[HyperText Transfer Protocol]].
-
-Let’s break that term down:
-
-# Protocol
-
-A protocol is “a procedure or set of rules”. So HTTP is a set of rules. For doing what?
-
-# Transfer Protocol
-
-Okay, this tells us that HTTP is a set of rules for transferring something—i.e. data.
-
-# HyperText
-
-“[HyperText](https://en.wikipedia.org/wiki/Hypertext)” is a term coined by author Ted Nelson in 1963 to describe documents that can reference each other.
-
-Today, we know these references as “hyperlinks” or “[[URL]]s”.
-
-So hypertext is what we simply know today as a “webpage”.
-
-# What is HTTP?
-
-The HTTP protocol describes how a (software) program called the [[client]] may send a data packet, called a **request**, to another (software) program called the [[server]]. The [[server]] must return a data packet, called a **response**, to the [[client]].
-
-Theoretically, a client and server implementing the HTTP specification perfectly would be able to correctly interpret the requests and responses of the other party.
-
-Both requests and responses consist of a **header** and a **body**. The header contains [[metadata]] about the data packet.
-
-![An example HTTP response header](images/issue008_01.png)
-
-The key parts of the response for us are all in the first three lines:
-
-```
-HTTP/1.1 200 OK
-Date: Sat, 17 Nov 2018 04:01:02 GMT
-Content-Type: application/json; charset=UTF-8
-[...]
-```
-
-In the first line, `HTTP/1.1` tells us that this is version 1.1 of the HTTP specification (in use since 1990), and the response from the server is `200` which means OK (more on this below).
-
-The second line is just the date and time that the response was sent. Nothing new.
-
-The third line tells is what kind of data was sent with the HTTP response. For now we can see that the data is sent in [[JSON]] format.
-
-UTF-8 stands for “[[Unicode]] Transformation Format - 8 bit”, which means it is a format for transform letters and symbols into 1s and 0s. `charset=UTF-8` tells us that the *char*acters in the data come from this *set* of tables known as Unicode.
-
-Main article: [[UTF-8]], [[Unicode]]</pre>
-</div>
 <div created="20210728095742017" creator="jsng" modified="20210728101904531" modifier="jsng" summary="Driver files provide information about the driver, and instructions on how to receive information from the device, and encode information to be passed to the device. The operating system may come with generic driver files for the device, but custom driver files might provide better performance or additional features." tags="Topic:systems Glossary" title="driver" type="text/x-markdown">
 <pre>{{||prereqTemplate}}
 
@@ -15802,7 +15750,7 @@ The `&lt;img&gt;` tag&lt;&lt;fnote &quot;img stands for image&quot;&gt;&gt; is u
 
 Mouse-over text, which appears when you put the mouse cursor over the image without clicking, is defined in the `alt=&quot;…&quot;` attribute. The source URL of the image is defined in the `src=&quot;…&quot;` attribute.</pre>
 </div>
-<div created="20211009091631738" creator="jsng" modified="20211009092248354" modifier="jsng" tags="Topic:internet WIP Glossary" title="HTTP" type="text/x-markdown">
+<div created="20211009091631738" creator="jsng" modified="20211009093441781" modifier="jsng" summary="HTTP is a set of rules for sending and receiving webpages that link to other webpages. According to the rules, if you want a webpages, you (the client) must send a (HTTP) request to a server, which will return a response. A request or a response consists of a header and a body. The response header contains information about the response. The status code in the response header determines if the request was successful or unsuccessful." tags="Topic:internet WIP Glossary" title="HTTP" type="text/x-markdown">
 <pre>**HTTP** stands for [[HyperText Transfer Protocol]].
 
 Let’s break that term down:
@@ -15827,7 +15775,91 @@ So hypertext is what we simply know today as a “webpage”.
 
 The HTTP protocol describes how a (software) program called the [[client]] may send a data packet, called a **request**, to another (software) program called the [[server]]. The [[server]] must return a data packet, called a **response**, to the [[client]].
 
-Theoretically, a client and server implementing the HTTP specification perfectly would be able to correctly interpret the requests and responses of the other party.</pre>
+Theoretically, a client and server implementing the HTTP specification perfectly would be able to correctly interpret the requests and responses of the other party.
+
+Both requests and responses consist of a **header** and a **body**. The header contains [[metadata]] about the data packet.
+
+# HTTP response headers
+
+![An example HTTP response header](images/issue008_01.png)  
+An example HTTP response header, with a 200 status code
+
+The key parts of the response for us are all in the first three lines:
+
+```
+HTTP/1.1 200 OK
+Date: Sat, 17 Nov 2018 04:01:02 GMT
+Content-Type: application/json; charset=UTF-8
+[...]
+```
+
+In the first line, `HTTP/1.1` tells us that this is version 1.1 of the HTTP specification (in use since 1990), and the response from the server is `200` which means OK (more on this below).
+
+The second line is just the date and time that the response was sent. Nothing new.
+
+The third line tells is what kind of data was sent with the HTTP response. For now we can see that the data is sent in [[JSON]] format.
+
+UTF-8 stands for “[[Unicode]] Transformation Format - 8 bit”, which means it is a format for transform letters and symbols into 1s and 0s. `charset=UTF-8` tells us that the *char*acters in the data come from this *set* of tables known as Unicode.
+
+Main article: [[UTF-8]], [[Unicode]]
+
+# HTTP status codes
+
+The `200` part is what we call a status code, since it is a number code that tells us the status of the request.
+
+Like error codes that you get from your electronic devices or appliances, there is [a whole list of error codes](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html) defined by the HTTP/1.1 specification to tell you the exact status of your request. It looks long and scary, so here’s the gist.
+
+Status codes are always three digits. The first digit tells you the category of status:
+
+**1XX status codes** are technical, and you should never see them as they are supposed to be invisibly handled by your client (i.e. your web browser).
+
+**2XX status codes** are good news: it means everything is okay! `HTTP 200` means OK (as you saw above) and is the usual response your client gets when browsing the internet. If you are using an API, you may also get status codes `201`, `202`, `203`, and `204`. 
+
+**3XX status codes** are response headers that basically say “your princess is in another castle!” In general, they are usually redirects. If you have noticed your web browser going to a URL and then jumping to another one by itself, you’ve just experienced a redirect. These codes are usually handled invisibly by your client so you shouldn’t run into them often.
+
+**4XX status codes** are bad news, and generally the server’s way of blaming the client.  
+`400` means the server didn’t understand what you meant (I didn’t understand your English).  
+`401` means you don’t have permission (this place is members only; do I know you?).  
+`403` means you don’t have permission and may not ask for permission (These are not the droids you are looking for).  
+`404`, the often-parodied status code, means what you are looking for at that URL didn’t exist.
+
+**5XX status codes** are also bad news, but this time round the server is blaming itself.
+
+`500` means “something is wrong with me; I can’t fulfill your request” (be right back; learning how to make avocado brioche!).  
+`501` means “I don’t know how to do that yet” (but coming soon to a browser near you!).  
+`502` means “I was trying to help you but when I asked Server C it gave me nonsense so now I can’t help” (please complain to your Member of Parliament on Facebook).  
+`503` usually means “all our customer service officers are currently busy, please try again later.”  
+`504` is the worst: you’ve waited until the request timed out and didn’t get a response. (the lights are on but nobody’s home …)
+
+![An HTTP response header with a 404 status code](images/issue008_02.png)
+An example response header, with a 404 status code
+
+# HTTP request headers
+
+![An HTTP request header](images/issue009_01.png)
+A request header
+
+The third line, `Accept */*`, is the client’s way of saying “send me anything”. A more limited client, for example image-browsing software, might send an HTTP header requesting only images.
+
+# How do I make an HTTP request?
+
+As humans, we can’t speak computerese. If I asked the server for information, it would not understand what I said. I need software to help me translate my request in a way the server can understand.
+
+This software acts as an *agent* for me, the *user*. So any software that helps to form an HTTP request, send it to a server, and receive the response, is known as a **User Agent**. The user agent needs to identify itself in the HTTP header (because the HTTP, a set of rules for transferring webpages, says so).
+
+# What is my User Agent?
+
+You can find out what information your user agent is sending in its HTTP header on websites like [whatismybrowser.com](https://www.whatismybrowser.com/detect/what-is-my-user-agent). Go ahead, it’s safe.
+
+Some user-agents are highly advanced—think about your laptop web browser. Some are really simple and barebones and can’t handle very much—think of the web browser on your Kindle Paperwhite.
+
+A server can actually serve different user agents differently, but first it must be able to identify them. The user agent string, the fourth line in the request header, is how it identifies the user agent and delivers a response—hopefully an appropriate one with `200` in the header.
+
+Ever wondered how some websites or services seem to know what kind of web browser you are using, perhaps even what operating system you are using? If you have ever needed to install drivers or software, some websites figure out whether to give you the Linux version or the Windows version or the Mac version, and they do so through your user agent string.
+
+Yep, that means that on less scrupulous websites, the server can actually know something about you from your user agent declaration. It can, for example, know that you are using an iPhone and hence serve you a different webpage format—or different ads.
+
+In the past, when the old version of Internet Explorer failed to render some pages correctly, some websites took to blocking it from visiting their site entirely, or serving a different, simpler site. They did so by detecting the user agent.</pre>
 </div>
 <div created="20210611030849058" creator="jsng" modified="20210702095643740" modifier="jsng" tags="Topic:internet WIP" title="HTTP request" type="text/x-markdown">
 <pre>![An HTTP request captured in Wireshark showing my developer API key](https://raw.githubusercontent.com/ngjunsiang/laymansguide/release/season1/issue012/issue012_01.png)&lt;br /&gt;
